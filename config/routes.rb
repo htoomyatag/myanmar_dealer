@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  resources :fronts
+
+ get 'home' => 'fronts#home'
+ get 'about' => 'fronts#about'
+ get 'cart' => 'fronts#cart'
+ get 'category' => 'fronts#category'
+ get 'category_list' => 'fronts#category_list'
+ get 'compare' => 'fronts#compare'
+ get 'contact' => 'fronts#contact'
+ get 'login' => 'fronts#login'
+ get 'product' => 'fronts#product'
+ get 'product_full' => 'fronts#product_full'
+ get 'register' => 'fronts#register'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
