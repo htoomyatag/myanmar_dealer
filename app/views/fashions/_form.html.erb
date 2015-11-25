@@ -1,0 +1,37 @@
+<%= form_for(@fashion) do |f| %>
+  <% if @fashion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fashion.errors.count, "error") %> prohibited this fashion from being saved:</h2>
+
+      <ul>
+      <% @fashion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group" >
+    <%= f.label :product_name %><br>
+    <%= f.text_field :product_name, :class => "form-control" %>
+  </div>
+  <div class="form-group" >
+    <%= f.label :available_size %><br>
+    <%= f.text_field :available_size, :class => "form-control" %>
+  </div>
+  <div class="form-group" >
+    <%= f.label :available_color %><br>
+    <%= f.text_field :available_color, :class => "form-control" %>
+  </div>
+  <div class="form-group" >
+    <%= f.label :shop_id %><br>
+    <%= f.number_field :shop_id, :class => "form-control" %>
+  </div>
+  <div class="form-group" >
+    <%= f.label :shop_name %><br>
+    <%= f.text_field :shop_name, :class => "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

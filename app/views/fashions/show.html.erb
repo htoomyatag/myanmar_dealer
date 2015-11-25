@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+
+        </div>
+      </div>
+  </div>
+  <div class="col-md-9">
+    
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Product Information</h3>
+        </div>
+        <div class="panel-body">
+              <p id="notice"><%= notice %></p>
+
+              <p>
+                <strong>Product name:</strong>
+                <%= @fashion.product_name %>
+              </p>
+
+              <p>
+                <strong>Available size:</strong>
+                <%= @fashion.available_size %>
+              </p>
+
+              <p>
+                <strong>Available color:</strong>
+                <%= @fashion.available_color %>
+              </p>
+
+              <p>
+                <strong>Shop:</strong>
+                <%= @fashion.shop_id %>
+              </p>
+
+              <p>
+                <strong>Shop name:</strong>
+                <%= @fashion.shop_name %>
+              </p>
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<%= link_to 'Edit', edit_fashion_path(@fashion), :class =>"btn btn-default" %> |
+<%= link_to 'Back', fashions_path, :class =>"btn btn-default" %>
