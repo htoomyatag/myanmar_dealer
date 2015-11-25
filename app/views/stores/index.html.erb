@@ -1,9 +1,11 @@
+
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Stores</h1>
-
-<table>
-  <thead>
+<h1>Stores &nbsp;</h1> <%= link_to 'New Store', new_store_path, :class=>"btn btn-primary" %>
+<div class="table-responsive">
+  <table class="table">
+   <thead>
     <tr>
       <th>Store name</th>
       <th>Contact number</th>
@@ -27,7 +29,8 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
-<%= link_to 'New Store', new_store_path %>
+<%= link_to 'New Store', new_store_path, :class=>"btn btn-primary" %>
