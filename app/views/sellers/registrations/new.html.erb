@@ -1,0 +1,134 @@
+<div id="main-container" class="container">
+  <!-- Breadcrumb Starts -->
+    <ol class="breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li class="active">Register</li>
+    </ol>
+  <!-- Breadcrumb Ends -->
+  <!-- Main Heading Starts -->
+    <h2 class="main-heading text-center">
+      Register <br />
+      <span>Create New Seller</span>
+    </h2>
+  <!-- Main Heading Ends -->
+  <!-- Registration Section Starts -->
+    <section class="registration-area">
+      <div class="row">
+        <div class="col-sm-6">
+        <!-- Registration Block Starts -->
+          <div class="panel panel-smart">
+            <div class="panel-heading">
+              <h3 class="panel-title">Personal Information</h3>
+            </div>
+            <div class="panel-body">
+            <!-- Registration Form Starts -->
+              <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => "form-horizontal" }) do  |f| %>
+
+              <!-- Personal Information Starts -->
+                <div class="form-group">
+                  <label for="inputFname" class="col-sm-3 control-label">Full Name :</label>
+                  <div class="col-sm-9">
+                    <%= f.text_field :name, autofocus: true, :class => "form-control", :Placeholder => "Name" %>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputFname" class="col-sm-3 control-label">Company:</label>
+                  <div class="col-sm-9">
+                    <%= f.text_field :company_name, autofocus: true, :class => "form-control", :Placeholder => "Company" %>
+                  </div>
+                </div>
+               
+                <div class="form-group">
+                  <label for="inputEmail" class="col-sm-3 control-label">Email :</label>
+                  <div class="col-sm-9">
+                      <%= f.email_field :email, autofocus: true, :class => "form-control", :Placeholder => "Email" %>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPhone" class="col-sm-3 control-label">Phone :</label>
+                  <div class="col-sm-9">
+                     <%= f.text_field :phone, autofocus: true, :class => "form-control", :Placeholder => "Phone" %>
+                  </div>
+                </div>
+               
+              <!-- Personal Information Ends -->
+               
+              <!-- Delivery Information Ends -->
+                <h3 class="panel-heading inner">
+                  Password
+                </h3>
+              <!-- Password Area Starts -->
+                <div class="form-group">
+                  <label for="inputPassword" class="col-sm-3 control-label">Password :</label>
+                  <div class="col-sm-9">
+                    <%= f.password_field :password, autocomplete: "off", :class=>"form-control", :Placeholder => "Password" %>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputRePassword" class="col-sm-3 control-label">Re-Password :</label>
+                  <div class="col-sm-9">
+                    <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"form-control", :Placeholder => "Re-Password" %>
+                  </div>
+                </div>
+               
+                <div class="form-group">
+                  <div class="col-sm-offset-3 col-sm-9">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> I'v read and agreed on Conditions
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-3 col-sm-9">
+                    <button type="submit" class="btn btn-black">
+                      Register
+                    </button>
+                  </div>
+                </div>
+              <!-- Password Area Ends -->
+              <% end %>
+            <!-- Registration Form Starts -->
+            </div>              
+          </div>
+        <!-- Registration Block Ends -->
+        </div>
+        <div class="col-sm-6">
+        
+        <!-- Conditions Panel Starts -->
+          <div class="panel panel-smart">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                Conditions
+              </h3>
+            </div>
+            <div class="panel-body">
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including  versions of Lorem Ipsum.
+              </p>
+              <ol>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Consectetur adipiscing elit</li>
+                <li>Integer molestie lorem at massa</li>
+                <li>Facilisis in pretium nisl aliquet</li>
+                <li>Nulla volutpat aliquam velit</li>
+                <li>Faucibus porta lacus fringilla vel</li>
+                <li>Aenean sit amet erat nunc</li>
+                <li>Eget porttitor lorem</li>
+              </ol>
+              <p>
+                HTML Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. 
+              </p>
+              <p>
+                Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst. 
+              </p>
+            </div>
+          </div>
+        <!-- Conditions Panel Ends -->
+        </div>
+      </div>
+    </section>
+  <!-- Registration Section Ends -->
+  </div>
