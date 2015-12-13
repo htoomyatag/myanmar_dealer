@@ -1,12 +1,12 @@
 class StoresController < ApplicationController
   before_action :set_store, only: [:show, :edit, :update, :destroy]
-  layout "backend"
 
   # GET /stores
   # GET /stores.json
   def index
     @stores = Store.all
   end
+
 
   # GET /stores/1
   # GET /stores/1.json
@@ -29,6 +29,9 @@ class StoresController < ApplicationController
 
     respond_to do |format|
       if @store.save
+         @seller = Seller.find(current_seller.id)
+         @seller.update(:has_store => "yes")
+
         format.html { redirect_to @store, notice: 'Store was successfully created.' }
         format.json { render :show, status: :created, location: @store }
       else
@@ -70,6 +73,6 @@ class StoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def store_params
-      params.require(:store).permit(:store_name, :contact_number, :contact_address, :owner)
+      params.require(:store).permit(:avatar, :store_name, :store_address, :store_contact, :description, :seller_id, :seller_name)
     end
 end

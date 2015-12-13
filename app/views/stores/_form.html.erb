@@ -11,23 +11,31 @@
     </div>
   <% end %>
 
-  <div class="form-group" >
+  <div class="field">
     <%= f.label :store_name %><br>
-    <%= f.text_field :store_name, :class => "form-control" %>
+    <%= f.text_field :store_name %>
   </div>
-  <div class="form-group" >
-    <%= f.label :contact_number %><br>
-    <%= f.text_field :contact_number, :class => "form-control" %>
+  <div class="field">
+    <%= f.label :store_address %><br>
+    <%= f.text_field :store_address %>
   </div>
-  <div class="form-group" >
-    <%= f.label :contact_address %><br>
-    <%= f.text_field :contact_address, :class => "form-control" %>
+  <div class="field">
+    <%= f.label :store_contact %><br>
+    <%= f.text_field :store_contact %>
   </div>
-  <div class="form-group" >
-    <%= f.label :owner %><br>
-    <%= f.text_field :owner, :class => "form-control" %>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :seller_id %><br>
+    <%= f.text_field :seller_id%>
+  </div>
+  <div class="field">
+    <%= f.label :seller_name %><br>
+    <%= f.text_field :seller_name %>
   </div>
   <div class="actions">
-    <%= f.submit :class=>"btn btn-success" %>
+    <%= f.submit %>
   </div>
 <% end %>

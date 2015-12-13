@@ -4,6 +4,7 @@ class CreateSellers < ActiveRecord::Migration
       t.string :name
       t.string :company_name
       t.string :phone
+      t.string :has_store
 
       t.timestamps null: false
     end

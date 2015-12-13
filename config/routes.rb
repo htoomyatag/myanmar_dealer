@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  resources :stores
   devise_for :buyers, :controllers => {:sessions => "buyers/sessions", :registrations => "buyers/registrations"}
   devise_for :sellers, :controllers => {:sessions => "sellers/sessions", :registrations => "sellers/registrations"}
   resources :buyers
   resources :sellers
   resources :fashions
-  resources :stores
   resources :fronts
+  root 'fronts#home'
 
  get 'home' => 'fronts#home'
  get 'about' => 'fronts#about'

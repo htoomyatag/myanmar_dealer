@@ -2,12 +2,16 @@
 
 one:
   store_name: MyString
-  contact_number: MyString
-  contact_address: MyString
-  owner: MyString
+  store_address: MyString
+  store_contact: MyString
+  description: MyText
+  seller_id: 1
+  seller_name: MyString
 
 two:
   store_name: MyString
-  contact_number: MyString
-  contact_address: MyString
-  owner: MyString
+  store_address: MyString
+  store_contact: MyString
+  description: MyText
+  seller_id: 1
+  seller_name: MyString

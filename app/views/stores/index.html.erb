@@ -1,16 +1,16 @@
-
-
 <p id="notice"><%= notice %></p>
 
-<h1>Stores &nbsp;</h1> <%= link_to 'New Store', new_store_path, :class=>"btn btn-primary" %>
-<div class="table-responsive">
-  <table class="table">
-   <thead>
+<h1>Listing Stores</h1>
+
+<table>
+  <thead>
     <tr>
       <th>Store name</th>
-      <th>Contact number</th>
-      <th>Contact address</th>
-      <th>Owner</th>
+      <th>Store address</th>
+      <th>Store contact</th>
+      <th>Description</th>
+      <th>Seller</th>
+      <th>Seller name</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,9 +19,11 @@
     <% @stores.each do |store| %>
       <tr>
         <td><%= store.store_name %></td>
-        <td><%= store.contact_number %></td>
-        <td><%= store.contact_address %></td>
-        <td><%= store.owner %></td>
+        <td><%= store.store_address %></td>
+        <td><%= store.store_contact %></td>
+        <td><%= store.description %></td>
+        <td><%= store.seller_id %></td>
+        <td><%= store.seller_name %></td>
         <td><%= link_to 'Show', store %></td>
         <td><%= link_to 'Edit', edit_store_path(store) %></td>
         <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -29,8 +31,7 @@
     <% end %>
   </tbody>
 </table>
-</div>
 
 <br>
 
-<%= link_to 'New Store', new_store_path, :class=>"btn btn-primary" %>
+<%= link_to 'New Store', new_store_path %>
