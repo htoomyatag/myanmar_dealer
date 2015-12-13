@@ -87,16 +87,18 @@
 									</a>
 									</li>
 
-                    				<li>
-									<a href="login.html">
-										<i class="fa fa-lock hidden-lg hidden-md" title="Login"></i>
-										<span class="hidden-sm hidden-xs">
-											Login
-										</span>
-									</a>
-									</li>
+                    			
 
                     			<% end %>
+
+                    			<% if buyer_signed_in? %>
+
+								 	<li>
+                    				<%= link_to 'Logout', destroy_buyer_session_path, :method => :delete %>
+                    				</li>
+                    			
+                    			<% end %>
+
 
 
 							
@@ -108,33 +110,42 @@
 					<div class="col-sm-4 col-xs-12">
 						<div class="pull-right">
 						<!-- Currency Starts -->
-							<div class="btn-group">
-								<button class="btn btn-link dropdown-toggle" data-toggle="dropdown">
-									Currency
-									<i class="fa fa-caret-down"></i>
-								</button>
-								<ul class="pull-right dropdown-menu">
-									<li><a tabindex="-1" href="#">Pound </a></li>
-									<li><a tabindex="-1" href="#">US Dollar</a></li>
-									<li><a tabindex="-1" href="#">Euro</a></li>
-								</ul>
-							</div>
-						<!-- Currency Ends -->
-						<!-- Languages Starts -->
-							<div class="btn-group">
-								<button class="btn btn-link dropdown-toggle" data-toggle="dropdown">
-									Language
-									<i class="fa fa-caret-down"></i>
-								</button>
-								<ul class="pull-right dropdown-menu">
-									<li>
-										<a tabindex="-1" href="#">English</a>
-									</li>
-									<li>
-										<a tabindex="-1" href="#">French</a>
-									</li>
-								</ul>
-							</div>
+							<ul class="nav navbar-nav pull-left">
+							<% if seller_signed_in? %>
+
+
+							<% elsif buyer_signed_in? %>
+
+ 	
+                    			
+                    		<% else %>
+
+                    			<li>
+									<a href="/sellers/sign_in">
+										<i class="fa fa-unlock hidden-lg hidden-md" title="Register"></i>
+										<span class="hidden-sm hidden-xs" style="color:white">
+											Seller Login
+										</span>
+									</a>
+								</li>
+
+								<li>
+									<a href="/buyers/sign_in">
+										<i class="fa fa-unlock hidden-lg hidden-md" title="Register"></i>
+										<span class="hidden-sm hidden-xs" style="color:white">
+											Buyer Login
+										</span>
+									</a>
+								</li>
+
+                    		<% end %>
+
+                    				
+							</ul>
+
+                    			
+
+                    		
 						<!-- Languages Ends -->
 						</div>
 					</div>

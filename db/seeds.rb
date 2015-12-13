@@ -5,3 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+seller = Seller.create([
+
+{email: "htoomyatag.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
+{email: "theldarlykhin.webdev@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
+
+])
+
+
+buyer = Buyer.create([
+
+{email: "htoomyatag@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
+{email: "theldarlykhin@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
+
+])
