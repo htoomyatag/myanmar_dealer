@@ -12,8 +12,10 @@
 	<%= stylesheet_link_tag    'responsive.css' %>
 	
 
-
+<%= javascript_include_tag "jquery.min.js" %>
+    <%= javascript_include_tag "jquery_ujs.js" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -67,22 +69,37 @@
 										</span>
 									</a>
 								</li>
-								<li>
-									<a href="register.html">
+							
+								 <% if seller_signed_in? %>
+
+								 	<li>
+                    				<%= link_to 'Logout', destroy_seller_session_path, :method => :delete %>
+                    				</li>
+                    			
+                    			<% else %>
+
+                    				<li>
+									<a href="/sellers/sign_up">
 										<i class="fa fa-unlock hidden-lg hidden-md" title="Register"></i>
 										<span class="hidden-sm hidden-xs">
-											Register
+											want to be a SELLER?
 										</span>
 									</a>
-								</li>
-								<li>
+									</li>
+
+                    				<li>
 									<a href="login.html">
 										<i class="fa fa-lock hidden-lg hidden-md" title="Login"></i>
 										<span class="hidden-sm hidden-xs">
 											Login
 										</span>
 									</a>
-								</li>
+									</li>
+
+                    			<% end %>
+
+
+							
 							</ul>
 						</div>
 					</div>
