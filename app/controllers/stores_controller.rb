@@ -24,6 +24,8 @@ class StoresController < ApplicationController
 
   # GET /stores/1/edit
   def edit
+    @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
+      @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
   end
 
   # POST /stores

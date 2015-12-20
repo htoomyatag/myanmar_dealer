@@ -6,6 +6,7 @@
           <div class="panel-body">
           <center>
              <%= image_tag @store.avatar.url(:thumb), :id => "store_avatar" %>
+             
           </center> 
           <br/>
            
@@ -50,7 +51,7 @@
                  </span></li>
 
                  <li class="list-group-item">
-                 <%= link_to 'exdit store profile here', edit_store_path(@store) %>
+                 <%= link_to 'edit store profile here', edit_store_path(@store) %>
                  </li>
             </ul>
         

@@ -11,14 +11,14 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
      @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
-      @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
+     @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
   end
 
   # GET /products/new
   def new
     @product = Product.new
-     @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
-      @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
+    @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
+    @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
   end
 
   # GET /products/1/edit
@@ -62,8 +62,11 @@ class ProductsController < ApplicationController
   # DELETE /products/1.json
   def destroy
     @product.destroy
+    @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
+    @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
+    
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to "/stores/#{@store_id}", notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

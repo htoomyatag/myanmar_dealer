@@ -1,6 +1,86 @@
-<h1>Editing Store</h1>
+<%= form_for(@store) do |f| %>
+  <% if @store.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@store.errors.count, "error") %> prohibited this store from being saved:</h2>
 
-<%= render 'form' %>
+      <ul>
+      <% @store.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<%= link_to 'Show', @store %> |
-<%= link_to 'Back', stores_path %>
+
+<div class="col-md-12">
+
+
+  <div class="col-md-8">
+
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+           
+            About store
+            <hr/>
+               <%= f.text_area :description, :class=>"form-control", :rows => 5 %>
+               <br/>
+               <%= f.file_field :avatar %>
+
+        
+
+          </div>
+        </div>
+
+
+  </div>
+  <div class="col-md-4">
+    
+            <ul class="list-group">
+                <li class="list-group-item">Store Name<br/> <br/> 
+                <span style="color:grey;">
+                	 <%= f.text_field :store_name, :class=>"form-control" %>
+                </span></li>
+               
+                <li class="list-group-item">Store Address<br/> <br/> 
+                 <span style="color:grey;">  
+                 <%= f.text_field :store_address, :class=>"form-control" %>
+                 </span></li>
+          
+                <li class="list-group-item">Store Contact<br/><br/>
+                 <span style="color:grey;">
+                   <%= f.text_field :store_contact, :class=>"form-control" %>
+                 </span></li>
+
+               
+                <li class="list-group-item">Seller Name<br/><br/>
+                 <span style="color:grey;"> <%= f.text_field :seller_name, :class=>"form-control" %>
+                 </span></li>
+
+                 <li class="list-group-item">
+                   Update information by enter  <%= f.submit %>
+                 </li>
+                 
+
+               
+            </ul>
+        
+  </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<% end %>
+
+
+ 
+
