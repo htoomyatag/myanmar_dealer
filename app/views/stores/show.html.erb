@@ -1,34 +1,63 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-12">
+  <div class="col-md-3">
 
-<p>
-  <strong>Store name:</strong>
-  <%= @store.store_name %>
-</p>
 
-<p>
-  <strong>Store address:</strong>
-  <%= @store.store_address %>
-</p>
+        <div class="panel panel-default">
+          <div class="panel-body">
+          <center>
+             <%= image_tag @store.avatar.url(:thumb), :id => "store_avatar" %>
+          </center> 
+          <br/>
+           
+          </div>
+        </div>
 
-<p>
-  <strong>Store contact:</strong>
-  <%= @store.store_contact %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @store.description %>
-</p>
+  </div>
 
-<p>
-  <strong>Seller:</strong>
-  <%= @store.seller_id %>
-</p>
+  <div class="col-md-5">
 
-<p>
-  <strong>Seller name:</strong>
-  <%= @store.seller_name %>
-</p>
 
-<%= link_to 'Edit', edit_store_path(@store) %> |
-<%= link_to 'Back', stores_path %>
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+           
+            About store
+            <hr/>
+            <%= @store.description %>
+          </div>
+        </div>
+
+
+  </div>
+  <div class="col-md-4">
+    
+            <ul class="list-group">
+                <li class="list-group-item">Store: 
+                <span style="color:grey;"><%= @store.store_name %></span></li>
+               
+                <li class="list-group-item">Address: 
+                 <span style="color:grey;"><%= @store.store_address %></span></li>
+          
+                <li class="list-group-item">Contact: 
+                 <span style="color:grey;"><%= @store.store_contact %>
+                 </span></li>
+
+          
+               
+                <li class="list-group-item">Seller:
+                 <span style="color:grey;"> <%= @store.seller_name %>
+                 </span></li>
+
+                 <li class="list-group-item">
+                 <%= link_to 'exdit store profile here', edit_store_path(@store) %>
+                 </li>
+            </ul>
+        
+  </div>
+</div>
+
+
+
+ 
+
