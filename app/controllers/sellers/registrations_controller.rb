@@ -6,7 +6,7 @@ class Sellers::RegistrationsController < Devise::RegistrationsController
    	  if current_seller.has_store == nil
           return new_store_path
       else
-          return stores_path	
+          return "/stores/#{@store_id}"	
       end
 
   	end
