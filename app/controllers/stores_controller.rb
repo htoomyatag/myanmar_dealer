@@ -12,6 +12,9 @@ class StoresController < ApplicationController
   # GET /stores/1
   # GET /stores/1.json
   def show
+      @products = Product.where(:seller_id => current_seller.id)
+      @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
+      @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
   end
 
   # GET /stores/new
