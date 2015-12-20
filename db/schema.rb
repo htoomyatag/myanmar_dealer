@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151220042248) do
+ActiveRecord::Schema.define(version: 20151220062110) do
 
   create_table "buyers", force: :cascade do |t|
     t.string   "name"
@@ -55,8 +55,28 @@ ActiveRecord::Schema.define(version: 20151220042248) do
     t.string   "size"
     t.string   "weight"
     t.integer  "seller_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "sellers", force: :cascade do |t|

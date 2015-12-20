@@ -1,29 +1,77 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-12">
+  <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+            <%= image_tag @product.avatar1.url(:medium), :id => "product_avatar" %>
+        </div>
+      </div>
+  </div>
+  <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-body">
+                
+              <p>
+                <span style="color:grey;">Title:</span>
+                <%= @product.title %> 
+                 <span style="float:right;"> 
+                 <%= link_to 'Edit', edit_product_path(@product) %>
+                 </span> 
+              </p><hr/>
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
+              <p>
+                <span style="color:grey;">Color:</span>
+                <%= @product.color %>
+              </p><hr/>
 
-<p>
-  <strong>Color:</strong>
-  <%= @product.color %>
-</p>
+              <p>
+                <span style="color:grey;">Size:</span>
+                <%= @product.size %>
+              </p><hr/>
 
-<p>
-  <strong>Size:</strong>
-  <%= @product.size %>
-</p>
+              <p>
+                <span style="color:grey;">Weight:</span>
+                <%= @product.weight %>
+              </p><hr/>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @product.weight %>
-</p>
+              
+             
+        </div>
+      </div>
+  </div>
 
-<p>
-  <strong>Seller:</strong>
-  <%= @product.seller_id %>
-</p>
+  <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+           <%= image_tag @product.avatar2.url(:medium), :id => "product_avatar" %>
+        </div>
+      </div>
+  </div>
+  <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+           <%= image_tag @product.avatar3.url(:medium), :id => "product_avatar" %>
+        </div>
+      </div>
+  </div>
+  <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+           <%= image_tag @product.avatar4.url(:medium), :id => "product_avatar" %>
+        </div>
+      </div>
+  </div>
+  <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <%= image_tag @product.avatar5.url(:medium), :id => "product_avatar" %>
+        </div>
+      </div>
+  </div>
+  
+</div>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+
+
+
+
+
