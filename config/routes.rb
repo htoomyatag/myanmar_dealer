@@ -3,7 +3,13 @@ Rails.application.routes.draw do
   get 'add_to_cart' => 'carts#_cart'
 
   resources :line_items
+  get 'my_items' => 'line_items#my_items'
+  
+
+
   resources :orders
+  get 'my_order' => 'orders#my_order'
+
   resources :products
   get 'my_product' => 'products#my_product', :as => :my_product
 

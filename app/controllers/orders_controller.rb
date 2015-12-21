@@ -1,12 +1,18 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   layout :layout_per_action
+  before_action :authenticate_buyer!, only: [:my_order]
   # GET /orders
   # GET /orders.json
   def index
     @orders = Order.all
      @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
      @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
+  end
+
+
+  def my_order
+      @orders = Order.where(:buyer_id  => current_buyer.id)
   end
 
   # GET /orders/1
@@ -78,6 +84,8 @@ class OrdersController < ApplicationController
     def layout_per_action
       if action_name == "index"
            "backend"
+      elsif action_name == "my_order"
+           "application"
       else
            "backend"
       end

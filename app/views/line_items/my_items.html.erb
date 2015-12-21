@@ -1,0 +1,36 @@
+<div id="main-container" class="container">
+
+<br/><br/>
+
+<div class="col-md-12">
+<div class="panel panel-default">
+  <div class="panel-body">
+     <p>MyOrder details</p>
+     <hr/>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @line_items.each do |line_item| %>
+              <tr>
+                <td><%= line_item.product.title %></td>
+                <td><%= line_item.quantity %></td>
+               
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+  </div>
+</div>
+</div>
+
+</div>
+
+
+

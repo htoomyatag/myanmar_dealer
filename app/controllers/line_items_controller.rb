@@ -14,6 +14,17 @@ class LineItemsController < ApplicationController
   end
 
 
+  def my_items
+    
+      if params[:cart_id]
+         @line_items = LineItem.where("cart_id = ? ", params[:cart_id])
+      end
+   
+     
+  end
+
+
+
 
 
   # GET /line_items/1
@@ -92,6 +103,8 @@ class LineItemsController < ApplicationController
     def layout_per_action
       if action_name == "index"
            "backend"
+      elsif action_name == "my_items"
+           "application"
       else
            "application"
       end
