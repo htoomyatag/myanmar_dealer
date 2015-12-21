@@ -28,7 +28,8 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        session[:cart_id] = nil
+        format.html { redirect_to thanks_you_path, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -69,7 +70,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:store_id, :customer_name, :customer_email, :customer_phone, :customer_city, :customer_township, :customer_address)
+      params.require(:order).permit(:cart_id, :store_id, :customer_name, :customer_email, :customer_phone, :customer_city, :customer_township, :customer_address)
     end
 
     def layout_per_action

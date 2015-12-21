@@ -1,4 +1,4 @@
-
+   <% if !request.original_url.include? "check_out" %>
                   <table class="table hcart">
 
                     <tr>
@@ -18,6 +18,37 @@
                    
                   </table>
 
+
+<% elsif request.original_url.include? "check_out" %>
+
+          <tr>
+            <td class="text-center">
+              <a href="#">
+                <img src="/assets/product-images/cart-thumb-img1.jpg" alt="Product Name" title="Product Name" class="img-thumbnail" />
+              </a>
+            </td>
+            <td class="text-center">
+              <a href="#"><%= line_item.product.title %></a>
+            </td>             
+            <td class="text-center">
+              <div class="input-group btn-block">
+                <input type="text" name="quantity" value="<%= line_item.quantity %>" size="1" class="form-control" disabled />
+              </div>                
+            </td>
+            <td class="text-center">
+              <%= line_item.product.price %>
+            </td>
+            <td class="text-center">
+              <%= line_item.product.price * line_item.quantity %>
+            </td>
+            <td class="text-center">
+              
+              <%= link_to 'remove', line_item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger"  %>
+            </td>
+          </tr>
+
+
+<% end %>
 
 
 

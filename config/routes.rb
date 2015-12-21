@@ -28,6 +28,8 @@ Rails.application.routes.draw do
  get 'product' => 'fronts#product'
  get 'product_full' => 'fronts#product_full'
  get 'register' => 'fronts#register'
+ get 'check_out' => 'fronts#check_out'
+ get 'thanks_you' => 'fronts#thanks_you'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -11,6 +11,14 @@ class FrontsController < ApplicationController
       @products = Product.all
    end
 
+   def check_out
+       @order = Order.new
+     
+   end
+
+  def thanks_you
+    
+  end
 
    def about
    end
