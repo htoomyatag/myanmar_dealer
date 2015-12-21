@@ -5,6 +5,8 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.all
+     @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
+     @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
   end
 
   # GET /orders/1
@@ -75,7 +77,7 @@ class OrdersController < ApplicationController
 
     def layout_per_action
       if action_name == "index"
-           "application"
+           "backend"
       else
            "backend"
       end
