@@ -6,10 +6,13 @@ class LineItemsController < ApplicationController
   def index
     
       if params[:cart_id]
-         @line_items = LineItem.where("cart_id = ? ", params[:cart_id])
+         @line_items = LineItem.where("cart_id = ? ", params[:cart_id]).where(:seller_id => current_seller.id)
       end
    
   end
+
+
+
 
   # GET /line_items/1
   # GET /line_items/1.json
