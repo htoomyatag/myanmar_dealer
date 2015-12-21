@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+  resources :carts
+  get 'add_to_cart' => 'carts#_cart'
+
+  resources :line_items
+  resources :orders
   resources :products
+  get 'my_product' => 'products#my_product', :as => :my_product
+
+
   resources :stores
   devise_for :buyers, :controllers => {:sessions => "buyers/sessions", :registrations => "buyers/registrations"}
   devise_for :sellers, :controllers => {:sessions => "sellers/sessions", :registrations => "sellers/registrations"}

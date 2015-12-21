@@ -7,6 +7,11 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def my_product
+    @cart = current_cart
+    @line_items = LineItem.all
+  end
+
   # GET /products/1
   # GET /products/1.json
   def show

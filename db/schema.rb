@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151220062110) do
+ActiveRecord::Schema.define(version: 20151221025215) do
 
   create_table "buyers", force: :cascade do |t|
     t.string   "name"
@@ -34,6 +34,11 @@ ActiveRecord::Schema.define(version: 20151220062110) do
   add_index "buyers", ["email"], name: "index_buyers_on_email", unique: true
   add_index "buyers", ["reset_password_token"], name: "index_buyers_on_reset_password_token", unique: true
 
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "fashions", force: :cascade do |t|
     t.string   "product_name"
     t.string   "available_size"
@@ -47,6 +52,26 @@ ActiveRecord::Schema.define(version: 20151220062110) do
   create_table "fronts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "cart_id"
+    t.integer  "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "store_id"
+    t.string   "customer_name"
+    t.string   "customer_email"
+    t.string   "customer_phone"
+    t.string   "customer_city"
+    t.string   "customer_township"
+    t.text     "customer_address"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "products", force: :cascade do |t|

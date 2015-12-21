@@ -14,4 +14,32 @@ class ApplicationController < ActionController::Base
   end
 
 
+   protected
+	  def my_store
+	  	   if current_seller != nil
+	  	   @my_stores = Store.where(:seller_id => current_seller.id)
+	  	   else
+	  	   	@my_stores = Store.all
+	  	   end
+	  end
+
+  private
+  def current_cart
+
+      Cart.find(session[:cart_id])
+      rescue ActiveRecord::RecordNotFound
+      cart = Cart.create
+      session[:cart_id] = cart.id
+      cart
+      
+  end
+
+  def reset_cart
+     Cart.find(session[:cart_id])
+      rescue ActiveRecord::RecordNotFound
+      session[:cart_id] = nil
+      cart
+  end
+
+
 end
