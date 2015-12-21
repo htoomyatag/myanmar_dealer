@@ -57,13 +57,14 @@ ActiveRecord::Schema.define(version: 20151221081126) do
   create_table "line_items", force: :cascade do |t|
     t.integer  "product_id"
     t.integer  "cart_id"
+    t.integer  "seller_id"
     t.integer  "quantity",   default: 1
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "store_id"
+    t.integer  "seller_id"
     t.string   "customer_name"
     t.string   "customer_email"
     t.string   "customer_phone"
