@@ -72,7 +72,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:cart_id, :seller_id, :customer_name, :customer_email, :customer_phone, :customer_city, :customer_township, :customer_address)
+      params.require(:order).permit(:buyer_id,:cart_id, :seller_id, :customer_name, :customer_email, :customer_phone, :customer_city, :customer_township, :customer_address)
     end
 
     def layout_per_action

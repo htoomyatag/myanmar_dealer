@@ -1,3 +1,141 @@
+<div class="main-header">
+      <div class="container">
+        <div class="row">
+        <!-- Search Starts -->
+          <div class="col-md-3">
+            <div id="search">
+              <div class="input-group">
+                <input type="text" class="form-control input-lg" placeholder="Search">
+                <span class="input-group-btn">
+                <button class="btn btn-lg" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+                </span>
+              </div>
+            </div>  
+          </div>
+        <!-- Search Ends -->
+        <!-- Logo Starts -->
+          <div class="col-md-6">
+            <div id="logo">
+              <a href="#"><img src="/assets/logo.png" title="Spice Shoppe" alt="Spice Shoppe" class="img-responsive" /></a>
+            </div>
+          </div>
+        <!-- Logo Starts -->        
+        <!-- Shopping Cart Starts -->
+          <div class="col-md-3">
+            <div id="cart" class="btn-group btn-block">
+              <button type="button" data-toggle="dropdown" class="btn btn-block btn-lg dropdown-toggle">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="hidden-md">Cart:</span> 
+                <span id="cart-total"> <%= (@cart.total_quantity) %> item(s) -   <%= (@cart.total_price) %> MMK</span>
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <ul class="dropdown-menu pull-right">
+                  <li>
+                 
+                </li>
+              
+                <li>
+                  <p class="text-right btn-block1">
+                    <a href="/check_out">
+                      View Cart
+                    </a>
+                    <a href="/check_out">
+                      Checkout
+                    </a>
+                  </p>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        <!-- Shopping Cart Ends -->
+        </div>
+      </div>
+    </div>
+  <!-- Main Header Ends -->
+  <!-- Main Menu Starts -->
+    <nav id="main-menu" class="navbar" role="navigation">
+      <div class="container">
+      <!-- Nav Header Starts -->
+        <div class="navbar-header">
+          <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-cat-collapse">
+            <span class="sr-only">Toggle Navigation</span>
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+      <!-- Nav Header Ends -->
+      <!-- Navbar Cat collapse Starts -->
+        <div class="collapse navbar-collapse navbar-cat-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Digital Cameras</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
+                Sound Devices
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a tabindex="-1" href="#">Music System</a></li>
+                <li><a tabindex="-1" href="#">DTS</a></li>
+                <li><a tabindex="-1" href="#">Home Theater</a></li> 
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">Televisions </a>
+              <div class="dropdown-menu">
+                <div class="dropdown-inner">
+                  <ul class="list-unstyled">
+                    <li class="dropdown-header">Sub Category</li>
+                    <li><a tabindex="-1" href="#">item 1</a></li>
+                    <li><a tabindex="-1" href="#">item 2</a></li>
+                    <li><a tabindex="-1" href="#">item 3</a></li>
+                  </ul>                   
+                  <ul class="list-unstyled">
+                    <li class="dropdown-header">Sub Category</li>
+                    <li><a tabindex="-1" href="#">item 1</a></li>
+                    <li><a tabindex="-1" href="#">item 2</a></li>
+                    <li><a tabindex="-1" href="#">item 3</a></li>
+                  </ul>
+                  <ul class="list-unstyled">
+                    <li class="dropdown-header">Sub Category</li>
+                    <li><a tabindex="-1" href="#">item 1</a></li>
+                    <li><a tabindex="-1" href="#">item 2</a></li>
+                    <li><a tabindex="-1" href="#">item 3</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li><a href="#">Computers </a></li>
+            <li><a href="#">Washing Machines</a></li>
+            <li><a href="#">Accessories </a></li>
+                        <li><a href="#">Mobile Phones  </a></li>
+            <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
+            Pages
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a tabindex="-1" href="#">Home</a></li>
+            <li><a tabindex="-1" href="#">About</a></li>
+            <li><a tabindex="-1" href="#">Category List</a></li>
+            <li><a tabindex="-1" href="#">Category Grid</a></li>
+            <li><a tabindex="-1" href="#">Product</a></li>
+            <li><a tabindex="-1" href="#">Product Full Width</a></li>
+            <li><a tabindex="-1" href="#">Cart</a></li>
+            <li><a tabindex="-1" href="#">Login</a></li>
+            <li><a tabindex="-1" href="#">Compare Products</a></li>
+            <li><a tabindex="-1" href="#">Typography</a></li>
+            <li><a tabindex="-1" href="#">Register</a></li>
+            <li><a tabindex="-1" href="#">Contact</a></li>
+            <li><a tabindex="-1" href="#">404</a></li>
+          </ul>
+        </li>
+          </ul>
+        </div>
+      <!-- Navbar Cat collapse Ends -->
+      </div>
+    </nav>
+  <!-- Main Menu Ends -->
+  </header>
 <div id="main-container" class="container">
   <!-- Breadcrumb Starts -->
     <ol class="breadcrumb">

@@ -9,6 +9,8 @@ class LineItemsController < ApplicationController
          @line_items = LineItem.where("cart_id = ? ", params[:cart_id]).where(:seller_id => current_seller.id)
       end
    
+        @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
+     @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
   end
 
 

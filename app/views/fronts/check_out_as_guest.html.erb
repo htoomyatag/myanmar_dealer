@@ -140,116 +140,197 @@
 	<!-- Breadcrumb Starts -->
 		<ol class="breadcrumb">
 			<li><a href="index.html">Home</a></li>
-			<li class="active">Compare Products</li>
+			<li class="active">Shopping Cart</li>
 		</ol>
 	<!-- Breadcrumb Ends -->
 	<!-- Main Heading Starts -->
 		<h2 class="main-heading text-center">
-			Compare Products
+			Shopping Cart
 		</h2>
 	<!-- Main Heading Ends -->
-	<!-- Compare Table Starts -->
-		<div class="table-responsive compare-table">
+	<!-- Shopping Cart Table Starts -->
+		<div class="table-responsive shopping-cart-table">
 			<table class="table table-bordered">
 				<thead>
 					<tr>
-						<td>S.NO</td>
-						<td>Image</td>
-						<td>Product</td>
-						<td>Price</td>
-						<td>Model</td>
-						<td>Brand</td>
-						<td>Availability</td>
-						<td>Rating</td>
+						<td class="text-center">
+							Image
+						</td>
+						<td class="text-center">
+							Product Details
+						</td>							
+						<td class="text-center">
+							Quantity
+						</td>
+						<td class="text-center">
+							Price
+						</td>
+						<td class="text-center">
+							Total
+						</td>
+						<td class="text-center">
+							Action
+						</td>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>
-							<img src="/assets/product-images/thumb1.jpg" alt="image" title="image" class="img-thumbnail" />
-						</td>
-						<td class="name">
-							<a href="product.html">Digital Electro Goods</a>
-						</td>							
-						<td>
-							 $120.68
-						</td>
-						<td>
-							product 11 
-						</td>
-						<td>
-							Elite 
-						</td>
-						<td>
-							<span class="label label-success">In Stock</span>
-						</td>
-						<td class="rating">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star-o"></i>
-						</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>
-							<img src="/assets/product-images/thumb2.jpg" alt="image" title="image" class="img-thumbnail" />
-						</td>
-						<td class="name">
-							<a href="product.html">Digital Electro Goods</a>
-						</td>							
-						<td>
-							 $220.68
-						</td>
-						<td>
-							product 12 
-						</td>
-						<td>
-							Elite 
-						</td>
-						<td>
-							<span class="label label-danger">Out of Stock</span>
-						</td>
-						<td class="rating">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-						</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>
-							<img src="/assets/product-images/thumb1.jpg" alt="image" title="image" class="img-thumbnail" />
-						</td>
-						<td class="name">
-							<a href="product.html">Digital Electro Goods</a>
-						</td>							
-						<td>
-							 $320.68
-						</td>
-						<td>
-							product 13 
-						</td>
-						<td>
-							Elite 
-						</td>
-						<td>
-							<span class="label label-success">In Stock</span>
-						</td>
-						<td class="rating">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star-o"></i>
-							<i class="fa fa-star-o"></i>
-							<i class="fa fa-star-o"></i>
-						</td>
-					</tr>
+					
+					<%= render(@cart.line_items) %>
+									
 				</tbody>
-			</table>
+				<tfoot>
+					<tr>
+					  <td colspan="4" class="text-right">
+						<strong>Total :</strong>
+					  </td>
+					  <td colspan="2" class="text-left">
+						 <%= (@cart.total_price) %> MMK
+					  </td>
+					</tr>
+				</tfoot>
+			</table>				
 		</div>
-	<!-- Compare Table Ends -->
+	<!-- Shopping Cart Table Ends -->
+	<!-- Shipping Section Starts -->
+	<%= form_for(@order) do |f| %>
+		<section class="registration-area">
+			<div class="row">
+			<!-- Shipping & Shipment Block Starts -->
+				<div class="col-sm-6">
+				<!-- Taxes Block Starts -->
+					
+				<!-- Taxes Block Ends -->
+				<!-- Shipment Information Block Starts -->
+					<div class="panel panel-smart">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								Shipment Information
+							</h3>
+						</div>
+						<div class="panel-body">
+						<!-- Form Starts -->
+							<form class="form-horizontal" role="form">
+								<div class="form-group">
+									<label for="inputFname" class="col-sm-3 control-label">Full Name :</label>
+									<div class="col-sm-9">
+										  <%= f.text_field :customer_name, :class=>"form-control" %>
+									</div>
+								</div><br/><br/>
+								
+								<div class="form-group">
+									<label for="inputEmail" class="col-sm-3 control-label">Email :</label>
+									<div class="col-sm-9">
+										   <%= f.text_field :customer_email, :class=>"form-control" %>
+									</div>
+								</div><br/><br/>
+
+								<div class="form-group">
+									<label for="inputPhone" class="col-sm-3 control-label">Phone :</label>
+									<div class="col-sm-9">
+										<%= f.text_field :customer_phone, :class=>"form-control" %>
+									</div>
+								</div><br/><br/>
+
+								<div class="form-group">
+									<label for="inputAddress1" class="col-sm-3 control-label">Address:</label>
+									<div class="col-sm-9">
+										<%= f.text_field :customer_address, :class=>"form-control" %>
+									</div>
+								</div><br/><br/>
+
+								<div class="form-group">
+									<label for="inputCity" class="col-sm-3 control-label">Township :</label>
+									<div class="col-sm-9">
+										<%= f.text_field :customer_township, :class=>"form-control" %>
+									</div>
+								</div><br/><br/>
+								
+								<div class="form-group">
+									<label for="inputCity" class="col-sm-3 control-label">City :</label>
+									<div class="col-sm-9">
+										<%= f.text_field :customer_city, :class=>"form-control" %>
+									</div>
+								</div><br/><br/>
+
+								<div style="display:none;">
+								<%= f.text_field :cart_id, :class=>"form-control" , :value => session[:cart_id]%>
+								</div>						
+									
+							</form>
+						<!-- Form Ends -->
+						</div>
+					</div>
+				<!-- Shipment Information Block Ends -->
+				</div>
+			<!-- Shipping & Shipment Block Ends -->
+			<!-- Discount & Conditions Blocks Starts -->
+				<div class="col-sm-6">
+				<!-- Discount Coupon Block Starts -->
+				
+				<!-- Discount Coupon Block Ends -->
+				<!-- Conditions Panel Starts -->
+					<div class="panel panel-smart">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								Terms &amp; Conditions
+							</h3>
+						</div>
+						<div class="panel-body">
+							<p>
+								HTML Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. 
+							</p>
+							<p>
+								Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. 
+							</p>
+							<p>
+								Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat.
+							</p>								
+						</div>
+					</div>
+				<!-- Conditions Panel Ends -->
+				<!-- Total Panel Starts -->
+					<div class="panel panel-smart">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								Total
+							</h3>
+						</div>
+						<div class="panel-body">
+							
+							<dl class="dl-horizontal total">
+								<dt>Total :</dt>
+								<dd> <%= (@cart.total_price) %> MMK</dd>
+							</dl>
+							<hr />
+							<div class="text-uppercase clearfix">
+								<a href="/" class="btn btn-default pull-left">
+									<span class="hidden-xs">Continue Shopping</span>
+									<span class="visible-xs">Continue</span>
+								</a>
+								<%= f.submit "Checkout",  :class=>"btn btn-default pull-right" %>
+								
+							</div>
+						</div>
+					</div>
+				<!-- Total Panel Ends -->
+				</div>
+			<!-- Discount & Conditions Blocks Ends -->
+			</div>
+		</section>
+	<!-- Shipping Section Ends -->
 	</div>
+
+<% end %>
+
+
+
+
+
+
+<style>
+
+#cart{
+	display: none;
+}
+
+</style>

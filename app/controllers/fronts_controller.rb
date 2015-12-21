@@ -1,11 +1,12 @@
 class FrontsController < ApplicationController
   before_action :set_front, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_buyer!, only: [:check_out]
+  
   # GET /fronts
   # GET /fronts.json
-  def index
+   def index
     @fronts = Front.all
-  end
+   end
 
    def home
       @products = Product.all
@@ -13,12 +14,16 @@ class FrontsController < ApplicationController
 
    def check_out
        @order = Order.new
-     
    end
 
-  def thanks_you
+
+   def check_out_as_guest
+       @order = Order.new
+   end
+
+   def thanks_you
     
-  end
+   end
 
    def about
    end
