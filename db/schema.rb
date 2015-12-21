@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151221025215) do
+ActiveRecord::Schema.define(version: 20151221032427) do
 
   create_table "buyers", force: :cascade do |t|
     t.string   "name"
@@ -57,9 +57,9 @@ ActiveRecord::Schema.define(version: 20151221025215) do
   create_table "line_items", force: :cascade do |t|
     t.integer  "product_id"
     t.integer  "cart_id"
-    t.integer  "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "quantity",   default: 1
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "orders", force: :cascade do |t|
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 20151221025215) do
     t.string   "avatar5_content_type"
     t.integer  "avatar5_file_size"
     t.datetime "avatar5_updated_at"
+    t.integer  "price"
   end
 
   create_table "sellers", force: :cascade do |t|

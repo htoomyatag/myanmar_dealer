@@ -23,6 +23,17 @@ class ApplicationController < ActionController::Base
 	  	   end
 	  end
 
+
+  private
+  
+    before_filter :get_products
+
+  private
+  def get_products
+
+     @cart = current_cart
+  end
+
   private
   def current_cart
 

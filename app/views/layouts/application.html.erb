@@ -185,7 +185,7 @@
 							<button type="button" data-toggle="dropdown" class="btn btn-block btn-lg dropdown-toggle">
 								<i class="fa fa-shopping-cart"></i>
 								<span class="hidden-md">Cart:</span> 
-								<span id="cart-total">2 item(s) - $340.00</span>
+								<span id="cart-total"> <%= (@cart.total_quantity) %> item(s) -   <%= (@cart.total_price) %> MMK</span>
 								<i class="fa fa-caret-down"></i>
 							</button>
 							<ul class="dropdown-menu pull-right">

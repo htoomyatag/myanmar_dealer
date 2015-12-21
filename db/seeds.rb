@@ -9,7 +9,7 @@
 
 seller = Seller.create([
 
-{email: "htoomyatag.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
+{has_store:"Yes", name:"HtooMyatAung",company_name:"H&Ttechs", phone:"09795545748", email: "htoomyatag.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
 {email: "theldarlykhin.webdev@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
 
 ])
@@ -19,5 +19,95 @@ buyer = Buyer.create([
 
 {email: "htoomyatag@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
 {email: "theldarlykhin@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
+
+])
+
+
+store = Store.create([
+
+{
+
+  store_name:"H&Ttechs",
+  store_address:"Building5,Room 24, Hlaing Myinn Moh Housing",
+  store_contact:"09795545748",
+  description:"a technology startup to bring applications",
+  seller_id:"1",
+  seller_name:""
+
+}
+
+])
+
+
+product = Product.create([
+
+{
+
+  title:"Aok",
+  color:"Red, Green, Blue",
+  size:"120x150",
+  weight:"100lbl",
+  seller_id:"1",
+  price: 100
+
+},
+
+
+
+{
+
+  title:"Bok",
+  color:"Red, Green, Blue",
+  size:"120x150",
+  weight:"100lbl",
+  seller_id:"1",
+  price: 50
+},
+
+
+{
+
+  title:"cok",
+  color:"Red, Green, Blue",
+  size:"120x150",
+  weight:"100lbl",
+  seller_id:"1",
+  price: 10
+},
+
+{
+
+  title:"cok",
+  color:"Red, Green, Blue",
+  size:"120x150",
+  weight:"100lbl",
+  seller_id:"1",
+  price: 100
+
+},
+
+
+
+{
+
+  title:"dok",
+  color:"Red, Green, Blue",
+  size:"120x150",
+  weight:"100lbl",
+  seller_id:"1",
+  price: 50
+},
+
+
+{
+
+  title:"eok",
+  color:"Red, Green, Blue",
+  size:"120x150",
+  weight:"100lbl",
+  seller_id:"1",
+  price: 10
+}
+
 
 ])

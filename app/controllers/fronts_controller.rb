@@ -8,6 +8,7 @@ class FrontsController < ApplicationController
   end
 
    def home
+      @products = Product.all
    end
 
 
