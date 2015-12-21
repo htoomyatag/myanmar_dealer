@@ -121,21 +121,12 @@
                     		<% else %>
 
                     			<li>
-									<a href="sellers/sign_in">
-										<i class="fa fa-unlock hidden-lg hidden-md" title="Register"></i>
-										<span class="hidden-sm hidden-xs" style="color:white">
-											Seller Login
-										</span>
-									</a>
+									<%= link_to 'Seller Login', new_seller_session_path %>
 								</li>
 
 								<li>
-									<a href="/buyers/sign_in">
-										<i class="fa fa-unlock hidden-lg hidden-md" title="Register"></i>
-										<span class="hidden-sm hidden-xs" style="color:white">
-											Buyer Login
-										</span>
-									</a>
+									<%= link_to 'Buyer Login', new_buyer_session_path %>
+
 								</li>
 
                     		<% end %>
