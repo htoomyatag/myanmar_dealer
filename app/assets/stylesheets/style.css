@@ -1204,3 +1204,12 @@ hr{
 #product_menu_image{
 	height: 64px;
 }
+
+
+
+select#select option[value="transporter"]   { 
+
+	background-image:url(/assets/mmtransporter.png);  
+	background-repeat: no-repeat;
+
+ }
