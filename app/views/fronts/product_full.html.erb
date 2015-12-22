@@ -163,16 +163,18 @@
 			<div class="col-sm-8 product-details">
 				<div class="panel-smart">
 				<!-- Product Name Starts -->
-					<h2>Digital Electro Goods</h2>
+					<h2><%= @product.title %></h2>
 				<!-- Product Name Ends -->
 					<hr />
 				<!-- Manufacturer Starts -->
 					<ul class="list-unstyled manufacturer">
 						<li>
-							<span>Brand:</span> Indian spices
+							<span>Color:</span> <%= @product.color %>
 						</li>
-						<li><span>Model:</span> SKU012452</li>
-						<li><span>Reward Points:</span> 300</li>
+						<li><span>Size:</span> <%= @product.size %>
+						</li>
+						<li><span>Weight:</span>  <%= @product.weight %>
+						</li>
 						<li>
 							<span>Availability:</span> <strong class="label label-danger">Out Of Stock</strong>
 						</li>
@@ -182,9 +184,10 @@
 				<!-- Price Starts -->
 					<div class="price">
 						<span class="price-head">Price :</span>
-						<span class="price-new">$199.50</span> 
-						<span class="price-old">$249.50</span>
-						<p class="price-tax">Ex Tax: $279.99</p>
+						<span class="price-new"><%= @product.price %> MMK
+						</span> 
+						<span class="price-old"><%= @product.price + 15 %> MMK
+						</span>
 					</div>
 				<!-- Price Ends -->
 					<hr />
@@ -203,47 +206,9 @@
 								</option>
 						</select>
 						</div>	
-						<div class="form-group">
-							<label class="control-label text-uppercase">Radio:</label>
-							<div class="radio">
-								<label>
-									<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-									Option one is this and that&mdash;be sure to include why it's great
-								</label>
-							</div>
-							<div class="radio">
-								<label>
-									<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-									Option two can be something else and selecting it will deselect option one
-								</label>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label text-uppercase">Checkbox:</label>
-							<div class="checkbox">
-								<label>
-									<input type="checkbox" value="">
-									Option one is this and that&mdash;be sure to include why it's great
-								</label>
-							</div>
-							<div class="checkbox">
-								<label>
-									<input type="checkbox" value="" checked>
-									Option two is checked
-								</label>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label text-uppercase" for="input-quantity">Qty:</label>
-							<input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control" />
-						</div>
+					
 						<div class="cart-button button-group">
-							<button type="button" title="Wishlist" class="btn btn-wishlist">
-								<i class="fa fa-heart"></i>
-							</button>
-							<button type="button" title="Compare" class="btn btn-compare">
-								<i class="fa fa-bar-chart-o"></i>
-							</button>
+							
 							<button type="button" class="btn btn-cart">
 								Add to cart
 								<i class="fa fa-shopping-cart"></i> 

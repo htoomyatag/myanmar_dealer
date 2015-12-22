@@ -60,6 +60,7 @@ class FrontsController < ApplicationController
    end
 
    def product_full
+     @product = Product.find(params[:id])
    end
 
    def register

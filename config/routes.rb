@@ -32,7 +32,7 @@ Rails.application.routes.draw do
  get 'contact' => 'fronts#contact'
  get 'login' => 'fronts#login'
  get 'product' => 'fronts#product'
- get 'product_full' => 'fronts#product_full'
+ get 'product_full/:id' => 'fronts#product_full' , :as => :product_full
  get 'register' => 'fronts#register'
  get 'check_out' => 'fronts#check_out'
  get 'thanks_you' => 'fronts#thanks_you'
