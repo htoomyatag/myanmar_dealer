@@ -20,6 +20,30 @@ class Product < ActiveRecord::Base
   has_many :line_items
   before_destroy :ensure_not_referenced_by_any_line_item
   # ensure that there are no line items referencing this product
+PRODUCTCATEGORY = [
+
+"Apparel, Textiles & Accessories",
+"Auto & Transportation",
+"Electronics",
+"Industrial Parts & Tools",
+"Gifts, Sports & Toys",
+"Home, Lights & Construction",
+"Health & Beauty",
+"Bags, Shoes & Accessories",
+"Electrical Equipment",
+"Agriculture & Food",
+"Packaging, Advertising & Office",
+"Chemicals & Plastics",
+
+]
+
+
+
+
+
+
+
+
   def ensure_not_referenced_by_any_line_item
     if line_items.count.zero?
       return true

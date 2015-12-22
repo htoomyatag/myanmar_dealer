@@ -37,6 +37,7 @@ Rails.application.routes.draw do
  get 'check_out' => 'fronts#check_out'
  get 'thanks_you' => 'fronts#thanks_you'
  get 'check_out_as_guest' => 'fronts#check_out_as_guest'
+ get 'product_by_category' => 'fronts#product_by_category'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
