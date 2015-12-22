@@ -132,7 +132,11 @@
 								<div class="col-md-4 col-sm-6">
 									<div class="product-col">
 										<div class="image">
-											<img src="/assets/product-images/9.jpg" alt="product" class="img-responsive" />
+											<% if !product.avatar1_file_name.nil?  %>
+								                <%= image_tag product.avatar1.url, :id => "product_image" %>
+								            <% else  %>      
+												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
+								            <% end %>
 										</div>
 										<div class="caption">
 											<h4>
