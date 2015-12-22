@@ -10,9 +10,9 @@ class FrontsController < ApplicationController
 
    def product_by_category
     if params[:category].nil?
-      products = Product.all
+      @products = Product.all
     else
-      products = Product.where(:category  => params[:category])
+      @products = Product.where(:product_category  => params[:category])
     end
    end
 

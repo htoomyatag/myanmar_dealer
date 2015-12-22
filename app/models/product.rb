@@ -22,18 +22,18 @@ class Product < ActiveRecord::Base
   # ensure that there are no line items referencing this product
 PRODUCTCATEGORY = [
 
-"Apparel, Textiles & Accessories",
-"Auto & Transportation",
+"Apparel-Textiles-Accessories",
+"Auto-Transportation",
 "Electronics",
-"Industrial Parts & Tools",
-"Gifts, Sports & Toys",
-"Home, Lights & Construction",
-"Health & Beauty",
-"Bags, Shoes & Accessories",
-"Electrical Equipment",
-"Agriculture & Food",
-"Packaging, Advertising & Office",
-"Chemicals & Plastics",
+"Industrial-Parts-Tools",
+"Gifts-Sports-Toys",
+"Home-Lights-Construction",
+"Health-Beauty",
+"Bags-Shoes-Accessories",
+"Electrical-Equipment",
+"Agriculture-Food",
+"Packaging-Advertising-Office",
+"Chemicals-Plastics",
 
 ]
 

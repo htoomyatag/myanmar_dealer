@@ -59,7 +59,8 @@ product = Product.create([
   size:"120x150",
   weight:"100lbl",
   seller_id:"1",
-  price: 100
+  price: 100,
+  product_category:"Apparel-Textiles-Accessories"
 
 },
 
@@ -72,7 +73,8 @@ product = Product.create([
   size:"120x150",
   weight:"100lbl",
   seller_id:"1",
-  price: 50
+  price: 50,
+  product_category:"Auto-Transportation"
 },
 
 
@@ -83,7 +85,8 @@ product = Product.create([
   size:"120x150",
   weight:"100lbl",
   seller_id:"1",
-  price: 10
+  price: 10,
+  product_category:"Electronics"
 },
 
 {
@@ -93,7 +96,8 @@ product = Product.create([
   size:"120x150",
   weight:"100lbl",
   seller_id:"1",
-  price: 100
+  price: 100,
+  product_category:"Industrial-Parts-Tools"
 
 },
 
@@ -106,7 +110,8 @@ product = Product.create([
   size:"120x150",
   weight:"100lbl",
   seller_id:"1",
-  price: 50
+  price: 50,
+  product_category:"Gifts-Sports-Toys"
 },
 
 
@@ -117,7 +122,8 @@ product = Product.create([
   size:"120x150",
   weight:"100lbl",
   seller_id:"1",
-  price: 10
+  price: 10,
+  product_category:"Home-Lights-Construction"
 },
 
 
@@ -128,7 +134,8 @@ product = Product.create([
   size:"120x150",
   weight:"100lbl",
   seller_id:"2",
-  price: 100
+  price: 100,
+  product_category:"Health-Beauty"
 
 },
 
@@ -141,7 +148,8 @@ product = Product.create([
   size:"120x150",
   weight:"100lbl",
   seller_id:"2",
-  price: 50
+  price: 50,
+  product_category:"Bags-Shoes-Accessories"
 },
 
 
@@ -152,7 +160,8 @@ product = Product.create([
   size:"120x150",
   weight:"100lbl",
   seller_id:"2",
-  price: 10
+  price: 10,
+  product_category:"Electrical-Equipment"
 },
 
 {
@@ -162,7 +171,8 @@ product = Product.create([
   size:"120x150",
   weight:"100lbl",
   seller_id:"2",
-  price: 100
+  price: 100,
+  product_category:"Agriculture-Food"
 
 },
 
@@ -175,7 +185,8 @@ product = Product.create([
   size:"120x150",
   weight:"100lbl",
   seller_id:"2",
-  price: 50
+  price: 50,
+  product_category:"Packaging-Advertising-Office"
 },
 
 
@@ -186,7 +197,8 @@ product = Product.create([
   size:"120x150",
   weight:"100lbl",
   seller_id:"2",
-  price: 10
+  price: 10,
+  product_category:"Chemicals-Plastics"
 }
 
 
