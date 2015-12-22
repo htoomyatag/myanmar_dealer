@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151221123947) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "buyers", force: :cascade do |t|
     t.string   "name"
     t.string   "phone"
@@ -31,8 +34,8 @@ ActiveRecord::Schema.define(version: 20151221123947) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "buyers", ["email"], name: "index_buyers_on_email", unique: true
-  add_index "buyers", ["reset_password_token"], name: "index_buyers_on_reset_password_token", unique: true
+  add_index "buyers", ["email"], name: "index_buyers_on_email", unique: true, using: :btree
+  add_index "buyers", ["reset_password_token"], name: "index_buyers_on_reset_password_token", unique: true, using: :btree
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -127,8 +130,8 @@ ActiveRecord::Schema.define(version: 20151221123947) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "sellers", ["email"], name: "index_sellers_on_email", unique: true
-  add_index "sellers", ["reset_password_token"], name: "index_sellers_on_reset_password_token", unique: true
+  add_index "sellers", ["email"], name: "index_sellers_on_email", unique: true, using: :btree
+  add_index "sellers", ["reset_password_token"], name: "index_sellers_on_reset_password_token", unique: true, using: :btree
 
   create_table "stores", force: :cascade do |t|
     t.string   "store_name"
