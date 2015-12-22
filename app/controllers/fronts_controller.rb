@@ -61,6 +61,7 @@ class FrontsController < ApplicationController
 
    def product_full
      @product = Product.find(params[:id])
+     @relate_product = Product.where(:product_category => @product.product_category)
    end
 
    def register

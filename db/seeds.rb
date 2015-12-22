@@ -65,6 +65,20 @@ product = Product.create([
 },
 
 
+{
+
+  title:"ycht",
+  color:"Red, Green, Blue",
+  size:"120x150",
+  weight:"100lbl",
+  seller_id:"1",
+  price: 1000,
+  product_category:"Apparel-Textiles-Accessories"
+
+},
+
+
+
 
 {
 
