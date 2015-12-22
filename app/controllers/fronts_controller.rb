@@ -18,6 +18,7 @@ class FrontsController < ApplicationController
 
    def home
       @products = Product.all
+      @side_products = Product.order('id ASC').limit(5)
    end
 
    def check_out
