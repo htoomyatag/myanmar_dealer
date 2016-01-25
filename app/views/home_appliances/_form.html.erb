@@ -1,0 +1,73 @@
+<%= form_for(@home_appliance) do |f| %>
+  <% if @home_appliance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@home_appliance.errors.count, "error") %> prohibited this home_appliance from being saved:</h2>
+
+      <ul>
+      <% @home_appliance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br>
+    <%= f.text_field :size %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :made_by_country %><br>
+    <%= f.text_field :made_by_country %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :brand %><br>
+    <%= f.text_field :brand %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :modal_number %><br>
+    <%= f.text_field :modal_number %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :feature %><br>
+    <%= f.text_area :feature %>
+  </div>
+  <div class="field">
+    <%= f.label :power %><br>
+    <%= f.text_field :power %>
+  </div>
+  <div class="field">
+    <%= f.label :voltage %><br>
+    <%= f.text_field :voltage %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

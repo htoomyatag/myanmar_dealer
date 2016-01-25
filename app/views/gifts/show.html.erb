@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @gift.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @gift.price %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @gift.quantity %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @gift.weight %>
+</p>
+
+<p>
+  <strong>Made by country:</strong>
+  <%= @gift.made_by_country %>
+</p>
+
+<p>
+  <strong>Made with:</strong>
+  <%= @gift.made_with %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @gift.description %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @gift.color %>
+</p>
+
+<%= link_to 'Edit', edit_gift_path(@gift) %> |
+<%= link_to 'Back', gifts_path %>

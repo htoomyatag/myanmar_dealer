@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Training And Schools</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Fees</th>
+      <th>Period</th>
+      <th>School</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @training_and_schools.each do |training_and_school| %>
+      <tr>
+        <td><%= training_and_school.title %></td>
+        <td><%= training_and_school.fees %></td>
+        <td><%= training_and_school.period %></td>
+        <td><%= training_and_school.school %></td>
+        <td><%= training_and_school.description %></td>
+        <td><%= link_to 'Show', training_and_school %></td>
+        <td><%= link_to 'Edit', edit_training_and_school_path(training_and_school) %></td>
+        <td><%= link_to 'Destroy', training_and_school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Training and school', new_training_and_school_path %>

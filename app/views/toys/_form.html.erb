@@ -1,0 +1,53 @@
+<%= form_for(@toy) do |f| %>
+  <% if @toy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@toy.errors.count, "error") %> prohibited this toy from being saved:</h2>
+
+      <ul>
+      <% @toy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :made_by_country %><br>
+    <%= f.text_field :made_by_country %>
+  </div>
+  <div class="field">
+    <%= f.label :made_with %><br>
+    <%= f.text_field :made_with %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :age_group %><br>
+    <%= f.text_field :age_group %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

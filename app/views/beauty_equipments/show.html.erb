@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @beauty_equipment.title %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @beauty_equipment.category %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @beauty_equipment.brand %>
+</p>
+
+<p>
+  <strong>Made by country:</strong>
+  <%= @beauty_equipment.made_by_country %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @beauty_equipment.description %>
+</p>
+
+<p>
+  <strong>Feature:</strong>
+  <%= @beauty_equipment.feature %>
+</p>
+
+<p>
+  <strong>Modal number:</strong>
+  <%= @beauty_equipment.modal_number %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @beauty_equipment.color %>
+</p>
+
+<%= link_to 'Edit', edit_beauty_equipment_path(@beauty_equipment) %> |
+<%= link_to 'Back', beauty_equipments_path %>

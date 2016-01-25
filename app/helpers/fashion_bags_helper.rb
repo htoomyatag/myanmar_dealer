@@ -1,0 +1,2 @@
+module FashionBagsHelper
+end

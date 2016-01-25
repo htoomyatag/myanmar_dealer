@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @bath_supply.title %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @bath_supply.category %>
+</p>
+
+<p>
+  <strong>Ingredient:</strong>
+  <%= @bath_supply.ingredient %>
+</p>
+
+<p>
+  <strong>Usage:</strong>
+  <%= @bath_supply.usage %>
+</p>
+
+<p>
+  <strong>Made by country:</strong>
+  <%= @bath_supply.made_by_country %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bath_supply.description %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @bath_supply.brand %>
+</p>
+
+<p>
+  <strong>Effect:</strong>
+  <%= @bath_supply.effect %>
+</p>
+
+<p>
+  <strong>Certification:</strong>
+  <%= @bath_supply.certification %>
+</p>
+
+<p>
+  <strong>Age group:</strong>
+  <%= @bath_supply.age_group %>
+</p>
+
+<%= link_to 'Edit', edit_bath_supply_path(@bath_supply) %> |
+<%= link_to 'Back', bath_supplies_path %>

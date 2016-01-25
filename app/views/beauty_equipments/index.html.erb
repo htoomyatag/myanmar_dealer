@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Beauty Equipments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Brand</th>
+      <th>Made by country</th>
+      <th>Description</th>
+      <th>Feature</th>
+      <th>Modal number</th>
+      <th>Color</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @beauty_equipments.each do |beauty_equipment| %>
+      <tr>
+        <td><%= beauty_equipment.title %></td>
+        <td><%= beauty_equipment.category %></td>
+        <td><%= beauty_equipment.brand %></td>
+        <td><%= beauty_equipment.made_by_country %></td>
+        <td><%= beauty_equipment.description %></td>
+        <td><%= beauty_equipment.feature %></td>
+        <td><%= beauty_equipment.modal_number %></td>
+        <td><%= beauty_equipment.color %></td>
+        <td><%= link_to 'Show', beauty_equipment %></td>
+        <td><%= link_to 'Edit', edit_beauty_equipment_path(beauty_equipment) %></td>
+        <td><%= link_to 'Destroy', beauty_equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Beauty equipment', new_beauty_equipment_path %>

@@ -1,0 +1,2 @@
+module BathSuppliesHelper
+end

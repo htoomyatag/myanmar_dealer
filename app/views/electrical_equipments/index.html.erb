@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Electrical Equipments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Size</th>
+      <th>Weight</th>
+      <th>Made by country</th>
+      <th>Description</th>
+      <th>Brand</th>
+      <th>Category</th>
+      <th>Modal number</th>
+      <th>Color</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @electrical_equipments.each do |electrical_equipment| %>
+      <tr>
+        <td><%= electrical_equipment.title %></td>
+        <td><%= electrical_equipment.price %></td>
+        <td><%= electrical_equipment.quantity %></td>
+        <td><%= electrical_equipment.size %></td>
+        <td><%= electrical_equipment.weight %></td>
+        <td><%= electrical_equipment.made_by_country %></td>
+        <td><%= electrical_equipment.description %></td>
+        <td><%= electrical_equipment.brand %></td>
+        <td><%= electrical_equipment.category %></td>
+        <td><%= electrical_equipment.modal_number %></td>
+        <td><%= electrical_equipment.color %></td>
+        <td><%= link_to 'Show', electrical_equipment %></td>
+        <td><%= link_to 'Edit', edit_electrical_equipment_path(electrical_equipment) %></td>
+        <td><%= link_to 'Destroy', electrical_equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Electrical equipment', new_electrical_equipment_path %>

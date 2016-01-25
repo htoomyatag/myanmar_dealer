@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @sport.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @sport.price %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @sport.quantity %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @sport.weight %>
+</p>
+
+<p>
+  <strong>Made by country:</strong>
+  <%= @sport.made_by_country %>
+</p>
+
+<p>
+  <strong>Made with:</strong>
+  <%= @sport.made_with %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sport.description %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @sport.color %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @sport.brand %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @sport.category %>
+</p>
+
+<%= link_to 'Edit', edit_sport_path(@sport) %> |
+<%= link_to 'Back', sports_path %>

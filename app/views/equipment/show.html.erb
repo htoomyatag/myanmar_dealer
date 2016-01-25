@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @equipment.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @equipment.price %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @equipment.quantity %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @equipment.size %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @equipment.weight %>
+</p>
+
+<p>
+  <strong>Made by country:</strong>
+  <%= @equipment.made_by_country %>
+</p>
+
+<p>
+  <strong>Made with:</strong>
+  <%= @equipment.made_with %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @equipment.description %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @equipment.brand %>
+</p>
+
+<p>
+  <strong>Specification:</strong>
+  <%= @equipment.specification %>
+</p>
+
+<p>
+  <strong>Modal number:</strong>
+  <%= @equipment.modal_number %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @equipment.color %>
+</p>
+
+<%= link_to 'Edit', edit_equipment_path(@equipment) %> |
+<%= link_to 'Back', equipment_index_path %>

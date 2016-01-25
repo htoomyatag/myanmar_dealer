@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @instrument.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @instrument.price %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @instrument.quantity %>
+</p>
+
+<p>
+  <strong>Dimension:</strong>
+  <%= @instrument.dimension %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @instrument.weight %>
+</p>
+
+<p>
+  <strong>Made by country:</strong>
+  <%= @instrument.made_by_country %>
+</p>
+
+<p>
+  <strong>Made with:</strong>
+  <%= @instrument.made_with %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @instrument.description %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @instrument.brand %>
+</p>
+
+<p>
+  <strong>Modal number:</strong>
+  <%= @instrument.modal_number %>
+</p>
+
+<p>
+  <strong>Specification:</strong>
+  <%= @instrument.specification %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @instrument.color %>
+</p>
+
+<%= link_to 'Edit', edit_instrument_path(@instrument) %> |
+<%= link_to 'Back', instruments_path %>

@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+  resources :services
+  resources :training_and_schools
+  resources :sports
+  resources :toys
+  resources :gifts
+  resources :car_accessories
+  resources :motorcycle_accessories
+  resources :machines
+  resources :instruments
+  resources :equipment
+  resources :bath_supplies
+  resources :makeup_and_skincares
+  resources :beauty_equipments
+  resources :medicines
+  resources :home_appliances
+  resources :computers
+  resources :telephone_accessories
+  resources :telephone_accessories
+  resources :electrical_equipments
+  resources :fashion_hats
+  resources :fashion_footwears
+  resources :fashion_bags
+  resources :fashion_accessories
+  resources :fashion_clothings
   resources :carts
   get 'add_to_cart' => 'carts#_cart'
 

@@ -1,0 +1,2 @@
+module TrainingAndSchoolsHelper
+end

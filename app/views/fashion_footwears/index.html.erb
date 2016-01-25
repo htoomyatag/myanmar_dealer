@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fashion Footwears</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Made by country</th>
+      <th>Made with</th>
+      <th>Description</th>
+      <th>Footwear type</th>
+      <th>Size</th>
+      <th>Brand</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fashion_footwears.each do |fashion_footwear| %>
+      <tr>
+        <td><%= fashion_footwear.title %></td>
+        <td><%= fashion_footwear.price %></td>
+        <td><%= fashion_footwear.quantity %></td>
+        <td><%= fashion_footwear.made_by_country %></td>
+        <td><%= fashion_footwear.made_with %></td>
+        <td><%= fashion_footwear.description %></td>
+        <td><%= fashion_footwear.footwear_type %></td>
+        <td><%= fashion_footwear.size %></td>
+        <td><%= fashion_footwear.brand %></td>
+        <td><%= link_to 'Show', fashion_footwear %></td>
+        <td><%= link_to 'Edit', edit_fashion_footwear_path(fashion_footwear) %></td>
+        <td><%= link_to 'Destroy', fashion_footwear, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fashion footwear', new_fashion_footwear_path %>

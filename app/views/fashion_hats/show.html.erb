@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @fashion_hat.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @fashion_hat.price %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @fashion_hat.quantity %>
+</p>
+
+<p>
+  <strong>Made by country:</strong>
+  <%= @fashion_hat.made_by_country %>
+</p>
+
+<p>
+  <strong>Made with:</strong>
+  <%= @fashion_hat.made_with %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @fashion_hat.description %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @fashion_hat.brand %>
+</p>
+
+<p>
+  <strong>Hat type:</strong>
+  <%= @fashion_hat.hat_type %>
+</p>
+
+<%= link_to 'Edit', edit_fashion_hat_path(@fashion_hat) %> |
+<%= link_to 'Back', fashion_hats_path %>

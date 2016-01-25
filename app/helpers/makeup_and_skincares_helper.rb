@@ -1,0 +1,2 @@
+module MakeupAndSkincaresHelper
+end

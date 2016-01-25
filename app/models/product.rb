@@ -31,7 +31,7 @@ PRODUCTCATEGORY = [
 "Health-Beauty",
 "Bags-Shoes-Accessories",
 "Electrical-Equipment",
-"Agriculture-Food",
+"Industrial-Parts-Tools",
 "Packaging-Advertising-Office",
 "Chemicals-Plastics",
 

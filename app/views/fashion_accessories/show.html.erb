@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @fashion_accessory.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @fashion_accessory.price %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @fashion_accessory.quantity %>
+</p>
+
+<p>
+  <strong>Made by country:</strong>
+  <%= @fashion_accessory.made_by_country %>
+</p>
+
+<p>
+  <strong>Made with:</strong>
+  <%= @fashion_accessory.made_with %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @fashion_accessory.description %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @fashion_accessory.brand %>
+</p>
+
+<%= link_to 'Edit', edit_fashion_accessory_path(@fashion_accessory) %> |
+<%= link_to 'Back', fashion_accessories_path %>

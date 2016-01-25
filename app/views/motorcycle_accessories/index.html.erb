@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Motorcycle Accessories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Size</th>
+      <th>Weight</th>
+      <th>Made by country</th>
+      <th>Made with</th>
+      <th>Description</th>
+      <th>Brand</th>
+      <th>Specification</th>
+      <th>Modal number</th>
+      <th>Color</th>
+      <th>Feature</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @motorcycle_accessories.each do |motorcycle_accessory| %>
+      <tr>
+        <td><%= motorcycle_accessory.title %></td>
+        <td><%= motorcycle_accessory.price %></td>
+        <td><%= motorcycle_accessory.quantity %></td>
+        <td><%= motorcycle_accessory.size %></td>
+        <td><%= motorcycle_accessory.weight %></td>
+        <td><%= motorcycle_accessory.made_by_country %></td>
+        <td><%= motorcycle_accessory.made_with %></td>
+        <td><%= motorcycle_accessory.description %></td>
+        <td><%= motorcycle_accessory.brand %></td>
+        <td><%= motorcycle_accessory.specification %></td>
+        <td><%= motorcycle_accessory.modal_number %></td>
+        <td><%= motorcycle_accessory.color %></td>
+        <td><%= motorcycle_accessory.feature %></td>
+        <td><%= link_to 'Show', motorcycle_accessory %></td>
+        <td><%= link_to 'Edit', edit_motorcycle_accessory_path(motorcycle_accessory) %></td>
+        <td><%= link_to 'Destroy', motorcycle_accessory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Motorcycle accessory', new_motorcycle_accessory_path %>

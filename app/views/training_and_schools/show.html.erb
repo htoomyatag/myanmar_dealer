@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @training_and_school.title %>
+</p>
+
+<p>
+  <strong>Fees:</strong>
+  <%= @training_and_school.fees %>
+</p>
+
+<p>
+  <strong>Period:</strong>
+  <%= @training_and_school.period %>
+</p>
+
+<p>
+  <strong>School:</strong>
+  <%= @training_and_school.school %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @training_and_school.description %>
+</p>
+
+<%= link_to 'Edit', edit_training_and_school_path(@training_and_school) %> |
+<%= link_to 'Back', training_and_schools_path %>

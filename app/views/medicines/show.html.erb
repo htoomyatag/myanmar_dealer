@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @medicine.title %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @medicine.category %>
+</p>
+
+<p>
+  <strong>Certification:</strong>
+  <%= @medicine.certification %>
+</p>
+
+<p>
+  <strong>Ingredient:</strong>
+  <%= @medicine.ingredient %>
+</p>
+
+<p>
+  <strong>Usage:</strong>
+  <%= @medicine.usage %>
+</p>
+
+<p>
+  <strong>Made by country:</strong>
+  <%= @medicine.made_by_country %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @medicine.description %>
+</p>
+
+<p>
+  <strong>Caution:</strong>
+  <%= @medicine.caution %>
+</p>
+
+<%= link_to 'Edit', edit_medicine_path(@medicine) %> |
+<%= link_to 'Back', medicines_path %>

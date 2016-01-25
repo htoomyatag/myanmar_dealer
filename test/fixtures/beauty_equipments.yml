@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  category: MyString
+  brand: MyString
+  made_by_country: MyString
+  description: MyText
+  feature: MyString
+  modal_number: MyString
+  color: MyString
+
+two:
+  title: MyString
+  category: MyString
+  brand: MyString
+  made_by_country: MyString
+  description: MyText
+  feature: MyString
+  modal_number: MyString
+  color: MyString

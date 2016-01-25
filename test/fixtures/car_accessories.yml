@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  price: MyString
+  quantity: 1
+  size: MyString
+  weight: MyString
+  made_by_country: MyString
+  made_with: MyString
+  description: MyText
+  brand: MyString
+  specification: MyText
+  modal_number: MyString
+  color: MyString
+  feature: MyString
+
+two:
+  title: MyString
+  price: MyString
+  quantity: 1
+  size: MyString
+  weight: MyString
+  made_by_country: MyString
+  made_with: MyString
+  description: MyText
+  brand: MyString
+  specification: MyText
+  modal_number: MyString
+  color: MyString
+  feature: MyString

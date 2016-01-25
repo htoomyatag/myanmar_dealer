@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Bath Supplies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Ingredient</th>
+      <th>Usage</th>
+      <th>Made by country</th>
+      <th>Description</th>
+      <th>Brand</th>
+      <th>Effect</th>
+      <th>Certification</th>
+      <th>Age group</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bath_supplies.each do |bath_supply| %>
+      <tr>
+        <td><%= bath_supply.title %></td>
+        <td><%= bath_supply.category %></td>
+        <td><%= bath_supply.ingredient %></td>
+        <td><%= bath_supply.usage %></td>
+        <td><%= bath_supply.made_by_country %></td>
+        <td><%= bath_supply.description %></td>
+        <td><%= bath_supply.brand %></td>
+        <td><%= bath_supply.effect %></td>
+        <td><%= bath_supply.certification %></td>
+        <td><%= bath_supply.age_group %></td>
+        <td><%= link_to 'Show', bath_supply %></td>
+        <td><%= link_to 'Edit', edit_bath_supply_path(bath_supply) %></td>
+        <td><%= link_to 'Destroy', bath_supply, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bath supply', new_bath_supply_path %>

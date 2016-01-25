@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  category: MyString
+  certification: MyString
+  ingredient: MyString
+  usage: MyText
+  made_by_country: MyString
+  description: MyText
+  caution: MyText
+
+two:
+  title: MyString
+  category: MyString
+  certification: MyString
+  ingredient: MyString
+  usage: MyText
+  made_by_country: MyString
+  description: MyText
+  caution: MyText

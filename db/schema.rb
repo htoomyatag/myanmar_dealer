@@ -11,10 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151222124302) do
+ActiveRecord::Schema.define(version: 20160125031658) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  create_table "bath_supplies", force: :cascade do |t|
+    t.string   "title"
+    t.string   "category"
+    t.text     "ingredient"
+    t.text     "usage"
+    t.string   "made_by_country"
+    t.text     "description"
+    t.string   "brand"
+    t.string   "effect"
+    t.string   "certification"
+    t.string   "age_group"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "beauty_equipments", force: :cascade do |t|
+    t.string   "title"
+    t.string   "category"
+    t.string   "brand"
+    t.string   "made_by_country"
+    t.text     "description"
+    t.string   "feature"
+    t.string   "modal_number"
+    t.string   "color"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "buyers", force: :cascade do |t|
     t.string   "name"
@@ -34,12 +59,149 @@ ActiveRecord::Schema.define(version: 20151222124302) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "buyers", ["email"], name: "index_buyers_on_email", unique: true, using: :btree
-  add_index "buyers", ["reset_password_token"], name: "index_buyers_on_reset_password_token", unique: true, using: :btree
+  add_index "buyers", ["email"], name: "index_buyers_on_email", unique: true
+  add_index "buyers", ["reset_password_token"], name: "index_buyers_on_reset_password_token", unique: true
+
+  create_table "car_accessories", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "size"
+    t.string   "weight"
+    t.string   "made_by_country"
+    t.string   "made_with"
+    t.text     "description"
+    t.string   "brand"
+    t.text     "specification"
+    t.string   "modal_number"
+    t.string   "color"
+    t.string   "feature"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "computers", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "size"
+    t.string   "weight"
+    t.string   "Thickness"
+    t.string   "made_by_country"
+    t.text     "description"
+    t.string   "brand"
+    t.string   "category"
+    t.string   "modal_number"
+    t.string   "color"
+    t.string   "feature"
+    t.string   "operation_system"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "electrical_equipments", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "size"
+    t.string   "weight"
+    t.string   "made_by_country"
+    t.text     "description"
+    t.string   "brand"
+    t.string   "category"
+    t.string   "modal_number"
+    t.string   "color"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "equipment", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "size"
+    t.string   "weight"
+    t.string   "made_by_country"
+    t.string   "made_with"
+    t.text     "description"
+    t.string   "brand"
+    t.text     "specification"
+    t.string   "modal_number"
+    t.string   "color"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "fashion_accessories", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "made_by_country"
+    t.string   "made_with"
+    t.text     "description"
+    t.string   "brand"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "fashion_bags", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "made_by_country"
+    t.string   "made_with"
+    t.text     "description"
+    t.string   "bag_type"
+    t.string   "size"
+    t.string   "brand"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "fashion_clothings", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "size"
+    t.string   "made_by_country"
+    t.string   "made_with"
+    t.text     "description"
+    t.string   "gender"
+    t.string   "brand"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "fashion_footwears", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "made_by_country"
+    t.string   "made_with"
+    t.text     "description"
+    t.string   "footwear_type"
+    t.string   "size"
+    t.string   "brand"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "fashion_hats", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "made_by_country"
+    t.string   "made_with"
+    t.text     "description"
+    t.string   "brand"
+    t.string   "hat_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "fashions", force: :cascade do |t|
@@ -57,6 +219,55 @@ ActiveRecord::Schema.define(version: 20151222124302) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "gifts", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "weight"
+    t.string   "made_by_country"
+    t.string   "made_with"
+    t.text     "description"
+    t.string   "color"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "home_appliances", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "size"
+    t.string   "weight"
+    t.string   "made_by_country"
+    t.text     "description"
+    t.string   "brand"
+    t.string   "category"
+    t.string   "modal_number"
+    t.string   "color"
+    t.text     "feature"
+    t.string   "power"
+    t.string   "voltage"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "instruments", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "dimension"
+    t.string   "weight"
+    t.string   "made_by_country"
+    t.string   "made_with"
+    t.text     "description"
+    t.string   "brand"
+    t.string   "modal_number"
+    t.text     "specification"
+    t.string   "color"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "line_items", force: :cascade do |t|
     t.integer  "product_id"
     t.integer  "cart_id"
@@ -64,6 +275,70 @@ ActiveRecord::Schema.define(version: 20151222124302) do
     t.integer  "quantity",   default: 1
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "machines", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "dimension"
+    t.string   "weight"
+    t.string   "made_by_country"
+    t.string   "made_with"
+    t.text     "description"
+    t.string   "brand"
+    t.string   "category"
+    t.string   "modal_number"
+    t.text     "specification"
+    t.string   "color"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "makeup_and_skincares", force: :cascade do |t|
+    t.string   "title"
+    t.string   "category"
+    t.string   "certification"
+    t.text     "ingredient"
+    t.text     "usage"
+    t.string   "made_by_country"
+    t.text     "description"
+    t.string   "brand"
+    t.string   "color"
+    t.string   "effect"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "medicines", force: :cascade do |t|
+    t.string   "title"
+    t.string   "category"
+    t.string   "certification"
+    t.string   "ingredient"
+    t.text     "usage"
+    t.string   "made_by_country"
+    t.text     "description"
+    t.text     "caution"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "motorcycle_accessories", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "size"
+    t.string   "weight"
+    t.string   "made_by_country"
+    t.string   "made_with"
+    t.text     "description"
+    t.string   "brand"
+    t.text     "specification"
+    t.string   "modal_number"
+    t.string   "color"
+    t.string   "feature"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "orders", force: :cascade do |t|
@@ -131,8 +406,32 @@ ActiveRecord::Schema.define(version: 20151222124302) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "sellers", ["email"], name: "index_sellers_on_email", unique: true, using: :btree
-  add_index "sellers", ["reset_password_token"], name: "index_sellers_on_reset_password_token", unique: true, using: :btree
+  add_index "sellers", ["email"], name: "index_sellers_on_email", unique: true
+  add_index "sellers", ["reset_password_token"], name: "index_sellers_on_reset_password_token", unique: true
+
+  create_table "services", force: :cascade do |t|
+    t.string   "title"
+    t.string   "charges"
+    t.string   "service_category"
+    t.text     "description"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "sports", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "weight"
+    t.string   "made_by_country"
+    t.string   "made_with"
+    t.text     "description"
+    t.string   "color"
+    t.string   "brand"
+    t.string   "category"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "stores", force: :cascade do |t|
     t.string   "store_name"
@@ -147,6 +446,48 @@ ActiveRecord::Schema.define(version: 20151222124302) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "telephone_accessories", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "size"
+    t.string   "weight"
+    t.string   "made_by_country"
+    t.text     "description"
+    t.string   "brand"
+    t.string   "category"
+    t.string   "modal_number"
+    t.string   "color"
+    t.text     "feature"
+    t.string   "operation_system"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "toys", force: :cascade do |t|
+    t.string   "title"
+    t.string   "price"
+    t.integer  "quantity"
+    t.string   "weight"
+    t.string   "made_by_country"
+    t.string   "made_with"
+    t.text     "description"
+    t.string   "color"
+    t.string   "age_group"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "training_and_schools", force: :cascade do |t|
+    t.string   "title"
+    t.string   "fees"
+    t.string   "period"
+    t.string   "school"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
