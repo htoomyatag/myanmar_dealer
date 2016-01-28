@@ -1,12 +1,12 @@
 
 
-            <%= form_for(@motor_accessory, html: { multipart: true }) do |f| %>
-              <% if @motor_accessory.errors.any? %>
+            <%= form_for(@motorcycle_accessory, html: { multipart: true }) do |f| %>
+              <% if @motorcycle_accessory.errors.any? %>
                 <div id="error_explanation">
-                  <h2><%= pluralize(@motor_accessory.errors.count, "error") %> prohibited this product from being saved:</h2>
+                  <h2><%= pluralize(@motorcycle_accessory.errors.count, "error") %> prohibited this product from being saved:</h2>
 
                   <ul>
-                  <% @motor_accessory.errors.full_messages.each do |message| %>
+                  <% @motorcycle_accessory.errors.full_messages.each do |message| %>
                     <li><%= message %></li>
                   <% end %>
                   </ul>
@@ -57,4 +57,4 @@
   </div>
 
 
-<% end %>s
+<% end %>

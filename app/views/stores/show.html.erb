@@ -69,53 +69,53 @@
         <tr>
           <td><h4><b>Fashions related</b></h4>
            
-                <br/> Clothings
-                <br/> Hats
-                <br/> Footwears
-                <br/> Bags
-                <br/> Accessories
+                <br/> <a href="/fashion_clothings/new">Clothings</a>
+                <br/> <a href="/fashion_hats/new">Hats</a>
+                <br/> <a href="/fashion_footwears/new">Footwears</a>
+                <br/> <a href="/fashion_bags/new">Bags</a>
+                <br/> <a href="/fashion_accessories/new">Accessories</a>
           </td>
           <td><h4><b>Electronics</b></h4>
 
-                <br/>Electrical Equipments
-                <br/>Telephone and Accessories
-                <br/>Computers and Laptops
-                <br/>Home Appliance 
+                <br/> <a href="/electrical_equipments/new">Electrical Equipments</a>
+                <br/> <a href="/telephone_accessories/new">Telephone and Accessories</a>
+                <br/> <a href="/computers/new">Computers and Laptops</a>
+                <br/> <a href="/home_appliances/new">Home Appliance </a>
 
           </td>
           <td><h4><b>Health & Beauty</b></h4>
 
-                  <br/>Medicine
-                  <br/>Beauty Equipments
-                  <br/>Makeup and Skincare
-                  <br/>Bath supply
+                  <br/> <a href="/medicines/new">Medicine </a>
+                  <br/> <a href="/beauty_equipments/new">Beauty Equipments </a>
+                  <br/> <a href="/makeup_and_skincares/new">Makeup and Skincare </a>
+                  <br/> <a href="/bath_supplies/new">Bath supply </a>
 
           </td>
           <td><h4><b>Industrial Parts Tools</b></h4>
 
-                   <br/>Industrial Equipments
-                   <br/>Instruments
-                   <br/>Machines
+                   <br/>  <a href="/equipment/new">Industrial Equipments </a>
+                   <br/>   <a href="/instruments/new">Instruments </a>
+                   <br/>   <a href="/machines/new">Machines </a>
 
           </td>
 
           <td><h4><b>Auto Transportation</b></h4>
 
-                  <br/>Motorcycle Accessories
-                  <br/>Motorcar Accessories
+                  <br/>  <a href="/motorcycle_accessories/new">Motorcycle Accessories </a>
+                  <br/>  <a href="/car_accessories/new">Motorcar Accessories </a>
           </td>
 
           <td><h4><b>Gifts Sports Toys</b></h4>
 
-                  <br/> Special Gifts 
-                  <br/> Sports Accessories
-                  <br/> Toys
+                  <br/>  <a href="/gifts/new">Special Gifts </a>
+                  <br/>  <a href="/sports/new">Sports Accessories </a>
+                  <br/>  <a href="/toys/new">Toys </a>
 
           </td>
           <td><h4><b>Services</b></h4>
 
-                <br/>Training and School
-                <br/>Other Services
+                <br/>  <a href="/training_and_schools/new">Training and School </a>
+                <br/>   <a href="/services/new">Other Services </a>
 
           </td>
         </tr>
@@ -123,37 +123,6 @@
     </table>
 </div>
 
-<h5>Listing Products
-<%= link_to 'New Product', new_product_path %>
-</h5>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Color</th>
-      <th>Size</th>
-      <th>Weight</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.title %></td>
-        <td><%= product.color %></td>
-        <td><%= product.size %></td>
-        <td><%= product.weight %></td>
-        <td><%= product.price %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
