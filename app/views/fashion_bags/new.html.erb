@@ -1,122 +1,12 @@
+<div class="col-md-12"><br/>
 
 
+  <div class="col-md-6"> 
 
-
-<div class="col-md-12">
-  
-
-
-<%= form_for(@fashion_bag) do |f| %>
-  <% if @fashion_bag.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@fashion_bag.errors.count, "error") %> prohibited this fashion_bag from being saved:</h2>
-
-      <ul>
-      <% @fashion_bag.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="col-md-12">
-  	<div class="panel panel-default">
-			  <div class="panel-body">
-					<ul class="nav nav-tabs">
-			  		  <li role="presentation"><a href="#">Fashions</a></li>
-					  <li role="presentation"><a href="/fashion_hats/new">Hats</a></li>
-					  <li role="presentation"><a href="/fashion_clothings/new">Clothings</a></li>
-					  <li role="presentation" class="active"><a href="/fashion_bags/new">Bags</a></li>
-					  <li role="presentation"><a href="/fashion_footwears/new">Footwears</a></li>
-					  <li role="presentation"><a href="/fashion_accessories/new">Other Accessories</a></li>
-					</ul>
-			  </div>
-	</div>
-  </div>
-
-	<div class="col-md-6"> 
-
-		<div class="panel panel-default">
-			  <div class="panel-body">
-			    	<h4>New Bags</h4>
-			    	<hr/>
-			    	
-
-					  <div class="form-group">
-					    <%= f.label :title %><br/>
-					    <%= f.text_field :title, :class=>"form-control"  %>
-					  </div>
-					  <div class="form-group">
-					    <%= f.label :brand %><br/>
-					    <%= f.text_field :brand, :class=>"form-control" %>
-					  </div>
-					  <div class="form-group">
-					    <%= f.label :size %><br/>
-					    <%= f.text_field :size, :class=>"form-control" %>
-					  </div>
-					  <div class="form-group">
-					    <%= f.label :price %><br/>
-					    <%= f.text_field :price, :class=>"form-control" %>
-					  </div>
-					  <div class="form-group">
-					    <%= f.label :quantity %><br/>
-					    <%= f.text_field :quantity, :class=>"form-control" %>
-					  </div>
-					  <div class="form-group">
-					    <%= f.label :made_by_country %><br/>
-					    <%= f.text_field :made_by_country, :class=>"form-control" %>
-					  </div>
-					   <div class="form-group">
-					    <%= f.label :made_with %><br/>
-					    <%= f.text_field :made_with, :class=>"form-control"  %>
-					  </div>
-					 <div class="form-group">
-					    <%= f.label :bag_type %><br/>
-					    <%= f.select(:bag_type, FashionBag::BAGCATEGORY, {prompt: 'Select BAG TYPE'}) %>
-					  </div>
-					  <div class="form-group" style="display:none;">
-					    <%= f.label :seller_id %>
-					    <%= f.number_field :seller_id, :value => current_seller.id %>
-					  </div>
-					 
-
-
-			  </div>
-		</div> 
-	
-	</div>
-	<div class="col-md-6">
-
-		<div class="panel panel-default">
-			  <div class="panel-body">
-			    	<h4>Product Images</h4>
-			    	<hr/>
-			    	<!-- image will come here -->
-
-			    	
-			  </div>
-		</div>
-
-
-	</div>
-
-	<div class="col-md-12">
-
-		<div class="panel panel-default">
-			  <div class="panel-body">
-
-					 <div class="actions">
-					  Please enter "Create product" button to upload your
-					  fashion bags in your store.
-					 	<span style="float:right;"><%= f.submit %></span>
-					</div>
-
-			  </div>
-		</div>
-	</div>
-
-
-
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h4>New Product Fashion bags</h4>
+            <hr/>
+				<%= render 'form' %>	
 </div>
 
-<% end %>

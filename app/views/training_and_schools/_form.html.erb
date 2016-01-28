@@ -1,37 +1,60 @@
-<%= form_for(@training_and_school) do |f| %>
-  <% if @training_and_school.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@training_and_school.errors.count, "error") %> prohibited this training_and_school from being saved:</h2>
 
-      <ul>
-      <% @training_and_school.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+            <%= form_for(@training_and_school, html: { multipart: true }) do |f| %>
+              <% if @training_and_school.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@training_and_school.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+                  <ul>
+                  <% @training_and_school.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+            
+
+            <div class="form-group">
+              <%= f.label :title %><br/>
+              <%= f.text_field :title, :class=>"form-control"  %>
+            </div>
+            
+
+
+        </div>
+    </div> 
+  
+  </div>
+  <div class="col-md-6">
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h4>Product Images</h4>
+            <hr/>
+           
+
+            
+        </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+
   </div>
-  <div class="field">
-    <%= f.label :fees %><br>
-    <%= f.text_field :fees %>
+
+  <div class="col-md-12">
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+           <div class="actions">
+            Please enter "Create" button to upload your
+            training and school in your store.
+            <span style="float:right;"><%= f.submit %></span>
+          </div>
+
+        </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :period %><br>
-    <%= f.text_field :period %>
-  </div>
-  <div class="field">
-    <%= f.label :school %><br>
-    <%= f.text_field :school %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+
+
+<% end %>s
