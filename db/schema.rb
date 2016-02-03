@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125031658) do
+ActiveRecord::Schema.define(version: 20160203085215) do
 
   create_table "bath_supplies", force: :cascade do |t|
     t.string   "title"
@@ -24,8 +24,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.string   "effect"
     t.string   "certification"
     t.string   "age_group"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "beauty_equipments", force: :cascade do |t|
@@ -37,8 +57,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.string   "feature"
     t.string   "modal_number"
     t.string   "color"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "buyers", force: :cascade do |t|
@@ -76,8 +116,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.string   "modal_number"
     t.string   "color"
     t.string   "feature"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "carts", force: :cascade do |t|
@@ -100,8 +160,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.string   "color"
     t.string   "feature"
     t.string   "operation_system"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "electrical_equipments", force: :cascade do |t|
@@ -116,8 +196,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.string   "category"
     t.string   "modal_number"
     t.string   "color"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "equipment", force: :cascade do |t|
@@ -133,8 +233,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.text     "specification"
     t.string   "modal_number"
     t.string   "color"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "fashion_accessories", force: :cascade do |t|
@@ -145,8 +265,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.string   "made_with"
     t.text     "description"
     t.string   "brand"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "fashion_bags", force: :cascade do |t|
@@ -159,8 +299,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.string   "bag_type"
     t.string   "size"
     t.string   "brand"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "fashion_clothings", force: :cascade do |t|
@@ -173,8 +333,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.text     "description"
     t.string   "gender"
     t.string   "brand"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "fashion_footwears", force: :cascade do |t|
@@ -187,8 +367,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.string   "footwear_type"
     t.string   "size"
     t.string   "brand"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "fashion_hats", force: :cascade do |t|
@@ -200,8 +400,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.text     "description"
     t.string   "brand"
     t.string   "hat_type"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "fashions", force: :cascade do |t|
@@ -228,8 +448,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.string   "made_with"
     t.text     "description"
     t.string   "color"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "home_appliances", force: :cascade do |t|
@@ -247,8 +487,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.text     "feature"
     t.string   "power"
     t.string   "voltage"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "instruments", force: :cascade do |t|
@@ -264,8 +524,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.string   "modal_number"
     t.text     "specification"
     t.string   "color"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "line_items", force: :cascade do |t|
@@ -291,8 +571,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.string   "modal_number"
     t.text     "specification"
     t.string   "color"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "makeup_and_skincares", force: :cascade do |t|
@@ -306,8 +606,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.string   "brand"
     t.string   "color"
     t.string   "effect"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "medicines", force: :cascade do |t|
@@ -337,8 +657,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.string   "modal_number"
     t.string   "color"
     t.string   "feature"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -429,8 +769,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.string   "color"
     t.string   "brand"
     t.string   "category"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "stores", force: :cascade do |t|
@@ -462,8 +822,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.string   "color"
     t.text     "feature"
     t.string   "operation_system"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "toys", force: :cascade do |t|
@@ -476,8 +856,28 @@ ActiveRecord::Schema.define(version: 20160125031658) do
     t.text     "description"
     t.string   "color"
     t.string   "age_group"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "training_and_schools", force: :cascade do |t|

@@ -188,6 +188,10 @@
 						</span> 
 						<span class="price-old"><%= @product.price + 15 %> MMK
 						</span>
+						<span class="price-head">Delivery :</span>
+						<span class="price-new"> 
+							<input id="delivery_fees">
+						</span> 
 					</div>
 				<!-- Price Ends -->
 					<hr />
@@ -199,12 +203,102 @@
 						<select name="select" id="select" class="form-control">
 								<option value="1" selected>Select</option>
 								<option value="transporter"> 
-							
-									<span style="font-size:8px;text-align:right;">
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Myanmar Transporter
-									</span>
+									MM TRANSPORTER
 								</option>
 						</select>
+
+						<select id="select_city" class="form-control">
+
+								<option value="1" selected>Shipping to</option>
+								<option value="2000"> 
+										Ahlone	
+								</option>
+								<option value="2000"> 
+										Kyimyindaing
+										</option>
+								<option value="2000"> 
+										Sanchaung
+								</option>
+								<option value="2000"> 	
+										Latha	
+										</option>
+								<option value="2000"> 
+										Lanmadaw
+										</option>
+								<option value="2000"> 
+										Pabedan	
+										</option>
+								<option value="2000"> 
+										Kyauktada
+										</option>
+								<option value="2000"> 
+										Botahtaung
+										</option>
+								<option value="2000"> 
+										Pazundaung
+										</option>
+								<option value="2000"> 
+										Tamwe
+										</option>
+								<option value="2000"> 
+										Mingalar taung nyunt
+										</option>
+								<option value="2000"> 
+										Thingangyun
+										</option>
+								<option value="2000"> 
+										Thuwunna
+										</option>
+								<option value="2000"> 
+										Bahan 
+										</option>
+								<option value="2000"> 
+										Hlaing
+										</option>
+								<option value="2000"> 
+										Mayangon
+										</option>
+								<option value="2000"> 
+										Yankin
+										</option>
+								<option value="2000"> 
+										Tharkayta
+								</option>
+								<!--  -->
+
+								<option value="2500"> 
+								Dagon myothit(south)
+								</option>
+								<option value="2500"> 	
+								Dagon myothit(north)	
+								</option>
+								<option value="2500"> 
+								Dagon myothit(east)	
+								</option>
+								<option value="2500"> 
+								Dagon myothit(west)	
+								</option>
+								<option value="2500"> 
+								Okkalapa(south)	
+								</option>
+								<option value="2500"> 
+								Okkalapa(north)	
+								</option>
+								<option value="2500"> 
+								Bayintnaung	
+								</option>
+								<option value="2500"> 
+								Insein	
+								</option>
+								<option value="2500"> 
+								Sawbuagyigong	
+								</option>
+								<option value="2500"> 
+								Mingalardon	
+								</option>
+
+						</select>
+
 						</div>	
 					
 						<div class="cart-button button-group">
@@ -377,3 +471,24 @@
 		</div>
 	<!-- Related Products Ends -->
 	</div>
+
+
+
+	<script type="text/javascript">
+
+window.onload = function(){
+   document.getElementById('select_city').onclick = function(e){
+
+  
+
+
+
+ var package_name = document.getElementById('select_city').options[document.getElementById('select_city').selectedIndex].value;
+
+
+document.getElementById('delivery_fees').value = package_name;
+
+
+   }};
+
+	</script>

@@ -28,7 +28,7 @@ class BathSuppliesController < ApplicationController
 
     respond_to do |format|
       if @bath_supply.save
-        format.html { redirect_to @bath_supply, notice: 'Bath supply was successfully created.' }
+        format.html { redirect_to bath_supplies_path, notice: 'Bath supply was successfully created.' }
         format.json { render :show, status: :created, location: @bath_supply }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class BathSuppliesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bath_supply_params
-      params.require(:bath_supply).permit(:title, :category, :ingredient, :usage, :made_by_country, :description, :brand, :effect, :certification, :age_group)
+      params.require(:bath_supply).permit(:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :category, :ingredient, :usage, :made_by_country, :description, :brand, :effect, :certification, :age_group)
     end
 end
