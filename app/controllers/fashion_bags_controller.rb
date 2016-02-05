@@ -69,7 +69,7 @@ class FashionBagsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fashion_bag_params
-      params.require(:fashion_bag).permit(:title, :price, :quantity, :made_by_country, :made_with, :description, :bag_type, :size, :brand)
+      params.require(:fashion_bag).permit(:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :made_by_country, :made_with, :description, :bag_type, :size, :brand)
     end
 
     def layout_per_action

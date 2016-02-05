@@ -69,6 +69,6 @@ class CarAccessoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def car_accessory_params
-      params.require(:car_accessory).permit(:title, :price, :quantity, :size, :weight, :made_by_country, :made_with, :description, :brand, :specification, :modal_number, :color, :feature)
+      params.require(:car_accessory).permit(:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :size, :weight, :made_by_country, :made_with, :description, :brand, :specification, :modal_number, :color, :feature)
     end
 end

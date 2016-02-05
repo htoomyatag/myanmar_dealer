@@ -69,6 +69,6 @@ class ElectricalEquipmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def electrical_equipment_params
-      params.require(:electrical_equipment).permit(:title, :price, :quantity, :size, :weight, :made_by_country, :description, :brand, :category, :modal_number, :color)
+      params.require(:electrical_equipment).permit(:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :size, :weight, :made_by_country, :description, :brand, :category, :modal_number, :color)
     end
 end
