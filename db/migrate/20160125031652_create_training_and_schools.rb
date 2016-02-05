@@ -6,6 +6,7 @@ class CreateTrainingAndSchools < ActiveRecord::Migration
       t.string :period
       t.string :school
       t.text :description
+      t.integer :seller_id
 
       t.timestamps null: false
     end

@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
   resources :products
   get 'my_product' => 'products#my_product', :as => :my_product
-
+  
 
   resources :stores
   devise_for :buyers, :controllers => {:sessions => "buyers/sessions", :registrations => "buyers/registrations"}
@@ -62,6 +62,11 @@ Rails.application.routes.draw do
  get 'thanks_you' => 'fronts#thanks_you'
  get 'check_out_as_guest' => 'fronts#check_out_as_guest'
  get 'product_by_category' => 'fronts#product_by_category'
+
+ # sell product page
+  get 'product_bath_supplies' => 'bath_supplies#product_bath_supplies', :as => :product_bath_supplies
+  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

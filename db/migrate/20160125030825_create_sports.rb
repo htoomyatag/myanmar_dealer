@@ -11,6 +11,7 @@ class CreateSports < ActiveRecord::Migration
       t.string :color
       t.string :brand
       t.string :category
+      t.integer :seller_id
 
       t.timestamps null: false
     end

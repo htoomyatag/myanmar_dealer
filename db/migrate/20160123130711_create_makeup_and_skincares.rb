@@ -11,6 +11,8 @@ class CreateMakeupAndSkincares < ActiveRecord::Migration
       t.string :brand
       t.string :color
       t.string :effect
+      t.integer :price
+      t.integer :seller_id
 
       t.timestamps null: false
     end

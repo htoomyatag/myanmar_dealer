@@ -23,6 +23,15 @@ buyer = Buyer.create([
 ])
 
 
+bath_supplies = BathSupply.create([
+
+{seller_id:"1",title: "test1", price:"100"},
+{seller_id:"1",title: "test2",  price:"50"},
+
+])
+
+
+
 store = Store.create([
 
 {

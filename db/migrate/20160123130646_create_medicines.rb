@@ -9,6 +9,8 @@ class CreateMedicines < ActiveRecord::Migration
       t.string :made_by_country
       t.text :description
       t.text :caution
+      t.integer :price
+      t.integer :seller_id
 
       t.timestamps null: false
     end

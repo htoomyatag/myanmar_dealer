@@ -11,6 +11,8 @@ class CreateBathSupplies < ActiveRecord::Migration
       t.string :effect
       t.string :certification
       t.string :age_group
+      t.integer :price
+      t.integer :seller_id
 
       t.timestamps null: false
     end

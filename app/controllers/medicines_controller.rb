@@ -69,6 +69,6 @@ class MedicinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def medicine_params
-      params.require(:medicine).permit(:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :category, :certification, :ingredient, :usage, :made_by_country, :description, :caution)
+      params.require(:medicine).permit(:seller_id,:price,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :category, :certification, :ingredient, :usage, :made_by_country, :description, :caution)
     end
 end

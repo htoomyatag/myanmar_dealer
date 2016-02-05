@@ -7,6 +7,10 @@ class BathSuppliesController < ApplicationController
     @bath_supplies = BathSupply.all
   end
 
+  def product_bath_supplies
+     @bath_supplies = BathSupply.all
+  end
+
   # GET /bath_supplies/1
   # GET /bath_supplies/1.json
   def show
@@ -69,6 +73,6 @@ class BathSuppliesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bath_supply_params
-      params.require(:bath_supply).permit(:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :category, :ingredient, :usage, :made_by_country, :description, :brand, :effect, :certification, :age_group)
+      params.require(:bath_supply).permit(:seller_id,:price,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :category, :ingredient, :usage, :made_by_country, :description, :brand, :effect, :certification, :age_group)
     end
 end

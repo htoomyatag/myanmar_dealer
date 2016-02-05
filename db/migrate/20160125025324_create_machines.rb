@@ -14,6 +14,7 @@ class CreateMachines < ActiveRecord::Migration
       t.string :modal_number
       t.text :specification
       t.string :color
+      t.integer :seller_id
 
       t.timestamps null: false
     end

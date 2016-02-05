@@ -14,6 +14,7 @@ class CreateTelephoneAccessories < ActiveRecord::Migration
       t.string :color
       t.text :feature
       t.string :operation_system
+           t.integer :seller_id
 
       t.timestamps null: false
     end

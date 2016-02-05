@@ -15,6 +15,7 @@ class CreateComputers < ActiveRecord::Migration
       t.string :color
       t.string :feature
       t.string :operation_system
+      t.integer :seller_id
 
       t.timestamps null: false
     end

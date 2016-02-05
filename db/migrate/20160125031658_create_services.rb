@@ -5,6 +5,7 @@ class CreateServices < ActiveRecord::Migration
       t.string :charges
       t.string :service_category
       t.text :description
+           t.integer :seller_id
 
       t.timestamps null: false
     end

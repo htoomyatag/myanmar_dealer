@@ -9,6 +9,8 @@ class CreateBeautyEquipments < ActiveRecord::Migration
       t.string :feature
       t.string :modal_number
       t.string :color
+      t.integer :price
+           t.integer :seller_id
 
       t.timestamps null: false
     end

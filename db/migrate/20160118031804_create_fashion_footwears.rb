@@ -10,6 +10,7 @@ class CreateFashionFootwears < ActiveRecord::Migration
       t.string :footwear_type
       t.string :size
       t.string :brand
+      t.integer :seller_id
 
       t.timestamps null: false
     end

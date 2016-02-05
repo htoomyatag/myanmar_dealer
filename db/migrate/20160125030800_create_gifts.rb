@@ -9,6 +9,7 @@ class CreateGifts < ActiveRecord::Migration
       t.string :made_with
       t.text :description
       t.string :color
+      t.integer :seller_id
 
       t.timestamps null: false
     end

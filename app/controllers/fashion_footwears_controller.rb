@@ -69,7 +69,7 @@ class FashionFootwearsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fashion_footwear_params
-      params.require(:fashion_footwear).permit(:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :made_by_country, :made_with, :description, :footwear_type, :size, :brand)
+      params.require(:fashion_footwear).permit(:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :made_by_country, :made_with, :description, :footwear_type, :size, :brand)
     end
 
     def layout_per_action
