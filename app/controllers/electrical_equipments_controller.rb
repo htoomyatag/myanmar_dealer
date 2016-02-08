@@ -7,6 +7,10 @@ class ElectricalEquipmentsController < ApplicationController
     @electrical_equipments = ElectricalEquipment.all
   end
 
+
+  def product_electrical_equipments
+       @electrical_equipments = ElectricalEquipment.all
+  end
   # GET /electrical_equipments/1
   # GET /electrical_equipments/1.json
   def show

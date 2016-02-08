@@ -7,6 +7,10 @@ class InstrumentsController < ApplicationController
     @instruments = Instrument.all
   end
 
+  def product_instruments
+    @instruments = Instrument.all
+  end
+
   # GET /instruments/1
   # GET /instruments/1.json
   def show

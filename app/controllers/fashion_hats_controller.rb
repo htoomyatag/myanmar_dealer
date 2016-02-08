@@ -7,6 +7,11 @@ class FashionHatsController < ApplicationController
     @fashion_hats = FashionHat.all
   end
 
+  
+  def product_fashion_hats
+     @fashion_hats = FashionHat.all
+  end
+
   # GET /fashion_hats/1
   # GET /fashion_hats/1.json
   def show

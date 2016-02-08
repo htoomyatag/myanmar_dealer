@@ -7,6 +7,10 @@ class HomeAppliancesController < ApplicationController
     @home_appliances = HomeAppliance.all
   end
 
+  def product_home_appliances
+      @home_appliances = HomeAppliance.all
+  end
+
   # GET /home_appliances/1
   # GET /home_appliances/1.json
   def show

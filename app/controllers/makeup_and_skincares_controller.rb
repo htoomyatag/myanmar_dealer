@@ -7,6 +7,10 @@ class MakeupAndSkincaresController < ApplicationController
     @makeup_and_skincares = MakeupAndSkincare.all
   end
 
+  def product_makeup_and_skincares
+    @makeup_and_skincares = MakeupAndSkincare.all
+  end
+
   # GET /makeup_and_skincares/1
   # GET /makeup_and_skincares/1.json
   def show

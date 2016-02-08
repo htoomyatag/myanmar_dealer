@@ -7,6 +7,11 @@ class BeautyEquipmentsController < ApplicationController
     @beauty_equipments = BeautyEquipment.all
   end
 
+
+  def product_beauty_equipments
+      @beauty_equipments = BeautyEquipment.all
+  end
+
   # GET /beauty_equipments/1
   # GET /beauty_equipments/1.json
   def show

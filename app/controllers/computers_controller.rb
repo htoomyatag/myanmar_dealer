@@ -7,6 +7,11 @@ class ComputersController < ApplicationController
     @computers = Computer.all
   end
 
+
+  def product_computer
+      @computers = Computer.all
+  end
+
   # GET /computers/1
   # GET /computers/1.json
   def show

@@ -7,6 +7,10 @@ class MachinesController < ApplicationController
     @machines = Machine.all
   end
 
+  def product_machines
+    @machines = Machine.all
+  end
+
   # GET /machines/1
   # GET /machines/1.json
   def show

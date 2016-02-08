@@ -7,6 +7,10 @@ class GiftsController < ApplicationController
     @gifts = Gift.all
   end
 
+  def product_gifts
+      @gifts = Gift.all
+  end
+
   # GET /gifts/1
   # GET /gifts/1.json
   def show

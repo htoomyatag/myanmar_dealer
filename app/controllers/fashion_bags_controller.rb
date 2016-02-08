@@ -7,6 +7,10 @@ class FashionBagsController < ApplicationController
     @fashion_bags = FashionBag.all
   end
 
+  def product_fashion_bags
+    @fashion_bags = FashionBag.all
+  end
+
   # GET /fashion_bags/1
   # GET /fashion_bags/1.json
   def show

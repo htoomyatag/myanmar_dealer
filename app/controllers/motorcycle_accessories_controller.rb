@@ -7,6 +7,10 @@ class MotorcycleAccessoriesController < ApplicationController
     @motorcycle_accessories = MotorcycleAccessory.all
   end
 
+  def product_motorcycle_accessories
+    @motorcycle_accessories = MotorcycleAccessory.all
+  end
+
   # GET /motorcycle_accessories/1
   # GET /motorcycle_accessories/1.json
   def show

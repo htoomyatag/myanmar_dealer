@@ -7,6 +7,10 @@ class TelephoneAccessoriesController < ApplicationController
     @telephone_accessories = TelephoneAccessory.all
   end
 
+  def product_telephone_accessories
+     @telephone_accessories = TelephoneAccessory.all
+  end
+
   # GET /telephone_accessories/1
   # GET /telephone_accessories/1.json
   def show

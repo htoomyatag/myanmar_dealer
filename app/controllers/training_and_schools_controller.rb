@@ -7,6 +7,10 @@ class TrainingAndSchoolsController < ApplicationController
     @training_and_schools = TrainingAndSchool.all
   end
 
+  def product_training_and_schools
+     @training_and_schools = TrainingAndSchool.all
+  end
+
   # GET /training_and_schools/1
   # GET /training_and_schools/1.json
   def show

@@ -7,6 +7,10 @@ class CarAccessoriesController < ApplicationController
     @car_accessories = CarAccessory.all
   end
 
+  def product_car_accessories
+      @car_accessories = CarAccessory.all
+  end
+
   # GET /car_accessories/1
   # GET /car_accessories/1.json
   def show

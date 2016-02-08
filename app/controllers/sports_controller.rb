@@ -7,6 +7,10 @@ class SportsController < ApplicationController
     @sports = Sport.all
   end
 
+  def product_sports
+    @sports = Sport.all
+  end
+
   # GET /sports/1
   # GET /sports/1.json
   def show

@@ -7,6 +7,10 @@ class MedicinesController < ApplicationController
     @medicines = Medicine.all
   end
 
+  def product_medicines
+      @medicines = Medicine.all
+  end
+
   # GET /medicines/1
   # GET /medicines/1.json
   def show

@@ -66,6 +66,49 @@ Rails.application.routes.draw do
  # sell product page
   get 'product_bath_supplies' => 'bath_supplies#product_bath_supplies', :as => :product_bath_supplies
   
+ get 'product_beauty_equipments' => 'beauty_equipments#product_beauty_equipments', :as => :product_beauty_equipments
+   
+ get 'product_car_accessories' => 'car_accessories#product_car_accessories', :as => :product_car_accessories
+    
+ get 'product_computers' => 'computers#product_computers', :as => :product_computers
+ 
+ get 'product_electrical_equipments' => 'electrical_equipments#product_electrical_equipments', :as => :product_electrical_equipments
+
+ get 'product_equipments' => 'equipment#product_equipments', :as => :product_equipments
+
+ get 'product_fashion_accessories' => 'fashion_accessories#product_fashion_accessories', :as => :product_fashion_accessories
+
+ get 'product_fashion_bags' => 'fashion_bags#product_fashion_bags', :as => :product_fashion_bags
+
+ get 'product_fashion_clothings' => 'fashion_clothings#product_fashion_clothings', :as => :product_fashion_clothings
+
+ get 'product_fashion_footwears' => 'fashion_footwears#product_fashion_footwears', :as => :product_fashion_footwears
+
+ get 'product_fashion_hats' => 'fashion_hats#product_fashion_hats', :as => :product_fashion_hats
+   
+ get 'product_gifts' => 'gifts#product_gifts', :as => :product_gifts
+
+ get 'product_home_appliances' => 'home_appliances#product_home_appliances', :as => :product_home_appliances
+  
+ get 'product_instruments' => 'instruments#product_instruments', :as => :product_instruments
+
+ get 'product_machines' => 'machines#product_machines', :as => :product_machines
+  
+ get 'product_makeup_and_skincares' => 'makeup_and_skincares#product_makeup_and_skincares', :as => :product_makeup_and_skincares
+   
+ get 'product_medicines' => 'medicines#product_medicines', :as => :product_medicines
+ 
+ get 'product_motorcycle_accessories' => 'motorcycle_accessories#product_motorcycle_accessories', :as => :product_motorcycle_accessories
+  
+ get 'product_services' => 'services#product_services', :as => :product_services
+  
+ get 'product_sports' => 'sports#product_sports', :as => :product_sports
+ 
+ get 'product_telephone_accessories' => 'telephone_accessories#product_telephone_accessories', :as => :product_telephone_accessories
+
+ get 'product_toys' => 'toys#product_toys', :as => :product_toys
+  
+ get 'product_training_and_schools' => 'training_and_schools#product_training_and_schools', :as => :product_training_and_schools
 
 
   # The priority is based upon order of creation: first created -> highest priority.
