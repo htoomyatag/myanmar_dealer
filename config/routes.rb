@@ -62,6 +62,15 @@ Rails.application.routes.draw do
  get 'thanks_you' => 'fronts#thanks_you'
  get 'check_out_as_guest' => 'fronts#check_out_as_guest'
  get 'product_by_category' => 'fronts#product_by_category'
+ 
+
+ get 'fashion_related' => 'fronts#fashion_related', :as => :fashion_related
+ get 'electronics_related' => 'fronts#electronics_related', :as => :electronics_related
+ get 'health_beauty_related' => 'fronts#health_beauty_related', :as => :health_beauty_related
+ get 'industrial_part' => 'fronts#industrial_part', :as => :industrial_part
+ get 'auto_transportation' => 'fronts#auto_transportation', :as => :auto_transportation
+ get 'sports_related' => 'fronts#sports_related', :as => :sports_related
+ get 'service_related' => 'fronts#service_related', :as => :service_related
 
  # sell product page
   get 'product_bath_supplies' => 'bath_supplies#product_bath_supplies', :as => :product_bath_supplies

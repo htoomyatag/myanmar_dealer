@@ -64,8 +64,36 @@ class FrontsController < ApplicationController
      @relate_product = Product.where(:product_category => @product.product_category)
    end
 
-   def register
-   end
+    def register
+    end
+
+    def fashion_related
+
+    end
+     
+    def electronics_related
+
+    end
+
+    def health_beauty_related
+     
+    end
+     
+    def industrial_part
+
+    end
+    def auto_transportation
+
+    end
+    def sports_related
+    end 
+
+    def service_related
+
+    end
+
+
+
 
   # GET /fronts/1
   # GET /fronts/1.json
