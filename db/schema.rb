@@ -335,7 +335,7 @@ ActiveRecord::Schema.define(version: 20160203085215) do
 
   create_table "fashion_clothings", force: :cascade do |t|
     t.string   "title"
-    t.string   "price"
+    t.integer  "price"
     t.integer  "quantity"
     t.string   "size"
     t.string   "made_by_country"
@@ -344,6 +344,7 @@ ActiveRecord::Schema.define(version: 20160203085215) do
     t.string   "gender"
     t.string   "brand"
     t.integer  "seller_id"
+    t.string   "color"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"

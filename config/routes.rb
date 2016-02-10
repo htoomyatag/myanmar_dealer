@@ -73,7 +73,7 @@ Rails.application.routes.draw do
  get 'service_related' => 'fronts#service_related', :as => :service_related
 
  # sell product page
-  get 'product_bath_supplies' => 'bath_supplies#product_bath_supplies', :as => :product_bath_supplies
+ get 'product_bath_supplies' => 'bath_supplies#product_bath_supplies', :as => :product_bath_supplies
   
  get 'product_beauty_equipments' => 'beauty_equipments#product_beauty_equipments', :as => :product_beauty_equipments
    
@@ -118,6 +118,53 @@ Rails.application.routes.draw do
  get 'product_toys' => 'toys#product_toys', :as => :product_toys
   
  get 'product_training_and_schools' => 'training_and_schools#product_training_and_schools', :as => :product_training_and_schools
+
+# full product info
+ get 'full_productinfo_bath_supplies/:id' => 'fronts#full_productinfo_bath_supplies', :as => :full_productinfo_bath_supplies
+  
+ get 'full_productinfo_beauty_equipments/:id' => 'fronts#full_productinfo_beauty_equipments', :as => :full_productinfo_beauty_equipments
+   
+ get 'full_productinfo_car_accessories/:id' => 'fronts#full_productinfo_car_accessories', :as => :full_productinfo_car_accessories
+    
+ get 'full_productinfo_computers/:id' => 'fronts#full_productinfo_computers', :as => :full_productinfo_computers
+ 
+ get 'full_productinfo_electrical_equipments/:id' => 'fronts#full_productinfo_electrical_equipments', :as => :full_productinfo_electrical_equipments
+
+ get 'full_productinfo_equipments/:id' => 'fronts#full_productinfo_equipments', :as => :full_productinfo_equipments
+
+ get 'full_productinfo_fashion_accessories/:id' => 'fronts#full_productinfo_fashion_accessories', :as => :full_productinfo_fashion_accessories
+
+ get 'full_productinfo_fashion_bags/:id' => 'fronts#full_productinfo_fashion_bags', :as => :full_productinfo_fashion_bags
+
+ get 'full_productinfo_fashion_clothings/:id' => 'fronts#full_productinfo_fashion_clothings', :as => :full_productinfo_fashion_clothings
+
+ get 'full_productinfo_fashion_footwears/:id' => 'fronts#full_productinfo_fashion_footwears', :as => :full_productinfo_fashion_footwears
+
+ get 'full_productinfo_fashion_hats/:id' => 'fronts#full_productinfo_fashion_hats', :as => :full_productinfo_fashion_hats
+   
+ get 'full_productinfo_gifts/:id' => 'fronts#full_productinfo_gifts', :as => :full_productinfo_gifts
+
+ get 'full_productinfo_home_appliances/:id' => 'fronts#full_productinfo_home_appliances', :as => :full_productinfo_home_appliances
+  
+ get 'full_productinfo_instruments/:id' => 'fronts#full_productinfo_instruments', :as => :full_productinfo_instruments
+
+ get 'full_productinfo_machines/:id' => 'fronts#full_productinfo_machines', :as => :full_productinfo_machines
+  
+ get 'full_productinfo_makeup_and_skincares/:id' => 'fronts#full_productinfo_makeup_and_skincares', :as => :full_productinfo_makeup_and_skincares
+   
+ get 'full_productinfo_medicines/:id' => 'fronts#full_productinfo_medicines', :as => :full_productinfo_medicines
+ 
+ get 'full_productinfo_motorcycle_accessories/:id' => 'fronts#full_productinfo_motorcycle_accessories', :as => :full_productinfo_motorcycle_accessories
+  
+ get 'full_productinfo_services/:id' => 'fronts#full_productinfo_services', :as => :full_productinfo_services
+  
+ get 'full_productinfo_sports/:id' => 'fronts#full_productinfo_sports', :as => :full_productinfo_sports
+ 
+ get 'full_productinfo_telephone_accessories/:id' => 'fronts#full_productinfo_telephone_accessories', :as => :full_productinfo_telephone_accessories
+
+ get 'full_productinfo_toys/:id' => 'fronts#full_productinfo_toys', :as => :full_productinfo_toys
+  
+ get 'full_productinfo_training_and_schools/:id' => 'fronts#full_productinfo_training_and_schools', :as => :full_productinfo_training_and_schools
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -123,36 +123,36 @@
 	<div class="container">
 		<section class="products-list">			
 						<!-- Heading Starts -->
-							<h2 class="product-head">Specials Products</h2>
+							<h2 class="product-head">Fashions & Clothings</h2>
 						<!-- Heading Ends -->
 						<!-- Products Row Starts -->
 							<div class="row">
 							<!-- Product #1 Starts -->
-							<% @bath_supplies.each do |bath_supply| %>
+							<% @fashion_clothings.each do |fashion_clothing| %>
 								<div class="col-md-3 col-sm-6">
 									<div class="product-col">
 										<div class="image">
-											<% if !bath_supply.avatar1_file_name.nil?  %>
-								                <%= image_tag bath_supply.avatar1.url, :id => "product_image" %>
+											<% if !fashion_clothing.avatar1_file_name.nil?  %>
+								                <%= image_tag fashion_clothing.avatar1.url, :id => "product_image" %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
 											<h4>
-												<a href="#"><%= bath_supply.title %></a>
+												<%= link_to fashion_clothing.title, full_productinfo_fashion_clothings_path(fashion_clothing) %>
 											</h4>
 											<div class="description">
 											
 											
 											</div>
 											<div class="price">
-												<span class="price-new"><%= bath_supply.price %> MMK</span> 
-												<span class="price-old"><%= bath_supply.price + 15 %> MMK</span>
+												<span class="price-new"><%= fashion_clothing.price %> MMK</span> 
+												<span class="price-old"><%= fashion_clothing.price + 15 %> MMK</span>
 											</div>
 											<div class="cart-button">
 											
-											<%= button_to line_items_path(:product_id => bath_supply, :seller_id => bath_supply.seller_id), :class =>"btn btn-cart" do %>
+											<%= button_to line_items_path(:product_id => fashion_clothing, :seller_id => fashion_clothing.seller_id), :class =>"btn btn-cart" do %>
 											   Add to cart
 											  <i class="fa fa-shopping-cart"></i> 
 											<% end %>

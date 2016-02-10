@@ -30,6 +30,23 @@ bath_supplies = BathSupply.create([
 
 ])
 
+fashion_clothings = FashionClothing.create([
+
+{
+seller_id:"1",
+title:"swag tee",
+price:1300,
+quantity: 12,
+size:"Medium, Large, XL",
+made_by_country:"Thailand", 
+made_with:"Cotton",
+description: "for the swag from the swag",
+gender: "Male",
+brand: "Genius",
+color: "Black, White, Grey"
+}
+
+])
 
 
 store = Store.create([

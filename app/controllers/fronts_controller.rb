@@ -64,6 +64,123 @@ class FrontsController < ApplicationController
      @relate_product = Product.where(:product_category => @product.product_category)
    end
 
+
+    def full_productinfo_bath_supplies
+      @product = BathSupply.find(params[:id])
+      @relate_products = BathSupply.all
+    end
+
+    def full_productinfo_beauty_equipments
+      @product = BeautyEquipment.find(params[:id])
+      @relate_products = BeautyEquipment.all
+    end
+
+    def full_productinfo_car_accessories
+      @product = CarAccessory.find(params[:id])
+      @relate_products = CarAccessory.all
+    end
+
+    def full_productinfo_computers
+       @product = Computer.find(params[:id])
+       @relate_products = Computer.all
+    end
+
+    def full_productinfo_electrical_equipments
+       @product = ElectricalEquipment.find(params[:id])
+       @relate_products = ElectricalEquipment.all
+    end
+
+    def full_productinfo_equipments
+        @product = Equipment.find(params[:id])
+        @relate_products = Equipment.all
+    end
+
+    def full_productinfo_fashion_accessories
+        @product = FashionAccessory.find(params[:id])
+        @relate_products = FashionAccessory.all
+    end
+
+    def full_productinfo_fashion_bags
+        @product = FashionBag.find(params[:id])
+        @relate_products = FashionBag.all
+    end
+
+    def full_productinfo_fashion_clothings
+      @product = FashionClothing.find(params[:id])
+      @relate_products = FashionClothing.all
+    end
+
+    def full_productinfo_fashion_footwears
+        @product = FashionFootwear.find(params[:id])
+        @relate_products = FashionFootwear.all
+    end
+
+
+    def full_productinfo_fashion_hats
+        @product = FashionHat.find(params[:id])
+        @relate_products = FashionHat.all
+    end
+
+    def full_productinfo_gifts
+        @product = Gift.find(params[:id])
+        @relate_products = Gift.all
+    end
+
+    def full_productinfo_home_appliances
+        @product = HomeAppliance.find(params[:id])
+        @relate_products = HomeAppliance.all
+    end
+
+    def full_productinfo_instruments
+        @product = Instrument.find(params[:id])
+        @relate_products = Instrument.all
+    end
+
+    def full_productinfo_machines
+         @product = Machine.find(params[:id])
+        @relate_products = Machine.all
+    end
+
+    def full_productinfo_makeup_and_skincares
+        @product = MakeupAndSkincare.find(params[:id])
+        @relate_products = MakeupAndSkincare.all
+    end
+
+    def full_productinfo_medicines
+        @product = Medicine.find(params[:id])
+        @relate_products = Medicine.all
+    end
+
+    def full_productinfo_motorcycle_accessories
+        @product = MotorcycleAccessory.find(params[:id])
+        @relate_products = MotorcycleAccessory.all
+    end
+
+    def full_productinfo_services
+        @product = Service.find(params[:id])
+        @relate_products = Service.all
+    end
+
+    def full_productinfo_sports
+       @product = Sport.find(params[:id])
+       @relate_products = Sport.all
+    end
+
+    def full_productinfo_telephone_accessories
+       @product = TelephoneAccessory.find(params[:id])
+       @relate_products = TelephoneAccessory.all
+    end
+
+    def full_productinfo_toys
+       @product = Toy.find(params[:id])
+       @relate_products = Toy.all
+    end
+
+    def full_productinfo_training_and_schools
+        @product = TrainingAndSchool.find(params[:id])
+       @relate_products = TrainingAndSchool.all
+    end
+
     def register
     end
 
