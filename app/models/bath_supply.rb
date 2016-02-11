@@ -1,5 +1,7 @@
 class BathSupply < ActiveRecord::Base
 
+  after_create :add_to_product
+
   has_attached_file :avatar1, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar1, content_type: /\Aimage\/.*\Z/
 
@@ -16,4 +18,46 @@ class BathSupply < ActiveRecord::Base
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
 
+
+   def add_to_product
+
+     title = self.title
+     category = self.category
+     ingredient = self.ingredient
+     usage = self.usage
+     made_by_country = self.made_by_country
+     description = self.description
+     brand = self.brand
+     effect = self.effect
+     certification = self.certification
+     age_group = self.age_group
+     price = self.price
+     seller_id = self.seller_id
+
+     Product.create(:title => title,
+     :category => category,
+     :ingredient => ingredient,
+     :usage => usage,
+     :made_by_country => made_by_country,
+     :description => description,
+     :brand => brand,
+     :effect => effect,
+     :certification => certification,
+     :age_group => age_group,
+     :price => price,
+     :seller_id => seller_id) 
+   
+
+
+
+
+
+
+   end
+
+
+
+
+
 end
+ 
