@@ -22,6 +22,7 @@ class Computer < ActiveRecord::Base
 
 
     Product.create(:title => self.title,
+         :store_name => self.store_name,
    :price => self.price,
    :quantity => self.quantity,
    :size => self.size,
