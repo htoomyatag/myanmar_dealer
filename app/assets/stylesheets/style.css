@@ -1213,3 +1213,10 @@ select#select option[value="transporter"]   {
 	background-repeat: no-repeat;
 
  }
+
+
+
+ #delivery_fees{
+ 	 outline: none;
+ 	 border:none;
+ }

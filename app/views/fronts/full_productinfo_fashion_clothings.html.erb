@@ -199,8 +199,9 @@
 						<span class="price-new"><%= @product.price %> MMK
 						</span> 
 						<span class="price-old"><%= @product.price + 15 %> MMK
-						</span>
-						<span class="price-head">Delivery :</span>
+						</span> 
+						<br/>
+						<span class="price-head">Delivery Fees:</span>
 						<span class="price-new"> 
 							<input id="delivery_fees">
 						</span> 
@@ -211,13 +212,13 @@
 					<div class="options">
 						<h3>Delivery Options</h3>
 						<div class="form-group">
-						<label for="select" class="control-label text-uppercase">Select:</label>
+						<label for="select" class="control-label text-uppercase">Choose:</label>
 						<select name="select" id="select" class="form-control">
-								<option value="1" selected>Select</option>
+								<option value="1" selected>Delivery Agency</option>
 								<option value="transporter"> 
 									MM TRANSPORTER
 								</option>
-						</select>
+						</select><br/>
 
 						<select id="select_city" class="form-control">
 
@@ -307,6 +308,18 @@
 								</option>
 								<option value="2500"> 
 								Mingalardon	
+								</option>
+
+								<option value="3500"> 
+								 Tanyin
+								</option>
+
+								<option value="3500"> 
+									Shwepyithar
+								</option>
+
+								<option value="3500"> 
+									Hlaing thar yar
 								</option>
 
 						</select>
@@ -488,7 +501,7 @@
 
 	<script type="text/javascript">
 
-window.onload = function(){
+
    document.getElementById('select_city').onclick = function(e){
 
   
@@ -501,6 +514,6 @@ window.onload = function(){
 document.getElementById('delivery_fees').value = package_name;
 
 
-   }};
+   };
 
 	</script>
