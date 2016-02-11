@@ -1,6 +1,8 @@
 class Computer < ActiveRecord::Base
 
-	  has_attached_file :avatar1, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  after_create :add_to_product
+	 
+  has_attached_file :avatar1, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar1, content_type: /\Aimage\/.*\Z/
 
   has_attached_file :avatar2, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
@@ -15,5 +17,24 @@ class Computer < ActiveRecord::Base
   has_attached_file :avatar5, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
+   
+ def add_to_product
+
+
+    Product.create(:title => self.title,
+   :price => self.price,
+   :quantity => self.quantity,
+   :size => self.size,
+   :weight => self.weight,
+   :thickness => self.thickness,
+   :made_by_country => self.made_by_country,
+   :description => self.description,
+   :brand => self.brand,
+   :category => self.category,
+   :modal_number => self.modal_number,
+   :color => self.color,
+   :feature => self.feature,
+   :operation_system => self.operation_system,
+   :seller_id => self.seller_id)
 
 end
