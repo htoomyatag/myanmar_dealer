@@ -1,6 +1,6 @@
 class ElectricalEquipmentsController < ApplicationController
   before_action :set_electrical_equipment, only: [:show, :edit, :update, :destroy]
-
+   layout :layout_per_action
   # GET /electrical_equipments
   # GET /electrical_equipments.json
   def index
@@ -74,5 +74,13 @@ class ElectricalEquipmentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def electrical_equipment_params
       params.require(:electrical_equipment).permit(:store_name,:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :size, :weight, :made_by_country, :description, :brand, :category, :modal_number, :color)
+    end
+
+    def layout_per_action
+      if action_name == "index" or "product_electrical_equipments"
+        "application"
+      else
+        "backend"
+      end
     end
 end

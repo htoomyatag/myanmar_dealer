@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
-
+   layout :layout_per_action
   # GET /services
   # GET /services.json
   def index
@@ -75,5 +75,13 @@ class ServicesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
       params.require(:service).permit(:store_name,:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :charges, :service_category, :description)
+    end
+
+    def layout_per_action
+      if action_name == "index" or action_name ==  "product_service" 
+           "application"
+      else
+        "backend"
+      end
     end
 end

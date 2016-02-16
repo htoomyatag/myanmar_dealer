@@ -1,6 +1,6 @@
 class MachinesController < ApplicationController
   before_action :set_machine, only: [:show, :edit, :update, :destroy]
-
+   layout :layout_per_action
   # GET /machines
   # GET /machines.json
   def index
@@ -74,5 +74,13 @@ class MachinesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def machine_params
       params.require(:machine).permit(:store_name,:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :dimension, :weight, :made_by_country, :made_with, :description, :brand, :category, :modal_number, :specification, :color)
+    end
+
+    def layout_per_action
+      if action_name == "index" or action_name ==  "product_machines" 
+           "application"
+      else
+        "backend"
+      end
     end
 end

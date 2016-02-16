@@ -1,6 +1,6 @@
 class BeautyEquipmentsController < ApplicationController
   before_action :set_beauty_equipment, only: [:show, :edit, :update, :destroy]
-
+   layout :layout_per_action
   # GET /beauty_equipments
   # GET /beauty_equipments.json
   def index
@@ -75,5 +75,13 @@ class BeautyEquipmentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def beauty_equipment_params
       params.require(:beauty_equipment).permit(:store_name,:seller_id,:price,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :category, :brand, :made_by_country, :description, :feature, :modal_number, :color)
+    end
+
+    def layout_per_action
+      if action_name == "index" or "product_beauty_equipments"
+           "application"
+      else
+        "backend"
+      end
     end
 end

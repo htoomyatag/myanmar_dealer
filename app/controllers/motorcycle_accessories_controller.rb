@@ -1,6 +1,6 @@
 class MotorcycleAccessoriesController < ApplicationController
   before_action :set_motorcycle_accessory, only: [:show, :edit, :update, :destroy]
-
+   layout :layout_per_action
   # GET /motorcycle_accessories
   # GET /motorcycle_accessories.json
   def index
@@ -74,5 +74,14 @@ class MotorcycleAccessoriesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def motorcycle_accessory_params
       params.require(:motorcycle_accessory).permit(:store_name,:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :size, :weight, :made_by_country, :made_with, :description, :brand, :specification, :modal_number, :color, :feature)
+    end
+
+    
+    def layout_per_action
+      if action_name == "index" or action_name ==  "product_motorcycle_accessories" 
+           "application"
+      else
+        "backend"
+      end
     end
 end

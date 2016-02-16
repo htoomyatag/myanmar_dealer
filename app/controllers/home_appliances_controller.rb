@@ -1,6 +1,6 @@
 class HomeAppliancesController < ApplicationController
   before_action :set_home_appliance, only: [:show, :edit, :update, :destroy]
-
+   layout :layout_per_action
   # GET /home_appliances
   # GET /home_appliances.json
   def index
@@ -74,5 +74,13 @@ class HomeAppliancesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_appliance_params
       params.require(:home_appliance).permit(:store_name,:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :size, :weight, :made_by_country, :description, :brand, :category, :modal_number, :color, :feature, :power, :voltage)
+    end
+
+    def layout_per_action
+      if action_name == "index" or action_name ==  "product_home_appliances" 
+           "application"
+      else
+        "backend"
+      end
     end
 end

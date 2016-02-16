@@ -1,6 +1,6 @@
 class InstrumentsController < ApplicationController
   before_action :set_instrument, only: [:show, :edit, :update, :destroy]
-
+   layout :layout_per_action
   # GET /instruments
   # GET /instruments.json
   def index
@@ -74,5 +74,13 @@ class InstrumentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def instrument_params
       params.require(:instrument).permit(:store_name,:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :dimension, :weight, :made_by_country, :made_with, :description, :brand, :modal_number, :specification, :color)
+    end
+
+    def layout_per_action
+      if action_name == "index" or action_name ==  "product_instruments" 
+           "application"
+      else
+        "backend"
+      end
     end
 end

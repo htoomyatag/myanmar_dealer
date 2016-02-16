@@ -76,9 +76,9 @@ class FashionAccessoriesController < ApplicationController
       params.require(:fashion_accessory).permit(:store_name,:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :made_by_country, :made_with, :description, :brand)
     end
 
-        def layout_per_action
-      if action_name == "index"
-           "application"
+    def layout_per_action
+      if action_name == "index" or "product_fashion_accessories"
+        "application"
       else
         "backend"
       end

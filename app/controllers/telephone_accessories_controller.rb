@@ -1,6 +1,6 @@
 class TelephoneAccessoriesController < ApplicationController
   before_action :set_telephone_accessory, only: [:show, :edit, :update, :destroy]
-
+   layout :layout_per_action
   # GET /telephone_accessories
   # GET /telephone_accessories.json
   def index
@@ -74,5 +74,13 @@ class TelephoneAccessoriesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def telephone_accessory_params
       params.require(:telephone_accessory).permit(:store_name,:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :size, :weight, :made_by_country, :description, :brand, :category, :modal_number, :color, :feature, :operation_system)
+    end
+
+    def layout_per_action
+      if action_name == "index" or action_name ==  "product_telephone_accessories" 
+           "application"
+      else
+        "backend"
+      end
     end
 end

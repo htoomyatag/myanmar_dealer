@@ -1,6 +1,6 @@
 class GiftsController < ApplicationController
   before_action :set_gift, only: [:show, :edit, :update, :destroy]
-
+   layout :layout_per_action
   # GET /gifts
   # GET /gifts.json
   def index
@@ -74,5 +74,13 @@ class GiftsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def gift_params
       params.require(:gift).permit(:store_name,:seller_id:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :weight, :made_by_country, :made_with, :description, :color)
+    end
+
+    def layout_per_action
+      if action_name == "index" or action_name ==  "product_gifts" 
+           "application"
+      else
+        "backend"
+      end
     end
 end

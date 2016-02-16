@@ -1,6 +1,6 @@
 class SportsController < ApplicationController
   before_action :set_sport, only: [:show, :edit, :update, :destroy]
-
+   layout :layout_per_action
   # GET /sports
   # GET /sports.json
   def index
@@ -74,5 +74,13 @@ class SportsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def sport_params
       params.require(:sport).permit(:store_name,:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :weight, :made_by_country, :made_with, :description, :color, :brand, :category)
+    end
+
+    def layout_per_action
+      if action_name == "index" or action_name ==  "product_sports" 
+           "application"
+      else
+        "backend"
+      end
     end
 end

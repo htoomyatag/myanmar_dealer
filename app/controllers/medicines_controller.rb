@@ -1,6 +1,6 @@
 class MedicinesController < ApplicationController
   before_action :set_medicine, only: [:show, :edit, :update, :destroy]
-
+   layout :layout_per_action
   # GET /medicines
   # GET /medicines.json
   def index
@@ -74,5 +74,13 @@ class MedicinesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def medicine_params
       params.require(:medicine).permit(:store_name,:seller_id,:price,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :category, :certification, :ingredient, :usage, :made_by_country, :description, :caution)
+    end
+
+    def layout_per_action
+      if action_name == "index" or action_name ==  "product_medicines" 
+           "application"
+      else
+        "backend"
+      end
     end
 end

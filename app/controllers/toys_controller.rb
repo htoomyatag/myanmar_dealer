@@ -1,6 +1,6 @@
 class ToysController < ApplicationController
   before_action :set_toy, only: [:show, :edit, :update, :destroy]
-
+   layout :layout_per_action
   # GET /toys
   # GET /toys.json
   def index
@@ -74,5 +74,13 @@ class ToysController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def toy_params
       params.require(:toy).permit(:store_name,:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :weight, :made_by_country, :made_with, :description, :color, :age_group)
+    end
+
+    def layout_per_action
+      if action_name == "index" or action_name ==  "product_toys" 
+        "application"
+      else
+        "backend"
+      end
     end
 end

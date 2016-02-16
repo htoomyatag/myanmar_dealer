@@ -1,6 +1,6 @@
 class ComputersController < ApplicationController
   before_action :set_computer, only: [:show, :edit, :update, :destroy]
-
+   layout :layout_per_action
   # GET /computers
   # GET /computers.json
   def index
@@ -75,5 +75,13 @@ class ComputersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def computer_params
       params.require(:computer).permit(:store_name,:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :size, :weight, :thickness, :made_by_country, :description, :brand, :category, :modal_number, :color, :feature, :operation_system)
+    end
+
+    def layout_per_action
+      if action_name == "index" or "product_computer"
+           "application"
+      else
+        "backend"
+      end
     end
 end

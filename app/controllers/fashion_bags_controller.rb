@@ -77,8 +77,8 @@ class FashionBagsController < ApplicationController
     end
 
     def layout_per_action
-      if action_name == "index"
-           "application"
+      if action_name == "index" or "product_fashion_bags"
+        "application"
       else
         "backend"
       end

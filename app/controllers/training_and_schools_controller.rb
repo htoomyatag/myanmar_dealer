@@ -1,6 +1,6 @@
 class TrainingAndSchoolsController < ApplicationController
   before_action :set_training_and_school, only: [:show, :edit, :update, :destroy]
-
+   layout :layout_per_action
   # GET /training_and_schools
   # GET /training_and_schools.json
   def index
@@ -74,5 +74,13 @@ class TrainingAndSchoolsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def training_and_school_params
       params.require(:training_and_school).permit(:store_name,:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :fees, :period, :school, :description)
+    end
+
+    def layout_per_action
+      if action_name == "index" or action_name ==  "product_training_and_schools" 
+        "application"
+      else
+        "backend"
+      end
     end
 end

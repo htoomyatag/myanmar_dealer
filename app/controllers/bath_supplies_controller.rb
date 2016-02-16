@@ -1,6 +1,6 @@
 class BathSuppliesController < ApplicationController
   before_action :set_bath_supply, only: [:show, :edit, :update, :destroy]
-
+   layout :layout_per_action
   # GET /bath_supplies
   # GET /bath_supplies.json
   def index
@@ -74,5 +74,13 @@ class BathSuppliesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def bath_supply_params
       params.require(:bath_supply).permit(:store_name,:seller_id,:price,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :category, :ingredient, :usage, :made_by_country, :description, :brand, :effect, :certification, :age_group)
+    end
+
+    def layout_per_action
+      if action_name == "index" or "product_bath_supplies"
+           "application"
+      else
+        "backend"
+      end
     end
 end

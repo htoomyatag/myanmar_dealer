@@ -1,6 +1,6 @@
 class EquipmentController < ApplicationController
   before_action :set_equipment, only: [:show, :edit, :update, :destroy]
-
+   layout :layout_per_action
   # GET /equipment
   # GET /equipment.json
   def index
@@ -74,5 +74,13 @@ class EquipmentController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def equipment_params
       params.require(:equipment).permit(:store_name,:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :size, :weight, :made_by_country, :made_with, :description, :brand, :specification, :modal_number, :color)
+    end
+
+    def layout_per_action
+      if action_name == "index" or "product_equipments"
+        "application"
+      else
+        "backend"
+      end
     end
 end
