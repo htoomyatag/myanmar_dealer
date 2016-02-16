@@ -123,36 +123,36 @@
 	<div class="container">
 		<section class="products-list">			
 						<!-- Heading Starts -->
-							<h2 class="product-head">Specials Products</h2>
+							<h2 class="product-head">Motorcyle and its Accessories</h2>
 						<!-- Heading Ends -->
 						<!-- Products Row Starts -->
 							<div class="row">
 							<!-- Product #1 Starts -->
-							<% @bath_supplies.each do |bath_supply| %>
+							<% @motorcycle_accessories.each do |motorcycle_accessory| %>
 								<div class="col-md-3 col-sm-6">
 									<div class="product-col">
 										<div class="image">
-											<% if !bath_supply.avatar1_file_name.nil?  %>
-								                <%= image_tag bath_supply.avatar1.url, :id => "product_image" %>
+											<% if !motorcycle_accessory.avatar1_file_name.nil?  %>
+								                <%= image_tag motorcycle_accessory.avatar1.url, :id => "product_image" %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
 											<h4>
-												<a href="#"><%= bath_supply.title %></a>
+												<a href="#"><%= motorcycle_accessory.title %></a>
 											</h4>
 											<div class="description">
 											
 											
 											</div>
 											<div class="price">
-												<span class="price-new"><%= bath_supply.price %> MMK</span> 
-												<span class="price-old"><%= bath_supply.price + 15 %> MMK</span>
+												<span class="price-new"><%= motorcycle_accessory.price.to_i %> MMK</span> 
+												<span class="price-old"><%= motorcycle_accessory.price.to_i + 15 %> MMK</span>
 											</div>
 											<div class="cart-button">
 											
-											<%= button_to line_items_path(:mmdealer_code => bath_supply, :seller_id => bath_supply.seller_id), :class =>"btn btn-cart" do %>
+											<%= button_to line_items_path(:mmdealer_code => motorcycle_accessory, :seller_id => motorcycle_accessory.seller_id), :class =>"btn btn-cart" do %>
 											   Add to cart
 											  <i class="fa fa-shopping-cart"></i> 
 											<% end %>

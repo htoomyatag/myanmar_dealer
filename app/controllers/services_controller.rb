@@ -8,7 +8,7 @@ class ServicesController < ApplicationController
   end
 
   def product_service
-      @services = Service.all
+      @customer_service = Service.all
   end
 
 

@@ -187,7 +187,7 @@
 
 						<div class="price"><br/>
 							<span class="price-new">
-							 <%= side_product.price %> MMK
+							 <%= side_product.price.to_i %> MMK
 							</span> 
 							<span class="price-old">
 							<%= side_product.price.to_i + 20 %> MMK
@@ -322,7 +322,7 @@
 									
 									</div>
 									<div class="price">
-										<span class="price-new"><%= product.price %> MMK</span>  <br/>
+										<span class="price-new"><%= product.price.to_i %> MMK</span>  <br/>
 										<span class="price-old"><%= product.price.to_i + 15 %> MMK</span>
 									</div>
 									<div class="cart-button">
