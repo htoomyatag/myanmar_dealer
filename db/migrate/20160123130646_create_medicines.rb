@@ -11,7 +11,8 @@ class CreateMedicines < ActiveRecord::Migration
       t.text :caution
       t.integer :price
       t.integer :seller_id
-            t.string :store_name
+      t.string :store_name
+      t.integer  :quantity
 
       t.timestamps null: false
     end

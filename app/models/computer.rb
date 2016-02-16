@@ -40,3 +40,4 @@ class Computer < ActiveRecord::Base
    :seller_id => self.seller_id)
 
 end
+end

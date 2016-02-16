@@ -15,6 +15,7 @@ class CreateEquipment < ActiveRecord::Migration
       t.string :color
       t.integer :seller_id
             t.string :store_name
+            t.string :category
 
       t.timestamps null: false
     end

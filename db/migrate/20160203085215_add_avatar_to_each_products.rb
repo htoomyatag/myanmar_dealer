@@ -19,11 +19,23 @@ class AddAvatarToEachProducts < ActiveRecord::Migration
     add_attachment :computers, :avatar4
     add_attachment :computers, :avatar5
 
+    add_attachment :services, :avatar1
+    add_attachment :services, :avatar2
+    add_attachment :services, :avatar3
+    add_attachment :services, :avatar4
+    add_attachment :services, :avatar5
+
     add_attachment :electrical_equipments, :avatar1
     add_attachment :electrical_equipments, :avatar2
     add_attachment :electrical_equipments, :avatar3
     add_attachment :electrical_equipments, :avatar4
     add_attachment :electrical_equipments, :avatar5
+
+    add_attachment :medicines, :avatar1
+    add_attachment :medicines, :avatar2
+    add_attachment :medicines, :avatar3
+    add_attachment :medicines, :avatar4
+    add_attachment :medicines, :avatar5
 
     add_attachment :equipment, :avatar1
     add_attachment :equipment, :avatar2
@@ -127,6 +139,12 @@ class AddAvatarToEachProducts < ActiveRecord::Migration
     remove_attachment :beauty_equipments, :avatar3
     remove_attachment :beauty_equipments, :avatar4
     remove_attachment :beauty_equipments, :avatar5
+
+    remove_attachment :medicines, :avatar1
+    remove_attachment :medicines, :avatar2
+    remove_attachment :medicines, :avatar3
+    remove_attachment :medicines, :avatar4
+    remove_attachment :medicines, :avatar5
 
     remove_attachment :car_accessories, :avatar1
     remove_attachment :car_accessories, :avatar2
@@ -237,6 +255,13 @@ class AddAvatarToEachProducts < ActiveRecord::Migration
     remove_attachment :toys, :avatar3
     remove_attachment :toys, :avatar4
     remove_attachment :toys, :avatar5
+
+
+    remove_attachment :services, :avatar1
+    remove_attachment :services, :avatar2
+    remove_attachment :services, :avatar3
+    remove_attachment :services, :avatar4
+    remove_attachment :services, :avatar5
 
 
   end

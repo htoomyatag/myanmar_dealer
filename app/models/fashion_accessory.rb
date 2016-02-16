@@ -19,7 +19,7 @@ class FashionAccessory < ActiveRecord::Base
 
  def add_to_product
 
-      Product.create( :mmdealer_code => "fashionaccessory"+self.id.to_s,:seller_id => self.seller_id
+      Product.create( :mmdealer_code => "fashionaccessory"+self.id.to_s,:seller_id => self.seller_id,
       :title => self.title,
       :description => self.description,
       :brand => self.brand,

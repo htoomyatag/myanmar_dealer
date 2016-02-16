@@ -6,7 +6,7 @@ class CreateComputers < ActiveRecord::Migration
       t.integer :quantity
       t.string :size
       t.string :weight
-      t.string :Thickness
+      t.string :thickness
       t.string :made_by_country
       t.text :description
       t.string :brand

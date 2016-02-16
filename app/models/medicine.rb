@@ -19,17 +19,7 @@ class Medicine < ActiveRecord::Base
 
  def add_to_product
 
-      t.string   "title"
-    t.string   "category"
-    t.string   "certification"
-    t.string   "ingredient"
-    t.text     "usage"
-    t.string   "made_by_country"
-    t.text     "description"
-    t.text     "caution"
-    t.integer  "price"
-    t.integer  "seller_id"
-
+      
 
       Product.create( :mmdealer_code => "medicine"+self.id.to_s,:seller_id => self.seller_id,
       :title => self.title,

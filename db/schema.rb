@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160203085215) do
     t.integer  "price"
     t.integer  "seller_id"
     t.string   "store_name"
+    t.integer  "quantity"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -63,6 +64,7 @@ ActiveRecord::Schema.define(version: 20160203085215) do
     t.integer  "price"
     t.integer  "seller_id"
     t.string   "store_name"
+    t.integer  "quantity"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -159,7 +161,7 @@ ActiveRecord::Schema.define(version: 20160203085215) do
     t.integer  "quantity"
     t.string   "size"
     t.string   "weight"
-    t.string   "Thickness"
+    t.string   "thickness"
     t.string   "made_by_country"
     t.text     "description"
     t.string   "brand"
@@ -247,6 +249,7 @@ ActiveRecord::Schema.define(version: 20160203085215) do
     t.string   "color"
     t.integer  "seller_id"
     t.string   "store_name"
+    t.string   "category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -390,6 +393,7 @@ ActiveRecord::Schema.define(version: 20160203085215) do
     t.string   "brand"
     t.integer  "seller_id"
     t.string   "store_name"
+    t.string   "color"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -642,6 +646,7 @@ ActiveRecord::Schema.define(version: 20160203085215) do
     t.integer  "price"
     t.integer  "seller_id"
     t.string   "store_name"
+    t.integer  "quantity"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -678,8 +683,29 @@ ActiveRecord::Schema.define(version: 20160203085215) do
     t.integer  "price"
     t.integer  "seller_id"
     t.string   "store_name"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "quantity"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "motorcycle_accessories", force: :cascade do |t|
@@ -828,8 +854,28 @@ ActiveRecord::Schema.define(version: 20160203085215) do
     t.text     "description"
     t.integer  "seller_id"
     t.string   "store_name"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
+    t.string   "avatar3_file_name"
+    t.string   "avatar3_content_type"
+    t.integer  "avatar3_file_size"
+    t.datetime "avatar3_updated_at"
+    t.string   "avatar4_file_name"
+    t.string   "avatar4_content_type"
+    t.integer  "avatar4_file_size"
+    t.datetime "avatar4_updated_at"
+    t.string   "avatar5_file_name"
+    t.string   "avatar5_content_type"
+    t.integer  "avatar5_file_size"
+    t.datetime "avatar5_updated_at"
   end
 
   create_table "sports", force: :cascade do |t|

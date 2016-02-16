@@ -29,7 +29,7 @@ class BeautyEquipment < ActiveRecord::Base
          :feature => self.feature,
          :modal_number => self.modal_number,
          :color => self.color,
-         :price => self.pric,
+         :price => self.price,
          :seller_id => self.seller_id)
 
     end
