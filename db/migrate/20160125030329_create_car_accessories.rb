@@ -15,6 +15,7 @@ class CreateCarAccessories < ActiveRecord::Migration
       t.string :color
       t.string :feature
       t.integer :seller_id
+            t.string :store_name
 
       t.timestamps null: false
     end

@@ -9,6 +9,7 @@ class CreateFashionAccessories < ActiveRecord::Migration
       t.text :description
       t.string :brand
         t.integer :seller_id
+              t.string :store_name
 
       t.timestamps null: false
     end

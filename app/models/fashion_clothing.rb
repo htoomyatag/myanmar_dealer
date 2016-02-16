@@ -20,14 +20,15 @@ class FashionClothing < ActiveRecord::Base
  def add_to_product
 
 
-      Product.create(:seller_id => self.seller_id,
+      Product.create( :mmdealer_code => self.id,:seller_id => self.seller_id,
       :title => self.title,
+      :store_name => self.store_name,
       :made_by_country => self.made_by_country,
       :description => self.description,
       :brand => self.brand,
       :price => self.price,
       :size => self.size,
-      :size => self.gender,
+      :gender => self.gender,
       :color => self.color,
       :quantity => self.quantity,
       :made_with => self.made_with)

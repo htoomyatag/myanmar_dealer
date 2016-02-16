@@ -84,7 +84,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:seller_id,:store_,:t,:cate,:ingredient,:usage,:made_by_country,:description,:brand,:effect,:certification,:age_group,:price,:feature,:modal_number,:color,:price,:quantity,:size,:weight,:made_with,:specification,:thickness,:operation_system,:bag_type,:gender,:footwear_type,:hat_type,:power,:voltage,:dimension,:ingredient,:caution ,:charges,:service_category,:feature,:fees,:period,:school)
+      params.require(:product).permit(:store_name,:mmdealer_code,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:seller_id,:store_,:t,:cate,:ingredient,:usage,:made_by_country,:description,:brand,:effect,:certification,:age_group,:price,:feature,:modal_number,:color,:price,:quantity,:size,:weight,:made_with,:specification,:thickness,:operation_system,:bag_type,:gender,:footwear_type,:hat_type,:power,:voltage,:dimension,:ingredient,:caution ,:charges,:service_category,:feature,:fees,:period,:school)
     end
 
     def layout_per_action

@@ -20,7 +20,8 @@ class ElectricalEquipment < ActiveRecord::Base
 
    
    def add_to_product
-      Product.create(:seller_id => self.seller_id,
+      Product.create(:mmdealer_code => self.id,
+        :seller_id => self.seller_id,
       :category => self.category,
       :store_name => self.store_name,
       :title => self.title,

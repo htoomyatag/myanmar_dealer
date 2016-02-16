@@ -11,6 +11,7 @@ class CreateBeautyEquipments < ActiveRecord::Migration
       t.string :color
       t.integer :price
            t.integer :seller_id
+                 t.string :store_name
 
       t.timestamps null: false
     end

@@ -40,6 +40,7 @@ class CreateProducts < ActiveRecord::Migration
     t.string   :fees
     t.string   :period
     t.string   :school
+    t.string :mmdealer_code
 
       t.timestamps null: false
     end

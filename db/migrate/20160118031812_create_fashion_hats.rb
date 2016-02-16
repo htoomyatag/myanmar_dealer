@@ -10,7 +10,7 @@ class CreateFashionHats < ActiveRecord::Migration
       t.string :brand
       t.string :hat_type
       t.integer :seller_id
-      
+            t.string :store_name
 
       t.timestamps null: false
     end

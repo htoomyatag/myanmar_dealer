@@ -18,7 +18,7 @@ class Toy < ActiveRecord::Base
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
  def add_to_product
-      Product.create(:seller_id => self.seller_id,
+      Product.create( :mmdealer_code => self.id,:seller_id => self.seller_id,
       :store_name => self.store_name,
       :title => self.title,
       :category => self.category,

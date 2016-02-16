@@ -20,7 +20,8 @@ class CarAccessory < ActiveRecord::Base
  def add_to_product
 
 
-    Product.create(:title => self.title,
+    Product.create(:mmdealer_code => self.id,
+      :title => self.title,
          :store_name => self.store_name,
     :price => self.price,
     :quantity => self.quantity,

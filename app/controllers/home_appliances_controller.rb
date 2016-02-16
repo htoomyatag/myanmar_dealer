@@ -73,6 +73,6 @@ class HomeAppliancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_appliance_params
-      params.require(:home_appliance).permit(:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :size, :weight, :made_by_country, :description, :brand, :category, :modal_number, :color, :feature, :power, :voltage)
+      params.require(:home_appliance).permit(:store_name,:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :size, :weight, :made_by_country, :description, :brand, :category, :modal_number, :color, :feature, :power, :voltage)
     end
 end

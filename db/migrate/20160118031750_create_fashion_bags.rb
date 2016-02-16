@@ -11,6 +11,7 @@ class CreateFashionBags < ActiveRecord::Migration
       t.string :size
       t.string :brand
         t.integer :seller_id
+              t.string :store_name
 
       t.timestamps null: false
     end

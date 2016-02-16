@@ -19,7 +19,7 @@ class Gift < ActiveRecord::Base
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
  def add_to_product
-      Product.create(:seller_id => self.seller_id,
+      Product.create( :mmdealer_code => self.id,:seller_id => self.seller_id,
       :title => self.title,
       :weight => self.weight,
       :quantity => self.quantity,
@@ -27,7 +27,7 @@ class Gift < ActiveRecord::Base
       :price => self.price,
       :made_by_country => self.made_by_country,
       :made_with => self.made_with,
-      :description => self.description,
+      :description => self.description
      )
   end
 

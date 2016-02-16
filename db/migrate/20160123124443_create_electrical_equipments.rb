@@ -13,6 +13,7 @@ class CreateElectricalEquipments < ActiveRecord::Migration
       t.string :modal_number
       t.string :color
       t.integer :seller_id
+            t.string :store_name
 
       t.timestamps null: false
     end

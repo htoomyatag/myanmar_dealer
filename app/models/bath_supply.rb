@@ -34,7 +34,8 @@ class BathSupply < ActiveRecord::Base
      price = self.price
      seller_id = self.seller_id
 
-     Product.create(:title => title,
+     Product.create(:mmdealer_code => self.id,
+     :title => title,
      :category => category,
      :ingredient => ingredient,
      :usage => usage,

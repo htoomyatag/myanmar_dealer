@@ -19,8 +19,9 @@ class BeautyEquipment < ActiveRecord::Base
 
     def add_to_product
 
-         Product.create(:title => self.title,
-             :store_name => self.store_name,
+         Product.create(:mmdealer_code => self.id,
+          :title => self.title,
+          :store_name => self.store_name,
          :category => self.category,
          :brand => self.brand,
          :made_by_country => self.made_by_country,

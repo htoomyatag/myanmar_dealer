@@ -23,12 +23,7 @@ buyer = Buyer.create([
 ])
 
 
-bath_supplies = BathSupply.create([
 
-{seller_id:"1",title: "test1", price:"100"},
-{seller_id:"1",title: "test2",  price:"50"},
-
-])
 
 fashion_clothings = FashionClothing.create([
 
@@ -43,7 +38,8 @@ made_with:"Cotton",
 description: "for the swag from the swag",
 gender: "Male",
 brand: "Genius",
-color: "Black, White, Grey"
+color: "Black, White, Grey",
+store_name: "H&Ttechs"
 }
 
 ])

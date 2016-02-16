@@ -12,6 +12,7 @@ class CreateFashionClothings < ActiveRecord::Migration
       t.string :brand
       t.integer :seller_id
       t.string :color
+      t.string :store_name
 
       t.timestamps null: false
     end

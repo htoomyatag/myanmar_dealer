@@ -13,6 +13,7 @@ class CreateMakeupAndSkincares < ActiveRecord::Migration
       t.string :effect
       t.integer :price
       t.integer :seller_id
+            t.string :store_name
 
       t.timestamps null: false
     end

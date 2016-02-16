@@ -15,6 +15,7 @@ class CreateMachines < ActiveRecord::Migration
       t.text :specification
       t.string :color
       t.integer :seller_id
+            t.string :store_name
 
       t.timestamps null: false
     end

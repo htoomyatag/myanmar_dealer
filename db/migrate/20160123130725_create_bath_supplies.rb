@@ -13,6 +13,7 @@ class CreateBathSupplies < ActiveRecord::Migration
       t.string :age_group
       t.integer :price
       t.integer :seller_id
+            t.string :store_name
 
       t.timestamps null: false
     end

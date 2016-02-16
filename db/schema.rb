@@ -345,6 +345,7 @@ ActiveRecord::Schema.define(version: 20160203085215) do
     t.string   "brand"
     t.integer  "seller_id"
     t.string   "color"
+    t.string   "store_name"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -755,6 +756,7 @@ ActiveRecord::Schema.define(version: 20160203085215) do
     t.string   "fees"
     t.string   "period"
     t.string   "school"
+    t.string   "mmdealer_code"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"

@@ -19,7 +19,8 @@ class Equipment < ActiveRecord::Base
 
  def add_to_product
 
-      Product.create(:seller_id => self.seller_id,
+      Product.create( :mmdealer_code => self.id,
+        :seller_id => self.seller_id,
       :title => self.title,
       :category => self.category,
       :made_by_country => self.made_by_country,
