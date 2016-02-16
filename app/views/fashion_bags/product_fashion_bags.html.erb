@@ -152,7 +152,7 @@
 											</div>
 											<div class="cart-button">
 											
-											<%= button_to line_items_path(:mmdealer_code => fashion_bag, :seller_id => fashion_bag.seller_id), :class =>"btn btn-cart" do %>
+											<%= button_to line_items_path(:mmdealer_code => "fashionbag"+fashion_bag.id.to_s, :seller_id => fashion_bag.seller_id), :class =>"btn btn-cart" do %>
 											   Add to cart
 											  <i class="fa fa-shopping-cart"></i> 
 											<% end %>
