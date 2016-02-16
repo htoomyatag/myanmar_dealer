@@ -49,10 +49,12 @@ class LineItemsController < ApplicationController
 
   def create
       @cart = current_cart
-
-      product = Product.where(:mmdealer_code => params[:mmdealer_code]).pluck(:id)
+     
+      product = Product.where("mmdealer_code = ?", params[:mmdealer_code]).ids
+      @product_id = product.to_s.gsub("[","")
+     
       seller = Seller.find(params[:seller_id])
-      @line_item = @cart.add_item(product.id,seller.id)
+      @line_item = @cart.add_item(@product_id,seller.id)
       respond_to do |format|
             if @line_item.save
               format.html { redirect_to request.referer }
