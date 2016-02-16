@@ -31,7 +31,7 @@ class Medicine < ActiveRecord::Base
     t.integer  "seller_id"
 
 
-      Product.create( :mmdealer_code => self.id,:seller_id => self.seller_id,
+      Product.create( :mmdealer_code => "medicine"+self.id.to_s,:seller_id => self.seller_id,
       :title => self.title,
       :category => self.category,
       :ingredient => self.ingredient,

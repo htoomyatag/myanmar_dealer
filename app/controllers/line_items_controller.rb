@@ -49,7 +49,8 @@ class LineItemsController < ApplicationController
 
   def create
       @cart = current_cart
-      product = Product.find(params[:product_id])
+
+      product = Product.where(:mmdealer_code => params[:mmdealer_code]).pluck(:id)
       seller = Seller.find(params[:seller_id])
       @line_item = @cart.add_item(product.id,seller.id)
       respond_to do |format|

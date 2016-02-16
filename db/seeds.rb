@@ -45,6 +45,23 @@ store_name: "H&Ttechs"
 ])
 
 
+fashion_hats = FashionHat.create([
+
+{
+seller_id:"1",
+title:"swag tee",
+price:1000,
+quantity: 12,
+made_by_country:"Thailand", 
+made_with:"Cotton",
+description: "for the swag from the swag",
+brand: "Genius",
+store_name: "H&Ttechs"
+}
+
+])
+
+
 store = Store.create([
 
 {

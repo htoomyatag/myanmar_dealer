@@ -32,7 +32,7 @@ class FashionHat < ActiveRecord::Base
 
 
 
-      Product.create( :mmdealer_code => self.id,:seller_id => self.seller_id,
+      Product.create( :mmdealer_code => "fashionhat"+self.id.to_s,:seller_id => self.seller_id,
       :title => self.title,
       :made_by_country => self.made_by_country,
       :description => self.description,

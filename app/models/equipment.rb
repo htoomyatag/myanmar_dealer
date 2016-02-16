@@ -19,7 +19,7 @@ class Equipment < ActiveRecord::Base
 
  def add_to_product
 
-      Product.create( :mmdealer_code => self.id,
+      Product.create( :mmdealer_code => "equipment"+self.id.to_s,
         :seller_id => self.seller_id,
       :title => self.title,
       :category => self.category,

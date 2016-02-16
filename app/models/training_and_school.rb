@@ -3,7 +3,7 @@ class TrainingAndSchool < ActiveRecord::Base
 		after_create :add_to_product
 	
 	 def add_to_product
-      Product.create( :mmdealer_code => self.id,:seller_id => self.seller_id,
+      Product.create( :mmdealer_code => "trainingandschool"+self.id.to_s,:seller_id => self.seller_id,
       :store_name => self.store_name,
       :title => self.title,
       :category => self.category,

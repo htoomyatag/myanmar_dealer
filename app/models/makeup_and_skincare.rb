@@ -21,7 +21,7 @@ class MakeupAndSkincare < ActiveRecord::Base
  def add_to_product
 
 
-      Product.create( :mmdealer_code => self.id,:seller_id => self.seller_id,
+      Product.create( :mmdealer_code => "makeupandskincare"+self.id.to_s,:seller_id => self.seller_id,
       :title => self.title,
       :category => self.category,
       :ingredient => self.ingredient,
