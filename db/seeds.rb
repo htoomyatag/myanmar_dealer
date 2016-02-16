@@ -7,6 +7,25 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+
+bath_supply = BathSupply.create([
+
+   {title: "aokshampoo",
+   category: "shamepoo",
+   ingredient: "livers",
+   usage: "one times a week",
+   made_by_country: "japan",
+   description: "dandruff shampoo",
+   brand: "pentine",
+   effect: "clean dandruff",
+   certification: "3453vgergrecerti",
+   age_group: "12 to 60",
+   price: "70000",
+   seller_id: "1",
+   store_name: "H&Ttechs"}
+
+])
+
 seller = Seller.create([
 
 {has_store:"Yes", name:"HtooMyatAung",company_name:"H&Ttechs", phone:"09795545748", email: "htoomyatag.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},

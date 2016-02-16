@@ -140,14 +140,14 @@
 										</div>
 										<div class="caption">
 											<h4>
-												<a href="#"><%= bath_supply.title %></a>
+												<%= link_to bath_supply.title, full_productinfo_bath_supplies_path(bath_supply) %>
 											</h4>
 											<div class="description">
 											
 											
 											</div>
 											<div class="price">
-												<span class="price-new"><%= bath_supply.price.to_i %> MMK</span> 
+												<span class="price-new"><%= bath_supply.price.to_i %> MMK</span> <br/>
 												<span class="price-old"><%= bath_supply.price.to_i + 15 %> MMK</span>
 											</div>
 											<div class="cart-button">
