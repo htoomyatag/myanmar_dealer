@@ -122,23 +122,22 @@
 								<div class="col-md-3 col-sm-6">
 									<div class="product-col">
 										<div class="image">
-											<% if !training_and_school.avatar1_file_name.nil?  %>
-								                <%= image_tag training_and_school.avatar1.url, :id => "product_image" %>
-								            <% else  %>      
+											
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
-								            <% end %>
+								          
 										</div>
 										<div class="caption">
 											<h4>
-												<a href="#"><%= training_and_school.title %></a>
+												
+												<%= link_to training_and_school.title, full_productinfo_training_and_schools_path(training_and_school) %>
 											</h4>
 											<div class="description">
 											
 											
 											</div>
 											<div class="price">
-												<span class="price-new"><%= training_and_school.price.to_i %> MMK</span> 
-												<span class="price-old"><%= training_and_school.price.to_i + 15 %> MMK</span>
+												<span class="price-new"><%= training_and_school.fees.to_i %> MMK</span> 
+												<span class="price-old"><%= training_and_school.fees.to_i + 15 %> MMK</span>
 											</div>
 											<div class="cart-button">
 											

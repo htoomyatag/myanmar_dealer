@@ -7,8 +7,8 @@ class ServicesController < ApplicationController
     @services = Service.all
   end
 
-  def product_service
-      @customer_service = Service.all
+  def product_services
+      @customer_services = Service.all
   end
 
 
@@ -78,7 +78,7 @@ class ServicesController < ApplicationController
     end
 
     def layout_per_action
-      if action_name == "index" or action_name ==  "product_service" 
+      if action_name == "index" or action_name ==  "product_services" 
            "application"
       else
         "backend"

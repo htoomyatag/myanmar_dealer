@@ -130,15 +130,16 @@
 										</div>
 										<div class="caption">
 											<h4>
-												<a href="#"><%= customer_service.title %></a>
+												
+												<%= link_to customer_service.title, full_productinfo_services_path(customer_service) %>	  
 											</h4>
 											<div class="description">
 											
 											
 											</div>
 											<div class="price">
-												<span class="price-new"><%= customer_service.price.to_i %> MMK</span> 
-												<span class="price-old"><%= customer_service.price.to_i + 15 %> MMK</span>
+												<span class="price-new"><%= customer_service.charges.to_i %> MMK</span> 
+												<span class="price-old"><%= customer_service.charges.to_i + 15 %> MMK</span>
 											</div>
 											<div class="cart-button">
 											

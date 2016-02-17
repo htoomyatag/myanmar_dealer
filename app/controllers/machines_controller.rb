@@ -8,7 +8,7 @@ class MachinesController < ApplicationController
   end
 
   def product_machines
-    @machines = Machine.all
+    @product_machines = Machine.all
   end
 
   # GET /machines/1

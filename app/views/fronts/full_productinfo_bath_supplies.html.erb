@@ -68,51 +68,41 @@
 			<!-- Nav Header Ends -->
 			<!-- Navbar Cat collapse Starts -->
 				<div class="collapse navbar-collapse navbar-cat-collapse">
-					<ul class="nav navbar-nav">
-									<li>
-							<a href="/product_by_category?category=Apparel-Textiles-Accessories" class="btn btn-1">
-				 					Accessories
-				 			</a>
+						<ul class="nav navbar-nav">
+						<li>
+						
+
+				 		 <%= link_to "Fashions related", fashion_related_path, class: "btn btn-1" %>
 
 						</li>
 						<li>
-							<a href="/product_by_category?category=Electronics" class="btn btn-1">
-				 					Electronics
-				 			</a>
+
+						 <%= link_to "Electronics", electronics_related_path, class: "btn btn-1" %>
+
+							
 						</li>
 						<li>
-							<a href="/product_by_category?category=Health-Beauty" class="btn btn-1">
-				 					Health & Beauty
-				 			</a>
+							
+				 			<%= link_to "Health & Beauty", health_beauty_related_path, class: "btn btn-1" %>
 						</li>
-						<li>
-							<a href="/product_by_category?category=Bags-Shoes-Accessories" class="btn btn-1">
-				 					Fashions
-				 			</a>
-						</li>
+						
 
 						<!--  -->
 						<li>
-							<a href="/product_by_category?category=Agriculture-Food" class="btn btn-1">
-				 					Agricultures 
-				 			</a>
+				 			<%= link_to "Industrial parts", industrial_part_path, class: "btn btn-1" %>
 						</li>
-							<li>
-							<a href="/product_by_category?category=Packaging-Advertising-Office" class="btn btn-1">
-				 					Office
-				 			</a>
+
+						<li>
+				 			<%= link_to "Sports", sports_related_path, class: "btn btn-1" %>
+						</li>
+
+						<li>
+				 			<%= link_to "Services", service_related_path, class: "btn btn-1" %>
 						</li>
 						
-							<li>
-							<a href="/product_by_category?category=Gifts-Sports-Toys" class="btn btn-1">
-				 					Sports
-				 			</a>
-						</li>
-							<li>
-							<a href="/product_by_category?category=Auto-Transportation" class="btn btn-1">
-				 					Auto Transportation
-				 			</a>
-						</li>
+						
+						
+						
 					</ul>
 				</div>
 			<!-- Navbar Cat collapse Ends -->
@@ -163,9 +153,6 @@
 			<div class="col-sm-8 product-details">
 				<div class="panel-smart">
 				<!-- Product Name Starts -->
-
-  
-
 					<h2><%= @product.title rescue "-" %></h2>
 					 
 				<!-- Product Name Ends -->
