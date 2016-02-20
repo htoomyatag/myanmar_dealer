@@ -1,1 +1,513 @@
-full_productinfo_fashion_accessories
+<div class="main-header">
+			<div class="container">
+				<div class="row">
+				<!-- Search Starts -->
+					<div class="col-md-3">
+						<div id="search">
+							<div class="input-group">
+							  <input type="text" class="form-control input-lg" placeholder="Search">
+							  <span class="input-group-btn">
+								<button class="btn btn-lg" type="button">
+									<i class="fa fa-search"></i>
+								</button>
+							  </span>
+							</div>
+						</div>	
+					</div>
+				<!-- Search Ends -->
+				<!-- Logo Starts -->
+					<div class="col-md-6">
+						<div id="logo">
+							<a href="#"><img src="/assets/logo.png" title="Spice Shoppe" alt="Spice Shoppe" class="img-responsive" /></a>
+						</div>
+					</div>
+				<!-- Logo Starts -->				
+				<!-- Shopping Cart Starts -->
+					<div class="col-md-3">
+						<div id="cart" class="btn-group btn-block">
+							<button type="button" data-toggle="dropdown" class="btn btn-block btn-lg dropdown-toggle">
+								<i class="fa fa-shopping-cart"></i>
+								<span class="hidden-md">Cart:</span> 
+								<span id="cart-total"> <%= (@cart.total_quantity) %> item(s) -   <%= (@cart.total_price) %> MMK</span>
+								<i class="fa fa-caret-down"></i>
+							</button>
+							<ul class="dropdown-menu pull-right">
+							    <li>
+									<%= render (@cart.line_items) %>
+								</li>
+							
+								<li>
+									<p class="text-right btn-block1">
+										<a href="/check_out">
+											View Cart
+										</a>
+										<a href="/check_out">
+											Checkout
+										</a>
+									</p>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				<!-- Shopping Cart Ends -->
+				</div>
+			</div>
+		</div>
+	<!-- Main Header Ends -->
+	<!-- Main Menu Starts -->
+		<nav id="main-menu" class="navbar" role="navigation">
+			<div class="container">
+			<!-- Nav Header Starts -->
+				<div class="navbar-header">
+					<button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-cat-collapse">
+						<span class="sr-only">Toggle Navigation</span>
+						<i class="fa fa-bars"></i>
+					</button>
+				</div>
+			<!-- Nav Header Ends -->
+			<!-- Navbar Cat collapse Starts -->
+				<div class="collapse navbar-collapse navbar-cat-collapse">
+					<ul class="nav navbar-nav">
+									<li>
+							<a href="/product_by_category?category=Apparel-Textiles-Accessories" class="btn btn-1">
+				 					Accessories
+				 			</a>
+
+						</li>
+						<li>
+							<a href="/product_by_category?category=Electronics" class="btn btn-1">
+				 					Electronics
+				 			</a>
+						</li>
+						<li>
+							<a href="/product_by_category?category=Health-Beauty" class="btn btn-1">
+				 					Health & Beauty
+				 			</a>
+						</li>
+						<li>
+							<a href="/product_by_category?category=Bags-Shoes-Accessories" class="btn btn-1">
+				 					Fashions
+				 			</a>
+						</li>
+
+						<!--  -->
+						<li>
+							<a href="/product_by_category?category=Agriculture-Food" class="btn btn-1">
+				 					Agricultures 
+				 			</a>
+						</li>
+							<li>
+							<a href="/product_by_category?category=Packaging-Advertising-Office" class="btn btn-1">
+				 					Office
+				 			</a>
+						</li>
+						
+							<li>
+							<a href="/product_by_category?category=Gifts-Sports-Toys" class="btn btn-1">
+				 					Sports
+				 			</a>
+						</li>
+							<li>
+							<a href="/product_by_category?category=Auto-Transportation" class="btn btn-1">
+				 					Auto Transportation
+				 			</a>
+						</li>
+					</ul>
+				</div>
+			<!-- Navbar Cat collapse Ends -->
+			</div>
+		</nav>
+	<!-- Main Menu Ends -->
+	</header>
+<div id="main-container" class="container">
+	<!-- Breadcrumb Starts -->
+		<ol class="breadcrumb">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="category-grid.html">Category</a></li>
+			<li class="active">Product</li>
+		</ol>
+	<!-- Breadcrumb Ends -->
+	<!-- Product Info Starts -->
+		<div class="row product-info full">
+		<!-- Left Starts -->
+			<div class="col-sm-4 images-block">
+				<a href="/assets/product-images/big-pimg1.jpg">
+					<img src="/assets/product-images/pimg3.jpg" alt="Image" class="img-responsive thumbnail" />
+				</a>
+				<ul class="list-unstyled list-inline">
+					<li>
+						<a href="/assets/product-images/big-pimg2.jpg">
+							<img src="/assets/product-images/thumb1.jpg" alt="Image" class="img-responsive thumbnail" />
+						</a>
+					</li>
+					<li>
+						<a href="/assets/product-images/big-pimg3.jpg">
+							<img src="/assets/product-images/thumb2.jpg" alt="Image" class="img-responsive thumbnail" />
+						</a>
+					</li>
+					<li>
+						<a href="/assets/product-images/big-pimg4.jpg">
+							<img src="/assets/product-images/thumb3.jpg" alt="Image" class="img-responsive thumbnail" />
+						</a>
+					</li>
+					<li>
+						<a href="/assets/product-images/big-pimg4.jpg">
+							<img src="/assets/product-images/thumb4.jpg" alt="Image" class="img-responsive thumbnail" />
+						</a>
+					</li>
+				</ul>
+			</div>
+		<!-- Left Ends -->
+		<!-- Right Starts -->
+			<div class="col-sm-8 product-details">
+				<div class="panel-smart">
+				<!-- Product Name Starts -->
+					<h2><%= @product.title rescue "-" %></h2>
+					 
+				<!-- Product Name Ends -->
+					<hr />
+				<!-- Manufacturer Starts -->
+					<ul class="list-unstyled manufacturer">
+					    <li>
+							<span>Brand:</span> <%= @product.brand rescue "-"%>
+						</li>
+						<li>
+							<span>Color:</span> <%= @product.color rescue "-" %>
+						</li>
+						<li><span>Size:</span> <%= @product.size rescue "-" %>
+						</li>
+						<li><span>Gender:</span> <%= @product.gender rescue "-" %>
+						</li>
+						<li><span>Quantity:</span>  <%= @product.quantity rescue "-" %>
+						</li>
+						<li>
+							<span>Availability:</span> <strong class="label label-danger">Out Of Stock</strong>
+						</li>
+						<li>
+							<span>Made in:</span> <%= @product.made_by_country rescue "-" %>
+						</li>
+						<li>
+							<span>Made with:</span> <%= @product.made_with rescue "-" %>
+						</li>
+					</ul>
+				<!-- Manufacturer Ends -->
+					<hr />
+				<!-- Price Starts -->
+					<div class="price">
+						<span class="price-head">Price :</span>
+						<span class="price-new"><%= @product.price.to_i %> MMK
+						</span> 
+						<span class="price-old"><%= @product.price.to_i + 15 %> MMK
+						</span> 
+						<br/>
+						<span class="price-head">Delivery Fees:</span>
+						<span class="price-new"> 
+							<input id="delivery_fees">
+						</span> 
+					</div>
+				<!-- Price Ends -->
+					<hr />
+				<!-- Available Options Starts -->
+					<div class="options">
+						<h3>Delivery Options</h3>
+						<div class="form-group">
+						<label for="select" class="control-label text-uppercase">Choose:</label>
+						<select name="select" id="select" class="form-control">
+								<option value="1" selected>Delivery Agency</option>
+								<option value="transporter"> 
+									MM TRANSPORTER
+								</option>
+						</select><br/>
+
+						<select id="select_city" class="form-control">
+
+								<option value="1" selected>Shipping to</option>
+								<option value="2000"> 
+										Ahlone	
+								</option>
+								<option value="2000"> 
+										Kyimyindaing
+										</option>
+								<option value="2000"> 
+										Sanchaung
+								</option>
+								<option value="2000"> 	
+										Latha	
+										</option>
+								<option value="2000"> 
+										Lanmadaw
+										</option>
+								<option value="2000"> 
+										Pabedan	
+										</option>
+								<option value="2000"> 
+										Kyauktada
+										</option>
+								<option value="2000"> 
+										Botahtaung
+										</option>
+								<option value="2000"> 
+										Pazundaung
+										</option>
+								<option value="2000"> 
+										Tamwe
+										</option>
+								<option value="2000"> 
+										Mingalar taung nyunt
+										</option>
+								<option value="2000"> 
+										Thingangyun
+										</option>
+								<option value="2000"> 
+										Thuwunna
+										</option>
+								<option value="2000"> 
+										Bahan 
+										</option>
+								<option value="2000"> 
+										Hlaing
+										</option>
+								<option value="2000"> 
+										Mayangon
+										</option>
+								<option value="2000"> 
+										Yankin
+										</option>
+								<option value="2000"> 
+										Tharkayta
+								</option>
+								<!--  -->
+
+								<option value="2500"> 
+								Dagon myothit(south)
+								</option>
+								<option value="2500"> 	
+								Dagon myothit(north)	
+								</option>
+								<option value="2500"> 
+								Dagon myothit(east)	
+								</option>
+								<option value="2500"> 
+								Dagon myothit(west)	
+								</option>
+								<option value="2500"> 
+								Okkalapa(south)	
+								</option>
+								<option value="2500"> 
+								Okkalapa(north)	
+								</option>
+								<option value="2500"> 
+								Bayintnaung	
+								</option>
+								<option value="2500"> 
+								Insein	
+								</option>
+								<option value="2500"> 
+								Sawbuagyigong	
+								</option>
+								<option value="2500"> 
+								Mingalardon	
+								</option>
+
+								<option value="3500"> 
+								 Tanyin
+								</option>
+
+								<option value="3500"> 
+									Shwepyithar
+								</option>
+
+								<option value="3500"> 
+									Hlaing thar yar
+								</option>
+
+						</select>
+
+						</div>	
+					
+						<div class="cart-button button-group">
+							
+								<%= button_to line_items_path(:mmdealer_code => @product, :seller_id => @product.seller_id), :class =>"btn btn-cart" do %>
+									   Add to cart
+									  <i class="fa fa-shopping-cart"></i> 
+								<% end %>									
+						</div>
+					</div>
+				<!-- Available Options Ends -->
+				</div>
+			</div>
+		<!-- Right Ends -->
+		</div>
+	<!-- Product Info Ends -->	
+	<!-- Tabs Starts -->
+		<div class="tabs-panel panel-smart">
+		<!-- Nav Tabs Starts -->
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a href="#tab-description">Description</a>
+				</li>
+				
+			</ul>
+		<!-- Nav Tabs Ends -->
+		<!-- Tab Content Starts -->
+			<div class="tab-content clearfix">
+			<!-- Description Starts -->
+				<div class="tab-pane active" id="tab-description">
+					<p>
+						<%= @product.description rescue "-" %> 
+					</p>
+					
+				</div>
+			<!-- Description Ends -->
+			<!-- Specification Starts -->
+				<div class="tab-pane" id="tab-specification">
+					<table class="table table-bordered">
+						<thead>
+						  <tr>
+							<td colspan="2"><strong>Name</strong></td>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td>Name</td>
+							<td>Attribute Specification</td>
+						  </tr>
+						</tbody>
+					</table>
+					<table class="table table-bordered">
+						<thead>
+						  <tr>
+							<td colspan="2"><strong>Name</strong></td>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td>Name</td>
+							<td>Attribute Specification</td>
+						  </tr>
+						</tbody>
+					</table>
+				</div>
+			<!-- Specification Ends -->
+			<!-- Additional Information Starts -->
+				<div class="tab-pane" id="tab-ainfo">
+					<p>
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+					</p>
+				</div>
+			<!-- Additional Information Ends -->
+			<!-- Review Starts -->
+				<div class="tab-pane" id="tab-review">
+					<form class="form-horizontal">
+						<div class="form-group required">
+							<label class="col-sm-2 control-label" for="input-name">Name</label>
+							<div class="col-sm-10">
+							<input type="text" name="name" value="" id="input-name" class="form-control" />
+							</div>
+						</div>
+						<div class="form-group required">
+							<label class="col-sm-2 control-label" for="input-review">Review</label>
+							<div class="col-sm-10">
+								<textarea name="text" rows="5" id="input-review" class="form-control"></textarea>
+								<div class="help-block">
+									Some note goes here..
+								</div>
+							</div>
+						</div>
+						<div class="form-group required">
+							<label class="col-sm-2 control-label ratings">Ratings</label>
+							<div class="col-sm-10">
+								Bad&nbsp;
+								<input type="radio" name="rating" value="1" />
+								&nbsp;
+								<input type="radio" name="rating" value="2" />
+								&nbsp;
+								<input type="radio" name="rating" value="3" />
+								&nbsp;
+								<input type="radio" name="rating" value="4" />
+								&nbsp;
+								<input type="radio" name="rating" value="5" />
+								&nbsp;Good
+							</div>
+						</div>
+						<div class="buttons">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="button" id="button-review" class="btn btn-main">
+									Submit
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			<!-- Review Ends -->
+			</div>
+		<!-- Tab Content Ends -->
+		</div>
+	<!-- Tabs Ends -->		
+	<!-- Related Products Starts -->
+		<div class="product-info-box">
+			<h4 class="heading">Related Products</h4>
+		<!-- Products Row Starts -->
+			<div class="row">
+			<!-- Product #1 Starts -->
+			<% @relate_products.each do |relate_product| %>
+				<div class="col-md-3 col-sm-6">
+					<div class="product-col">
+						<div class="image">
+						<% if !relate_product.avatar1_file_name.nil?  %>
+					        <%= image_tag relate_product.avatar1.url, :id => "product_menu_image", :class=>"img-responsive" %>
+					    <% else  %>      
+							<img src="/assets/no_image.jpg" alt="product" class="img-responsive" id="product_image" />
+					    <% end %>
+						</div>
+						<div class="caption">
+							<h4><a href="product.html">
+								<%= relate_product.title %>
+							</a></h4>
+							<div class="description">
+								We are so lucky living in such a wonderful time. Our almost unlimited ...
+							</div>
+							<div class="price">
+								<span class="price-new">$199.50</span> 
+								<span class="price-old">$249.50</span>
+							</div>
+							<div class="cart-button button-group">
+								
+								<%= button_to line_items_path(:mmdealer_code => relate_product, :seller_id => relate_product.seller_id), :class =>"btn btn-cart" do %>
+									   Add to cart
+									  <i class="fa fa-shopping-cart"></i> 
+								<% end %>								
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+			
+			<!-- Product #4 Ends -->
+			</div>
+		<!-- Products Row Ends -->
+		</div>
+	<!-- Related Products Ends -->
+	</div>
+
+
+
+	<script type="text/javascript">
+
+
+   document.getElementById('select_city').onclick = function(e){
+
+  
+
+
+
+ var package_name = document.getElementById('select_city').options[document.getElementById('select_city').selectedIndex].value;
+
+
+document.getElementById('delivery_fees').value = package_name;
+
+
+   };
+
+	</script>
