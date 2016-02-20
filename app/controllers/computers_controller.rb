@@ -8,7 +8,7 @@ class ComputersController < ApplicationController
   end
 
 
-  def product_computer
+  def product_computers
       @computers = Computer.all
   end
 

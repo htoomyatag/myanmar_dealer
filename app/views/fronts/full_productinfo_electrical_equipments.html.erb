@@ -167,8 +167,17 @@
 					 
 				<!-- Product Name Ends -->
 					<hr />
+
+ 
+
 				<!-- Manufacturer Starts -->
 					<ul class="list-unstyled manufacturer">
+					    <li>
+							<span>Modal:</span> <%= @product.modal_number rescue "-"%>
+						</li>
+						<li>
+							<span>Category:</span> <%= @product.category rescue "-"%>
+						</li>
 					    <li>
 							<span>Brand:</span> <%= @product.brand rescue "-"%>
 						</li>
@@ -177,7 +186,7 @@
 						</li>
 						<li><span>Size:</span> <%= @product.size rescue "-" %>
 						</li>
-						<li><span>Gender:</span> <%= @product.gender rescue "-" %>
+						<li><span>Weight:</span> <%= @product.weight rescue "-" %>
 						</li>
 						<li><span>Quantity:</span>  <%= @product.quantity rescue "-" %>
 						</li>
@@ -187,9 +196,7 @@
 						<li>
 							<span>Made in:</span> <%= @product.made_by_country rescue "-" %>
 						</li>
-						<li>
-							<span>Made with:</span> <%= @product.made_with rescue "-" %>
-						</li>
+						
 					</ul>
 				<!-- Manufacturer Ends -->
 					<hr />
@@ -360,42 +367,7 @@
 					
 				</div>
 			<!-- Description Ends -->
-			<!-- Specification Starts -->
-				<div class="tab-pane" id="tab-specification">
-					<table class="table table-bordered">
-						<thead>
-						  <tr>
-							<td colspan="2"><strong>Name</strong></td>
-						  </tr>
-						</thead>
-						<tbody>
-						  <tr>
-							<td>Name</td>
-							<td>Attribute Specification</td>
-						  </tr>
-						</tbody>
-					</table>
-					<table class="table table-bordered">
-						<thead>
-						  <tr>
-							<td colspan="2"><strong>Name</strong></td>
-						  </tr>
-						</thead>
-						<tbody>
-						  <tr>
-							<td>Name</td>
-							<td>Attribute Specification</td>
-						  </tr>
-						</tbody>
-					</table>
-				</div>
-			<!-- Specification Ends -->
-			<!-- Additional Information Starts -->
-				<div class="tab-pane" id="tab-ainfo">
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-					</p>
-				</div>
+		
 			<!-- Additional Information Ends -->
 			<!-- Review Starts -->
 				<div class="tab-pane" id="tab-review">

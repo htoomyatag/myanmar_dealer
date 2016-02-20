@@ -170,6 +170,13 @@
 				<!-- Manufacturer Starts -->
 					<ul class="list-unstyled manufacturer">
 					    <li>
+							<span>Model:</span> <%= @product.modal_number rescue "-"%>
+						</li>
+						 
+						 <li>
+							<span>Category:</span> <%= @product.category rescue "-"%>
+						</li>
+					    <li>
 							<span>Brand:</span> <%= @product.brand rescue "-"%>
 						</li>
 						<li>
@@ -177,10 +184,13 @@
 						</li>
 						<li><span>Size:</span> <%= @product.size rescue "-" %>
 						</li>
-						<li><span>Gender:</span> <%= @product.gender rescue "-" %>
+						
+						<li><span>Weight:</span>  <%= @product.weight rescue "-" %>
 						</li>
-						<li><span>Quantity:</span>  <%= @product.quantity rescue "-" %>
+
+						<li><span>Thickness:</span>  <%= @product.thickness rescue "-" %>
 						</li>
+
 						<li>
 							<span>Availability:</span> <strong class="label label-danger">Out Of Stock</strong>
 						</li>
@@ -189,6 +199,11 @@
 						</li>
 						<li>
 							<span>Made with:</span> <%= @product.made_with rescue "-" %>
+						</li>
+						<li>
+							<span>OS:</span> <%= @product.operation_system rescue "-"%>
+						</li>
+						<li><span>Feature:</span>  <%= @product.feature rescue "-" %>
 						</li>
 					</ul>
 				<!-- Manufacturer Ends -->

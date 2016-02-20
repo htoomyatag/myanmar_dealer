@@ -166,9 +166,15 @@
 					<h2><%= @product.title rescue "-" %></h2>
 					 
 				<!-- Product Name Ends -->
+
+
+
 					<hr />
 				<!-- Manufacturer Starts -->
 					<ul class="list-unstyled manufacturer">
+					    <li>
+							<span>Modal:</span> <%= @product.modal_number rescue "-"%>
+						</li>
 					    <li>
 							<span>Brand:</span> <%= @product.brand rescue "-"%>
 						</li>
@@ -177,7 +183,7 @@
 						</li>
 						<li><span>Size:</span> <%= @product.size rescue "-" %>
 						</li>
-						<li><span>Gender:</span> <%= @product.gender rescue "-" %>
+						<li><span>Weight:</span> <%= @product.weight rescue "-" %>
 						</li>
 						<li><span>Quantity:</span>  <%= @product.quantity rescue "-" %>
 						</li>
@@ -189,6 +195,9 @@
 						</li>
 						<li>
 							<span>Made with:</span> <%= @product.made_with rescue "-" %>
+						</li>
+						<li>
+							<span>Specification:</span> <%= @product.specification rescue "-" %>
 						</li>
 					</ul>
 				<!-- Manufacturer Ends -->

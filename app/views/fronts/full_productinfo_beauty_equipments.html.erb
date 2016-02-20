@@ -159,33 +159,35 @@
 					<hr />
 				<!-- Manufacturer Starts -->
 					<ul class="list-unstyled manufacturer">
+
+     					<li>
+							<span>Model:</span> <%= @product.modal_number rescue "-"%>
+						</li>
+
+						<li>
+							<span>Color:</span> <%= @product.color rescue "-"%>
+						</li>
+
 					    <li>
-							<span>Brand:</span> <%= @product.brand rescue "-"%>
+							<span>Category:</span> <%= @product.category rescue "-"%>
 						</li>
 						 <li>
-							<span>Age Group:</span> <%= @product.age_group rescue "-"%>
+							<span>Brand:</span> <%= @product.brand rescue "-"%>
 						</li>
-						<li>
-							<span>Certification:</span> <%= @product.certification rescue "-" %>
-						</li>
+					
 					
 						
 						<li>
 							<span>Availability:</span> <strong class="label label-danger">Out Of Stock</strong>
 						</li>
-						<li>
-							<span>Usage:</span> <%= @product.usage rescue "-" %>
-						</li>
+					
 						<li>
 							<span>Made in:</span> <%= @product.made_by_country rescue "-" %>
 						</li>
-							<li><span>Ingredient:</span> <%= @product.ingredient rescue "-" %>
+							<li><span>Feature:</span> <%= @product.feature rescue "-" %>
 						</li>
 							
-						<li>
-						<span>Effect:</span> <%= @product.effect rescue "-" %>
-						</li>
-
+						
 
 						
 						
