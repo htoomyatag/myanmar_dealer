@@ -173,12 +173,24 @@
 							<span>Brand:</span> <%= @product.brand rescue "-"%>
 						</li>
 						<li>
+							<span>Category:</span> <%= @product.category rescue "-"%>
+						</li>
+						<li>
+							<span>Certification:</span> <%= @product.certification rescue "-"%>
+						</li>
+						<li>
+							<span>Ingredient:</span> <%= @product.ingredient rescue "-"%>
+						</li>
+						<li>
+							<span>effect:</span> <%= @product.effect rescue "-"%>
+						</li>
+						<li>
+							<span>Usage:</span> <%= @product.usage rescue "-"%>
+						</li>
+						<li>
 							<span>Color:</span> <%= @product.color rescue "-" %>
 						</li>
-						<li><span>Size:</span> <%= @product.size rescue "-" %>
-						</li>
-						<li><span>Gender:</span> <%= @product.gender rescue "-" %>
-						</li>
+					
 						<li><span>Quantity:</span>  <%= @product.quantity rescue "-" %>
 						</li>
 						<li>
@@ -187,9 +199,7 @@
 						<li>
 							<span>Made in:</span> <%= @product.made_by_country rescue "-" %>
 						</li>
-						<li>
-							<span>Made with:</span> <%= @product.made_with rescue "-" %>
-						</li>
+						
 					</ul>
 				<!-- Manufacturer Ends -->
 					<hr />

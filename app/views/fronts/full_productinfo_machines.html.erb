@@ -164,7 +164,7 @@
 				<div class="panel-smart">
 				<!-- Product Name Starts -->
 					<h2><%= @product.title rescue "-" %></h2>
-					 
+
 				<!-- Product Name Ends -->
 					<hr />
 				<!-- Manufacturer Starts -->
@@ -172,13 +172,20 @@
 					    <li>
 							<span>Brand:</span> <%= @product.brand rescue "-"%>
 						</li>
+						 <li>
+							<span>Modal:</span> <%= @product.modal_number rescue "-"%>
+						</li>
+						<li>
+							<span>Category:</span> <%= @product.category rescue "-"%>
+						</li>
 						<li>
 							<span>Color:</span> <%= @product.color rescue "-" %>
 						</li>
-						<li><span>Size:</span> <%= @product.size rescue "-" %>
+						<li><span>Weight:</span> <%= @product.weight rescue "-" %>
 						</li>
-						<li><span>Gender:</span> <%= @product.gender rescue "-" %>
+						<li><span>Dimension:</span> <%= @product.dimension rescue "-" %>
 						</li>
+						
 						<li><span>Quantity:</span>  <%= @product.quantity rescue "-" %>
 						</li>
 						<li>
@@ -189,6 +196,8 @@
 						</li>
 						<li>
 							<span>Made with:</span> <%= @product.made_with rescue "-" %>
+						</li>
+						<li><span>Specification:</span> <%= @product.specification rescue "-" %>
 						</li>
 					</ul>
 				<!-- Manufacturer Ends -->

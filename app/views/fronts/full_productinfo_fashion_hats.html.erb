@@ -167,17 +167,15 @@
 					 
 				<!-- Product Name Ends -->
 					<hr />
+
+					  
 				<!-- Manufacturer Starts -->
 					<ul class="list-unstyled manufacturer">
 					    <li>
 							<span>Brand:</span> <%= @product.brand rescue "-"%>
 						</li>
-						<li>
-							<span>Color:</span> <%= @product.color rescue "-" %>
-						</li>
-						<li><span>Size:</span> <%= @product.size rescue "-" %>
-						</li>
-						<li><span>Gender:</span> <%= @product.gender rescue "-" %>
+						
+						<li><span>Hat Type:</span> <%= @product.hat_type rescue "-" %>
 						</li>
 						<li><span>Quantity:</span>  <%= @product.quantity rescue "-" %>
 						</li>

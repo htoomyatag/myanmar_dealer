@@ -165,6 +165,7 @@
 				<!-- Product Name Starts -->
 					<h2><%= @product.title rescue "-" %></h2>
 					 
+
 				<!-- Product Name Ends -->
 					<hr />
 				<!-- Manufacturer Starts -->
@@ -175,9 +176,7 @@
 						<li>
 							<span>Color:</span> <%= @product.color rescue "-" %>
 						</li>
-						<li><span>Size:</span> <%= @product.size rescue "-" %>
-						</li>
-						<li><span>Gender:</span> <%= @product.gender rescue "-" %>
+						<li><span>Weight:</span> <%= @product.weight rescue "-" %>
 						</li>
 						<li><span>Quantity:</span>  <%= @product.quantity rescue "-" %>
 						</li>

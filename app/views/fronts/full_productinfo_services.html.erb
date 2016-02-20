@@ -169,36 +169,23 @@
 					<hr />
 				<!-- Manufacturer Starts -->
 					<ul class="list-unstyled manufacturer">
+
+  
+
 					    <li>
-							<span>Brand:</span> <%= @product.brand rescue "-"%>
+							<span>Service:</span> <%= @product.service_category rescue "-"%>
 						</li>
-						<li>
-							<span>Color:</span> <%= @product.color rescue "-" %>
-						</li>
-						<li><span>Size:</span> <%= @product.size rescue "-" %>
-						</li>
-						<li><span>Gender:</span> <%= @product.gender rescue "-" %>
-						</li>
-						<li><span>Quantity:</span>  <%= @product.quantity rescue "-" %>
-						</li>
-						<li>
-							<span>Availability:</span> <strong class="label label-danger">Out Of Stock</strong>
-						</li>
-						<li>
-							<span>Made in:</span> <%= @product.made_by_country rescue "-" %>
-						</li>
-						<li>
-							<span>Made with:</span> <%= @product.made_with rescue "-" %>
-						</li>
+						
+						
 					</ul>
 				<!-- Manufacturer Ends -->
 					<hr />
 				<!-- Price Starts -->
 					<div class="price">
-						<span class="price-head">Price :</span>
-						<span class="price-new"><%= @product.price.to_i %> MMK
+						<span class="price-head">Charges :</span>
+						<span class="price-new"><%= @product.charges.to_i %> MMK
 						</span> 
-						<span class="price-old"><%= @product.price.to_i + 15 %> MMK
+						<span class="price-old"><%= @product.charges.to_i + 15 %> MMK
 						</span> 
 						<br/>
 						<span class="price-head">Delivery Fees:</span>

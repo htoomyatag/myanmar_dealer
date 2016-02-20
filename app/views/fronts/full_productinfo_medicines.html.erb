@@ -164,21 +164,28 @@
 				<div class="panel-smart">
 				<!-- Product Name Starts -->
 					<h2><%= @product.title rescue "-" %></h2>
-					 
+
 				<!-- Product Name Ends -->
 					<hr />
 				<!-- Manufacturer Starts -->
 					<ul class="list-unstyled manufacturer">
-					    <li>
-							<span>Brand:</span> <%= @product.brand rescue "-"%>
+					  
+						 <li>
+							<span>Category:</span> <%= @product.category rescue "-"%>
 						</li>
-						<li>
-							<span>Color:</span> <%= @product.color rescue "-" %>
+						 <li>
+							<span>Certification:</span> <%= @product.certification rescue "-"%>
 						</li>
-						<li><span>Size:</span> <%= @product.size rescue "-" %>
+						 <li>
+							<span>Ingredient:</span> <%= @product.ingredient rescue "-"%>
 						</li>
-						<li><span>Gender:</span> <%= @product.gender rescue "-" %>
+						 <li>
+							<span>usage:</span> <%= @product.usage rescue "-"%>
 						</li>
+						 <li>
+							<span>Caution:</span> <%= @product.caution rescue "-"%>
+						</li>
+						
 						<li><span>Quantity:</span>  <%= @product.quantity rescue "-" %>
 						</li>
 						<li>
@@ -187,9 +194,7 @@
 						<li>
 							<span>Made in:</span> <%= @product.made_by_country rescue "-" %>
 						</li>
-						<li>
-							<span>Made with:</span> <%= @product.made_with rescue "-" %>
-						</li>
+						
 					</ul>
 				<!-- Manufacturer Ends -->
 					<hr />

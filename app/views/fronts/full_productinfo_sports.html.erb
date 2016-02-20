@@ -167,18 +167,22 @@
 					 
 				<!-- Product Name Ends -->
 					<hr />
+
 				<!-- Manufacturer Starts -->
 					<ul class="list-unstyled manufacturer">
 					    <li>
 							<span>Brand:</span> <%= @product.brand rescue "-"%>
 						</li>
 						<li>
+							<span>Category:</span> <%= @product.category rescue "-"%>
+						</li>
+						<li>
 							<span>Color:</span> <%= @product.color rescue "-" %>
 						</li>
-						<li><span>Size:</span> <%= @product.size rescue "-" %>
+						<li>
+							<span>Weight:</span> <%= @product.weight rescue "-" %>
 						</li>
-						<li><span>Gender:</span> <%= @product.gender rescue "-" %>
-						</li>
+						
 						<li><span>Quantity:</span>  <%= @product.quantity rescue "-" %>
 						</li>
 						<li>
