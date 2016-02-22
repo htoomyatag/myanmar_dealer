@@ -189,28 +189,44 @@ class FrontsController < ApplicationController
         @fashion_bags = FashionBag.all
         @fashion_hats = FashionHat.all
         @fashion_footwears = FashionFootwear.all
-         @fashion_clothings = FashionClothing.all
+        @fashion_clothings = FashionClothing.all
     end
      
     def electronics_related
-
+        @electrical_equipments = ElectricalEquipment.all
+        @computers = Computer.all
+        @telephone_accessories = TelephoneAccessory.all
+        @home_appliances = HomeAppliance.all
     end
 
     def health_beauty_related
+       @medicines = Medicine.all
+       @bath_supplies = BathSupply.all
+       @beauty_equipments = BeautyEquipment.all
+       @makeup_and_skincares = MakeupAndSkincare.all
      
     end
      
     def industrial_part
+       @equipments = Equipment.all
+       @product_machines = Machine.all
+       @instruments = Instrument.all
+
 
     end
     def auto_transportation
 
     end
     def sports_related
+       @sports = Sport.all
+       @gifts = Gift.all
+       @toys = Toy.all
+
     end 
 
     def service_related
-
+        @customer_services = Service.all
+          @training_and_schools = TrainingAndSchool.all
     end
 
 
