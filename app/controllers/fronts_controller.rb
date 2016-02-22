@@ -185,7 +185,11 @@ class FrontsController < ApplicationController
     end
 
     def fashion_related
-
+        @fashion_accessories = FashionAccessory.all
+        @fashion_bags = FashionBag.all
+        @fashion_hats = FashionHat.all
+        @fashion_footwears = FashionFootwear.all
+         @fashion_clothings = FashionClothing.all
     end
      
     def electronics_related

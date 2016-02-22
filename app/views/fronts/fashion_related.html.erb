@@ -1,1 +1,376 @@
-fashion_related
+<div class="main-header">
+			<div class="container">
+				<div class="row">
+				<!-- Search Starts -->
+					<div class="col-md-3">
+						<div id="search">
+							<div class="input-group">
+							  <input type="text" class="form-control input-lg" placeholder="Search">
+							  <span class="input-group-btn">
+								<button class="btn btn-lg" type="button">
+									<i class="fa fa-search"></i>
+								</button>
+							  </span>
+							</div>
+						</div>	
+					</div>
+				<!-- Search Ends -->
+				<!-- Logo Starts -->
+					<div class="col-md-6">
+						<div id="logo">
+							<a href="#"><img src="/assets/logo.png" title="Spice Shoppe" alt="Spice Shoppe" class="img-responsive" /></a>
+						</div>
+					</div>
+				<!-- Logo Starts -->				
+				<!-- Shopping Cart Starts -->
+					<div class="col-md-3">
+						<div id="cart" class="btn-group btn-block">
+							<button type="button" data-toggle="dropdown" class="btn btn-block btn-lg dropdown-toggle">
+								<i class="fa fa-shopping-cart"></i>
+								<span class="hidden-md">Cart:</span> 
+								<span id="cart-total"> <%= (@cart.total_quantity) %> item(s) -   <%= (@cart.total_price) %> MMK</span>
+								<i class="fa fa-caret-down"></i>
+							</button>
+							<ul class="dropdown-menu pull-right">
+							    <li>
+									<%= render (@cart.line_items) %>
+								</li>
+							
+								<li>
+									<p class="text-right btn-block1">
+										<a href="/check_out">
+											View Cart
+										</a>
+										<a href="/check_out">
+											Checkout
+										</a>
+									</p>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				<!-- Shopping Cart Ends -->
+				</div>
+			</div>
+		</div>
+	<!-- Main Header Ends -->
+	<!-- Main Menu Starts -->
+		<nav id="main-menu" class="navbar" role="navigation">
+			<div class="container">
+			<!-- Nav Header Starts -->
+				<div class="navbar-header">
+					<button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-cat-collapse">
+						<span class="sr-only">Toggle Navigation</span>
+						<i class="fa fa-bars"></i>
+					</button>
+				</div>
+			<!-- Nav Header Ends -->
+			<!-- Navbar Cat collapse Starts -->
+				<div class="collapse navbar-collapse navbar-cat-collapse">
+					<ul class="nav navbar-nav">
+						<li>
+						
+
+				 		 <%= link_to "Fashions related", fashion_related_path, class: "btn btn-1" %>
+
+						</li>
+						<li>
+
+						 <%= link_to "Electronics", electronics_related_path, class: "btn btn-1" %>
+
+							
+						</li>
+						<li>
+							
+				 			<%= link_to "Health & Beauty", health_beauty_related_path, class: "btn btn-1" %>
+						</li>
+						
+
+						<!--  -->
+						<li>
+				 			<%= link_to "Industrial parts", industrial_part_path, class: "btn btn-1" %>
+						</li>
+
+						<li>
+				 			<%= link_to "Sports", sports_related_path, class: "btn btn-1" %>
+						</li>
+
+						<li>
+				 			<%= link_to "Services", service_related_path, class: "btn btn-1" %>
+						</li>
+						
+						
+						
+						
+					</ul>
+				</div>
+			<!-- Navbar Cat collapse Ends -->
+			</div>
+		</nav>
+	<!-- Main Menu Ends -->
+	</header>
+	<div class="container">
+		<section class="products-list">			
+						<!-- Heading Starts -->
+							<h2 class="product-head">Fashion Accessories</h2>
+						<!-- Heading Ends -->
+						<!-- Products Row Starts -->
+							<div class="row">
+							<!-- Product #1 Starts -->
+							<% @fashion_accessories.each do |fashion_accessory| %>
+								<div class="col-md-3 col-sm-6">
+									<div class="product-col">
+										<div class="image">
+											<% if !fashion_accessory.avatar1_file_name.nil?  %>
+								                <%= image_tag fashion_accessory.avatar1.url, :id => "product_image" %>
+								            <% else  %>      
+												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
+								            <% end %>
+										</div>
+										<div class="caption">
+											<h4>
+												
+												<%= link_to fashion_accessory.title, full_productinfo_fashion_accessories_path(fashion_accessory) %>
+											</h4>
+											<div class="description">
+											
+											
+											</div>
+											<div class="price">
+												<span class="price-new"><%= fashion_accessory.price.to_i %> MMK</span> 
+												<span class="price-old"><%= fashion_accessory.price.to_i + 15 %> MMK</span>
+											</div>
+											<div class="cart-button">
+											
+											<%= button_to line_items_path(:mmdealer_code => "fashionaccessory"+fashion_accessory.id.to_s, :seller_id => fashion_accessory.seller_id), :class =>"btn btn-cart" do %>
+											   Add to cart
+											  <i class="fa fa-shopping-cart"></i> 
+											<% end %>
+
+
+																			
+											</div>
+										</div>
+									</div>
+								</div>
+							<% end %>
+							<!-- Product #1 Ends -->
+							<!-- Product #2 Starts -->
+								
+							<!-- Product #3 Ends -->
+							</div>
+						<!-- Products Row Ends -->
+		</section>
+
+				<section class="products-list">			
+						<!-- Heading Starts -->
+							<h2 class="product-head">Fashion Bags</h2>
+						<!-- Heading Ends -->
+						<!-- Products Row Starts -->
+							<div class="row">
+							<!-- Product #1 Starts -->
+							<% @fashion_bags.each do |fashion_bag| %>
+								<div class="col-md-3 col-sm-6">
+									<div class="product-col">
+										<div class="image">
+											<% if !fashion_bag.avatar1_file_name.nil?  %>
+								                <%= image_tag fashion_bag.avatar1.url, :id => "product_image" %>
+								            <% else  %>      
+												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
+								            <% end %>
+										</div>
+										<div class="caption">
+											<h4>
+												<%= link_to fashion_bag.title, full_productinfo_fashion_bags_path(fashion_bag) %>
+											</h4>
+											<div class="description">
+											
+											
+											</div>
+											<div class="price">
+												<span class="price-new"><%= fashion_bag.price.to_i %> MMK</span> 
+												<span class="price-old"><%= fashion_bag.price.to_i + 15 %> MMK</span>
+											</div>
+											<div class="cart-button">
+											
+											<%= button_to line_items_path(:mmdealer_code => "fashionbag"+fashion_bag.id.to_s, :seller_id => fashion_bag.seller_id), :class =>"btn btn-cart" do %>
+											   Add to cart
+											  <i class="fa fa-shopping-cart"></i> 
+											<% end %>
+
+
+																			
+											</div>
+										</div>
+									</div>
+								</div>
+							<% end %>
+							<!-- Product #1 Ends -->
+							<!-- Product #2 Starts -->
+								
+							<!-- Product #3 Ends -->
+							</div>
+						<!-- Products Row Ends -->
+		</section>
+
+		<section class="products-list">			
+						<!-- Heading Starts -->
+							<h2 class="product-head">Fashions & Clothings</h2>
+						<!-- Heading Ends -->
+						<!-- Products Row Starts -->
+							<div class="row">
+							<!-- Product #1 Starts -->
+							<% @fashion_clothings.each do |fashion_clothing| %>
+								<div class="col-md-3 col-sm-6">
+									<div class="product-col">
+										<div class="image">
+											<% if !fashion_clothing.avatar1_file_name.nil?  %>
+								                <%= image_tag fashion_clothing.avatar1.url, :id => "product_image" %>
+								            <% else  %>      
+												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
+								            <% end %>
+										</div>
+										<div class="caption">
+											<h4>
+												<%= link_to fashion_clothing.title, full_productinfo_fashion_clothings_path(fashion_clothing) %>
+												
+											</h4>
+											<div class="description">
+											
+											
+											</div>
+											<div class="price">
+												<span class="price-new"><%= fashion_clothing.price.to_i %> MMK</span> 
+												<span class="price-old"><%= fashion_clothing.price.to_i + 15 %> MMK</span>
+											</div>
+											<div class="cart-button">
+											
+											<%= button_to line_items_path(:mmdealer_code => "fashionclothing"+fashion_clothing.id.to_s, :seller_id => fashion_clothing.seller_id), :class =>"btn btn-cart" do %>
+											   Add to cart
+											  <i class="fa fa-shopping-cart"></i> 
+											<% end %>
+
+
+																			
+											</div>
+										</div>
+									</div>
+								</div>
+							<% end %>
+							<!-- Product #1 Ends -->
+							<!-- Product #2 Starts -->
+								
+							<!-- Product #3 Ends -->
+							</div>
+						<!-- Products Row Ends -->
+		</section>
+
+		<section class="products-list">			
+						<!-- Heading Starts -->
+							<h2 class="product-head">FASHION & FOOTWEARS</h2>
+						<!-- Heading Ends -->
+						<!-- Products Row Starts -->
+							<div class="row">
+							<!-- Product #1 Starts -->
+							<% @fashion_footwears.each do |fashion_footwear| %>
+								<div class="col-md-3 col-sm-6">
+									<div class="product-col">
+										<div class="image">
+											<% if !fashion_footwear.avatar1_file_name.nil?  %>
+								                <%= image_tag fashion_footwear.avatar1.url, :id => "product_image" %>
+								            <% else  %>      
+												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
+								            <% end %>
+										</div>
+										<div class="caption">
+											<h4>
+													<%= link_to fashion_footwear.title, full_productinfo_fashion_footwears_path(fashion_footwear) %>
+											</h4>
+											<div class="description">
+											
+											
+											</div>
+											<div class="price">
+												<span class="price-new"><%= fashion_footwear.price.to_i %> MMK</span> 
+												<span class="price-old"><%= fashion_footwear.price.to_i + 15 %> MMK</span>
+											</div>
+											<div class="cart-button">
+											
+											<%= button_to line_items_path(:mmdealer_code => "fashionfootwear"+fashion_footwear.id.to_s, :seller_id => fashion_footwear.seller_id), :class =>"btn btn-cart" do %>
+											   Add to cart
+											  <i class="fa fa-shopping-cart"></i> 
+											<% end %>
+
+
+																			
+											</div>
+										</div>
+									</div>
+								</div>
+							<% end %>
+							<!-- Product #1 Ends -->
+							<!-- Product #2 Starts -->
+								
+							<!-- Product #3 Ends -->
+							</div>
+						<!-- Products Row Ends -->
+		</section>
+
+			<section class="products-list">			
+						<!-- Heading Starts -->
+							<h2 class="product-head">FASHIONS & HATS</h2>
+						<!-- Heading Ends -->
+						<!-- Products Row Starts -->
+							<div class="row">
+							<!-- Product #1 Starts -->
+							<% @fashion_hats.each do |fashion_hats| %>
+								<div class="col-md-3 col-sm-6">
+									<div class="product-col">
+										<div class="image">
+											<% if !fashion_hats.avatar1_file_name.nil?  %>
+								                <%= image_tag fashion_hats.avatar1.url, :id => "product_image" %>
+								            <% else  %>      
+												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
+								            <% end %>
+										</div>
+										<div class="caption">
+											<h4>
+												<%= link_to fashion_hats.title, full_productinfo_fashion_hats_path(fashion_hats) %>
+											</h4>
+											<div class="description">
+											
+											
+											</div>
+											<div class="price">
+												<span class="price-new"><%= fashion_hats.price.to_i %> MMK</span> 
+												<span class="price-old"><%= fashion_hats.price.to_i + 15 %> MMK</span>
+											</div>
+											<div class="cart-button">
+											
+											<%= button_to line_items_path(:mmdealer_code => "fashionhat"+fashion_hats.id.to_s, :seller_id => fashion_hats.seller_id), :class =>"btn btn-cart" do %>
+											   Add to cart
+											  <i class="fa fa-shopping-cart"></i> 
+											<% end %>
+
+
+																			
+											</div>
+										</div>
+									</div>
+								</div>
+							<% end %>
+							<!-- Product #1 Ends -->
+							<!-- Product #2 Starts -->
+								
+							<!-- Product #3 Ends -->
+							</div>
+						<!-- Products Row Ends -->
+		</section>
+
+
+
+	</div>
+		</div>
+	</div>
+</div>
