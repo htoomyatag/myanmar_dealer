@@ -1,1 +1,220 @@
-auto_transportation
+<div class="main-header">
+			<div class="container">
+				<div class="row">
+				<!-- Search Starts -->
+					<div class="col-md-3">
+						<div id="search">
+							<div class="input-group">
+							  <input type="text" class="form-control input-lg" placeholder="Search">
+							  <span class="input-group-btn">
+								<button class="btn btn-lg" type="button">
+									<i class="fa fa-search"></i>
+								</button>
+							  </span>
+							</div>
+						</div>	
+					</div>
+				<!-- Search Ends -->
+				<!-- Logo Starts -->
+					<div class="col-md-6">
+						<div id="logo">
+							<a href="#"><img src="/assets/logo.png" title="Spice Shoppe" alt="Spice Shoppe" class="img-responsive" /></a>
+						</div>
+					</div>
+				<!-- Logo Starts -->				
+				<!-- Shopping Cart Starts -->
+					<div class="col-md-3">
+						<div id="cart" class="btn-group btn-block">
+							<button type="button" data-toggle="dropdown" class="btn btn-block btn-lg dropdown-toggle">
+								<i class="fa fa-shopping-cart"></i>
+								<span class="hidden-md">Cart:</span> 
+								<span id="cart-total"> <%= (@cart.total_quantity) %> item(s) -   <%= (@cart.total_price) %> MMK</span>
+								<i class="fa fa-caret-down"></i>
+							</button>
+							<ul class="dropdown-menu pull-right">
+							    <li>
+									<%= render (@cart.line_items) %>
+								</li>
+							
+								<li>
+									<p class="text-right btn-block1">
+										<a href="/check_out">
+											View Cart
+										</a>
+										<a href="/check_out">
+											Checkout
+										</a>
+									</p>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				<!-- Shopping Cart Ends -->
+				</div>
+			</div>
+		</div>
+	<!-- Main Header Ends -->
+	<!-- Main Menu Starts -->
+		<nav id="main-menu" class="navbar" role="navigation">
+			<div class="container">
+			<!-- Nav Header Starts -->
+				<div class="navbar-header">
+					<button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-cat-collapse">
+						<span class="sr-only">Toggle Navigation</span>
+						<i class="fa fa-bars"></i>
+					</button>
+				</div>
+			<!-- Nav Header Ends -->
+			<!-- Navbar Cat collapse Starts -->
+				<div class="collapse navbar-collapse navbar-cat-collapse">
+					<ul class="nav navbar-nav">
+						<li>
+						
+
+				 		 <%= link_to "Fashions related", fashion_related_path, class: "btn btn-1" %>
+
+						</li>
+						<li>
+
+						 <%= link_to "Electronics", electronics_related_path, class: "btn btn-1" %>
+
+							
+						</li>
+						<li>
+							
+				 			<%= link_to "Health & Beauty", health_beauty_related_path, class: "btn btn-1" %>
+						</li>
+						
+
+						<!--  -->
+						<li>
+				 			<%= link_to "Industrial parts", industrial_part_path, class: "btn btn-1" %>
+						</li>
+
+						<li>
+				 			<%= link_to "Sports", sports_related_path, class: "btn btn-1" %>
+						</li>
+
+						<li>
+				 			<%= link_to "Services", service_related_path, class: "btn btn-1" %>
+						</li>
+						<li>
+				 			<%= link_to "Transportation related", auto_transportation_path, class: "btn btn-1" %>
+						</li>
+						
+						
+						
+						
+					</ul>
+				</div>
+			<!-- Navbar Cat collapse Ends -->
+			</div>
+		</nav>
+	<!-- Main Menu Ends -->
+	</header>
+	<div class="container">
+		<section class="products-list">			
+						<!-- Heading Starts -->
+							<h2 class="product-head">Car and its Accessories</h2>
+						<!-- Heading Ends -->
+						<!-- Products Row Starts -->
+							<div class="row">
+							<!-- Product #1 Starts -->
+							<% @car_accessories.each do |car_accessory| %>
+								<div class="col-md-3 col-sm-6">
+									<div class="product-col">
+										<div class="image">
+											<% if !car_accessory.avatar1_file_name.nil?  %>
+								                <%= image_tag car_accessory.avatar1.url, :id => "product_image" %>
+								            <% else  %>      
+												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
+								            <% end %>
+										</div>
+										<div class="caption">
+											<h4>
+											<%= link_to car_accessory.title, full_productinfo_car_accessories_path(car_accessory) %>
+											</h4>
+											<div class="description">
+											
+											
+											</div>
+											<div class="price">
+												<span class="price-new"><%= car_accessory.price.to_i %> MMK</span> 
+												<span class="price-old"><%= car_accessory.price.to_i + 15 %> MMK</span>
+											</div>
+											<div class="cart-button">
+											
+											<%= button_to line_items_path(:mmdealer_code => "caraccessory"+car_accessory.id.to_s, :seller_id => car_accessory.seller_id), :class =>"btn btn-cart" do %>
+											   Add to cart
+											  <i class="fa fa-shopping-cart"></i> 
+											<% end %>
+
+
+																			
+											</div>
+										</div>
+									</div>
+								</div>
+							<% end %>
+							<!-- Product #1 Ends -->
+							<!-- Product #2 Starts -->
+								
+							<!-- Product #3 Ends -->
+							</div>
+						<!-- Products Row Ends -->
+		</section>
+				<section class="products-list">			
+						<!-- Heading Starts -->
+							<h2 class="product-head">Motorcyle and its Accessories</h2>
+						<!-- Heading Ends -->
+						<!-- Products Row Starts -->
+							<div class="row">
+							<!-- Product #1 Starts -->
+							<% @motorcycle_accessories.each do |motorcycle_accessory| %>
+								<div class="col-md-3 col-sm-6">
+									<div class="product-col">
+										<div class="image">
+											<% if !motorcycle_accessory.avatar1_file_name.nil?  %>
+								                <%= image_tag motorcycle_accessory.avatar1.url, :id => "product_image" %>
+								            <% else  %>      
+												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
+								            <% end %>
+										</div>
+										<div class="caption">
+											<h4>
+												<%= link_to motorcycle_accessory.title, full_productinfo_motorcycle_accessories_path(motorcycle_accessory) %>
+											</h4>
+											<div class="description">
+											
+											
+											</div>
+											<div class="price">
+												<span class="price-new"><%= motorcycle_accessory.price.to_i %> MMK</span> 
+												<span class="price-old"><%= motorcycle_accessory.price.to_i + 15 %> MMK</span>
+											</div>
+											<div class="cart-button">
+											
+											<%= button_to line_items_path(:mmdealer_code => "motorcycleaccessory"+motorcycle_accessory.id.to_s, :seller_id => motorcycle_accessory.seller_id), :class =>"btn btn-cart" do %>
+											   Add to cart
+											  <i class="fa fa-shopping-cart"></i> 
+											<% end %>
+
+
+																			
+											</div>
+										</div>
+									</div>
+								</div>
+							<% end %>
+							<!-- Product #1 Ends -->
+							<!-- Product #2 Starts -->
+								
+							<!-- Product #3 Ends -->
+							</div>
+						<!-- Products Row Ends -->
+		</section>
+	</div>
+		</div>
+	</div>
+</div>

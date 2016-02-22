@@ -215,7 +215,8 @@ class FrontsController < ApplicationController
 
     end
     def auto_transportation
-
+      @car_accessories = CarAccessory.all
+       @motorcycle_accessories = MotorcycleAccessory.all
     end
     def sports_related
        @sports = Sport.all
@@ -226,7 +227,7 @@ class FrontsController < ApplicationController
 
     def service_related
         @customer_services = Service.all
-          @training_and_schools = TrainingAndSchool.all
+        @training_and_schools = TrainingAndSchool.all
     end
 
 
