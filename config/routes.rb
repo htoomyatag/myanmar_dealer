@@ -1,4 +1,34 @@
 Rails.application.routes.draw do
+  resources :apis
+
+  get 'my_api_services' => 'apis#my_api_services', :as => :my_api_services
+  get 'my_api_training_and_schools' => 'apis#my_api_training_and_schools', :as => :my_api_training_and_schools
+  get 'my_api_sports' => 'apis#my_api_sports', :as => :my_api_sports
+  get 'my_api_toys' => 'apis#my_api_toys', :as => :my_api_toys
+  get 'my_api_gifts' => 'apis#my_api_gifts', :as => :my_api_gifts
+  get 'my_api_car_accessories' => 'apis#my_api_car_accessories', :as => :my_api_car_accessories
+  get 'my_api_motorcycle_accessories' => 'apis#my_api_motorcycle_accessories', :as => :my_api_motorcycle_accessories
+  get 'my_api_machines' => 'apis#my_api_machines', :as => :my_api_machines
+  get 'my_api_instruments' => 'apis#my_api_instruments', :as => :my_api_instruments
+  get 'my_api_equipment' => 'apis#my_api_equipment', :as => :my_api_equipment
+  get 'my_api_bath_supplies' => 'apis#my_api_bath_supplies', :as => :my_api_bath_supplies
+  get 'my_api_makeup_and_skincares' => 'apis#my_api_makeup_and_skincares', :as => :my_api_makeup_and_skincares
+  get 'my_api_beauty_equipments' => 'apis#my_api_beauty_equipments', :as => :my_api_beauty_equipments
+  get 'my_api_medicines' => 'apis#my_api_medicines', :as => :my_api_medicines
+  get 'my_api_home_appliances' => 'apis#my_api_home_appliances', :as => :my_api_home_appliances
+  get 'my_api_computers' => 'apis#my_api_computers', :as => :my_api_computers
+  get 'my_api_telephone_accessories' => 'apis#my_api_telephone_accessories', :as => :my_api_telephone_accessories
+  get 'my_api_electrical_equipments' => 'apis#my_api_electrical_equipments', :as => :my_api_electrical_equipments
+  get 'my_api_fashion_hats' => 'apis#my_api_fashion_hats', :as => :my_api_fashion_hats
+  get 'my_api_fashion_footwears' => 'apis#my_api_fashion_footwears', :as => :my_api_fashion_footwears
+  get 'my_api_fashion_bags' => 'apis#my_api_fashion_bags', :as => :my_api_fashion_bags
+  get 'my_api_fashion_accessories' => 'apis#my_api_fashion_accessories', :as => :my_api_fashion_accessories
+  get 'my_api_fashion_clothings' => 'apis#my_api_fashion_clothings', :as => :my_api_fashion_clothings
+  get 'my_api_stores' => 'apis#my_api_stores', :as => :my_api_stores
+
+  
+
+
   resources :services
   resources :training_and_schools
   resources :sports

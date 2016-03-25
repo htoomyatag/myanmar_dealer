@@ -7,6 +7,8 @@ class BathSuppliesController < ApplicationController
     @bath_supplies = BathSupply.all
   end
 
+  
+
   def product_bath_supplies
      @bath_supplies = BathSupply.all
   end
