@@ -3,20 +3,19 @@
 <head>
   <title>MyanmarDealer</title>
   <link rel="shortcut icon" href="<%= asset_path 'm.png'%>">
-  
-	
+ 
   	<%= stylesheet_link_tag    'bootstrap.min.css' %>
 	<%= stylesheet_link_tag    'font-awesome.min.css' %>
 	<%= stylesheet_link_tag    'owl.carousel.css' %>
 	<%= stylesheet_link_tag    'style.css' %>
 	<%= stylesheet_link_tag    'responsive.css' %>
 	
+    <%= javascript_include_tag "jquery.min.js" %>
+    <%= javascript_include_tag "jquery_ujs.js" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
-   <%= javascript_include_tag "jquery.min.js" %>
-   <%= javascript_include_tag "jquery_ujs.js" %>
-   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  	<%= csrf_meta_tags %>
 
-  <%= csrf_meta_tags %>
 </head>
 <body>
 
@@ -33,14 +32,14 @@
 									<a href="/">
 										<i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
 										<span class="hidden-sm hidden-xs">
-											Home
+											<%=t :home %>
 										</span>
 									</a>
 								</li>
 								 <% if buyer_signed_in? %>
 
 								 	<li>
-                    				<%= link_to 'Order List', my_order_path %>
+                    				<%= link_to "#{t :order_list}", my_order_path %>
                     				</li>
                     			
                     			<% end %>
@@ -49,19 +48,19 @@
 									<a href="#">
 										<i class="fa fa-user hidden-lg hidden-md" title="My Account"></i>
 										<span class="hidden-sm hidden-xs">
-											My Account
+											<%=t :my_account %>
 										</span>
 									</a>
 								</li>
 								
 								<li>
-									<%= link_to 'Checkout', check_out_path %>
+									<%= link_to "#{t :check_out}", check_out_path %>
 								</li>
 							
 								 <% if seller_signed_in? %>
 
 								 	<li>
-                    				<%= link_to 'Logout', destroy_seller_session_path, :method => :delete %>
+                    				<%= link_to "#{t :log_out}", destroy_seller_session_path, :method => :delete %>
                     				</li>
                     			
                     			<% else %>
@@ -70,7 +69,7 @@
 									<a href="sellers/sign_up">
 										<i class="fa fa-unlock hidden-lg hidden-md" title="Register"></i>
 										<span class="hidden-sm hidden-xs">
-											want to be a SELLER?
+											<%=t :want_to_be_a_seller %>
 										</span>
 									</a>
 									</li>
@@ -82,7 +81,7 @@
                     			<% if buyer_signed_in? %>
 
 								 	<li>
-                    				<%= link_to 'Logout', destroy_buyer_session_path, :method => :delete %>
+                    				<%= link_to "#{t :log_out}", destroy_buyer_session_path, :method => :delete %>
                     				</li>
                     			
                     			<% end %>
@@ -109,11 +108,11 @@
                     		<% else %>
 
                     			<li>
-									<%= link_to 'Seller Login', new_seller_session_path %>
+									<%= link_to "#{t :Seller_Login}", new_seller_session_path %>
 								</li>
 
 								<li>
-									<%= link_to 'Buyer Login', new_buyer_session_path %>
+									<%= link_to "#{t :Buyer_Login}", new_buyer_session_path %>
 
 								</li>
 
@@ -217,26 +216,15 @@
 			<div class="container">
 			<!-- Starts -->
 				<p class="pull-left">
-					&copy; 2015 Myanmar Dealers. Powered By <a href="http://www.hnttechs.com">H&Ttechs</a>
+					&copy; 2016 Myanmar Dealers. Powered By <a href="http://www.hnttechs.com">H&Ttechs</a>
 				</p>
 			<!-- Ends -->
 			<!-- Payment Gateway Links Starts -->
 				<ul class="pull-right list-inline">
 					<li>
-						<img src="/assets/payment-icon/cirrus.png" alt="PaymentGateway" />
+						<img src="/assets/payment-icon/mpu.jpg" alt="PaymentGateway" />
 					</li>
-					<li>
-						<img src="/assets/payment-icon/paypal.png" alt="PaymentGateway" />
-					</li>
-					<li>
-						<img src="/assets/payment-icon/visa.png" alt="PaymentGateway" />
-					</li>
-					<li>
-						<img src="/assets/payment-icon/mastercard.png" alt="PaymentGateway" />
-					</li>
-					<li>
-						<img src="/assets/payment-icon/americanexpress.png" alt="PaymentGateway" />
-					</li>
+				
 				</ul>
 			<!-- Payment Gateway Links Ends -->
 			</div>

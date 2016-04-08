@@ -29,8 +29,8 @@
 						<div id="cart" class="btn-group btn-block">
 							<button type="button" data-toggle="dropdown" class="btn btn-block btn-lg dropdown-toggle" style="height:47px;">
 								<i class="fa fa-shopping-cart" ></i>
-								<span class="hidden-md">Cart:</span> 
-								<span id="cart-total"> <%= (@cart.total_quantity) %> item(s) -   <%= (@cart.total_price) %> MMK</span>
+								<span class="hidden-md"><%=t :cart %></span> 
+								<span id="cart-total"> <%= (@cart.total_quantity) %> item(s) -   <%= (@cart.total_price) %> <%=t :MMK %></span>
 								<i class="fa fa-caret-down"></i>
 							</button>
 							<ul class="dropdown-menu pull-right">
@@ -41,10 +41,10 @@
 								<li>
 									<p class="text-right btn-block1">
 										<a href="/check_out">
-											View Cart
+											<%=t :view_cart %>
 										</a>
 										<a href="/check_out">
-											Checkout
+											<%=t :check_out %>
 										</a>
 									</p>
 								</li>
@@ -72,37 +72,30 @@
 				<div class="collapse navbar-collapse navbar-cat-collapse">
 					<ul class="nav navbar-nav">
 						<li>
-						
-
-				 		 <%= link_to "Fashions related", fashion_related_path, class: "btn btn-1" %>
-
+				 		 <%= link_to "#{t :fashions_related}", fashion_related_path, class: "btn btn-1" %>
 						</li>
 						<li>
-
-						 <%= link_to "Electronics", electronics_related_path, class: "btn btn-1" %>
-
-							
+						 <%= link_to "#{t :electronics}", electronics_related_path, class: "btn btn-1" %>
 						</li>
 						<li>
-							
-				 			<%= link_to "Health & Beauty", health_beauty_related_path, class: "btn btn-1" %>
+				 			<%= link_to "#{t :health_beauty}", health_beauty_related_path, class: "btn btn-1" %>
 						</li>
 						
 
 						<!--  -->
 						<li>
-				 			<%= link_to "Industrial parts", industrial_part_path, class: "btn btn-1" %>
+				 			<%= link_to  "#{t :industrial_parts}", industrial_part_path, class: "btn btn-1" %>
 						</li>
 
 						<li>
-				 			<%= link_to "Sports", sports_related_path, class: "btn btn-1" %>
+				 			<%= link_to "#{t :sports}", sports_related_path, class: "btn btn-1" %>
 						</li>
 
 						<li>
-				 			<%= link_to "Services", service_related_path, class: "btn btn-1" %>
+				 			<%= link_to "#{t :services}", service_related_path, class: "btn btn-1" %>
 						</li>
 						<li>
-				 			<%= link_to "Transportation related", auto_transportation_path, class: "btn btn-1" %>
+				 			<%= link_to "#{t :transportation_related}", auto_transportation_path, class: "btn btn-1" %>
 						</li>
 						
 						
@@ -120,55 +113,55 @@
 		<!-- Sidebar Starts -->
 			<div class="col-md-3">
 			<!-- Categories Links Starts -->
-				<h3 class="side-heading">Categories</h3>
+				<h3 class="side-heading"><%=t :category %></h3>
 				<div class="list-group categories">
 
 
-				 	<%= link_to "Clothings (Men, Women, Child)", product_fashion_clothings_path, id: "side_menu", class: "list-group-item" %>
+				 	<%= link_to "#{t :clothings}", product_fashion_clothings_path, id: "side_menu", class: "list-group-item" %>
 
 
-				 	<%= link_to "Hats", product_fashion_hats_path, id: "side_menu", class: "list-group-item" %>
+				 	<%= link_to "#{t :hats}", product_fashion_hats_path, id: "side_menu", class: "list-group-item" %>
 
-				 	<%= link_to "Footwears", product_fashion_footwears_path, id: "side_menu", class: "list-group-item" %>
+				 	<%= link_to "#{t :footwears}", product_fashion_footwears_path, id: "side_menu", class: "list-group-item" %>
 
-				 	<%= link_to "Bags", product_fashion_bags_path, id: "side_menu", class: "list-group-item" %>
+				 	<%= link_to "#{t :bags}", product_fashion_bags_path, id: "side_menu", class: "list-group-item" %>
 
-				 	<%= link_to "Fashion related Accessories", product_fashion_accessories_path, id: "side_menu", class: "list-group-item" %>
+				 	<%= link_to  "#{t :fashions_related_acc}", product_fashion_accessories_path, id: "side_menu", class: "list-group-item" %>
 
-				 	<%= link_to "Electrical Equipments", product_electrical_equipments_path, id: "side_menu", class: "list-group-item" %>
+				 	<%= link_to "#{t :electrical_equipments}", product_electrical_equipments_path, id: "side_menu", class: "list-group-item" %>
 
-				 	<%= link_to "Telephone and Accessories", product_telephone_accessories_path, id: "side_menu", class: "list-group-item" %>
+				 	<%= link_to "#{t :telephone_accessories}", product_telephone_accessories_path, id: "side_menu", class: "list-group-item" %>
 
-				 	<%= link_to "Computers and Laptops", product_computers_path, id: "side_menu", class: "list-group-item" %>
+				 	<%= link_to  "#{t :computers_laptops}", product_computers_path, id: "side_menu", class: "list-group-item" %>
 
-				 	<%= link_to "Home Appliances", product_home_appliances_path, id: "side_menu", class: "list-group-item" %>
+				 	<%= link_to "#{t :home_appliances}", product_home_appliances_path, id: "side_menu", class: "list-group-item" %>
 
-				 	<%= link_to "Medicines", product_medicines_path, id: "side_menu", class: "list-group-item" %>
+				 	<%= link_to "#{t :medicines}", product_medicines_path, id: "side_menu", class: "list-group-item" %>
 
-				 	 <%= link_to "Beauty Equipments", product_beauty_equipments_path, id: "side_menu", class: "list-group-item" %>
+				 	 <%= link_to  "#{t :beauty_equipments}", product_beauty_equipments_path, id: "side_menu", class: "list-group-item" %>
 
-				 	 <%= link_to "Makeup and Skincares", product_makeup_and_skincares_path, id: "side_menu", class: "list-group-item" %>
+				 	 <%= link_to "#{t :makeup_and_skincares}", product_makeup_and_skincares_path, id: "side_menu", class: "list-group-item" %>
 
-				 	 <%= link_to "Bath supplies", product_bath_supplies_path, id: "side_menu", class: "list-group-item" %>
+				 	 <%= link_to "#{t :bath_supplies}", product_bath_supplies_path, id: "side_menu", class: "list-group-item" %>
 				
-				 	 <%= link_to "Industrial Equipments", product_instruments_path, id: "side_menu", class: "list-group-item" %>
+				 	 <%= link_to "#{t :industrial_equipments}", product_instruments_path, id: "side_menu", class: "list-group-item" %>
 				
-					 <%= link_to "Machines", product_machines_path, id: "side_menu", class: "list-group-item" %>
+					 <%= link_to "#{t :machines}", product_machines_path, id: "side_menu", class: "list-group-item" %>
 
-					 <%= link_to "Motorcycle Accessories", product_motorcycle_accessories_path, id: "side_menu", class: "list-group-item" %>
+					 <%= link_to "#{t :motorcycle_accessories}", product_motorcycle_accessories_path, id: "side_menu", class: "list-group-item" %>
 
-				 	 <%= link_to "Motorcar Accessories", product_car_accessories_path, id: "side_menu", class: "list-group-item" %>
+				 	 <%= link_to "#{t :carcycle_accessories}", product_car_accessories_path, id: "side_menu", class: "list-group-item" %>
 
 
-				 	 <%= link_to "Special Gifts", product_gifts_path, id: "side_menu", class: "list-group-item" %>
+				 	 <%= link_to "#{t :special_gifts}", product_gifts_path, id: "side_menu", class: "list-group-item" %>
 
-				 	 <%= link_to "Sports Accessories", product_sports_path, id: "side_menu", class: "list-group-item" %>
+				 	 <%= link_to "#{t :sports_accessories}", product_sports_path, id: "side_menu", class: "list-group-item" %>
 
-				 	 <%= link_to "Toys", product_toys_path, id: "side_menu", class: "list-group-item" %>
+				 	 <%= link_to "#{t :toys}", product_toys_path, id: "side_menu", class: "list-group-item" %>
 
-				 	<%= link_to "Training and Schools", product_training_and_schools_path, id: "side_menu", class: "list-group-item" %>
+				 	<%= link_to "#{t :training_and_schools}", product_training_and_schools_path, id: "side_menu", class: "list-group-item" %>
 
- 					<%= link_to "Other Services", product_services_path, id: "side_menu", class: "list-group-item" %>
+ 					<%= link_to "#{t :other_services}", product_services_path, id: "side_menu", class: "list-group-item" %>
 
 
 
@@ -176,7 +169,7 @@
 				</div>
 			<!-- Categories Links Ends -->
 			<!-- Special Products Starts -->
-				<h3 class="side-heading">Specials</h3>
+				<h3 class="side-heading"><%=t :special %></h3>
 				<ul class="side-products-list">
 				<!-- Special Product #1 Starts -->
 				<% @side_products.each do |side_product| %>
@@ -192,10 +185,10 @@
 
 						<div class="price"><br/>
 							<span class="price-new">
-							 <%= side_product.price.to_i %> MMK
+							 <%= side_product.price.to_i %> <%=t :MMK %>
 							</span> 
 							<span class="price-old">
-							<%= side_product.price.to_i + 20 %> MMK
+							<%= side_product.price.to_i + 20 %> <%=t :MMK %>
 							</span>
 						</div>
 					</li>
@@ -205,10 +198,10 @@
 				<br>
 			<!-- Banner #1 Ends -->
 			<!-- Shopping Options Starts -->
-				<h3 class="side-heading">Shopping Options</h3>
+				<h3 class="side-heading"><%=t :shopping_options %></h3>
 				<div class="list-group">
 					<div class="list-group-item">
-						Brands
+						 <%=t :brands %>
 					</div>
 					<div class="list-group-item">
 						<div class="filter-group">
@@ -231,7 +224,7 @@
 						</div>
 					</div>
 					<div class="list-group-item">
-						Manufacturer
+						 <%=t :manufacturer %>
 					</div>
 					<div class="list-group-item">
 						<div class="filter-group">
@@ -300,7 +293,9 @@
 			<!-- Specials Products Starts -->
 				<section class="products-list">			
 				<!-- Heading Starts -->
-					<h2 class="product-head">Specials Products</h2>
+					<h2 class="product-head">
+					<%=t :special_products %>
+					</h2>
 				<!-- Heading Ends -->
 				<!-- Products Row Starts -->
 					<div class="row">

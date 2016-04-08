@@ -1,0 +1,69 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+mm:
+  hello: "ဟယ္လို"
+  cart: "ေစ်းျခင္းေတာင္း"
+  MMK: "က်ပ္"
+  view_cart: "ဝယ္ယူထားေသာ စာရင္း ၾကည့္ရန္"
+  check_out: "ေငြရွင္းမည္"
+  special: "စပယ္ရွယ္"
+  shopping_options: "ေရြးခ်ယ္ ဝယ္ယူႏိုင္ပါသည္။"
+  brands: "ကုန္တံဆိပ္"
+  manufacturer: "ထုတ္လုပ္သူ"
+  category: "အမ်ိဳးအစား"
+  fashions_related: "ဖက္ရွင္ဆိုင္ရာ"
+  electronics: "အီလတ္ထေရာ္နစ္ဆိုင္ရာ"
+  health_beauty: "အလွအပႏွင့္က်န္းမာေရးဆိုင္ရာ"
+  industrial_parts: "စက္မႈလုပ္ငန္းဆိုင္ရာ"
+  sports: "အားကစားဆိုင္ရာ"
+  services: "ဝန္ေဆာင္မႉဆိုင္ရာ"
+  transportation_related: "သယ္ယူပို႕ေဆာင္ေရးဆိုင္ရာ"
+  hats: "ဦးထုပ္အမ်ိဳးမ်ိဳး"
+  footwears: "ဖိနပ္အမ်ိဳးမ်ိဳး"
+  clothings: "အဝတ္အစားမ်ား"
+  bags: "အိတ္အမ်ိဳးမ်ိဳး"
+  fashions_related_acc: "ဖက္ရွင္ႏွင့္ဆက္စပ္ပစၥည္း"
+  electrical_equipments: "အီလက္ထေရာနစ္ႏွင့္ဆက္စပ္ပစၥည္း"
+  telephone_accessories: "ဖုန္းႏွင့္ဆက္စပ္အသုံးအေဆာင္မ်ား"
+  computers_laptops: "ကြန္ပ်ဴတာႏွင့္လက္ပေတာ့မ်ား"
+  home_appliances: "အိမ္သုံးပစၥည္းမ်ား"
+  medicines: "ေဆးဝါးမ်ား"
+  machines: "စက္ႏွင့္ဆက္စပ္ပစၥည္းအမ်ိဳးမ်ိဳး"
+  motorcycle_accessories: "ေမာ္ေတာ္ဆိုင္ကယ္ႏွင့္ဆက္စပ္ပစၥည္းမ်ား"
+  carcycle_accessories: "ေမာ္ေတာ္ကားႏွင့္ဆက္စပ္ပစၥည္းမ်ား"
+  special_gifts: "လက္ေဆာင္္ပစၥည္း"
+  sports_accessories: "အားကစားဆိုင္ရာအသုံးအေဆာင္မ်ား"
+  toys: "ကေလးကစားစရာမ်ား"
+  training_and_schools: "သင္တန္းေက်ာင္းမ်ား"
+  other_services: "ဝန္ေဆာင္မႉဆိုင္ရာ လုပ္ငန္းမ်ား"
+  beauty_equipments: "အလွအပဆိုင္ရာစက္ပစၥည္းမ်ား"
+  makeup_and_skincares: "မိက္ကပ္ႏွင့္အလွကုန္ပစၥည္းမ်ား"
+  bath_supplies: "ေရခ်ိဳးခန္းသုံးပစၥည္းမ်ား"
+  industrial_equipments: "စက္ရံုအလုပ္ရံုသုံး စက္ ပစၥည္းမ်ား"
+  home: "မူလစာမ်က္ႏွာ"
+  my_account: "ကြ်နဳ္ပ္ အေကာင့္"
+  want_to_be_a_seller: "ေရာင္းသူျဖစ္ခ်င္ပါသလား"
+  log_out: "ထြက္မည္"
+  order_list: "ဝယ္ယူထားေသာ စာရင္း"
+  Seller_Login: "ေရာင္းသူဝင္ေရာက္ရန္"
+  Buyer_Login: "ဝယ္သူဝင္ေရာက္ရန္"
+  
