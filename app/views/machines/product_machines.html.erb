@@ -1,11 +1,23 @@
 <div class="main-header">
 			<div class="container">
 				<div class="row">
-				<!-- Search Starts -->
+						
+
 					<div class="col-md-3">
-						<div id="search">
-							<div class="input-group">
-							  <input type="text" class="form-control input-lg" placeholder="Search">
+						<div id="logo" style="float:left;">
+							<a href="#"><img src="/assets/logo.jpg" title="Spice Shoppe" alt="Spice Shoppe" class="img-responsive" /></a>
+						</div>
+					</div>
+
+					<div class="col-md-3">
+								<img src="/assets/ads.png" alt="BannerAds" />
+					</div>
+
+					<div class="col-md-6">
+						
+						<div id="search" style="width:300px;float:right;">
+							<div class="input-group" >
+							  <input type="text" class="form-control input-lg" placeholder="Search" >
 							  <span class="input-group-btn">
 								<button class="btn btn-lg" type="button">
 									<i class="fa fa-search"></i>
@@ -13,22 +25,12 @@
 							  </span>
 							</div>
 						</div>	
-					</div>
-				<!-- Search Ends -->
-				<!-- Logo Starts -->
-					<div class="col-md-6">
-						<div id="logo">
-							<a href="#"><img src="/assets/logo.png" title="Spice Shoppe" alt="Spice Shoppe" class="img-responsive" /></a>
-						</div>
-					</div>
-				<!-- Logo Starts -->				
-				<!-- Shopping Cart Starts -->
-					<div class="col-md-3">
-						<div id="cart" class="btn-group btn-block">
-							<button type="button" data-toggle="dropdown" class="btn btn-block btn-lg dropdown-toggle">
-								<i class="fa fa-shopping-cart"></i>
-								<span class="hidden-md">Cart:</span> 
-								<span id="cart-total"> <%= (@cart.total_quantity) %> item(s) -   <%= (@cart.total_price) %> MMK</span>
+
+						<div id="cart" class="btn-group btn-block" style="width:300px;float:right;">
+							<button type="button" data-toggle="dropdown" class="btn btn-block btn-lg dropdown-toggle" style="height:47px;">
+								<i class="fa fa-shopping-cart" ></i>
+								<span class="hidden-md"><%=t :cart %></span> 
+								<span id="cart-total"> <%= (@cart.total_quantity) %> item(s) -   <%= (@cart.total_price) %> <%=t :MMK %></span>
 								<i class="fa fa-caret-down"></i>
 							</button>
 							<ul class="dropdown-menu pull-right">
@@ -39,20 +41,22 @@
 								<li>
 									<p class="text-right btn-block1">
 										<a href="/check_out">
-											View Cart
+											<%=t :view_cart %>
 										</a>
 										<a href="/check_out">
-											Checkout
+											<%=t :check_out %>
 										</a>
 									</p>
 								</li>
 
 							</ul>
 						</div>
+
+
 					</div>
-				<!-- Shopping Cart Ends -->
+
 				</div>
-			</div>
+		
 		</div>
 	<!-- Main Header Ends -->
 	<!-- Main Menu Starts -->
@@ -140,8 +144,8 @@
 											
 											</div>
 											<div class="price">
-												<span class="price-new"><%= product_machine.price.to_i %> MMK</span> 
-												<span class="price-old"><%= product_machine.price.to_i + 15 %> MMK</span>
+												<span class="price-new"><%= product_machine.price.to_i %> <%=t :MMK %></span> 
+												<span class="price-old"><%= product_machine.price.to_i + 15 %> <%=t :MMK %></span>
 											</div>
 											<div class="cart-button">
 											

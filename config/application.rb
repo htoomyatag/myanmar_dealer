@@ -25,7 +25,7 @@ module MyanmarDealer
 
     config.i18n.enforce_available_locales = false
     config.i18n.available_locales = [:en, :mm]
-    config.i18n.default_locale = :en
+    config.i18n.default_locale = :mm
 
   end
 end
