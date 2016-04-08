@@ -1220,3 +1220,9 @@ select#select option[value="transporter"]   {
  	 outline: none;
  	 border:none;
  }
+
+
+ #cart{
+
+ 	height: 130px;
+ }
