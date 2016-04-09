@@ -16,14 +16,38 @@
 					<div class="col-md-6">
 						
 						<div id="search" style="width:300px;float:right;">
+
+							<select class="form-control" style="background:#bf1c23;
+  border: solid #bf1c23;
+  border-width: 1px 1px 1px 1px;
+  color: white;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;">
+							  <option>အမ်ိဳးအစားေရြးခ်ယ္ရန္</option>
+							  <option>1</option>
+							  <option>2</option>
+							  <option>3</option>
+							  <option>4</option>
+							  <option>5</option>
+							</select>
+
 							<div class="input-group" >
 							  <input type="text" class="form-control input-lg" placeholder="Search" >
+
+
 							  <span class="input-group-btn">
 								<button class="btn btn-lg" type="button">
 									<i class="fa fa-search"></i>
 								</button>
 							  </span>
+
 							</div>
+
+
 						</div>	
 
 						<div id="cart" class="btn-group btn-block" style="width:300px;float:right;">
@@ -331,7 +355,7 @@
 									<div class="cart-button">
 									
 									<%= button_to line_items_path(:mmdealer_code => product, :seller_id => product.seller_id), :class =>"btn btn-cart" do %>
-									   Add to cart
+									   <%=t :add_to_cart %>
 									  <i class="fa fa-shopping-cart"></i> 
 									<% end %>
 

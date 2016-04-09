@@ -73,38 +73,31 @@
 			<!-- Navbar Cat collapse Starts -->
 				<div class="collapse navbar-collapse navbar-cat-collapse">
 						<ul class="nav navbar-nav">
-						<li>
-						
-
-				 		 <%= link_to "Fashions related", fashion_related_path, class: "btn btn-1" %>
-
+	<li>
+				 		 <%= link_to "#{t :fashions_related}", fashion_related_path, class: "btn btn-1" %>
 						</li>
 						<li>
-
-						 <%= link_to "Electronics", electronics_related_path, class: "btn btn-1" %>
-
-							
+						 <%= link_to "#{t :electronics}", electronics_related_path, class: "btn btn-1" %>
 						</li>
 						<li>
-							
-				 			<%= link_to "Health & Beauty", health_beauty_related_path, class: "btn btn-1" %>
+				 			<%= link_to "#{t :health_beauty}", health_beauty_related_path, class: "btn btn-1" %>
 						</li>
 						
 
 						<!--  -->
 						<li>
-				 			<%= link_to "Industrial parts", industrial_part_path, class: "btn btn-1" %>
+				 			<%= link_to  "#{t :industrial_parts}", industrial_part_path, class: "btn btn-1" %>
 						</li>
 
 						<li>
-				 			<%= link_to "Sports", sports_related_path, class: "btn btn-1" %>
+				 			<%= link_to "#{t :sports}", sports_related_path, class: "btn btn-1" %>
 						</li>
 
 						<li>
-				 			<%= link_to "Services", service_related_path, class: "btn btn-1" %>
+				 			<%= link_to "#{t :services}", service_related_path, class: "btn btn-1" %>
 						</li>
 						<li>
-				 			<%= link_to "Transportation related", auto_transportation_path, class: "btn btn-1" %>
+				 			<%= link_to "#{t :transportation_related}", auto_transportation_path, class: "btn btn-1" %>
 						</li>
 						
 						
@@ -151,7 +144,7 @@
 											<div class="cart-button">
 											
 											<%= button_to line_items_path(:mmdealer_code => "service"+customer_service.id.to_s, :seller_id => customer_service.seller_id), :class =>"btn btn-cart" do %>
-											   Add to cart
+											   <%=t :add_to_cart %>
 											  <i class="fa fa-shopping-cart"></i> 
 											<% end %>
 
@@ -201,7 +194,7 @@
 											<div class="cart-button">
 											
 											<%= button_to line_items_path(:mmdealer_code => "trainingandschool"+training_and_school.id.to_s, :seller_id => training_and_school.seller_id), :class =>"btn btn-cart" do %>
-											   Add to cart
+											   <%=t :add_to_cart %>
 											  <i class="fa fa-shopping-cart"></i> 
 											<% end %>
 

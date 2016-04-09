@@ -73,49 +73,31 @@
 			<!-- Navbar Cat collapse Starts -->
 				<div class="collapse navbar-collapse navbar-cat-collapse">
 					<ul class="nav navbar-nav">
-									<li>
-							<a href="/product_by_category?category=Apparel-Textiles-Accessories" class="btn btn-1">
-				 					Accessories
-				 			</a>
-
+										<li>
+				 		 <%= link_to "#{t :fashions_related}", fashion_related_path, class: "btn btn-1" %>
 						</li>
 						<li>
-							<a href="/product_by_category?category=Electronics" class="btn btn-1">
-				 					Electronics
-				 			</a>
+						 <%= link_to "#{t :electronics}", electronics_related_path, class: "btn btn-1" %>
 						</li>
 						<li>
-							<a href="/product_by_category?category=Health-Beauty" class="btn btn-1">
-				 					Health & Beauty
-				 			</a>
+				 			<%= link_to "#{t :health_beauty}", health_beauty_related_path, class: "btn btn-1" %>
 						</li>
-						<li>
-							<a href="/product_by_category?category=Bags-Shoes-Accessories" class="btn btn-1">
-				 					Fashions
-				 			</a>
-						</li>
+						
 
 						<!--  -->
 						<li>
-							<a href="/product_by_category?category=Agriculture-Food" class="btn btn-1">
-				 					Agricultures 
-				 			</a>
+				 			<%= link_to  "#{t :industrial_parts}", industrial_part_path, class: "btn btn-1" %>
 						</li>
-							<li>
-							<a href="/product_by_category?category=Packaging-Advertising-Office" class="btn btn-1">
-				 					Office
-				 			</a>
+
+						<li>
+				 			<%= link_to "#{t :sports}", sports_related_path, class: "btn btn-1" %>
 						</li>
-						
-							<li>
-							<a href="/product_by_category?category=Gifts-Sports-Toys" class="btn btn-1">
-				 					Sports
-				 			</a>
+
+						<li>
+				 			<%= link_to "#{t :services}", service_related_path, class: "btn btn-1" %>
 						</li>
-							<li>
-							<a href="/product_by_category?category=Auto-Transportation" class="btn btn-1">
-				 					Auto Transportation
-				 			</a>
+						<li>
+				 			<%= link_to "#{t :transportation_related}", auto_transportation_path, class: "btn btn-1" %>
 						</li>
 					</ul>
 				</div>
@@ -344,7 +326,7 @@
 						<div class="cart-button button-group">
 							
 								<%= button_to line_items_path(:mmdealer_code => @product, :seller_id => @product.seller_id), :class =>"btn btn-cart" do %>
-									   Add to cart
+									   <%=t :add_to_cart %>
 									  <i class="fa fa-shopping-cart"></i> 
 								<% end %>									
 						</div>
@@ -490,7 +472,7 @@
 							<div class="cart-button button-group">
 								
 								<%= button_to line_items_path(:mmdealer_code => relate_product, :seller_id => relate_product.seller_id), :class =>"btn btn-cart" do %>
-									   Add to cart
+									   <%=t :add_to_cart %>
 									  <i class="fa fa-shopping-cart"></i> 
 								<% end %>								
 							</div>
