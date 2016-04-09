@@ -12,10 +12,10 @@ class FrontsController < ApplicationController
 
    def home
      if params[:category]
-        @products = Product.search_with_category(params[:category], params[:product])
+        @products = Product.search_with_category(params[:category], params[:title])
         @side_products = Product.order('id ASC').limit(5)
-     elsif params[:product]
-        @products = Product.search_with_category(params[:category], params[:product])
+     elsif params[:title]
+        @products = Product.search_with_category(params[:category], params[:title])
         @side_products = Product.order('id ASC').limit(5)
      else
         @products = Product.all

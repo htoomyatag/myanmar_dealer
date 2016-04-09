@@ -40,14 +40,9 @@ PRODUCTCATEGORY = [
 
 
 
-  def self.search_with_category(category, product)
-      @products = Product.where("category = ? OR title = ?", category, "%"+product.to_s+"%")
+  def self.search_with_category(category, title)
+      @products = Product.where("category = ? OR title LIKE ?", category, "%"+title.to_s+"%")
   end
-
-
-
-
-
 
   def ensure_not_referenced_by_any_line_item
     if line_items.count.zero?
