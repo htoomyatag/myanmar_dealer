@@ -1226,3 +1226,20 @@ select#select option[value="transporter"]   {
 
  	height: 130px;
  }
+
+
+
+ #search_product{
+
+ 	background:#bf1c23;
+  border: solid #bf1c23;
+  border-width: 1px 1px 1px 1px;
+  color: white;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  
+ }

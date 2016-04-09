@@ -33,6 +33,7 @@ class ElectricalEquipment < ActiveRecord::Base
       :color => self.color,
       :quantity => self.quantity,
       :size => self.size,
+      :category => "eletronic_related",
       :weight => self.weight)
   end
 

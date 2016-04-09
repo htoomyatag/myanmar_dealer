@@ -32,6 +32,7 @@ class TelephoneAccessory < ActiveRecord::Base
       :quantity => self.quantity,
       :size => self.size,
       :weight => self.weight,
+      :category => "phone_related",
       :operation_system => self.operation_system)
   end
   

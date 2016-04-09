@@ -28,7 +28,7 @@ class Sport < ActiveRecord::Base
             :description => self.description,
             :color => self.color,
             :brand => self.brand,
-            :category => self.category,
+            :category => "sports",
             :store_name => self.seller_id
         )
   end

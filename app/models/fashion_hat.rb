@@ -40,6 +40,7 @@ class FashionHat < ActiveRecord::Base
       :price => self.price,
       :quantity => self.quantity,
       :made_with => self.made_with,
+      :category => "hats",
       :hat_type => self.hat_type)
   end
 end

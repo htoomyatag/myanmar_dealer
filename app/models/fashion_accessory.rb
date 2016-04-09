@@ -26,6 +26,7 @@ class FashionAccessory < ActiveRecord::Base
       :price => self.price,
       :quantity => self.quantity,
       :made_by_country => self.made_by_country,
+      :category => "fashion_related",
       :made_with => self.made_with)
   end
 end

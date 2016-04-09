@@ -31,6 +31,7 @@ class MakeupAndSkincare < ActiveRecord::Base
       :brand => self.brand,
       :effect => self.effect,
       :certification => self.certification,
+      :category => "comesmetics",
       :price => self.price,
       :color => self.color)
   end

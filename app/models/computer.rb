@@ -36,6 +36,7 @@ class Computer < ActiveRecord::Base
    :modal_number => self.modal_number,
    :color => self.color,
    :feature => self.feature,
+   :category => "computer_laptops",
    :operation_system => self.operation_system,
    :seller_id => self.seller_id)
 

@@ -30,6 +30,7 @@ class Medicine < ActiveRecord::Base
       :description => self.description,
       :certification => self.certification,
       :price => self.price,
+      :category => "medicines",
       :caution => self.caution)
   end
   

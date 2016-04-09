@@ -31,6 +31,7 @@ class Instrument < ActiveRecord::Base
       :quantity => self.quantity,
       :weight => self.weight,
       :made_with => self.made_with,
+      :category => "machines",
       :specification => self.specification,
     )
   end

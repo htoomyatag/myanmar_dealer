@@ -8,13 +8,7 @@ class FrontsController < ApplicationController
     @fronts = Front.all
    end
 
-   def product_by_category
-    if params[:category].nil?
-      @products = Product.all
-    else
-      @products = Product.where(:product_category  => params[:category])
-    end
-   end
+  
 
    def home
       @products = Product.all

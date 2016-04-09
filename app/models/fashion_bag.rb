@@ -39,6 +39,7 @@ class FashionBag < ActiveRecord::Base
        :size => self.size,
       :quantity => self.quantity,
       :made_with => self.made_with,
+      :category => "bags",
       :bag_type => self.bag_type)
   end
 

@@ -40,7 +40,8 @@ class FashionFootwear < ActiveRecord::Base
       :color => self.color,
       :quantity => self.quantity,
       :size => self.size,
-      :footwear_type => self.footwear_type,
+       :category => "footwears",
+      :footwear_type => self.footwear_type
      )
   end
 end

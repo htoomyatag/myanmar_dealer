@@ -34,6 +34,7 @@ class Machine < ActiveRecord::Base
       :weight => self.weight,
       :made_with => self.made_with,
       :specification => self.specification,
+      :category => "machines",
       :dimension => self.dimension
     )
   end

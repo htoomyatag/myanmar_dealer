@@ -46,7 +46,8 @@ class BathSupply < ActiveRecord::Base
      :certification => certification,
      :age_group => age_group,
      :price => price,
-        :store_name => self.store_name,
+     :store_name => self.store_name,
+     :category => "bath_supplies",
      :seller_id => seller_id) 
    
 

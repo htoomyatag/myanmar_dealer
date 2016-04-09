@@ -780,7 +780,7 @@ ActiveRecord::Schema.define(version: 20160325144416) do
     t.string   "effect"
     t.string   "certification"
     t.string   "age_group"
-    t.string   "price"
+    t.integer  "price"
     t.text     "feature"
     t.string   "modal_number"
     t.string   "color"

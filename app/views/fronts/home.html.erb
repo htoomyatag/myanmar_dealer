@@ -17,35 +17,46 @@
 						
 						<div id="search" style="width:300px;float:right;">
 
-							<select class="form-control" style="background:#bf1c23;
-  border: solid #bf1c23;
-  border-width: 1px 1px 1px 1px;
-  color: white;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;">
-							  <option>အမ်ိဳးအစားေရြးခ်ယ္ရန္</option>
-							  <option>1</option>
-							  <option>2</option>
-							  <option>3</option>
-							  <option>4</option>
-							  <option>5</option>
-							</select>
 
-							<div class="input-group" >
-							  <input type="text" class="form-control input-lg" placeholder="Search" >
+						<%= form_tag(home_path, :method => "get", id: "search-form") do %>
 
+								<select class="form-control" id="search_product" name="category">
+								  	<option value=""><%=t :choose_item %></option>
+									<option value="cloths"><%=t :cloths %></option>
+									<option value="hats"><%=t :hats %></option>
+									<option value="footwears"><%=t :footwears %></option>
+									<option value="bags"><%=t :bags %></option>
+									<option value="fashion_related"><%=t :fashion_related %></option>
+									<option value="eletronic_related"><%=t :eletronic_related %></option>
+									<option value="phone_related"><%=t :phone_related %></option>
+									<option value="computer_laptops"><%=t :computer_laptops %></option>
+									<option value="home_appliance"><%=t :home_appliance %></option>
+									<option value="medicines"><%=t :medicines %></option>
+									<option value="beauty_equipments"><%=t :beauty_equipments %></option>
+									<option value="comesmetics"><%=t :comesmetics %></option>
+									<option value="bath_supplies"><%=t :bath_supplies %></option>
+									<option value="factory_uses"><%=t :factory_uses %></option>
+									<option value="machines"><%=t :machines %></option>
+									<option value="motorcycle"><%=t :motorcycle %></option>
+									<option value="motorcar"><%=t :motorcar %></option>
+									<option value="gifts"><%=t :gifts %></option>
+									<option value="sports"><%=t :sports %></option>
+									<option value="toys"><%=t :toys %></option>
+									<option value="schools"><%=t :schools %></option>
+									<option value="customer_services"><%=t :customer_services %></option>
+								</select>
 
-							  <span class="input-group-btn">
-								<button class="btn btn-lg" type="button">
-									<i class="fa fa-search"></i>
-								</button>
-							  </span>
+								
+								<div class="input-group" >
+									  <input type="text" class="form-control input-lg" placeholder="Search" name="product">
+									  <span class="input-group-btn">
+										<button class="btn btn-lg" type="submit">
+											<i class="fa fa-search"></i>
+										</button>
+									  </span>
+								</div>
 
-							</div>
+						<% end %>
 
 
 						</div>	

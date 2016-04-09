@@ -31,6 +31,7 @@ class FashionClothing < ActiveRecord::Base
       :gender => self.gender,
       :color => self.color,
       :quantity => self.quantity,
+      :category => "cloths",
       :made_with => self.made_with)
   end
 end

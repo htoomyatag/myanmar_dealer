@@ -21,8 +21,8 @@ class CarAccessory < ActiveRecord::Base
 
 
     Product.create(:mmdealer_code => "caraccessory"+self.id.to_s,
-      :title => self.title,
-         :store_name => self.store_name,
+    :title => self.title,
+    :store_name => self.store_name,
     :price => self.price,
     :quantity => self.quantity,
     :size => self.size,
@@ -35,6 +35,7 @@ class CarAccessory < ActiveRecord::Base
     :modal_number => self.modal_number,
     :color => self.color,
     :feature => self.feature,
+    :category => "motorcar",
     :seller_id => self.seller_id)
 
  end

@@ -33,6 +33,7 @@ class HomeAppliance < ActiveRecord::Base
       :size => self.size,
       :weight => self.weight,
       :power => self.power,
+      :category => "home_appliance",
       :voltage => self.voltage)
   end
   

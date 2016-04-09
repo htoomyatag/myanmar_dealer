@@ -32,6 +32,7 @@ class MotorcycleAccessory < ActiveRecord::Base
       :size => self.size,
       :weight => self.weight,
       :made_with => self.made_with,
+      :category => "motorcycle",
       :specification => self.specification,
      )
   end

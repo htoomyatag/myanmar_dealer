@@ -31,6 +31,7 @@ class Equipment < ActiveRecord::Base
       :color => self.color,
       :quantity => self.quantity,
       :size => self.size,
+      :category => "machines",
       :weight => self.weight)
   end
 end

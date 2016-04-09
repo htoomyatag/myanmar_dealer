@@ -17,7 +17,6 @@ class CreateProducts < ActiveRecord::Migration
     t.string   :feature
     t.string   :modal_number
     t.string   :color
-    t.string   :price
     t.integer  :quantity
     t.string   :size
     t.string   :weight

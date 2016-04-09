@@ -28,6 +28,7 @@ class Toy < ActiveRecord::Base
       :color => self.color,
       :quantity => self.quantity,
       :weight => self.weight,
+      :category => "toys",
       :made_with => self.made_with)
   end
   

@@ -27,6 +27,7 @@ class Gift < ActiveRecord::Base
       :price => self.price,
       :made_by_country => self.made_by_country,
       :made_with => self.made_with,
+      :category => "gifts",
       :description => self.description
      )
   end
