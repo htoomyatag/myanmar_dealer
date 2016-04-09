@@ -26,7 +26,6 @@ class Machine < ActiveRecord::Base
       :made_by_country => self.made_by_country,
       :description => self.description,
       :brand => self.brand,
-      :category => self.category,
       :price => self.price,
       :modal_number => self.modal_number,
       :color => self.color,

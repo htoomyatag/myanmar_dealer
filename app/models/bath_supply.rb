@@ -36,7 +36,6 @@ class BathSupply < ActiveRecord::Base
 
      Product.create(:mmdealer_code =>  "bathsupply"+self.id.to_s,
      :title => title,
-     :category => category,
      :ingredient => ingredient,
      :usage => usage,
      :made_by_country => made_by_country,

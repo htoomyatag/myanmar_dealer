@@ -7,4 +7,6 @@ class Front < ActiveRecord::Base
 		product.price * quantity
 	end
 
+
+
 end

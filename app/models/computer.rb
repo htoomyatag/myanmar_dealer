@@ -32,7 +32,6 @@ class Computer < ActiveRecord::Base
    :made_by_country => self.made_by_country,
    :description => self.description,
    :brand => self.brand,
-   :category => self.category,
    :modal_number => self.modal_number,
    :color => self.color,
    :feature => self.feature,

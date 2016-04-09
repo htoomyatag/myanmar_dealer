@@ -40,6 +40,11 @@ PRODUCTCATEGORY = [
 
 
 
+  def self.search_with_category(category, product)
+      @products = Product.where("category = ? OR title = ?", category, "%"+product.to_s+"%")
+  end
+
+
 
 
 

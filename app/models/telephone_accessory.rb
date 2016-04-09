@@ -21,7 +21,6 @@ class TelephoneAccessory < ActiveRecord::Base
 
       Product.create( :mmdealer_code => "telephoneaccessory"+self.id.to_s,:seller_id => self.seller_id,
       :title => self.title,
-      :category => self.category,
       :made_by_country => self.made_by_country,
       :description => self.description,
       :brand => self.brand,

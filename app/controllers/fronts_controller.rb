@@ -11,8 +11,16 @@ class FrontsController < ApplicationController
   
 
    def home
-      @products = Product.all
-      @side_products = Product.order('id ASC').limit(5)
+     if params[:category]
+        @products = Product.search_with_category(params[:category], params[:product])
+        @side_products = Product.order('id ASC').limit(5)
+     elsif params[:product]
+        @products = Product.search_with_category(params[:category], params[:product])
+        @side_products = Product.order('id ASC').limit(5)
+     else
+        @products = Product.all
+        @side_products = Product.order('id ASC').limit(5)
+     end
    end
 
    def check_out

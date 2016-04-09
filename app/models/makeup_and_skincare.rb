@@ -23,7 +23,6 @@ class MakeupAndSkincare < ActiveRecord::Base
 
       Product.create( :mmdealer_code => "makeupandskincare"+self.id.to_s,:seller_id => self.seller_id,
       :title => self.title,
-      :category => self.category,
       :ingredient => self.ingredient,
       :usage => self.usage,
       :made_by_country => self.made_by_country,
