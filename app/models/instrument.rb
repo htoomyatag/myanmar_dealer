@@ -19,7 +19,7 @@ class Instrument < ActiveRecord::Base
 
  def add_to_product
 
-      Product.create( :mmdealer_code => "machines"+(Product.maximum(:id).next.to_i).to_s,:seller_id => self.seller_id,
+      Product.create( :mmdealer_code => "instruments"+(Product.maximum(:id).next.to_i).to_s,:seller_id => self.seller_id,
       :title => self.title,
       :made_by_country => self.made_by_country,
       :description => self.description,
@@ -31,7 +31,7 @@ class Instrument < ActiveRecord::Base
       :quantity => self.quantity,
       :weight => self.weight,
       :made_with => self.made_with,
-      :category => "machines",
+      :category => "instruments",
       :specification => self.specification,
     )
   end

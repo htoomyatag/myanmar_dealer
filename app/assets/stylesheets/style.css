@@ -235,6 +235,7 @@ hr{
 		#cart .btn span#cart-total{
 			color:#bf1c23;
 			padding:0 8px 0 5px;
+			font-size: 10px;
 		}
 		#cart .btn i.fa-caret-down{
 			color:#bf1c23;

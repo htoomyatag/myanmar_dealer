@@ -9,7 +9,7 @@
 
 products = Product.create([
 
-{title:"tmp"},
+{title:"tmp",price: "10"},
 
 
 ])
@@ -129,7 +129,7 @@ beauty_equipments = BeautyEquipment.create([
     size:"tempsize",
     weight:"tempweight",
     made_by_country:"China",
-    category:"machines",
+    category:"equipments",
     made_with:"tempmadewith",
    description:"This is Descritpion",
     brand:"tempbrand",
@@ -299,7 +299,7 @@ instruments = Instrument.create([
    specification:"this is specfication",
     color:"Red Green Blue",
     seller_id:"1",
-    category:"machines",
+    category:"instruments",
     store_name:"H&Ttechs"}
 
     ])
@@ -512,6 +512,7 @@ description: "for the swag from the swag",
 gender: "Male",
 brand: "Genius",
 color: "Black, White, Grey",
+category: "cloths",
 store_name: "H&Ttechs"
 }
 
@@ -529,6 +530,7 @@ made_by_country:"Thailand",
 made_with:"Cotton",
 description: "for the swag from the swag",
 brand: "Genius",
+category:"hats",
 store_name: "H&Ttechs"
 }
 

@@ -187,43 +187,43 @@ class FrontsController < ApplicationController
     end
 
     def fashion_related
-        @fashion_accessories = FashionAccessory.all
-        @fashion_bags = FashionBag.all
-        @fashion_hats = FashionHat.all
-        @fashion_footwears = FashionFootwear.all
-        @fashion_clothings = FashionClothing.all
+        @fashion_accessories = Product.where(:category => "fashion_related")
+        @fashion_bags = Product.where(:category => "bags")
+        @fashion_hats = Product.where(:category => "hats")
+        @fashion_footwears = Product.where(:category => "footwears")
+        @fashion_clothings = Product.where(:category => "cloths")
     end
      
     def electronics_related
-        @electrical_equipments = ElectricalEquipment.all
-        @computers = Computer.all
-        @telephone_accessories = TelephoneAccessory.all
-        @home_appliances = HomeAppliance.all
+        @electrical_equipments = Product.where(:category => "eletronic_related")
+        @computers = Product.where(:category => "computers_laptops")
+        @telephone_accessories = Product.where(:category => "phone_related")
+        @home_appliances = Product.where(:category => "home_appliance")
     end
 
     def health_beauty_related
-       @medicines = Medicine.all
-       @bath_supplies = BathSupply.all
-       @beauty_equipments = BeautyEquipment.all
-       @makeup_and_skincares = MakeupAndSkincare.all
+       @medicines = Product.where(:category => "medicines")
+       @bath_supplies = Product.where(:category => "bath_supplies")
+       @beauty_equipments = Product.where(:category => "beauty_equipments")
+       @makeup_and_skincares = Product.where(:category => "comesmetics")
      
     end
      
     def industrial_part
-       @equipments = Equipment.all
-       @product_machines = Machine.all
-       @instruments = Instrument.all
+       @equipments = Product.where(:category => "equipments")
+       @product_machines = Product.where(:category => "machines")
+       @instruments = Product.where(:category => "instruments")
 
 
     end
     def auto_transportation
-      @car_accessories = CarAccessory.all
-       @motorcycle_accessories = MotorcycleAccessory.all
+       @car_accessories = Product.where(:category => "car_accessories")
+       @motorcycle_accessories = Product.where(:category => "motorcycle")
     end
     def sports_related
-       @sports = Sport.all
-       @gifts = Gift.all
-       @toys = Toy.all
+       @sports = Product.where(:category => "sports")
+       @gifts = Product.where(:category => "gifts")
+       @toys = Product.where(:category => "toys")
 
     end 
 
