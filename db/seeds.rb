@@ -18,7 +18,7 @@ products = Product.create([
 bath_supply = BathSupply.create([
 
    {title: "aokshampoo",
-   category: "shamepoo",
+   category: "bath_supplies",
    ingredient: "livers",
    usage: "one times a week",
    made_by_country: "japan",
@@ -37,7 +37,7 @@ bath_supply = BathSupply.create([
 beauty_equipments = BeautyEquipment.create([
 
    {title:"temptitle",
-    category:"tempcategory",
+    category:"beautyequipment",
     brand:"tempbrand",
     made_by_country:"China",
    description:"This is Descritpion",
@@ -69,6 +69,7 @@ beauty_equipments = BeautyEquipment.create([
     modal_number:"tempmodal",
     color:"Red Green Blue",
     feature:"This is feature",
+    category:"car_accessories",
     seller_id:"1",
     store_name:"H&Ttechs"}
 
@@ -88,7 +89,7 @@ beauty_equipments = BeautyEquipment.create([
     made_by_country:"China",
    description:"This is Descritpion",
     brand:"tempbrand",
-    category:"tempcategory",
+    category:"computers_laptops",
     modal_number:"tempmodal",
     color:"Red Green Blue",
     feature:"This is feature",

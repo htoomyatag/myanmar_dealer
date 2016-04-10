@@ -32,7 +32,7 @@ class FashionHat < ActiveRecord::Base
 
 
 
-      Product.create( :mmdealer_code => "fashionhat"+(Product.maximum(:id).next.to_i).to_s,:seller_id => self.seller_id,
+      Product.create( :mmdealer_code => "hats"+(Product.maximum(:id).next.to_i).to_s,:seller_id => self.seller_id,
       :title => self.title,
       :made_by_country => self.made_by_country,
       :description => self.description,
@@ -40,7 +40,7 @@ class FashionHat < ActiveRecord::Base
       :price => self.price,
       :quantity => self.quantity,
       :made_with => self.made_with,
-      :category => "fashionhat",
+      :category => "hats",
       :hat_type => self.hat_type)
   end
 end

@@ -19,7 +19,7 @@ class BeautyEquipment < ActiveRecord::Base
 
     def add_to_product
 
-         Product.create(:mmdealer_code => "beautyequipment"+(Product.maximum(:id).next.to_i).to_s,
+         Product.create(:mmdealer_code => "beauty_equipments"+(Product.maximum(:id).next.to_i).to_s,
           :title => self.title,
           :store_name => self.store_name,
          :brand => self.brand,
@@ -29,7 +29,7 @@ class BeautyEquipment < ActiveRecord::Base
          :modal_number => self.modal_number,
          :color => self.color,
          :price => self.price,
-         :category => "beautyequipment",
+         :category => "beauty_equipments",
          :seller_id => self.seller_id)
 
     end
