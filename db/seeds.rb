@@ -37,7 +37,7 @@ bath_supply = BathSupply.create([
 beauty_equipments = BeautyEquipment.create([
 
    {title:"temptitle",
-    category:"beautyequipment",
+    category:"beauty_equipments",
     brand:"tempbrand",
     made_by_country:"China",
    description:"This is Descritpion",
@@ -111,7 +111,7 @@ beauty_equipments = BeautyEquipment.create([
     made_by_country:"China",
    description:"This is Descritpion",
     brand:"tempbrand",
-    category:"tempcategory",
+    category:"eletronic_related",
     modal_number:"tempmodal",
     color:"Red Green Blue",
     seller_id:"1",
@@ -129,7 +129,7 @@ beauty_equipments = BeautyEquipment.create([
     size:"tempsize",
     weight:"tempweight",
     made_by_country:"China",
-    category:"thiscategory",
+    category:"machines",
     made_with:"tempmadewith",
    description:"This is Descritpion",
     brand:"tempbrand",
@@ -154,6 +154,7 @@ beauty_equipments = BeautyEquipment.create([
    description:"This is Descritpion",
     brand:"tempbrand",
     seller_id:"1",
+    category:"fashion_related",
     store_name:"H&Ttechs"}
 
     ])
@@ -173,6 +174,7 @@ fashion_bags = FashionBag.create([
     size:"tempsize",
     brand:"tempbrand",
     seller_id:"1",
+    category:"bags",
     store_name:"H&Ttechs"}
 
     ])
@@ -192,6 +194,7 @@ fashion_bags = FashionBag.create([
     brand:"tempbrand",
     seller_id:"1",
     color:"Red Green Blue",
+    category:"cloths",
     store_name:"H&Ttechs"}
 
     ])
@@ -206,12 +209,13 @@ fashion_bags = FashionBag.create([
     quantity:"30",
     made_by_country:"China",
     made_with:"tempmadewith",
-   description:"This is Descritpion",
+    description:"This is Descritpion",
     footwear_type:"slipper",
     size:"tempsize",
     brand:"tempbrand",
     seller_id:"1",
     color: "red green black",
+    category:"footwears",
     store_name:"H&Ttechs"}
 
     ])
@@ -230,6 +234,7 @@ fashion_bags = FashionBag.create([
     brand:"tempbrand",
     hat_type:"snapback",
     seller_id:"1",
+    category:"hats",
     store_name:"H&Ttechs"}
 
     ])
@@ -246,6 +251,7 @@ gifts = Gift.create([
    description:"This is Descritpion",
     color:"Red Green Blue",
     seller_id:"1",
+    category:"gifts",
     store_name:"H&Ttechs"}
 
     ])
@@ -263,13 +269,13 @@ gifts = Gift.create([
     made_by_country:"China",
    description:"This is Descritpion",
     brand:"tempbrand",
-    category:"tempcategory",
     modal_number:"tempmodal",
     color:"Red Green Blue",
    feature:"This is feature",
     power:"14k",
     voltage:"22V",
     seller_id:"1",
+    category:"home_appliance",
     store_name:"H&Ttechs"}
 
     ])
@@ -293,6 +299,7 @@ instruments = Instrument.create([
    specification:"this is specfication",
     color:"Red Green Blue",
     seller_id:"1",
+    category:"machines",
     store_name:"H&Ttechs"}
 
     ])
@@ -307,12 +314,12 @@ instruments = Instrument.create([
     weight:"tempweight",
     made_by_country:"China",
     made_with:"tempmadewith",
-   description:"This is Descritpion",
+    description:"This is Descritpion",
     brand:"tempbrand",
-    category:"tempcategory",
     modal_number:"tempmodal",
-   specification:"this is specfication",
+    specification:"this is specfication",
     color:"Red Green Blue",
+    category:"machines",
     seller_id:"1",
     store_name:"H&Ttechs"}
 
@@ -323,19 +330,19 @@ instruments = Instrument.create([
   makeup_and_skincares = MakeupAndSkincare.create([
 
     {title:"temptitle",
-    category:"tempcategory",
-        quantity:22,
-    certification:"this is certification",
-   ingredient:"thisisingredient",
-   usage:"thissuage",
-    made_by_country:"China",
-   description:"This is Descritpion",
-    brand:"tempbrand",
-    color:"Red Green Blue",
-    effect:"thisiseffect",
-    price:"6000",
-    seller_id:"1",
-    store_name:"H&Ttechs"}
+     category:"comesmetics",
+     quantity:22,
+     certification:"this is certification",
+     ingredient:"thisisingredient",
+     usage:"thissuage",
+     made_by_country:"China",
+     description:"This is Descritpion",
+     brand:"tempbrand",
+     color:"Red Green Blue",
+     effect:"thisiseffect",
+     price:"6000",
+     seller_id:"1",
+     store_name:"H&Ttechs"}
 
     ])
 
@@ -344,23 +351,24 @@ instruments = Instrument.create([
 medicines = Medicine.create([
 
     {title:"temptitle",
-    category:"tempcategory",
-    certification:"thisiscerti",
-        quantity:22,
-    ingredient:"thisisingredient",
-   usage:"thisisusage",
-    made_by_country:"China",
-   description:"This is Descritpion",
-   caution:"thiscaution",
-    price:"2000",
-    seller_id:"1",
-    store_name:"H&Ttechs"}
+     category:"medicines",
+     certification:"thisiscerti",
+     quantity:22,
+     ingredient:"thisisingredient",
+     usage:"thisisusage",
+     made_by_country:"China",
+     description:"This is Descritpion",
+     caution:"thiscaution",
+     price:"2000",
+     seller_id:"1",
+     store_name:"H&Ttechs"}
 
     ])
 
   
 
  motorcycle_accessories = MotorcycleAccessory.create([
+
     {title:"temptitle",
     price:"8000",
     quantity:"30",
@@ -368,13 +376,14 @@ medicines = Medicine.create([
     weight:"tempweight",
     made_by_country:"China",
     made_with:"tempmadewith",
-   description:"This is Descritpion",
+    description:"This is Descritpion",
     brand:"tempbrand",
-   specification:"this is specfication",
+    specification:"this is specfication",
     modal_number:"tempmodal",
     color:"Red Green Blue",
     feature:"This is feature",
     seller_id:"1",
+    category:"motorcycle",
     store_name:"H&Ttechs"}
 
     ])
@@ -402,7 +411,7 @@ services = Service.create([
    description:"This is Descritpion",
     color:"Red Green Blue",
     brand:"tempbrand",
-    category:"tempcategory",
+    category:"sports",
     seller_id:"1",
     store_name:"H&Ttechs"}
 
@@ -421,7 +430,7 @@ services = Service.create([
     made_by_country:"China",
    description:"This is Descritpion",
     brand:"tempbrand",
-    category:"tempcategory",
+    category:"phone_related",
     modal_number:"tempmodal",
     color:"Red Green Blue",
    feature:"This is feature",
@@ -440,10 +449,11 @@ services = Service.create([
     weight:"tempweight",
     made_by_country:"China",
     made_with:"tempmadewith",
-   description:"This is Descritpion",
+    description:"This is Descritpion",
     color:"Red Green Blue",
     age_group:"Adult 18 to 60",
     seller_id:"1",
+    category:"toys",
     store_name:"H&Ttechs"}
 
     ])
@@ -455,7 +465,7 @@ services = Service.create([
     fees:"760",
     period:"12July2016 to 12Dec2016",
     school:"TTC",
-   description:"This is Descritpion",
+    description:"This is Descritpion",
     seller_id:"1",
     store_name:"H&Ttechs"}
 

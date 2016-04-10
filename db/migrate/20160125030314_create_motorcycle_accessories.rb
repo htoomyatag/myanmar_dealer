@@ -15,7 +15,8 @@ class CreateMotorcycleAccessories < ActiveRecord::Migration
       t.string :color
       t.string :feature
       t.integer :seller_id
-            t.string :store_name
+      t.string :store_name
+      t.string :category
 
       t.timestamps null: false
     end

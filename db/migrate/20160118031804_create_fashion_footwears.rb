@@ -13,6 +13,7 @@ class CreateFashionFootwears < ActiveRecord::Migration
       t.integer :seller_id
       t.string :store_name
       t.string :color
+      t.string :category
 
       t.timestamps null: false
     end

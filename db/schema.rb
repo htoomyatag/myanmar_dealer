@@ -131,6 +131,7 @@ ActiveRecord::Schema.define(version: 20160325144416) do
     t.string   "feature"
     t.integer  "seller_id"
     t.string   "store_name"
+    t.string   "category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -289,6 +290,7 @@ ActiveRecord::Schema.define(version: 20160325144416) do
     t.string   "brand"
     t.integer  "seller_id"
     t.string   "store_name"
+    t.string   "category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -325,6 +327,7 @@ ActiveRecord::Schema.define(version: 20160325144416) do
     t.string   "brand"
     t.integer  "seller_id"
     t.string   "store_name"
+    t.string   "category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -362,6 +365,7 @@ ActiveRecord::Schema.define(version: 20160325144416) do
     t.integer  "seller_id"
     t.string   "color"
     t.string   "store_name"
+    t.string   "category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -399,6 +403,7 @@ ActiveRecord::Schema.define(version: 20160325144416) do
     t.integer  "seller_id"
     t.string   "store_name"
     t.string   "color"
+    t.string   "category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -434,6 +439,7 @@ ActiveRecord::Schema.define(version: 20160325144416) do
     t.string   "hat_type"
     t.integer  "seller_id"
     t.string   "store_name"
+    t.string   "category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -484,6 +490,7 @@ ActiveRecord::Schema.define(version: 20160325144416) do
     t.string   "color"
     t.integer  "seller_id"
     t.string   "store_name"
+    t.string   "category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -564,6 +571,7 @@ ActiveRecord::Schema.define(version: 20160325144416) do
     t.string   "color"
     t.integer  "seller_id"
     t.string   "store_name"
+    t.string   "category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -729,6 +737,7 @@ ActiveRecord::Schema.define(version: 20160325144416) do
     t.string   "feature"
     t.integer  "seller_id"
     t.string   "store_name"
+    t.string   "category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -987,6 +996,7 @@ ActiveRecord::Schema.define(version: 20160325144416) do
     t.string   "age_group"
     t.integer  "seller_id"
     t.string   "store_name"
+    t.string   "category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
