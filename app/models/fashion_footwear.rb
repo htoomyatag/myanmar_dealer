@@ -32,7 +32,7 @@ class FashionFootwear < ActiveRecord::Base
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
  def add_to_product
-      Product.create( :mmdealer_code => "fashionfootwear"+self.id.to_s,:seller_id => self.seller_id,
+      Product.create( :mmdealer_code => "footwears"+(Product.maximum(:id).next.to_i).to_s,:seller_id => self.seller_id,
       :title => self.title,
       :made_by_country => self.made_by_country,
       :brand => self.brand,
@@ -40,7 +40,7 @@ class FashionFootwear < ActiveRecord::Base
       :color => self.color,
       :quantity => self.quantity,
       :size => self.size,
-       :category => "footwears",
+      :category => "footwears",
       :footwear_type => self.footwear_type
      )
   end

@@ -19,10 +19,9 @@ class Equipment < ActiveRecord::Base
 
  def add_to_product
 
-      Product.create( :mmdealer_code => "equipment"+self.id.to_s,
+      Product.create( :mmdealer_code => "machines"+(Product.maximum(:id).next.to_i).to_s,
         :seller_id => self.seller_id,
       :title => self.title,
-      :category => self.category,
       :made_by_country => self.made_by_country,
       :description => self.description,
       :brand => self.brand,

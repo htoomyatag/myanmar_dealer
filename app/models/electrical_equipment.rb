@@ -20,7 +20,7 @@ class ElectricalEquipment < ActiveRecord::Base
 
    
    def add_to_product
-      Product.create(:mmdealer_code => "electricalequipment"+self.id.to_s,
+      Product.create(:mmdealer_code => "eletronic_related"+(Product.maximum(:id).next.to_i).to_s,
         :seller_id => self.seller_id,
       :store_name => self.store_name,
       :title => self.title,

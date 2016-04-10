@@ -18,7 +18,7 @@ class Sport < ActiveRecord::Base
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
  def add_to_product
-      Product.create( :mmdealer_code => "sport"+self.id.to_s,:seller_id => self.seller_id,
+      Product.create( :mmdealer_code => "sports"+(Product.maximum(:id).next.to_i).to_s,:seller_id => self.seller_id,
             :title => self.title,
             :price => self.price,
             :quantity => self.quantity,

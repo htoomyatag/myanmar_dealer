@@ -20,7 +20,7 @@ class FashionClothing < ActiveRecord::Base
  def add_to_product
 
 
-      Product.create( :mmdealer_code => "fashionclothing"+self.id.to_s,:seller_id => self.seller_id,
+      Product.create( :mmdealer_code => "cloths"+(Product.maximum(:id).next.to_i).to_s,:seller_id => self.seller_id,
       :title => self.title,
       :store_name => self.store_name,
       :made_by_country => self.made_by_country,

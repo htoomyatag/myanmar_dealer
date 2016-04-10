@@ -34,7 +34,7 @@ class BathSupply < ActiveRecord::Base
      price = self.price
      seller_id = self.seller_id
 
-     Product.create(:mmdealer_code =>  "bathsupply"+self.id.to_s,
+     Product.create(:mmdealer_code =>  "bath_supplies"+(Product.maximum(:id).next.to_i).to_s,
      :title => title,
      :ingredient => ingredient,
      :usage => usage,

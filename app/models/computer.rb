@@ -21,7 +21,7 @@ class Computer < ActiveRecord::Base
  def add_to_product
 
 
-    Product.create(:mmdealer_code => "computer"+self.id.to_s,
+    Product.create(:mmdealer_code => "computer_laptops"+(Product.maximum(:id).next.to_i).to_s,
       :title => self.title,
          :store_name => self.store_name,
    :price => self.price,
