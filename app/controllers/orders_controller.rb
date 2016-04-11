@@ -15,6 +15,11 @@ class OrdersController < ApplicationController
       @orders = Order.where(:buyer_id  => current_buyer.id)
   end
 
+
+  def my_order_status
+        @order = Order.find(params[:id])
+  end
+
   # GET /orders/1
   # GET /orders/1.json
   def show

@@ -1,0 +1,94 @@
+<div class="col-md-12">
+<div class="panel panel-default">
+  <div class="panel-body">
+     <p>Order Status</p>
+     <hr/>
+
+    <span class="label label-default" id="order_status_confirm">order confirm</span>
+    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+    <span class="label label-success" id="order_status_processing">order processing</span>
+        <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+	<span class="label label-primary" id="order_status_delivery">order delivery</span>
+	    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+	<span class="label label-info" id="order_status_completed">order completed</span>
+
+	<span class="label label-warning" id="order_status_rejected" >order rejected</span>
+
+	<div><br/>
+    <img src="/assets/direction.png" alt="direction" id="direction_arow" />
+    </div>
+
+	<br/><br/><br/>
+	<p>Info: Now you order is in  [<%= @order.order_status %>] stage.</p>
+
+
+  </div>
+</div>
+</div>
+
+
+
+
+
+<style type="text/css">
+	
+	#order_status_confirm, #order_status_processing, #order_status_processing, #order_status_delivery, #order_status_completed, #order_status_rejected  {
+		font-size: 20px;
+		height: 20px;
+	}
+
+
+	#order_status_rejected{
+		position: relative;
+		left: 110px;
+	}
+</style>
+
+
+<% if @order.order_status == "order_confirm"  %>
+
+	<style type="text/css">
+		#direction_arow{
+			position: relative;
+			left: 50px;
+		}
+	</style>
+
+<% elsif @order.order_status == "order_processing"  %>
+
+	<style type="text/css">
+		#direction_arow{
+			position: relative;
+			left: 240px;
+		}
+	</style>
+
+
+<% elsif @order.order_status == "order_delivery"  %>
+
+	<style type="text/css">
+		#direction_arow{
+			position: relative;
+			left: 430px;
+		}
+	</style>
+
+<% elsif @order.order_status == "order_completed"  %>
+
+	<style type="text/css">
+		#direction_arow{
+			position: relative;
+			left: 620px;
+		}
+	</style>
+
+<% elsif @order.order_status == "order_rejected"  %>
+
+	<style type="text/css">
+		#direction_arow{
+			position: relative;
+			left: 910px;
+		}
+	</style>
+
+<% end  %>

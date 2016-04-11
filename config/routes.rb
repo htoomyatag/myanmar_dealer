@@ -66,6 +66,7 @@ Rails.application.routes.draw do
 
   resources :orders
   get 'my_order' => 'orders#my_order'
+  get 'my_order_status' => 'orders#my_order_status'
 
   resources :products
   get 'my_product' => 'products#my_product', :as => :my_product
