@@ -9,6 +9,7 @@ class CreateOrders < ActiveRecord::Migration
       t.string :customer_township
       t.text :customer_address
 
+
       t.timestamps null: false
     end
   end

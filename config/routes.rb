@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :buyer_reports
+  get 'my_report' => 'buyer_reports#my_report'
+
   resources :apis
 
   get 'my_api_services' => 'apis#my_api_services', :as => :my_api_services
@@ -69,6 +72,10 @@ Rails.application.routes.draw do
   
 
   resources :stores
+  get 'dashboard' => 'stores#dashboard', :as => :dashboard
+
+
+
   devise_for :buyers, :controllers => {:sessions => "buyers/sessions", :registrations => "buyers/registrations"}
   devise_for :sellers, :controllers => {:sessions => "sellers/sessions", :registrations => "sellers/registrations"}
   resources :buyers

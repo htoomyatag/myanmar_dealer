@@ -1,3 +1,4 @@
+
 <div class="main-header">
       <div class="container">
         <div class="row">
@@ -27,7 +28,29 @@
             </div>  
 
             <div id="cart" class="btn-group btn-block" style="width:300px;float:right;">
-             
+              <button type="button" data-toggle="dropdown" class="btn btn-block btn-lg dropdown-toggle" style="height:47px;">
+                <i class="fa fa-shopping-cart" ></i>
+                <span class="hidden-md"><%=t :cart %></span> 
+                <span id="cart-total"> <%= (@cart.total_quantity) %> item(s) -   <%= (@cart.total_price) %> <%=t :MMK %></span>
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <ul class="dropdown-menu pull-right">
+                  <li>
+                  <%= render (@cart.line_items) %>
+                </li>
+              
+                <li>
+                  <p class="text-right btn-block1">
+                    <a href="/check_out">
+                      <%=t :view_cart %>
+                    </a>
+                    <a href="/check_out">
+                      <%=t :check_out %>
+                    </a>
+                  </p>
+                </li>
+
+              </ul>
             </div>
 
 
@@ -103,69 +126,55 @@
   <!-- Main Menu Ends -->
   </header>
 <div id="main-container" class="container">
-  <!-- Breadcrumb Starts -->
-    <ol class="breadcrumb">
-      <li><a href="index.html">Home</a></li>
-      <li class="active">Register</li>
-    </ol>
-  <!-- Breadcrumb Ends -->
-  <!-- Main Heading Starts -->
-    <h2 class="main-heading text-center">
-      Login or create new account
-    </h2>
-  <!-- Main Heading Ends -->
-  <!-- Login Form Section Starts -->
-    <section class="login-area">
-      <div class="row">
-        <div class="col-sm-6">
-        <!-- Login Panel Starts -->
-          <div class="panel panel-smart">
-            <div class="panel-heading">
-              <h3 class="panel-title">Seller Login</h3>
-            </div>
-            <div class="panel-body">
-              <p>
-                Please login using your existing account
-              </p>
-            <!-- Login Form Starts -->
-             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                <div class="form-group">
-                  <label class="sr-only" for="exampleInputEmail2">Email</label>
-                  <%= f.email_field :email, autofocus: true, :class=>"form-control" %>
-                </div>
-                <div class="form-group">
-                  <label class="sr-only" for="exampleInputPassword2">Password</label>
-                  <%= f.password_field :password, autocomplete: "off", :class=>"form-control" %>
-                </div>
-                <button type="submit" class="btn btn-black">
-                  Login
-                </button>
-            <% end %>
-            <!-- Login Form Ends -->
-            </div>
-          </div>
-        <!-- Login Panel Ends -->
-        </div>
-        <div class="col-sm-6">
-        <!-- Account Panel Starts -->
-          <div class="panel panel-smart">
-            <div class="panel-heading">
-              <h3 class="panel-title">
-                Create new seller account
-              </h3>
-            </div>
-            <div class="panel-body">
-              <p>
-                Lorem ispum Lorem ispumLorem ispumLorem ispumLorem ispumLorem ispumLorem ispum
-              </p>
-              <a href="/sellers/sign_up" class="btn btn-black">
-                Register
-              </a>
-            </div>
-          </div>
-        <!-- Account Panel Ends -->
-        </div>
-      </div>
-    </section>
-  <!-- Login Form Section Ends -->
+
+<div class="col-md-12">
+
+<h1> Report detail</h1>
+<div class="panel panel-default">
+  <div class="panel-body">
+     <p>Reports</p>
+     <hr/>
+		<p id="notice"><%= notice %></p>
+
+		<p>
+		  <strong>Title:</strong>
+		  <%= @buyer_report.title %>
+		</p>
+
+		<p>
+		  <strong>Purchase date:</strong>
+		  <%= @buyer_report.purchase_date %>
+		</p>
+
+		<p>
+		  <strong>Description:</strong>
+		  <%= @buyer_report.description %>
+		</p>
+
+		<p>
+		  <%= image_tag @buyer_report.avatar.url %>
+		</p>
+
+		<%= link_to 'Edit', edit_buyer_report_path(@buyer_report) %> |
+		<%= link_to 'Back', buyer_reports_path %>
+
+
+      
   </div>
+</div>
+</div>
+
+
+
+
+
+</div>
+
+<!--  -->
+
+
+
+
+
+
+

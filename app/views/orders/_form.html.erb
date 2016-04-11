@@ -11,35 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :seller_id %><br>
-    <%= f.number_field :seller_id %>
+ 
+  <div class="field"><br/>
+    <%= f.text_field :order_status %>
   </div>
-  <div class="field">
-    <%= f.label :customer_name %><br>
-    <%= f.text_field :customer_name, :class=>"form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :customer_email %><br>
-    <%= f.text_field :customer_email %>
-  </div>
-  <div class="field">
-    <%= f.label :customer_phone %><br>
-    <%= f.text_field :customer_phone %>
-  </div>
-  <div class="field">
-    <%= f.label :customer_city %><br>
-    <%= f.text_field :customer_city %>
-  </div>
-  <div class="field">
-    <%= f.label :customer_township %><br>
-    <%= f.text_field :customer_township %>
-  </div>
-  <div class="field">
-    <%= f.label :customer_address %><br>
-    <%= f.text_area :customer_address %>
-  </div>
-  <div class="actions">
+
+  
+  <div class="actions"><br/>
     <%= f.submit %>
   </div>
+
+
 <% end %>

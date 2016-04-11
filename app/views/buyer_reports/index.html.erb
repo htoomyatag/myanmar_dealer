@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Buyer Reports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Purchase date</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @buyer_reports.each do |buyer_report| %>
+      <tr>
+        <td><%= buyer_report.title %></td>
+        <td><%= buyer_report.purchase_date %></td>
+        <td><%= buyer_report.description %></td>
+        <td><%= link_to 'Show', buyer_report %></td>
+        <td><%= link_to 'Edit', edit_buyer_report_path(buyer_report) %></td>
+        <td><%= link_to 'Destroy', buyer_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Buyer report', new_buyer_report_path %>

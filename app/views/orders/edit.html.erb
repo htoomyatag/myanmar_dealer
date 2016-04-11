@@ -1,6 +1,80 @@
-<h1>Editing Order</h1>
 
-<%= render 'form' %>
+<div class="col-md-12">
+<div class="panel panel-default">
+  <div class="panel-body">
+     <p>Set order Status</p>
+     <hr/>
 
-<%= link_to 'Show', @order %> |
-<%= link_to 'Back', orders_path %>
+
+<span class="label label-default" id="order_status_confirm">order_confirm</span>
+<span class="label label-primary" id="order_status_delivery">order_delivery</span>
+<span class="label label-success" id="order_status_processing">order_processing</span>
+<span class="label label-info" id="order_status_completed">order_completed</span>
+<span class="label label-warning" id="order_status_rejected">order_rejected</span>
+
+       <%= render 'form' %>
+
+
+  </div>
+</div>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+	
+
+$(document).on('click', '#order_status_confirm', function() {
+
+	var aok = $("#order_status_confirm").text();
+	document.getElementById("order_order_status").value = aok;
+
+
+});
+
+
+$(document).on('click', '#order_status_delivery', function() {
+
+	var aok = $("#order_status_delivery").text();
+	document.getElementById("order_order_status").value = aok;
+
+
+});
+
+$(document).on('click', '#order_status_processing', function() {
+
+	var aok = $("#order_status_processing").text();
+	document.getElementById("order_order_status").value = aok;
+
+
+});
+
+$(document).on('click', '#order_status_completed', function() {
+
+	var aok = $("#order_status_completed").text();
+	document.getElementById("order_order_status").value = aok;
+
+
+});
+
+
+$(document).on('click', '#order_status_rejected', function() {
+
+	var aok = $("#order_status_rejected").text();
+	document.getElementById("order_order_status").value = aok;
+
+
+});
+
+</script>
+
+
+<style type="text/css">
+	
+span:hover {
+    cursor: pointer;
+}
+
+</style>
