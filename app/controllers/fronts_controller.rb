@@ -8,7 +8,12 @@ class FrontsController < ApplicationController
     @fronts = Front.all
    end
 
-  
+   def my_conversation
+      @buyers = Buyer.where.not("id = ?",current_buyer.id).order("created_at DESC")
+      @conversations = Conversation.involving(current_buyer).order("created_at DESC")
+
+   end
+
 
    def home
      if params[:category]

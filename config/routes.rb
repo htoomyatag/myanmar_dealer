@@ -102,6 +102,8 @@ Rails.application.routes.draw do
  get 'thanks_you' => 'fronts#thanks_you'
  get 'check_out_as_guest' => 'fronts#check_out_as_guest'
  get 'product_by_category' => 'fronts#product_by_category'
+ get 'my_conversation' => 'fronts#my_conversation'
+ 
  
 
  get 'fashion_related' => 'fronts#fashion_related', :as => :fashion_related
