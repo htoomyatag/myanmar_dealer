@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411060401) do
+ActiveRecord::Schema.define(version: 20160412023030) do
 
   create_table "apis", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -214,6 +214,16 @@ ActiveRecord::Schema.define(version: 20160411060401) do
     t.integer  "avatar5_file_size"
     t.datetime "avatar5_updated_at"
   end
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "conversations", ["recipient_id"], name: "index_conversations_on_recipient_id"
+  add_index "conversations", ["sender_id"], name: "index_conversations_on_sender_id"
 
   create_table "electrical_equipments", force: :cascade do |t|
     t.string   "title"
@@ -733,6 +743,17 @@ ActiveRecord::Schema.define(version: 20160411060401) do
     t.integer  "avatar5_file_size"
     t.datetime "avatar5_updated_at"
   end
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "conversation_id"
+    t.integer  "buyer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "messages", ["buyer_id"], name: "index_messages_on_buyer_id"
+  add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id"
 
   create_table "motorcycle_accessories", force: :cascade do |t|
     t.string   "title"

@@ -3,8 +3,11 @@ class BuyersController < ApplicationController
 
   # GET /buyers
   # GET /buyers.json
+  before_filter :authenticate_buyer!
+
   def index
-    @buyers = Buyer.all
+      @buyers = Buyer.where.not("id = ?",current_buyer.id).order("created_at DESC")
+      @conversations = Conversation.involving(current_buyer).order("created_at DESC")
   end
 
   # GET /buyers/1

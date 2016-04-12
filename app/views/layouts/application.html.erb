@@ -3,256 +3,260 @@
 <head>
   <title>MyanmarDealer</title>
   <link rel="shortcut icon" href="<%= asset_path 'm.png'%>">
+  <meta content='<%= buyer_signed_in? ? current_buyer.id : "" %>' name='buyer-id'/>
  
-  	<%= stylesheet_link_tag    'bootstrap.min.css' %>
-	<%= stylesheet_link_tag    'font-awesome.min.css' %>
-	<%= stylesheet_link_tag    'owl.carousel.css' %>
-	<%= stylesheet_link_tag    'style.css' %>
-	<%= stylesheet_link_tag    'responsive.css' %>
-	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	
-    <%= javascript_include_tag "jquery.min.js" %>
-    <%= javascript_include_tag "jquery_ujs.js" %>
+
+  <%= stylesheet_link_tag    'bootstrap.min.css' %>
+  <%= stylesheet_link_tag    'font-awesome.min.css' %>
+  <%= stylesheet_link_tag    'owl.carousel.css' %>
+  <%= stylesheet_link_tag    'style.css' %>
+  <%= stylesheet_link_tag    'responsive.css' %>
+  <%= stylesheet_link_tag    'chat.css' %>
+  <%= stylesheet_link_tag    'buyers.css' %>
+
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
-  	<%= csrf_meta_tags %>
+    <%= csrf_meta_tags %>
 
 </head>
 <body>
 
 
 
-	<header id="header-area">
+  <header id="header-area">
 
-	<!-- Header Top Starts -->
-		<div class="header-top">
-			
-			<div class="container">
-				<div class="row">
-				<!-- Header Links Starts -->
-					<div class="col-sm-8 col-xs-12">
-						<div class="header-links">
-							<ul class="nav navbar-nav pull-left">
-								<li>
-									<a href="/">
-										<i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
-										<span class="hidden-sm hidden-xs">
-											<%=t :home %>
-										</span>
-									</a>
-								</li>
-								 <% if buyer_signed_in? %>
+  <!-- Header Top Starts -->
+    <div class="header-top">
+      
+      <div class="container">
+        <div class="row">
+        <!-- Header Links Starts -->
+          <div class="col-sm-8 col-xs-12">
+            <div class="header-links">
+              <ul class="nav navbar-nav pull-left">
+                <li>
+                  <a href="/">
+                    <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                    <span class="hidden-sm hidden-xs">
+                      <%=t :home %>
+                    </span>
+                  </a>
+                </li>
+                 <% if buyer_signed_in? %>
 
-								 	  <li class="dropdown">
-								          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%=t :my_account %> <span class="caret"></span></a>
-								          <ul class="dropdown-menu" style="background:black;">
+                    <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%=t :my_account %> <span class="caret"></span></a>
+                          <ul class="dropdown-menu" style="background:black;">
 
-								        
-								            <li>
-	                    						<%= link_to "#{t :order_list}", my_order_path %>
-	                    					</li>
+                        
+                            <li>
+                                  <%= link_to "#{t :order_list}", my_order_path %>
+                                </li>
 
-								            <li>
-	                    						<%= link_to "#{t :report_list}", my_report_path %>
-	                    					</li>
-	                    					
-										
-								         
-								          </ul>
-								        </li>
+                            <li>
+                                  <%= link_to "#{t :report_list}", my_report_path %>
+                                </li>
+                                
+                    
+                         
+                          </ul>
+                        </li>
 
-								        <li>
-                    							<%= link_to "#{t :log_out}", destroy_buyer_session_path, :method => :delete %>
-                    					</li>
+                        <li>
+                                  <%= link_to "#{t :log_out}", destroy_buyer_session_path, :method => :delete %>
+                              </li>
 
-                    			
-                    			<% end %>
-							
-							
+                          
+                          <% end %>
+              
+              
 
-                    			<li>
-									<a href="/sellers/sign_up">
-										<i class="fa fa-unlock hidden-lg hidden-md" title="Register"></i>
-										<span class="hidden-sm hidden-xs">
-											<%=t :want_to_be_a_seller %>
-										</span>
-									</a>
-								</li>
+                          <li>
+                  <a href="/sellers/sign_up">
+                    <i class="fa fa-unlock hidden-lg hidden-md" title="Register"></i>
+                    <span class="hidden-sm hidden-xs">
+                      <%=t :want_to_be_a_seller %>
+                    </span>
+                  </a>
+                </li>
 
-                    			
+                          
 
-                    			<li>
-									<%= link_to "#{t :check_out}", check_out_path %>
-								</li>
-
-
-							   <% if seller_signed_in? %>
+                          <li>
+                  <%= link_to "#{t :check_out}", check_out_path %>
+                </li>
 
 
-										<li><%= link_to "#{t :dashboard}", dashboard_path %></li>
-
-										<li>
-                    							<%= link_to "#{t :log_out}", destroy_seller_session_path, :method => :delete %>
-                    					</li>
-
-								 
-                    			
-                    			<% end %>
+                 <% if seller_signed_in? %>
 
 
+                    <li><%= link_to "#{t :dashboard}", dashboard_path %></li>
 
-							
-							</ul>
-						</div>
-					</div>
-				<!-- Header Links Ends -->
-				<!-- Currency & Languages Starts -->
-					<div class="col-sm-4 col-xs-12">
-						<div class="pull-right">
-						<!-- Currency Starts -->
-							<ul class="nav navbar-nav pull-left">
-							<% if seller_signed_in? %>
+                    <li>
+                                  <%= link_to "#{t :log_out}", destroy_seller_session_path, :method => :delete %>
+                              </li>
+
+                 
+                          
+                          <% end %>
 
 
-							<% elsif buyer_signed_in? %>
 
- 	
-                    			
-                    		<% else %>
+              
+              </ul>
+            </div>
+          </div>
+        <!-- Header Links Ends -->
+        <!-- Currency & Languages Starts -->
+          <div class="col-sm-4 col-xs-12">
+            <div class="pull-right">
+            <!-- Currency Starts -->
+              <ul class="nav navbar-nav pull-left">
+              <% if seller_signed_in? %>
 
-                    			<li>
-									<%= link_to "#{t :Seller_Login}", new_seller_session_path %>
-								</li>
 
-								<li>
-									<%= link_to "#{t :Buyer_Login}", new_buyer_session_path %>
-								</li>
+              <% elsif buyer_signed_in? %>
 
-				
-                    		<% end %>
+  
+                          
+                        <% else %>
 
-                    	
+                          <li>
+                  <%= link_to "#{t :Seller_Login}", new_seller_session_path %>
+                </li>
 
-                    				
-							</ul>
-						
-							<span style="position:absolute;float:left;">
-							<%= link_to image_tag("english_flag.png"), "?locale=en" %>
-							<%= link_to image_tag("mm_flag.png"), "?locale=mm" %>
-							</span>
-						
+                <li>
+                  <%= link_to "#{t :Buyer_Login}", new_buyer_session_path %>
+                </li>
 
-                    			
+        
+                        <% end %>
 
-                    		
-						<!-- Languages Ends -->
-						</div>
-					</div>
-				<!-- Currency & Languages Ends -->
-				</div>
-			</div>
-		</div>
-	<!-- Header Top Ends -->
-	<!-- Main Header Starts -->
-		
+                      
+
+                            
+              </ul>
+            
+              <span style="position:absolute;float:left;">
+              <%= link_to image_tag("english_flag.png"), "?locale=en" %>
+              <%= link_to image_tag("mm_flag.png"), "?locale=mm" %>
+              </span>
+            
+
+                          
+
+                        
+            <!-- Languages Ends -->
+            </div>
+          </div>
+        <!-- Currency & Languages Ends -->
+        </div>
+      </div>
+    </div>
+  <!-- Header Top Ends -->
+  <!-- Main Header Starts -->
+    
 
 <%= yield %>
 
 
-	<footer id="footer-area">
-	<!-- Footer Links Starts -->
-		<div class="footer-links">
-		<!-- Container Starts -->
-			<div class="container">
-				<!-- Information Links Starts -->
-					<div class="col-md-2 col-sm-6">
-						<h5>Information</h5>
-						<ul>
-							<li><a href="#">About Us</a></li>
-							<li><a href="#">Delivery Information</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-							<li><a href="#">Terms &amp; Conditions</a></li>
-						</ul>
-					</div>
-				<!-- Information Links Ends -->
-				<!-- My Account Links Starts -->
-					<div class="col-md-2 col-sm-6">
-						<h5>My Account</h5>
-						<ul>
-							<li><a href="#">My orders</a></li>
-							<li><a href="#">My merchandise returns</a></li>
-							<li><a href="#">My credit slips</a></li>
-							<li><a href="#">My addresses</a></li>
-							<li><a href="#">My personal info</a></li>
-						</ul>
-					</div>
-				<!-- My Account Links Ends -->					
-				<!-- Customer Service Links Starts -->
-					<div class="col-md-2 col-sm-6">
-						<h5>Service</h5>
-						<ul>
-							<li><a href="#">Contact Us</a></li>
-							<li><a href="#">Returns</a></li>
-							<li><a href="#">Site Map</a></li>
-							<li><a href="#">Affiliates</a></li>
-							<li><a href="#">Specials</a></li>
-						</ul>
-					</div>
-				<!-- Customer Service Links Ends -->
-				<!-- Follow Us Links Starts -->
-					<div class="col-md-2 col-sm-6">
-						<h5>Follow Us</h5>
-						<ul>
-							<li><a href="#">Facebook</a></li>
-							<li><a href="#">Twitter</a></li>
-							<li><a href="#">RSS</a></li>
-							<li><a href="#">YouTube</a></li>
-						</ul>
-					</div>
-				<!-- Follow Us Links Ends -->
-				<!-- Contact Us Starts -->
-					<div class="col-md-4 col-sm-12 last">
-						<h5>Contact Us</h5>
-						<ul>
-							<li>Myanmar Dealer.com</li>
-							<li>
-								No.A (21), U Wisara Road, Industrial Zone, North Dagon, Yangon, Myanmar.
-							</li>
-							<li>
-								Email: <a href="#">info@myanmardealer.com</a>
-							</li>								
-						</ul>
-						<h4 class="lead">
-							Tel: <span> (+959) 972646904</span>
-						</h4>
-					</div>
-				<!-- Contact Us Ends -->
-			</div>
-		<!-- Container Ends -->
-		</div>
-	<!-- Footer Links Ends -->
-	<!-- Copyright Area Starts -->
-		<div class="copyright">
-		<!-- Container Starts -->
-			<div class="container">
-			<!-- Starts -->
-				<p class="pull-left">
-					&copy; 2016 Myanmar Dealers. Powered By <a href="http://www.hnttechs.com">H&Ttechs</a>
-				</p>
-			<!-- Ends -->
-			<!-- Payment Gateway Links Starts -->
-				<ul class="pull-right list-inline">
-					<li>
-						<img src="/assets/payment-icon/mpu.jpg" alt="PaymentGateway" />
-					</li>
-				
-				</ul>
-			<!-- Payment Gateway Links Ends -->
-			</div>
-		<!-- Container Ends -->
-		</div>
-	<!-- Copyright Area Ends -->
-	</footer>
+  <footer id="footer-area">
+  <!-- Footer Links Starts -->
+    <div class="footer-links">
+    <!-- Container Starts -->
+      <div class="container">
+        <!-- Information Links Starts -->
+          <div class="col-md-2 col-sm-6">
+            <h5>Information</h5>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Delivery Information</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+            </ul>
+          </div>
+        <!-- Information Links Ends -->
+        <!-- My Account Links Starts -->
+          <div class="col-md-2 col-sm-6">
+            <h5>My Account</h5>
+            <ul>
+              <li><a href="#">My orders</a></li>
+              <li><a href="#">My merchandise returns</a></li>
+              <li><a href="#">My credit slips</a></li>
+              <li><a href="#">My addresses</a></li>
+              <li><a href="#">My personal info</a></li>
+            </ul>
+          </div>
+        <!-- My Account Links Ends -->          
+        <!-- Customer Service Links Starts -->
+          <div class="col-md-2 col-sm-6">
+            <h5>Service</h5>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Site Map</a></li>
+              <li><a href="#">Affiliates</a></li>
+              <li><a href="#">Specials</a></li>
+            </ul>
+          </div>
+        <!-- Customer Service Links Ends -->
+        <!-- Follow Us Links Starts -->
+          <div class="col-md-2 col-sm-6">
+            <h5>Follow Us</h5>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">RSS</a></li>
+              <li><a href="#">YouTube</a></li>
+            </ul>
+          </div>
+        <!-- Follow Us Links Ends -->
+        <!-- Contact Us Starts -->
+          <div class="col-md-4 col-sm-12 last">
+            <h5>Contact Us</h5>
+            <ul>
+              <li>Myanmar Dealer.com</li>
+              <li>
+                No.A (21), U Wisara Road, Industrial Zone, North Dagon, Yangon, Myanmar.
+              </li>
+              <li>
+                Email: <a href="#">info@myanmardealer.com</a>
+              </li>               
+            </ul>
+            <h4 class="lead">
+              Tel: <span> (+959) 972646904</span>
+            </h4>
+          </div>
+        <!-- Contact Us Ends -->
+      </div>
+    <!-- Container Ends -->
+    </div>
+  <!-- Footer Links Ends -->
+  <!-- Copyright Area Starts -->
+    <div class="copyright">
+    <!-- Container Starts -->
+      <div class="container">
+      <!-- Starts -->
+        <p class="pull-left">
+          &copy; 2016 Myanmar Dealers. Powered By <a href="http://www.hnttechs.com">H&Ttechs</a>
+        </p>
+      <!-- Ends -->
+      <!-- Payment Gateway Links Starts -->
+        <ul class="pull-right list-inline">
+          <li>
+            <img src="/assets/payment-icon/mpu.jpg" alt="PaymentGateway" />
+          </li>
+        
+        </ul>
+      <!-- Payment Gateway Links Ends -->
+      </div>
+    <!-- Container Ends -->
+    </div>
+  <!-- Copyright Area Ends -->
+  </footer>
 
 </body>
 </html>

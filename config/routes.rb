@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+ 
+ 
   resources :buyer_reports
   get 'my_report' => 'buyer_reports#my_report'
 
@@ -204,6 +206,10 @@ Rails.application.routes.draw do
   
  get 'full_productinfo_training_and_schools/:id' => 'fronts#full_productinfo_training_and_schools', :as => :full_productinfo_training_and_schools
 
+
+  resources :conversations do
+    resources :messages
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

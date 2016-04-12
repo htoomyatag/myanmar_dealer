@@ -490,8 +490,8 @@ seller = Seller.create([
 
 buyer = Buyer.create([
 
-{email: "htoomyatag@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
-{email: "theldarlykhin@gmail.com", password: "privatethel", password_confirmation: "privatethel"}
+{name: "htoo", email: "htoomyatag@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
+{name: "thel", email: "theldarlykhin@gmail.com", password: "privatethel", password_confirmation: "privatethel"}
 
 ])
 
