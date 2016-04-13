@@ -3,7 +3,7 @@ class CreateMessages < ActiveRecord::Migration
     create_table :messages do |t|
       t.text :body
       t.references :conversation, index: true
-      t.references :buyer, index: true
+      t.references :user, index: true
 
       t.timestamps
     end

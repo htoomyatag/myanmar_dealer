@@ -143,7 +143,17 @@
 						</a>
 					</li>
 				</ul>
+					
+
 			</div>
+			
+
+			 <% @users.each_with_index do |user, index| %>
+		             
+		                <%= user.name %>
+		                  <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
+		                              "data-sid" => current_user.id, "data-rip" => user.id %>
+	          		<% end %>
 		<!-- Left Ends -->
 		<!-- Right Starts -->
 			<div class="col-sm-8 product-details">

@@ -9,7 +9,7 @@ class FrontsController < ApplicationController
    end
 
    def my_conversation
-      @buyers = Buyer.where.not("id = ?",current_user.id).order("created_at DESC")
+      @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
       @conversations = Conversation.involving(current_user).order("created_at DESC")
 
    end
@@ -69,6 +69,9 @@ class FrontsController < ApplicationController
    def product_full
      @product = Product.find(params[:id])
      @relate_product = Product.where(:product_category => @product.product_category)
+
+      @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
+      @conversations = Conversation.involving(current_user).order("created_at DESC")
    end
 
 

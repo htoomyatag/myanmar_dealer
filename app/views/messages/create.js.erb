@@ -1,8 +1,8 @@
 <% publish_to @path do %>
     var id = "<%= @conversation.id %>";
     var chatbox = $("#chatbox_" + id + " .chatboxcontent");
-    var sender_id = "<%= @message.buyer.id %>";
-    var reciever_id = $('meta[name=buyer-id]').attr("content");
+    var sender_id = "<%= @message.user.id %>";
+    var reciever_id = $('meta[name=user-id]').attr("content");
 
     chatbox.append("<%= j render( partial: @message ) %>");
     chatbox.scrollTop(chatbox[0].scrollHeight);
