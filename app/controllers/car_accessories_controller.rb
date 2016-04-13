@@ -8,7 +8,7 @@ class CarAccessoriesController < ApplicationController
   end
 
   def product_car_accessories
-      @car_accessories = CarAccessory.all
+      @car_accessories = Product.where(:category => "car_accessories")
   end
 
   # GET /car_accessories/1

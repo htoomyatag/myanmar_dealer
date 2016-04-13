@@ -8,7 +8,7 @@ class HomeAppliancesController < ApplicationController
   end
 
   def product_home_appliances
-      @home_appliances = HomeAppliance.all
+      @home_appliances = Product.where(:category => "home_appliance")
   end
 
   # GET /home_appliances/1

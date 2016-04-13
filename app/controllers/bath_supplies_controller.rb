@@ -10,7 +10,7 @@ class BathSuppliesController < ApplicationController
   
 
   def product_bath_supplies
-     @bath_supplies = BathSupply.all
+     @bath_supplies =Product.where(:category => "bath_supplies")
   end
 
   # GET /bath_supplies/1

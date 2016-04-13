@@ -75,119 +75,120 @@ class FrontsController < ApplicationController
    end
 
 
+ 
     def full_productinfo_bath_supplies
-      @product = BathSupply.find(params[:id])
-      @relate_products = BathSupply.all
+      @product = Product.find(params[:id])
+      @relate_products = Product.where(:category => "bath_supplies")
     end
 
     def full_productinfo_beauty_equipments
-      @product = BeautyEquipment.find(params[:id])
-      @relate_products = BeautyEquipment.all
+      @product = Product.find(params[:id])
+      @relate_products = Product.where(:category => "beauty_equipments")
     end
 
     def full_productinfo_car_accessories
-      @product = CarAccessory.find(params[:id])
-      @relate_products = CarAccessory.all
+      @product = Product.find(params[:id])
+      @relate_products = Product.where(:category => "car_accessories")
     end
 
     def full_productinfo_computers
-       @product = Computer.find(params[:id])
-       @relate_products = Computer.all
+       @product = Product.find(params[:id])
+       @relate_products = Product.where(:category => "computers_laptops")
     end
 
     def full_productinfo_electrical_equipments
-       @product = ElectricalEquipment.find(params[:id])
-       @relate_products = ElectricalEquipment.all
+       @product = Product.find(params[:id])
+       @relate_products = Product.where(:category => "eletronic_related")
     end
 
     def full_productinfo_equipments
-        @product = Equipment.find(params[:id])
-        @relate_products = Equipment.all
+        @product = Product.find(params[:id])
+        @relate_products = Product.where(:category => "equipments")
     end
 
     def full_productinfo_fashion_accessories
-        @product = FashionAccessory.find(params[:id])
-        @relate_products = FashionAccessory.all
+        @product = Product.find(params[:id])
+        @relate_products = Product.where(:category => "fashion_related")
     end
 
     def full_productinfo_fashion_bags
-        @product = FashionBag.find(params[:id])
-        @relate_products = FashionBag.all
+        @product = Product.find(params[:id])
+        @relate_products = Product.where(:category => "bags")
     end
 
     def full_productinfo_fashion_clothings
-      @product = FashionClothing.find(params[:id])
-      @relate_products = FashionClothing.all
+      @product = Product.find(params[:id])
+      @relate_products = Product.where(:category => "cloths")
     end
 
     def full_productinfo_fashion_footwears
-        @product = FashionFootwear.find(params[:id])
-        @relate_products = FashionFootwear.all
+        @product = Product.find(params[:id])
+        @relate_products = Product.where(:category => "footwears")
     end
 
 
     def full_productinfo_fashion_hats
-        @product = FashionHat.find(params[:id])
-        @relate_products = FashionHat.all
+        @product = Product.find(params[:id])
+        @relate_products = Product.where(:category => "hats")
     end
 
     def full_productinfo_gifts
-        @product = Gift.find(params[:id])
-        @relate_products = Gift.all
+        @product = Product.find(params[:id])
+        @relate_products = Product.where(:category => "gifts")
     end
 
     def full_productinfo_home_appliances
-        @product = HomeAppliance.find(params[:id])
-        @relate_products = HomeAppliance.all
+        @product = Product.find(params[:id])
+        @relate_products = Product.where(:category => "home_appliance")
     end
 
     def full_productinfo_instruments
-        @product = Instrument.find(params[:id])
-        @relate_products = Instrument.all
+        @product = Product.find(params[:id])
+        @relate_products = Product.where(:category => "instruments")
     end
 
     def full_productinfo_machines
-         @product = Machine.find(params[:id])
-        @relate_products = Machine.all
+         @product = Product.find(params[:id])
+        @relate_products = Product.where(:category => "machines")
     end
 
     def full_productinfo_makeup_and_skincares
-        @product = MakeupAndSkincare.find(params[:id])
-        @relate_products = MakeupAndSkincare.all
+        @product = Product.find(params[:id])
+        @relate_products = Product.where(:category => "comesmetics")
     end
 
     def full_productinfo_medicines
-        @product = Medicine.find(params[:id])
-        @relate_products = Medicine.all
+        @product = Product.find(params[:id])
+        @relate_products = Product.where(:category => "medicines")
     end
 
     def full_productinfo_motorcycle_accessories
-        @product = MotorcycleAccessory.find(params[:id])
-        @relate_products = MotorcycleAccessory.all
+        @product = Product.find(params[:id])
+        @relate_products = Product.where(:category => "motorcycle")
     end
 
     def full_productinfo_services
-        @product = Service.find(params[:id])
-        @relate_products = Service.all
+        @product = Product.find(params[:id])
+        @relate_products = Product.where(:category => "service_category")
     end
 
     def full_productinfo_sports
-       @product = Sport.find(params[:id])
-       @relate_products = Sport.all
+       @product = Product.find(params[:id])
+       @relate_products = Product.where(:category => "sports")
     end
 
     def full_productinfo_telephone_accessories
-       @product = TelephoneAccessory.find(params[:id])
-       @relate_products = TelephoneAccessory.all
+       @product = Product.find(params[:id])
+       @relate_products = Product.where(:category => "phone_related")
     end
 
     def full_productinfo_toys
-       @product = Toy.find(params[:id])
-       @relate_products = Toy.all
+       @product = Product.find(params[:id])
+       @relate_products = Product.where(:category => "toys")
     end
 
     def full_productinfo_training_and_schools
-        @product = TrainingAndSchool.find(params[:id])
+       @product = TrainingAndSchool.find(params[:id])
        @relate_products = TrainingAndSchool.all
     end
 

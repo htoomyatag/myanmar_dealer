@@ -8,7 +8,7 @@ class SportsController < ApplicationController
   end
 
   def product_sports
-    @sports = Sport.all
+    @sports = Product.where(:category => "sports")
   end
 
   # GET /sports/1

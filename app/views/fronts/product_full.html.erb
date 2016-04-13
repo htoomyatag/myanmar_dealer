@@ -148,12 +148,6 @@
 			</div>
 			
 
-			 <% @users.each_with_index do |user, index| %>
-		             
-		                <%= user.name %>
-		                  <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
-		                              "data-sid" => current_user.id, "data-rip" => user.id %>
-	          		<% end %>
 		<!-- Left Ends -->
 		<!-- Right Starts -->
 			<div class="col-sm-8 product-details">
@@ -302,8 +296,21 @@
 								<%= button_to line_items_path(:mmdealer_code => @product, :user_id => @product.user_id), :class =>"btn btn-cart" do %>
 									   <%=t :add_to_cart %>
 									  <i class="fa fa-shopping-cart"></i> 
-								<% end %>									
+								<% end %>		<br/>
+
+								<% @users.each_with_index do |user, index| %>
+		             
+		                			Contact with seller (<%= user.name %>)
+		                  			<%= link_to "Chat Now", "#", class: "btn btn-success btn-xs start-conversation",
+		                              "data-sid" => current_user.id, "data-rip" => user.id %>
+	         						<% end %>							
 						</div>
+
+
+
+	
+
+
 					</div>
 				<!-- Available Options Ends -->
 				</div>

@@ -8,7 +8,7 @@ class TelephoneAccessoriesController < ApplicationController
   end
 
   def product_telephone_accessories
-     @telephone_accessories = TelephoneAccessory.all
+     @telephone_accessories = Product.where(:category => "phone_related")
   end
 
   # GET /telephone_accessories/1

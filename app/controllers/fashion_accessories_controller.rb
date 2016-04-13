@@ -8,7 +8,7 @@ class FashionAccessoriesController < ApplicationController
   end
 
   def product_fashion_accessories
-     @fashion_accessories = FashionAccessory.all
+     @fashion_accessories = Product.where(:category => "fashion_related")
   end
 
   # GET /fashion_accessories/1

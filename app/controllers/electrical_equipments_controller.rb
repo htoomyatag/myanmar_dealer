@@ -9,7 +9,7 @@ class ElectricalEquipmentsController < ApplicationController
 
 
   def product_electrical_equipments
-       @electrical_equipments = ElectricalEquipment.all
+       @electrical_equipments = Product.where(:category => "eletronic_related")
   end
   # GET /electrical_equipments/1
   # GET /electrical_equipments/1.json

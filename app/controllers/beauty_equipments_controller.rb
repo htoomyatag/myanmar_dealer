@@ -9,7 +9,7 @@ class BeautyEquipmentsController < ApplicationController
 
 
   def product_beauty_equipments
-      @beauty_equipments = BeautyEquipment.all
+      @beauty_equipments = Product.where(:category => "beauty_equipments")
   end
 
   # GET /beauty_equipments/1

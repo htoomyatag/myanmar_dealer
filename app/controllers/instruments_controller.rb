@@ -8,7 +8,7 @@ class InstrumentsController < ApplicationController
   end
 
   def product_instruments
-    @instruments = Instrument.all
+    @instruments = Product.where(:category => "instruments")
   end
 
   # GET /instruments/1

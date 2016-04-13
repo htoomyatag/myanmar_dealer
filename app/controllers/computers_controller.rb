@@ -9,7 +9,7 @@ class ComputersController < ApplicationController
 
 
   def product_computers
-      @computers = Computer.all
+      @computers = Product.where(:category => "computers_laptops")
   end
 
   # GET /computers/1

@@ -167,6 +167,7 @@ Rails.application.routes.draw do
  get 'product_training_and_schools' => 'training_and_schools#product_training_and_schools', :as => :product_training_and_schools
 
 # full product info
+# full product info
  get 'full_productinfo_bath_supplies/:id' => 'fronts#full_productinfo_bath_supplies', :as => :full_productinfo_bath_supplies
   
  get 'full_productinfo_beauty_equipments/:id' => 'fronts#full_productinfo_beauty_equipments', :as => :full_productinfo_beauty_equipments
