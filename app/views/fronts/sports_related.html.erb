@@ -142,7 +142,7 @@
 											</div>
 											<div class="cart-button">
 											
-											<%= button_to line_items_path(:mmdealer_code => "sports"+sport.id.to_s, :seller_id => sport.seller_id), :class =>"btn btn-cart" do %>
+											<%= button_to line_items_path(:mmdealer_code => "sports"+sport.id.to_s, :user_id => sport.user_id), :class =>"btn btn-cart" do %>
 											   <%=t :add_to_cart %>
 											  <i class="fa fa-shopping-cart"></i> 
 											<% end %>
@@ -192,7 +192,7 @@
 											</div>
 											<div class="cart-button">
 											
-											<%= button_to line_items_path(:mmdealer_code => "gifts"+gift.id.to_s, :seller_id => gift.seller_id), :class =>"btn btn-cart" do %>
+											<%= button_to line_items_path(:mmdealer_code => "gifts"+gift.id.to_s, :user_id => gift.user_id), :class =>"btn btn-cart" do %>
 											   <%=t :add_to_cart %>
 											  <i class="fa fa-shopping-cart"></i> 
 											<% end %>
@@ -242,7 +242,7 @@
 											</div>
 											<div class="cart-button">
 											
-											<%= button_to line_items_path(:mmdealer_code => "toys"+toy.id.to_s, :seller_id => toy.seller_id), :class =>"btn btn-cart" do %>
+											<%= button_to line_items_path(:mmdealer_code => "toys"+toy.id.to_s, :user_id => toy.user_id), :class =>"btn btn-cart" do %>
 											   <%=t :add_to_cart %>
 											  <i class="fa fa-shopping-cart"></i> 
 											<% end %>

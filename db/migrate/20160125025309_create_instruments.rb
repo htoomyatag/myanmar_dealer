@@ -13,7 +13,7 @@ class CreateInstruments < ActiveRecord::Migration
       t.string :modal_number
       t.text :specification
       t.string :color
-      t.integer :seller_id
+      t.integer :user_id
       t.string :store_name
       t.string :category   
 

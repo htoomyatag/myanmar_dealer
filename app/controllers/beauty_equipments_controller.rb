@@ -74,7 +74,7 @@ class BeautyEquipmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def beauty_equipment_params
-      params.require(:beauty_equipment).permit(:quantity,:store_name,:seller_id,:price,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :category, :brand, :made_by_country, :description, :feature, :modal_number, :color)
+      params.require(:beauty_equipment).permit(:quantity,:store_name,:user_id,:price,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :category, :brand, :made_by_country, :description, :feature, :modal_number, :color)
     end
 
     def layout_per_action

@@ -32,7 +32,7 @@ class BathSupply < ActiveRecord::Base
      certification = self.certification
      age_group = self.age_group
      price = self.price
-     seller_id = self.seller_id
+     user_id = self.user_id
 
      Product.create(:mmdealer_code =>  "bath_supplies"+(Product.maximum(:id).next.to_i).to_s,
      :title => title,
@@ -47,7 +47,7 @@ class BathSupply < ActiveRecord::Base
      :price => price,
      :store_name => self.store_name,
      :category => "bath_supplies",
-     :seller_id => seller_id) 
+     :user_id => user_id) 
    
 
 

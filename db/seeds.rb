@@ -28,7 +28,7 @@ bath_supply = BathSupply.create([
    certification: "3453vgergrecerti",
    age_group: "12 to 60",
    price: "70000",
-   seller_id: "1",
+   user_id: "1",
    store_name: "H&Ttechs"}
 
 ])
@@ -45,7 +45,7 @@ beauty_equipments = BeautyEquipment.create([
     modal_number:"tempmodal",
     color:"Red Green Blue",
     price:"500",
-    seller_id:"1",
+    user_id:"1",
     quantity:22,
     store_name:"H&Ttechs"}
 
@@ -70,7 +70,7 @@ beauty_equipments = BeautyEquipment.create([
     color:"Red Green Blue",
     feature:"This is feature",
     category:"car_accessories",
-    seller_id:"1",
+    user_id:"1",
     store_name:"H&Ttechs"}
 
     ])
@@ -94,7 +94,7 @@ beauty_equipments = BeautyEquipment.create([
     color:"Red Green Blue",
     feature:"This is feature",
     operation_system:"android os",
-    seller_id:"1",
+    user_id:"1",
     store_name:"H&Ttechs"}
 
     ])
@@ -114,7 +114,7 @@ beauty_equipments = BeautyEquipment.create([
     category:"eletronic_related",
     modal_number:"tempmodal",
     color:"Red Green Blue",
-    seller_id:"1",
+    user_id:"1",
     store_name:"H&Ttechs"}
 
     ])
@@ -136,7 +136,7 @@ beauty_equipments = BeautyEquipment.create([
    specification:"this is specfication",
     modal_number:"tempmodal",
     color:"Red Green Blue",
-    seller_id:"1",
+    user_id:"1",
     store_name:"H&Ttechs"}
 
     ])
@@ -153,7 +153,7 @@ beauty_equipments = BeautyEquipment.create([
     made_with:"tempmadewith",
    description:"This is Descritpion",
     brand:"tempbrand",
-    seller_id:"1",
+    user_id:"1",
     category:"fashion_related",
     store_name:"H&Ttechs"}
 
@@ -173,7 +173,7 @@ fashion_bags = FashionBag.create([
     bag_type:"thisisbagtype",
     size:"tempsize",
     brand:"tempbrand",
-    seller_id:"1",
+    user_id:"1",
     category:"bags",
     store_name:"H&Ttechs"}
 
@@ -192,7 +192,7 @@ fashion_bags = FashionBag.create([
    description:"This is Descritpion",
     gender:"male",
     brand:"tempbrand",
-    seller_id:"1",
+    user_id:"1",
     color:"Red Green Blue",
     category:"cloths",
     store_name:"H&Ttechs"}
@@ -213,7 +213,7 @@ fashion_bags = FashionBag.create([
     footwear_type:"slipper",
     size:"tempsize",
     brand:"tempbrand",
-    seller_id:"1",
+    user_id:"1",
     color: "red green black",
     category:"footwears",
     store_name:"H&Ttechs"}
@@ -233,7 +233,7 @@ fashion_bags = FashionBag.create([
    description:"This is Descritpion",
     brand:"tempbrand",
     hat_type:"snapback",
-    seller_id:"1",
+    user_id:"1",
     category:"hats",
     store_name:"H&Ttechs"}
 
@@ -250,7 +250,7 @@ gifts = Gift.create([
     made_with:"tempmadewith",
    description:"This is Descritpion",
     color:"Red Green Blue",
-    seller_id:"1",
+    user_id:"1",
     category:"gifts",
     store_name:"H&Ttechs"}
 
@@ -274,7 +274,7 @@ gifts = Gift.create([
    feature:"This is feature",
     power:"14k",
     voltage:"22V",
-    seller_id:"1",
+    user_id:"1",
     category:"home_appliance",
     store_name:"H&Ttechs"}
 
@@ -298,7 +298,7 @@ instruments = Instrument.create([
     modal_number:"tempmodal",
    specification:"this is specfication",
     color:"Red Green Blue",
-    seller_id:"1",
+    user_id:"1",
     category:"instruments",
     store_name:"H&Ttechs"}
 
@@ -320,7 +320,7 @@ instruments = Instrument.create([
     specification:"this is specfication",
     color:"Red Green Blue",
     category:"machines",
-    seller_id:"1",
+    user_id:"1",
     store_name:"H&Ttechs"}
 
     ])
@@ -341,7 +341,7 @@ instruments = Instrument.create([
      color:"Red Green Blue",
      effect:"thisiseffect",
      price:"6000",
-     seller_id:"1",
+     user_id:"1",
      store_name:"H&Ttechs"}
 
     ])
@@ -360,7 +360,7 @@ medicines = Medicine.create([
      description:"This is Descritpion",
      caution:"thiscaution",
      price:"2000",
-     seller_id:"1",
+     user_id:"1",
      store_name:"H&Ttechs"}
 
     ])
@@ -382,7 +382,7 @@ medicines = Medicine.create([
     modal_number:"tempmodal",
     color:"Red Green Blue",
     feature:"This is feature",
-    seller_id:"1",
+    user_id:"1",
     category:"motorcycle",
     store_name:"H&Ttechs"}
 
@@ -395,7 +395,7 @@ services = Service.create([
     charges:"thisischarges",
     service_category:"tempcategory",
    description:"This is Descritpion",
-    seller_id:"1",
+    user_id:"1",
     store_name:"H&Ttechs"}
 
     ])
@@ -412,7 +412,7 @@ services = Service.create([
     color:"Red Green Blue",
     brand:"tempbrand",
     category:"sports",
-    seller_id:"1",
+    user_id:"1",
     store_name:"H&Ttechs"}
 
     ])
@@ -435,7 +435,7 @@ services = Service.create([
     color:"Red Green Blue",
    feature:"This is feature",
     operation_system:"android os",
-    seller_id:"1",
+    user_id:"1",
     store_name:"H&Ttechs"}
 
     ])
@@ -452,7 +452,7 @@ services = Service.create([
     description:"This is Descritpion",
     color:"Red Green Blue",
     age_group:"Adult 18 to 60",
-    seller_id:"1",
+    user_id:"1",
     category:"toys",
     store_name:"H&Ttechs"}
 
@@ -466,7 +466,7 @@ services = Service.create([
     period:"12July2016 to 12Dec2016",
     school:"TTC",
     description:"This is Descritpion",
-    seller_id:"1",
+    user_id:"1",
     store_name:"H&Ttechs"}
 
     ])
@@ -480,29 +480,32 @@ services = Service.create([
 
 
 
-seller = Seller.create([
+user = User.create([
+# seller
+{user_type_id:"1", has_store:"Yes", name:"HtooMyatAung",company_name:"H&Ttechs", phone:"09795545748", email: "htoomyatag.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
+{user_type_id:"1", has_store:"Yes", name:"theldarlykhin",company_name:"MiMiBerry", phone:"09795545748",email: "theldarlykhin.webdev@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
+# buyer
+{user_type_id:"2",name: "htoo", email: "htoomyatag@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
+{user_type_id:"2",name: "thel", email: "theldarlykhin@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
+{user_type_id:"2",name: "insane", email: "insane@gmail.com", password: "privatethel", password_confirmation: "privatethel"}
 
-{has_store:"Yes", name:"HtooMyatAung",company_name:"H&Ttechs", phone:"09795545748", email: "htoomyatag.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
-{has_store:"Yes", name:"theldarlykhin",company_name:"MiMiBerry", phone:"09795545748",email: "theldarlykhin.webdev@gmail.com", password: "privatethel", password_confirmation: "privatethel"}
 
-])
-
-
-buyer = Buyer.create([
-
-{name: "htoo", email: "htoomyatag@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
-{name: "thel", email: "theldarlykhin@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
-{name: "insane", email: "insane@gmail.com", password: "privatethel", password_confirmation: "privatethel"}
 
 ])
 
+user_types = UserType.create([
+
+{title:"Seller"},
+{title:"Buyer"}
+
+])
 
 
 
 fashion_clothings = FashionClothing.create([
 
 {
-seller_id:"1",
+user_id:"1",
 title:"swag tee",
 price:1300,
 quantity: 12,
@@ -523,7 +526,7 @@ store_name: "H&Ttechs"
 fashion_hats = FashionHat.create([
 
 {
-seller_id:"1",
+user_id:"1",
 title:"swag tee",
 price:1000,
 quantity: 12,
@@ -546,7 +549,7 @@ store = Store.create([
   store_address:"Building5,Room 24, Hlaing Myinn Moh Housing",
   store_contact:"09795545748",
   description:"a technology startup to bring applications",
-  seller_id:"1",
+  user_id:"1",
   seller_name:""
 
 },
@@ -557,7 +560,7 @@ store = Store.create([
   store_address:"Building5,Room 24, Hlaing Myinn Moh Housing",
   store_contact:"09795545748",
   description:"tshirt printing",
-  seller_id:"2",
+  user_id:"2",
   seller_name:""
 
 }

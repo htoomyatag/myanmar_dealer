@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160412023030) do
+ActiveRecord::Schema.define(version: 20160413022028) do
 
   create_table "apis", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "certification"
     t.string   "age_group"
     t.integer  "price"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.integer  "quantity"
     t.datetime "created_at",           null: false
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "modal_number"
     t.string   "color"
     t.integer  "price"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.integer  "quantity"
     t.datetime "created_at",           null: false
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "title"
     t.string   "purchase_date"
     t.string   "description"
-    t.string   "buyer_id"
+    t.string   "user_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.string   "avatar_file_name"
@@ -106,27 +106,6 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
-
-  create_table "buyers", force: :cascade do |t|
-    t.string   "name"
-    t.string   "phone"
-    t.text     "address"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-  end
-
-  add_index "buyers", ["email"], name: "index_buyers_on_email", unique: true
-  add_index "buyers", ["reset_password_token"], name: "index_buyers_on_reset_password_token", unique: true
 
   create_table "car_accessories", force: :cascade do |t|
     t.string   "title"
@@ -142,7 +121,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "modal_number"
     t.string   "color"
     t.string   "feature"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
     t.datetime "created_at",           null: false
@@ -189,7 +168,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "color"
     t.string   "feature"
     t.string   "operation_system"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
@@ -237,7 +216,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "category"
     t.string   "modal_number"
     t.string   "color"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
@@ -276,7 +255,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.text     "specification"
     t.string   "modal_number"
     t.string   "color"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
     t.datetime "created_at",           null: false
@@ -311,7 +290,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "made_with"
     t.text     "description"
     t.string   "brand"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
     t.datetime "created_at",           null: false
@@ -348,7 +327,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "bag_type"
     t.string   "size"
     t.string   "brand"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
     t.datetime "created_at",           null: false
@@ -385,7 +364,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.text     "description"
     t.string   "gender"
     t.string   "brand"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "color"
     t.string   "store_name"
     t.string   "category"
@@ -423,7 +402,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "footwear_type"
     t.string   "size"
     t.string   "brand"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.string   "color"
     t.string   "category"
@@ -460,7 +439,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.text     "description"
     t.string   "brand"
     t.string   "hat_type"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
     t.datetime "created_at",           null: false
@@ -511,7 +490,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "made_with"
     t.text     "description"
     t.string   "color"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
     t.datetime "created_at",           null: false
@@ -553,7 +532,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.text     "feature"
     t.string   "power"
     t.string   "voltage"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
@@ -592,7 +571,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "modal_number"
     t.text     "specification"
     t.string   "color"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
     t.datetime "created_at",           null: false
@@ -622,7 +601,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
   create_table "line_items", force: :cascade do |t|
     t.integer  "product_id"
     t.integer  "cart_id"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.integer  "quantity",   default: 1
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
@@ -642,7 +621,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "modal_number"
     t.text     "specification"
     t.string   "color"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
@@ -680,7 +659,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "color"
     t.string   "effect"
     t.integer  "price"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.integer  "quantity"
     t.datetime "created_at",           null: false
@@ -717,7 +696,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.text     "description"
     t.text     "caution"
     t.integer  "price"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.integer  "quantity"
     t.datetime "created_at",           null: false
@@ -769,7 +748,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "modal_number"
     t.string   "color"
     t.string   "feature"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
     t.datetime "created_at",           null: false
@@ -797,7 +776,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "customer_name"
     t.string   "customer_email"
     t.string   "customer_phone"
@@ -807,12 +786,11 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "cart_id"
-    t.integer  "buyer_id"
     t.string   "order_status"
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.string   "title"
     t.string   "category"
@@ -874,34 +852,12 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "product_category"
   end
 
-  create_table "sellers", force: :cascade do |t|
-    t.string   "name"
-    t.string   "company_name"
-    t.string   "phone"
-    t.string   "has_store"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-  end
-
-  add_index "sellers", ["email"], name: "index_sellers_on_email", unique: true
-  add_index "sellers", ["reset_password_token"], name: "index_sellers_on_reset_password_token", unique: true
-
   create_table "services", force: :cascade do |t|
     t.string   "title"
     t.string   "charges"
     t.string   "service_category"
     t.text     "description"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
@@ -938,7 +894,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "color"
     t.string   "brand"
     t.string   "category"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
@@ -969,7 +925,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "store_address"
     t.string   "store_contact"
     t.text     "description"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "seller_name"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
@@ -993,7 +949,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "color"
     t.text     "feature"
     t.string   "operation_system"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
@@ -1029,7 +985,7 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.text     "description"
     t.string   "color"
     t.string   "age_group"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
     t.datetime "created_at",           null: false
@@ -1062,10 +1018,41 @@ ActiveRecord::Schema.define(version: 20160412023030) do
     t.string   "period"
     t.string   "school"
     t.text     "description"
-    t.integer  "seller_id"
+    t.integer  "user_id"
     t.string   "store_name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "user_types", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.text     "address"
+    t.string   "has_store"
+    t.string   "company_name"
+    t.integer  "user_type_id"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

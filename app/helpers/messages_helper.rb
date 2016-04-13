@@ -1,6 +1,6 @@
 module MessagesHelper
   def self_or_other(message)
-    message.buyer == current_buyer ? "self" : "other"
+    message.buyer == current_user ? "self" : "other"
   end
 
   def message_interlocutor(message)

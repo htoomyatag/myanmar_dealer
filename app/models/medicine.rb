@@ -21,7 +21,7 @@ class Medicine < ActiveRecord::Base
 
       
 
-      Product.create( :mmdealer_code => "medicines"+(Product.maximum(:id).next.to_i).to_s,:seller_id => self.seller_id,
+      Product.create( :mmdealer_code => "medicines"+(Product.maximum(:id).next.to_i).to_s,:user_id => self.user_id,
       :title => self.title,
       :ingredient => self.ingredient,
       :usage => self.usage,

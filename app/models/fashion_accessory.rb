@@ -19,7 +19,7 @@ class FashionAccessory < ActiveRecord::Base
 
  def add_to_product
 
-      Product.create( :mmdealer_code => "fashion_related"+(Product.maximum(:id).next.to_i).to_s,:seller_id => self.seller_id,
+      Product.create( :mmdealer_code => "fashion_related"+(Product.maximum(:id).next.to_i).to_s,:user_id => self.user_id,
       :title => self.title,
       :description => self.description,
       :brand => self.brand,

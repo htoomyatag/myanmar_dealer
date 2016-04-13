@@ -10,7 +10,7 @@ class CreateFashionBags < ActiveRecord::Migration
       t.string :bag_type
       t.string :size
       t.string :brand
-      t.integer :seller_id
+      t.integer :user_id
       t.string :store_name
       t.string :category
 

@@ -30,7 +30,7 @@ class BeautyEquipment < ActiveRecord::Base
          :color => self.color,
          :price => self.price,
          :category => "beauty_equipments",
-         :seller_id => self.seller_id)
+         :user_id => self.user_id)
 
     end
 

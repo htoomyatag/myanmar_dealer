@@ -10,7 +10,7 @@ class CreateMedicines < ActiveRecord::Migration
       t.text :description
       t.text :caution
       t.integer :price
-      t.integer :seller_id
+      t.integer :user_id
       t.string :store_name
       t.integer  :quantity
 

@@ -6,10 +6,10 @@ class LineItemsController < ApplicationController
   def index
     
       if params[:cart_id]
-         @line_items = LineItem.where("cart_id = ? ", params[:cart_id]).where(:seller_id => current_seller.id)
+         @line_items = LineItem.where("cart_id = ? ", params[:cart_id]).where(:user_id => current_user.id)
       end
    
-        @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
+        @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
      @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
   end
 
@@ -53,8 +53,8 @@ class LineItemsController < ApplicationController
       product = Product.where("mmdealer_code = ?", params[:mmdealer_code]).ids
       @product_id = product.to_s.gsub("[","")
      
-      seller = Seller.find(params[:seller_id])
-      @line_item = @cart.add_item(@product_id,seller.id)
+      user = User.find(params[:user_id])
+      @line_item = @cart.add_item(@product_id,user.id)
       respond_to do |format|
             if @line_item.save
               format.html { redirect_to request.referer }
@@ -100,7 +100,7 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:product_id, :cart_id, :seller_id)
+      params.require(:line_item).permit(:product_id, :cart_id, :user_id)
     end
 
     def layout_per_action

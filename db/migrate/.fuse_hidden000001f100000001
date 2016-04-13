@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :color
       t.string :size
       t.string :weight
-      t.integer :seller_id
+      t.integer :user_id
       
       t.string :store_name
 

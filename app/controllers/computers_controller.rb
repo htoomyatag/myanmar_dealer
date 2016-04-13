@@ -74,7 +74,7 @@ class ComputersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def computer_params
-      params.require(:computer).permit(:store_name,:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :size, :weight, :thickness, :made_by_country, :description, :brand, :category, :modal_number, :color, :feature, :operation_system)
+      params.require(:computer).permit(:store_name,:user_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :size, :weight, :thickness, :made_by_country, :description, :brand, :category, :modal_number, :color, :feature, :operation_system)
     end
 
     def layout_per_action

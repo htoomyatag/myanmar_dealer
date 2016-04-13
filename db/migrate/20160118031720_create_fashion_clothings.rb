@@ -10,7 +10,7 @@ class CreateFashionClothings < ActiveRecord::Migration
       t.text :description
       t.string :gender
       t.string :brand
-      t.integer :seller_id
+      t.integer :user_id
       t.string :color
       t.string :store_name
       t.string :category

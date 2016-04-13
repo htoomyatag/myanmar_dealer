@@ -21,7 +21,7 @@ class Machine < ActiveRecord::Base
  def add_to_product
 
 
-      Product.create( :mmdealer_code => "machines"+(Product.maximum(:id).next.to_i).to_s,:seller_id => self.seller_id,
+      Product.create( :mmdealer_code => "machines"+(Product.maximum(:id).next.to_i).to_s,:user_id => self.user_id,
       :title => self.title,
       :made_by_country => self.made_by_country,
       :description => self.description,

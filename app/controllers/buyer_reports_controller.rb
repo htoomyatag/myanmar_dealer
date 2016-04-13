@@ -8,7 +8,7 @@ class BuyerReportsController < ApplicationController
   end
 
   def my_report
-     @buyer_reports = BuyerReport.where(:buyer_id => current_buyer.id)
+     @buyer_reports = BuyerReport.where(:user_id => current_user.id)
   end
 
   # GET /buyer_reports/1
@@ -73,6 +73,6 @@ class BuyerReportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def buyer_report_params
-      params.require(:buyer_report).permit(:title, :purchase_date, :description, :buyer_id, :avatar)
+      params.require(:buyer_report).permit(:title, :purchase_date, :description, :user_id, :avatar)
     end
 end

@@ -12,7 +12,7 @@ class CreateMakeupAndSkincares < ActiveRecord::Migration
       t.string :color
       t.string :effect
       t.integer :price
-      t.integer :seller_id
+      t.integer :user_id
             t.string :store_name
                 t.integer  :quantity
 

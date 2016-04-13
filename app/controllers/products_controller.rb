@@ -15,14 +15,14 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-     @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
+     @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
      @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
   end
 
   # GET /products/new
   def new
     @product = Product.new
-    @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
+    @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
     @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
   end
 
@@ -35,7 +35,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
 
-     @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
+     @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
      @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
 
     respond_to do |format|
@@ -67,7 +67,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1.json
   def destroy
     @product.destroy
-    @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
+    @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
     @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
     
     respond_to do |format|
@@ -84,7 +84,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:store_name,:mmdealer_code,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:seller_id,:store_,:t,:cate,:ingredient,:usage,:made_by_country,:description,:brand,:effect,:certification,:age_group,:price,:feature,:modal_number,:color,:price,:quantity,:size,:weight,:made_with,:specification,:thickness,:operation_system,:bag_type,:gender,:footwear_type,:hat_type,:power,:voltage,:dimension,:ingredient,:caution ,:charges,:service_category,:feature,:fees,:period,:school)
+      params.require(:product).permit(:store_name,:mmdealer_code,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:user_id,:store_,:t,:cate,:ingredient,:usage,:made_by_country,:description,:brand,:effect,:certification,:age_group,:price,:feature,:modal_number,:color,:price,:quantity,:size,:weight,:made_with,:specification,:thickness,:operation_system,:bag_type,:gender,:footwear_type,:hat_type,:power,:voltage,:dimension,:ingredient,:caution ,:charges,:service_category,:feature,:fees,:period,:school)
     end
 
     def layout_per_action

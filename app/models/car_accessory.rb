@@ -36,7 +36,7 @@ class CarAccessory < ActiveRecord::Base
     :color => self.color,
     :feature => self.feature,
     :category => "car_accessories",
-    :seller_id => self.seller_id)
+    :user_id => self.user_id)
 
  end
 

@@ -1,6 +1,6 @@
 class FrontsController < ApplicationController
   before_action :set_front, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_buyer!, only: [:check_out]
+  before_action :authenticate_user!, only: [:check_out]
   
   # GET /fronts
   # GET /fronts.json
@@ -9,8 +9,8 @@ class FrontsController < ApplicationController
    end
 
    def my_conversation
-      @buyers = Buyer.where.not("id = ?",current_buyer.id).order("created_at DESC")
-      @conversations = Conversation.involving(current_buyer).order("created_at DESC")
+      @buyers = Buyer.where.not("id = ?",current_user.id).order("created_at DESC")
+      @conversations = Conversation.involving(current_user).order("created_at DESC")
 
    end
 

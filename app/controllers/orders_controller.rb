@@ -1,18 +1,18 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   layout :layout_per_action
-  before_action :authenticate_buyer!, only: [:my_order]
+  before_action :is_buyer?, only: [:my_order]
   # GET /orders
   # GET /orders.json
   def index
     @orders = Order.all
-     @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
+     @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
      @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
   end
 
 
   def my_order
-      @orders = Order.where(:buyer_id  => current_buyer.id)
+      @orders = Order.where(:user_id  => current_user.id)
   end
 
 
@@ -83,7 +83,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:order_status,:buyer_id,:cart_id, :seller_id, :customer_name, :customer_email, :customer_phone, :customer_city, :customer_township, :customer_address)
+      params.require(:order).permit(:order_status,:user_id,:cart_id, :user_id, :customer_name, :customer_email, :customer_phone, :customer_city, :customer_township, :customer_address)
     end
 
     def layout_per_action

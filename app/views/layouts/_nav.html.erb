@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav pull-right">
         <% if buyer_signed_in? %>
             <li>
-              <%= link_to "Hi, #{current_buyer.name}" %>
+              <%= link_to "Hi, #{current_user.name}" %>
             </li>
             <li>
               <%= link_to "Logout", destroy_buyer_session_path, method: :delete	  %>

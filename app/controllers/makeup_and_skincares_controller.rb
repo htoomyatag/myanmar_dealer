@@ -73,7 +73,7 @@ class MakeupAndSkincaresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def makeup_and_skincare_params
-      params.require(:makeup_and_skincare).permit(:quantity,:store_name,:seller_id,:price,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :category, :certification, :ingredient, :usage, :made_by_country, :description, :brand, :color, :effect)
+      params.require(:makeup_and_skincare).permit(:quantity,:store_name,:user_id,:price,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :category, :certification, :ingredient, :usage, :made_by_country, :description, :brand, :color, :effect)
     end
 
     def layout_per_action

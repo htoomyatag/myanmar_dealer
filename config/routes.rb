@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
  
  
+  resources :user_types
+  devise_for :users, :controllers => {:sessions => "users/sessions", :registrations => "users/registrations"}
+  get 'buyer_sign_up' => 'users#buyer_sign_up', :as => :buyer_sign_up
+  get 'seller_sign_up' => 'users#seller_sign_up', :as => :seller_sign_up
+
+  get 'buyer_sign_in' => 'users#buyer_sign_in', :as => :buyer_sign_in
+  get 'seller_sign_in' => 'users#seller_sign_in', :as => :seller_sign_in
+
+  resources :users
   resources :buyer_reports
   get 'my_report' => 'buyer_reports#my_report'
 
@@ -79,10 +88,6 @@ Rails.application.routes.draw do
 
 
 
-  devise_for :buyers, :controllers => {:sessions => "buyers/sessions", :registrations => "buyers/registrations"}
-  devise_for :sellers, :controllers => {:sessions => "sellers/sessions", :registrations => "sellers/registrations"}
-  resources :buyers
-  resources :sellers
   resources :fashions
   resources :fronts
   root 'fronts#home'

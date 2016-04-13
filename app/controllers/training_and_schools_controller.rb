@@ -73,7 +73,7 @@ class TrainingAndSchoolsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def training_and_school_params
-      params.require(:training_and_school).permit(:store_name,:seller_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :fees, :period, :school, :description)
+      params.require(:training_and_school).permit(:store_name,:user_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :fees, :period, :school, :description)
     end
 
     def layout_per_action

@@ -5,7 +5,7 @@ class CreateStores < ActiveRecord::Migration
       t.string :store_address
       t.string :store_contact
       t.text :description
-      t.integer :seller_id
+      t.integer :user_id
       t.string :seller_name
 
       t.timestamps null: false

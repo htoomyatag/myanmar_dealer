@@ -13,7 +13,7 @@ class CreateEquipment < ActiveRecord::Migration
       t.text :specification
       t.string :modal_number
       t.string :color
-      t.integer :seller_id
+      t.integer :user_id
             t.string :store_name
             t.string :category
 

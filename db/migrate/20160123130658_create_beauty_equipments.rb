@@ -10,7 +10,7 @@ class CreateBeautyEquipments < ActiveRecord::Migration
       t.string :modal_number
       t.string :color
       t.integer :price
-      t.integer :seller_id
+      t.integer :user_id
       t.string :store_name
       t.integer  :quantity
 

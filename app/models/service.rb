@@ -19,7 +19,7 @@ class Service < ActiveRecord::Base
 
  def add_to_product
 
-      Product.create(:seller_id => "service"+self.seller_id.to_s,
+      Product.create(:user_id => "service"+self.user_id.to_s,
       :title => self.title,
       :charges => self.charges,
       :service_category => self.service_category,

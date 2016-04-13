@@ -10,7 +10,7 @@ class CreateToys < ActiveRecord::Migration
       t.text :description
       t.string :color
       t.string :age_group
-      t.integer :seller_id
+      t.integer :user_id
       t.string :store_name
       t.string :category
 

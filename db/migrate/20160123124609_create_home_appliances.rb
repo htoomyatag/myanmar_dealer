@@ -15,7 +15,7 @@ class CreateHomeAppliances < ActiveRecord::Migration
       t.text :feature
       t.string :power
       t.string :voltage
-      t.integer :seller_id
+      t.integer :user_id
             t.string :store_name
 
       t.timestamps null: false

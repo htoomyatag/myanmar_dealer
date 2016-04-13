@@ -16,8 +16,8 @@ class StoresController < ApplicationController
   # GET /stores/1
   # GET /stores/1.json
   def show
-      @products = Product.where(:seller_id => current_seller.id)
-      @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
+      @products = Product.where(:user_id => current_user.id)
+      @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
       @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
   end
 
@@ -28,7 +28,7 @@ class StoresController < ApplicationController
 
   # GET /stores/1/edit
   def edit
-    @raw_store_id = Store.where(:seller_id => current_seller.id).pluck(:id)
+    @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
       @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
   end
 
@@ -39,7 +39,7 @@ class StoresController < ApplicationController
 
     respond_to do |format|
       if @store.save
-         @seller = Seller.find(current_seller.id)
+         @seller = Seller.find(current_user.id)
          @seller.update(:has_store => "yes")
 
         format.html { redirect_to @store, notice: 'Store was successfully created.' }
@@ -83,7 +83,7 @@ class StoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def store_params
-      params.require(:store).permit(:seller_id,:avatar, :store_name, :store_address, :store_contact, :description, :seller_id, :seller_name)
+      params.require(:store).permit(:user_id,:avatar, :store_name, :store_address, :store_contact, :description, :user_id, :seller_name)
     end
 
     def layout_per_action

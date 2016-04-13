@@ -3,7 +3,7 @@
 <head>
   <title>MyanmarDealer</title>
   <link rel="shortcut icon" href="<%= asset_path 'm.png'%>">
-  <meta content='<%= buyer_signed_in? ? current_buyer.id : "" %>' name='buyer-id'/>
+  <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
  
 
   <%= stylesheet_link_tag    'bootstrap.min.css' %>
@@ -45,66 +45,49 @@
                     </span>
                   </a>
                 </li>
-                 <% if buyer_signed_in? %>
+                <% if user_signed_in? %>
+                     <% if current_user.user_type_id == 2 %>
 
-                    <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%=t :my_account %> <span class="caret"></span></a>
-                          <ul class="dropdown-menu" style="background:black;">
+                          <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%=t :my_account %> <span class="caret"></span></a>
+                              <ul class="dropdown-menu" style="background:black;">
 
-                        
-                            <li>
-                                  <%= link_to "#{t :order_list}", my_order_path %>
+                                <li>
+                                      <%= link_to "#{t :order_list}", my_order_path %>
                                 </li>
 
-                            <li>
-                                  <%= link_to "#{t :report_list}", my_report_path %>
+                                <li>
+                                      <%= link_to "#{t :report_list}", my_report_path %>
                                 </li>
-                                
-                    
-                         
-                          </ul>
-                        </li>
+                                  
+                              </ul>
+                          </li>
 
-                        <li>
-                                  <%= link_to "#{t :log_out}", destroy_buyer_session_path, :method => :delete %>
-                              </li>
+                          <li>
+                              <%= link_to "#{t :log_out}", destroy_user_session_path, :method => :delete %>
+                          </li>
 
-                          
-                          <% end %>
+                              
+                      <% end %>
+
+                      <% if current_user.user_type_id == 1 %>
+
+                          <li><%= link_to "#{t :dashboard}", dashboard_path %></li>
+
+                          <li><%= link_to "#{t :log_out}", destroy_user_session_path, :method => :delete %></li>
+
+                      <% end %>
+                <% end %>
               
               
 
-                          <li>
-                  <a href="/sellers/sign_up">
-                    <i class="fa fa-unlock hidden-lg hidden-md" title="Register"></i>
-                    <span class="hidden-sm hidden-xs">
-                      <%=t :want_to_be_a_seller %>
-                    </span>
-                  </a>
-                </li>
-
                           
 
-                          <li>
-                  <%= link_to "#{t :check_out}", check_out_path %>
-                </li>
+                      <li>
+                        <%= link_to "#{t :check_out}", check_out_path %>
+                      </li>
 
-
-                 <% if seller_signed_in? %>
-
-
-                    <li><%= link_to "#{t :dashboard}", dashboard_path %></li>
-
-                    <li>
-                                  <%= link_to "#{t :log_out}", destroy_seller_session_path, :method => :delete %>
-                              </li>
-
-                 
-                          
-                          <% end %>
-
-
-
+            
               
               </ul>
             </div>
@@ -115,28 +98,23 @@
             <div class="pull-right">
             <!-- Currency Starts -->
               <ul class="nav navbar-nav pull-left">
-              <% if seller_signed_in? %>
+                  
+                  <% if user_signed_in? %>
+      
+                  <% else %>
+
+                      <li>
+                        <%= link_to "#{t :Buyer_Login}", buyer_sign_in_path %>
+                      </li>
+
+                      <li>
+                        <%= link_to "#{t :Seller_Login}", seller_sign_in_path %>
+                      </li>
 
 
-              <% elsif buyer_signed_in? %>
 
-  
-                          
-                        <% else %>
-
-                          <li>
-                  <%= link_to "#{t :Seller_Login}", new_seller_session_path %>
-                </li>
-
-                <li>
-                  <%= link_to "#{t :Buyer_Login}", new_buyer_session_path %>
-                </li>
-
-        
-                        <% end %>
-
-                      
-
+            
+                  <% end %>
                             
               </ul>
             

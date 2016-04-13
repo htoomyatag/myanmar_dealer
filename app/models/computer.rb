@@ -37,7 +37,7 @@ class Computer < ActiveRecord::Base
    :feature => self.feature,
    :category => "computers_laptops",
    :operation_system => self.operation_system,
-   :seller_id => self.seller_id)
+   :user_id => self.user_id)
 
 end
 end

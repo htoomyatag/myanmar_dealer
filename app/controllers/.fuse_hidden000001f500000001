@@ -12,13 +12,13 @@ class FrontsController < ApplicationController
     
       if seller_signed_in?
 
-        @users = Seller.where.not("id = ?",current_seller.id).order("created_at DESC")
-        @conversations = Conversation.involving(current_seller).order("created_at DESC")
+        @users = Seller.where.not("id = ?",current_user.id).order("created_at DESC")
+        @conversations = Conversation.involving(current_user).order("created_at DESC")
 
       elsif buyer_signed_in?
 
-        @users = Buyer.where.not("id = ?",current_buyer.id).order("created_at DESC")
-        @conversations = Conversation.involving(current_buyer).order("created_at DESC")
+        @users = Buyer.where.not("id = ?",current_user.id).order("created_at DESC")
+        @conversations = Conversation.involving(current_user).order("created_at DESC")
         
       end
 
@@ -84,13 +84,13 @@ class FrontsController < ApplicationController
 
      if seller_signed_in?
 
-        @users = Seller.where.not("id = ?",current_seller.id).order("created_at DESC")
-        @conversations = Conversation.involving(current_seller).order("created_at DESC")
+        @users = Seller.where.not("id = ?",current_user.id).order("created_at DESC")
+        @conversations = Conversation.involving(current_user).order("created_at DESC")
 
       elsif buyer_signed_in?
 
-        @users = Buyer.where.not("id = ?",current_buyer.id).order("created_at DESC")
-        @conversations = Conversation.involving(current_buyer).order("created_at DESC")
+        @users = Buyer.where.not("id = ?",current_user.id).order("created_at DESC")
+        @conversations = Conversation.involving(current_user).order("created_at DESC")
         
       end
 

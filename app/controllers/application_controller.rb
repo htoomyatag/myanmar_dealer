@@ -14,19 +14,22 @@ def set_locale
 
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:company_name,:name,:phone,:address, :email, :password, :password_confirmation,:date_of_birth,:gender, :customer_type, :phone_number, :year_of_birth, :user_name)}
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:user_type_id,:company_name,:name,:phone,:address, :email, :password, :password_confirmation,:date_of_birth,:gender, :customer_type, :phone_number, :year_of_birth, :user_name)}
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:email, :password, :remember_me)}
   end
 
 
    protected
 	  def my_store
-	  	   if current_seller != nil
-	  	   @my_stores = Store.where(:seller_id => current_seller.id)
+	  	   if current_user != nil
+	  	   @my_stores = Store.where(:user_id => current_user.id)
 	  	   else
 	  	   	@my_stores = Store.all
 	  	   end
 	  end
+
+
+  
 
 
   private
@@ -35,8 +38,30 @@ def set_locale
 
   private
   def get_products
-
      @cart = current_cart
+  end
+
+  def is_seller?
+    
+
+      if current_user.user_type_id == "1"
+        return true
+      else
+         return false
+      end
+
+  end
+
+  def is_buyer?
+
+
+      if current_user.user_type_id == "2"
+        return true
+      else
+         return false
+      end
+
+
   end
 
   private

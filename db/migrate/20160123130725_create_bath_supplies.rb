@@ -12,7 +12,7 @@ class CreateBathSupplies < ActiveRecord::Migration
       t.string :certification
       t.string :age_group
       t.integer :price
-      t.integer :seller_id
+      t.integer :user_id
             t.string :store_name
             t.integer :quantity
 

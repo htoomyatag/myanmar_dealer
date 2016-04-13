@@ -14,7 +14,7 @@ class CreateCarAccessories < ActiveRecord::Migration
       t.string :modal_number
       t.string :color
       t.string :feature
-      t.integer :seller_id
+      t.integer :user_id
       t.string :store_name
       t.string :category
 

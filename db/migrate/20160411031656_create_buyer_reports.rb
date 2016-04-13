@@ -4,7 +4,7 @@ class CreateBuyerReports < ActiveRecord::Migration
       t.string :title
       t.string :purchase_date
       t.string :description
-      t.string :buyer_id
+      t.string :user_id
 
       t.timestamps null: false
     end
