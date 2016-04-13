@@ -39,7 +39,7 @@ class StoresController < ApplicationController
 
     respond_to do |format|
       if @store.save
-         @seller = Seller.find(current_user.id)
+         @seller = User.find(current_user.id)
          @seller.update(:has_store => "yes")
 
         format.html { redirect_to @store, notice: 'Store was successfully created.' }
