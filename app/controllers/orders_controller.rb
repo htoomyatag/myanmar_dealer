@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
 
 
   def my_order_status
-        @order = Order.find(params[:id])
+        @order = Order.find(1)
   end
 
   # GET /orders/1

@@ -81,6 +81,8 @@ Rails.application.routes.draw do
 
   resources :products
   get 'my_product' => 'products#my_product', :as => :my_product
+  get 'my_sell_product' => 'products#my_sell_product', :as => :my_sell_product
+  
   
 
   resources :stores

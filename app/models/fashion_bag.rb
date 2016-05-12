@@ -32,6 +32,7 @@ class FashionBag < ActiveRecord::Base
 
     Product.create( :mmdealer_code => "bags"+(Product.maximum(:id).next.to_i).to_s,:user_id => self.user_id,
       :title => self.title,
+      :color => self.color,
       :made_by_country => self.made_by_country,
       :description => self.description,
       :brand => self.brand,

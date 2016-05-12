@@ -329,6 +329,7 @@ ActiveRecord::Schema.define(version: 20160413022028) do
     t.string   "brand"
     t.integer  "user_id"
     t.string   "store_name"
+    t.string   "color"
     t.string   "category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false

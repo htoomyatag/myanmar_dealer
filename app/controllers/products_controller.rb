@@ -7,6 +7,10 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def my_sell_product
+     @products = Product.where(:user_id => current_user)
+  end
+
   def my_product
     @cart = current_cart
     @line_items = LineItem.all
