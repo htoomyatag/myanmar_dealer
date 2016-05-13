@@ -65,7 +65,10 @@
 							<button type="button" data-toggle="dropdown" class="btn btn-block btn-lg dropdown-toggle" style="height:47px;">
 								<i class="fa fa-shopping-cart" ></i>
 								<span class="hidden-md"><%=t :cart %></span> 
-								<span id="cart-total"> <%= (@cart.total_quantity) %> item(s) -   <%= (@cart.total_price) %> <%=t :MMK %></span>
+								<span id="cart-total"> 
+									<span id="myqty"><%= (@cart.total_quantity) %></span> item(s) -   
+									<span id="myprice"><%= (@cart.total_price) %></span>  <%=t :MMK %>
+								</span>
 								<i class="fa fa-caret-down"></i>
 							</button>
 							<ul class="dropdown-menu pull-right">
@@ -365,7 +368,7 @@
 									</div>
 									<div class="cart-button">
 									
-									<%= button_to line_items_path(:mmdealer_code => product.category.to_s+product.id.to_s, :user_id => product.user_id), :class =>"btn btn-cart" do %>
+									<%= button_to line_items_path(:mmdealer_code => product.category.to_s+product.id.to_s, :user_id => product.user_id), remote: true, :onclick =>"cartFunction#{product.id}()", :data => product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
 									   <%=t :add_to_cart %>
 
 
@@ -392,3 +395,38 @@
 		<!-- Primary Content Ends -->
 		</div>
 	</div>
+
+
+
+	<script type="text/javascript">
+
+	<% @products.each do |product| %>
+
+				function cartFunction<%= product.id %>() {
+
+
+					var myqty = $("#myqty").text();
+					var addqty = parseInt(myqty)+1; 
+					$("#myqty").text(addqty);   
+
+
+
+
+					var myprice = $("#myprice").text();
+					
+					var addmyprice = parseInt(myprice)+<%= product.price %>; 
+					$("#myprice").text(addmyprice);   
+
+
+				  		
+
+				}
+
+		<% end %>
+
+	</script>
+
+
+
+
+

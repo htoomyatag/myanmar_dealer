@@ -965,13 +965,13 @@ fashion_hats = FashionHat.create([
 user = User.create([
   # seller
 
-  {user_type_id:"1", has_store:"Yes", name:"htoomyatag1",company_name:"MiMiBerry", phone:"09795545748", email: "htoomyatag.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
-  {user_type_id:"1", has_store:"Yes", name:"htoomyatag2",company_name:"OverDoze", phone:"09795545748", email: "htoomyatag.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
-  {user_type_id:"1", has_store:"Yes", name:"theldarlykhin1",company_name:"5000Kyats", phone:"0930210743",email: "theldarlykhin.webdev@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
-  {user_type_id:"1", has_store:"Yes", name:"theldarlykhin2",company_name:"S3 fashion", phone:"0930210743",email: "theldarlykhin.webdev@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
-  {user_type_id:"1", has_store:"Yes", name:"tracy1",company_name:"Lady's foot wear", phone:"095016213",email: "tracy2006ster@gmail.com", password: "privatetracy", password_confirmation: "privatetracy"},
-  {user_type_id:"1", has_store:"Yes", name:"tracy2",company_name:"Luggage", phone:"095016213",email: "tracy2006ster@gmail.com", password: "privatetracy", password_confirmation: "privatetracy"},
-  {user_type_id:"1", has_store:"Yes", name:"tracy3",company_name:"Lady's under wear", phone:"095016213",email: "tracy2006ster@gmail.com", password: "privatetracy", password_confirmation: "privatetracy"},
+  {user_type_id:"1", has_store:"Yes", name:"htoomyatag1",company_name:"MiMiBerry", phone:"09795545748", email: "htoomyatag1.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
+  {user_type_id:"1", has_store:"Yes", name:"htoomyatag2",company_name:"OverDoze", phone:"09795545748", email: "htoomyatag2.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
+  {user_type_id:"1", has_store:"Yes", name:"theldarlykhin1",company_name:"5000Kyats", phone:"0930210743",email: "theldarlykhin1.webdev@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
+  {user_type_id:"1", has_store:"Yes", name:"theldarlykhin2",company_name:"S3 fashion", phone:"0930210743",email: "theldarlykhin2.webdev@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
+  {user_type_id:"1", has_store:"Yes", name:"tracy1",company_name:"Lady's foot wear", phone:"095016213",email: "tracy1@gmail.com", password: "privatetracy", password_confirmation: "privatetracy"},
+  {user_type_id:"1", has_store:"Yes", name:"tracy2",company_name:"Luggage", phone:"095016213",email: "tracy2@gmail.com", password: "privatetracy", password_confirmation: "privatetracy"},
+  {user_type_id:"1", has_store:"Yes", name:"tracy3",company_name:"Lady's under wear", phone:"095016213",email: "tracy3@gmail.com", password: "privatetracy", password_confirmation: "privatetracy"},
 
   # buyer
 
