@@ -1,153 +1,114 @@
-<div class="main-header">
-			<div class="container">
-				<div class="row">
-						
+<div class="row">
 
-					<div class="col-md-3">
-						<div id="logo" style="float:left;">
-							<a href="#"><img src="/assets/logo.jpg" title="Spice Shoppe" alt="Spice Shoppe" class="img-responsive" /></a>
-						</div>
-					</div>
+<div class="col-md-12">
+  <div class="col-md-4">
+        <div class="panel panel-default">
+        <div class="panel-body">
+           <h3> Peoples </h3><hr/> <br/>
+             <% @chat_users.each do |user| %>
+              <h4>
+                 <b><%= link_to user.name, my_conversation_path(:user_id => user.id) %></b>
+                 <br/>
+              </h4> <br/>
+            <% end %>     
+           <hr/>        
+        </div>
+      </div>
 
-					<div class="col-md-3">
-								<img src="/assets/ads.png" alt="BannerAds" />
-					</div>
-
-					<div class="col-md-6">
-						
-						<div id="search" style="width:300px;float:right;">
-							<div class="input-group" >
-							  <input type="text" class="form-control input-lg" placeholder="Search" >
-							  <span class="input-group-btn">
-								<button class="btn btn-lg" type="button">
-									<i class="fa fa-search"></i>
-								</button>
-							  </span>
-							</div>
-						</div>	
-
-						<div id="cart" class="btn-group btn-block" style="width:300px;float:right;">
-							<button type="button" data-toggle="dropdown" class="btn btn-block btn-lg dropdown-toggle" style="height:47px;">
-								<i class="fa fa-shopping-cart" ></i>
-								<span class="hidden-md"><%=t :cart %></span> 
-								<span id="cart-total"> <%= (@cart.total_quantity) %> item(s) -   <%= (@cart.total_price) %> <%=t :MMK %></span>
-								<i class="fa fa-caret-down"></i>
-							</button>
-							<ul class="dropdown-menu pull-right">
-							    <li>
-									<%= render (@cart.line_items) %>
-								</li>
-							
-								<li>
-									<p class="text-right btn-block1">
-										<a href="/check_out">
-											<%=t :view_cart %>
-										</a>
-										<a href="/check_out">
-											<%=t :check_out %>
-										</a>
-									</p>
-								</li>
-
-							</ul>
-						</div>
+  </div>
+    <div class="col-md-8">
+          <div class="panel panel-default">
+          <div class="panel-body">
+                <h3> Conversations </h3><hr/> 
+                <div>
+                 <% @messages.each do |message| %>
+                  
+                    <% if current_user.id == message.user_id %>
+                       <span style="color:black;"><b>You:<%= message.body %></b></span>
+                       <span style="float:right;"><%= message.created_at.strftime("at %I:%M%p  on %m/%d/%Y") %> </span>
+                       <br/>
+                    <% else %>
+                        <span style="color:red;"><b><%= message.user.name %>:<%= message.body %></b> </span>
+                        <span style="float:right;"><%= message.created_at.strftime("at %I:%M%p  on %m/%d/%Y") %> </span>
+                       <br/>
+                    <% end %>
 
 
-					</div>
+                  
+                  <% end %> 
+                </div>
 
-				</div>
-		
-		</div>
-	<!-- Main Header Ends -->
-	<!-- Main Menu Starts -->
-		<nav id="main-menu" class="navbar" role="navigation">
-			<div class="container">
-			<!-- Nav Header Starts -->
-				<div class="navbar-header">
-					<button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-cat-collapse">
-						<span class="sr-only">Toggle Navigation</span>
-						<i class="fa fa-bars"></i>
-					</button>
-				</div>
-			<!-- Nav Header Ends -->
-			<!-- Navbar Cat collapse Starts -->
-				<div class="collapse navbar-collapse navbar-cat-collapse">
-					<ul class="nav navbar-nav">
-	<li>
-				 		 <%= link_to "#{t :fashions_related}", fashion_related_path, class: "btn btn-1" %>
-						</li>
-						<li>
-						 <%= link_to "#{t :electronics}", electronics_related_path, class: "btn btn-1" %>
-						</li>
-						<li>
-				 			<%= link_to "#{t :health_beauty}", health_beauty_related_path, class: "btn btn-1" %>
-						</li>
-						
+                <br/>
+                     
+            <p id="text_msg"></p>
 
-						<!--  -->
-						<li>
-				 			<%= link_to  "#{t :industrial_parts}", industrial_part_path, class: "btn btn-1" %>
-						</li>
+           <textarea rows="1" id="my_msg_btn" style="width:100%;"></textarea>
+           <input class="btn btn-default" id="my_send_btn" type="button" value="Send"><br/>
+               
+          </div>
+        </div>
+    </div>
+  </div>
 
-						<li>
-				 			<%= link_to "#{t :sports}", sports_related_path, class: "btn btn-1" %>
-						</li>
-
-						<li>
-				 			<%= link_to "#{t :services}", service_related_path, class: "btn btn-1" %>
-						</li>
-						<li>
-				 			<%= link_to "#{t :transportation_related}", auto_transportation_path, class: "btn btn-1" %>
-						</li>
-						
-						
-						
-						
-					</ul>
-				</div>
-			<!-- Navbar Cat collapse Ends -->
-			</div>
-		</nav>
-	<!-- Main Menu Ends -->
-	</header>
-				<div class="container">
-					
-							<section class="products-list">			
-									<!-- Heading Starts -->
-										
-									<!-- Heading Ends -->
-									<!-- Products Row Starts -->
-										<div class="row">
-
-												<h2 class="product-head">Conversations</h2>
-										
-
-												<div style="height: 400px; overflow-y: auto;">
-												      <% if @conversations.any? %>
-												          <ul class="media-list">
-												            <% @conversations.each do |conversation| %>
-												                <li class="media">
-												                   <%= image_tag("50.png", class: "media-object pull-left") %>
-												                  <div class="media-body">
-												                    <%= link_to "", conversation_path(conversation), class: "conversation", "data-cid" => conversation.id %>
-												                        <h4 class="media-heading"><%= conversation_interlocutor(conversation).name %></h4>
-												                        <p><%= conversation.messages.last.nil? ? "No messages" : truncate(conversation.messages.last.body, length: 45) %></p>
-												                  </div>
-												                </li><hr/>
-
-												            <% end %>
-												          </ul>
-												      <% else %>
-												          <p>You have no conversations. </p>
-												      <% end %>
-												    </div>
-
-
-
-										</div>
-									<!-- Products Row Ends -->
-					       </section>
-				</div>
-		</div>
-	</div>
 </div>
+
+
+<% @users.each do |user| %>
+
+    <script type="text/javascript">
+      
+     // Enable pusher logging - don't include this in production
+        Pusher.log = function(message) {
+          if (window.console && window.console.log) {
+            window.console.log(message);
+          }
+        };
+
+        var pusher = new Pusher('b218d631b3532773d67f', {
+          encrypted: true
+        });
+
+        var my_channel = "<%= user.name.to_s + current_user.name.to_s %>";
+
+      
+        var channel = pusher.subscribe(my_channel);
+        channel.bind('my_event', function(data) {
+
+            $("#text_msg").append("<b id='receiver'><%= user.name.to_s %>: "+data.message+"</b><br/> ");
+                     
+        });
+
+    </script>
+
+
+    <script type="text/javascript">
+  
+        $(document).ready(function () {
+
+
+            $('#my_send_btn').click(function () {
+                
+              var message = document.getElementById("my_msg_btn").value;
+              var mychannel = "<%= current_user.name.to_s + user.name.to_s %>";
+              var sender_id = "<%= current_user.id %>";
+              var recipient_id = "<%= user.id %>";
+
+              $.ajax({
+                      type: 'get',
+                      url: "send_to_pusher?message="+message+"&recipient_id="+recipient_id+"&sender_id="+sender_id+"&channels="+mychannel,
+                      complete: function(r){
+
+                          $("#text_msg").append("<b>You: "+message+"</b><br/> ");
+                          
+                      }
+                   });
+
+            });
+
+        });
+
+</script>
+
+<% end %> 
+
+

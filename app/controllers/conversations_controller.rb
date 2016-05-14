@@ -13,6 +13,11 @@ class ConversationsController < ApplicationController
     render json: { conversation_id: @conversation.id }
   end
 
+
+  def my_conversation
+
+  end
+
   def show
     @conversation = Conversation.find(params[:id])
     @reciever = interlocutor(@conversation)

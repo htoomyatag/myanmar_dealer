@@ -726,6 +726,7 @@ ActiveRecord::Schema.define(version: 20160413022028) do
 
   create_table "messages", force: :cascade do |t|
     t.text     "body"
+    t.string   "conversation_code"
     t.integer  "conversation_id"
     t.integer  "user_id"
     t.datetime "created_at"

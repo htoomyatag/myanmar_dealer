@@ -15,6 +15,9 @@ Rails.application.routes.draw do
 
   resources :apis
 
+  
+
+
   get 'my_api_services' => 'apis#my_api_services', :as => :my_api_services
   get 'my_api_training_and_schools' => 'apis#my_api_training_and_schools', :as => :my_api_training_and_schools
   get 'my_api_sports' => 'apis#my_api_sports', :as => :my_api_sports
@@ -92,6 +95,7 @@ Rails.application.routes.draw do
 
   resources :fashions
   resources :fronts
+  get "send_to_pusher" => "fronts#send_to_pusher", :as => :send_to_pusher
   root 'fronts#home'
 
  get 'home' => 'fronts#home'

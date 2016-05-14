@@ -1,6 +1,5 @@
 class MessagesController < ApplicationController
   before_filter :authenticate_user!
-  
 
   def create
     @conversation = Conversation.find(params[:conversation_id])
@@ -14,6 +13,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:body)
+    params.require(:message).permit(:body, :conversation_code)
   end
 end

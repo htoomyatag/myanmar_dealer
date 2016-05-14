@@ -8,11 +8,39 @@ class FrontsController < ApplicationController
     @fronts = Front.all
    end
 
-   def my_conversation
-      @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
-      @conversations = Conversation.involving(current_user).order("created_at DESC")
 
-   end
+
+
+
+  def send_to_pusher
+
+    require 'pusher'
+
+    pusher_client = Pusher::Client.new(
+
+      app_id: '206905',
+      key: 'b218d631b3532773d67f',
+      secret: '0915071b6a6cdb0a636f'
+    );
+
+
+      Pusher.trigger(params[:channels], 'my_event', {
+      message: params[:message],
+      channels: params[:channels]
+    })
+
+
+    @conversation = Conversation.create(:sender_id => params[:sender_id] , :recipient_id => params[:recipient_id])
+    @message = Message.create(:conversation_code => params[:channels],:user_id => params[:sender_id], :body => params[:message] , :conversation_id => @conversation.id)
+
+
+
+
+
+  end
+
+
+
 
 
    def home
@@ -71,7 +99,7 @@ class FrontsController < ApplicationController
      @relate_product = Product.where(:product_category => @product.product_category)
 
       @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-      @conversations = Conversation.involving(current_user).order("created_at DESC")
+      
    end
 
 
@@ -81,7 +109,7 @@ class FrontsController < ApplicationController
       @relate_products = Product.where(:category => "bath_supplies")
 
       @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-      @conversations = Conversation.involving(current_user).order("created_at DESC")
+
     end
 
     def full_productinfo_beauty_equipments
@@ -89,7 +117,7 @@ class FrontsController < ApplicationController
       @relate_products = Product.where(:category => "beauty_equipments")
 
       @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-      @conversations = Conversation.involving(current_user).order("created_at DESC")
+
     end
 
     def full_productinfo_car_accessories
@@ -97,7 +125,7 @@ class FrontsController < ApplicationController
       @relate_products = Product.where(:category => "car_accessories")
 
       @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-      @conversations = Conversation.involving(current_user).order("created_at DESC")
+  
     end
 
     def full_productinfo_computers
@@ -105,7 +133,7 @@ class FrontsController < ApplicationController
        @relate_products = Product.where(:category => "computers_laptops")
 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-       @conversations = Conversation.involving(current_user).order("created_at DESC")
+   
     end
 
     def full_productinfo_electrical_equipments
@@ -113,7 +141,7 @@ class FrontsController < ApplicationController
        @relate_products = Product.where(:category => "eletronic_related")
 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-       @conversations = Conversation.involving(current_user).order("created_at DESC")
+   
     end
 
     def full_productinfo_equipments
@@ -121,7 +149,7 @@ class FrontsController < ApplicationController
         @relate_products = Product.where(:category => "equipments")
 
         @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-        @conversations = Conversation.involving(current_user).order("created_at DESC")
+    
     end
 
     def full_productinfo_fashion_accessories
@@ -129,7 +157,7 @@ class FrontsController < ApplicationController
         @relate_products = Product.where(:category => "fashion_related")
 
         @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-        @conversations = Conversation.involving(current_user).order("created_at DESC")
+    
     end
 
     def full_productinfo_fashion_bags
@@ -137,7 +165,7 @@ class FrontsController < ApplicationController
         @relate_products = Product.where(:category => "bags")
 
         @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-        @conversations = Conversation.involving(current_user).order("created_at DESC")
+    
     end
 
     def full_productinfo_fashion_clothings
@@ -145,7 +173,7 @@ class FrontsController < ApplicationController
       @relate_products = Product.where(:category => "cloths")
 
       @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-      @conversations = Conversation.involving(current_user).order("created_at DESC")
+  
     end
 
     def full_productinfo_fashion_footwears
@@ -153,7 +181,7 @@ class FrontsController < ApplicationController
         @relate_products = Product.where(:category => "footwears")
 
         @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-        @conversations = Conversation.involving(current_user).order("created_at DESC")
+    
     end
 
 
@@ -162,7 +190,7 @@ class FrontsController < ApplicationController
         @relate_products = Product.where(:category => "hats")
 
         @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-        @conversations = Conversation.involving(current_user).order("created_at DESC")
+    
     end
 
     def full_productinfo_gifts
@@ -170,7 +198,7 @@ class FrontsController < ApplicationController
         @relate_products = Product.where(:category => "gifts")
 
         @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-        @conversations = Conversation.involving(current_user).order("created_at DESC")
+    
     end
 
     def full_productinfo_home_appliances
@@ -178,7 +206,7 @@ class FrontsController < ApplicationController
         @relate_products = Product.where(:category => "home_appliance")
 
         @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-       @conversations = Conversation.involving(current_user).order("created_at DESC")
+   
     end
 
     def full_productinfo_instruments
@@ -186,7 +214,7 @@ class FrontsController < ApplicationController
         @relate_products = Product.where(:category => "instruments")
 
         @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-        @conversations = Conversation.involving(current_user).order("created_at DESC")
+    
     end
 
     def full_productinfo_machines
@@ -194,7 +222,7 @@ class FrontsController < ApplicationController
         @relate_products = Product.where(:category => "machines")
 
         @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-        @conversations = Conversation.involving(current_user).order("created_at DESC")
+    
     end
 
     def full_productinfo_makeup_and_skincares
@@ -202,7 +230,7 @@ class FrontsController < ApplicationController
         @relate_products = Product.where(:category => "comesmetics")
 
         @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-        @conversations = Conversation.involving(current_user).order("created_at DESC")
+    
     end
 
     def full_productinfo_medicines
@@ -210,7 +238,7 @@ class FrontsController < ApplicationController
         @relate_products = Product.where(:category => "medicines")
 
         @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-        @conversations = Conversation.involving(current_user).order("created_at DESC")
+    
     end
 
     def full_productinfo_motorcycle_accessories
@@ -218,7 +246,7 @@ class FrontsController < ApplicationController
         @relate_products = Product.where(:category => "motorcycle")
 
         @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-        @conversations = Conversation.involving(current_user).order("created_at DESC")
+    
     end
 
     def full_productinfo_services
@@ -226,7 +254,7 @@ class FrontsController < ApplicationController
         @relate_products = Product.where(:category => "service_category")
 
         @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-        @conversations = Conversation.involving(current_user).order("created_at DESC")
+    
     end
 
     def full_productinfo_sports
@@ -234,7 +262,7 @@ class FrontsController < ApplicationController
        @relate_products = Product.where(:category => "sports")
 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-       @conversations = Conversation.involving(current_user).order("created_at DESC")
+   
     end
 
     def full_productinfo_telephone_accessories
@@ -242,7 +270,7 @@ class FrontsController < ApplicationController
        @relate_products = Product.where(:category => "phone_related")
 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-       @conversations = Conversation.involving(current_user).order("created_at DESC")
+   
     end
 
     def full_productinfo_toys
@@ -250,7 +278,7 @@ class FrontsController < ApplicationController
        @relate_products = Product.where(:category => "toys")
 
       @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-       @conversations = Conversation.involving(current_user).order("created_at DESC")
+   
     end
 
     def full_productinfo_training_and_schools
@@ -258,7 +286,7 @@ class FrontsController < ApplicationController
        @relate_products = TrainingAndSchool.all
 
         @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-       @conversations = Conversation.involving(current_user).order("created_at DESC")
+   
     end
 
     def register
@@ -322,6 +350,42 @@ class FrontsController < ApplicationController
 
     
     end
+
+
+  def my_conversation
+    @chat_users = User.where.not(:id => current_user)
+
+
+     if params[:user_id]
+        @users = User.where("id = ?", params[:user_id])
+
+        @user_name = User.where("id = ?", params[:user_id]).pluck(:name)
+        @raw_user_name = @user_name.to_s.gsub("[", "")
+        
+        @raw_user_name2 = @raw_user_name.to_s.gsub("]", "")
+        @my_user_name = @raw_user_name2.to_s.gsub("\"", "")
+
+        code_one = current_user.name.to_s+@my_user_name
+        code_two = @my_user_name+current_user.name.to_s
+
+        @products = Product.where("user_id = ?", params[:user_id])
+        @sender_messages = Message.where(:conversation_code => code_one)
+        @receiver_messages = Message.where(:conversation_code => code_two)
+
+
+        @messages = Message.where.any_of(@sender_messages, @receiver_messages)
+
+
+     else
+        @users = User.all
+        @messages = Message.all
+     end
+
+  
+
+
+
+  end
 
 
 
