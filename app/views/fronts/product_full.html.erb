@@ -298,12 +298,9 @@
 									  <i class="fa fa-shopping-cart"></i> 
 								<% end %>		<br/>
 
-								<% @users.each_with_index do |user, index| %>
-		             
-		                			Contact with seller (<%= user.name %>)
-		                  			<%= link_to "Chat Now", "#", class: "btn btn-success btn-xs start-conversation",
-		                              "data-sid" => current_user.id, "data-rip" => user.id %>
-	         						<% end %>							
+								<button class="btn btn-default" id="chat_user"> Chat with
+			      				<b><%= @product.user.name rescue "-" %></b> </button>	
+
 						</div>
 
 
@@ -486,7 +483,7 @@
 
 
 
-  <div class="popup-box chat-popup" id="mychatbox" >
+  <div class="popup-box chat-popup" id="mychatbox"  style="display:none;">
 
     <div class="popup-head">
         <div class="popup-head-left"><%= @product.user.name %></div>
