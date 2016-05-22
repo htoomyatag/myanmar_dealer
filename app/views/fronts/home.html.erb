@@ -239,52 +239,64 @@
 				<br>
 			<!-- Banner #1 Ends -->
 			<!-- Shopping Options Starts -->
+		
 				<h3 class="side-heading"><%=t :shopping_options %></h3>
 				<div class="list-group">
 					<div class="list-group-item">
 						 <%=t :brands %>
 					</div>
+
 					<div class="list-group-item">
 						<div class="filter-group">
-							<label class="checkbox">
-								<input name="filter1" type="checkbox" value="br1" checked="checked" />
-								Brand Name 1
-							</label>
-							<label class="checkbox">
-								<input name="filter2" type="checkbox" value="br2" />
-								Brand Name 2
-							</label>
-							<label class="checkbox">
-								<input name="filter3" type="checkbox" value="br3" />
-								Brand Name 3
-							</label>
-							<label class="checkbox">
-								<input name="filter4" type="checkbox" value="br4" />
-								Brand Name 4
-							</label>
-						</div>
-					</div>
-					<div class="list-group-item">
-						 <%=t :manufacturer %>
-					</div>
-					<div class="list-group-item">
-						<div class="filter-group">
+						<% @brand_products.each do |brand_product| %>
+
 							<label class="radio">
-								<input name="filter-manuf" type="radio" value="mr1" checked="checked" />
-								Manufacturer Name 1
+								<input name="filter-manuf" type="radio" value="<%= brand_product.brand %>" checked="checked" id="brand_check" name="Brand" />
+								<%= brand_product.brand %>
 							</label>
-							<label class="radio">
-								<input name="filter-manuf" type="radio" value="mr2" />
-								Manufacturer Name 2
-							</label>
-							<label class="radio">
-								<input name="filter-manuf" type="radio" value="mr3" />
-								Manufacturer Name 3
-							</label>
+
+						<% end %>
+						
 						</div>							
 					</div>	
 					<div class="list-group-item">
-						<button type="button" class="btn btn-black">Filter</button>
+						<form action="/">
+						    <input id="brand" name="brand" style="display:none;">
+							<button type="submit" class="btn btn-black">Filter with Brand</button>
+						</form>
+					</div>
+
+
+					<div class="list-group-item">
+						 <%=t :manufacturer %>
+					</div>
+
+
+
+					<div class="list-group-item">
+						<div class="filter-group">
+						<% @coutry_products.each do |coutry_product| %>
+
+							<label class="radio">
+								<input name="filter-manuf" type="radio" value="<%= coutry_product.made_by_country %>" checked="checked" id="country_check" name="Country" />
+								<%= coutry_product.made_by_country %>
+							</label>
+
+						<% end %>
+						
+						</div>							
+					</div>	
+					<div class="list-group-item">
+						<form action="/">
+						    <input id="made_by_coutry" name="made_by_country" style="display:none;">
+							<button type="submit" class="btn btn-black">Filter with Country</button>
+						</form>
+					</div>
+
+
+					<div class="list-group-item">
+						<img src="/assets/transporter_ads.png" alt="Slider" class="img-responsive" />
+									
 					</div>
 				</div>
 			<!-- Shopping Options Ends -->
@@ -355,13 +367,7 @@
 									<h4>
 										<%= link_to product.title, product_full_path(:id => product) %>
 									</h4>
-									<div class="description">
-									 Color: <%= product.color %>
-									 <br/>
-									 Size: <%= product.size %>
-									 Weight: <%= product.weight %>
-									
-									</div>
+								
 									<div class="price">
 										<span class="price-new"><%= product.price.to_i %> <%=t :MMK %></span>  <br/>
 										<span class="price-old"><%= product.price.to_i + 15 %> <%=t :MMK %></span>
@@ -414,12 +420,63 @@
 					var addmyprice = parseInt(myprice)+<%= product.price %>; 
 					$("#myprice").text(addmyprice);   
 
+					alert("add item");
+
 
 				  		
 
 				}
 
 		<% end %>
+
+	</script>
+
+
+	<script type="text/javascript">
+
+
+			
+
+
+
+$(function(){
+  $('input[type="radio"]').click(function(){
+    if ($(this).is(':checked'))
+    {
+      document.getElementById("made_by_coutry").value = $(this).val();
+    }
+  });
+});
+
+
+$( document ).ready(function() {
+    
+
+document.getElementById("made_by_coutry").value = "CHINA";
+
+});
+
+
+
+
+$(function(){
+  $('input[type="radio"]').click(function(){
+    if ($(this).is(':checked'))
+    {
+      document.getElementById("brand").value = $(this).val();
+    }
+  });
+});
+
+
+$( document ).ready(function() {
+    
+
+document.getElementById("brand").value = "%";
+
+});
+
+
 
 	</script>
 

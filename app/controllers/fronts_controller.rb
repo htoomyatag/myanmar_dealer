@@ -1,6 +1,6 @@
 class FrontsController < ApplicationController
   before_action :set_front, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:check_out]
+  before_action :authenticate_user!, except: [:check_out_as_guest]
   
   # GET /fronts
   # GET /fronts.json
@@ -40,19 +40,32 @@ class FrontsController < ApplicationController
   end
 
 
-
-
-
    def home
      if params[:category]
-        @products = Product.search_with_category(params[:category], params[:title])
-        @side_products = Product.order('id ASC').limit(5)
+        @products = Product.search_with_category(params[:category], params[:title]).where.not(id: '1')
+        @side_products = Product.order('id ASC').limit(5).where.not(id: '1')
+        @coutry_products = Product.all.select(:made_by_country).uniq
+         @brand_products = Product.all.select(:brand).uniq
      elsif params[:title]
-        @products = Product.search_with_category(params[:category], params[:title])
-        @side_products = Product.order('id ASC').limit(5)
+        @products = Product.search_with_category(params[:category], params[:title]).where.not(id: '1')
+        @side_products = Product.order('id ASC').limit(5).where.not(id: '1')
+        @coutry_products = Product.all.select(:made_by_country).uniq
+         @brand_products = Product.all.select(:brand).uniq
+     elsif params[:made_by_country]
+        @products = Product.where("made_by_country = ?", params[:made_by_country])
+        @side_products = Product.order('id ASC').limit(5).where.not(id: '1')
+        @coutry_products = Product.all.select(:made_by_country).uniq
+         @brand_products = Product.all.select(:brand).uniq
+     elsif params[:brand]
+        @products = Product.where("brand = ?", params[:brand])
+        @side_products = Product.order('id ASC').limit(5).where.not(id: '1')
+        @coutry_products = Product.all.select(:made_by_country).uniq
+        @brand_products = Product.all.select(:brand).uniq
      else
-        @products = Product.all
-        @side_products = Product.order('id ASC').limit(5)
+        @products = Product.where.not(id: '1')
+        @side_products = Product.order('id ASC').limit(5).where.not(id: '1')
+        @coutry_products = Product.all.select(:made_by_country).uniq
+        @brand_products = Product.all.select(:brand).uniq
      end
    end
 

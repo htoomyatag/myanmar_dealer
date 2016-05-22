@@ -168,6 +168,7 @@ fashion_bags = FashionBag.create([
             title:"Luggage",
             price:19000,
             bag_type:"Luggage",
+                        made_by_country: "China",
             size:"12 inches",
             category:"bags",
             store_name:"Luggage",
@@ -180,6 +181,7 @@ fashion_bags = FashionBag.create([
             title:"Luggage",
             price:36000,
             bag_type:"Luggage",
+                        made_by_country: "China",
             size:"20 inches",
             category:"bags",
             store_name:"Luggage",
@@ -192,6 +194,7 @@ fashion_bags = FashionBag.create([
             title:"Luggage",
             price:40000,
             bag_type:"Luggage",
+                        made_by_country: "China",
             size:"22 inches",
             category:"bags",
             store_name:"Luggage",
@@ -203,6 +206,7 @@ fashion_bags = FashionBag.create([
           {
             title:"Luggage",
             price:43000,
+                        made_by_country: "China",
             bag_type:"Luggage",
             size:"24 inches",
             category:"bags",
@@ -215,6 +219,7 @@ fashion_bags = FashionBag.create([
 
           {
             title:"Luggage",
+                        made_by_country: "China",
             price:44000,
             bag_type:"Luggage",
             size:"20 inches",
@@ -226,6 +231,7 @@ fashion_bags = FashionBag.create([
 
           {
             title:"Luggage",
+                        made_by_country: "China",
             price:51000,
             bag_type:"Luggage",
             size:"24 inches",
@@ -238,23 +244,25 @@ fashion_bags = FashionBag.create([
 
           {
             title:"Luggage",
+                        made_by_country: "China",
             price:35000,
             bag_type:"Luggage",
             size:"20 inches  ",
             category:"bags",
             store_name:"Luggage",
-            color: "Light pink, deep pink, green, yellow, purple, light blue",
+            color: "Light&DeepPink,Green,Yellow,Purple,Lightblue",
             user_id:"6"
           },
 
           {
             title:"Luggage",
+                        made_by_country: "China",
             price:42000,
             bag_type:"Luggage",
             size:"24 inches  ",
             category:"bags",
             store_name:"Luggage",
-            color: "Light pink, deep pink, green, yellow, purple, light blue",
+            color: "Light&DeepPink,Green,Yellow,Purple,Lightblue",
             user_id:"6"
           }
 
@@ -262,23 +270,7 @@ fashion_bags = FashionBag.create([
 
 
   
-    fashion_clothings = FashionClothing.create([
-
-   #  {title:"temptitle",
-   #  price:"5000",
-   #  quantity:"30",
-   #  size:"tempsize",
-   #  made_by_country:"China",
-   #  made_with:"tempmadewith",
-   # description:"This is Descritpion",
-   #  gender:"male",
-   #  brand:"tempbrand",
-   #  user_id:"1",
-   #  color:"Red Green Blue",
-   #  category:"cloths",
-   #  store_name:"H&Ttechs"}
-
-    ])
+    
 
 
   
@@ -287,6 +279,7 @@ fashion_bags = FashionBag.create([
 
           {
             title:"Shoes",
+                        made_by_country: "China",
             price:"16000",
             footwear_type:"Shoes",
             size:"35,36,37,38,39",
@@ -299,6 +292,7 @@ fashion_bags = FashionBag.create([
 
           {
             title:"Shoes",
+                        made_by_country: "China",
             price:"16500",
             footwear_type:"Shoes",
             size:"35,36,37,38,39,40",
@@ -312,6 +306,7 @@ fashion_bags = FashionBag.create([
           {
             title:"Shoes",
             price:"16500",
+                        made_by_country: "China",
             footwear_type:"Shoes",
             size:"35,36,37,38,39,40",
             user_id:"5",
@@ -324,6 +319,7 @@ fashion_bags = FashionBag.create([
           {
             title:"Shoes",
             price:"16500",
+                        made_by_country: "China",
             footwear_type:"Shoes",
             size:"35,36,37,38,39",
             user_id:"5",
@@ -337,6 +333,7 @@ fashion_bags = FashionBag.create([
           {
             title:"Shoes",
             price:"16500",
+                        made_by_country: "China",
             footwear_type:"Shoes",
             size:"35,36,37,38,39",
             user_id:"5",
@@ -349,6 +346,7 @@ fashion_bags = FashionBag.create([
           {
             title:"Shoes",
             price:"17000",
+                        made_by_country: "China",
             footwear_type:"Shoes",
             size:"35,36,37,38,39",
             user_id:"5",
@@ -361,6 +359,7 @@ fashion_bags = FashionBag.create([
           {
             title:"Shoes",
             price:"14500",
+             made_by_country: "China",
             footwear_type:"Shoes",
             size:"35,36,37,38,39",
             user_id:"5",
@@ -372,6 +371,7 @@ fashion_bags = FashionBag.create([
           {
             title:"Shoes",
             price:"16500",
+           made_by_country: "China",
             footwear_type:"Shoes",
             size:"35,36,37,38,39,40",
             user_id:"5",
@@ -384,6 +384,7 @@ fashion_bags = FashionBag.create([
           {
             title:"Shoes",
             price:"16500",
+           made_by_country: "China",
             footwear_type:"Shoes",
             size:"35,36,37,38,39",
             user_id:"5",
@@ -396,6 +397,7 @@ fashion_bags = FashionBag.create([
           {
             title:"Shoes",
             price:"16500",
+            made_by_country: "China",
             footwear_type:"Shoes",
             size:"35,36,37,38,39",
             user_id:"5",
@@ -407,6 +409,7 @@ fashion_bags = FashionBag.create([
 
           {
             title:"Shoes",
+           made_by_country: "China",
             price:"16000",
             footwear_type:"Shoes",
             size:"35,36,37,38,39",
@@ -419,6 +422,7 @@ fashion_bags = FashionBag.create([
 
           {
             title:"Shoes",
+            made_by_country: "China",
             price:"15500",
             footwear_type:"Shoes",
             size:"35,36,37,38,39",
@@ -431,6 +435,7 @@ fashion_bags = FashionBag.create([
 
           {
             title:"Sandal",
+            made_by_country: "China",
             price:"19000",
             footwear_type:"Sandal",
             size:"35,36,37,38,39",
@@ -443,6 +448,7 @@ fashion_bags = FashionBag.create([
 
           {
             title:"Sandal",
+           made_by_country: "China",
             price:"19000",
             footwear_type:"Sandal",
             size:"35,36,37,38,39",
@@ -455,6 +461,7 @@ fashion_bags = FashionBag.create([
 
          {
             title:"Sandal",
+            made_by_country: "China",
             price:"16500",
             footwear_type:"Sandal",
             size:"35,36,37,38,39",
@@ -467,6 +474,7 @@ fashion_bags = FashionBag.create([
 
          {
             title:"Sandal",
+            made_by_country: "China",
             price:"23000",
             footwear_type:"Sandal",
             size:"35,36,37,38,39",
@@ -480,6 +488,7 @@ fashion_bags = FashionBag.create([
 
          {
             title:"Sandal",
+            made_by_country: "China",
             price:"15500",
             footwear_type:"Sandal",
             size:"35,36,37,38,39",
@@ -492,6 +501,7 @@ fashion_bags = FashionBag.create([
 
          {
             title:"Sandal",
+            made_by_country: "China",
             price:"16500",
             footwear_type:"Sandal",
             size:"35,36,37,38,39",
@@ -503,6 +513,7 @@ fashion_bags = FashionBag.create([
 
          {
             title:"Sandal",
+             made_by_country: "China",
             price:"16500",
             footwear_type:"Sandal",
             size:"35,36,37,38,39",
@@ -515,6 +526,7 @@ fashion_bags = FashionBag.create([
 
           {
             title:"Sandal",
+             made_by_country: "China",
             price:"18500",
             footwear_type:"Sandal",
             size:"35,36,37,38,39",
@@ -527,6 +539,7 @@ fashion_bags = FashionBag.create([
 
           {
             title:"Sandal",
+             made_by_country: "China",
             price:"17000",
             footwear_type:"Sandal",
             size:"35,36,37,38,39",
@@ -539,6 +552,7 @@ fashion_bags = FashionBag.create([
 
           {
             title:"Lady Shoes",
+            made_by_country: "China",
             price:"16000",
             footwear_type:"Lady Shoes",
             size:"35,36,37,38,39",
@@ -555,17 +569,13 @@ fashion_bags = FashionBag.create([
 
       fashion_hats = FashionHat.create([
 
-   #  {title:"temptitle",
-   #  price:"299",
-   #  quantity:"30",
-   #  made_by_country:"China",
-   #  made_with:"tempmadewith",
-   # description:"This is Descritpion",
-   #  brand:"tempbrand",
-   #  hat_type:"snapback",
-   #  user_id:"1",
-   #  category:"hats",
-   #  store_name:"H&Ttechs"}
+        {title:"batman snapback",
+        price:"9000 Kyats",
+        made_by_country:"Thailand",
+        hat_type:"snapback",
+        user_id:"4",
+        category:"hats",
+        store_name:"S3 fashion"}
 
     ])
 
@@ -831,9 +841,70 @@ user_types = UserType.create([
 
 fashion_clothings = FashionClothing.create([
 
+
+
+  {
+
+    user_id:"4",
+    title:"batman t-shirt",
+    made_by_country: "Myanmar",
+    price:10000,
+    size:"S,M,L,XL",
+    color: "White, Black",
+    category: "cloths",
+    store_name: "S3 fashion"
+
+    },
+
+  {
+
+    user_id:"4",
+    title:"Bull Dog",
+    made_by_country: "Thailand",
+    price: 7500,
+    size:"S,M,L,XL",
+    color: "White, Black",
+    category: "cloths",
+    store_name: "S3 fashion",
+    brand: "Overdoze"
+
+    },
+
+     
+
+
+      {
+
+    user_id:"4",
+    title:"BDVDS",
+    made_by_country: "Thailand",
+    price: 7500,
+    size:"S,M,L,XL",
+    color: "White, Black",
+    category: "cloths",
+    store_name: "S3 fashion",
+    brand: "Overdoze"
+
+    },
+
+    {
+
+    user_id:"1",
+    title:"Plain Tee",
+    made_by_country: "Thailand",
+    price: 7500,
+    size:"S,M,L,XL",
+    color: "White, Black, Grey, LightGray",
+    category: "cloths",
+    store_name: "S3 fashion",
+    brand: "Indi"
+
+    },
+
     {
 
     user_id:"7",title:"Brassiere",
+                made_by_country: "China",
     price:10000,
     size:"70/A32, 70B/32, 75/34A, 75/34B, 36/80A, 36/80B",
     color: "Black, Pearl, Red, Green, Pink, Grey, Peach",
@@ -847,6 +918,7 @@ fashion_clothings = FashionClothing.create([
 
     user_id:"7",
     title:"Brassiere (one set)",
+                made_by_country: "China",
     price:13000,
     size:"70/A32, 70B/32, 75/34A, 75/34B, 36/80A, 36/80B",
     color: "Black, Pearl, Red, Green, Pink, Grey, Peach",
@@ -860,6 +932,7 @@ fashion_clothings = FashionClothing.create([
 
     user_id:"7",
     title:"Brassiere (one set)",
+                made_by_country: "China",
     price:14000,
     size:"70/A32, 70B/32, 75/34A, 75/34B, 36/80A, 36/80B",
     color: "Flower",
@@ -874,6 +947,7 @@ fashion_clothings = FashionClothing.create([
 
     user_id:"7",
     title:"Brassiere (one set)",
+                made_by_country: "China",
     price:16000,
     size:"70/32B, 75/34B, 36/80B",
     color: "Black, Pink, Corlourful",
@@ -887,6 +961,7 @@ fashion_clothings = FashionClothing.create([
 
     user_id:"7",
     title:"Brassiere",
+                made_by_country: "China",
     price:14000,
     size:"70/32B, 75/34B, 36/80B",
     color: "Black, Pink, Corlourful",
@@ -901,6 +976,7 @@ fashion_clothings = FashionClothing.create([
 
     user_id:"7",
     title:"Brassiere (one set)",
+                made_by_country: "China",
     price:15000,
     size:"70/32A, 75/34A, 36/80A",
     color: "Black,Blue, Peach, light pink, deep pink, yellow",
@@ -914,6 +990,7 @@ fashion_clothings = FashionClothing.create([
 
     user_id:"7",
     title:"Brassiere",
+    made_by_country: "China",
     price:11500,
     size:"70/A32, 70B/32, 75/34A, 75/34B, 36/80A",
     color: "Black,Blue, Peach, light pink, deep pink, yellow",
@@ -927,6 +1004,7 @@ fashion_clothings = FashionClothing.create([
 
     user_id:"7",
     title:"Brassiere (one set)",
+    made_by_country: "China",
     price:13500,
     size:"70/A32, 70B/32, 75/34A, 75/34B, 36/80A",
     color: "Yellow, Pink, Light green, Dark green, Blue",
@@ -941,22 +1019,6 @@ fashion_clothings = FashionClothing.create([
 ])
 
 
-fashion_hats = FashionHat.create([
-
-# {
-# user_id:"1",
-# title:"swag tee",
-# price:1000,
-# quantity: 12,
-# made_by_country:"Thailand", 
-# made_with:"Cotton",
-# description: "for the swag from the swag",
-# brand: "Genius",
-# category:"hats",
-# store_name: "H&Ttechs"
-# }
-
-])
 
 
 
@@ -978,7 +1040,7 @@ user = User.create([
 
   # {user_type_id:"2",name: "htoo", email: "htoomyatag@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
   # {user_type_id:"2",name: "thel", email: "theldarlykhin@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
-  # {user_type_id:"2",name: "insane", email: "insane@gmail.com", password: "privatethel", password_confirmation: "privatethel"}
+  {user_type_id:"2",name: "arphan", email: "arphan@gmail.com", password: "privateafan", password_confirmation: "privateafan"}
 
 
 
