@@ -15,11 +15,8 @@
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 
-
-
-
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
   <script src="http://js.pusher.com/3.0/pusher.min.js"></script>
   
   <%= csrf_meta_tags %>
@@ -30,119 +27,201 @@
 
 
   <header id="header-area">
-
   <!-- Header Top Starts -->
     <div class="header-top">
-      
       <div class="container">
         <div class="row">
         <!-- Header Links Starts -->
-          <div class="col-sm-8 col-xs-12">
-            <div class="header-links">
+          <div class="col-sm-12 col-xs-12">
               <ul class="nav navbar-nav pull-left">
-                <li>
-                  <a href="/">
-                    <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
-                    <span class="hidden-sm hidden-xs">
-                      <%=t :home %>
-                    </span>
-                  </a>
-                </li>
-                <% if user_signed_in? %>
-                     <% if current_user.user_type_id == 2 %>
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" style="color:white;">
+                              MD Home
+                            </span>
+                          </a>
+                        </li>
 
-                          <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%=t :my_account %> <span class="caret"></span></a>
-                              <ul class="dropdown-menu" style="background:black;">
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" style="color:white;">
+                              Big Deal
+                            </span>
+                          </a>
+                        </li>
 
-                                <li>
-                                      <%= link_to "#{t :order_list}", my_order_path %>
-                                </li>
 
-                                <li>
-                                      <%= link_to "#{t :report_list}", my_report_path %>
-                                </li>
-
-                                 <li>
-                                      <%= link_to "#{t :conversation_list}", my_conversation_path %>
-                                </li>
-                                  
-                              </ul>
-                          </li>
-
-                          <li>
-                              <%= link_to "#{t :log_out}", destroy_user_session_path, :method => :delete %>
-                          </li>
-
-                              
-                      <% end %>
-
-                      <% if current_user.user_type_id == 1 %>
-
-                          <li><%= link_to "#{t :dashboard}", dashboard_path %></li>
-
-                          <li><%= link_to "#{t :log_out}", destroy_user_session_path, :method => :delete %></li>
-
-                      <% end %>
-                <% end %>
-              
-              
-
-                          
-
-                      <li>
-                        <%= link_to "#{t :check_out}", check_out_path %>
-                      </li>
-
-            
-              
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" style="color:white;">
+                              MD Mobile
+                            </span>
+                          </a>
+                        </li>
               </ul>
-            </div>
-          </div>
-        <!-- Header Links Ends -->
-        <!-- Currency & Languages Starts -->
-          <div class="col-sm-4 col-xs-12">
-            <div class="pull-right">
-            <!-- Currency Starts -->
-              <ul class="nav navbar-nav pull-left">
-                  
-                  <% if user_signed_in? %>
       
-                  <% else %>
+            <div class="pull-right">
+              <!-- Currency Starts -->
+              <ul class="nav navbar-nav pull-left">
 
                       <li>
-                        <%= link_to "#{t :Buyer_Login}", buyer_sign_in_path %>
+                        <a href="/">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            My MD
+                          </span>
+                        </a>
                       </li>
 
                       <li>
-                        <%= link_to "#{t :Seller_Login}", seller_sign_in_path %>
+                        <a href="/">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Cart
+                          </span>
+                        </a>
                       </li>
 
+                      <li>
+                        <a href="/">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Favourite
+                          </span>
+                        </a>
+                      </li>
 
+                      <li>
+                        <a href="/">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Orderd
+                          </span>
+                        </a>
+                      </li>
 
-            
-                  <% end %>
-                            
+                      <li>
+                        <a href="/">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs">
+                            <b>Login</b>
+                          </span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs">
+                            <b>Register</b>
+                          </span>
+                        </a>
+                      </li>
+
+                      <li>
+                         <%= link_to image_tag("english_flag.png"), "?locale=en" %>
+                      </li>
+
+                      <li>
+                          <%= link_to image_tag("mm_flag.png"), "?locale=mm" %>
+                      </li>
               </ul>
-            
-              <span style="position:absolute;float:left;">
-                <%= link_to image_tag("english_flag.png"), "?locale=en" %>
-                <%= link_to image_tag("mm_flag.png"), "?locale=mm" %>
-              </span>
-            
-
-                          
-
-                        
-            <!-- Languages Ends -->
             </div>
+
+
           </div>
-        <!-- Currency & Languages Ends -->
         </div>
       </div>
     </div>
-  <!-- Header Top Ends -->
-  <!-- Main Header Starts -->
+
+
+    <div class="main-header">
+      <div class="container">
+              <div class="row">
+                  
+
+                <div class="col-md-3">
+                  <div id="logo">
+                    <a href="#"><img src="/assets/logo.jpg" title="Spice Shoppe" alt="Spice Shoppe" class="img-responsive" /></a>
+                  </div>
+                </div>
+
+                <div class="col-md-6" style="background:red;">
+                </div>
+
+                <div class="col-md-3" style="background:black;">
+   
+                    <div style="float:left;">
+                      <img src="/assets/avatar.png" class="img-responsive" />
+                      <p class="avata_name"> Sai Kham Mg </p>
+                    </div>
+
+                    <div style="float:right;">
+                      <br/>
+                      <button class="btn btn-default" type="submit" id="menu_mybtn">Login</button><br/>
+                      <button class="btn btn-default" type="submit" id="menu_mybtn">Register</button><br/>
+                      <button class="btn btn-default" type="submit" id="menu_mybtn">Open Shop</button>
+                    </div>
+                  
+                </div>
+
+              </div>
+    
+      </div>
+    </div>
+  
+      <!-- Main Menu Starts -->
+        <nav id="main-menu" class="navbar" role="navigation">
+          <div class="container">
+          <!-- Nav Header Starts -->
+            <div class="navbar-header">
+              <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-cat-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <i class="fa fa-bars"></i>
+              </button>
+            </div>
+          <!-- Nav Header Ends -->
+          <!-- Navbar Cat collapse Starts -->
+            <div class="collapse navbar-collapse navbar-cat-collapse">
+              <ul class="nav navbar-nav">
+                <li>
+                 <%= link_to "#{t :fashions_related}", fashion_related_path, class: "btn btn-1" %>
+                </li>
+                <li>
+                 <%= link_to "#{t :electronics}", electronics_related_path, class: "btn btn-1" %>
+                </li>
+                <li>
+                  <%= link_to "#{t :health_beauty}", health_beauty_related_path, class: "btn btn-1" %>
+                </li>
+                
+
+                <!--  -->
+                <li>
+                  <%= link_to  "#{t :industrial_parts}", industrial_part_path, class: "btn btn-1" %>
+                </li>
+
+                <li>
+                  <%= link_to "#{t :sports}", sports_related_path, class: "btn btn-1" %>
+                </li>
+
+                <li>
+                  <%= link_to "#{t :services}", service_related_path, class: "btn btn-1" %>
+                </li>
+                <li>
+                  <%= link_to "#{t :transportation_related}", auto_transportation_path, class: "btn btn-1" %>
+                </li>
+                
+                
+              </ul>
+            </div>
+          <!-- Navbar Cat collapse Ends -->
+          </div>
+        </nav>
+  <!-- Main Menu Ends -->
+  </header>
     
 
 <%= yield %>

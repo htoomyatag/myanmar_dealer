@@ -306,7 +306,7 @@ hr{
 			color:#bf1c23;
 		}
 		#cart .dropdown-menu table td a:hover{
-			color:#fff;
+			color:#bf1c23;
 		}
 		
 /* Main Menu Styles Starts */
@@ -1244,3 +1244,22 @@ select#select option[value="transporter"]   {
   box-shadow: none;
   
  }
+
+
+.navbar-nav>li>a:hover {
+   background:#bf1c23;
+}
+
+
+
+#menu_mybtn{
+	margin-bottom: 11px;
+	width: 100%;
+}
+
+
+.avata_name {
+
+	text-align: center;
+	color: white;
+}
