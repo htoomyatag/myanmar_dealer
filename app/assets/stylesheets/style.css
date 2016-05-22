@@ -1193,6 +1193,7 @@ hr{
 
 #side_menu{
 	font-size: 12px;
+	color: white;
 }
 
 
@@ -1235,7 +1236,7 @@ select#select option[value="transporter"]   {
  	background:#bf1c23;
   border: solid #bf1c23;
   border-width: 1px 1px 1px 1px;
-  color: white;
+  color: #fff;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -1253,7 +1254,7 @@ select#select option[value="transporter"]   {
 
 
 #menu_mybtn{
-	margin-bottom: 11px;
+	margin-bottom: 5px;
 	width: 100%;
 }
 
@@ -1261,5 +1262,37 @@ select#select option[value="transporter"]   {
 .avata_name {
 
 	text-align: center;
-	color: white;
+	color: #fff;
+}
+
+
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  color: #fff;
+  cursor: default;
+  background-color: #d9534f;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+
+.badge{
+	background: #d9534f;
+}
+
+
+.mytitle{
+	background: #d9534f;
+	font-size: 16px;
+	padding: 10px;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+}
+
+
+.list-group-item {
+
+	background: #d9534f;
+	color: #fff;
+
 }

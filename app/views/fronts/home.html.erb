@@ -1,336 +1,182 @@
+<div class="container">
+     <div class="row">
 
-<div id="main-container-home" class="container">
-		<div class="row">
-		<!-- Sidebar Starts -->
-			<div class="col-md-3">
-			<!-- Categories Links Starts -->
-				<h3 class="side-heading"><%=t :category %></h3>
-				<div class="list-group categories">
+     <!-- side menu -->
+     	 <div class="col-md-3">
+     	 	<p class="mytitle"> <%=t :category %> </p>
 
-
-				 	<%= link_to "#{t :clothings}", product_fashion_clothings_path, id: "side_menu", class: "list-group-item" %>
+     	 	<div class="list-group categories">
 
 
-				 	<%= link_to "#{t :hats}", product_fashion_hats_path, id: "side_menu", class: "list-group-item" %>
-
-				 	<%= link_to "#{t :footwears}", product_fashion_footwears_path, id: "side_menu", class: "list-group-item" %>
-
-				 	<%= link_to "#{t :bags}", product_fashion_bags_path, id: "side_menu", class: "list-group-item" %>
-
-				 	<%= link_to  "#{t :fashions_related_acc}", product_fashion_accessories_path, id: "side_menu", class: "list-group-item" %>
-
-				 	<%= link_to "#{t :electrical_equipments}", product_electrical_equipments_path, id: "side_menu", class: "list-group-item" %>
-
-				 	<%= link_to "#{t :telephone_accessories}", product_telephone_accessories_path, id: "side_menu", class: "list-group-item" %>
-
-				 	<%= link_to  "#{t :computers_laptops}", product_computers_path, id: "side_menu", class: "list-group-item" %>
-
-				 	<%= link_to "#{t :home_appliances}", product_home_appliances_path, id: "side_menu", class: "list-group-item" %>
-
-				 	<%= link_to "#{t :medicines}", product_medicines_path, id: "side_menu", class: "list-group-item" %>
-
-				 	 <%= link_to  "#{t :beauty_equipments}", product_beauty_equipments_path, id: "side_menu", class: "list-group-item" %>
-
-				 	 <%= link_to "#{t :makeup_and_skincares}", product_makeup_and_skincares_path, id: "side_menu", class: "list-group-item" %>
-
-				 	 <%= link_to "#{t :bath_supplies}", product_bath_supplies_path, id: "side_menu", class: "list-group-item" %>
-				
-				 	 <%= link_to "#{t :industrial_equipments}", product_instruments_path, id: "side_menu", class: "list-group-item" %>
-				
-					 <%= link_to "#{t :machines}", product_machines_path, id: "side_menu", class: "list-group-item" %>
-
-					 <%= link_to "#{t :motorcycle_accessories}", product_motorcycle_accessories_path, id: "side_menu", class: "list-group-item" %>
-
-				 	 <%= link_to "#{t :carcycle_accessories}", product_car_accessories_path, id: "side_menu", class: "list-group-item" %>
-
-
-				 	 <%= link_to "#{t :special_gifts}", product_gifts_path, id: "side_menu", class: "list-group-item" %>
-
-				 	 <%= link_to "#{t :sports_accessories}", product_sports_path, id: "side_menu", class: "list-group-item" %>
-
-				 	 <%= link_to "#{t :toys}", product_toys_path, id: "side_menu", class: "list-group-item" %>
-
-				 	<%= link_to "#{t :training_and_schools}", product_training_and_schools_path, id: "side_menu", class: "list-group-item" %>
-
- 					<%= link_to "#{t :other_services}", product_services_path, id: "side_menu", class: "list-group-item" %>
-
-
-
+				<%= link_to "#{t :fashions_related}", fashion_related_path,id: "side_menu", class: "list-group-item" %>
 					
-				</div>
-			<!-- Categories Links Ends -->
-			<!-- Special Products Starts -->
-				<h3 class="side-heading"><%=t :special %></h3>
-				<ul class="side-products-list">
-				<!-- Special Product #1 Starts -->
-				<% @side_products.each do |side_product| %>
-					<li class="clearfix">
+				<%= link_to "#{t :electronics}", electronics_related_path,id: "side_menu", class: "list-group-item" %>
 						
-						<% if !side_product.avatar1_file_name.nil?  %>
-					        <%= image_tag side_product.avatar1.url, :id => "product_menu_image", :class=>"img-responsive" %>
-					    <% else  %>      
-							<img src="/assets/no_image.jpg" alt="product" class="img-responsive" id="product_menu_image" />
-					    <% end %>
-
-						<h5><a href="#"><%= side_product.title %></a></h5>
-
-						<div class="price"><br/>
-							<span class="price-new">
-							 <%= side_product.price.to_i %> <%=t :MMK %>
-							</span> 
-							<span class="price-old">
-							<%= side_product.price.to_i + 20 %> <%=t :MMK %>
-							</span>
-						</div>
-					</li>
-				<% end %>
-				</ul>
-			<!-- Special Products Ends -->
-				<br>
-			<!-- Banner #1 Ends -->
-			<!-- Shopping Options Starts -->
-		
-				<h3 class="side-heading"><%=t :shopping_options %></h3>
-				<div class="list-group">
-					<div class="list-group-item">
-						 <%=t :brands %>
-					</div>
-
-					<div class="list-group-item">
-						<div class="filter-group">
-						<% @brand_products.each do |brand_product| %>
-
-							<label class="radio">
-								<input name="filter-manuf" type="radio" value="<%= brand_product.brand %>" checked="checked" id="brand_check" name="Brand" />
-								<%= brand_product.brand %>
-							</label>
-
-						<% end %>
+				<%= link_to "#{t :health_beauty}", health_beauty_related_path,id: "side_menu", class: "list-group-item" %>
 						
-						</div>							
-					</div>	
-					<div class="list-group-item">
-						<form action="/">
-						    <input id="brand" name="brand" style="display:none;">
-							<button type="submit" class="btn btn-black">Filter with Brand</button>
-						</form>
-					</div>
-
-
-					<div class="list-group-item">
-						 <%=t :manufacturer %>
-					</div>
-
-
-
-					<div class="list-group-item">
-						<div class="filter-group">
-						<% @coutry_products.each do |coutry_product| %>
-
-							<label class="radio">
-								<input name="filter-manuf" type="radio" value="<%= coutry_product.made_by_country %>" checked="checked" id="country_check" name="Country" />
-								<%= coutry_product.made_by_country %>
-							</label>
-
-						<% end %>
+				 <%= link_to  "#{t :industrial_parts}", industrial_part_path,id: "side_menu", class: "list-group-item" %>
+					
+				 <%= link_to "#{t :sports}", sports_related_path,id: "side_menu", class: "list-group-item" %>
 						
-						</div>							
-					</div>	
-					<div class="list-group-item">
-						<form action="/">
-						    <input id="made_by_coutry" name="made_by_country" style="display:none;">
-							<button type="submit" class="btn btn-black">Filter with Country</button>
-						</form>
-					</div>
+				 <%= link_to "#{t :services}", service_related_path,id: "side_menu", class: "list-group-item" %>
+						
+				 <%= link_to "#{t :transportation_related}", auto_transportation_path,id: "side_menu", class: "list-group-item" %>
 
 
-					<div class="list-group-item">
-						<img src="/assets/transporter_ads.png" alt="Slider" class="img-responsive" />
-									
-					</div>
-				</div>
-			<!-- Shopping Options Ends -->
+
+
+
+
+				<%= link_to "#{t :electronics}", electronics_related_path,id: "side_menu", class: "list-group-item" %>
+						
+				<%= link_to "#{t :health_beauty}", health_beauty_related_path,id: "side_menu", class: "list-group-item" %>
+						
+				 <%= link_to  "#{t :industrial_parts}", industrial_part_path,id: "side_menu", class: "list-group-item" %>
+					
+				 <%= link_to "#{t :sports}", sports_related_path,id: "side_menu", class: "list-group-item" %>
+						
+				 <%= link_to "#{t :services}", service_related_path,id: "side_menu", class: "list-group-item" %>
+						
+				 <%= link_to "#{t :transportation_related}", auto_transportation_path,id: "side_menu", class: "list-group-item" %>
+							
+							
 			</div>
-		<!-- Sidebar Ends -->		
-		<!-- Primary Content Starts -->
-			<div class="col-md-9">
-			<!-- Slider Section Starts -->
-				<div class="slider">
-					<div id="main-carousel" class="carousel slide" data-ride="carousel">
-					<!-- Wrapper For Slides Starts -->
-						<div class="carousel-inner">
-							<div class="item active">
-								<img src="/assets/slider-imgs/slide1-img.jpg" alt="Slider" class="img-responsive" />
-							</div>
-							<div class="item">
-								<img src="/assets/slider-imgs/slide2-img.jpg" alt="Slider" class="img-responsive" />
-							</div>
-						</div>
-					<!-- Wrapper For Slides Ends -->
-					<!-- Controls Starts -->
-						<a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
-							<span class="glyphicon glyphicon-chevron-left"></span>
-						</a>
-						<a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
-							<span class="glyphicon glyphicon-chevron-right"></span>
-						</a>
-					<!-- Controls Ends -->
-					</div>	
-				</div>
-			<!-- Slider Section Ends -->
-			<!-- 2 Column Banners Starts -->
-				<div class="col2-banners">
-					<ul class="row list-unstyled">
-						<li class="col-sm-8">
-							<img src="/assets/banners/2col-banner1.jpg" alt="banners" class="img-responsive" />
-						</li>
-						<li class="col-sm-4">
-							<img src="/assets/banners/2col-banner2.jpg" alt="banners" class="img-responsive" />
-						</li>
-					</ul>
-				</div>
-			<!-- 2 Column Banners Ends -->
-			<!-- Latest Products Starts -->
-				
-			<!-- Latest Products Ends -->
-			<!-- Specials Products Starts -->
-				<section class="products-list">			
-				<!-- Heading Starts -->
-					<h2 class="product-head">
-					<%=t :special_products %>
-					</h2>
-				<!-- Heading Ends -->
-				<!-- Products Row Starts -->
-					<div class="row">
-					<!-- Product #1 Starts -->
-					<% @products.each do |product| %>
-						<div class="col-md-4 col-sm-6">
-							<div class="product-col">
-								<div class="image">
-								<% if !product.avatar1_file_name.nil?  %>
-					                <%= image_tag product.avatar1.url, :id => "product_image" %>
-					            <% else  %>      
-									<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
-					            <% end %>
-								</div>
-								<div class="caption">
-									<h4>
-										<%= link_to product.title, product_full_path(:id => product) %>
-									</h4>
-								
-									<div class="price">
-										<span class="price-new"><%= product.price.to_i %> <%=t :MMK %></span>  <br/>
-										<span class="price-old"><%= product.price.to_i + 15 %> <%=t :MMK %></span>
-									</div>
-									<div class="cart-button">
-									
-									<%= button_to line_items_path(:mmdealer_code => product.category.to_s+product.id.to_s, :user_id => product.user_id), remote: true, :onclick =>"cartFunction#{product.id}()", :data => product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
-									   <%=t :add_to_cart %>
+     	 	
 
 
+     	 </div>
+     	 <div class="col-md-6">
+     	  	<p class="mytitle"> Hot sale</p>
 
-									  <i class="fa fa-shopping-cart"></i> 
-									<% end %>
+		     	  	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+							 
 
+							  <!-- Wrapper for slides -->
+							  <div class="carousel-inner" role="listbox">
+							    <div class="item active">
+							       <%= image_tag 'slide1.png' %>
+							   
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'slide2.png' %>
+							     
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'slide3.png' %>
+							     
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'slide4.png' %>
+							     
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'slide5.png' %>
+							    </div>
+							  </div>
 
-																	
-									</div>
-								</div>
-							</div>
-						</div>
-					<% end %>
-					<!-- Product #1 Ends -->
-					<!-- Product #2 Starts -->
-						
-					<!-- Product #3 Ends -->
+							 
 					</div>
-				<!-- Products Row Ends -->
-				</section>
-			<!-- Specials Products Ends -->
-			</div>
-		<!-- Primary Content Ends -->
+					<br/>
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+							
+							  <!-- Wrapper for slides -->
+							  <div class="carousel-inner" role="listbox">
+							    <div class="item active">
+							       <%= image_tag 'slide1.png' %>
+							   
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'slide2.png' %>
+							     
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'slide3.png' %>
+							     
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'slide4.png' %>
+							     
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'slide5.png' %>
+							    </div>
+							  </div>
+
+							
+					</div>
+
+
 		</div>
-	</div>
+     	  <div class="col-md-3">
+     	  	
 
+     	  			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+							 
+							  <!-- Wrapper for slides -->
+							  <div class="carousel-inner" role="listbox">
+							    <div class="item active">
+							       <%= image_tag 'leftslide1.png' %>
+							   
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'leftslide2.png' %>
+							     
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'leftslide3.png' %>
+							     
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'leftslide4.png' %>
+							     
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'leftslide5.png' %>
+							    </div>
+							  </div>
 
+							  <!-- Controls -->
+							 
+					</div>
+					<br/>
 
-	<script type="text/javascript">
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+							 
+							  <!-- Wrapper for slides -->
+							  <div class="carousel-inner" role="listbox">
+							    <div class="item active">
+							       <%= image_tag 'mleftslide1.png' %>
+							   
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'mleftslide2.png' %>
+							     
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'mleftslide3.png' %>
+							     
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'mleftslide4.png' %>
+							     
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'mleftslide5.png' %>
+							    </div>
+							  </div>
 
-	<% @products.each do |product| %>
+							  <!-- Controls -->
+							 
+					</div>
 
-				function cartFunction<%= product.id %>() {
-
-
-					var myqty = $("#myqty").text();
-					var addqty = parseInt(myqty)+1; 
-					$("#myqty").text(addqty);   
-
-					var myprice = $("#myprice").text();
-					
-					var addmyprice = parseInt(myprice)+<%= product.price %>; 
-					$("#myprice").text(addmyprice);   
-
-					alert("add item");
-
-
-				  		
-
-				}
-
-		<% end %>
-
-	</script>
-
-
-	<script type="text/javascript">
-
-
-			
-
-
-
-$(function(){
-  $('input[type="radio"]').click(function(){
-    if ($(this).is(':checked'))
-    {
-      document.getElementById("made_by_coutry").value = $(this).val();
-    }
-  });
-});
-
-
-$( document ).ready(function() {
-    
-
-document.getElementById("made_by_coutry").value = "CHINA";
-
-});
-
-
-
-
-$(function(){
-  $('input[type="radio"]').click(function(){
-    if ($(this).is(':checked'))
-    {
-      document.getElementById("brand").value = $(this).val();
-    }
-  });
-});
-
-
-$( document ).ready(function() {
-    
-
-document.getElementById("brand").value = "%";
-
-});
-
-
-
-	</script>
+		
 
 
 
 
+     	  </div>
 
+
+
+     </div>
+</div>
