@@ -1,6 +1,6 @@
 class FrontsController < ApplicationController
   before_action :set_front, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:check_out_as_guest]
+  # before_action :authenticate_user!, except: [:check_out_as_guest]
   
   # GET /fronts
   # GET /fronts.json

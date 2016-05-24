@@ -1026,8 +1026,7 @@ fashion_clothings = FashionClothing.create([
 
 user = User.create([
   # seller
-
-  {user_type_id:"1", has_store:"Yes", name:"htoomyatag1",company_name:"MiMiBerry", phone:"09795545748", email: "htoomyatag1.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
+ {user_type_id:"1", has_store:"Yes", name:"htoomyatag1",company_name:"MiMiBerry", phone:"09795545748", email: "htoomyatag1.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
   {user_type_id:"1", has_store:"Yes", name:"htoomyatag2",company_name:"OverDoze", phone:"09795545748", email: "htoomyatag2.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
   {user_type_id:"1", has_store:"Yes", name:"theldarlykhin1",company_name:"5000Kyats", phone:"0930210743",email: "theldarlykhin1.webdev@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
   {user_type_id:"1", has_store:"Yes", name:"theldarlykhin2",company_name:"S3 fashion", phone:"0930210743",email: "theldarlykhin2.webdev@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
@@ -1041,7 +1040,8 @@ user = User.create([
   # {user_type_id:"2",name: "htoo", email: "htoomyatag@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
   # {user_type_id:"2",name: "thel", email: "theldarlykhin@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
   {user_type_id:"2",name: "arphan", email: "arphan@gmail.com", password: "privateafan", password_confirmation: "privateafan"}
-
+  {user_type_id:"2",name: "guest", email: "guestguest@gmail.com", password: "privateafan", password_confirmation: "privateafan"}
+ 
 
 
 ])

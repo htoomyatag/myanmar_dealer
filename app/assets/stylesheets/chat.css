@@ -77,14 +77,15 @@
 
                     width:100%;
                     position: absolute;
-                    bottom: 40px;
+                    bottom: 15px;
             }
 
 
             #msg_box {
 
                   overflow: scroll;
-                  height: 130px;
+                  height: 240px;
+                  
 
 
             }
@@ -95,3 +96,5 @@
 
     width: 100%;
 }
+
+
