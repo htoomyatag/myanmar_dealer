@@ -1,6 +1,6 @@
 class FrontsController < ApplicationController
   before_action :set_front, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!, except: [:check_out_as_guest]
+  before_action :authenticate_user!, only: [:check_out]
   
   # GET /fronts
   # GET /fronts.json
@@ -45,27 +45,55 @@ class FrontsController < ApplicationController
         @products = Product.search_with_category(params[:category], params[:title]).where.not(id: '1')
         @side_products = Product.order('id ASC').limit(5).where.not(id: '1')
         @coutry_products = Product.all.select(:made_by_country).uniq
-         @brand_products = Product.all.select(:brand).uniq
+        @brand_products = Product.all.select(:brand).uniq
+        if user_signed_in? 
+         @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
+         @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
+        end
+
      elsif params[:title]
         @products = Product.search_with_category(params[:category], params[:title]).where.not(id: '1')
         @side_products = Product.order('id ASC').limit(5).where.not(id: '1')
         @coutry_products = Product.all.select(:made_by_country).uniq
          @brand_products = Product.all.select(:brand).uniq
+
+        if user_signed_in? 
+         @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
+         @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
+        end
+
      elsif params[:made_by_country]
         @products = Product.where("made_by_country = ?", params[:made_by_country])
         @side_products = Product.order('id ASC').limit(5).where.not(id: '1')
         @coutry_products = Product.all.select(:made_by_country).uniq
-         @brand_products = Product.all.select(:brand).uniq
+        @brand_products = Product.all.select(:brand).uniq
+
+        if user_signed_in? 
+         @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
+         @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
+        end
+
      elsif params[:brand]
         @products = Product.where("brand = ?", params[:brand])
         @side_products = Product.order('id ASC').limit(5).where.not(id: '1')
         @coutry_products = Product.all.select(:made_by_country).uniq
         @brand_products = Product.all.select(:brand).uniq
+
+        if user_signed_in? 
+         @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
+         @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
+        end
+        
      else
         @products = Product.where.not(id: '1')
         @side_products = Product.order('id ASC').limit(5).where.not(id: '1')
         @coutry_products = Product.all.select(:made_by_country).uniq
         @brand_products = Product.all.select(:brand).uniq
+
+        if user_signed_in? 
+         @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
+         @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
+        end
      end
    end
 
@@ -110,9 +138,9 @@ class FrontsController < ApplicationController
    def product_full
      @product = Product.find(params[:id])
      @relate_product = Product.where(:product_category => @product.product_category)
-
-      @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-      
+      if user_signed_in? 
+       @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
+      end
    end
 
 

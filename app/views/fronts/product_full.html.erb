@@ -191,8 +191,12 @@
 									  <i class="fa fa-shopping-cart"></i> 
 								<% end %>		<br/>
 
+ 							 <%  if user_signed_in?  %>
 								<button class="btn btn-default" id="chat_user"> Chat with
 			      				<b><%= @product.user.name rescue "-" %></b> </button>	
+			      			 <%  else  %>
+			      			 	<p> Please login to chat with this seller</p>	
+			      			  <%  end  %>
 
 						</div>
 
@@ -432,97 +436,99 @@ document.getElementById('delivery_fees').value = package_name;
 
 
 
+  <%  if user_signed_in?  %>
 
+				<script type="text/javascript">
+				  
+				$(document).ready(function () {
+				    //$('#dialog').dialog(); 
+				    $('#chat_user').click(function () {
+				        $('#mychatbox').show();
+				        return false;
+				    });
 
-<script type="text/javascript">
-  
-$(document).ready(function () {
-    //$('#dialog').dialog(); 
-    $('#chat_user').click(function () {
-        $('#mychatbox').show();
-        return false;
-    });
+				    $('#close_chat').click(function () {
+				        $('#mychatbox').hide();
+				        return false;
+				    });
 
-    $('#close_chat').click(function () {
-        $('#mychatbox').hide();
-        return false;
-    });
-
-    $('#send').click(function () {
-        
-      var message = document.getElementById("message").value;
-      var mychannel = "<%= current_user.name.to_s + @product.user.name.to_s %>";
-      var sender_id = "<%= current_user.id %>";
-      var recipient_id = "<%= @product.user_id %>";
-
-
-
-      $.ajax({
-              type: 'get',
-              url: "send_to_pusher?message="+message+"&recipient_id="+recipient_id+"&sender_id="+sender_id+"&channels="+mychannel,
-              complete: function(r){
-
-
-                      $("#text_msg").append("<b> You: "+message+"</b><br/> ");
-                      $("#msg_box").scrollTop($("#msg_box")[0].scrollHeight);
-                   
-
-              }
-           });
+				    $('#send').click(function () {
+				        
+				      var message = document.getElementById("message").value;
+				      var mychannel = "<%= current_user.name.to_s + @product.user.name.to_s %>";
+				      var sender_id = "<%= current_user.id %>";
+				      var recipient_id = "<%= @product.user_id %>";
 
 
 
-    });
+				      $.ajax({
+				              type: 'get',
+				              url: "send_to_pusher?message="+message+"&recipient_id="+recipient_id+"&sender_id="+sender_id+"&channels="+mychannel,
+				              complete: function(r){
+
+
+				                      $("#text_msg").append("<b> You: "+message+"</b><br/> ");
+				                      $("#msg_box").scrollTop($("#msg_box")[0].scrollHeight);
+				                   
+
+				              }
+				           });
 
 
 
-
-
-});
-
-</script>
-
-
-<script type="text/javascript">
-  
- // Enable pusher logging - don't include this in production
-    Pusher.log = function(message) {
-      if (window.console && window.console.log) {
-        window.console.log(message);
-      }
-    };
-
-    var pusher = new Pusher('b218d631b3532773d67f', {
-      encrypted: true
-    });
-
-
-     var my_channel = "<%= @product.user.name.to_s + current_user.name.to_s %>";
-  
-
-    var channel = pusher.subscribe(my_channel);
-    channel.bind('my_event', function(data) {
-
-          $("#text_msg").append("<b id='receiver'>"+"<%= @product.user.name.to_s %>: "+data.message+"</b><br/> ");
-                 
-    });
-
-</script>
+				    });
 
 
 
 
 
+				});
+
+				</script>
 
 
-<script type="text/javascript">
-  
+				<script type="text/javascript">
+				  
+				 // Enable pusher logging - don't include this in production
+				    Pusher.log = function(message) {
+				      if (window.console && window.console.log) {
+				        window.console.log(message);
+				      }
+				    };
 
-$('#message').keypress(function (e) {
-  if (e.which == 13) {
-    $("#send").click()
-    $('#message').val('');
-  }
-});
+				    var pusher = new Pusher('b218d631b3532773d67f', {
+				      encrypted: true
+				    });
 
-</script>
+
+				     var my_channel = "<%= @product.user.name.to_s + current_user.name.to_s %>";
+				  
+
+				    var channel = pusher.subscribe(my_channel);
+				    channel.bind('my_event', function(data) {
+
+				          $("#text_msg").append("<b id='receiver'>"+"<%= @product.user.name.to_s %>: "+data.message+"</b><br/> ");
+				                 
+				    });
+
+				</script>
+
+
+
+
+
+
+
+				<script type="text/javascript">
+				  
+
+				$('#message').keypress(function (e) {
+				  if (e.which == 13) {
+				    $("#send").click()
+				    $('#message').val('');
+				  }
+				});
+
+				</script>
+
+ <% end %>
