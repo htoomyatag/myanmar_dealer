@@ -91,6 +91,8 @@ class OrdersController < ApplicationController
            "backend"
       elsif action_name == "my_order"
            "application"
+      elsif action_name == "my_order_status"
+          "application"
       else
            "backend"
       end
