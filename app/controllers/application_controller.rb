@@ -45,9 +45,11 @@ def set_locale
              @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
              @order_number = Order.where(:user_id => current_user.id).count
              @fav_number = Favourite.where(:user_id => current_user.id).count
+        else
+        	  @order_number = 0
+      		  @fav_number = 0
         end
-      @order_number = 0
-      @fav_number = 0
+    
   end
 
   def is_seller?
