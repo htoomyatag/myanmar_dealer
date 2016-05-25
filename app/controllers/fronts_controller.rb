@@ -9,6 +9,9 @@ class FrontsController < ApplicationController
    end
 
 
+  def add_to_favourite
+     @favourite = Favourite.create(:item => params[:item], :user_id => params[:user_id], :item_code => params[:item_code])
+  end
 
 
 

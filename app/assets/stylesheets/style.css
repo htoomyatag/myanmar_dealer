@@ -1296,3 +1296,8 @@ select#select option[value="transporter"]   {
 	color: #fff;
 
 }
+
+
+#fav {
+    cursor: pointer;
+}

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
  
  
+  resources :favourites
   resources :user_types
   devise_for :users, :controllers => {:sessions => "users/sessions", :registrations => "users/registrations"}
   get 'buyer_sign_up' => 'users#buyer_sign_up', :as => :buyer_sign_up
@@ -96,6 +97,7 @@ Rails.application.routes.draw do
   resources :fashions
   resources :fronts
   get "send_to_pusher" => "fronts#send_to_pusher", :as => :send_to_pusher
+  get "add_to_favourite" => "fronts#add_to_favourite", :as => :add_to_favourite
   root 'fronts#home'
 
  get 'home' => 'fronts#home'

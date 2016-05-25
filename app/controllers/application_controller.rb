@@ -41,11 +41,13 @@ def set_locale
      @cart = current_cart
      @products = Product.where.not(id: '1')
         if user_signed_in? 
-         @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
-         @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
-         @order_number = Order.where(:user_id => current_user.id).count
+             @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
+             @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
+             @order_number = Order.where(:user_id => current_user.id).count
+             @fav_number = Favourite.where(:user_id => current_user.id).count
         end
       @order_number = 0
+      @fav_number = 0
   end
 
   def is_seller?

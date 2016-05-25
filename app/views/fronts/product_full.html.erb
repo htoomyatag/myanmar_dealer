@@ -46,8 +46,16 @@
 			<div class="col-sm-8 product-details">
 				<div class="panel-smart">
 				<!-- Product Name Starts -->
-					<h2><%= @product.title %></h2>
+					<h2>
+					<div>
+						<span style="float:left;"><%= @product.title %></span>
+ 						
+ 						<span style="float:right;"><%= image_tag "fav.png", :class=>"img-responsive", :id => "fav" %></span>
+ 					</div>
+
+					</h2>
 				<!-- Product Name Ends -->
+				    <br/>
 					<hr />
 				<!-- Manufacturer Starts -->
 					<ul class="list-unstyled manufacturer">
@@ -531,4 +539,39 @@ document.getElementById('delivery_fees').value = package_name;
 
 				</script>
 
+
+				 <script type="text/javascript">
+
+
+
+
+				  $('#fav').click(function () {
+				        
+				      var item_code = "aok_code";
+				      var item =  "aok_item";
+				      var user_id = "<%= current_user.id %>";
+				 
+
+
+
+				      $.ajax({
+				              type: 'get',
+				              url: "add_to_favourite?item_code="+item_code+"&item="+item+"&user_id="+user_id,
+				              complete: function(r){
+
+				              		alert("added to your favourite");
+				                   
+
+				              }
+				           });
+
+
+
+				    });
+
+
+ 				</script>
+
  <% end %>
+
+
