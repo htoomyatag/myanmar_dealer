@@ -6,11 +6,11 @@
      <hr/>
 
 
-<span class="label label-default" id="order_status_confirm">order_confirm</span>
-<span class="label label-primary" id="order_status_delivery">order_delivery</span>
-<span class="label label-success" id="order_status_processing">order_processing</span>
-<span class="label label-info" id="order_status_completed">order_completed</span>
-<span class="label label-warning" id="order_status_rejected">order_rejected</span>
+<span class="label label-default" id="order_status_confirm" onclick="order_status_confirm()">order_confirm</span>
+<span class="label label-primary" id="order_status_delivery"  onclick="order_status_delivery()">order_delivery</span>
+<span class="label label-success" id="order_status_processing"  onclick="order_status_processing()">order_processing</span>
+<span class="label label-info" id="order_status_completed"  onclick="order_status_completed()">order_completed</span>
+<span class="label label-warning" id="order_status_rejected"  onclick="order_status_rejected()">order_rejected</span>
 
        <%= render 'form' %>
        
@@ -25,48 +25,51 @@
 
 <script type="text/javascript">
 	
+	
 
-$(document).on('click', '#order_status_confirm', function() {
 
-	var aok = $("#order_status_confirm").text();
+function order_status_confirm() {
+
+    var aok = $("#order_status_confirm").text();
 	document.getElementById("order_order_status").value = aok;
+}
 
 
-});
+function order_status_delivery() {
 
-
-$(document).on('click', '#order_status_delivery', function() {
 
 	var aok = $("#order_status_delivery").text();
 	document.getElementById("order_order_status").value = aok;
 
 
-});
+};
 
-$(document).on('click', '#order_status_processing', function() {
+function order_status_processing() {
+
 
 	var aok = $("#order_status_processing").text();
 	document.getElementById("order_order_status").value = aok;
 
 
-});
+};
 
-$(document).on('click', '#order_status_completed', function() {
+function order_status_completed() {
 
 	var aok = $("#order_status_completed").text();
 	document.getElementById("order_order_status").value = aok;
 
 
-});
+};
 
 
-$(document).on('click', '#order_status_rejected', function() {
+function order_status_rejected() {
+
 
 	var aok = $("#order_status_rejected").text();
 	document.getElementById("order_order_status").value = aok;
 
 
-});
+};
 
 </script>
 

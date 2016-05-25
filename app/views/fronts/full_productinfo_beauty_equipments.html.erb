@@ -275,12 +275,12 @@
 									  <i class="fa fa-shopping-cart"></i> 
 								<% end %>	<br/>
 
-<% @users.each_with_index do |user, index| %>
-		             
-		                			Contact with seller (<%= user.name %>)
-		                  			<%= link_to "Chat Now", "#", class: "btn btn-success btn-xs start-conversation",
-		                              "data-sid" => current_user.id, "data-rip" => user.id %>
-	         						<% end %>									
+                             <%  if user_signed_in?  %>
+								<button class="btn btn-default" id="chat_user"> Chat with
+			      				<b><%= @product.user.name rescue "-" %></b> </button>	
+			      			 <%  else  %>
+			      			 	<p> Please login to chat with this seller</p>	
+			      			  <%  end  %>								
 						</div>
 					</div>
 				<!-- Available Options Ends -->
