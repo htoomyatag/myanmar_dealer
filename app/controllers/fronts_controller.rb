@@ -145,6 +145,9 @@ class FrontsController < ApplicationController
       if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+
+     @comment = Comment.new
+     @comments = Comment.where(:product_id => @product.id)
     
    end
 

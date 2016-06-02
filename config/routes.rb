@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
  
  
+  resources :comments
   resources :favourites
   resources :user_types
   devise_for :users, :controllers => {:sessions => "users/sessions", :registrations => "users/registrations"}
