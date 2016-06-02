@@ -142,12 +142,14 @@ class FrontsController < ApplicationController
      @product = Product.find(params[:id])
      @relate_product = Product.where(:product_category => @product.product_category)
 
+    @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
       if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
 
-     @comment = Comment.new
-     @comments = Comment.where(:product_id => @product.id)
+   
     
    end
 
@@ -157,9 +159,12 @@ class FrontsController < ApplicationController
       @product = Product.find(params[:id])
       @relate_products = Product.where(:category => "bath_supplies")
 
-     if user_signed_in? 
+   @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
 
     end
 
@@ -167,9 +172,12 @@ class FrontsController < ApplicationController
       @product = Product.find(params[:id])
       @relate_products = Product.where(:category => "beauty_equipments")
 
-     if user_signed_in? 
+   @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
 
     end
 
@@ -177,9 +185,12 @@ class FrontsController < ApplicationController
       @product = Product.find(params[:id])
       @relate_products = Product.where(:category => "car_accessories")
 
-     if user_signed_in? 
+   @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
   
     end
 
@@ -187,9 +198,12 @@ class FrontsController < ApplicationController
        @product = Product.find(params[:id])
        @relate_products = Product.where(:category => "computers_laptops")
 
+    @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
       if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
    
     end
 
@@ -197,9 +211,12 @@ class FrontsController < ApplicationController
        @product = Product.find(params[:id])
        @relate_products = Product.where(:category => "eletronic_related")
 
+    @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
       if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
    
     end
 
@@ -207,9 +224,12 @@ class FrontsController < ApplicationController
         @product = Product.find(params[:id])
         @relate_products = Product.where(:category => "equipments")
 
-       if user_signed_in? 
+     @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
     
     end
 
@@ -217,9 +237,12 @@ class FrontsController < ApplicationController
         @product = Product.find(params[:id])
         @relate_products = Product.where(:category => "fashion_related")
 
-       if user_signed_in? 
+     @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
     
     end
 
@@ -227,9 +250,12 @@ class FrontsController < ApplicationController
         @product = Product.find(params[:id])
         @relate_products = Product.where(:category => "bags")
 
-       if user_signed_in? 
+     @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
     
     end
 
@@ -237,9 +263,12 @@ class FrontsController < ApplicationController
       @product = Product.find(params[:id])
       @relate_products = Product.where(:category => "cloths")
 
-     if user_signed_in? 
+   @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
   
     end
 
@@ -247,9 +276,12 @@ class FrontsController < ApplicationController
         @product = Product.find(params[:id])
         @relate_products = Product.where(:category => "footwears")
 
-       if user_signed_in? 
+     @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
     
     end
 
@@ -258,9 +290,12 @@ class FrontsController < ApplicationController
         @product = Product.find(params[:id])
         @relate_products = Product.where(:category => "hats")
 
-       if user_signed_in? 
+     @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
     
     end
 
@@ -268,9 +303,12 @@ class FrontsController < ApplicationController
         @product = Product.find(params[:id])
         @relate_products = Product.where(:category => "gifts")
 
-       if user_signed_in? 
+     @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
     
     end
 
@@ -278,9 +316,12 @@ class FrontsController < ApplicationController
         @product = Product.find(params[:id])
         @relate_products = Product.where(:category => "home_appliance")
 
-       if user_signed_in? 
+     @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
    
     end
 
@@ -288,9 +329,12 @@ class FrontsController < ApplicationController
         @product = Product.find(params[:id])
         @relate_products = Product.where(:category => "instruments")
 
-       if user_signed_in? 
+     @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
     
     end
 
@@ -298,9 +342,12 @@ class FrontsController < ApplicationController
          @product = Product.find(params[:id])
         @relate_products = Product.where(:category => "machines")
 
-       if user_signed_in? 
+     @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
     
     end
 
@@ -308,9 +355,12 @@ class FrontsController < ApplicationController
         @product = Product.find(params[:id])
         @relate_products = Product.where(:category => "comesmetics")
 
-       if user_signed_in? 
+     @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
     
     end
 
@@ -318,9 +368,12 @@ class FrontsController < ApplicationController
         @product = Product.find(params[:id])
         @relate_products = Product.where(:category => "medicines")
 
-       if user_signed_in? 
+     @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
     
     end
 
@@ -328,9 +381,12 @@ class FrontsController < ApplicationController
         @product = Product.find(params[:id])
         @relate_products = Product.where(:category => "motorcycle")
 
-       if user_signed_in? 
+     @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
     
     end
 
@@ -338,9 +394,12 @@ class FrontsController < ApplicationController
         @product = Product.find(params[:id])
         @relate_products = Product.where(:category => "service_category")
 
-       if user_signed_in? 
+     @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
     
     end
 
@@ -348,9 +407,12 @@ class FrontsController < ApplicationController
        @product = Product.find(params[:id])
        @relate_products = Product.where(:category => "sports")
 
+    @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
       if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
    
     end
 
@@ -358,9 +420,12 @@ class FrontsController < ApplicationController
        @product = Product.find(params[:id])
        @relate_products = Product.where(:category => "phone_related")
 
+    @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
       if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
    
     end
 
@@ -368,9 +433,12 @@ class FrontsController < ApplicationController
        @product = Product.find(params[:id])
        @relate_products = Product.where(:category => "toys")
 
-     if user_signed_in? 
+   @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
    
     end
 
@@ -378,9 +446,12 @@ class FrontsController < ApplicationController
        @product = TrainingAndSchool.find(params[:id])
        @relate_products = TrainingAndSchool.all
 
-       if user_signed_in? 
+     @comment = Comment.new
+  @comments = Comment.where(:product_id => @product.id)
+      if user_signed_in? 
        @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
       end
+    
    
     end
 

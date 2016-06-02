@@ -351,21 +351,189 @@
 
 
 
+
+<!--  chat box -->
+
+
+
+  <div class="popup-box chat-popup" id="mychatbox"  style="display:none;">
+
+    <div class="popup-head">
+        <div class="popup-head-left"><%= @product.user.name %></div>
+        <div class="popup-head-right">
+          <a href="#" id="close_chat">✕</a>
+        </div>
+    </div>
+
+   
+
+
+    <div class="popup_foot">
+
+     <div id="msg_box">
+       <p id="text_msg"></p>
+     </div>
+
+
+      <input class="form-control" id="message" rows="1"></textarea>
+      <input class="btn btn-default" type="button" value="Send" id="send" style="display:none;">
+    </div>
+    
+
+  </div>
+
 	<script type="text/javascript">
 
 
    document.getElementById('select_city').onclick = function(e){
 
-  
-
-
-
- var package_name = document.getElementById('select_city').options[document.getElementById('select_city').selectedIndex].value;
-
-
-document.getElementById('delivery_fees').value = package_name;
+ 	var package_name = document.getElementById('select_city').options[document.getElementById('select_city').selectedIndex].value;
+		document.getElementById('delivery_fees').value = package_name;
 
 
    };
 
 	</script>
+
+
+
+  <%  if user_signed_in?  %>
+
+			<script type="text/javascript">
+				  
+				$(document).ready(function () {
+				    //$('#dialog').dialog(); 
+				    $('#chat_user').click(function () {
+				        $('#mychatbox').show();
+				        return false;
+				    });
+
+				    $('#close_chat').click(function () {
+				        $('#mychatbox').hide();
+				        return false;
+				    });
+
+				    $('#send').click(function () {
+				        
+				      var message = document.getElementById("message").value;
+				      var mychannel = "<%= current_user.name.to_s + @product.user.name.to_s %>";
+				      var sender_id = "<%= current_user.id %>";
+				      var recipient_id = "<%= @product.user_id %>";
+
+
+
+				      $.ajax({
+				              type: 'get',
+				              url: "send_to_pusher?message="+message+"&recipient_id="+recipient_id+"&sender_id="+sender_id+"&channels="+mychannel,
+				              complete: function(r){
+
+
+				                      $("#text_msg").append("<b> You: "+message+"</b><br/> ");
+				                      $("#msg_box").scrollTop($("#msg_box")[0].scrollHeight);
+				                   
+
+				              }
+				           });
+
+
+
+				    });
+
+
+
+
+
+				});
+
+				</script>
+
+
+				<script type="text/javascript">
+				  
+				 // Enable pusher logging - don't include this in production
+				    Pusher.log = function(message) {
+				      if (window.console && window.console.log) {
+				        window.console.log(message);
+				      }
+				    };
+
+				    var pusher = new Pusher('b218d631b3532773d67f', {
+				      encrypted: true
+				    });
+
+
+				     var my_channel = "<%= @product.user.name.to_s + current_user.name.to_s %>";
+				  
+
+				    var channel = pusher.subscribe(my_channel);
+				    channel.bind('my_event', function(data) {
+
+				          $("#text_msg").append("<b id='receiver'>"+"<%= @product.user.name.to_s %>: "+data.message+"</b><br/> ");
+				                 
+				    });
+
+				</script>
+
+
+
+
+
+
+
+				<script type="text/javascript">
+				  
+
+					$('#message').keypress(function (e) {
+					  if (e.which == 13) {
+					    $("#send").click()
+					    $('#message').val('');
+					  }
+					});
+
+				</script>
+
+
+				 <script type="text/javascript">
+
+
+
+
+				  $('#fav').click(function () {
+				        
+				      var item_code = "aok_code";
+				      var item =  "aok_item";
+				      var user_id = "<%= current_user.id %>";
+				 
+
+
+
+				      $.ajax({
+				              type: 'get',
+				              url: "add_to_favourite?item_code="+item_code+"&item="+item+"&user_id="+user_id,
+				              complete: function(r){
+
+				              		alert("added to your favourite");
+				                   
+
+				              }
+				           });
+
+
+
+				    });
+
+				  $("#btn_feedback").click(function () {
+
+				  		 message = document.getElementById("comment_message").value;
+				  		 $("#the_feed").append("<p>"+message+"</p>");
+					    
+					}); 
+
+
+ 				</script>
+
+
+
+ <% end %>
+
+
