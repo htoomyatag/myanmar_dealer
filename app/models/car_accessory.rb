@@ -36,6 +36,10 @@ class CarAccessory < ActiveRecord::Base
     :color => self.color,
     :feature => self.feature,
     :category => "car_accessories",
+    :avatar1_file_name => self.avatar1.url,
+     :avatar2_file_name => self.avatar2.url,
+     :avatar3_file_name => self.avatar3.url,
+     :avatar4_file_name => self.avatar4.url,
     :user_id => self.user_id)
 
  end

@@ -34,6 +34,7 @@ class BathSupply < ActiveRecord::Base
      price = self.price
      user_id = self.user_id
 
+
      Product.create(:mmdealer_code =>  "bath_supplies"+(Product.maximum(:id).next.to_i).to_s,
      :title => title,
      :ingredient => ingredient,
@@ -47,6 +48,10 @@ class BathSupply < ActiveRecord::Base
      :price => price,
      :store_name => self.store_name,
      :category => "bath_supplies",
+     :avatar1_file_name => self.avatar1.url,
+     :avatar2_file_name => self.avatar2.url,
+     :avatar3_file_name => self.avatar3.url,
+     :avatar4_file_name => self.avatar4.url,
      :user_id => user_id) 
    
 

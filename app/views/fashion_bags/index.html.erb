@@ -22,7 +22,7 @@
   <tbody>
     <% @fashion_bags.each do |fashion_bag| %>
       <tr>
-        <td><%= fashion_bag.title %></td>
+        <td>   <%= image_tag fashion_bag.avatar1.url, :id => "store_avatar" %> <%= fashion_bag.title %></td>
         <td><%= fashion_bag.price %></td>
         <td><%= fashion_bag.quantity %></td>
         <td><%= fashion_bag.made_by_country %></td>
@@ -35,6 +35,8 @@
         <td><%= link_to 'Edit', edit_fashion_bag_path(fashion_bag) %></td>
         <td><%= link_to 'Destroy', fashion_bag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+
+
     <% end %>
   </tbody>
 </table>

@@ -37,10 +37,15 @@ class FashionBag < ActiveRecord::Base
       :description => self.description,
       :brand => self.brand,
       :price => self.price,
-       :size => self.size,
+      :size => self.size,
       :quantity => self.quantity,
       :made_with => self.made_with,
       :category => "bags",
+      :avatar1_file_name => self.avatar1.url,
+      :avatar2_file_name => self.avatar2.url,
+      :avatar3_file_name => self.avatar3.url,
+      :avatar4_file_name => self.avatar4.url,
+      :avatar5_file_name => self.avatar5.url,
       :bag_type => self.bag_type)
   end
 

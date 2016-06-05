@@ -11,29 +11,52 @@
 		<div class="row product-info full">
 		<!-- Left Starts -->
 			<div class="col-sm-4 images-block">
-				<a href="/assets/product-images/big-pimg1.jpg">
-					<img src="/assets/product-images/pimg3.jpg" alt="Image" class="img-responsive thumbnail" />
-				</a>
+					<div style="border:1px solid #ccc;">
+					  <% if !@product.avatar1_file_name.nil?  %>
+					                <%= image_tag @product.avatar1_file_name, :style=>"height:300px;width:300px;" %>
+					            <% else  %>      
+									<img src="/assets/product-images/thumb1.jpg" alt="Image" class="img-responsive thumbnail" />
+					   <% end %>
+					</div><br/>
+
 				<ul class="list-unstyled list-inline">
 					<li>
-						<a href="/assets/product-images/big-pimg2.jpg">
-							<img src="/assets/product-images/thumb1.jpg" alt="Image" class="img-responsive thumbnail" />
-						</a>
+						<div style="border:1px solid #ccc;">
+							   <% if !@product.avatar2_file_name.nil?  %>
+					                <%= image_tag @product.avatar2_file_name, :style=>"height:150px;width:168px;" %>
+					            <% else  %>      
+									<img src="/assets/product-images/thumb1.jpg" alt="Image" class="img-responsive thumbnail" />
+					            <% end %>
+					    </div>
+						
 					</li>
 					<li>
-						<a href="/assets/product-images/big-pimg3.jpg">
-							<img src="/assets/product-images/thumb2.jpg" alt="Image" class="img-responsive thumbnail" />
-						</a>
+						<div style="border:1px solid #ccc;">
+							  <% if !@product.avatar3_file_name.nil?  %>
+					                <%= image_tag @product.avatar3_file_name, :style=>"height:150px;width:168px;"%>
+					            <% else  %>      
+									<img src="/assets/product-images/thumb1.jpg" alt="Image" class="img-responsive thumbnail" />
+					            <% end %>
+						</div>
 					</li>
 					<li>
-						<a href="/assets/product-images/big-pimg4.jpg">
-							<img src="/assets/product-images/thumb3.jpg" alt="Image" class="img-responsive thumbnail" />
-						</a>
+						<div style="border:1px solid #ccc;">
+						
+							  <% if !@product.avatar4_file_name.nil?  %>
+					                <%= image_tag @product.avatar4_file_name,:style=>"height:150px;width:168px;" %>
+					            <% else  %>      
+									<img src="/assets/product-images/thumb1.jpg" alt="Image" class="img-responsive thumbnail" />
+					            <% end %>
+						</div>
 					</li>
 					<li>
-						<a href="/assets/product-images/big-pimg4.jpg">
-							<img src="/assets/product-images/thumb4.jpg" alt="Image" class="img-responsive thumbnail" />
-						</a>
+						<div style="border:1px solid #ccc;">
+								  <% if !@product.avatar5_file_name.nil?  %>
+					                <%= image_tag @product.avatar5_file_name, :style=>"height:150px;width:168px;"%>
+					            <% else  %>      
+									<img src="/assets/product-images/thumb1.jpg" alt="Image" class="img-responsive thumbnail" />
+					            <% end %>
+						</div>
 					</li>
 				</ul>
 					
@@ -309,7 +332,7 @@
 					    <% end %>
 						</div>
 						<div class="caption">
-							<h4><a href="product.html">
+							<h4><a href="#">
 								<%= relate_product.title %>
 							</a></h4>
 							<div class="description">

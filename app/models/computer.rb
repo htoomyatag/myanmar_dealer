@@ -37,6 +37,10 @@ class Computer < ActiveRecord::Base
    :feature => self.feature,
    :category => "computers_laptops",
    :operation_system => self.operation_system,
+   :avatar1_file_name => self.avatar1.url,
+   :avatar2_file_name => self.avatar2.url,
+   :avatar3_file_name => self.avatar3.url,
+  :avatar4_file_name => self.avatar4.url,
    :user_id => self.user_id)
 
 end
