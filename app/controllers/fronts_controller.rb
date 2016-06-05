@@ -88,7 +88,7 @@ class FrontsController < ApplicationController
         end
         
      else
-        @products = Product.where.not(id: '1')
+        @products = Product.where.not(id: '1').order('id DESC')
         @side_products = Product.order('id ASC').limit(5).where.not(id: '1')
         @coutry_products = Product.all.select(:made_by_country).uniq
         @brand_products = Product.all.select(:brand).uniq

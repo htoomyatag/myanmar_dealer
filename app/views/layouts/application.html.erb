@@ -17,16 +17,34 @@
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <%= javascript_include_tag 'amazonmenu.js' %>
   <script src="http://js.pusher.com/3.0/pusher.min.js"></script>
+
+
+<script>
+
+jQuery(function(){
+  amazonmenu.init({
+    menuid: 'mysidebarmenu'
+  })
+})
+
+</script>
+
   
   <%= csrf_meta_tags %>
 
 </head>
-<body>
 
 
 
-  <header id="header-area">
+<body data-spy="scroll" data-target=".navbar" data-offset="50" >
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background:white;border:red;">
+
+
+  <header id="header-area" >
   <!-- Header Top Starts -->
     <div class="header-top">
       <div class="container">
@@ -292,9 +310,21 @@
 
                           <div style="float:right;">
                             <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class=>"btn btn-default", :style => "margin-top:8px;", :id => "menu_mybtn"%>
+
                             <br/>
-                            <button class="btn btn-default" type="submit" id="menu_mybtn">Register</button><br/>
-                            <button class="btn btn-default" type="submit" id="menu_mybtn">Open Shop</button>
+                            <%= link_to "Register", new_user_registration_path, :class=>"btn btn-default", :id => "menu_mybtn"%>
+
+
+                            <br/>
+                           
+
+                            <% if current_user.has_store == "yes" %>
+                                <a href="/stores/<%= @store_id %>"  class="btn btn-default", id="menu_mybtn">MyStore</a>
+                            <% else %>
+                               <%= link_to "Open Shop", new_store_path, :class=>"btn btn-default", :id => "menu_mybtn"%>
+                            <% end %>
+
+
                           </div>
       
                   <% else %>
@@ -309,8 +339,11 @@
                             <a href="/users/sign_in" class="btn btn-default" type="submit" id="menu_mybtn" style="margin-top:8px;">Login</a><br/>
 
 
-                            <button class="btn btn-default" type="submit" id="menu_mybtn">Register</button><br/>
-                            <button class="btn btn-default" type="submit" id="menu_mybtn">Open Shop</button>
+                            <%= link_to "Register", new_user_registration_path, :class=>"btn btn-default", :id => "menu_mybtn"%>
+
+                            <br/>
+                            <button class="btn btn-default" id="menu_mybtn" onclick="storeFunction()"> Open Shop</button>
+
                           </div>
 
                   <% end %>
@@ -318,15 +351,23 @@
                 </div>
 
               </div>
-    
+     
       </div>
+
     </div>
   
-     
+    
   </header>
+
+  </nav>
+  <div style="height:210px;">
+
+  </div>
 
 
 <%= yield %>
+
+</body>
 
 
   <footer id="footer-area">
@@ -462,3 +503,23 @@
     <% end %>
 
   </script>
+
+
+<style type="text/css">
+  
+#navbar{
+
+
+  height: 30px;
+
+
+}
+
+</style>
+
+<script>
+function storeFunction() {
+    alert("Please login or register first to open store.")
+}
+</script>
+

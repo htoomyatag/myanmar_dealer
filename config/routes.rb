@@ -4,7 +4,23 @@ Rails.application.routes.draw do
   resources :comments
   resources :favourites
   resources :user_types
-  devise_for :users, :controllers => {:sessions => "users/sessions", :registrations => "users/registrations"}
+
+  devise_for :users, :authentication_token => 'authentication_token'
+
+  namespace :myapi do
+  namespace :v1 do
+    devise_scope :user do
+      post 'registrations' => 'registrations#create', :as => 'register'
+      post 'sessions' => 'sessions#create', :as => 'login'
+      delete 'sessions' => 'sessions#destroy', :as => 'logout'
+      post 'user_new' => 'registrations#user_new', :as => 'user_new'
+    end
+  end
+end
+
+
+
+
   get 'buyer_sign_up' => 'users#buyer_sign_up', :as => :buyer_sign_up
   get 'seller_sign_up' => 'users#seller_sign_up', :as => :seller_sign_up
 
