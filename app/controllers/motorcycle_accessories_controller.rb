@@ -32,7 +32,7 @@ class MotorcycleAccessoriesController < ApplicationController
 
     respond_to do |format|
       if @motorcycle_accessory.save
-        format.html { redirect_to @motorcycle_accessory, notice: 'Motorcycle accessory was successfully created.' }
+        format.html { redirect_to my_products_path, notice: 'Motorcycle accessory was successfully created.' }
         format.json { render :show, status: :created, location: @motorcycle_accessory }
       else
         format.html { render :new }

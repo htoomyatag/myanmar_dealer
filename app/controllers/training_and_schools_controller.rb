@@ -32,7 +32,7 @@ class TrainingAndSchoolsController < ApplicationController
 
     respond_to do |format|
       if @training_and_school.save
-        format.html { redirect_to @training_and_school, notice: 'Training and school was successfully created.' }
+        format.html { redirect_to my_products_path, notice: 'Training and school was successfully created.' }
         format.json { render :show, status: :created, location: @training_and_school }
       else
         format.html { render :new }

@@ -33,7 +33,7 @@ class BeautyEquipmentsController < ApplicationController
 
     respond_to do |format|
       if @beauty_equipment.save
-        format.html { redirect_to @beauty_equipment, notice: 'Beauty equipment was successfully created.' }
+        format.html { redirect_to my_products_path, notice: 'Beauty equipment was successfully created.' }
         format.json { render :show, status: :created, location: @beauty_equipment }
       else
         format.html { render :new }

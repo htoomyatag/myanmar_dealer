@@ -5,8 +5,12 @@
         <div class="panel panel-default">
           <div class="panel-body">
           <center>
-             <%= image_tag "shop-icon.png", :id => "store_avatar" %>
-             
+           
+             <% if !@store.avatar_file_name.nil?  %>
+                    <%= image_tag @store.avatar.url, :id => "store_avatar" %>
+              <% else  %>      
+                   <%= image_tag "shop-icon.png", :id => "store_avatar" %>
+            <% end %>
           </center> 
           <br/>
            
@@ -69,7 +73,7 @@
         <tr>
           <td><h4><b>Fashions related</b></h4>
            
-                <br/> <a href="/fashion_clothings/new">Clothings</a>
+                <br/> <a href="/fashion_clothings/new" >Clothings</a>
                 <br/> <a href="/fashion_hats/new">Hats</a>
                 <br/> <a href="/fashion_footwears/new">Footwears</a>
                 <br/> <a href="/fashion_bags/new">Bags</a>

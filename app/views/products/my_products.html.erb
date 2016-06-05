@@ -1,0 +1,31 @@
+
+
+
+<div class="container">
+    <p id="notice"><%= notice %></p>
+
+    <h4>Listing Products</h4>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Price</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @products.each do |product| %>
+          <tr>
+            <td><%= product.title %></td>
+            <td><%= product.price %></td>
+            <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+</div>

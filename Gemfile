@@ -38,6 +38,7 @@ gem 'devise'
 
 gem 'pusher'
 gem 'devise-token_authenticatable', :branch => 'fix-authenticatable-require'
+gem 'smartcrop-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

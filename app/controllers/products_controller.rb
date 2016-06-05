@@ -16,6 +16,11 @@ class ProductsController < ApplicationController
     @line_items = LineItem.all
   end
 
+  def my_products
+    @products = Product.where(:user_id => current_user)
+  end
+
+
   # GET /products/1
   # GET /products/1.json
   def show

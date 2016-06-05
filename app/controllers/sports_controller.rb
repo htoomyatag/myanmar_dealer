@@ -32,7 +32,7 @@ class SportsController < ApplicationController
 
     respond_to do |format|
       if @sport.save
-        format.html { redirect_to @sport, notice: 'Sport was successfully created.' }
+        format.html { redirect_to my_products_path, notice: 'Sport was successfully created.' }
         format.json { render :show, status: :created, location: @sport }
       else
         format.html { render :new }

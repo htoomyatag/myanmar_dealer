@@ -32,7 +32,7 @@ class EquipmentController < ApplicationController
 
     respond_to do |format|
       if @equipment.save
-        format.html { redirect_to @equipment, notice: 'Equipment was successfully created.' }
+        format.html { redirect_to my_products_path, notice: 'Equipment was successfully created.' }
         format.json { render :show, status: :created, location: @equipment }
       else
         format.html { render :new }

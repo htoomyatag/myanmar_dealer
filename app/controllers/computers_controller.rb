@@ -33,7 +33,7 @@ class ComputersController < ApplicationController
 
     respond_to do |format|
       if @computer.save
-        format.html { redirect_to @computer, notice: 'Computer was successfully created.' }
+        format.html { redirect_to my_products_path, notice: 'Computer was successfully created.' }
         format.json { render :show, status: :created, location: @computer }
       else
         format.html { render :new }

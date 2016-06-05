@@ -33,7 +33,7 @@ class FashionHatsController < ApplicationController
 
     respond_to do |format|
       if @fashion_hat.save
-        format.html { redirect_to @fashion_hat, notice: 'Fashion hat was successfully created.' }
+        format.html { redirect_to my_products_path, notice: 'Fashion hat was successfully created.' }
         format.json { render :show, status: :created, location: @fashion_hat }
       else
         format.html { render :new }

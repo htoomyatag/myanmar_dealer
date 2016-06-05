@@ -32,7 +32,7 @@ class MachinesController < ApplicationController
 
     respond_to do |format|
       if @machine.save
-        format.html { redirect_to @machine, notice: 'Machine was successfully created.' }
+        format.html { redirect_to my_products_path, notice: 'Machine was successfully created.' }
         format.json { render :show, status: :created, location: @machine }
       else
         format.html { render :new }

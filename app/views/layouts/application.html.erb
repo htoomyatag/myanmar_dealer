@@ -16,8 +16,10 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <%= javascript_include_tag 'amazonmenu.js' %>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
+  <%= javascript_include_tag 'amazonmenu.js' %>
   <script src="http://js.pusher.com/3.0/pusher.min.js"></script>
 
 
@@ -38,7 +40,7 @@ jQuery(function(){
 
 
 
-<body data-spy="scroll" data-target=".navbar" data-offset="50" >
+<body data-spy="scroll" data-target=".navbar" data-offset="50" data-no-turbolink="true">
 
 
 <nav class="navbar navbar-inverse navbar-fixed-top" style="background:white;border:red;">
@@ -188,7 +190,7 @@ jQuery(function(){
 
 
                       <li>
-                        <a href="/users/sign_in">
+                        <a href="/user_sign_in">
                           <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
                           <span class="hidden-sm hidden-xs">
                             <b>Login</b>
@@ -336,10 +338,10 @@ jQuery(function(){
                           </div>
 
                           <div style="float:right;">
-                            <a href="/users/sign_in" class="btn btn-default" type="submit" id="menu_mybtn" style="margin-top:8px;">Login</a><br/>
+                            <a href="user_sign_in" class="btn btn-default" type="submit" id="menu_mybtn" style="margin-top:8px;">Login</a><br/>
 
 
-                            <%= link_to "Register", new_user_registration_path, :class=>"btn btn-default", :id => "menu_mybtn"%>
+                            <%= link_to "Register(Seller)", seller_sign_up_path, :class=>"btn btn-default", :id => "menu_mybtn"%>
 
                             <br/>
                             <button class="btn btn-default" id="menu_mybtn" onclick="storeFunction()"> Open Shop</button>

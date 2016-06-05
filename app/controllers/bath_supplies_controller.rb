@@ -34,7 +34,7 @@ class BathSuppliesController < ApplicationController
 
     respond_to do |format|
       if @bath_supply.save
-        format.html { redirect_to bath_supplies_path, notice: 'Bath supply was successfully created.' }
+        format.html { redirect_to my_products_path, notice: 'Bath supply was successfully created.' }
         format.json { render :show, status: :created, location: @bath_supply }
       else
         format.html { render :new }

@@ -1,6 +1,7 @@
 class FrontsController < ApplicationController
   before_action :set_front, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:check_out]
+    layout :layout_per_action
   
   # GET /fronts
   # GET /fronts.json
@@ -12,6 +13,8 @@ class FrontsController < ApplicationController
   def add_to_favourite
      @favourite = Favourite.create(:item => params[:item], :user_id => params[:user_id], :item_code => params[:item_code])
   end
+
+
 
 
 
@@ -619,5 +622,14 @@ class FrontsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def front_params
       params[:front]
+    end
+
+
+    def layout_per_action
+      if action_name == "my_conversation"
+           "backend"
+      else
+        "application"
+      end
     end
 end

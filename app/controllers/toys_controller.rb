@@ -32,7 +32,7 @@ class ToysController < ApplicationController
 
     respond_to do |format|
       if @toy.save
-        format.html { redirect_to @toy, notice: 'Toy was successfully created.' }
+        format.html { redirect_to my_products_path, notice: 'Toy was successfully created.' }
         format.json { render :show, status: :created, location: @toy }
       else
         format.html { render :new }

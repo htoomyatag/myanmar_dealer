@@ -32,7 +32,7 @@ class TelephoneAccessoriesController < ApplicationController
 
     respond_to do |format|
       if @telephone_accessory.save
-        format.html { redirect_to @telephone_accessory, notice: 'Telephone accessory was successfully created.' }
+        format.html { redirect_to my_products_path, notice: 'Telephone accessory was successfully created.' }
         format.json { render :show, status: :created, location: @telephone_accessory }
       else
         format.html { render :new }

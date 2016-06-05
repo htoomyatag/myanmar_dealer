@@ -1,4 +1,11 @@
 
+  <div class="col-md-6"> 
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h4>New Product Fashion clothings</h4>
+            <hr/>
+
 
             <%= form_for(@fashion_clothing, html: { multipart: true }) do |f| %>
               <% if @fashion_clothing.errors.any? %>
@@ -72,7 +79,7 @@
 
     <div class="panel panel-default">
         <div class="panel-body">
-         <h4>Product Images</h4>
+         <h4>Product Images (Width:250px High:200px for best view)</h4>
             <hr/>
           <div class="form-group">
               <label>Image1</label>

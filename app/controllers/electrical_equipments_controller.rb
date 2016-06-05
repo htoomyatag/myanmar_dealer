@@ -32,7 +32,7 @@ class ElectricalEquipmentsController < ApplicationController
 
     respond_to do |format|
       if @electrical_equipment.save
-        format.html { redirect_to @electrical_equipment, notice: 'Electrical equipment was successfully created.' }
+        format.html { redirect_to my_products_path, notice: 'Electrical equipment was successfully created.' }
         format.json { render :show, status: :created, location: @electrical_equipment }
       else
         format.html { render :new }

@@ -15,9 +15,8 @@
 
 .amazonmenu > ul{
 	background: white;
-	border: 1px solid gray;
 	border-radius: 5px;
-	width: 200px; /* width of main menu */
+	width: 100%; /* width of main menu */
 	height: 400px; /* height of main menu */
 	position: relative;
 }
@@ -34,7 +33,7 @@
 
 .amazonmenu > ul li.hassub > a::after{ /* Arrow to indicate this item has sub menu (LI elements with sub menus have a ".hassub" class). */
 	border: 5px solid transparent;
-	border-left-color: gray; /* Default color of arrow */
+	border-left-color: white; /* Default color of arrow */
 	content: '';
 	height: 0;
 	position: absolute;

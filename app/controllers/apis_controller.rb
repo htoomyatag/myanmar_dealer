@@ -387,7 +387,7 @@ class ApisController < ApplicationController
     @fashion_clothings = FashionClothing.all
   
     respond_to do |format|
-          my_primary_json = { :Products => @fashion_clothings.to_json(:methods => [:avatar_url])   }
+          my_primary_json = { :Products => @fashion_clothings.to_json(:methods => [:avatar_url]) }
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
           a = '"['
           b = ']"'

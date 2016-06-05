@@ -64,7 +64,7 @@
 
     <div class="panel panel-default">
         <div class="panel-body">
-         <h4>Product Images</h4>
+         <h4>Product Images (Width:250px High:200px for best view)</h4>
             <hr/>
 
           <div class="form-group">
@@ -136,3 +136,26 @@
 
 
 <% end %>
+
+
+  <div id="vanilla-demo"></div>
+    <button class="vanilla-result">Result</button>
+
+
+<script type="text/javascript">
+      
+    var el = document.getElementById('vanilla-demo');
+    var vanilla = new Croppie(el, {
+        viewport: { width: 250, height: 200 },
+        boundary: { width: 300, height: 300 },
+        showZoomer: false,
+        enableOrientation: true
+    });
+    vanilla.bind({
+        url: '/assets/logo.jpg',
+        orientation: 4
+    });
+    //on button click
+    vanilla.result('canvas');
+  
+</script>

@@ -25,7 +25,7 @@ end
   get 'seller_sign_up' => 'users#seller_sign_up', :as => :seller_sign_up
 
   get 'buyer_sign_in' => 'users#buyer_sign_in', :as => :buyer_sign_in
-  get 'seller_sign_in' => 'users#seller_sign_in', :as => :seller_sign_in
+  get 'user_sign_in' => 'users#seller_sign_in', :as => :user_sign_in
 
   resources :users
   resources :buyer_reports
@@ -102,6 +102,7 @@ end
 
   resources :products
   get 'my_product' => 'products#my_product', :as => :my_product
+  get 'my_products' => 'products#my_products', :as => :my_products
   get 'my_sell_product' => 'products#my_sell_product', :as => :my_sell_product
   
   
@@ -238,6 +239,7 @@ end
  get 'full_productinfo_toys' => 'fronts#full_productinfo_toys', :as => :full_productinfo_toys
   
  get 'full_productinfo_training_and_schools' => 'fronts#full_productinfo_training_and_schools', :as => :full_productinfo_training_and_schools
+
 
 
   resources :conversations do
