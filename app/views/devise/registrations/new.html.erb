@@ -27,26 +27,30 @@
             <!-- Registration Form Starts -->
               <%= form_for(:user, :url => registration_path(:user)) do |f| %>
 
-                  <%= devise_error_messages! %>
+
+
+
+
+     <%- if flash[:alert] %><div style="color:#fff;padding:4px;margin-bottom:6px;background-color:rgba(255,0,0,0.5);"> <%= flash[:alert] %></div><% end -%>
 
               <!-- Personal Information Starts -->
                 <div class="form-group">
                   <label for="inputFname" class="col-sm-3 control-label">Full Name :</label>
                   <div class="col-sm-9">
-                    <%= f.text_field :name, autofocus: true, :class => "form-control", :Placeholder => "Name",:require => true %>
+                    <%= f.text_field :name, autofocus: true, :class => "form-control", :Placeholder => "Name" %>
                   </div><br/><br/>
                 </div>
                
                 <div class="form-group">
                   <label for="inputEmail" class="col-sm-3 control-label">Email :</label>
                   <div class="col-sm-9">
-                      <%= f.email_field :email, autofocus: true, :class => "form-control", :Placeholder => "Email", :require => true %><br/>
+                      <%= f.email_field :email, autofocus: true, :class => "form-control", :Placeholder => "Email" %><br/>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputPhone" class="col-sm-3 control-label">Phone :</label>
                   <div class="col-sm-9">
-                     <%= f.text_field :phone, autofocus: true, :class => "form-control", :Placeholder => "Phone",:require => true %><br/>
+                     <%= f.text_field :phone, autofocus: true, :class => "form-control", :Placeholder => "Phone" %><br/>
                   </div>
                 </div>
 
@@ -62,13 +66,13 @@
                 <div class="form-group">
                   <label for="inputPassword" class="col-sm-3 control-label">Password :</label>
                   <div class="col-sm-9">
-                    <%= f.password_field :password, autocomplete: "off", :class=>"form-control", :Placeholder => "Password", :require => true %><br/>
+                    <%= f.password_field :password, autocomplete: "off", :class=>"form-control", :Placeholder => "Password" %><br/>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputRePassword" class="col-sm-3 control-label">Re-Password :</label>
                   <div class="col-sm-9">
-                    <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"form-control", :Placeholder => "Re-Password",:require => true %><br/>
+                    <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"form-control", :Placeholder => "Re-Password" %><br/>
                   </div>
                 </div>
                

@@ -34,5 +34,10 @@ class Users::SessionsController < Devise::SessionsController
   	end
 
 
+    def new
+
+    end
+
+
 
 end

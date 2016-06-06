@@ -1,6 +1,4 @@
-<div style="height:50px;">
-
-</div>
+<br/><br/>
 
 <div id="main-container" class="container">
   <!-- Breadcrumb Starts -->
@@ -27,13 +25,11 @@
             <!-- Registration Form Starts -->
               <%= form_for(:user, :url => registration_path(:user)) do |f| %>
 
-                  <%= devise_error_messages! %>
-
               <!-- Personal Information Starts -->
                 <div class="form-group">
                   <label for="inputFname" class="col-sm-3 control-label">Full Name :</label>
                   <div class="col-sm-9">
-                    <%= f.text_field :name, autofocus: true, :class => "form-control", :Placeholder => "Name",:require => true %>
+                    <%= f.text_field :name, autofocus: true, :class => "form-control", :Placeholder => "Name", :require => true %>
                   </div><br/><br/>
                 </div>
                
@@ -46,7 +42,7 @@
                 <div class="form-group">
                   <label for="inputPhone" class="col-sm-3 control-label">Phone :</label>
                   <div class="col-sm-9">
-                     <%= f.text_field :phone, autofocus: true, :class => "form-control", :Placeholder => "Phone",:require => true %><br/>
+                     <%= f.text_field :phone, autofocus: true, :class => "form-control", :Placeholder => "Phone", :require => true %><br/>
                   </div>
                 </div>
 
@@ -68,7 +64,7 @@
                 <div class="form-group">
                   <label for="inputRePassword" class="col-sm-3 control-label">Re-Password :</label>
                   <div class="col-sm-9">
-                    <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"form-control", :Placeholder => "Re-Password",:require => true %><br/>
+                    <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"form-control", :Placeholder => "Re-Password", :require => true %><br/>
                   </div>
                 </div>
                

@@ -14,10 +14,10 @@ Rails.application.routes.draw do
       post 'sessions' => 'sessions#create', :as => 'login'
       delete 'sessions' => 'sessions#destroy', :as => 'logout'
       post 'user_new' => 'registrations#user_new', :as => 'user_new'
+      
     end
   end
 end
-
 
 
 

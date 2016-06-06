@@ -258,8 +258,8 @@
 							<div class="product-col">
 								<div class="image">
 								<% if !product.avatar1_file_name.nil?  %>
-					                <%= image_tag product.avatar1_file_name, :id => "product_image", :style=>"height:200px;width:250px;" %>
-					            <% else  %>      
+					                <%= image_tag product.avatar1_file_name, :id => "product_image", :style=>"height:200px;width:220px;" %>
+					            <% elsif product.avatar1_file_name.nil?  %>      
 									<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 					            <% end %>
 								</div>

@@ -29,20 +29,20 @@
                 <div class="form-group">
                   <label for="inputFname" class="col-sm-3 control-label">Full Name :</label>
                   <div class="col-sm-9">
-                    <%= f.text_field :name, autofocus: true, :class => "form-control", :Placeholder => "Name" %>
+                    <%= f.text_field :name, autofocus: true, :class => "form-control", :Placeholder => "Name", :required => "true" %>
                   </div><br/><br/>
                 </div>
                
                 <div class="form-group">
                   <label for="inputEmail" class="col-sm-3 control-label">Email :</label>
                   <div class="col-sm-9">
-                      <%= f.email_field :email, autofocus: true, :class => "form-control", :Placeholder => "Email" %><br/>
+                      <%= f.email_field :email, autofocus: true, :class => "form-control", :Placeholder => "Email", :require => "true" %><br/>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputPhone" class="col-sm-3 control-label">Phone :</label>
                   <div class="col-sm-9">
-                     <%= f.text_field :phone, autofocus: true, :class => "form-control", :Placeholder => "Phone" %><br/>
+                     <%= f.text_field :phone, autofocus: true, :class => "form-control", :Placeholder => "Phone", :require => "true" %><br/>
                   </div>
                 </div>
 
@@ -58,13 +58,13 @@
                 <div class="form-group">
                   <label for="inputPassword" class="col-sm-3 control-label">Password :</label>
                   <div class="col-sm-9">
-                    <%= f.password_field :password, autocomplete: "off", :class=>"form-control", :Placeholder => "Password" %><br/>
+                    <%= f.password_field :password, autocomplete: "off", :class=>"form-control", :Placeholder => "Password",:require => "true" %><br/>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputRePassword" class="col-sm-3 control-label">Re-Password :</label>
                   <div class="col-sm-9">
-                    <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"form-control", :Placeholder => "Re-Password" %><br/>
+                    <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"form-control", :Placeholder => "Re-Password",:require => "true" %><br/>
                   </div>
                 </div>
                
