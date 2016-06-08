@@ -14,11 +14,19 @@
               <% end %>
 
 
-         <div class="form-group" style="display:none;">
+               <div class="form-group">
+                
+                  <%= f.cropbox :avatar1, :width => 500 %>
+                  <%= f.crop_preview :avatar1, :width => 150 %>
+
+              </div>
+
+
+            <div class="form-group" style="display:none;">
 					    <%= f.label :user_id %>
 					    <%= f.number_field :user_id, :value => current_user.id %>
 					  </div>
-					     <div class="form-group">
+					  <div class="form-group">
                <%= f.label :title %><br/>
               <%= f.text_field :title , :class=>"form-control"  %>
             </div>
@@ -67,10 +75,7 @@
          <h4>Product Images (Width:250px High:200px for best view)</h4>
             <hr/>
 
-          <div class="form-group">
-              <label>Image1</label>
-              <%= f.file_field :avatar1 %>
-          </div>
+   
           <div class="form-group">
               <label>Image2</label>
               <%= f.file_field :avatar2 %>
@@ -136,26 +141,3 @@
 
 
 <% end %>
-
-
-  <div id="vanilla-demo"></div>
-    <button class="vanilla-result">Result</button>
-
-
-<script type="text/javascript">
-      
-    var el = document.getElementById('vanilla-demo');
-    var vanilla = new Croppie(el, {
-        viewport: { width: 250, height: 200 },
-        boundary: { width: 300, height: 300 },
-        showZoomer: false,
-        enableOrientation: true
-    });
-    vanilla.bind({
-        url: '/assets/logo.jpg',
-        orientation: 4
-    });
-    //on button click
-    vanilla.result('canvas');
-  
-</script>

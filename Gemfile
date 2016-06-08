@@ -33,12 +33,15 @@ gem 'activerecord_any_of'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem "paperclip", "~> 4.3"
+gem "cocaine"
+gem "paperclip"
 gem 'devise'
 
 gem 'pusher'
 gem 'devise-token_authenticatable', :branch => 'fix-authenticatable-require'
 gem 'smartcrop-rails'
+gem 'papercrop'
+# gem 'rmagick', '~> 2.15', '>= 2.15.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

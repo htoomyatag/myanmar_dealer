@@ -2,8 +2,12 @@ class BathSupply < ActiveRecord::Base
 
   after_create :add_to_product
 
-  has_attached_file :avatar1, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
-  validates_attachment_content_type :avatar1, content_type: /\Aimage\/.*\Z/
+
+
+  has_attached_file :avatar1, :styles => {:big => '2000x1500'}, 
+                              :processors => [:papercrop, :rotator]
+  crop_attached_file :avatar1, :aspect => "16:9"
+
 
   has_attached_file :avatar2, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar2, content_type: /\Aimage\/.*\Z/
