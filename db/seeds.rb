@@ -7,12 +7,12 @@
 # #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-# products = Product.create([
+products = Product.create([
 
-# {title:"tmp",price: "10"},
+{title:"tmp",price: "10"},
 
 
-# ])
+])
 
 
 # bath_supply = BathSupply.create([
