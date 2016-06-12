@@ -36,7 +36,7 @@ gem 'activerecord_any_of'
 # gem 'capistrano-rails', group: :development
 # gem "cocaine"
 gem "paperclip"
-gem 'devise', '~> 3.5'
+gem 'devise'
 
 gem 'pusher'
 gem 'devise-token_authenticatable', :branch => 'fix-authenticatable-require'
