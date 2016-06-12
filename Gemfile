@@ -43,7 +43,7 @@ gem 'devise-token_authenticatable', :branch => 'fix-authenticatable-require'
 # gem 'smartcrop-rails'
 # gem 'papercrop'
 # gem 'rmagick', '~> 2.15', '>= 2.15.4'
-
+ruby "2.3.1"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
