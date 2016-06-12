@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: utf8 
-  database: barcamp_db 
+  database: myanard_db 
   pool: 5
   password: root
 
@@ -9,7 +9,7 @@ development:
 production: 
    adapter: postgresql
    encoding: utf8 
-   database: barcamp_db 
+   database: myanmard_db 
    pool: 10 
    username: htoo 
    password: root 
