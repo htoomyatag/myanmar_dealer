@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
+#gem 'sqlite3'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -33,14 +33,14 @@ gem 'activerecord_any_of'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem "cocaine"
+# gem "cocaine"
 gem "paperclip"
 gem 'devise'
 
 gem 'pusher'
 gem 'devise-token_authenticatable', :branch => 'fix-authenticatable-require'
-gem 'smartcrop-rails'
-gem 'papercrop'
+# gem 'smartcrop-rails'
+# gem 'papercrop'
 # gem 'rmagick', '~> 2.15', '>= 2.15.4'
 
 group :development, :test do

@@ -100,10 +100,6 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
-    papercrop (0.3.0)
-      jquery-rails
-      paperclip (>= 3.4)
-      rails (>= 3.1)
     pg (0.18.4)
     pkg-config (1.1.7)
     pusher (1.1.0)
@@ -153,7 +149,6 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    smartcrop-rails (0.1.12)
     spring (1.7.1)
     sprockets (3.6.0)
       concurrent-ruby (~> 1.0)
@@ -185,20 +180,17 @@ PLATFORMS
 DEPENDENCIES
   activerecord_any_of
   byebug
-  cocaine
   coffee-rails (~> 4.1.0)
   devise
   devise-token_authenticatable
   jbuilder (~> 2.0)
   jquery-rails
   paperclip
-  papercrop
   pg
   pusher
   rails (= 4.2.1)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  smartcrop-rails
   spring
   turbolinks
   uglifier (>= 1.3.0)

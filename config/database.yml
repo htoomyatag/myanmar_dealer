@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: utf8 
-  database: dealer_db 
+  database: barcamp_db 
   pool: 5
   password: root
 
@@ -9,7 +9,7 @@ development:
 production: 
    adapter: postgresql
    encoding: utf8 
-   database: dealer_db 
+   database: barcamp_db 
    pool: 10 
    username: htoo 
    password: root 

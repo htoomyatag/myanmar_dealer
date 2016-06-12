@@ -43,16 +43,16 @@ jQuery(function(){
 <body data-spy="scroll" data-target=".navbar" data-offset="50" data-no-turbolink="true">
 
 
-<nav class="navbar navbar-inverse navbar-fixed-top" style="background:white;border:red;">
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background:white;border:red;" >
 
 
   <header id="header-area" >
   <!-- Header Top Starts -->
     <div class="header-top">
       <div class="container">
-        <div class="row">
+        <div class="row" >
         <!-- Header Links Starts -->
-          <div class="col-sm-12 col-xs-12">
+          <div class="col-sm-12 col-xs-12" >
               <ul class="nav navbar-nav pull-left">
                         <li>
                           <a href="/">
@@ -230,9 +230,19 @@ jQuery(function(){
     </div>
 
 
-    <div class="main-header">
+    <div class="main-header" >
       <div class="container">
-              <div class="row">
+              <span id="myanothernav" style="display:none;float:left;">
+                            <form class="form-inline"><br/>
+                                <center>
+                                      <div class="form-group">
+                                         <span style="font-size:20px;color:#bf1c23;"> I am shopping For </span><input type="text" class="form-control" >
+                                      </div>
+                                      <button type="submit" class="btn btn-danger">Search</button>
+                                 </center>
+                            </form>
+              </span>
+              <div class="row" id="mynav" >
                   
 
                 <div class="col-md-3">
@@ -245,7 +255,7 @@ jQuery(function(){
 
                       <div><br/>
                             <!-- Nav tabs -->
-                            <ul class="nav nav-tabs" role="tablist">
+                            <ul class="nav nav-tabs" role="tablist" id="mynavtab">
                               <li role="presentation" class="active">
                               <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Item</a></li>
                               <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Shop</a></li>
@@ -299,7 +309,7 @@ jQuery(function(){
 
                 </div>
 
-                <div class="col-md-3" style="background:black;">
+                <div class="col-md-3" style="background:black;" id="account_setting">
    
 
                   <% if user_signed_in? %>
@@ -338,7 +348,7 @@ jQuery(function(){
                           </div>
 
                           <div style="float:right;">
-                            <a href="user_sign_in" class="btn btn-default" type="submit" id="menu_mybtn" style="margin-top:8px;">Login</a><br/>
+                            <a href="/user_sign_in" class="btn btn-default" type="submit" id="menu_mybtn" style="margin-top:8px;">Login</a><br/>
 
 
                             <%= link_to "Register(Seller)", seller_sign_up_path, :class=>"btn btn-default", :id => "menu_mybtn"%>
@@ -523,5 +533,24 @@ jQuery(function(){
 function storeFunction() {
     alert("Please login or register first to open store.")
 }
+
+
+
+$(window).scroll(function() {
+
+    if ($(this).scrollTop()>0)
+     {
+        $('#mynav').fadeOut();
+        $('#myanothernav').fadeIn();
+
+
+
+     }
+    else
+     {
+      $('#mynav').fadeIn();
+      $('#myanothernav').fadeOut();
+     }
+ });
 </script>
 

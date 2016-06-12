@@ -26,6 +26,7 @@ module MyanmarDealer
     config.i18n.enforce_available_locales = false
     config.i18n.available_locales = [:en, :mm]
     config.i18n.default_locale = :mm
+    Paperclip.options[:command_path] = "/usr/local/bin/identify"
 
     
 
