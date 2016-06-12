@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -36,7 +36,6 @@ gem 'activerecord_any_of'
 # gem 'capistrano-rails', group: :development
 # gem "cocaine"
 gem "paperclip"
-
 gem 'devise'
 
 gem 'pusher'
