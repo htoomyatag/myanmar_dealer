@@ -1,5 +1,145 @@
 
+<div id="desktop_hide">
 
+
+	<%= form_for(@order) do |f| %>
+		<section class="registration-area">
+			<div class="row">
+			<!-- Shipping & Shipment Block Starts -->
+				<div class="col-sm-6">
+				<!-- Taxes Block Starts -->
+					
+				<!-- Taxes Block Ends -->
+				<!-- Shipment Information Block Starts -->
+					<div class="panel panel-smart">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								Shipment Information
+							</h3>
+						</div>
+						<div class="panel-body">
+						<!-- Form Starts -->
+							<form class="form-horizontal" role="form">
+								<div class="form-group">
+									<label for="inputFname" class="col-sm-3 control-label">Full Name :</label>
+									<div class="col-sm-9">
+										  <%= f.text_field :customer_name, :class=>"form-control" %>
+									</div>
+								</div><br/><br/>
+								
+								<div class="form-group">
+									<label for="inputEmail" class="col-sm-3 control-label">Email :</label>
+									<div class="col-sm-9">
+										   <%= f.text_field :customer_email, :class=>"form-control" %>
+									</div>
+								</div><br/><br/>
+
+								<div class="form-group">
+									<label for="inputPhone" class="col-sm-3 control-label">Phone :</label>
+									<div class="col-sm-9">
+										<%= f.text_field :customer_phone, :class=>"form-control" %>
+									</div>
+								</div><br/><br/>
+
+								<div class="form-group">
+									<label for="inputAddress1" class="col-sm-3 control-label">Address:</label>
+									<div class="col-sm-9">
+										<%= f.text_field :customer_address, :class=>"form-control" %>
+									</div>
+								</div><br/><br/>
+
+								<div class="form-group">
+									<label for="inputCity" class="col-sm-3 control-label">Township :</label>
+									<div class="col-sm-9">
+										<%= f.text_field :customer_township, :class=>"form-control" %>
+									</div>
+								</div><br/><br/>
+								
+								<div class="form-group">
+									<label for="inputCity" class="col-sm-3 control-label">City :</label>
+									<div class="col-sm-9">
+										<%= f.text_field :customer_city, :class=>"form-control" %>
+									</div>
+								</div><br/><br/>
+
+								<div style="display:none;">
+								<%= f.text_field :cart_id, :class=>"form-control" , :value => session[:cart_id]%>
+								</div>
+
+								<div  style="display:none;">
+								<%= f.text_field :user_id, :class=>"form-control" , :value => current_user.id %>
+								</div>		
+								
+							</form>
+						<!-- Form Ends -->
+						</div>
+					</div>
+				<!-- Shipment Information Block Ends -->
+				</div>
+			<!-- Shipping & Shipment Block Ends -->
+			<!-- Discount & Conditions Blocks Starts -->
+				<div class="col-sm-6">
+				<!-- Discount Coupon Block Starts -->
+				
+				<!-- Discount Coupon Block Ends -->
+				<!-- Conditions Panel Starts -->
+					<div class="panel panel-smart">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								Terms &amp; Conditions
+							</h3>
+						</div>
+						<div class="panel-body">
+							<p>
+								HTML Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. 
+							</p>
+							<p>
+								Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. 
+							</p>
+							<p>
+								Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat.
+							</p>								
+						</div>
+					</div>
+				<!-- Conditions Panel Ends -->
+				<!-- Total Panel Starts -->
+					<div class="panel panel-smart">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								Total
+							</h3>
+						</div>
+						<div class="panel-body">
+							
+							<dl class="dl-horizontal total">
+								<dt>Total :</dt>
+								<dd> <%= (@cart.total_price) %> MMK</dd>
+							</dl>
+							<hr />
+							<div class="text-uppercase clearfix">
+								<a href="/" class="btn btn-default pull-left">
+									<span class="hidden-xs">Continue Shopping</span>
+									<span class="visible-xs">Continue</span>
+								</a>
+								<%= f.submit "Checkout",  :class=>"btn btn-default pull-right" %>
+								
+							</div>
+						</div>
+					</div>
+				<!-- Total Panel Ends -->
+				</div>
+			<!-- Discount & Conditions Blocks Ends -->
+			</div>
+		</section>
+	<!-- Shipping Section Ends -->
+	</div>
+
+<% end %>
+
+
+</div>
+
+<div id="hide_mobile">
 <div id="main-container" class="container">
 	<!-- Breadcrumb Starts -->
 		<ol class="breadcrumb">
@@ -192,7 +332,7 @@
 
 
 
-
+</div>
 
 
 <style>

@@ -40,10 +40,94 @@ jQuery(function(){
 
 
 
-<body data-spy="scroll" data-target=".navbar" data-offset="50" data-no-turbolink="true">
+<body data-spy="scroll" data-target=".navbar" data-offset="50" data-no-turbolink="true" >
+
+<!-- for mobile -->
 
 
-<nav class="navbar navbar-inverse navbar-fixed-top" style="background:white;border:red;" >
+                <div class="rows" id="desktop_hide">
+
+                <nav class="navbar navbar-default" style="background:#d9534f;">
+                    <div class="container-fluid">
+                      <!-- Brand and toggle get grouped for better mobile display -->
+                      <div class="navbar-header">
+
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                        <p class="navbar-text" style="color:white;font-weight:bold;"> &nbsp;&nbsp;&nbsp;Menu
+                                <a href="/check_out">
+                                  <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                                  <span class="hidden-sm hidden-xs" style="color:white;">
+                                    Cart
+                                  </span>
+                                  <span class="badge" id="myqty">Cart (<%= (@cart.total_quantity) %>)</span>
+                                </a>
+                        </p>
+
+
+                      </div>
+
+                      <!-- Collect the nav links, forms, and other content for toggling -->
+                      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    
+                        <ul class="nav navbar-nav">
+                             <li><a href="/product_fashion_clothings">Clothing</a></li>
+                         <li><a href="/product_fashion_hats">Hats</a></li>
+                         <li><a href="/product_fashion_accessories">Accessories</a></li>
+
+                         <li><a href="/product_bath_supplies">Bath Supplies</a></li>
+                         <li><a href="/product_beauty_equipments">Beauty Equipment</a></li>
+                               <li><a href="/product_makeup_and_skincares">Makeup and Skincares</a></li>
+
+
+                           <li><a href="/product_machines">Machines</a></li>
+                         <li><a href="/product_equipments">Equipments</a></li>
+                         <li><a href="/product_instruments">Instruments</a></li>
+                           <li><a href="/product_car_accessories">Motor Car</a></li>
+                         <li><a href="/product_motorcycle_accessories">Motor Cycle</a></li>
+                         <li><a href="/product_sports"> Sports </a></li>
+                         <li><a href="/product_medicines" > Medicines </a></li>
+                         <li><a href="/product_gifts" > Gifts </a></li>
+                         
+                        </ul>
+                      
+                      </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+              </nav>
+
+              
+                    <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
+                                   
+                                        <div class="form-group">
+                                          <span style="padding-left:20px;;font-size:20px;color:#bf1c23;"> I am shopping For </span>
+                                  
+                                          <%= text_field_tag :title, params[:title], :style => "width:40%;" %>
+                                          <button type="submit" class="btn btn-danger">Search</button>
+                                        </div>
+                                    
+                                    
+                    <% end %>
+
+                    <div id="logo">
+                        <img src="/assets/mobile_logo.jpg" title="Spice Shoppe" alt="Spice Shoppe" class="img-responsive" />
+                    </div>
+
+                </div>
+
+
+
+
+
+ <!-- end -->
+
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background:white;border:red;" id="hide_mobile">
 
 
   <header id="header-area" >
@@ -373,7 +457,7 @@ jQuery(function(){
   </header>
 
   </nav>
-  <div style="height:210px;">
+  <div style="height:210px;" id="hide_mobile">
 
   </div>
 
@@ -383,7 +467,7 @@ jQuery(function(){
 </body>
 
 
-  <footer id="footer-area">
+  <footer id="footer-area" >
   <!-- Footer Links Starts -->
     <div class="footer-links">
     <!-- Container Starts -->
@@ -478,7 +562,10 @@ jQuery(function(){
   <!-- Copyright Area Ends -->
   </footer>
 
-</body>
+
+
+
+
 </html>
 
 

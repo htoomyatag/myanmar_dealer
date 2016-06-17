@@ -1,4 +1,83 @@
-<div class="container">
+<!-- for mobile_view -->
+<div class="container" id="desktop_hide">
+
+		
+
+
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+							 
+
+							  <!-- Wrapper for slides -->
+							  <div class="carousel-inner" role="listbox">
+							    <div class="item active">
+							       <%= image_tag 'slide1.png' %>
+							   
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'slide1.png' %>
+							     
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'slide1.png' %>
+							     
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'slide1.png' %>
+							     
+							    </div>
+							    <div class="item">
+							       <%= image_tag 'slide1.png' %>
+							    </div>
+							  </div>
+
+							 
+			</div>
+
+			<div class="rows"><br/>
+				<% @products.each do |product| %>
+						<div class="col-xs-6 col-sm-6">
+							<div class="product-col">
+								<div class="image">
+								<% if !product.avatar1_file_name.nil?  %>
+					                <%= image_tag product.avatar1_file_name, :id => "product_image", :style=>"height:100px;width:100px;" %>
+					            <% elsif product.avatar1_file_name.nil?  %>      
+									<img src="/assets/no_image.jpg" alt="product" class="img-responsive" style="height:100px;width:100px;" />
+					            <% end %>
+								</div>
+								<div class="caption">
+									<p>
+										<%= link_to product.title, product_full_path(:id => product) %><br/>
+										<%= product.price.to_i %> <%=t :MMK %>
+									</p>
+								
+									
+									<div class="cart-button">
+									
+									<%= button_to line_items_path(:mmdealer_code => product.category.to_s+product.id.to_s, :user_id => product.user_id), remote: true, :onclick =>"cartFunction#{product.id}()", :data => product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
+									   <%=t :add_to_cart %>
+
+
+
+									  <i class="fa fa-shopping-cart"></i> 
+									<% end %>
+
+
+																	
+									</div>
+								</div>
+							</div>
+						</div>
+					<% end %>
+			</div>
+
+
+</div>
+
+<!--  -->
+
+
+
+<div class="container" id="hide_mobile">
      <div class="row">
 
      <!-- side menu -->
@@ -32,8 +111,7 @@
 						  <ul>
 							  <li><a href="/product_bath_supplies">Bath Supplies</a></li>
 							  <li><a href="/product_beauty_equipments">Beauty Equipment</a></li>
-                               <li><a href="/product_makeup_and_skincares">Makeup and Skincares</a></li>
-							  
+                              <li><a href="/product_makeup_and_skincares">Makeup and Skincares</a></li>
 						  </ul>
 						</div>
 					</li>
@@ -92,10 +170,6 @@
 
 					 <li><a href="/product_gifts" id="side_menu", class= "list-group-item"> Gifts </a>
 					</li>
-
-
-
-
 
 
 				
@@ -243,7 +317,7 @@
 
 <br/>
 
-<div class="container">
+<div class="container" id="hide_mobile">
      <div class="row">
 
 			 <div class="col-md-12" >
