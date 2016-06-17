@@ -15,6 +15,23 @@ class FrontsController < ApplicationController
   end
 
 
+  def search_result
+    if params[:title]
+      @products = Product.where("lower(title) LIKE ?", "%#{params[:title].downcase}%")
+    elsif params[:store_name]
+      @products = Product.where("lower(store_name) LIKE ?", "%#{params[:store_name].downcase}%")
+    elsif params[:title2]
+      @products = Product.where("lower(title) LIKE ?", "%#{params[:title2].downcase}%")
+    else
+      flash[:notice] = "nothing found"
+    end
+
+
+
+
+  end
+
+
 
 
 

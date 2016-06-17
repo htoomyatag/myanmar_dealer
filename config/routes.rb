@@ -116,6 +116,7 @@ end
   resources :fronts
   get "send_to_pusher" => "fronts#send_to_pusher", :as => :send_to_pusher
   get "add_to_favourite" => "fronts#add_to_favourite", :as => :add_to_favourite
+  get "search_result" => "fronts#search_result", :as => :search_result
   root 'fronts#home'
 
  get 'home' => 'fronts#home'

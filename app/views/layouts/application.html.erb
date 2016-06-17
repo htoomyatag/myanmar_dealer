@@ -233,14 +233,19 @@ jQuery(function(){
     <div class="main-header" >
       <div class="container">
               <span id="myanothernav" style="display:none;">
-                            <form class="form-inline"><br/>
-                                <center>
-                                      <div class="form-group">
-                                         <span style="font-size:20px;color:#bf1c23;"> I am shopping For </span><input type="text" class="form-control" >
-                                      </div>
-                                      <button type="submit" class="btn btn-danger">Search</button>
-                                 </center>
-                            </form>
+                           
+                                <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
+                                      <br/>
+                                    
+
+                                      <center>
+                                        <div class="form-group">
+                                           <span style="font-size:20px;color:#bf1c23;"> I am shopping For </span>
+                                          <%= text_field_tag :title, params[:title] %>
+                                        </div>
+                                        <button type="submit" class="btn btn-danger">Search</button>
+                                      </center>
+                                <% end %>
               </span>
               <div class="row" id="mynav" >
                   
@@ -266,41 +271,37 @@ jQuery(function(){
                             <div class="tab-content">
                               <div role="tabpanel" class="tab-pane active" id="home">
                                   
-                                    <form class="form-inline"><br/>
-
+                                <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
+                                      <br/>
                                       <div class="form-group">
-                                          <input type="text" class="form-control" style="width:450px;;">
+                                          <%= text_field_tag :title, params[:title], :style=>"width:450px;" %>
                                       </div>
-
-
-                                      <button type="submit" class="btn btn-danger">Search</button>
-                                    </form>
+                                      <button type="submit" class="btn btn-danger">search</button>
+                                <% end %>
 
                               </div>
                               <div role="tabpanel" class="tab-pane" id="profile">
 
-                                     <form class="form-inline"><br/>
-
+                                  <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
+                                      <br/>
                                       <div class="form-group">
-                                          <input type="text" class="form-control" style="width:450px;;">
+                                          <%= text_field_tag :store_name, params[:store_name], :style=>"width:450px;" %>
                                       </div>
-
-
-                                      <button type="submit" class="btn btn-danger">Search</button>
-                                    </form>
+                                      <button type="submit" class="btn btn-danger">search</button>
+                                <% end %>
 
                               </div>
                               <div role="tabpanel" class="tab-pane" id="messages">
                                     
-                                     <form class="form-inline"><br/>
-
+                                <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
+                                      <br/>
                                       <div class="form-group">
-                                          <input type="text" class="form-control" style="width:450px;;">
+                                          <%= text_field_tag :title2, params[:title2], :style=>"width:450px;" %>
                                       </div>
+                                      <button type="submit" class="btn btn-danger">search</button>
+                                <% end %>
 
 
-                                      <button type="submit" class="btn btn-danger">Search</button>
-                                    </form>
                               </div>
                             </div>
 
