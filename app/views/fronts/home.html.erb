@@ -1,3 +1,382 @@
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background:white;border:red;" id="hide_mobile">
+
+
+
+  <header id="header-area" >
+  <!-- Header Top Starts -->
+    <div class="header-top" >
+      <div class="container">
+        <div class="row" >
+        <!-- Header Links Starts -->
+          <div class="col-sm-12 col-xs-12" >
+              <ul class="nav navbar-nav pull-left" id="showatscroll">
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" style="color:white;">
+                              MD Home
+                            </span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" style="color:white;">
+                              Big Deal
+                            </span>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" style="color:white;">
+                              MD Mobile
+                            </span>
+                          </a>
+                        </li>
+              </ul>
+
+            
+
+              <ul  class="nav navbar-nav pull-left" style="display:none;" id="myanothernav">
+                
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MD <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                         <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" >
+                              MD Home
+                            </span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" >
+                              Big Deal
+                            </span>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" >
+                              MD Mobile
+                            </span>
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
+            </ul>
+
+
+                <%= form_tag(search_result_path, :style => "display:none;", :method => "get", :class =>"navbar-form navbar-left", id:"myanothernavone") do %> 
+                                      <div class="form-group">
+                                          <%= text_field_tag :title, params[:title], :class=>"form-control" %>
+                                      </div>
+                                      <button type="submit" class="btn btn-danger">search</button>
+                <% end %>
+      
+            <div class="pull-right" >
+              <!-- Currency Starts -->
+              <ul class="nav navbar-nav pull-left" >
+
+                <% if user_signed_in? %>
+                   <% if current_user.user_type_id == 1 %>
+                      <li>
+                        <a href="/stores/<%= @store_id %>">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            My MD
+                          </span>
+                        </a>
+                      </li>
+                    <% else %>
+                        <li>
+                        <a href="/seller_sign_up">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            My MD
+                          </span>
+                        </a>
+                      </li>
+                   <% end %>
+                <% else %>
+                   <li>
+                        <a href="/seller_sign_up">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            My MD
+                          </span>
+                        </a>
+                      </li>
+
+                <% end %>
+
+
+                      <li>
+                        <a href="/check_out">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Cart
+                          </span>
+                          <span class="badge" id="myqty"><%= (@cart.total_quantity) %></span>
+                        </a>
+                      </li>
+
+
+                  <% if user_signed_in? %>
+
+                     <li>
+                        <a href="#">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Favourite
+                          </span>
+                          <span class="badge"><%= @fav_number %></span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/my_order">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Ordered
+                          </span>
+                          <span class="badge"> <%=  @order_number  %></span>
+                        </a>
+                      </li>
+
+                         <li>
+                              <%= link_to "#{t :log_out}", destroy_user_session_path, :method => :delete %>
+                          </li>
+      
+                  <% else %>
+
+
+                   <li>
+                        <a href="#">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Favourite
+                          </span>
+                          <span class="badge">0</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/my_order">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Ordered
+                          </span>
+                          <span class="badge">0</span>
+                        </a>
+                      </li>
+
+
+                      <li>
+                        <a href="/user_sign_in">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs">
+                            <b>Login</b>
+                          </span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/buyer_sign_up">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs">
+                            <b>Register</b>
+                          </span>
+                        </a>
+                      </li>
+
+
+                  <% end %>
+
+
+
+
+                      <li>
+                         <%= link_to image_tag("english_flag.png"), "?locale=en" %>
+                      </li>
+
+                      <li>
+                          <%= link_to image_tag("mm_flag.png"), "?locale=mm" %>
+                      </li>
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-header" >
+      
+                           
+                            
+              <div class="row" id="hideatscroll" >
+                  
+
+                <div class="col-md-2">
+                  <div id="logo">
+                    <a href="#"><img src="/assets/logo.jpg" title="Spice Shoppe" alt="Spice Shoppe" style="height:95px;" /></a>
+                  </div>
+                </div>
+
+                <div class="col-md-5" >
+
+                      <div><br/>
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist" id="mynavtab">
+                              <li role="presentation" class="active">
+                              <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Item</a></li>
+                              <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Shop</a></li>
+                              <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Big Deal</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                              <div role="tabpanel" class="tab-pane active" id="home">
+                                  
+                                <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
+                                      <br/>
+                                      <div class="form-group">
+                                          <%= text_field_tag :title, params[:title], :style=>"width:350px;" %>
+                                      </div>
+                                      <button type="submit" class="btn btn-danger">search</button>
+                                <% end %>
+
+                              </div>
+                              <div role="tabpanel" class="tab-pane" id="profile">
+
+                                  <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
+                                      <br/>
+                                      <div class="form-group">
+                                          <%= text_field_tag :store_name, params[:store_name], :style=>"width:350px;" %>
+                                      </div>
+                                      <button type="submit" class="btn btn-danger">search</button>
+                                <% end %>
+
+                              </div>
+                              <div role="tabpanel" class="tab-pane" id="messages">
+                                    
+                                <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
+                                      <br/>
+                                      <div class="form-group">
+                                          <%= text_field_tag :title2, params[:title2], :style=>"width:350px;" %>
+                                      </div>
+                                      <button type="submit" class="btn btn-danger">search</button>
+                                <% end %>
+
+
+                              </div>
+                            </div>
+
+                      </div>
+
+
+                </div>
+
+                <div class="col-md-3" style="background:black;margin-left:12px;width:22%;" id="account_setting" >
+   
+
+                  <% if user_signed_in? %>
+
+
+                           <div style="float:left;">
+                            <img src="/assets/avatar.png" class="img-responsive" />
+                            <p class="avata_name">  <%= current_user.name %> </p>
+                          </div>
+
+                          <div style="float:right;">
+                            <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class=>"btn btn-default", :style => "margin-top:8px;", :id => "menu_mybtn"%>
+
+                            <br/>
+                            <%= link_to "Register", new_user_registration_path, :class=>"btn btn-default", :id => "menu_mybtn"%>
+
+
+                            <br/>
+                           
+
+                            <% if current_user.has_store == "yes" %>
+                                <a href="/stores/<%= @store_id %>"  class="btn btn-default", id="menu_mybtn">MyStore</a>
+                            <% else %>
+                               <%= link_to "Open Shop", new_store_path, :class=>"btn btn-default", :id => "menu_mybtn"%>
+                            <% end %>
+
+
+                          </div>
+      
+                  <% else %>
+
+
+                          <div style="float:left;">
+                            <img src="/assets/avatar.png" class="img-responsive" />
+                            <p class="avata_name"> Guest </p>
+                          </div>
+
+                          <div style="float:right;">
+                            <a href="/user_sign_in" class="btn btn-default" type="submit" id="menu_mybtn" style="margin-top:8px;">Login</a><br/>
+
+
+                            <%= link_to "Register(Seller)", seller_sign_up_path, :class=>"btn btn-default", :id => "menu_mybtn"%>
+
+                            <br/>
+                            <button class="btn btn-default" id="menu_mybtn" onclick="storeFunction()"> Open Shop</button>
+
+                          </div>
+
+                  <% end %>
+
+                </div>
+                <div class="col-md-2" style="margin-left:10px;">
+
+                    <div class="panel panel-default">
+                      
+                      <div class="panel-heading" style="font-size:10px;background:#d9534f;font-weight:bold;text-align:center;">DOWNLOAD OUR FREE APP</div>
+                        <div class="panel-body">
+                            <center>
+                                     <%= image_tag 'app.jpg' %> 
+                            </center>
+                        </div>
+                    </div>
+                 
+
+
+
+
+
+
+                </div>
+
+              </div>
+     
+
+
+    </div>
+    
+  </header>
+
+  </nav>
+  <div style="height:210px;" id="hide_mobile">
+
+  </div>
 <!-- for mobile_view -->
 <div class="container" id="desktop_hide">
 
@@ -39,7 +418,7 @@
 							<div class="product-col">
 								<div class="image">
 								<% if !product.avatar1_file_name.nil?  %>
-					                <%= image_tag product.avatar1_file_name, :id => "product_image", :style=>"height:100px;width:100px;" %>
+					                 <%= link_to image_tag(product.avatar1_file_name, :style=>"height:100px;width:100px;"), product_full_path(:id => product), :id => "product_image" %>
 					            <% elsif product.avatar1_file_name.nil?  %>      
 									<img src="/assets/no_image.jpg" alt="product" class="img-responsive" style="height:100px;width:100px;" />
 					            <% end %>
@@ -77,18 +456,18 @@
 
 
 
-<div class="container" id="hide_mobile">
+<div class="rows" id="hide_mobile" style="padding:13px;">
      <div class="row">
 
      <!-- side menu -->
-     	 <div class="col-md-3">
+     	 <div class="col-md-2">
      	 	<p class="mytitle"> <%=t :category %> </p>
 
      	 	<div class="list-group categories">
 
 
      	 	<nav id="mysidebarmenu" class="amazonmenu">
-				<ul>
+				<ul >
 					<li><a href="#" id="side_menu", class= "list-group-item">Fashions Men / Women</a>
 						<div>
 						  <ul>
@@ -121,7 +500,7 @@
 					</li>
 
 
-					<li><a href="#" id="side_menu", class= "list-group-item"> Computer & Accessories </a>
+					<li><a href="#" id="side_menu", class= "list-group-item"> Electronics </a>
 						<div>
 						  <ul>
 							  <li><a href="/product_computers">Computers</a></li>
@@ -183,7 +562,7 @@
 
 
      	 </div>
-     	 <div class="col-md-6">
+     	 <div class="col-md-5">
      	  	<p class="mytitle"> Hot sale</p>
 
 		     	  	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -192,156 +571,138 @@
 							  <!-- Wrapper for slides -->
 							  <div class="carousel-inner" role="listbox">
 							    <div class="item active">
-							       <%= image_tag 'slide1.png' %>
+							       <%= image_tag 'slide2.png' %>
 							   
 							    </div>
 							    <div class="item">
-							       <%= image_tag 'slide1.png' %>
+							       <%= image_tag 'slide2.png' %>
 							     
 							    </div>
 							    <div class="item">
-							       <%= image_tag 'slide1.png' %>
+							       <%= image_tag 'slide2.png' %>
 							     
 							    </div>
 							    <div class="item">
-							       <%= image_tag 'slide1.png' %>
+							       <%= image_tag 'slide2.png' %>
 							     
 							    </div>
 							    <div class="item">
-							       <%= image_tag 'slide1.png' %>
+							       <%= image_tag 'slide2.png' %>
 							    </div>
 							  </div>
 
 							 
 					</div>
-					<br/>
-					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-							
-							  <!-- Wrapper for slides -->
-							  <div class="carousel-inner" role="listbox">
-							    <div class="item active">
-							       <%= image_tag 'slide2.png' %>
-							   
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'slide2.png' %>
-							     
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'slide2.png' %>
-							     
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'slide2.png' %>
-							     
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'slide2.png' %>
-							    </div>
-							  </div>
-
-							
+					<div style="position:relative;top:15px;">
+						<span id="home_menubtn">Big Deals</span>
+						<span id="home_menubtn">Best Selling</span>
+						<span id="home_menubtn">Hot Shop</span>
+						<span id="home_menubtn">Branded</span>
+						<span id="home_menubtn">Free Delivery</span>
+						
 					</div>
+						
+					
 
 
 		</div>
      	  <div class="col-md-3">
-     	  	
+     	  		
+     	  		<p class="mytitle"> Big Deals</p>
+     	  		<div class="panel panel-default">
+				  <div class="panel-heading"><span style="color:#d9534f;">TODAY'S</span> DEALS</div>
+				  <div class="panel-body">
+				     <h6 style="text-align:center;"> Ends in 21:29:58</h6>
+				   		<center>
+				   			   <%= image_tag 'clock.jpg' %>
+				   		</center>
+				   
 
-     	  			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-							 
-							  <!-- Wrapper for slides -->
-							  <div class="carousel-inner" role="listbox">
-							    <div class="item active">
-							       <%= image_tag 'leftslide1.png' %>
-							   
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'leftslide1.png' %>
-							     
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'leftslide1.png' %>
-							     
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'leftslide1.png' %>
-							     
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'leftslide1.png' %>
-							    </div>
-							  </div>
+				     <h6 style="text-align:center;"> 
+				     	7000 Kyats 
+				     	<span style="background:#d43f3a;color:white;padding:5px;"> 30% OFF </span>
+				     </h6>
 
-							  <!-- Controls -->
-							 
-					</div>
-					<br/>
 
-					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-							 
-							  <!-- Wrapper for slides -->
-							  <div class="carousel-inner" role="listbox">
-							    <div class="item active">
-							       <%= image_tag 'mleftslide1.png' %>
-							   
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'mleftslide1.png' %>
-							     
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'mleftslide1.png' %>
-							     
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'mleftslide1.png' %>
-							     
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'mleftslide1.png' %>
-							    </div>
-							  </div>
-
-							  <!-- Controls -->
-							 
-					</div>
-
+				  </div>
+				</div>
+     	  		
 	
      	  </div>
+
+
+     	  <div class="col-md-2" style="margin-left:-15px;">
+
+
+
+     	  			<br/><br/>
+
+                    <div class="panel panel-default" >
+                        <div class="panel-heading" style="font-size:14px;background:#d9534f;font-weight:bold;text-align:center;">
+                          How to Buy
+                        </div>
+                        <ul class="list-group">
+						  <li class="list-group-item" id="menuside">Register</li>
+						  <li class="list-group-item" id="menuside">Add to Favourite</li>
+						  <li class="list-group-item" id="menuside">Add to cart</li>
+						  <li class="list-group-item" id="menuside">Make Order</li>
+						  <li class="list-group-item" id="menuside">Order Trekking</li>
+						</ul>
+                    </div>
+
+
+                      <div class="panel panel-default" >
+                        <div class="panel-heading" style="font-size:14px;background:#d9534f;font-weight:bold;text-align:center;">
+                          How to Sell
+                        </div>
+                         <ul class="list-group">
+						  <li class="list-group-item" id="menuside">Open Shop</li>
+						  <li class="list-group-item" id="menuside">Sell Your Product</li>
+						  <li class="list-group-item" id="menuside">Manage Your Shop</li>
+						  <li class="list-group-item" id="menuside">Manage Your Item</li>
+						  <li class="list-group-item" id="menuside">View Your Report</li>
+						</ul>
+                    </div>
+
+          </div>
 
     
 
      </div>
 </div>
 
-<br/>
 
-<div class="container" id="hide_mobile">
-     <div class="row">
+<div id="hide_mobile" style="padding:10px;">
+     <div class="row" style="position:relative;top:-63px;">
 
 			 <div class="col-md-12" >
-			     	 	<p class="mytitle"> Big Deals </p>
+			     	 	<p class="mytitle"> Hot Sale </p>
 
 			     	 	<% @products.each do |product| %>
-						<div class="col-md-3">
+						<div class="col-md-2">
 							<div class="product-col">
 								<div class="image">
 								<% if !product.avatar1_file_name.nil?  %>
-					                <%= image_tag product.avatar1_file_name, :id => "product_image", :style=>"height:200px;width:220px;" %>
+					                <%= link_to image_tag(product.avatar1_file_name, :style=>"height:100px;width:120px;"), product_full_path(:id => product), :id => "product_image" %>
 					            <% elsif product.avatar1_file_name.nil?  %>      
-									<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
+									<img src="/assets/no_image.jpg" alt="product" class="img-responsive" style="height:100px;width:120px;" />
 					            <% end %>
 								</div>
 								<div class="caption">
-									<h4>
-										<%= link_to product.title, product_full_path(:id => product) %>
-									</h4>
-								
-									<div class="price">
-										<span class="price-new"><%= product.price.to_i %> <%=t :MMK %></span> 
+
+									<div>
+										<span style="color:#bf1c23;">
+											<%= product.price.to_i %> <%=t :MMK %>
+										</span> 
+										<span  style="color:gray;float:right;"> 125 sold</span> 
 										
 									</div>
+
+									<p style="font-size:14px;font-weight:bold;">
+										<%= link_to product.title, product_full_path(:id => product), :style => "color:black;" %>
+									</p>
+								
+								
 									<div class="cart-button">
 									
 									<%= button_to line_items_path(:mmdealer_code => product.category.to_s+product.id.to_s, :user_id => product.user_id), remote: true, :onclick =>"cartFunction#{product.id}()", :data => product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>

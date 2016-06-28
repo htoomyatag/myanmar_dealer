@@ -1,3 +1,7 @@
+
+
+
+
 body{
 	background:#fff;
 	color:#252a2f;
@@ -167,7 +171,9 @@ hr{
 /* Main Header & Search Styles Starts */
 
 	.main-header{
-		padding:10px 0 0px;
+		padding:10px;
+		width: 100%;
+		position: absolute;
 	}
 		#logo{
 			margin-top: 15px;
@@ -637,6 +643,7 @@ hr{
 
 	#main-container{
 		margin-bottom:35px;
+		padding: 15px;
 	}
 	#main-container-home{
 		margin-bottom:0;
@@ -1196,9 +1203,9 @@ hr{
 
 
 #side_menu{
-	font-size: 14px;
+	font-size: 12px;
 	color: white;
-	padding: 11px;
+	padding: 5px;
 }
 
 
@@ -1305,4 +1312,84 @@ select#select option[value="transporter"]   {
 
 #fav {
     cursor: pointer;
+}
+
+
+
+#menuside{
+
+	font-size: 10px;
+	text-align: center;
+	color: black;
+	background: white;
+	height: 28px;
+
+}
+
+
+
+#footer_link{
+	color: white;
+}
+
+
+
+#home_menubtn{
+
+
+	padding:14px;
+	font-size: 15px;
+	background:#bf1c23;
+	color: white;
+
+
+}
+
+
+
+.color_box {
+	border:1px solid black;
+	padding:2px;
+	margin-left: 5px;
+}
+
+
+
+#shopdetail_btn {
+
+	font-size:18px;
+	font-weight:bold;
+	background:#d9534f;
+	text-align: center;
+	margin: -5px;
+	padding-top: 5px;
+
+}
+
+
+#customerdetail_btn{
+
+	font-size:18px;
+	font-weight:bold;
+	background:#d9534f;
+	text-align: center;
+	padding-top: 5px;
+	margin-left: -4px;
+	margin-top: 7px;
+
+
+
+}
+
+
+#store_infos{
+	font-size: 19px;
+	color: #d9534f;
+	font-weight: bold;
+	width: 140px;
+}
+
+
+.shoptitle {
+	font-size:22px;font-weight:bold;color:#d9534f
 }

@@ -1,12 +1,288 @@
 
-<div id="main-container" class="container">
-	<!-- Breadcrumb Starts -->
-		<ol class="breadcrumb">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="category-grid.html">Category</a></li>
-			<li class="active">Product</li>
-		</ol>
-	<!-- Breadcrumb Ends -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background:white;border:red;" id="hide_mobile">
+
+
+
+  <header id="header-area" >
+  <!-- Header Top Starts -->
+    <div class="header-top" >
+      <div class="container">
+        <div class="row" >
+        <!-- Header Links Starts -->
+          <div class="col-sm-12 col-xs-12" >
+              <ul class="nav navbar-nav pull-left" id="showatscroll">
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" style="color:white;">
+                              MD Home
+                            </span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" style="color:white;">
+                              Big Deal
+                            </span>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" style="color:white;">
+                              MD Mobile
+                            </span>
+                          </a>
+                        </li>
+              </ul>
+
+            
+
+              <ul  class="nav navbar-nav pull-left" style="display:none;" id="myanothernav">
+                
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MD <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                         <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" >
+                              MD Home
+                            </span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" >
+                              Big Deal
+                            </span>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" >
+                              MD Mobile
+                            </span>
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
+            </ul>
+
+
+                <%= form_tag(search_result_path, :style => "display:none;", :method => "get", :class =>"navbar-form navbar-left", id:"myanothernavone") do %> 
+                                      <div class="form-group">
+                                          <%= text_field_tag :title, params[:title], :class=>"form-control" %>
+                                      </div>
+                                      <button type="submit" class="btn btn-danger">search</button>
+                <% end %>
+      
+            <div class="pull-right" >
+              <!-- Currency Starts -->
+              <ul class="nav navbar-nav pull-left" >
+
+                <% if user_signed_in? %>
+                   <% if current_user.user_type_id == 1 %>
+                      <li>
+                        <a href="/stores/<%= @store_id %>">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            My MD
+                          </span>
+                        </a>
+                      </li>
+                    <% else %>
+                        <li>
+                        <a href="/seller_sign_up">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            My MD
+                          </span>
+                        </a>
+                      </li>
+                   <% end %>
+                <% else %>
+                   <li>
+                        <a href="/seller_sign_up">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            My MD
+                          </span>
+                        </a>
+                      </li>
+
+                <% end %>
+
+
+                      <li>
+                        <a href="/check_out">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Cart
+                          </span>
+                          <span class="badge" id="myqty"><%= (@cart.total_quantity) %></span>
+                        </a>
+                      </li>
+
+
+                  <% if user_signed_in? %>
+
+                     <li>
+                        <a href="#">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Favourite
+                          </span>
+                          <span class="badge"><%= @fav_number %></span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/my_order">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Ordered
+                          </span>
+                          <span class="badge"> <%=  @order_number  %></span>
+                        </a>
+                      </li>
+
+                         <li>
+                              <%= link_to "#{t :log_out}", destroy_user_session_path, :method => :delete %>
+                          </li>
+      
+                  <% else %>
+
+
+                   <li>
+                        <a href="#">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Favourite
+                          </span>
+                          <span class="badge">0</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/my_order">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Ordered
+                          </span>
+                          <span class="badge">0</span>
+                        </a>
+                      </li>
+
+
+                      <li>
+                        <a href="/user_sign_in">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs">
+                            <b>Login</b>
+                          </span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/buyer_sign_up">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs">
+                            <b>Register</b>
+                          </span>
+                        </a>
+                      </li>
+
+
+                  <% end %>
+
+
+
+
+                      <li>
+                         <%= link_to image_tag("english_flag.png"), "?locale=en" %>
+                      </li>
+
+                      <li>
+                          <%= link_to image_tag("mm_flag.png"), "?locale=mm" %>
+                      </li>
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-header" id="hideatscroll">
+      
+                <div class="col-md-2">
+                  <div id="logo">
+                    <a href="#"><img src="/assets/logo.jpg" title="Spice Shoppe" alt="Spice Shoppe" style="height:95px;" /></a>
+                  </div>
+                </div>
+
+
+                <div class="col-md-5">
+                		<div>
+                		  <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
+                                      <br/><br/>      
+                                      <div class="form-group">
+                                          <%= text_field_tag :title, params[:title], :style => "width:280px;height:50px;", :class => "form-control" %>
+                                      </div>
+                                      <button type="submit" class="btn btn-danger" style="height:50px;">Search Shop</button>
+                                      <button type="submit" class="btn btn-danger" style="height:50px;">Search Site</button>
+                           <% end %>
+                        </div>
+
+
+                </div>
+
+                 <div class="col-md-5" >
+                 		<h2 style="background:#d9534f;margin-top:30px;padding:20px;border-radius:5px;">Advertising Place</h2>
+                 </div>
+   
+         
+     
+
+
+    </div>
+    
+  </header>
+
+  </nav>
+  <div style="height:210px;" id="hide_mobile">
+
+  </div>
+
+
+  <div style="height:20px;background:#d9534f;">
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="main-container" class="rows">
+	
 	<!-- Product Info Starts -->
 		<div class="row product-info full">
 		<!-- Left Starts -->
@@ -66,171 +342,232 @@
 
 		<!-- Left Ends -->
 		<!-- Right Starts -->
-			<div class="col-sm-8 product-details">
-				<div class="panel-smart">
+			<div class="col-sm-5 product-details">
+				<div >
 				<!-- Product Name Starts -->
 					<h2>
-					<div>
-						<span style="float:left;"><%= @product.title %></span>
- 						
- 						<span style="float:right;"><%= image_tag "fav.png", :class=>"img-responsive", :id => "fav" %></span>
- 					</div>
+						<div>
+							<span style="float:left;"><%= @product.title %></span>
+	 					</div>
 
 					</h2>
 				<!-- Product Name Ends -->
-				    <br/>
-					<hr />
-				<!-- Manufacturer Starts -->
-					<ul class="list-unstyled manufacturer">
-						<li>
-							<span>Color:</span> <%= @product.color %>
-						</li>
-						<li><span>Size:</span> <%= @product.size %>
-						</li>
-						<li><span>Weight:</span>  <%= @product.weight %>
-						</li>
-						<li>
-							<span>Availability:</span> <strong class="label label-danger">Out Of Stock</strong>
-						</li>
-					</ul>
-				<!-- Manufacturer Ends -->
-					<hr />
-				<!-- Price Starts -->
-					<div class="price">
-						<span class="price-head">Price :</span>
-						<span class="price-new"><%= @product.price.to_i %> MMK
+				    <br/><br/>
+					<span>Price:</span>
+					<span class="price-new">
+						<%= @product.price.to_i %> Ks
+					</span> 
+
+					<br/><br/>
+					
+					<div style="width:100%;">
+
+						<div style="width:20%;float:left;padding-right:10px;padding-top:5px;">
+							<span>Delivery Charges:</span>
+						</div>
+
+						<div style="width:20%;float:left;padding-right:10px;">
+							<select class="form-control">
+							  <option>Region</option>
+							  <option>2</option>
+							  <option>3</option>
+							  <option>4</option>
+							  <option>5</option>
+							</select>
+						</div>
+
+						<div style="width:20%;float:left;padding-right:10px;">
+							<select class="form-control" >
+							   <option>City</option>
+							  <option>Yangon</option>
+							  <option>Mandalay</option>
+							  <option>Taunggyi</option>
+							  <option>Larshio</option>
+							  <option>Myeik</option>
+							  <option>Mgway</option>
+							</select>
+						</div>
+
+						<div style="width:20%;float:left;padding-right:10px;">
+
+							<select class="form-control" >
+							  	
+							  			<option>Township</option>
+										<option value="2000"> 
+												Ahlone	
+										</option>
+										<option value="2000"> 
+												Kyimyindaing
+										</option>
+										<option value="2000"> 
+												Sanchaung
+										</option>
+										<option value="2000"> 	
+												Latha	
+												</option>
+										<option value="2000"> 
+												Lanmadaw
+												</option>
+										<option value="2000"> 
+												Pabedan	
+												</option>
+										<option value="2000"> 
+												Kyauktada
+												</option>
+										<option value="2000"> 
+												Botahtaung
+												</option>
+										<option value="2000"> 
+												Pazundaung
+												</option>
+										<option value="2000"> 
+												Tamwe
+												</option>
+										<option value="2000"> 
+												Mingalar taung nyunt
+												</option>
+										<option value="2000"> 
+												Thingangyun
+												</option>
+										<option value="2000"> 
+												Thuwunna
+												</option>
+										<option value="2000"> 
+												Bahan 
+												</option>
+										<option value="2000"> 
+												Hlaing
+												</option>
+										<option value="2000"> 
+												Mayangon
+												</option>
+										<option value="2000"> 
+												Yankin
+												</option>
+										<option value="2000"> 
+												Tharkayta
+										</option>
+										<!--  -->
+
+										<option value="2500"> 
+										Dagon myothit(south)
+										</option>
+										<option value="2500"> 	
+										Dagon myothit(north)	
+										</option>
+										<option value="2500"> 
+										Dagon myothit(east)	
+										</option>
+										<option value="2500"> 
+										Dagon myothit(west)	
+										</option>
+										<option value="2500"> 
+										Okkalapa(south)	
+										</option>
+										<option value="2500"> 
+										Okkalapa(north)	
+										</option>
+										<option value="2500"> 
+										Bayintnaung	
+										</option>
+										<option value="2500"> 
+										Insein	
+										</option>
+										<option value="2500"> 
+										Sawbuagyigong	
+										</option>
+										<option value="2500"> 
+										Mingalardon	
+										</option>
+
+										<option value="500"> 
+											NAYPYITAW
+										</option>
+
+										<option value="500"> 
+											MANDALAY	
+										</option>
+
+										<option value="500"> 
+											TAUNGGYI	
+										</option>
+							</select>
+						</div>
+
+						<div style="width:20%;float:left;padding-right:10px;">
+
+							= 2000 Kyats
+						</div>
+
+					</div><br/><br/><br/>
+
+					<div>
+						<span>Color:</span>
+						<span style="padding-left:95px;">
+						       <span class="color_box"> White </span>
+						       <span class="color_box"> Black </span>
+						       <span class="color_box"> Yellow </span>
+								
 						</span> 
-						<span class="price-old"><%= @product.price.to_i + 15 %> MMK
-						</span>
-						<span class="price-head">Delivery :</span>
-						<span class="price-new"> 
-							<input id="delivery_fees">
+					</div><br/>
+
+					<div>
+						<span>Size:</span>
+						<span style="padding-left:100px;">
+						       <span class="color_box"> S </span>
+						       <span class="color_box"> M </span>
+						       <span class="color_box"> L </span>
+						       <span class="color_box"> XL </span>
+						       <span class="color_box"> XXL </span>
+								
+						</span> 
+					</div><br/>
+
+					<div>
+						<span>Quantity:</span>
+						<span style="padding-left:80px;">
+						        <input type="text">
+								989 packs in stock
 						</span> 
 					</div>
-				<!-- Price Ends -->
-					<hr />
+
+
+						
+		
+				
 				<!-- Available Options Starts -->
 					<div class="options">
-						<h3>Delivery Options</h3>
-						<div class="form-group">
-						<label for="select" class="control-label text-uppercase">Select:</label>
-						<select name="select" id="select" class="form-control">
-								<option value="1" selected>Select</option>
-								<option value="transporter"> 
-									MM TRANSPORTER
-								</option>
-						</select>
 
-						<select id="select_city" class="form-control">
+						<br/>
 
-								<option value="1" selected>Shipping to</option>
-								<option value="2000"> 
-										Ahlone	
-								</option>
-								<option value="2000"> 
-										Kyimyindaing
-										</option>
-								<option value="2000"> 
-										Sanchaung
-								</option>
-								<option value="2000"> 	
-										Latha	
-										</option>
-								<option value="2000"> 
-										Lanmadaw
-										</option>
-								<option value="2000"> 
-										Pabedan	
-										</option>
-								<option value="2000"> 
-										Kyauktada
-										</option>
-								<option value="2000"> 
-										Botahtaung
-										</option>
-								<option value="2000"> 
-										Pazundaung
-										</option>
-								<option value="2000"> 
-										Tamwe
-										</option>
-								<option value="2000"> 
-										Mingalar taung nyunt
-										</option>
-								<option value="2000"> 
-										Thingangyun
-										</option>
-								<option value="2000"> 
-										Thuwunna
-										</option>
-								<option value="2000"> 
-										Bahan 
-										</option>
-								<option value="2000"> 
-										Hlaing
-										</option>
-								<option value="2000"> 
-										Mayangon
-										</option>
-								<option value="2000"> 
-										Yankin
-										</option>
-								<option value="2000"> 
-										Tharkayta
-								</option>
-								<!--  -->
-
-								<option value="2500"> 
-								Dagon myothit(south)
-								</option>
-								<option value="2500"> 	
-								Dagon myothit(north)	
-								</option>
-								<option value="2500"> 
-								Dagon myothit(east)	
-								</option>
-								<option value="2500"> 
-								Dagon myothit(west)	
-								</option>
-								<option value="2500"> 
-								Okkalapa(south)	
-								</option>
-								<option value="2500"> 
-								Okkalapa(north)	
-								</option>
-								<option value="2500"> 
-								Bayintnaung	
-								</option>
-								<option value="2500"> 
-								Insein	
-								</option>
-								<option value="2500"> 
-								Sawbuagyigong	
-								</option>
-								<option value="2500"> 
-								Mingalardon	
-								</option>
-
-						</select>
-
-						</div>	
+						
+					
 					
 						<div class="cart-button button-group">
 							
-							
+							<div style="float:left;">
 
 								<%= button_to line_items_path(:mmdealer_code => @product.category.to_s+@product.id.to_s, :user_id => @product.user_id), remote: true, :onclick =>"cartFunction#{@product.id}()", :data => @product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
 									   <%=t :add_to_cart %>
 
 
-								<% end %>		<br/>
+								<% end %>
 
- 							 <%  if user_signed_in?  %>
-								<button class="btn btn-default" id="chat_user"> Chat with
-			      				<b><%= @product.user.name rescue "-" %></b> </button>	
-			      			 <%  else  %>
-			      			 	<p> Please login to chat with this seller</p>	
-			      			  <%  end  %>
+
+						   </div>
+
+						   <div  style="float:right;">
+
+
+							    <%= button_to line_items_path(:mmdealer_code => @product.category.to_s+@product.id.to_s, :user_id => @product.user_id), remote: true, :onclick =>"cartFunction#{@product.id}()", :data => @product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
+									   <%=t :add_to_cart %>
+
+
+								<% end %>
+
+						 </div>
+
+ 							
 
 						</div>
 
@@ -242,6 +579,100 @@
 					</div>
 				<!-- Available Options Ends -->
 				</div>
+			</div>
+
+
+			<div class="col-md-3">
+				<div class="panel panel-default">
+				  <div class="panel-body">
+				    	
+				    	<h6 class="shoptitle"><img src="assets/shop-icon-23328.png">  MiMiBerry Tshirt</h6>
+
+				    	<table>
+					      
+
+					      	<tr>
+					          <td id="store_infos"><span>Level:</span></td>
+					          <td id="store_infos">******</td>
+					        </tr>
+					      
+					        <tr>
+					          <td id="store_infos">Shopkeeper:</td>
+					          <td id="store_infos">HtooMyatAung</td>
+					        </tr>
+
+					        <tr>
+					          <td id="store_infos">Contact:</td>
+					          <td id="store_infos">09795545748</td>
+					        </tr>
+
+					        <tr>
+					          <td id="store_infos">Certificate:</td>
+					          <td id="store_infos">2008/1234</td>
+					        </tr>
+
+					        <tr>
+					          <td id="store_infos">Deposit:</td>
+					          <td id="store_infos">200,000 Ks</td>
+					        </tr>
+
+			     
+					    </table>
+
+					 	 <div class="col-md-4">
+					 	 	<p >
+								Depict<br/>
+								4.3
+							</p>
+					 	 </div>
+					 	 <div class="col-md-4">
+					 	 	<p style="text-align:center;">
+								Delivery<br/>
+								4.3
+							</p>
+					 	 </div>
+					 	 <div class="col-md-4">
+					 	 	<p style="text-align:center;">
+								Service<br/>
+								4.3
+							</p>
+					 	 </div>
+
+
+					 	 <div class="col-md-6" id="shopdetail_btn" >
+					 	   <p >ShopView</p>
+					 	 </div>
+
+					 	 <div class="col-md-6" id="shopdetail_btn" style="margin-left: 7px;">
+					 	   <p >LikeShop</p>
+					 	 </div>
+
+					 	 <div class="col-md-12" id="customerdetail_btn" >
+					 	   <p >Customer Service</p>
+					 	 </div>
+
+					 	  <div class="col-md-12" ><br>
+					 	   <p >1.Htoo Myat Aung</p>
+					 	   <p >2.Thel DarlyKhin</p>
+					 	   <p >3.Sai Kham Mg</p>
+					 	   <p >4.Aarphan</p>
+					 	   <p >5.Arphan</p>
+					 	 </div>
+
+					          	    
+					          
+					          		
+					        
+					          		
+					      
+					    	
+					    
+
+
+				  </div>
+				</div>
+
+
 			</div>
 		<!-- Right Ends -->
 		</div>
@@ -325,22 +756,15 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="product-col">
 						<div class="image">
-						<% if !relate_product.avatar1_file_name.nil?  %>
-					        <%= image_tag relate_product.avatar1.url, :id => "product_menu_image", :class=>"img-responsive" %>
-					    <% else  %>      
-							<img src="/assets/no_image.jpg" alt="product" class="img-responsive" id="product_image" />
-					    <% end %>
+							 <%= image_tag relate_product.avatar1_file_name, :style=>"height:200px;width:200px;" %>
 						</div>
 						<div class="caption">
 							<h4><a href="#">
 								<%= relate_product.title %>
 							</a></h4>
-							<div class="description">
-								We are so lucky living in such a wonderful time. Our almost unlimited ...
-							</div>
+							
 							<div class="price">
-								<span class="price-new">$199.50</span> 
-								<span class="price-old">$249.50</span>
+								<span class="price-new"><%= relate_product.price %></span> 
 							</div>
 							<div class="cart-button button-group">
 								

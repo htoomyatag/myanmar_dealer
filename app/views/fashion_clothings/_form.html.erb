@@ -21,10 +21,11 @@
               <% end %>
 
             
- <div class="form-group" style="display:none;">
+            <div class="form-group" style="display:none;">
               <%= f.label :user_id %>
               <%= f.number_field :user_id, :value => current_user.id %>
             </div>
+
             <div class="form-group">
               <%= f.label :title %><br/>
               <%= f.text_field :title, :class=>"form-control"  %>
@@ -69,7 +70,12 @@
             <div class="form-group">
               <%= f.label :made_with %><br/>
               <%= f.text_field :made_with, :class=>"form-control"  %>
-            </div>            
+            </div>   
+
+            <div class="form-group">
+                <%= f.cropbox :avatar1 %><br/>
+                <%= f.crop_preview :avatar1 %>
+            </div>         
 
         </div>
     </div> 

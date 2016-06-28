@@ -15,7 +15,27 @@
 }
 
 
+
 }
 
 
 
+
+
+@media screen and (max-device-width: 480px) and (orientation: portrait){
+
+
+#hide_mobile, #footer-area{
+	display: none;
+}
+
+
+#desktop_hide{
+	display: block;
+}
+
+
+
+
+
+}

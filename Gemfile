@@ -40,6 +40,8 @@ gem 'devise'
 
 gem 'pusher'
 gem 'devise-token_authenticatable', :branch => 'fix-authenticatable-require'
+gem 'papercrop'
+gem 'cocaine'
 # gem 'smartcrop-rails'
 # gem 'papercrop'
 # gem 'rmagick', '~> 2.15', '>= 2.15.4'
