@@ -71,6 +71,12 @@ class FrontsController < ApplicationController
 
   def logging_with_qrcode
 
+    require "base64"
+
+    @de_code = Base64.decode64(params[:thecode].to_s)
+    @aok = @de_code
+    puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+@aok+"@@@@@@@@@@@@"
+
   end
 
 
