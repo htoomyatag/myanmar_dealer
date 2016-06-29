@@ -8,18 +8,6 @@ class ApisController < ApplicationController
   end
 
 
-  def get_ip
-
-      @aok = '12345'
-      
-      if @aok == params[:my_ip].to_s
-         render :status => 200, :json => "true"
-      else
-         render :status => 200, :json => "false"
-      end
-    
-  end
-
 
   def my_api_services
 

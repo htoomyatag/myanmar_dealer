@@ -9,11 +9,17 @@ class Myapi::V1::SessionsController < Devise::SessionsController
 
   def create
 
+
     warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#failure")
     render :status => 200,
            :json => { :success => true,
                       :info => "Logged in",
                       :data => { :auth_token => current_user.authentication_token } }
+
+
+    require 'launchy'
+
+    Launchy.open("http://192.168.43.128:3000/logging_with_qrcode")
     
   end
 

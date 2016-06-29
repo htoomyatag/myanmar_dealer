@@ -1,7 +1,22 @@
-login_qr_code
+
+    
+    <br/><br/><br/><br/><br/>
+    <%= @remote_ip %>
+
+<div id="qrcode" style="position:relative;left:300px;"></div>
+
+<br/><br/>
+
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+    text: "<%= @my_ip %>",
+    width: 128,
+    height: 128,
+    colorDark : "#000000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.H
+});
+</script>
 
 
 
-
-
-    {<%= @remote_ip1 %>}

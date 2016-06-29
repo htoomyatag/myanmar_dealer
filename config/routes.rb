@@ -242,7 +242,10 @@ end
   
  get 'full_productinfo_training_and_schools' => 'fronts#full_productinfo_training_and_schools', :as => :full_productinfo_training_and_schools
 
- get 'login_qr_code' => "fronts#login_qr_code", :as => :login_qr_code
+ match "login_qr_code" => "fronts#login_qr_code", as: :login_qr_code, via: [:get, :post]
+ match "access_with_qr" => "fronts#access_with_qr", as: :access_with_qr, via: [:get, :post]
+
+ get 'logging_with_qrcode' => "fronts#logging_with_qrcode", :as => :logging_with_qrcode
 
   resources :conversations do
     resources :messages

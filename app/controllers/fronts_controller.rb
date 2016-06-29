@@ -31,10 +31,45 @@ class FrontsController < ApplicationController
 
   end
 
+  def access_with_qr
+
+     
+      if params[:my_ip]
+
+        @read_ip = File.read("/#{Rails.root}/app/assets/file.txt")
+        @send_ip = params[:my_ip].to_i 
+
+        # puts "********web***"+@read_ip+"***************"     
+        # puts "*******mobile*****"+@send_ip+"***************" 
+
+
+        if @read_ip.to_i == @send_ip
+           render :status => 200, :json => "true"
+        else
+           render :status => 200, :json => "false"
+        end
+
+      else
+
+      end
+  
+  end
+
+
   def login_qr_code
 
-     @remote_ip1 = request.remote_ip
-    @remote_ip2 = request.env["HTTP_X_FORWARDED_FOR"]
+      @my_ip = request.remote_ip
+
+      directory = "/#{Rails.root}/app/assets/"
+        File.open(File.join(directory, 'file.txt'), 'w') do |f|
+          f.puts @my_ip
+      end
+
+    
+  end
+
+
+  def logging_with_qrcode
 
   end
 
