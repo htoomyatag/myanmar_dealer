@@ -31,6 +31,13 @@ class FrontsController < ApplicationController
 
   end
 
+  def login_qr_code
+
+     @remote_ip1 = request.remote_ip
+    @remote_ip2 = request.env["HTTP_X_FORWARDED_FOR"]
+
+  end
+
 
 
 

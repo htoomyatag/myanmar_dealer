@@ -60,6 +60,7 @@ end
   get 'my_api_fashion_accessories' => 'apis#my_api_fashion_accessories', :as => :my_api_fashion_accessories
   get 'my_api_fashion_clothings' => 'apis#my_api_fashion_clothings', :as => :my_api_fashion_clothings
   get 'my_api_stores' => 'apis#my_api_stores', :as => :my_api_stores
+  post 'get_ip' => 'apis#get_ip', :as => :get_ip
 
   
 
@@ -241,7 +242,7 @@ end
   
  get 'full_productinfo_training_and_schools' => 'fronts#full_productinfo_training_and_schools', :as => :full_productinfo_training_and_schools
 
-
+ get 'login_qr_code' => "fronts#login_qr_code", :as => :login_qr_code
 
   resources :conversations do
     resources :messages
