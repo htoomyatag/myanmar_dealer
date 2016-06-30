@@ -1351,6 +1351,7 @@ select#select option[value="transporter"]   {
 	border:1px solid black;
 	padding:2px;
 	margin-left: 5px;
+	font-size: 18px;
 }
 
 
@@ -1383,7 +1384,7 @@ select#select option[value="transporter"]   {
 
 
 #store_infos{
-	font-size: 19px;
+	font-size: 14px;
 	color: #d9534f;
 	font-weight: bold;
 	width: 140px;
@@ -1393,3 +1394,44 @@ select#select option[value="transporter"]   {
 .shoptitle {
 	font-size:22px;font-weight:bold;color:#d9534f
 }
+
+#chatman{
+	font-size: 13px;
+	font-weight: bold;
+	color: #d9534f;
+
+}
+
+.product_ask{
+
+	font-size: 18px;
+}
+
+
+.etalage_zoom_area div {
+    width:380px !important;
+}
+
+
+.etalage_zoom_area div {
+    width:100px !important;
+    height: 540px !important;
+}
+
+
+#etalage {
+	margin-bottom: 11px;
+}
+
+.etalage_zoom_area{
+	width:10px !important;
+}
+
+
+
+#tablink{
+	font-size: 11px;
+}
+/*
+*/
+

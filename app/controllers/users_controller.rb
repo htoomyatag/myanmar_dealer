@@ -7,6 +7,19 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+
+    def seller_sign_in
+
+      @my_ip = request.remote_ip
+
+      directory = "/#{Rails.root}/app/assets/"
+      File.open(File.join(directory, 'file.txt'), 'w') do |f|
+          f.puts @my_ip
+      end
+
+
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show

@@ -1,6 +1,242 @@
 
 
-<br/>
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background:white;border:red;" id="hide_mobile">
+
+
+
+  <header id="header-area" >
+  <!-- Header Top Starts -->
+    <div class="header-top" >
+      <div class="container">
+        <div class="row" >
+        <!-- Header Links Starts -->
+          <div class="col-sm-12 col-xs-12" >
+              <ul class="nav navbar-nav pull-left" id="showatscroll">
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" style="color:white;">
+                              MD Home
+                            </span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" style="color:white;">
+                              Big Deal
+                            </span>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" style="color:white;">
+                              MD Mobile
+                            </span>
+                          </a>
+                        </li>
+              </ul>
+
+            
+
+              <ul  class="nav navbar-nav pull-left" style="display:none;" id="myanothernav">
+                
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MD <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                         <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" >
+                              MD Home
+                            </span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" >
+                              Big Deal
+                            </span>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a href="/">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" >
+                              MD Mobile
+                            </span>
+                          </a>
+                        </li>
+                    </ul>
+                  </li>
+            </ul>
+
+
+                <%= form_tag(search_result_path, :style => "display:none;", :method => "get", :class =>"navbar-form navbar-left", id:"myanothernavone") do %> 
+                                      <div class="form-group">
+                                          <%= text_field_tag :title, params[:title], :class=>"form-control" %>
+                                      </div>
+                                      <button type="submit" class="btn btn-danger">search</button>
+                <% end %>
+      
+            <div class="pull-right" >
+              <!-- Currency Starts -->
+              <ul class="nav navbar-nav pull-left" >
+
+                <% if user_signed_in? %>
+                   <% if current_user.user_type_id == 1 %>
+                      <li>
+                        <a href="/stores/<%= @store_id %>">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            My MD
+                          </span>
+                        </a>
+                      </li>
+                    <% else %>
+                        <li>
+                        <a href="/seller_sign_up">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            My MD
+                          </span>
+                        </a>
+                      </li>
+                   <% end %>
+                <% else %>
+                   <li>
+                        <a href="/seller_sign_up">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            My MD
+                          </span>
+                        </a>
+                      </li>
+
+                <% end %>
+
+
+                      <li>
+                        <a href="/check_out">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Cart
+                          </span>
+                          <span class="badge" id="myqty"><%= (@cart.total_quantity) %></span>
+                        </a>
+                      </li>
+
+
+                  <% if user_signed_in? %>
+
+                     <li>
+                        <a href="#">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Favourite
+                          </span>
+                          <span class="badge"><%= @fav_number %></span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/my_order">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Ordered
+                          </span>
+                          <span class="badge"> <%=  @order_number  %></span>
+                        </a>
+                      </li>
+
+                         <li>
+                              <%= link_to "#{t :log_out}", destroy_user_session_path, :method => :delete %>
+                          </li>
+      
+                  <% else %>
+
+
+                   <li>
+                        <a href="#">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Favourite
+                          </span>
+                          <span class="badge">0</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/my_order">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs" style="color:white;">
+                            Ordered
+                          </span>
+                          <span class="badge">0</span>
+                        </a>
+                      </li>
+
+
+                      <li>
+                        <a href="/user_sign_in">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs">
+                            <b>Login</b>
+                          </span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="/buyer_sign_up">
+                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                          <span class="hidden-sm hidden-xs">
+                            <b>Register</b>
+                          </span>
+                        </a>
+                      </li>
+
+
+                  <% end %>
+
+
+
+
+                      <li>
+                         <%= link_to image_tag("english_flag.png"), "?locale=en" %>
+                      </li>
+
+                      <li>
+                          <%= link_to image_tag("mm_flag.png"), "?locale=mm" %>
+                      </li>
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    
+  </header>
+
+  </nav>
+
+
+  <div style="height:70px;" id="hide_mobile">
+
+  </div>
+
+
 <div id="main-container" class="container">
   <!-- Breadcrumb Starts -->
     <ol class="breadcrumb">
@@ -24,22 +260,22 @@
             </div>
             <div class="panel-body">
               <p>
-                Please login using your existing account
+                Please login using your existing account 
               </p>
             <!-- Login Form Starts -->
-              <%= form_for(:user, :url => session_path(:user)) do |f| %>
-                <div class="form-group">
-                  <label class="sr-only" for="exampleInputEmail2">Email</label>
-                  <%= f.email_field :email, autofocus: true, :class=>"form-control" %>
-                </div>
-                <div class="form-group">
-                  <label class="sr-only" for="exampleInputPassword2">Password</label>
-                  <%= f.password_field :password, autocomplete: "off", :class=>"form-control" %>
-                </div>
-                <button type="submit" class="btn btn-black">
-                  Login
-                </button>
-            <% end %>
+                    <%= form_for(:user, :url => session_path(:user)) do |f| %>
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputEmail2">Email</label>
+                        <%= f.email_field :email, autofocus: true, :class=>"form-control" %>
+                      </div>
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword2">Password</label>
+                        <%= f.password_field :password, autocomplete: "off", :class=>"form-control" %>
+                      </div>
+                      <button type="submit" class="btn btn-black">
+                        Login
+                      </button>
+                  <% end %>
             <!-- Login Form Ends -->
             </div>
           </div>
@@ -50,16 +286,14 @@
           <div class="panel panel-smart">
             <div class="panel-heading">
               <h3 class="panel-title">
-                Create new seller account
+                Login with QR Code
               </h3>
             </div>
             <div class="panel-body">
-              <p>
-                Lorem ispum Lorem ispumLorem ispumLorem ispumLorem ispumLorem ispumLorem ispum
+              <p>  
+                 <div id="qrcode" style="position:relative;left:150px;"></div>
               </p>
-              <a href="/seller_sign_up" class="btn btn-black">
-                Register
-              </a>
+             
             </div>
           </div>
         <!-- Account Panel Ends -->
@@ -68,3 +302,21 @@
     </section>
   <!-- Login Form Section Ends -->
   </div>
+
+
+  <!--  QR model -->
+
+</div>
+
+
+
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+    text: "<%= @my_ip %>",
+    width: 144,
+    height: 144,
+    colorDark : "#000000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.H
+});
+</script>

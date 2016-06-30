@@ -287,54 +287,30 @@
 		<div class="row product-info full">
 		<!-- Left Starts -->
 			<div class="col-sm-4 images-block">
-					<div style="border:1px solid #ccc;">
-					  <% if !@product.avatar1_file_name.nil?  %>
-					                <%= image_tag @product.avatar1_file_name, :style=>"height:300px;width:300px;" %>
-					            <% else  %>      
-									<img src="/assets/product-images/thumb1.jpg" alt="Image" class="img-responsive thumbnail" />
-					   <% end %>
-					</div><br/>
+          <ul id="etalage">
+              <li>
+                <a href="optionallink.html">
+                  <img class="etalage_thumb_image" src="/assets/s4.jpg" class="img-responsive" />
+                  <img class="etalage_source_image" src="/assets/si4.jpg" class="img-responsive" title="" />
+                </a>
+              </li>
+              <li>
+                <img class="etalage_thumb_image" src="/assets/s2.jpg" class="img-responsive" />
+                <img class="etalage_source_image" src="/assets/si2.jpg" class="img-responsive" title="" />
+              </li>
+              <li>
+                <img class="etalage_thumb_image" src="/assets/s3.jpg" class="img-responsive"  />
+                <img class="etalage_source_image" src="/assets/si3.jpg"class="img-responsive"  />
+              </li>
+                <li>
+                <img class="etalage_thumb_image" src="/assets/s1.jpg" class="img-responsive"  />
+                <img class="etalage_source_image" src="/assets/si1.jpg"class="img-responsive"  />
+              </li>
+            </ul>
+					 
 
-				<ul class="list-unstyled list-inline">
-					<li>
-						<div style="border:1px solid #ccc;">
-							   <% if !@product.avatar2_file_name.nil?  %>
-					                <%= image_tag @product.avatar2_file_name, :style=>"height:150px;width:168px;" %>
-					            <% else  %>      
-									<img src="/assets/product-images/thumb1.jpg" alt="Image" class="img-responsive thumbnail" />
-					            <% end %>
-					    </div>
-						
-					</li>
-					<li>
-						<div style="border:1px solid #ccc;">
-							  <% if !@product.avatar3_file_name.nil?  %>
-					                <%= image_tag @product.avatar3_file_name, :style=>"height:150px;width:168px;"%>
-					            <% else  %>      
-									<img src="/assets/product-images/thumb1.jpg" alt="Image" class="img-responsive thumbnail" />
-					            <% end %>
-						</div>
-					</li>
-					<li>
-						<div style="border:1px solid #ccc;">
-						
-							  <% if !@product.avatar4_file_name.nil?  %>
-					                <%= image_tag @product.avatar4_file_name,:style=>"height:150px;width:168px;" %>
-					            <% else  %>      
-									<img src="/assets/product-images/thumb1.jpg" alt="Image" class="img-responsive thumbnail" />
-					            <% end %>
-						</div>
-					</li>
-					<li>
-						<div style="border:1px solid #ccc;">
-								  <% if !@product.avatar5_file_name.nil?  %>
-					                <%= image_tag @product.avatar5_file_name, :style=>"height:150px;width:168px;"%>
-					            <% else  %>      
-									<img src="/assets/product-images/thumb1.jpg" alt="Image" class="img-responsive thumbnail" />
-					            <% end %>
-						</div>
-					</li>
-				</ul>
+
+			
 					
 
 			</div>
@@ -352,8 +328,8 @@
 
 					</h2>
 				<!-- Product Name Ends -->
-				    <br/><br/>
-					<span>Price:</span>
+				    <br/><br/>   <br/>
+					<span class="product_ask">Price:</span>
 					<span class="price-new">
 						<%= @product.price.to_i %> Ks
 					</span> 
@@ -363,7 +339,7 @@
 					<div style="width:100%;">
 
 						<div style="width:20%;float:left;padding-right:10px;padding-top:5px;">
-							<span>Delivery Charges:</span>
+							<span class="product_ask">Delivery Charges:</span>
 						</div>
 
 						<div style="width:20%;float:left;padding-right:10px;">
@@ -494,7 +470,7 @@
 							</select>
 						</div>
 
-						<div style="width:20%;float:left;padding-right:10px;">
+						<div style="width:20%;float:left;padding-right:10px;padding-top:6px;">
 
 							= 2000 Kyats
 						</div>
@@ -502,7 +478,7 @@
 					</div><br/><br/><br/>
 
 					<div>
-						<span>Color:</span>
+						<span class="product_ask">Color:</span>
 						<span style="padding-left:95px;">
 						       <span class="color_box"> White </span>
 						       <span class="color_box"> Black </span>
@@ -512,7 +488,7 @@
 					</div><br/>
 
 					<div>
-						<span>Size:</span>
+						<span class="product_ask">Size:</span>
 						<span style="padding-left:100px;">
 						       <span class="color_box"> S </span>
 						       <span class="color_box"> M </span>
@@ -524,7 +500,7 @@
 					</div><br/>
 
 					<div>
-						<span>Quantity:</span>
+						<span class="product_ask">Quantity:</span>
 						<span style="padding-left:80px;">
 						        <input type="text">
 								989 packs in stock
@@ -548,7 +524,7 @@
 							<div style="float:left;">
 
 								<%= button_to line_items_path(:mmdealer_code => @product.category.to_s+@product.id.to_s, :user_id => @product.user_id), remote: true, :onclick =>"cartFunction#{@product.id}()", :data => @product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
-									   <%=t :add_to_cart %>
+									   Buy Now
 
 
 								<% end %>
@@ -560,7 +536,7 @@
 
 
 							    <%= button_to line_items_path(:mmdealer_code => @product.category.to_s+@product.id.to_s, :user_id => @product.user_id), remote: true, :onclick =>"cartFunction#{@product.id}()", :data => @product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
-									   <%=t :add_to_cart %>
+									   Add to Cart
 
 
 								<% end %>
@@ -585,8 +561,14 @@
 			<div class="col-md-3">
 				<div class="panel panel-default">
 				  <div class="panel-body">
-				    	
-				    	<h6 class="shoptitle"><img src="assets/shop-icon-23328.png">  MiMiBerry Tshirt</h6>
+
+              <img src="/assets/logo_mimiberry.jpg" >
+              <span style="font-weight:bold;color:#d9534f;text-align:center;"> 
+                Gold Seller Company
+              </span>
+                <img src="/assets/chat.png" style="float:right;">
+				    	 
+				    	<h6 class="shoptitle"><img src="/assets/shop-icon-23328.png">  MiMiBerry Tshirt</h6>
 
 				    	<table>
 					      
@@ -616,23 +598,23 @@
 					          <td id="store_infos">200,000 Ks</td>
 					        </tr>
 
-			     
 					    </table>
 
+          
 					 	 <div class="col-md-4">
-					 	 	<p >
+					 	 	<p style="text-align:center;font-weight:bold;">
 								Depict<br/>
 								4.3
 							</p>
 					 	 </div>
 					 	 <div class="col-md-4">
-					 	 	<p style="text-align:center;">
+					 	 	<p style="text-align:center;font-weight:bold;">
 								Delivery<br/>
 								4.3
 							</p>
 					 	 </div>
 					 	 <div class="col-md-4">
-					 	 	<p style="text-align:center;">
+					 	 	<p style="text-align:center;font-weight:bold;">
 								Service<br/>
 								4.3
 							</p>
@@ -652,11 +634,11 @@
 					 	 </div>
 
 					 	  <div class="col-md-12" ><br>
-					 	   <p >1.Htoo Myat Aung</p>
-					 	   <p >2.Thel DarlyKhin</p>
-					 	   <p >3.Sai Kham Mg</p>
-					 	   <p >4.Aarphan</p>
-					 	   <p >5.Arphan</p>
+					 	   <p id="chatman">1.Htoo Myat Aung Hi  <img src="/assets/chat_small.png" style="float:right;"></p>
+					 	   <p id="chatman">2.Thel DarlyKhin Off   <img src="/assets/chat_small_b.png" style="float:right;"></p>
+					 	   <p id="chatman">3.Sai Kham Mg    Hi  <img src="/assets/chat_small.png" style="float:right;"></p>
+					 	   <p id="chatman">4.Aarphan        Off  <img src="/assets/chat_small_b.png" style="float:right;"></p>
+					 	   <p id="chatman">5.Arphan         Hi  <img src="/assets/chat_small.png" style="float:right;"></p>
 					 	 </div>
 
 					          	    
@@ -677,112 +659,227 @@
 		<!-- Right Ends -->
 		</div>
 	<!-- Product Info Ends -->	
-	<!-- Tabs Starts -->
-		<div class="tabs-panel panel-smart">
-		
-		<div>
 
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#spec" aria-controls="home" role="tab" data-toggle="tab">Specification</a></li>
-    <li role="presentation"><a href="#review" aria-controls="profile" role="tab" data-toggle="tab">Review</a></li>
-    <li role="presentation"><a href="#feedback" aria-controls="messages" role="tab" data-toggle="tab">Feedbacks</a></li>
-  </ul>
+    <div class="tabs-panel panel-smart"  style="height:1100px;">
 
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="spec"> spec</div>
-    <div role="tabpanel" class="tab-pane" id="review"> review</div>
-    <div role="tabpanel" class="tab-pane" id="feedback"> 
+           <div class="col-md-2" > 
 
-			<% @comments.each do |comment| %>
-			     <p> <%= comment.message %> (<%= comment.user.name %>) </p>
-			<% end %>
-			<div id="the_feed"> </div>
+            <div class="input-group" style="padding-top:5px;">
+              <input type="text" class="form-control" placeholder="Search in shop" aria-describedby="basic-addon2">
+              <span class="input-group-addon" id="basic-addon2"></span>
+            </div>
 
+           </div>
 
-    		<%= form_for(@comment, :remote => true) do |f| %>
-			  <% if @comment.errors.any? %>
-			    <div id="error_explanation">
-			      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+           <div class="col-md-8" >
 
-			      <ul>
-			      <% @comment.errors.full_messages.each do |message| %>
-			        <li><%= message %></li>
-			      <% end %>
-			      </ul>
-			    </div>
-			  <% end %>
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#spec" id="tablink" aria-controls="home" role="tab" data-toggle="tab">Product Detail</a></li>
+                <li role="presentation"><a href="#feedback" id="tablink" aria-controls="profile" role="tab" data-toggle="tab">Feedback</a></li>
+                <li role="presentation"><a href="#shipment" id="tablink" aria-controls="messages" role="tab" data-toggle="tab"> Shipment & Payment</a></li>
+                <li role="presentation"><a href="#seller_grantee" id="tablink" aria-controls="messages" role="tab" data-toggle="tab"> Seller Grantee</a></li>
+              </ul>
 
-			  	<% if user_signed_in? %>
-			  	 
-
-				  	 <% if @purchase_product.include? @product.id %> 
-
-						  <div class="field"  style="display:none;">
-						    <%= f.label :user_id %><br>
-						    <%= f.number_field :user_id, :value => current_user.id %>
-						  </div>
-						  <div class="field">
-						    <%= f.text_area :message, :class => "form-control", :rows => "5" %>
-						  </div><br/>
-						  <div class="field" style="display:none;">
-						    <%= f.label :product_id %><br>
-						    <%= f.number_field :product_id, :value => @product.id %>
-						  </div>
-						  <div class="actions">
-						    <%= f.submit "Give feedback", :id=> "btn_feedback" %>
-						  </div>
-					<% end %>
-				<% end %> 
-
-			<% end %>
+           </div>
+            <div class="col-md-2" > 
+              <center>
+                
+              <button type="button" class="btn btn-danger" >Add to cart</button>
+              </center>
+            </div>
+        
+         
+            <hr/>
+            <div class="col-md-2" >
+                    <br/>
+                    <div>
+                    <a href="#" class="thumbnail">
+                        <img src="/assets/no_image.jpg" alt="...">
+                     </a>
+                        <b>1800 Kyats </b>
+                        <span style="float:right;color:gray;font-weight:bold;">125 sold</span>
+                    
+                    <span style="float:left;;color:black;font-weight:bold;">Summer dress for lady</span>
+                    <p>ggergegegreg gegregregrreg gregregre gregrege </p>
 
 
+                      <img src="/assets/shop-icon-23328.png">  MiMiBerry Tshirt
+                      <img src="/assets/chat.png" style="float:right;">
+                    </div>
+
+
+                        <br/>
+                    <div>
+                    <a href="#" class="thumbnail">
+                        <img src="/assets/no_image.jpg" alt="...">
+                     </a>
+                        <b>1800 Kyats </b>
+                        <span style="float:right;color:gray;font-weight:bold;">125 sold</span>
+                    
+                    <span style="float:left;;color:black;font-weight:bold;">Summer dress for lady</span>
+                    <p>ggergegegreg gegregregrreg gregregre gregrege </p>
+
+
+                      <img src="/assets/shop-icon-23328.png">  MiMiBerry Tshirt
+                      <img src="/assets/chat.png" style="float:right;">
+                    </div>
+
+
+                        <br/>
+                    <div>
+                    <a href="#" class="thumbnail">
+                        <img src="/assets/no_image.jpg" alt="...">
+                     </a>
+                        <b>1800 Kyats </b>
+                        <span style="float:right;color:gray;font-weight:bold;">125 sold</span>
+                    
+                    <span style="float:left;;color:black;font-weight:bold;">Summer dress for lady</span>
+                    <p>ggergegegreg gegregregrreg gregregre gregrege </p>
+
+
+                      <img src="/assets/shop-icon-23328.png">  MiMiBerry Tshirt
+                      <img src="/assets/chat.png" style="float:right;">
+                    </div>
+
+            </div>
+
+            <div class="col-md-8">
+
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="spec"> 
+
+                  <center>
+                        <table>
+
+
+                                <tr>
+                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                </tr>
+
+
+                                 <tr>
+                              <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                </tr>
+
+                                 <tr>
+                              <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                </tr>
+                            
+                                <tr>
+                              <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                </tr>
+
+                                 <tr>
+                              <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                </tr>
+
+                                 <tr>
+                              <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                </tr>
+
+
+                                 <tr>
+                              <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                </tr>
+
+
+                                 <tr>
+                              <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                </tr>
+
+
+                                 <tr>
+                              <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
+                                </tr>
+                               
+                              </tbody>
+                            </table>
+
+                  </center>
+                  <hr/>
+
+
+
+
+
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="feedback"> Feedback</div>
+                  <div role="tabpanel" class="tab-pane" id="shipment"> Shipment & Payment</div>
+                  <div role="tabpanel" class="tab-pane" id="seller_grantee"> Seller grantee</div>
+                </div>
+
+
+
+            </div>
+
+            <div class="col-md-2" >
+                    <br/>
+                    <div>
+                    <a href="#" class="thumbnail">
+                        <img src="/assets/no_image.jpg" alt="...">
+                     </a>
+                        <b>1800 Kyats </b>
+                        <span style="float:right;color:gray;font-weight:bold;">125 sold</span>
+                    
+                    <span style="float:left;;color:black;font-weight:bold;">Summer dress for lady</span>
+                    <p>ggergegegreg gegregregrreg gregregre gregrege </p>
+
+
+                      <img src="/assets/shop-icon-23328.png">  MiMiBerry Tshirt
+                      <img src="/assets/chat.png" style="float:right;">
+                    </div>
+
+
+                        <br/>
+                    <div>
+                    <a href="#" class="thumbnail">
+                        <img src="/assets/no_image.jpg" alt="...">
+                     </a>
+                        <b>1800 Kyats </b>
+                        <span style="float:right;color:gray;font-weight:bold;">125 sold</span>
+                    
+                    <span style="float:left;;color:black;font-weight:bold;">Summer dress for lady</span>
+                    <p>ggergegegreg gegregregrreg gregregre gregrege </p>
+
+
+                      <img src="/assets/shop-icon-23328.png">  MiMiBerry Tshirt
+                      <img src="/assets/chat.png" style="float:right;">
+                    </div>
+
+
+                        <br/>
+                    <div>
+                    <a href="#" class="thumbnail">
+                        <img src="/assets/no_image.jpg" alt="...">
+                     </a>
+                        <b>1800 Kyats </b>
+                        <span style="float:right;color:gray;font-weight:bold;">125 sold</span>
+                    
+                    <span style="float:left;;color:black;font-weight:bold;">Summer dress for lady</span>
+                    <p>ggergegegreg gegregregrreg gregregre gregrege </p>
+
+
+                      <img src="/assets/shop-icon-23328.png">  MiMiBerry Tshirt
+                      <img src="/assets/chat.png" style="float:right;">
+                    </div>
+
+            </div>
+
+        
+        <!-- Tab Content Ends -->
     </div>
-  </div>
 
-</div>
-		<!-- Tab Content Ends -->
-		</div>
-	<!-- Tabs Ends -->		
-	<!-- Related Products Starts -->
-		<div class="product-info-box">
-			<h4 class="heading">Related Products</h4>
-		<!-- Products Row Starts -->
-			<div class="row">
-			<!-- Product #1 Starts -->
-			<% @relate_product.each do |relate_product| %>
-				<div class="col-md-3 col-sm-6">
-					<div class="product-col">
-						<div class="image">
-							 <%= image_tag relate_product.avatar1_file_name, :style=>"height:200px;width:200px;" %>
-						</div>
-						<div class="caption">
-							<h4><a href="#">
-								<%= relate_product.title %>
-							</a></h4>
-							
-							<div class="price">
-								<span class="price-new"><%= relate_product.price %></span> 
-							</div>
-							<div class="cart-button button-group">
-								
-								<%= button_to line_items_path(:mmdealer_code => relate_product, :user_id => relate_product.user_id), :class =>"btn btn-cart" do %>
-									   <%=t :add_to_cart %>
-									  <i class="fa fa-shopping-cart"></i> 
-								<% end %>								
-							</div>
-						</div>
-					</div>
-				</div>
-			<% end %>
-			
-			<!-- Product #4 Ends -->
-			</div>
-		<!-- Products Row Ends -->
-		</div>
-	<!-- Related Products Ends -->
+
+ 
 	</div>
 
 
