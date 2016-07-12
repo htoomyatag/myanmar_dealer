@@ -261,6 +261,11 @@ end
 
  get 'about_add_to_cart' => "fronts#about_add_to_cart", :as => :about_add_to_cart
 
+ get 'about_order_trekking' => "fronts#about_order_trekking", :as => :about_order_trekking
+
+ get 'about_make_an_order' => "fronts#about_make_an_order", :as => :about_make_an_order
+ 
+
 
   resources :conversations do
     resources :messages

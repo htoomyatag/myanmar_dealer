@@ -9,8 +9,16 @@ class FrontsController < ApplicationController
     @fronts = Front.all
    end
 
+   def about_order_trekking
+    @orders = Order.where(:user_id => current_user)
+   end
+
    def about_add_to_fav
 
+   end
+
+   def about_make_an_order
+    @orders = Order.where(:user_id => current_user)
    end
 
 
