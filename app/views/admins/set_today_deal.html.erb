@@ -1,1 +1,85 @@
-set_today_deal
+<%= render 'layouts/defaultnav' %>
+
+ 
+<div class="rows" style="padding:10px;">
+
+<ul class="nav nav-tabs">
+  <li role="presentation"><a href="/admin_manage_shop">Manage Shop</a></li>
+  <li role="presentation"><a href="/admin_manage_product">View Products</a></li>
+  <li role="presentation"><a href="/admin_manage_seller">Manage Seller</a></li>
+  <li role="presentation"><a href="/admin_manage_buyer">Manage Buyer</a></li>
+  <li role="presentation" class="active"><a href="/set_today_deal">Set today deal</a></li>
+</ul>
+	<br/>
+    
+
+    <div class="well well-sm"> <h4>Set today DEAL</h4></div>
+
+   <div class="panel panel-default">
+	  <div class="panel-body">
+	  		PREVIOUS   =>
+	  		  <%= @admin.ends_in %> |
+	  		  <%= @admin.discount_percent %> |
+	  		  <%= @admin.price %>
+	  </div>
+	</div>
+
+
+    <div class="panel panel-default">
+	  <div class="panel-body">
+	    
+
+	  		<%= form_for(@admin) do |f| %>
+					  <% if @admin.errors.any? %>
+					    <div id="error_explanation">
+					      <h2><%= pluralize(@admin.errors.count, "error") %> prohibited this admin from being saved:</h2>
+
+					      <ul>
+					      <% @admin.errors.full_messages.each do |message| %>
+					        <li><%= message %></li>
+					      <% end %>
+					      </ul>
+					    </div>
+					  <% end %>
+
+
+					   <div class="form-group">
+					    <%= f.label :ends_in %>
+					    <%= f.date_field :ends_in %>
+					  </div>
+
+					    <div class="form-group">
+					    <%= f.label :discount_percent %>
+					    <%= f.text_field :discount_percent %>
+					  </div>
+
+
+  						<div class="form-group">
+					    <%= f.label :price %>
+					    <%= f.text_field :price %>
+					  </div>
+
+					    <div class="field">
+						    <%= f.label :avatar %>
+						    <%= f.file_field :avatar %>
+						 </div><br/>
+
+
+
+
+					  <div class="actions">
+					    <%= f.submit "set today deal" %>
+					  </div>
+			
+			<% end %>
+
+
+	  </div>
+	</div>
+
+
+
+  
+
+
+</div>

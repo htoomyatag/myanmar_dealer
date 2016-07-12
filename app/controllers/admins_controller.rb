@@ -20,7 +20,7 @@ class AdminsController < ApplicationController
   end
 
   def set_today_deal
-
+     @admin = Admin.find(1)
   end
 
   def admin_manage_product
@@ -49,7 +49,7 @@ class AdminsController < ApplicationController
 
     respond_to do |format|
       if @admin.save
-        format.html { redirect_to @admin, notice: 'Admin was successfully created.' }
+        format.html { redirect_to set_today_deal_path, notice: 'Admin was successfully created.' }
         format.json { render :show, status: :created, location: @admin }
       else
         format.html { render :new }
@@ -63,7 +63,7 @@ class AdminsController < ApplicationController
   def update
     respond_to do |format|
       if @admin.update(admin_params)
-        format.html { redirect_to @admin, notice: 'Admin was successfully updated.' }
+        format.html { redirect_to set_today_deal_path, notice: 'Admin was successfully updated.' }
         format.json { render :show, status: :ok, location: @admin }
       else
         format.html { render :edit }
@@ -90,6 +90,6 @@ class AdminsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_params
-      params.fetch(:admin, {})
+      params.require(:admin).permit(:ends_in, :discount_percent, :price, :avatar)
     end
 end

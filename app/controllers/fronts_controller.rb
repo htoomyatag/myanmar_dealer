@@ -126,6 +126,8 @@ class FrontsController < ApplicationController
 
 
    def home
+
+     @admin = Admin.find(1)
      if params[:category]
         @products = Product.search_with_category(params[:category], params[:title]).where.not(id: '1')
         @side_products = Product.order('id ASC').limit(5).where.not(id: '1')

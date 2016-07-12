@@ -613,15 +613,16 @@
      	  		<div class="panel panel-default">
 				  <div class="panel-heading"><span style="color:#d9534f;">TODAY'S</span> DEALS</div>
 				  <div class="panel-body">
-				     <h6 style="text-align:center;"> Ends in 21:29:58</h6>
+				     <h6 style="text-align:center;"> Ends in <%= @admin.ends_in %></h6>
+
 				   		<center>
-				   			   <%= image_tag 'clock.jpg' %>
+                  <%= image_tag @admin.avatar, :class=>"img-responsive", :style => "height:230px;width:250px;" %>
 				   		</center>
 				   
 
 				     <h6 style="text-align:center;"> 
-				     	7000 Kyats 
-				     	<span style="background:#d43f3a;color:white;padding:5px;"> 30% OFF </span>
+				     	<%= @admin.price %> Kyats 
+				     	<span style="background:#d43f3a;color:white;padding:5px;"> <%= @admin.discount_percent %>%  OFF </span>
 				     </h6>
 
 
