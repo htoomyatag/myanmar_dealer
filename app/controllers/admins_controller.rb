@@ -7,6 +7,10 @@ class AdminsController < ApplicationController
     @admins = Admin.all
   end
 
+  def admin_log_in
+
+  end
+
   def admin_manage_shop
      @stores = Store.all
   end

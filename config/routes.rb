@@ -2,6 +2,8 @@ Rails.application.routes.draw do
  
  
   resources :admins
+  get 'admin_log_in' => "admins#admin_log_in", :as => :admin_log_in
+
   resources :comments
   resources :favourites
   resources :user_types
@@ -264,7 +266,9 @@ end
  get 'about_order_trekking' => "fronts#about_order_trekking", :as => :about_order_trekking
 
  get 'about_make_an_order' => "fronts#about_make_an_order", :as => :about_make_an_order
+
  
+
 
 
   resources :conversations do
