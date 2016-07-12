@@ -9,6 +9,20 @@ class FrontsController < ApplicationController
     @fronts = Front.all
    end
 
+   def about_add_to_fav
+
+   end
+
+
+   def download_app
+
+      require 'open-uri'
+      url = '/assets/file.txt'
+      data = open(url).read
+      send_data data, :disposition => 'attachment', :filename=>"file.txt"
+
+   end
+
 
   def add_to_favourite
      @favourite = Favourite.create(:item => params[:item], :user_id => params[:user_id], :item_code => params[:item_code])

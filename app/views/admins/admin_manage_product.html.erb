@@ -1,0 +1,44 @@
+<%= render 'layouts/defaultnav' %>
+
+ 
+<div class="rows" style="padding:10px;">
+
+<ul class="nav nav-tabs">
+  <li role="presentation" ><a href="/admin_manage_shop">Manage Shop</a></li>
+  <li role="presentation" class="active"><a href="/admin_manage_product">View Products</a></li>
+  <li role="presentation"><a href="/admin_manage_seller">Manage Seller</a></li>
+  <li role="presentation"><a href="/admin_manage_buyer">Manage Buyer</a></li>
+  <li role="presentation"><a href="#">Set today deal</a></li>
+</ul>
+
+    <p id="notice" style="color:#d9534f;font-weight:bold;"><%= notice %></p>
+
+
+    <div class="well well-sm"> <h4>Products</h4></div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Store</th>
+          <th>Seller By</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @products.each do |product| %>
+          <tr>
+            <td><%= product.title %></td>
+            <td><%= product.price %></td>
+            <td><%= product.store_name %></td>
+            <td><%= product.user.name rescue "-" %></td>
+         
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+</div>

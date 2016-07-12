@@ -1,0 +1,52 @@
+<%= render 'layouts/defaultnav' %>
+
+ 
+<div class="rows" style="padding:10px;">
+
+
+<ul class="nav nav-tabs">
+  <li role="presentation" ><a href="/admin_manage_shop">Manage Shop</a></li>
+  <li role="presentation"><a href="/admin_manage_product">View Products</a></li>
+  <li role="presentation" class="active"><a href="/admin_manage_seller">Manage Seller</a></li>
+  <li role="presentation"><a href="/admin_manage_buyer">Manage Buyer</a></li>
+  <li role="presentation"><a href="#">Set today deal</a></li>
+</ul>
+	<br/>
+    <p id="notice" style="color:#d9534f;font-weight:bold;"><%= notice %></p>
+
+
+    <div class="well well-sm"> <h4>Sellers</h4></div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+
+          	<th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Has store</th>
+            <th>Company</th>
+            <th>Action</th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+         <% @sellers.each do |seller| %>
+          <tr>
+            <td><%= seller.name %></td>
+            <td><%= seller.email %></td>
+            <td><%= seller.phone %></td>
+            <td><%= seller.address %></td>
+            <td><%= seller.has_store %></td>
+            <td><%= seller.company_name %></td>
+            <td><%= link_to 'Remove', seller, :class=>"btn btn-danger btn-xs", :remote => true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+</div>

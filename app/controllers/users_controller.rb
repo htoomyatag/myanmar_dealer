@@ -3,12 +3,16 @@ class UsersController < ApplicationController
 
   # GET /users
   # GET /users.json
+
+
+
+
   def index
     @users = User.all
   end
 
 
-    def seller_sign_in
+  def seller_sign_in
 
       @my_ip = request.remote_ip
 

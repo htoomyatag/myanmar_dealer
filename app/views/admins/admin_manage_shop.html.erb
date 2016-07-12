@@ -1,0 +1,49 @@
+<%= render 'layouts/defaultnav' %>
+
+ 
+<div class="rows" style="padding:10px;">
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="/admin_manage_shop">Manage Shop</a></li>
+  <li role="presentation"><a href="/admin_manage_product">View Products</a></li>
+  <li role="presentation"><a href="/admin_manage_seller">Manage Seller</a></li>
+  <li role="presentation"><a href="/admin_manage_buyer">Manage Buyer</a></li>
+  <li role="presentation"><a href="#">Set today deal</a></li>
+</ul>
+	<br/>
+    <p id="notice" style="color:#d9534f;font-weight:bold;"><%= notice %></p>
+
+
+    <div class="well well-sm"> <h4>Stores</h4></div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          	<th>Store Name</th>
+            <th>Address</th>
+            <th>Contact</th>
+            <th>Desc</th>
+            <th>Seller name</th>
+            <th>Open Date</th>
+            <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+         <% @stores.each do |store| %>
+          <tr>
+            <td><%= store.store_name %></td>
+            <td><%= store.store_address %></td>
+            <td><%= store.store_contact %></td>
+            <td><%= store.description %></td>
+            <td><%= store.seller_name %></td>
+            <td><%= store.created_at.strftime("%m/%d/%Y") %></td>
+            <td><%= link_to 'Remove', store, :class=>"btn btn-danger btn-xs", :remote => true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+</div>

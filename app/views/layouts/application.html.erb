@@ -11,7 +11,6 @@
   <%= stylesheet_link_tag    'responsive.css' %>
   <%= stylesheet_link_tag    'chat.css' %>
   <%= stylesheet_link_tag    'buyers.css' %>
-  <%= stylesheet_link_tag    'etalage.css' %>
 
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -27,22 +26,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
-<script>
-      jQuery(document).ready(function($){
-
-        $('#etalage').etalage({
-          thumb_image_width: 300,
-          thumb_image_height: 400,
-          source_image_width: 900,
-          source_image_height: 1200,
-          show_hint: true,
-          click_callback: function(image_anchor, instance_id){
-            alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
-          }
-        });
-
-      });
-    </script>
 
 <script>
 
@@ -164,13 +147,13 @@ jQuery(function(){
           <div class="col-md-2 col-sm-6">
             <h5 style="font-weight:bold;">Information</h5>
             <ul>
-              <li><a href="#" id="footer_link">About Us</a></li>
-              <li><a href="#" id="footer_link">Payment</a></li>
-              <li><a href="#" id="footer_link">Service Charges</a></li>
-              <li><a href="#" id="footer_link">Delivery</a></li>
-              <li><a href="#" id="footer_link">Privacy Policy</a></li>
-              <li><a href="#" id="footer_link">Term and Condition</a></li>
-              <li><a href="#" id="footer_link">Contact Us</a></li>
+              <li><a href="/about_us" id="footer_link">About Us</a></li>
+              <li><a href="/about_payment" id="footer_link">Payment</a></li>
+              <li><a href="/about_service_charges" id="footer_link">Service Charges</a></li>
+              <li><a href="/about_delivery" id="footer_link">Delivery</a></li>
+              <li><a href="/privacy_policy" id="footer_link">Privacy Policy</a></li>
+              <li><a href="/terms_and_conditions" id="footer_link">Term and Condition</a></li>
+              <li><a href="/contact_us" id="footer_link">Contact Us</a></li>
             </ul>
           </div>
         <!-- Information Links Ends -->
@@ -178,12 +161,12 @@ jQuery(function(){
           <div class="col-md-2 col-sm-6">
             <h5 style="font-weight:bold;">How to Buy</h5>
             <ul>
-              <li><a href="#" id="footer_link">Register</a></li>
-              <li><a href="#" id="footer_link">Find item</a></li>
-              <li><a href="#" id="footer_link">Add to Favourite</a></li>
-              <li><a href="#" id="footer_link">Add to Cart</a></li>
-              <li><a href="#" id="footer_link">Make Order</a></li>
-              <li><a href="#" id="footer_link">Track Order</a></li>
+              <li><a href="/buyer_sign_up" id="footer_link">Register</a></li>
+              <li><a href="/" id="footer_link">Find item</a></li>
+              <li><a href="/" id="footer_link">Add to Favourite</a></li>
+              <li><a href="/add_to_cart" id="footer_link">Add to Cart</a></li>
+              <li><a href="/make_order" id="footer_link">Make Order</a></li>
+              <li><a href="/track_my_order" id="footer_link">Track Order</a></li>
               <li><a href="#" id="footer_link">Chat with Seller</a></li>
             </ul>
           </div>
@@ -275,7 +258,7 @@ jQuery(function(){
 
         function cartFunction<%= product.id %>() {
 
-
+          alert("aok")
           var myqty = $("#myqty").text();
           var addqty = parseInt(myqty)+1; 
           $("#myqty").text(addqty);   

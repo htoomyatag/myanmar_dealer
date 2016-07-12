@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
  
  
+  resources :admins
   resources :comments
   resources :favourites
   resources :user_types
@@ -30,6 +31,13 @@ end
   resources :users
   resources :buyer_reports
   get 'my_report' => 'buyer_reports#my_report'
+
+  get 'admin_manage_shop' => 'admins#admin_manage_shop'
+  get 'admin_manage_seller' => 'admins#admin_manage_seller'
+  get 'admin_manage_buyer' => 'admins#admin_manage_buyer'
+  get 'set_today_deal' => 'admins#set_today_deal'
+  get 'admin_manage_product' => 'admins#admin_manage_product'
+
 
   resources :apis
 
@@ -245,7 +253,14 @@ end
  match "login_qr_code" => "fronts#login_qr_code", as: :login_qr_code, via: [:get, :post]
  match "access_with_qr" => "fronts#access_with_qr", as: :access_with_qr, via: [:get, :post]
 
+ get "download_app" => "fronts#download_app", as: :download_app
+
  get 'logging_with_qrcode' => "fronts#logging_with_qrcode", :as => :logging_with_qrcode
+
+ get 'about_add_to_fav' => "fronts#about_add_to_fav", :as => :about_add_to_fav
+
+ get 'about_add_to_cart' => "fronts#about_add_to_cart", :as => :about_add_to_cart
+
 
   resources :conversations do
     resources :messages

@@ -352,6 +352,7 @@
                       <div class="panel-heading" style="font-size:10px;background:#d9534f;font-weight:bold;text-align:center;">DOWNLOAD OUR FREE APP</div>
                         <div class="panel-body">
                             <center>
+                            <%= link_to "Raw blast output", download_app_path %>
                                      <%= image_tag 'app.jpg' %> 
                             </center>
                         </div>
@@ -432,8 +433,8 @@
 									
 									<div class="cart-button">
 									
-									<%= button_to line_items_path(:mmdealer_code => product.category.to_s+product.id.to_s, :user_id => product.user_id), remote: true, :onclick =>"cartFunction#{product.id}()", :data => product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
-									   <%=t :add_to_cart %>
+  									<%= button_to line_items_path(:mmdealer_code => product.category.to_s+product.id.to_s, :user_id => product.user_id), remote: true, :onclick =>"cartFunction#{product.id}()", :data => product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
+  									<%=t :add_to_cart %>
 
 
 
@@ -642,12 +643,22 @@
                           How to Buy
                         </div>
                         <ul class="list-group">
-						  <li class="list-group-item" id="menuside">Register</li>
-						  <li class="list-group-item" id="menuside">Add to Favourite</li>
-						  <li class="list-group-item" id="menuside">Add to cart</li>
-						  <li class="list-group-item" id="menuside">Make Order</li>
-						  <li class="list-group-item" id="menuside">Order Trekking</li>
-						</ul>
+              						  <li class="list-group-item" id="menuside">
+                              <a href="/buyer_sign_up">Register</a>
+                            </li>
+                              <li class="list-group-item" id="menuside">
+                              <a href="/about_add_to_fav">Add to Favourite</a>
+                            </li>
+                              <li class="list-group-item" id="menuside">
+                              <a href="/about_add_to_cart">Add to cart</a>
+                            </li>
+                              <li class="list-group-item" id="menuside">
+                              <a href="/about_make_an_order">Make Order</a>
+                            </li>
+                              <li class="list-group-item" id="menuside">
+                              <a href="/about_order_trekking">Order Trekking</a>
+                            </li>
+						            </ul>
                     </div>
 
 
@@ -656,11 +667,27 @@
                           How to Sell
                         </div>
                          <ul class="list-group">
-						  <li class="list-group-item" id="menuside">Open Shop</li>
-						  <li class="list-group-item" id="menuside">Sell Your Product</li>
-						  <li class="list-group-item" id="menuside">Manage Your Shop</li>
-						  <li class="list-group-item" id="menuside">Manage Your Item</li>
-						  <li class="list-group-item" id="menuside">View Your Report</li>
+
+                            <li class="list-group-item" id="menuside">
+                              <a href="/seller_open_shop">Open Shop</a>
+                            </li>
+
+                            <li class="list-group-item" id="menuside">
+                              <a href="/seller_open_shop">Sell Your Product</a>
+                            </li>
+
+                            <li class="list-group-item" id="menuside">
+                              <a href="/seller_manage_shop">Manage Your Shop</a>
+                            </li>
+
+                                   <li class="list-group-item" id="menuside">
+                              <a href="/seller_manage_item">Manage Your Item</a>
+                            </li>
+
+                            <li class="list-group-item" id="menuside">
+                              <a href="/seller_view_report">View Your Report</a>
+                            </li>
+
 						</ul>
                     </div>
 
