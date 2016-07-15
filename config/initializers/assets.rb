@@ -19,5 +19,4 @@ Rails.application.config.assets.precompile += %w( jquery_ujs.js )
 Rails.application.config.assets.precompile += %w( chat.css )
 Rails.application.config.assets.precompile += %w( buyers.css )
 Rails.application.config.assets.precompile += %w( amazonmenu.js )
-
-
+Rails.application.config.assets.precompile += %w( jquery.cropit.js )

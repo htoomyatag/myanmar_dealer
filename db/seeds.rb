@@ -1013,9 +1013,12 @@ products = Product.create([
 
 
 
+ admin = Admin.create([
+
+  {price:"5000",discount_percent:"40"}
 
 
-
+ ])
 
  user = User.create([
 

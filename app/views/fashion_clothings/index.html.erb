@@ -6,6 +6,7 @@
 <table>
   <thead>
     <tr>
+      <th> </th>
       <th>Title</th>
       <th>Price</th>
       <th>Quantity</th>
@@ -22,6 +23,7 @@
   <tbody>
     <% @fashion_clothings.each do |fashion_clothing| %>
       <tr>
+        <td><img src="<%= fashion_clothing.avatar2_edit %>"></td>
         <td><%= fashion_clothing.title %></td>
         <td><%= fashion_clothing.price %></td>
         <td><%= fashion_clothing.quantity %></td>
