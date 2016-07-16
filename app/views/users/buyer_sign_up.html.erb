@@ -1,5 +1,7 @@
   <%= render 'layouts/defaultnav' %>  
-<br/><br/>
+ <div style="height:70px;" id="hide_mobile">
+
+  </div>
 
 <div id="main-container" class="container">
   <!-- Breadcrumb Starts -->
@@ -30,20 +32,20 @@
                 <div class="form-group">
                   <label for="inputFname" class="col-sm-3 control-label">Full Name :</label>
                   <div class="col-sm-9">
-                    <%= f.text_field :name, autofocus: true, :class => "form-control", :Placeholder => "Name", :required => "true" %>
+                    <%= f.text_field :name, autofocus: true, :class => "form-control", :Placeholder => "Name", :require => true %>
                   </div><br/><br/>
                 </div>
                
                 <div class="form-group">
                   <label for="inputEmail" class="col-sm-3 control-label">Email :</label>
                   <div class="col-sm-9">
-                      <%= f.email_field :email, autofocus: true, :class => "form-control", :Placeholder => "Email", :require => "true" %><br/>
+                      <%= f.email_field :email, autofocus: true, :class => "form-control", :Placeholder => "Email", :require => true %><br/>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputPhone" class="col-sm-3 control-label">Phone :</label>
                   <div class="col-sm-9">
-                     <%= f.text_field :phone, autofocus: true, :class => "form-control", :Placeholder => "Phone", :require => "true" %><br/>
+                     <%= f.text_field :phone, autofocus: true, :class => "form-control", :Placeholder => "Phone", :require => true %><br/>
                   </div>
                 </div>
 
@@ -59,13 +61,13 @@
                 <div class="form-group">
                   <label for="inputPassword" class="col-sm-3 control-label">Password :</label>
                   <div class="col-sm-9">
-                    <%= f.password_field :password, autocomplete: "off", :class=>"form-control", :Placeholder => "Password",:require => "true" %><br/>
+                    <%= f.password_field :password, autocomplete: "off", :class=>"form-control", :Placeholder => "Password", :require => true %><br/>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputRePassword" class="col-sm-3 control-label">Re-Password :</label>
                   <div class="col-sm-9">
-                    <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"form-control", :Placeholder => "Re-Password",:require => "true" %><br/>
+                    <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"form-control", :Placeholder => "Re-Password", :require => true %><br/>
                   </div>
                 </div>
                
@@ -102,29 +104,79 @@
               </h3>
             </div>
             <div class="panel-body">
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including  versions of Lorem Ipsum.
-              </p>
+             
               <ol>
-                <li>Lorem ipsum dolor sit amet</li>
-                <li>Consectetur adipiscing elit</li>
-                <li>Integer molestie lorem at massa</li>
-                <li>Facilisis in pretium nisl aliquet</li>
-                <li>Nulla volutpat aliquam velit</li>
-                <li>Faucibus porta lacus fringilla vel</li>
-                <li>Aenean sit amet erat nunc</li>
-                <li>Eget porttitor lorem</li>
+
+                  <li>
+                    ကုန္ပစၥည္း၀ယ္ယူရာတြင္ အမည္၊ဆက္သြယ္ရန္ဖုန္းနံပါတ္၊ေနရပ္လိပ္စာ၊ကုန္ပစၥည္းလက္ခံရယူ နိုင္မည့္ရက္သက္မွတ္ေပးပါရန္လိုအပ္ပါသည္။
+
+                  </li><br/>
+
+
+                  <li>
+                    ကုန္ပစၥည္း၀ယ္ယူရာတြင္မိမိ၀ယ္ယူလိုေသာ ပစၥည္းအမ်ိဳးအစား၊အေရာင္၊အရြယ္အစား၊အေရအတြက္၊ ေစ်းနွဳန္းတို ့ကိုေသခ်ာေရြးခ်ယ္ၿပီးမွ၀ယ္ယူရန္၊ေရာင္းသူဧ။္Cash Refund စနစ္နွင့္ Payment စနစ္တို ့အားေသခ်ာၾကည္ ့ရွဳၿပီးမွ၀ယ္ယူရန္။
+
+                  </li><br/>
+
+
+
+                  <li>
+                      မိမိထံကုုန္ပစၥည္းေရာက္ရွိပါက Packing ပ်က္စီးၿခင္းရွိမရွိစစ္ေဆးၿပီးတစ္ခ်ိန္တည္းတြင္ Packing အတြင္းရွွိကုန္ပစၥည္းအနာစာရွိမရွိ၊မိမိ၀ယ္ထားကုန္ပစၥည္းနွင္ ့အေရာင္၊အရြယ္အစားကြဲလြဲမွဳရွိမရွိ စစ္ ေဆးၿပီးမွလက္မွတ္ေရးထိုးလက္ခံရမည္။ကုန္ပစၥည္းစစ္ေဆးရာတြင္အပ်က္အစီး၊မိမိလိုခ်င္ေသာအခ်က္နွင့္ကိုက္ညီမွဳမရွိပါကလက္ခံၿခင္းမၿပဳပဲေရာင္းသူထံသိုဆက္သြယ္၍ပစၥည္းလဲလွယ္ေပးၿခင္း(သို ့)ညွိနွိဳင္းထားေသာေငြၿပန္အမ္းၿခင္းမ်ားၿပဳလုပ္ရမည္ၿဖစ္သည္.။                                                 ၀ယ္သူသည ္MD Website ေပၚရွိကုန္ပစၥည္းအား၀ယ္ယူလိုပါကေရာင္းသူထံမွ ့တိုက္ရိုက္ ၀ယ္ယူနိုင္ပါသည္။၀ယ္သူသည္ကုန္ပစၥည္းနွင့္ပတ္သက္ေသာအၿခားအေၾကာင္းအရာမ်ားေမးၿမန္းလိုပါက MD Chatting Software မွတဆင္ ့ေရာင္းသူအားတိုက္ရိုက္ဆက္သြယ္ေမးၿမန္းနိုင္ပါသည္။
+
+                  </li><br/>
+
+
+
               </ol>
+
+              <h3> Privancy & Services</h3>
               <p>
-                HTML Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. 
+                MD ကိုအသံုးၿပဳရန္ Register ၿပဳလုပ္ရာတြင္ MD မွသက္မွတ္ခ်က္အရေတာင္းဆိုေသာ မိမိကိုယ္ေရး ကိုယ္တာ  အခ်က္အလက္မ်ားအားၿဖည့္စြတ္ရန္သေဘာတူရမည္။ဤအခ်က္အလက္မ်ားကို MD မွသိမ္းဆည္းထိန္းသိမ္းထားမည္ၿဖစ္ၿပီး လံုၿခံဳမွဳရွိ ေစရန္တာ ၀န္ယူပါသည္။
               </p>
               <p>
-                Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst. 
+               သို ့ေသာ္သံုးစြဲသူမ်ားအသံုးၿပဳရလြယ္ကူေစရန္ MD နွင့္ပူးေပါင္း ၀န္ေဆာင္မွဳေပးေသာ Third Party မ်ား ၿဖစ္ေသာ Delivery Company /   Bank စသည္ တုိ ့ကိုပစၥည္း ေကာက္ယူ /ပို ့ေဆာင္ရန္/ ေငြေကာက္ခံ၇န္ Online Payment နွင့္တၿခားအေၾကာင္း အရာတြင္အသံုးၿပဳရန္ဤ Data အခ်က္အ လက္မ်ားကိုေပးပိုင္ခြင္ ့ရွိသည္ ။
               </p>
+
+
+
             </div>
           </div>
         <!-- Conditions Panel Ends -->
         </div>
+
+
+   <div class="col-sm-12">
+
+           <div class="panel panel-smart">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                Myanmar Dealer (Team & Condition)
+              </h3>
+            </div>
+            <div class="panel-body">
+
+
+              <p>လူၾကီးမင္းမ်ား Myanmar Dealer ကိုအသံုးၿပဳၿခင္းအတြက္အထူးေက်းဇူးတင္ရွိပါသည္။Myanmar Dealer သည္ လူၾကီးမင္းဧ။္လုပ္ငန္းအားကုန္က်စရိတ္သက္သာစြာ ၿဖင့္တြင္က်ယ္စြာေရာင္းခ်နိုင္ရန္ ၊ကုန္ပစၥည္းမ်ား ေစ်းနွုဳန္းခ်ိဳသာစြာ၀ယ္ယူနိုင္ရန္ Platform တစ္ခုအၿဖစ္၀န္ေဆာင္မွဳေပးေသာလုပ္ငန္းၿဖစ္သည္။လူၾကီးမင္း Myanmar Dealer အားအသံုးမၿပဳမီလူၾကီးမင္းဧ။္ရပိုင္ခြင္အၿခားခံစားခြင့္ဆံုးရွံဳးမွဳမရွိေစရန္ Myanmar Dealer ဧ။္စည္းကမ္း သက္မွတ္ခ်က္မ်ားကိုသိ ရွိ၍  ေအာက္ပါ အခ်က္အလက္မ်ားအား                                    ဖတ္ရွဳနားလည္သေဘာတူမွသာဆက္လက္အသံုးၿပဳပါရန္ေေလးစားစြာအသိေပး အပ္ပါသည္။</p><br/>
+
+              <ol> 
+
+                <li> ဤ Website သည္ ‘Myanmar Dealer ‘Domain Website ကိုဆိုလိုသည္။
+                MD သည္ Myanmar Dealer ကုိဆိုလိုသည္။</li><li>
+                User သည္ MD သက္မွတ္ထားေသာဤစည္းမ်ဥ္းစည္းကမ္းအတိုင္းလိုက္နာရန္သေဘာတူလက္ခံၿပီး MD မွေပးေသာ၀န္ေဆာင္မွဳအားအသံုးၿပဳသူကိုဆိုလိုသည္။</li><li>
+                Seller သည္ဤ Website ေပၚတြင္ကုန္ပစၥည္းေရာင္းခ်ေသာ User ကိုဆိုလိုသည္။</li><li>
+                Buyer သည္ဤ Website ေပၚမွတဆင္ ့ကုန္ပစၥည္း၀ယ္ယူေသာသူကိုဆိုလိုသည္။</li><li>
+                MD သည္ေရာင္းသူနွင္ ့၀ယ္သူတစ္ေနရာထဲတြင္ကုန္ပစၥည္းေရာင္း/၀ယ္နိုင္ရန္ Platform တစ္ခုသာၿဖစ္ေသာ့ေၾကာင္ ့ MD Website ေပၚရွိ               
+                ေရာင္းခ်ေသာကုန္ပစၥည္းဧ။္ ကုန္ပစၥည္း အမည္ု၊ ဓါတ္ပံု၊ဗြီဒီယို နွင္ ့ ရွင္းလင္းေဖာ္ၿပခ်က္အား လံုးတို ့သည္ ေရာင္းသူမွတင္ေရာက္ေရာင္းခ်ၿခင္းသာၿဖစ္သည္။ ထိုေရာင္းခ်ေသာ ကုန္ပစၥည္း မ်ားအားလံုးဧ။္ၿဖစ္ေပၚလာေသာတာ၀န္မ်ား သည္ေရာင္းသူဧ။္တာ၀န္သာၿဖစ္ၿပီး MD နွင့္မသက္ဆိုင္ပါ။</li><li>
+                MD Website ေပၚတြင္ေရာင္းခ်ေသာကုန္ပစၥည္းမ်ားသည္ MD နွင့္မသက္ဆိုင္ ေသာ္လည္း MD မွကုန္ပစၥည္းမ်ားအားစစ္ေဆးခြင္ ့ရွိၿပီးတရားဥပေဒနင္ ့မလြတ္ကင္းေသာပစၥည္းမ်ား ေတြ ့ရွိပါကေရာင္းခ်ခြင္ ့ကိုပိတ္ပင္ပိုင္ခြင္ ့ရွိသည္။တရားဥပေဒနွင္ ့မလြတ္ကင္းေသာပစၥည္းမ်ားဆိုသည္မွာနိုင္ငံေတာ္မွခ်မွတတ္ထားေသာ ဥပေဒခ်ိဳးေဖာက္ေသာ ကုန္ပစၥည္း၊ တၿခား သူ ဧ။္မူပိုင္ခြင့္ခ်ိဳးေဖာက္ေသာကုန္ပစၥည္း၊ ကုန္ပစၥည္းအတုအပနွင္ ့တားၿမစ္ထားေသာ ကုန္ပစၥည္း မ်ားကိုဆိုလိုသည္။</li><li>
+                ကုန္ပစၥည္းေရာင္း၀ယ္ရာတြင္ေရာင္းသူနွင္ ့၀ယ္သူၾကားၿဖစ္ေပၚလာေသာကုန္ပစၥည္းနွင္ ့ပတ္သက္၍အေရအေသြး နွင့္တၿခားၿငင္းခုန္မွဳရွိပါက MD သို ့တိုင္ၾကားနုိင္ၿပီး MD မွေရာင္းသူ/၀ယ္သူတင္ၿပေသာ Catting Records မ်ားစသည္ ့သက္ေသအေထာက္အထားမ်ားအားစီစစ္၍ ၀င္ေရာက္ ေၿဖရွင္းေပး မည္ၿဖစ္သည္။MD မွေၿဖရွင္းေပးေသာရလဒ္အားေက်နပ္္္မွွွဳမရွိပါကေရာင္းသူ /၀ယ္သူမွ မိမိ သေဘာ ၿဖင့္တရားဥပေဒနည္းလမ္းအတုိုင္းေၿဖရွင္းနိုင္သည္။</li><li>
+                MD Website ေပၚရွိကုန္ပစၥည္းမ်ားအား၀ယ္ယူလိုပါကေရာင္းသူထံသို ့ Chat Box ၿဖင္ ့တိုက္ရိုက္ေမးၿမန္း၀ယ္ယူနိုင္ပါသည္။</li><li>ကုန္ပစၥည္းမ်ား၀ယ္ယူရာတြင္မိမိ၀ယ္လိုေသာပစၥည္အမ်ိဳးအစား/အေရာင္/အေရအတြက္တို ့ကိုေသခ်ာေရြးခ်ယ္ၿပီးမွ၀ယ္ယူရန္။ေရာင္းသူဧ။္ Cash Refund စနစ္နွင္ ့Payment စနစ္တို ့အားေသခ်ာၾကည္ ့ရွဳၿပီးမွ၀ယ္ယူရန္။ မိမိထံသို  ့ကုန္ပစၥည္း မ်ားေရာက္ရွိလာပါက Packing ပ်က္စီးၿခင္းရွိမရွိ Packing အတြင္းရွိကုန္ပစၥည္းအပစ္အနာအစာ ရွိမရွိ စစ္ေဆးၿပီးမွလက္မွတ္ထိုးလက္ခံရမည္။ ကုန္ပစၥည္း စစ္ေဆးရာတြင္အပ်က္အစီးရွိၿခင္း၊ မိမိ၀ယ္ယူ လိုေသာကုန္ပစၥည္းနွင့္ကိုက္ညီးၿခင္းမရွိပါကလက္ခံၿခင္းမၿပဳပဲေရာင္းသူထံသို ့ဆက္သြယ္၍ ပစၥည္း လဲလွယ္ၿခင္း(သို ့)ညွိနွိဳင္းထားေသာ ေငြ ၿပန္အမ္းၿခင္းတို့ခ်က္ၿခင္းၿပဳလုပ္ရမည္ၿဖစ္သည္။</li><li>
+                ဤ  Platform ေပၚရွိ www.myanmardealer.com Website, Shopping Software,Seller Software, Buyer Software , Chatting Software,Logo နွင္ ့ Website Design စသည္တို  ့ကို Myanmar Dealer မွပိုင္ဆိုင္ပါသည္။ </li>
+
+              </ol>
+            </div>
+          </div>
+          </div>
+
       </div>
     </section>
   <!-- Registration Section Ends -->
