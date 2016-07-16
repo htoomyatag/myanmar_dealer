@@ -287,27 +287,30 @@
 		<div class="row product-info full">
 		<!-- Left Starts -->
 			<div class="col-sm-4 images-block">
-          <ul id="etalage">
-              <li>
-                <a href="optionallink.html">
-                  <img class="etalage_thumb_image" src="/assets/s4.jpg" class="img-responsive" />
-                  <img class="etalage_source_image" src="/assets/si4.jpg" class="img-responsive" title="" />
-                </a>
-              </li>
-              <li>
-                <img class="etalage_thumb_image" src="/assets/s2.jpg" class="img-responsive" />
-                <img class="etalage_source_image" src="/assets/si2.jpg" class="img-responsive" title="" />
-              </li>
-              <li>
-                <img class="etalage_thumb_image" src="/assets/s3.jpg" class="img-responsive"  />
-                <img class="etalage_source_image" src="/assets/si3.jpg"class="img-responsive"  />
-              </li>
-                <li>
-                <img class="etalage_thumb_image" src="/assets/s1.jpg" class="img-responsive"  />
-                <img class="etalage_source_image" src="/assets/si1.jpg"class="img-responsive"  />
-              </li>
-            </ul>
-					 
+        
+
+        <div style="background:gray;width:303px;">    
+          <img id="zoom_01" src="<%= @product.avatar1.url %>" data-zoom-image="<%= @product.avatar1.url %>" style="height:301px;" />
+
+
+
+          <img id="zoom_02" src="<%= @product.avatar2.url %>" data-zoom-image="<%= @product.avatar2.url %>" style="height:301px;display:none;" />
+
+
+          <img id="zoom_03" src="<%= @product.avatar3.url %>" data-zoom-image="<%= @product.avatar3.url %>" style="height:301px;display:none;"/>
+
+
+          <img id="zoom_04" src="<%= @product.avatar4.url %>" data-zoom-image="<%= @product.avatar4.url %>" style="height:301px;display:none;"/>
+        </div>
+
+
+
+          <div>
+            <img id="av2" src="<%= @product.avatar2.url(:thumb) %>" />
+            <img id="av3" src="<%= @product.avatar3.url(:thumb) %>" />
+            <img id="av4" src="<%= @product.avatar4.url(:thumb) %>" />
+          </div>
+
 
 
 			
@@ -1259,3 +1262,45 @@ document.getElementById('delivery_fees').value = package_name;
  <% end %>
 
 
+
+
+
+<script type="text/javascript">
+  
+$("#zoom_01").elevateZoom();
+$("#zoom_02").elevateZoom();
+$("#zoom_03").elevateZoom();
+$("#zoom_04").elevateZoom();
+
+$('#av2').click(function(){
+
+  $('#zoom_01').hide();
+  $('#zoom_02').show();
+  $('#zoom_03').hide();
+  $('#zoom_04').hide();
+
+});
+
+
+$('#av3').click(function(){
+
+  $('#zoom_01').hide();
+  $('#zoom_02').hide();
+  $('#zoom_03').show();
+  $('#zoom_04').hide();
+
+});
+
+
+$('#av4').click(function(){
+
+  $('#zoom_01').hide();
+  $('#zoom_02').hide();
+  $('#zoom_03').hide();
+  $('#zoom_04').show();
+
+});
+
+
+
+</script>
