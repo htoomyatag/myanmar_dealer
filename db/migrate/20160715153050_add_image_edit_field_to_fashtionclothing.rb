@@ -3,5 +3,6 @@ class AddImageEditFieldToFashtionclothing < ActiveRecord::Migration
   	 add_column :fashion_clothings, :avatar1_edit, :text
   	 add_column :fashion_clothings, :avatar2_edit, :text
   	 add_column :fashion_clothings, :avatar3_edit, :text
+  	 add_column :fashion_clothings, :avatar4_edit, :text
   end
 end

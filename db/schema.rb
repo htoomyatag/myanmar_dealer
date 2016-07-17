@@ -417,6 +417,7 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.text     "avatar1_edit"
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
   end
 
   create_table "fashion_footwears", force: :cascade do |t|
@@ -863,6 +864,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.string   "period"
     t.string   "school"
     t.string   "mmdealer_code"
+    t.string   "avatar1_edit"
+    t.string   "avatar2_edit"
+    t.string   "avatar3_edit"
+    t.string   "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"

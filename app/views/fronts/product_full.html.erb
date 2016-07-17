@@ -289,32 +289,28 @@
 			<div class="col-sm-4 images-block">
         
 
-        <div style="background:gray;width:303px;">    
-          <img id="zoom_01" src="<%= @product.avatar1.url %>" data-zoom-image="<%= @product.avatar1.url %>" style="height:301px;" />
+        <div style="background:gray;width:303px;">
+
+          <img id="zoom_01" src="<%= @product.avatar1_edit %>" data-zoom-image="<%= @product.avatar1_edit %>" style="height:301px;" />
+
+          <img id="zoom_02" src="<%= @product.avatar2_edit %>" data-zoom-image="<%= @product.avatar2_edit %>" style="height:301px;display:none;" />
+
+          <img id="zoom_03" src="<%= @product.avatar3_edit %>" data-zoom-image="<%= @product.avatar3_edit %>" style="height:301px;display:none;"/>
+
+          <img id="zoom_04" src="<%= @product.avatar4_edit %>" data-zoom-image="<%= @product.avatar4_edit %>" style="height:301px;display:none;"/>
 
 
 
-          <img id="zoom_02" src="<%= @product.avatar2.url %>" data-zoom-image="<%= @product.avatar2.url %>" style="height:301px;display:none;" />
-
-
-          <img id="zoom_03" src="<%= @product.avatar3.url %>" data-zoom-image="<%= @product.avatar3.url %>" style="height:301px;display:none;"/>
-
-
-          <img id="zoom_04" src="<%= @product.avatar4.url %>" data-zoom-image="<%= @product.avatar4.url %>" style="height:301px;display:none;"/>
         </div>
 
 
+        <div>
 
-          <div>
-            <img id="av2" src="<%= @product.avatar2.url(:thumb) %>" />
-            <img id="av3" src="<%= @product.avatar3.url(:thumb) %>" />
-            <img id="av4" src="<%= @product.avatar4.url(:thumb) %>" />
-          </div>
+            <img id="av2" src="<%= @product.avatar2_edit %>" style="width:100px;height:100px;"/>
+            <img id="av3" src="<%= @product.avatar3_edit %>" style="width:100px;height:100px;"/>
+            <img id="av4" src="<%= @product.avatar4_edit %>" style="width:100px;height:100px;"/>
 
-
-
-			
-					
+        </div>
 
 			</div>
 			

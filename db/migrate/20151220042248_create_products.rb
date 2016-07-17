@@ -40,6 +40,11 @@ class CreateProducts < ActiveRecord::Migration
     t.string   :period
     t.string   :school
     t.string :mmdealer_code
+    t.string :avatar1_edit
+    t.string :avatar2_edit
+    t.string :avatar3_edit
+    t.string :avatar4_edit
+
 
       t.timestamps null: false
     end

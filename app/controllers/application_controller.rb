@@ -39,7 +39,7 @@ def set_locale
   private
   def get_products
      @cart = current_cart
-     @products = Product.where.not(id: '1')
+     @products = Product.where.not(id: '1').order('id DESC')
      
         if user_signed_in? 
              @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
