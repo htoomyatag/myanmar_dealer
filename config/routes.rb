@@ -266,8 +266,29 @@ end
  get 'about_order_trekking' => "fronts#about_order_trekking", :as => :about_order_trekking
 
  get 'about_make_an_order' => "fronts#about_make_an_order", :as => :about_make_an_order
-
  
+ get 'about_seller_open_shop' => "fronts#about_seller_open_shop", :as => :about_seller_open_shop
+
+ get 'about_seller_manage_shop' => "fronts#about_seller_manage_shop", :as => :about_seller_manage_shop
+
+ get 'about_seller_sell_product' => "fronts#about_seller_sell_product", :as => :about_seller_sell_product
+
+ get 'about_seller_manage_product' => "fronts#about_seller_manage_product", :as => :about_seller_manage_product
+ 
+ get 'about_seller_view_report' => "fronts#about_seller_view_report", :as => :about_seller_view_report
+
+ get 'about_payment' => "fronts#about_payment", :as => :about_payment
+
+ get 'service_charges' => "fronts#service_charges", :as => :service_charges
+
+ get 'delivery_agency' => "fronts#delivery_agency", :as => :delivery_agency
+
+ get 'privacy_policy' => "fronts#privacy_policy", :as => :privacy_policy
+
+  get 'term_condition' => "fronts#term_condition", :as => :term_condition
+
+
+
 
 
 

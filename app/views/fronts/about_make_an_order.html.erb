@@ -15,40 +15,6 @@
 	</div>
 
 
-	  <table class="table table-striped">
-          <thead>
-            <tr> 
-              <th>Order Status</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Address</th>
-              <th>City</th>
-              <th>Township</th>
-              <th colspan="5"></th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <% @orders.each do |order| %>
-              <tr>
-                <td><%= order.order_status %></td>
-                <td><%= order.customer_name %></td>
-                <td><%= order.customer_email %></td>
-                <td><%= order.customer_phone %></td>
-                <td><%= order.customer_address %></td>
-                <td><%= order.customer_city %></td>
-                <td><%= order.customer_township %></td>
-                <td><%= link_to "View Order details",line_items_path(:cart_id => order.cart_id), :method => :get, :class => "btn btn-primary btn-xs" %></td>
-                <td><%= link_to 'Set Order status', edit_order_path(order), :class => "btn btn-info btn-xs"  %></td>
-                <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-
-
-
 	
 
 

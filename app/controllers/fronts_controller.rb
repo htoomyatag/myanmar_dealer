@@ -9,9 +9,44 @@ class FrontsController < ApplicationController
     @fronts = Front.all
    end
 
-   def about_order_trekking
-    @orders = Order.where(:user_id => current_user)
-   end
+    def about_seller_open_shop
+    end
+
+    def about_seller_manage_shop
+    end
+
+    def about_seller_sell_product
+    end
+
+    def about_seller_manage_product
+    end
+ 
+    def about_seller_view_report
+    end
+
+
+    def about_payment
+
+    end
+
+    def service_charges
+
+    end
+
+    def delivery_agency
+
+    end
+
+    def privacy_policy
+    end
+
+    def term_condition
+    end
+
+
+     def about_order_trekking
+      @orders = Order.where(:user_id => current_user)
+     end
 
    def about_add_to_fav
 
