@@ -77,7 +77,7 @@ class MakeupAndSkincaresController < ApplicationController
     end
 
     def layout_per_action
-      if action_name == "index" or action_name ==  "product_makeup_and_skincares" 
+      if action_name == "index" or "product_makeup_and_skincares" 
            "application"
       else
         "backend"

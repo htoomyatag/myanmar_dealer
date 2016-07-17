@@ -77,7 +77,7 @@ class MedicinesController < ApplicationController
     end
 
     def layout_per_action
-      if action_name == "index" or action_name ==  "product_medicines" 
+      if action_name == "index" or "product_medicines" 
            "application"
       else
         "backend"

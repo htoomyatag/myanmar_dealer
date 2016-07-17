@@ -77,7 +77,7 @@ class GiftsController < ApplicationController
     end
 
     def layout_per_action
-      if action_name == "index" or action_name ==  "product_gifts" 
+      if action_name == "index" or "product_gifts" 
            "application"
       else
         "backend"

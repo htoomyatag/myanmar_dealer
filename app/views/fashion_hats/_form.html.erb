@@ -1,6 +1,4 @@
-
-
-            <%= form_for(@fashion_hat, html: { multipart: true }) do |f| %>
+           <%= form_for(@fashion_hat, html: { multipart: true }) do |f| %>
               <% if @fashion_hat.errors.any? %>
                 <div id="error_explanation">
                   <h2><%= pluralize(@fashion_hat.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -13,110 +11,127 @@
                 </div>
               <% end %>
 
-             <div class="form-group" style="display:none;">
-              <%= f.label :user_id %>
-              <%= f.number_field :user_id, :value => current_user.id %>
-            </div>
-
-            <div class="form-group">
-              <%= f.label :title %><br/>
-              <%= f.text_field :title, :class=>"form-control"  %>
-            </div>
-
-            <div class="form-group">
-              <%= f.label :price %><br/>
-               <%= f.text_field :price, :class=>"form-control", :required => true  %> 
-            </div>
-
-            <div class="form-group">
-              <%= f.label :quantity %><br/>
-              <%= f.text_field :quantity, :class=>"form-control"  %>
-            </div>
-
-                <div class="form-group">
-              <%= f.label :made_by_country %><br/>
-              <%= f.text_field :made_by_country, :class=>"form-control"  %>
-            </div>
 
 
 
-    <div class="form-group">
-              <%= f.label :made_with %><br/>
-              <%= f.text_field :made_with, :class=>"form-control"  %>
-            </div>
+
+                  <div class="col-md-6">
+
+                            <div class="panel-body">
+                              <h4>New Product Fashion Hat</h4>
+                              <hr/>
+
+                          <div class="form-group" style="display:none;">
+                            <%= f.label :user_id %>
+                            <%= f.number_field :user_id, :value => current_user.id %>
+                          </div>
+
+                          <div class="form-group">
+                            <%= f.label :title %><br/>
+                            <%= f.text_field :title, :class=>"form-control"  %>
+                          </div>
+
+                          <div class="form-group">
+                            <%= f.label :price %><br/>
+                             <%= f.text_field :price, :class=>"form-control", :required => true  %> 
+                          </div>
+
+                          <div class="form-group">
+                            <%= f.label :quantity %><br/>
+                            <%= f.text_field :quantity, :class=>"form-control"  %>
+                          </div>
+
+                          <div class="form-group">
+                            <%= f.label :made_by_country %><br/>
+                            <%= f.text_field :made_by_country, :class=>"form-control"  %>
+                          </div>
+
+                          <div class="form-group">
+                              <%= f.label :made_with %><br/>
+                              <%= f.text_field :made_with, :class=>"form-control"  %>
+                          </div>
 
 
-    <div class="form-group">
-              <%= f.label :brand %><br/>
-              <%= f.text_field :brand, :class=>"form-control"  %>
-            </div>
+                          <div class="form-group">
+                            <%= f.label :brand %><br/>
+                            <%= f.text_field :brand, :class=>"form-control"  %>
+                          </div>
 
-    <div class="form-group">
-              <%= f.label :hat_type %><br/>
-              <%= f.text_field :hat_type, :class=>"form-control"  %>
-            </div>
+                          <div class="form-group">
+                              <%= f.label :hat_type %><br/>
+                              <%= f.text_field :hat_type, :class=>"form-control"  %>
+                          </div>
+
+                      </div>
              
-            
+
+                  </div>
 
 
-        </div>
-    </div> 
-  
-  </div>
-  <div class="col-md-6">
-
-    <div class="panel panel-default">
-        <div class="panel-body">
-         <h4>Product Images (Width:250px High:200px for best view)</h4>
-            <hr/>
-          <div class="form-group">
-              <label>Image1</label>
-              <%= f.file_field :avatar1 %>
-          </div>
-          <div class="form-group">
-              <label>Image2</label>
-              <%= f.file_field :avatar2 %>
-          </div>
-          <div class="form-group">
-              <label>Image3</label>
-              <%= f.file_field :avatar3 %>
-          </div>
-          <div class="form-group">
-              <label>Image4</label>
-              <%= f.file_field :avatar4 %>
-          </div>
-          <div class="form-group">
-              <label>Image5</label>
-              <%= f.file_field :avatar5 %>
-          </div>
-
-              <div class="form-group">
-              <%= f.label :description %><br/>
-              <%= f.text_area :description, :class=>"form-control", :rows => 8  %>
-            </div>
-           
-
-            
-        </div>
-    </div>
+                  <div class="col-md-6">
 
 
-  </div>
+                     <div class="panel panel-default">
+                            <div class="panel-body">
+                             
+                             <h4>Product Images (Width:250px High:200px for best view)</h4>
+                                <hr/>
+                              <div class="form-group">
+                                  <label>Image1</label>
+                                  <%= f.file_field :avatar1 %>
+                              </div>
+                              <div class="form-group">
+                                  <label>Image2</label>
+                                  <%= f.file_field :avatar2 %>
+                              </div>
+                              <div class="form-group">
+                                  <label>Image3</label>
+                                  <%= f.file_field :avatar3 %>
+                              </div>
+                              <div class="form-group">
+                                  <label>Image4</label>
+                                  <%= f.file_field :avatar4 %>
+                              </div>
+                              <div class="form-group">
+                                  <label>Image5</label>
+                                  <%= f.file_field :avatar5 %>
+                              </div>
 
-  <div class="col-md-12">
+                                  <div class="form-group">
+                                  <%= f.label :description %><br/>
+                                  <%= f.text_area :description, :class=>"form-control", :rows => 8  %>
+                                </div>
+                               
 
-    <div class="panel panel-default">
-        <div class="panel-body">
-
-           <div class="actions">
-            Please enter "Create" button to upload your
-            fashion hat product in your store.
-            <span style="float:right;"><%= f.submit %></span>
-          </div>
-
-        </div>
-    </div>
-  </div>
+                                
+                            </div>
+                        </div>
 
 
-<% end %>
+
+
+
+
+                    <!--  -->
+
+                  </div>
+
+                      <div class="col-md-12">
+
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+
+                               <div class="actions">
+                                Please enter "Create" button to upload your
+                                fashion hat product in your store.
+                                <span style="float:right;"><%= f.submit %></span>
+                              </div>
+
+                            </div>
+                        </div>
+                      </div>
+
+
+
+
+                  <% end %>

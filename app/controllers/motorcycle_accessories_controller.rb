@@ -78,7 +78,7 @@ class MotorcycleAccessoriesController < ApplicationController
 
     
     def layout_per_action
-      if action_name == "index" or action_name ==  "product_motorcycle_accessories" 
+      if action_name == "index" or "product_motorcycle_accessories" 
            "application"
       else
         "backend"

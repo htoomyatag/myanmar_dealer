@@ -1,6 +1,12 @@
+  <div class="col-md-6"> 
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h4>New  Medicine</h4>
+            <hr/>
 
 
-            <%= form_for(@medicine, html: { multipart: true }) do |f| %>
+<%= form_for(@medicine, html: { multipart: true }) do |f| %>
               <% if @medicine.errors.any? %>
                 <div id="error_explanation">
                   <h2><%= pluralize(@medicine.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -12,6 +18,8 @@
                   </ul>
                 </div>
               <% end %>
+
+
 
              <div class="form-group" style="display:none;">
               <%= f.label :user_id %>
@@ -41,13 +49,13 @@
 
                 
 
-                   <div class="form-group">
+            <div class="form-group">
               <%= f.label :made_by_country %><br/>
               <%= f.text_field :made_by_country, :class=>"form-control"  %>
             </div>
 
 
- <div class="form-group">
+            <div class="form-group">
               <%= f.label :usage %><br/>
               <%= f.text_area :usage, :class=>"form-control", :rows => 20  %>
             </div>

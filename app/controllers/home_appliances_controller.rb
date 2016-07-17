@@ -77,7 +77,7 @@ class HomeAppliancesController < ApplicationController
     end
 
     def layout_per_action
-      if action_name == "index" or action_name ==  "product_home_appliances" 
+      if action_name == "index" or "product_home_appliances" 
            "application"
       else
         "backend"

@@ -1,6 +1,6 @@
 class FashionHatsController < ApplicationController
   before_action :set_fashion_hat, only: [:show, :edit, :update, :destroy]
-    layout :layout_per_action
+  layout :layout_per_action
   # GET /fashion_hats
   # GET /fashion_hats.json
   def index

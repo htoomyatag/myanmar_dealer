@@ -77,7 +77,7 @@ class TelephoneAccessoriesController < ApplicationController
     end
 
     def layout_per_action
-      if action_name == "index" or action_name ==  "product_telephone_accessories" 
+      if action_name == "index" or "product_telephone_accessories" 
            "application"
       else
         "backend"
