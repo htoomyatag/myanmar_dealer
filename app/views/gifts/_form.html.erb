@@ -75,26 +75,110 @@
         <div class="panel-body">
          <h4>Product Images (Width:250px High:200px for best view)</h4>
             <hr/>
-          <div class="form-group">
-              <label>Image1</label>
-              <%= f.file_field :avatar1 %>
-          </div>
-          <div class="form-group">
-              <label>Image2</label>
-              <%= f.file_field :avatar2 %>
-          </div>
-          <div class="form-group">
-              <label>Image3</label>
-              <%= f.file_field :avatar3 %>
-          </div>
-          <div class="form-group">
-              <label>Image4</label>
-              <%= f.file_field :avatar4 %>
-          </div>
-          <div class="form-group">
-              <label>Image5</label>
-              <%= f.file_field :avatar5 %>
-          </div>
+        
+
+              <!-- crop mage -->
+               <div class="col-md-6">
+                      <div class="image-editor1">
+
+                          <%= f.file_field :avatar1, :class=>"cropit-image-input" %>
+                          <div class="cropit-preview"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                            <%= f.text_field :avatar1_edit, :class=>"form-control"  %>
+
+
+                            <input type="range" class="cropit-image-zoom-input" >
+
+                          <div>
+                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
+                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
+                              <span style="float:right;"><button class="exportav1">Confirm</button></span>
+                          </div>
+                  
+                          
+
+                        </div>
+              </div>
+               <div class="col-md-6">
+                      <div class="image-editor2">
+
+                          <%= f.file_field :avatar2, :class=>"cropit-image-input" %>
+                          <div class="cropit-preview"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                            <%= f.text_field :avatar2_edit, :class=>"form-control"  %>
+
+
+                            <input type="range" class="cropit-image-zoom-input" >
+
+                          <div>
+                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
+                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
+                              <span style="float:right;"><button class="exportav2">Confirm</button></span>
+                          </div>
+                  
+                       
+
+                        </div>
+              </div>
+
+
+                  <div class="col-md-6">
+                      <div class="image-editor3">
+
+                          <%= f.file_field :avatar3, :class=>"cropit-image-input" %>
+                          <div class="cropit-preview"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                            <%= f.text_field :avatar3_edit, :class=>"form-control"  %>
+
+
+                            <input type="range" class="cropit-image-zoom-input" >
+
+                          <div>
+                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
+                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
+                              <span style="float:right;"><button class="exportav3">Confirm</button></span>
+                          </div>
+                  
+                       
+
+                        </div>
+              </div>
+
+
+
+    <div class="col-md-6">
+                      <div class="image-editor4">
+
+                          <%= f.file_field :avatar4, :class=>"cropit-image-input" %>
+                          <div class="cropit-preview"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                            <%= f.text_field :avatar4_edit, :class=>"form-control"  %>
+
+
+                            <input type="range" class="cropit-image-zoom-input" >
+
+                          <div>
+                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
+                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
+                              <span style="float:right;"><button class="exportav4">Confirm</button></span>
+                          </div>
+                  
+                       
+
+                        </div>
+              </div>
 
 
                 <div class="form-group">
