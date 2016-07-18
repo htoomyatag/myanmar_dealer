@@ -478,33 +478,25 @@
 
 					<div>
 						<span class="product_ask">Color:</span>
-						<span style="padding-left:95px;">
-						       <span class="color_box"> White </span>
-						       <span class="color_box"> Black </span>
-						       <span class="color_box"> Yellow </span>
-								
-						</span> 
+					  <%= @product.color rescue "-" %>
 					</div><br/>
 
 					<div>
 						<span class="product_ask">Size:</span>
-						<span style="padding-left:100px;">
-						       <span class="color_box"> S </span>
-						       <span class="color_box"> M </span>
-						       <span class="color_box"> L </span>
-						       <span class="color_box"> XL </span>
-						       <span class="color_box"> XXL </span>
-								
-						</span> 
+						<span class="product_ask"><%= @product.size rescue "-" %></span>
 					</div><br/>
 
-					<div>
-						<span class="product_ask">Quantity:</span>
-						<span style="padding-left:80px;">
-						        <input type="text">
-								989 packs in stock
-						</span> 
-					</div>
+					<div style="width:100%;">
+						<span class="product_ask" style="float:left;">
+                 Quantity:    
+            </span>
+            <span style="float:left;padding-left:10px;">
+             <input type="text">  
+            </span>
+            <span style="float:left;padding-left:10px;">
+              989 packs in stock
+            </span>
+					</div><br/><br/><br/>
 
 
 						
@@ -563,11 +555,20 @@
 
               <img src="/assets/logo_mimiberry.jpg" >
               <span style="font-weight:bold;color:#d9534f;text-align:center;"> 
-                Gold Seller Company
+                <%= @product.store_name %>
               </span>
-                <img src="/assets/chat.png" style="float:right;">
+              
+
+                    <%  if user_signed_in?  %>
+                            <img src="/assets/chat.png" style="float:right;" id="chat_user">
+                   <%  else  %>
+                          
+                    <%  end  %>
+
+
 				    	 
-				    	<h6 class="shoptitle"><img src="/assets/shop-icon-23328.png">  MiMiBerry Tshirt</h6>
+				    	<h6 class="shoptitle"><img src="/assets/shop-icon-23328.png"> <%= @product.store_name rescue "-" %>
+</h6>
 
 				    	<table>
 					      
@@ -579,12 +580,13 @@
 					      
 					        <tr>
 					          <td id="store_infos">Shopkeeper:</td>
-					          <td id="store_infos">HtooMyatAung</td>
+					          <td id="store_infos"> <%= @product.user.name  rescue "-" %>
+</td>
 					        </tr>
 
 					        <tr>
 					          <td id="store_infos">Contact:</td>
-					          <td id="store_infos">09795545748</td>
+					          <td id="store_infos"><%= @product.user.phone  rescue "-" %></td>
 					        </tr>
 
 					        <tr>
@@ -750,61 +752,71 @@
                   <center>
                         <table>
 
+                                   <tr>
+                                       <th style="width:300px;font-size:15px;"><%= @product.store_name rescue "-" %></th>
+                                       <th style="width:300px;font-size:15px;"><%= @product.title rescue "-" %></th>
+                                      </tr>
+                                        <tr>
+                                       <th style="width:300px;font-size:15px;"><%= @product.category rescue "-" %></th>
+                                       <th style="width:300px;font-size:15px;"><%= @product.ingredient rescue "-" %></th>
+                                      </tr>
+                                        <tr>
+                                       <th style="width:300px;font-size:15px;"><%= @product.usage rescue "-" %></th>
+                                       <th style="width:300px;font-size:15px;"><%= @product.made_by_country rescue "-" %></th>
+                                      </tr>
+                                        <tr>
+                                       <th style="width:300px;font-size:15px;"><%= @product.description rescue "-" %></th>
+                                       <th style="width:300px;font-size:15px;"><%= @product.brand rescue "-" %></th>
+                                      </tr>
+                                        <tr>
+                                       <th style="width:300px;font-size:15px;"><%= @product.effect rescue "-" %></th>
+                                       <th style="width:300px;font-size:15px;"><%= @product.certification rescue "-" %></th>
+                                      </tr>
+                                        <tr>
+                                       <th style="width:300px;font-size:15px;"><%= @product.age_group rescue "-" %></th>
+                                       <th style="width:300px;font-size:15px;"><%= @product.price rescue "-" %></th>
+                                      </tr>
+                                        <tr>
+                                       <th style="width:300px;font-size:15px;"><%= @product.feature rescue "-" %></th>
+                                       <th style="width:300px;font-size:15px;"><%= @product.modal_number rescue "-" %></th>
+                                      </tr>
+                                        <tr>
+                                       <th style="width:300px;font-size:15px;"><%= @product.color rescue "-" %></th>
+                                       <th style="width:300px;font-size:15px;"><%= @product.quantity rescue "-" %></th>
+                                      </tr>
+                                        <tr>
+                                       <th style="width:300px;font-size:15px;"><%= @product.size rescue "-" %></th>
+                                       <th style="width:300px;font-size:15px;"><%= @product.weight rescue "-" %></th>
+                                      </tr>
+                                        <tr>
+                                       <th style="width:300px;font-size:15px;"><%= @product.made_with rescue "-" %></th>
+                                       <th style="width:300px;font-size:15px;"><%= @product.specification rescue "-" %></th>
+                                      </tr>
+                                        <tr>
+                                       <th style="width:300px;font-size:15px;"><%= @product.thickness rescue "-" %></th>
+                                       <th style="width:300px;font-size:15px;"><%= @product.operation_system rescue "-" %></th>
+                                      </tr>
+                                        <tr>
+                                       <th style="width:300px;font-size:15px;"><%= @product.bag_type rescue "-" %></th>
+                                       <th style="width:300px;font-size:15px;"><%= @product.gender rescue "-" %></th>
+                                      </tr>
+                                        <tr>
+                                       <th style="width:300px;font-size:15px;"><%= @product.footwear_type rescue "-" %></th>
+                                       <th style="width:300px;font-size:15px;"><%= @product.hat_type rescue "-" %></th>
+                                      </tr>
+                                        <tr>
+                                       <th style="width:300px;font-size:15px;"><%= @product.power rescue "-" %></th>
+                                       <th style="width:300px;font-size:15px;"><%= @product.voltage rescue "-" %></th>
+                                      </tr>
+                                        <tr>
+                                       <th style="width:300px;font-size:15px;"><%= @product.dimension rescue "-" %></th>
+                                       <th style="width:300px;font-size:15px;"><%= @product.caution rescue "-" %></th>
+                                      </tr>
+                                        
 
-                                <tr>
-                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                </tr>
 
-
-                                 <tr>
-                              <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                </tr>
-
-                                 <tr>
-                              <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                </tr>
-                            
-                                <tr>
-                              <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                </tr>
-
-                                 <tr>
-                              <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                </tr>
-
-                                 <tr>
-                              <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                </tr>
-
-
-                                 <tr>
-                              <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                </tr>
-
-
-                                 <tr>
-                              <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                </tr>
-
-
-                                 <tr>
-                              <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                  <th style="width:300px;font-size:15px;">CoulmnName: Value</th>
-                                </tr>
-                               
-                              </tbody>
-                            </table>
-
-
-
+                         
+                        </table>
                   </center>
                   <hr/>
 
@@ -873,114 +885,86 @@
                         </div>
 
 
-                        <div class="col-md-2">
-                           <img src="/assets/avatar.jpg" alt="...">
-                        </div>
+                      <%= form_for(@comment, :remote => true) do |f| %>
+                   
 
-                        <div class="col-md-9" style="left:30px;">
-                              <div class="panel panel-default">
-                                <div class="panel-body">
-                                   <p style="top:30px;"> &nbsp;&nbsp;Product is awesome, Like it. Customer service is good.</p>
-                                  <p style="top:30px;"> &nbsp;&nbsp; 
-                                  <img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png">
-                                  .</p><bt/>
-                                  <h4>  &nbsp;&nbsp; customer name</h4>
-                                </div>
-                              </div>
-                        </div>
+                         <% if user_signed_in? %>
+                 
 
+                               <% if @purchase_product.include? @product.id %> 
 
+                                  <div class="field"  style="display:none;">
+                                    <%= f.label :user_id %><br>
+                                    <%= f.number_field :user_id, :value => current_user.id %>
+                                  </div>
+                                  <div class="field">
+                                    <%= f.text_area :message, :class => "form-control", :rows => "5" %>
+                                  </div><br/>
+                                  <div class="field" style="display:none;">
+                                    <%= f.label :product_id %><br>
+                                    <%= f.number_field :product_id, :value => @product.id %>
+                                  </div>
+                                  <div class="actions">
+                                    <%= f.submit "Give feedback", :id=> "btn_feedback" %>
+                                  </div>
 
-                        <div class="col-md-2">
-                           <img src="/assets/avatar.jpg" alt="...">
-                        </div>
+                            <% end %>
+                          <% end %> 
 
-                        <div class="col-md-9" style="left:30px;">
-                              <div class="panel panel-default">
-                                <div class="panel-body">
-                                   <p style="top:30px;"> &nbsp;&nbsp;Product is awesome, Like it. Customer service is good.</p>
-                                  <p style="top:30px;"> &nbsp;&nbsp; 
-                                  <img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png">
-                                  .</p><bt/>
-                                  <h4>  &nbsp;&nbsp; customer name</h4>
-                                </div>
-                              </div>
-                        </div>
+                        <% end %><br/>
 
 
+                    
+
+                      <div style="height: 750px;overflow: scroll;">
+
+                              <% @comments.each do |comment| %>
+                                    <div class="col-md-2">
+                                       <img src="/assets/avatar.jpg" alt="...">
+                                    </div>
+
+                                    <div class="col-md-9" style="left:30px;">
+                                          <div class="panel panel-default">
+                                            <div class="panel-body">
+                                               <p style="top:30px;"> &nbsp;&nbsp;
+                                                      <%= comment.message %>
+                                               </p>
+                                              <p style="top:30px;"> &nbsp;&nbsp; 
+                                              <img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png">
+                                              .</p><bt/>
+                                              <h4>  &nbsp;&nbsp; <%= comment.user.name rescue "-" %></h4>
+                                            </div>
+                                          </div>
+                                    </div>
+                              <% end %>
+
+                            <div class="col-md-2">
+                               <img src="/assets/avatar.jpg" alt="...">
+                            </div>
+
+                            <div class="col-md-9" style="left:30px;">
+                                  <div class="panel panel-default">
+                                    <div class="panel-body">
+                                       <p style="top:30px;" id="the_feed"> &nbsp;&nbsp;.</p>
+                                      <p style="top:30px;"> &nbsp;&nbsp; 
+                                      <img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png">
+                                      .</p><bt/>
+                                        <% if user_signed_in? %>
+                                      <h4>  
+                                      &nbsp;&nbsp; <%= current_user.name %>
+                                      </h4>
+                                        <% end %>
+                                    </div>
+                                  </div>
+                            </div>
+
+                    </div>
 
 
-                        <div class="col-md-2">
-                           <img src="/assets/avatar.jpg" alt="...">
-                        </div>
-
-                        <div class="col-md-9" style="left:30px;">
-                              <div class="panel panel-default">
-                                <div class="panel-body">
-                                   <p style="top:30px;"> &nbsp;&nbsp;Product is awesome, Like it. Customer service is good.</p>
-                                  <p style="top:30px;"> &nbsp;&nbsp; 
-                                  <img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png">
-                                  .</p><bt/>
-                                  <h4>  &nbsp;&nbsp; customer name</h4>
-                                </div>
-                              </div>
-                        </div>
 
 
-
-
-                        <div class="col-md-2">
-                           <img src="/assets/avatar.jpg" alt="...">
-                        </div>
-
-                        <div class="col-md-9" style="left:30px;">
-                              <div class="panel panel-default">
-                                <div class="panel-body">
-                                   <p style="top:30px;"> &nbsp;&nbsp;Product is awesome, Like it. Customer service is good.</p>
-                                  <p style="top:30px;"> &nbsp;&nbsp; 
-                                  <img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png">
-                                  .</p><bt/>
-                                  <h4>  &nbsp;&nbsp; customer name</h4>
-                                </div>
-                              </div>
-                        </div>
-
-
-
-                        <div class="col-md-2">
-                           <img src="/assets/avatar.jpg" alt="...">
-                        </div>
-
-                        <div class="col-md-9" style="left:30px;">
-                              <div class="panel panel-default">
-                                <div class="panel-body">
-                                   <p style="top:30px;"> &nbsp;&nbsp;Product is awesome, Like it. Customer service is good.</p>
-                                  <p style="top:30px;"> &nbsp;&nbsp; 
-                                  <img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png">
-                                  .</p><bt/>
-                                  <h4>  &nbsp;&nbsp; customer name</h4>
-                                </div>
-                              </div>
-                        </div>
-
-
-                        <div class="col-md-2">
-                           <img src="/assets/avatar.jpg" alt="...">
-                        </div>
-
-                        <div class="col-md-9" style="left:30px;">
-                              <div class="panel panel-default">
-                                <div class="panel-body">
-                                   <p style="top:30px;"> &nbsp;&nbsp;Product is awesome, Like it. Customer service is good.</p>
-                                  <p style="top:30px;"> &nbsp;&nbsp; 
-                                  <img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png">
-                                  .</p><bt/>
-                                  <h4>  &nbsp;&nbsp; customer name</h4>
-                                </div>
-                              </div>
-                        </div>
-
-
+                 
+                      
                   </div>
                   <div role="tabpanel" class="tab-pane" id="shipment"> Shipment & Payment</div>
                   <div role="tabpanel" class="tab-pane" id="seller_grantee"> Seller grantee</div>
