@@ -233,49 +233,121 @@
 <% end %>
 
 
-<script type="text/javascript">
-  
-  var img = new Image();
-img.onload = function(){
-    var cropMarginWidth = 5,
-        canvas = $('<canvas/>')
-                    .attr({
-                         width: img.width - 2 * cropMarginWidth,
-                         height: img.height - 2 * cropMarginWidth
-                     })
-                    .hide()
-                    .appendTo('body'),
-        ctx = canvas.get(0).getContext('2d'),
-        a = $('<a download="cropped-image" title="click to download the image" />'),
-        cropCoords = {
-            topLeft : {
-                x : cropMarginWidth,
-                y : cropMarginWidth 
-            },
-            bottomRight :{
-                x : img.width - cropMarginWidth,
-                y : img.height - cropMarginWidth
-            }
-        };
-
-    ctx.drawImage(img, cropCoords.topLeft.x, cropCoords.topLeft.y, cropCoords.bottomRight.x, cropCoords.bottomRight.y, 0, 0, img.width, img.height);
-    var base64ImageData = canvas.get(0).toDataURL();
 
 
-    a
-        .attr('href', base64ImageData)
-        .text('cropped image')
-        .appendTo('body');
+    <script>
+      $(function() {
+        $('.image-editor1').cropit({
+          imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
 
-    a
-        .clone()
-        .attr('href', img.src)
-        .text('original image')
-        .attr('download','original-image')
-        .appendTo('body');
+        $('.image-editor2').cropit({
+          imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
 
-    canvas.remove();
-}
-img.src = 'some-image-src';
 
-</script>
+        $('.image-editor3').cropit({
+          imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
+
+        $('.image-editor4').cropit({
+          imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
+
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor1').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor1').cropit('rotateCCW');
+        });
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor2').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor2').cropit('rotateCCW');
+        });
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor3').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor3').cropit('rotateCCW');
+        });
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor4').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor4').cropit('rotateCCW');
+        });
+
+
+
+
+
+
+
+
+
+        $('.exportav1').click(function() {
+          var imageData1 = $('.image-editor1').cropit('export');
+       
+          document.getElementById("bath_supply_avatar1_edit").value = imageData1;
+          // window.open(imageData);
+
+        });
+
+
+
+
+          $('.exportav2').click(function() {
+          var imageData2 = $('.image-editor2').cropit('export');
+       
+          document.getElementById("bath_supply_avatar2_edit").value = imageData2;
+          // window.open(imageData);
+
+        });
+
+
+           $('.exportav3').click(function() {
+          var imageData3 = $('.image-editor3').cropit('export');
+       
+          document.getElementById("bath_supply_avatar3_edit").value = imageData3;
+          // window.open(imageData);
+
+        });
+
+
+              $('.exportav4').click(function() {
+          var imageData4 = $('.image-editor4').cropit('export');
+       
+          document.getElementById("bath_supply_avatar4_edit").value = imageData4;
+          // window.open(imageData);
+
+        });
+
+
+
+
+      });
+    </script>
+
+

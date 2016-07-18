@@ -253,3 +253,121 @@
 
 
 <% end %>
+
+
+    <script>
+      $(function() {
+        $('.image-editor1').cropit({
+          imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
+
+        $('.image-editor2').cropit({
+          imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
+
+
+        $('.image-editor3').cropit({
+          imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
+
+        $('.image-editor4').cropit({
+          imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
+
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor1').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor1').cropit('rotateCCW');
+        });
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor2').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor2').cropit('rotateCCW');
+        });
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor3').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor3').cropit('rotateCCW');
+        });
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor4').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor4').cropit('rotateCCW');
+        });
+
+
+
+
+
+
+
+
+
+        $('.exportav1').click(function() {
+          var imageData1 = $('.image-editor1').cropit('export');
+       
+          document.getElementById("home_appliance_avatar1_edit").value = imageData1;
+          // window.open(imageData);
+
+        });
+
+
+
+
+          $('.exportav2').click(function() {
+          var imageData2 = $('.image-editor2').cropit('export');
+       
+          document.getElementById("home_appliance_avatar2_edit").value = imageData2;
+          // window.open(imageData);
+
+        });
+
+
+           $('.exportav3').click(function() {
+          var imageData3 = $('.image-editor3').cropit('export');
+       
+          document.getElementById("home_appliance_avatar3_edit").value = imageData3;
+          // window.open(imageData);
+
+        });
+
+
+              $('.exportav4').click(function() {
+          var imageData4 = $('.image-editor4').cropit('export');
+       
+          document.getElementById("home_appliance_avatar4_edit").value = imageData4;
+          // window.open(imageData);
+
+        });
+
+
+
+
+      });
+    </script>
+
+
