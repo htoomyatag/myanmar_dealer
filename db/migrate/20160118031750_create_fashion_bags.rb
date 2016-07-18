@@ -14,7 +14,10 @@ class CreateFashionBags < ActiveRecord::Migration
       t.string :store_name
       t.string :color
       t.string :category
-
+      t.text :avatar1_edit
+      t.text :avatar2_edit
+      t.text :avatar3_edit
+      t.text :avatar4_edit
       t.timestamps null: false
     end
   end

@@ -14,8 +14,12 @@ class CreateTelephoneAccessories < ActiveRecord::Migration
       t.string :color
       t.text :feature
       t.string :operation_system
-           t.integer :user_id
-                 t.string :store_name
+      t.integer :user_id
+      t.string :store_name
+      t.text :avatar1_edit
+      t.text :avatar2_edit
+      t.text :avatar3_edit
+      t.text :avatar4_edit
 
       t.timestamps null: false
     end

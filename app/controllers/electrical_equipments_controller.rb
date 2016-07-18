@@ -73,7 +73,7 @@ class ElectricalEquipmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def electrical_equipment_params
-      params.require(:electrical_equipment).permit(:store_name,:user_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :size, :weight, :made_by_country, :description, :brand, :category, :modal_number, :color)
+      params.require(:electrical_equipment).permit(:avatar1_edit,:avatar2_edit,:avatar3_edit,:avatar4_edit,:store_name,:user_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :size, :weight, :made_by_country, :description, :brand, :category, :modal_number, :color)
     end
 
     def layout_per_action

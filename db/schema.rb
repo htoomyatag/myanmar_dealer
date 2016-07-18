@@ -48,6 +48,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.integer  "user_id"
     t.string   "store_name"
     t.integer  "quantity"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -85,6 +89,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.integer  "user_id"
     t.string   "store_name"
     t.integer  "quantity"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -139,6 +147,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -193,6 +205,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.string   "operation_system"
     t.integer  "user_id"
     t.string   "store_name"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -241,6 +257,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.string   "color"
     t.integer  "user_id"
     t.string   "store_name"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -281,6 +301,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -316,6 +340,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -354,6 +382,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.string   "store_name"
     t.string   "color"
     t.string   "category"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -434,6 +466,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.string   "store_name"
     t.string   "color"
     t.string   "category"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -470,6 +506,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -529,6 +569,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -570,6 +614,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.string   "voltage"
     t.integer  "user_id"
     t.string   "store_name"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -610,6 +658,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -659,6 +711,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.string   "color"
     t.integer  "user_id"
     t.string   "store_name"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -698,6 +754,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.integer  "user_id"
     t.string   "store_name"
     t.integer  "quantity"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -735,6 +795,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.integer  "user_id"
     t.string   "store_name"
     t.integer  "quantity"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -788,6 +852,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -937,6 +1005,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.string   "category"
     t.integer  "user_id"
     t.string   "store_name"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -992,6 +1064,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.string   "operation_system"
     t.integer  "user_id"
     t.string   "store_name"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -1029,6 +1105,10 @@ ActiveRecord::Schema.define(version: 20160715153050) do
     t.integer  "user_id"
     t.string   "store_name"
     t.string   "category"
+    t.text     "avatar1_edit"
+    t.text     "avatar2_edit"
+    t.text     "avatar3_edit"
+    t.text     "avatar4_edit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"

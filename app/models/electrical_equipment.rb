@@ -38,6 +38,10 @@ class ElectricalEquipment < ActiveRecord::Base
       :avatar3_file_name => self.avatar3.url,
       :avatar4_file_name => self.avatar4.url,
       :avatar5_file_name => self.avatar5.url,
+            :avatar1_edit => self.avatar1_edit,
+      :avatar2_edit => self.avatar2_edit,
+      :avatar3_edit => self.avatar3_edit,
+      :avatar4_edit => self.avatar4_edit,
       :weight => self.weight)
   end
 

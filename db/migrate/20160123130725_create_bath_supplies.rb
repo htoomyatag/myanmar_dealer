@@ -13,8 +13,12 @@ class CreateBathSupplies < ActiveRecord::Migration
       t.string :age_group
       t.integer :price
       t.integer :user_id
-            t.string :store_name
-            t.integer :quantity
+      t.string :store_name
+      t.integer :quantity
+      t.text :avatar1_edit
+      t.text :avatar2_edit
+      t.text :avatar3_edit
+      t.text :avatar4_edit
 
       t.timestamps null: false
     end

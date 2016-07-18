@@ -267,12 +267,12 @@ jQuery(function(){
 
 $(document).ready(function() {
     
-   alert("aok");
+
       <% @products.each do |product| %>
 
         function cartFunction<%= product.id %>() {
 
-          alert("aok");
+   
           var myqty = $("#myqty").text();
           var addqty = parseInt(myqty)+1; 
           $("#myqty").text(addqty);   
