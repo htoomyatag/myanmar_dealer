@@ -285,10 +285,9 @@ end
 
  get 'privacy_policy' => "fronts#privacy_policy", :as => :privacy_policy
 
-  get 'term_condition' => "fronts#term_condition", :as => :term_condition
+ get 'term_condition' => "fronts#term_condition", :as => :term_condition
 
-
-
+ get 'set_my_seller' => 'fronts#set_my_seller', :as => :set_my_seller
 
 
 

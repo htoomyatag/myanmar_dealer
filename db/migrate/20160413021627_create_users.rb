@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :has_store
       t.string :company_name
       t.integer :user_type_id
+      t.string :store_id
 
       t.timestamps null: false
     end

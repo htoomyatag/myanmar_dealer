@@ -5,6 +5,7 @@ class CreateStores < ActiveRecord::Migration
       t.string :store_address
       t.string :store_contact
       t.text :description
+      t.text :term
       t.integer :user_id
       t.string :seller_name
 

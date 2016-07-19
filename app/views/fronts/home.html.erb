@@ -314,10 +314,11 @@
                             <br/>
                            
 
-                            <% if current_user.has_store == "yes" %>
+                            <% if current_user.has_store == "Yes" %>
                                 <a href="/stores/<%= @store_id %>"  class="btn btn-default", id="menu_mybtn">MyStore</a>
                             <% else %>
                                <%= link_to "Open Shop", new_store_path, :class=>"btn btn-default", :id => "menu_mybtn"%>
+                              
                             <% end %>
 
 
@@ -754,5 +755,7 @@
 			 </div>
 	</div>
 </div>
+
+
 
 

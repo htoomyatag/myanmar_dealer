@@ -19,6 +19,7 @@ class StoresController < ApplicationController
       @products = Product.where(:user_id => current_user.id)
       @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
       @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
+      @users = User.all
   end
 
   # GET /stores/new
@@ -83,7 +84,7 @@ class StoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def store_params
-      params.require(:store).permit(:user_id,:avatar, :store_name, :store_address, :store_contact, :description, :user_id, :seller_name)
+      params.require(:store).permit(:term, :ads_one, :ads_two, :user_id,:avatar, :store_name, :store_address, :store_contact, :description, :user_id, :seller_name)
     end
 
     def layout_per_action

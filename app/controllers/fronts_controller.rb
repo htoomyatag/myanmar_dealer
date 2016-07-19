@@ -5,9 +5,15 @@ class FrontsController < ApplicationController
   
   # GET /fronts
   # GET /fronts.json
+
    def index
     @fronts = Front.all
    end
+
+    def set_my_seller
+          @user = User.find(params[:id])
+          @user.update(:store_id => params[:store_id])
+    end
 
     def about_seller_open_shop
     end
@@ -266,18 +272,23 @@ class FrontsController < ApplicationController
    end
 
    def product_full
-     @product = Product.find(params[:id])
-     @relate_product = Product.where(:product_category => @product.product_category)
+       @product = Product.find(params[:id])
+       @relate_product = Product.where(:product_category => @product.product_category)
 
-    @comment = Comment.new
-  @comments = Comment.where(:product_id => @product.id)
-      if user_signed_in? 
-       @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
-      end
-    
+      @comment = Comment.new
+      @comments = Comment.where(:product_id => @product.id)
+        if user_signed_in? 
+         @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
+        end
+
+      @user_id = @product.user_id.to_i
+      @store_ads = Store.where(:user_id => @user_id).distinct
+
+      @my_store = @store_ads.pluck(:id)
+      @my_sellers = User.where(:store_id => @my_store) 
+      
 
    
-    
    end
 
 

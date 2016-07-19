@@ -53,8 +53,18 @@
               </h3>
             </div>
             <div class="panel-body">
-              	  <%= f.text_area :description, :class=>"form-control",  :cols=>"20", :rows=>"10" %>
+              	  <%= f.text_area :description, :class=>"form-control",  :cols=>"10", :rows=>"2" %>
             </div>
+
+             <div class="panel-heading">
+              <h3 class="panel-title">
+                Terms and conditions
+              </h3>
+            </div>
+            <div class="panel-body">
+                  <%= f.text_area :term, :class=>"form-control",  :cols=>"10", :rows=>"2" %>
+            </div>
+
           </div>
         <!-- Account Panel Ends -->
         </div>
@@ -97,6 +107,27 @@
           </div>
         <!-- Login Panel Ends -->
         </div>
+         <div class="col-sm-12">
+            <div class="panel panel-smart">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Store ads</h3>
+                </div>
+                <div class="panel-body">
+
+                      <p>
+                         <%= f.file_field :ads_one %>
+                         width 700px height 300px for best view
+                      </p>
+
+                      <p>
+                         <%= f.file_field :ads_two %>
+                          width 700px height 300px for best view
+                      </p>
+                </div>
+            </div>
+
+
+         </div>
     <% end %>
    </div>
   </section>

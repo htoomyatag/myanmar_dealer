@@ -635,12 +635,27 @@
 					 	 </div>
 
 					 	  <div class="col-md-12" ><br>
-					 	   <p id="chatman">1.Htoo Myat Aung Hi  <img src="/assets/chat_small.png" style="float:right;"></p>
-					 	   <p id="chatman">2.Thel DarlyKhin Off   <img src="/assets/chat_small_b.png" style="float:right;"></p>
-					 	   <p id="chatman">3.Sai Kham Mg    Hi  <img src="/assets/chat_small.png" style="float:right;"></p>
-					 	   <p id="chatman">4.Aarphan        Off  <img src="/assets/chat_small_b.png" style="float:right;"></p>
-					 	   <p id="chatman">5.Arphan         Hi  <img src="/assets/chat_small.png" style="float:right;"></p>
+
+                <% @my_sellers.each do |my_seller| %>
+
+    					 	   <p id="chatman">
+                     <%= my_seller.name %>
+                    <img src="/assets/chat_small.png" style="float:right;" id="chat_myseller">
+                   </p>
+
+
+
+
+
+                <% end %>
+
+
+
+
+
+
 					 	 </div>
+
 
 					          	    
 					          
@@ -820,15 +835,32 @@
                   </center>
                   <hr/>
 
-                  <img src="assets/myads.jpg" class="img-responsive">
+              
+                   <% @store_ads.each do |store_ad| %>
+                    
+
+                         <%= image_tag store_ad.ads_one.url, :id => "store_ads"  %>
+                         <%= image_tag store_ad.ads_two.url, :id => "store_ads" %>
+
+
+                          <span style="font-weight:bold;color:#d9534f;">Terms and Condition</span><br/>
+                          <span style="font-weight:bold;colo:gray;">
+                               <%= store_ad.description rescue "-"  %>
+                          </span>
+
+
+                          <br/><br/>
+                          <span style="font-weight:bold;color:#d9534f;">Terms and Condition</span><br/>
+                           <span style="font-weight:bold;color:#d9534f;">
+                               <%= store_ad.term rescue "-" %>
+                           </span>
+
+
+              
+                    <% end %>
                   <br/>
-                  <span style="font-weight:bold;colo:gray;">Shop Service Description here Shop Service Description here Shop Service Description here Shop Service Description here Shop Service Description here</span>
-
-                   <br/><br/>
-                  <span style="font-weight:bold;color:#d9534f;">Terms and Condition</span><br/>
-                   <span style="font-weight:bold;color:#d9534f;">terms and conds here terms and conds here
-                   terms and conds here terms and conds here terms and conds here</span>
-
+                
+                
 
 
                   </div>
@@ -1074,6 +1106,34 @@
 
 
 
+         <% @my_sellers.each do |my_seller| %>
+
+                 
+
+                    <div class="popup-box chat-popup" id="mysellerchatbox"  style="display:none;">
+
+                      <div class="popup-head">
+                          <div class="popup-head-left"> <%= my_seller.name %></div>
+                          <div class="popup-head-right">
+                            <a href="#" id="close_chatseller">✕</a>
+                          </div>
+                      </div>
+
+                      <div class="popup_foot">
+
+                           <div id="msg_box">
+                             <p id="text_msg"></p>
+                           </div>
+                            <input class="form-control" id="message" rows="1"></textarea>
+                            <input class="btn btn-default" type="button" value="Send" id="send" style="display:none;">
+                      </div>
+                      
+                  </div>
+
+
+                <% end %>
+
+
 
 
 
@@ -1143,6 +1203,45 @@ document.getElementById('delivery_fees').value = package_name;
 
 
 				    });
+
+
+            // chat user my seller
+
+            $('#chat_myseller').click(function () {
+                $('#mysellerchatbox').show();
+                return false;
+            });
+
+            $('#close_chatseller').click(function () {
+                $('#mysellerchatbox').hide();
+                return false;
+            });
+
+            $('#send').click(function () {
+                
+              var message = document.getElementById("message").value;
+              var mychannel = "<%= current_user.name.to_s + @product.user.name.to_s %>";
+              var sender_id = "<%= current_user.id %>";
+              var recipient_id = "<%= @product.user_id %>";
+
+
+
+              $.ajax({
+                      type: 'get',
+                      url: "send_to_pusher?message="+message+"&recipient_id="+recipient_id+"&sender_id="+sender_id+"&channels="+mychannel,
+                      complete: function(r){
+
+
+                              $("#text_msg").append("<b> You: "+message+"</b><br/> ");
+                              $("#msg_box").scrollTop($("#msg_box")[0].scrollHeight);
+                           
+
+                      }
+                   });
+
+
+
+            });
 
 
 
@@ -1284,3 +1383,15 @@ $('#av4').click(function(){
 
 
 </script>
+
+
+<style type="text/css">
+  
+
+#store_ads{
+
+  width:700px;
+  height: 300px;
+}
+
+</style>
