@@ -16,7 +16,7 @@
   <!-- Login Form Section Starts -->
     <section class="login-area">
       <div class="row">
-       <%= form_for(@store, html: { multipart: true }) do |f| %>
+       <%= form_for(@store, html: { multipart: true , :onsubmit => "return validateForm()"}) do |f| %>
        	  <% if @store.errors.any? %>
 				    <div id="error_explanation">
 				      <h2><%= pluralize(@store.errors.count, "error") %> prohibited this store from being saved:</h2>
@@ -80,15 +80,23 @@
               </p>
 
 				  <div class="form-group">
-				    <%= f.label :store_name %><br>
+				    <%= f.label :store_name %>
+            <span style="color:red;font-weight:bold;display:none;" id="store_namelb"> 
+                &nbsp;&nbsp;*** store name must be filled ***
+            </span>
+            <br>
 				    <%= f.text_field :store_name, :class=>"form-control" %>
 				  </div>
 				  <div class="form-group">
-				    <%= f.label :store_address %><br>
+				    <%= f.label :store_address %>
+            <span style="color:red;font-weight:bold;display:none;" id="store_addresslb"> &nbsp;&nbsp;*** store address must be filled ***</span>
+            <br>
 				    <%= f.text_field :store_address, :class=>"form-control" %>
 				  </div>
 				  <div class="form-group">
-				    <%= f.label :store_contact %><br>
+				    <%= f.label :store_contact %>
+            <span style="color:red;font-weight:bold;display:none;" id="store_contactlb"> &nbsp;&nbsp;*** store contact must be filled ***</span>
+            <br>
 				    <%= f.text_field :store_contact, :class=>"form-control" %>
 				  </div>
 				  <div class="form-group" style="display:none;">
@@ -96,7 +104,9 @@
 				    <%= f.number_field :user_id,  :value => current_user.id ,:class=>"form-control" %>
 				  </div>
 				  <div class="form-group">
-				    <%= f.label :seller_name %><br>
+				    <%= f.label :seller_name %>
+              <span style="color:red;font-weight:bold;display:none;" id="seller_namelb"> &nbsp;&nbsp;*** seller name must be filled ***</span>
+            <br>
 				    <%= f.text_field :seller_name,:class=>"form-control" %>
 				  </div>
 				  <div class="actions">
@@ -134,3 +144,42 @@
   <!-- Login Form Section Ends -->
   </div>
 
+
+
+  <script type="text/javascript">
+
+function validateForm() {
+
+
+    var x = document.forms["new_store"]["store[store_name]"].value;
+    if (x == null || x == "") {
+        $("#store_namelb").show();
+        return false;
+    }
+
+
+    var x = document.forms["new_store"]["store[store_address]"].value;
+    if (x == null || x == "") {
+        $("#store_addresslb").show();
+        return false;
+    }
+
+
+    var x = document.forms["new_store"]["store[store_contact]"].value;
+    if (x == null || x == "") {
+        $("#store_contactlb").show();
+        return false;
+    }
+
+
+    var x = document.forms["new_store"]["store[seller_name]"].value;
+    if (x == null || x == "") {
+        $("#seller_namelb").show();
+        return false;
+    }
+
+
+
+}
+
+</script>

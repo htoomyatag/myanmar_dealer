@@ -1,52 +1,6 @@
 
-	<!-- Main Header Ends -->
-	<!-- Main Menu Starts -->
-		<nav id="main-menu" class="navbar" role="navigation">
-			<div class="container">
-			<!-- Nav Header Starts -->
-				<div class="navbar-header">
-					<button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-cat-collapse">
-						<span class="sr-only">Toggle Navigation</span>
-						<i class="fa fa-bars"></i>
-					</button>
-				</div>
-			<!-- Nav Header Ends -->
-			<!-- Navbar Cat collapse Starts -->
-				<div class="collapse navbar-collapse navbar-cat-collapse">
-					<ul class="nav navbar-nav">
-											<li>
-				 		 <%= link_to "#{t :fashions_related}", fashion_related_path, class: "btn btn-1" %>
-						</li>
-						<li>
-						 <%= link_to "#{t :electronics}", electronics_related_path, class: "btn btn-1" %>
-						</li>
-						<li>
-				 			<%= link_to "#{t :health_beauty}", health_beauty_related_path, class: "btn btn-1" %>
-						</li>
-						
 
-						<!--  -->
-						<li>
-				 			<%= link_to  "#{t :industrial_parts}", industrial_part_path, class: "btn btn-1" %>
-						</li>
-
-						<li>
-				 			<%= link_to "#{t :sports}", sports_related_path, class: "btn btn-1" %>
-						</li>
-
-						<li>
-				 			<%= link_to "#{t :services}", service_related_path, class: "btn btn-1" %>
-						</li>
-						<li>
-				 			<%= link_to "#{t :transportation_related}", auto_transportation_path, class: "btn btn-1" %>
-						</li>
-					</ul>
-				</div>
-			<!-- Navbar Cat collapse Ends -->
-			</div>
-		</nav>
-	<!-- Main Menu Ends -->
-	</header>
+	<%= render 'layouts/defaultnav' %>	
 	<br/><div class="row" style="margin:10px;">
 		<section class="products-list">		
 	

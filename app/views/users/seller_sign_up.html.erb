@@ -79,14 +79,14 @@
                   <div class="col-sm-offset-3 col-sm-9">
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> I'v read and agreed on Conditions
+                        <input type="checkbox" id="checky"> I'v read and agreed on Conditions
                       </label>
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-sm-offset-3 col-sm-9">
-                    <button type="submit" class="btn btn-black">
+                    <button type="submit" class="btn btn-black" id="postme">
                       Register
                     </button>
                   </div>
@@ -335,3 +335,17 @@ $(document).ready(function() {
 });
 
 </script>
+
+
+  <script type="text/javascript">
+
+
+
+       $('#checky').change(function () {
+          $('#postme').prop("disabled", !this.checked);
+      }).change()
+
+
+
+  </script>
+
