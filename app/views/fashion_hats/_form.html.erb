@@ -21,6 +21,12 @@
                               <h4>New Product Fashion Hat</h4>
                               <hr/>
 
+
+                                          <div class="form-group" >
+              <%= f.label :delivery_category %>
+              <%= f.select(:delivery_category, FashionHat::DELIVERY) %>
+            </div>
+
                           <div class="form-group" style="display:none;">
                             <%= f.label :user_id %>
                             <%= f.number_field :user_id, :value => current_user.id %>

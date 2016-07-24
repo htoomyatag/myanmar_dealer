@@ -28,6 +28,8 @@ class FashionBag < ActiveRecord::Base
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
 
+  DELIVERY = ["self_delivery", "transporter_logistics"]
+
  def add_to_product
 
     Product.create( :mmdealer_code => "bags"+(Product.maximum(:id).next.to_i).to_s,:user_id => self.user_id,
@@ -39,6 +41,7 @@ class FashionBag < ActiveRecord::Base
       :price => self.price,
       :size => self.size,
       :quantity => self.quantity,
+      :delivery_category => self.delivery_category,
       :made_with => self.made_with,
       :category => "bags",
       :avatar1_file_name => self.avatar1.url,

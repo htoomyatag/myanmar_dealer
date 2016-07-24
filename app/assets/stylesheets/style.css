@@ -1487,3 +1487,38 @@ select#select option[value="transporter"]   {
       #logo_img{
       	margin-top:-20px;
       }
+
+
+
+      .ask_seller {
+      	color: #bf1c23;
+      	font-weight: bold;
+
+      }
+
+
+
+      .mystore_seller {
+      		float: right;
+      		font-size: 16px;
+      		font-weight: bold;
+
+      }
+
+      .mystore_name {
+      	float: left;
+      		font-size: 16px;
+      		font-weight: bold;
+      }
+
+
+      #store_id, #product_id{
+      	cursor: pointer;
+      }
+
+
+
+      #product_pic {
+      	height: 50px;
+      	width: 50px;
+      }

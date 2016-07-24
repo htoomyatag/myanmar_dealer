@@ -9,6 +9,10 @@
   <li role="presentation"><a href="/admin_manage_seller">Manage Seller</a></li>
   <li role="presentation"><a href="/admin_manage_buyer">Manage Buyer</a></li>
   <li role="presentation"><a href="/set_today_deal">Set today deal</a></li>
+
+  <li role="presentation"><a href="/admin_view_order_report">Order Report</a></li>
+  <li role="presentation"><a href="/admin_view_product_report ">Product Report</a></li>
+  <li role="presentation"><a href="/admin_view_user_report ">User Report</a></li>
 </ul>
 
    
@@ -28,12 +32,78 @@
       <tbody>
         <% @products.each do |product| %>
           <tr>
-            <td><%= product.title %></td>
+            <td><a id="product_id" data-toggle="modal" data-target="#my<%= product.id %>"><%= product.title %></a></td>
             <td><%= product.price %></td>
             <td><%= product.store_name %></td>
             <td><%= product.user.name rescue "-" %></td>
          
           </tr>
+
+
+
+        <div class="modal fade" id="my<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel"><%= product.title %></h4>
+                </div>
+                <div class="modal-body">
+
+
+                    <img src="<%= product.avatar1_edit %>" id="product_pic" />
+
+                    <img src="<%= product.avatar2_edit %>"  id="product_pic"/>
+
+                    <img src="<%= product.avatar3_edit %>" id="product_pic"/>
+
+                    <img src="<%= product.avatar4_edit %>"  id="product_pic"/>
+
+
+                     <p><%=  product.title %></p>
+         <p><%=  product.category %></p>
+         <p><%=  product.ingredient %></p>
+         <p><%=  product.usage %></p>
+         <p><%=  product.made_by_country %></p>
+         <p><%=  product.description %></p>
+         <p><%=  product.brand %></p>
+         <p><%=  product.effect %></p>
+         <p><%=  product.certification %></p>
+         <p><%=  product.age_group %></p>
+         <p><%=  product.price %></p>
+         <p><%=  product.feature %></p>
+         <p><%=  product.modal_number %></p>
+         <p><%=  product.color %></p>
+         <p><%=  product.quantity %></p>
+         <p><%=  product.size %></p>
+         <p><%=  product.weight %></p>
+         <p><%=  product.made_with %></p>
+        <p><%=  product.specification %></p>
+         <p><%=  product.thickness %></p>
+         <p><%=  product.operation_system %></p>
+         <p><%=  product.bag_type %></p>
+         <p><%=  product.gender %></p>
+         <p><%=  product.footwear_type %></p>
+         <p><%=  product.hat_type %></p>
+         <p><%=  product.power %></p>
+         <p><%=  product.voltage %></p>
+         <p><%=  product.dimension %></p>
+        <p><%=  product.caution %></p>
+         <p><%=  product.charges %></p>
+
+
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
         <% end %>
       </tbody>
     </table>

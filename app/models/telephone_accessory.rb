@@ -17,6 +17,8 @@ class TelephoneAccessory < ActiveRecord::Base
   has_attached_file :avatar5, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
+    DELIVERY = ["self_delivery", "transporter_logistics"]
+
  def add_to_product
 
       Product.create( :mmdealer_code => "phone_related"+(Product.maximum(:id).next.to_i).to_s,:user_id => self.user_id,
@@ -29,6 +31,7 @@ class TelephoneAccessory < ActiveRecord::Base
       :modal_number => self.modal_number,
       :color => self.color,
       :quantity => self.quantity,
+      :delivery_category => self.delivery_category,
       :size => self.size,
       :weight => self.weight,
       :category => "phone_related",

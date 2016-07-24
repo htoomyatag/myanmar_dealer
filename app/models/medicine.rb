@@ -17,6 +17,8 @@ class Medicine < ActiveRecord::Base
   has_attached_file :avatar5, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
+    DELIVERY = ["self_delivery", "transporter_logistics"]
+
  def add_to_product
 
       
@@ -32,6 +34,7 @@ class Medicine < ActiveRecord::Base
       :category => "medicines",
       :avatar1_file_name => self.avatar1.url,
       :avatar2_file_name => self.avatar2.url,
+      :delivery_category => self.delivery_category,
       :avatar3_file_name => self.avatar3.url,
       :avatar4_file_name => self.avatar4.url,
       :avatar5_file_name => self.avatar5.url,

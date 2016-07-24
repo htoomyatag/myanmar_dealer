@@ -17,6 +17,7 @@ class Computer < ActiveRecord::Base
   has_attached_file :avatar5, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
+  DELIVERY = ["self_delivery", "transporter_logistics"]
    
  def add_to_product
 
@@ -29,6 +30,7 @@ class Computer < ActiveRecord::Base
    :size => self.size,
    :weight => self.weight,
    :thickness => self.thickness,
+   :delivery_category => self.delivery_category,
    :made_by_country => self.made_by_country,
    :description => self.description,
    :brand => self.brand,

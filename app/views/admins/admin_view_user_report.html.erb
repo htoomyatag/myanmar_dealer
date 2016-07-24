@@ -1,0 +1,81 @@
+<%= render 'layouts/defaultnav' %>
+
+ 
+<div class="rows" style="padding:10px;">
+
+<ul class="nav nav-tabs">
+  <li role="presentation"><a href="/admin_manage_shop">Manage Shop</a></li>
+  <li role="presentation"><a href="/admin_manage_product">View Products</a></li>
+  <li role="presentation"><a href="/admin_manage_seller">Manage Seller</a></li>
+  <li role="presentation"><a href="/admin_manage_buyer">Manage Buyer</a></li>
+  <li role="presentation"><a href="/set_today_deal">Set today deal</a></li>
+
+  <li role="presentation" ><a href="/admin_view_order_report">Order Report</a></li>
+  <li role="presentation"><a href="/admin_view_product_report ">Product Report</a></li>
+  <li role="presentation" class="active"><a href="/admin_view_user_report ">User Report</a></li>
+
+</ul>
+	<br/>
+   
+
+    <div class="well well-sm"> <h4>User REPORT</h4></div>
+
+    <button type="button" class="btn btn-danger btn-lg" style="float:right;position:relative;right:5px"> Total user: <%= @user_amount rescue "-" %> peoples </button>
+
+
+
+
+	<div class="panel panel-default">
+	  <div class="panel-body">
+	    		
+
+	    		 <form class="form-inline">
+					  <div class="form-group">
+					    <label for="exampleInputName2"> Date From</label>
+					    <input type="date" class="form-control" >
+					  </div>
+					  <div class="form-group">
+					    <label for="exampleInputEmail2">Date to</label>
+					     <input type="date" class="form-control" >
+					  </div>
+					  <button type="submit" class="btn btn-default" style="position:relative;bottom:5px;">Search</button>
+				</form>
+
+
+	  </div>
+	</div>
+
+
+
+    <table class="table">
+      <caption>Today user listing.</caption>
+
+		   <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Has store</th>
+      <th>Company name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.phone %></td>
+        <td><%= user.address %></td>
+        <td><%= user.has_store %></td>
+        <td><%= user.company_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+      
+    </table>
+
+   
+
+    <br>
+
+</div>

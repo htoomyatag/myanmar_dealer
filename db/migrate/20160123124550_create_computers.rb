@@ -21,6 +21,7 @@ class CreateComputers < ActiveRecord::Migration
       t.text :avatar2_edit
       t.text :avatar3_edit
       t.text :avatar4_edit
+       t.string :delivery_category
 
       t.timestamps null: false
     end

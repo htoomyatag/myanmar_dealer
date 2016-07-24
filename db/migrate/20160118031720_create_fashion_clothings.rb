@@ -14,6 +14,7 @@ class CreateFashionClothings < ActiveRecord::Migration
       t.string :color
       t.string :store_name
       t.string :category
+      t.string :delivery_category
 
 
       t.timestamps null: false

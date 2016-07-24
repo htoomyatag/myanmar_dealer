@@ -28,6 +28,15 @@
               <%= f.number_field :user_id, :value => current_user.id %>
             </div>
 
+
+            <div class="form-group" >
+              <%= f.label :delivery_category %>
+              <%= f.select(:delivery_category, FashionClothing::DELIVERY) %>
+            </div>
+
+
+              
+
             <div class="form-group">
               <%= f.label :title %><br/>
               <%= f.text_field :title, :class=>"form-control"  %>

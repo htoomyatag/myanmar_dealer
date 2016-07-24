@@ -17,6 +17,8 @@ class CarAccessory < ActiveRecord::Base
   has_attached_file :avatar5, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
+    DELIVERY = ["self_delivery", "transporter_logistics"]
+
  def add_to_product
 
 
@@ -25,6 +27,7 @@ class CarAccessory < ActiveRecord::Base
     :store_name => self.store_name,
     :price => self.price,
     :quantity => self.quantity,
+    :delivery_category => self.delivery_category,
     :size => self.size,
     :weight => self.weight,
     :made_by_country => self.made_by_country,

@@ -13,6 +13,7 @@ class CreateMedicines < ActiveRecord::Migration
       t.integer :user_id
       t.string :store_name
       t.integer  :quantity
+      t.string :delivery_category
       
       t.text :avatar1_edit
       t.text :avatar2_edit

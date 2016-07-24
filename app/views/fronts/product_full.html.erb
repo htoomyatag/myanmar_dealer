@@ -334,7 +334,11 @@
 					</span> 
 
 					<br/><br/>
-					
+			
+
+      <% if @product.delivery_category == "transporter_logistics" %>
+
+      		<!-- delivery with transporter -->
 					<div style="width:100%;">
 
 						<div style="width:20%;float:left;padding-right:10px;padding-top:5px;">
@@ -475,6 +479,27 @@
 						</div>
 
 					</div><br/><br/><br/>
+
+
+
+ <!--  -->
+
+       <% else %>
+
+                <div style="width:100%;">
+
+                  <div style="float:left;padding-right:10px;padding-top:5px;">
+                    <span class="product_ask">Delivery Charges:</span>
+                    <span class="ask_seller">ASK THE SELLER</span>
+                  </div><br/><br/><br/>
+
+            </div>
+
+         <% end %>
+
+
+
+
 
 					<div>
 						<span class="product_ask">Color:</span>

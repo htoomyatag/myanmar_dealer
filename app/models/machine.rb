@@ -17,6 +17,7 @@ class Machine < ActiveRecord::Base
   has_attached_file :avatar5, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
+  DELIVERY = ["self_delivery", "transporter_logistics"]
 
  def add_to_product
 
@@ -30,6 +31,7 @@ class Machine < ActiveRecord::Base
       :modal_number => self.modal_number,
       :color => self.color,
       :quantity => self.quantity,
+      :delivery_category => self.delivery_category,
       :weight => self.weight,
       :made_with => self.made_with,
       :specification => self.specification,

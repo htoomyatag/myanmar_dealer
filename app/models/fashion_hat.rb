@@ -27,6 +27,9 @@ class FashionHat < ActiveRecord::Base
   has_attached_file :avatar5, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
+
+    DELIVERY = ["self_delivery", "transporter_logistics"]
+
  def add_to_product
 
 
@@ -40,6 +43,7 @@ class FashionHat < ActiveRecord::Base
       :price => self.price,
       :quantity => self.quantity,
       :made_with => self.made_with,
+      :delivery_category => self.delivery_category,
       :category => "hats",
       :avatar1_file_name => self.avatar1.url,
       :avatar2_file_name => self.avatar2.url,

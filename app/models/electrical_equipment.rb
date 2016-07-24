@@ -18,7 +18,9 @@ class ElectricalEquipment < ActiveRecord::Base
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
 
-   
+  DELIVERY = ["self_delivery", "transporter_logistics"]
+
+
    def add_to_product
       Product.create(:mmdealer_code => "eletronic_related"+(Product.maximum(:id).next.to_i).to_s,
         :user_id => self.user_id,
@@ -27,6 +29,7 @@ class ElectricalEquipment < ActiveRecord::Base
       :made_by_country => self.made_by_country,
       :description => self.description,
       :brand => self.brand,
+      :delivery_category => self.delivery_category,
       :price => self.price,
       :modal_number => self.modal_number,
       :color => self.color,

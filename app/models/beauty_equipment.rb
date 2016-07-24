@@ -17,6 +17,8 @@ class BeautyEquipment < ActiveRecord::Base
   has_attached_file :avatar5, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
+    DELIVERY = ["self_delivery", "transporter_logistics"]
+
     def add_to_product
 
          Product.create(:mmdealer_code => "beauty_equipments"+(Product.maximum(:id).next.to_i).to_s,
@@ -24,6 +26,7 @@ class BeautyEquipment < ActiveRecord::Base
           :store_name => self.store_name,
          :brand => self.brand,
          :made_by_country => self.made_by_country,
+         :delivery_category => self.delivery_category,
          :description => self.description,
          :feature => self.feature,
          :modal_number => self.modal_number,

@@ -18,6 +18,7 @@ class FashionClothing < ActiveRecord::Base
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
 
+  DELIVERY = ["self_delivery", "transporter_logistics"]
 
  def add_to_product
 
@@ -34,6 +35,7 @@ class FashionClothing < ActiveRecord::Base
       :color => self.color,
       :quantity => self.quantity,
       :category => "cloths",
+      :delivery_category => self.delivery_category,
       :avatar1_file_name => self.avatar1.url,
       :avatar2_file_name => self.avatar2.url,
       :avatar3_file_name => self.avatar3.url,

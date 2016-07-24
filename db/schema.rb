@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
     t.text     "avatar4_edit"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -89,6 +90,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.integer  "user_id"
     t.string   "store_name"
     t.integer  "quantity"
+    t.string   "delivery_category"
     t.text     "avatar1_edit"
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
@@ -151,6 +153,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
     t.text     "avatar4_edit"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -209,6 +212,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
     t.text     "avatar4_edit"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -261,6 +265,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
     t.text     "avatar4_edit"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -305,6 +310,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
     t.text     "avatar4_edit"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -344,6 +350,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
     t.text     "avatar4_edit"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -386,6 +393,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
     t.text     "avatar4_edit"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -424,6 +432,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.string   "color"
     t.string   "store_name"
     t.string   "category"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -466,6 +475,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.string   "store_name"
     t.string   "color"
     t.string   "category"
+    t.string   "delivery_category"
     t.text     "avatar1_edit"
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
@@ -510,6 +520,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
     t.text     "avatar4_edit"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -573,6 +584,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
     t.text     "avatar4_edit"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -614,6 +626,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.string   "voltage"
     t.integer  "user_id"
     t.string   "store_name"
+    t.string   "delivery_category"
     t.text     "avatar1_edit"
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
@@ -662,6 +675,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
     t.text     "avatar4_edit"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -715,6 +729,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
     t.text     "avatar4_edit"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -758,6 +773,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
     t.text     "avatar4_edit"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -795,6 +811,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.integer  "user_id"
     t.string   "store_name"
     t.integer  "quantity"
+    t.string   "delivery_category"
     t.text     "avatar1_edit"
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
@@ -856,6 +873,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
     t.text     "avatar4_edit"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -959,6 +977,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.integer  "avatar5_file_size"
     t.datetime "avatar5_updated_at"
     t.string   "product_category"
+    t.string   "delivery_category"
   end
 
   create_table "services", force: :cascade do |t|
@@ -1009,6 +1028,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
     t.text     "avatar4_edit"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -1077,6 +1097,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
     t.text     "avatar4_edit"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"
@@ -1118,6 +1139,7 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.text     "avatar2_edit"
     t.text     "avatar3_edit"
     t.text     "avatar4_edit"
+    t.string   "delivery_category"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"

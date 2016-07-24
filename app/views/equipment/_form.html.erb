@@ -19,6 +19,12 @@
                 </div>
               <% end %>
 
+
+           <div class="form-group" >
+              <%= f.label :delivery_category %>
+              <%= f.select(:delivery_category, Equipment::DELIVERY) %>
+            </div>
+
             
  <div class="form-group" style="display:none;">
               <%= f.label :user_id %>

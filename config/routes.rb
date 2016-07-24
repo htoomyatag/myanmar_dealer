@@ -40,6 +40,10 @@ end
   get 'set_today_deal' => 'admins#set_today_deal'
   get 'admin_manage_product' => 'admins#admin_manage_product'
 
+   get 'admin_view_order_report' => 'admins#admin_view_order_report'
+   get 'admin_view_product_report' => 'admins#admin_view_product_report'
+   get 'admin_view_user_report' => 'admins#admin_view_user_report'
+
 
   resources :apis
 

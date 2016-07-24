@@ -17,6 +17,7 @@ class CreateHomeAppliances < ActiveRecord::Migration
       t.string :voltage
       t.integer :user_id
       t.string :store_name
+     t.string :delivery_category
       
       t.text :avatar1_edit
       t.text :avatar2_edit

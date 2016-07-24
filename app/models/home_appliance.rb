@@ -17,6 +17,8 @@ class HomeAppliance < ActiveRecord::Base
   has_attached_file :avatar5, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar5, content_type: /\Aimage\/.*\Z/
 
+    DELIVERY = ["self_delivery", "transporter_logistics"]
+
  def add_to_product
 
       Product.create( :mmdealer_code => "home_appliance"+(Product.maximum(:id).next.to_i).to_s,:user_id => self.user_id,
@@ -30,6 +32,7 @@ class HomeAppliance < ActiveRecord::Base
       :color => self.color,
       :quantity => self.quantity,
       :size => self.size,
+      :delivery_category => self.delivery_category,
       :weight => self.weight,
       :power => self.power,
       :avatar1_file_name => self.avatar1.url,

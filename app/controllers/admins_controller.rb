@@ -31,6 +31,27 @@ class AdminsController < ApplicationController
 
   end
 
+ 
+
+
+  def admin_view_order_report
+    @orders = Order.all
+    @order_amount = Order.count
+  end
+  
+  def admin_view_product_report
+
+    @products = Product.all
+    @product_amount = Product.count
+
+  end
+  
+  def admin_view_user_report
+    @users = User.all
+    @user_amount = User.count
+
+  end
+
 
   # GET /admins/1
   # GET /admins/1.json

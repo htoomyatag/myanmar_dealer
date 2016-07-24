@@ -75,7 +75,7 @@ class BathSuppliesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bath_supply_params
-      params.require(:bath_supply).permit(:avatar1_edit,:avatar2_edit,:avatar3_edit,:avatar4_edit,:quantity,:store_name,:user_id,:price,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :category, :ingredient, :usage, :made_by_country, :description, :brand, :effect, :certification, :age_group)
+      params.require(:bath_supply).permit(:delivery_category,:avatar1_edit,:avatar2_edit,:avatar3_edit,:avatar4_edit,:quantity,:store_name,:user_id,:price,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :category, :ingredient, :usage, :made_by_country, :description, :brand, :effect, :certification, :age_group)
     end
 
     def layout_per_action

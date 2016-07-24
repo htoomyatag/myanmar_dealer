@@ -17,6 +17,11 @@
                 </div>
               <% end %>
 
+              <div class="form-group" >
+              <%= f.label :delivery_category %>
+              <%= f.select(:delivery_category, TelephoneAccessory::DELIVERY) %>
+            </div>
+
             
 
  <div class="form-group" style="display:none;">

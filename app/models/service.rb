@@ -23,6 +23,7 @@ class Service < ActiveRecord::Base
       :title => self.title,
       :charges => self.charges,
       :service_category => self.service_category,
+      
       :category => "service_category",
       :description => self.description)
   end

@@ -14,6 +14,7 @@ class CreateFashionFootwears < ActiveRecord::Migration
       t.string :store_name
       t.string :color
       t.string :category
+      t.string :delivery_category
 
       t.text :avatar1_edit
       t.text :avatar2_edit
