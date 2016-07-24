@@ -1,0 +1,76 @@
+
+
+  <div id="desktop_hide">
+  		       <div class="container">    
+
+  		       		<div class="panel panel-default">
+					  <div class="panel-body">
+					    	<img src="<%= @product.avatar1_edit %>" class="img-responsive" />  
+					  </div>
+					</div>
+
+
+				 <p><%=  @product.title %></p>
+				 <p><%=  @product.category %></p>
+				 <p><%=  @product.ingredient %></p>
+				 <p><%=  @product.usage %></p>
+				 <p><%=  @product.made_by_country %></p>
+				 <p><%=  @product.description %></p>
+				 <p><%=  @product.brand %></p>
+				 <p><%=  @product.effect %></p>
+				 <p><%=  @product.certification %></p>
+				 <p><%=  @product.age_group %></p>
+				 <p><%=  @product.price %></p>
+				 <p><%=  @product.feature %></p>
+				 <p><%=  @product.modal_number %></p>
+				 <p><%=  @product.color %></p>
+				 <p><%=  @product.quantity %></p>
+				 <p><%=  @product.size %></p>
+				 <p><%=  @product.weight %></p>
+				 <p><%=  @product.made_with %></p>
+				<p><%=  @product.specification %></p>
+				 <p><%=  @product.thickness %></p>
+				 <p><%=  @product.operation_system %></p>
+				 <p><%=  @product.bag_type %></p>
+				 <p><%=  @product.gender %></p>
+				 <p><%=  @product.footwear_type %></p>
+				 <p><%=  @product.hat_type %></p>
+				 <p><%=  @product.power %></p>
+				 <p><%=  @product.voltage %></p>
+				 <p><%=  @product.dimension %></p>
+				<p><%=  @product.caution %></p>
+				 <p><%=  @product.charges %></p>
+
+
+
+				 		<%= button_to line_items_path(:mmdealer_code => @product.category.to_s+@product.id.to_s, :user_id => @product.user_id),  :id => "btn_to_cart", :class =>"btn btn-cart" do %>
+									   Buy Now
+						<% end %>
+
+
+  		       </div><br/>
+
+
+
+  		        <p class="mytitle"> Related Products</p>
+  		          <div class="container">
+
+
+				 <% @relate_products.each do |relate_product| %>
+
+                   
+                  
+                     	 <div class="col-xs-4 col-md-4">
+			                     <%= link_to image_tag(relate_product.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => relate_product), :id => "product_image" %>
+			                      
+			                      <span style="font-size:11px;"><%= relate_product.price.to_i %> <%=t :MMK %> </span>
+			                      <p style="font-size:9px;"><%= relate_product.title %> </p>
+			               </div>
+                      
+     
+               	<% end %>
+               	 </div>
+
+
+
+  </div>

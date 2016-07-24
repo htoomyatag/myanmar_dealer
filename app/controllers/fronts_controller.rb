@@ -15,6 +15,27 @@ class FrontsController < ApplicationController
           @user.update(:store_id => params[:store_id])
     end
 
+    def mobile_product_detail
+
+         @product = Product.find(params[:id])
+       @relate_products = Product.where(:product_category => @product.product_category).limit(2)
+       @the_relate_products = Product.where(:product_category => @product.product_category).last(2)
+
+      @comment = Comment.new
+      @comments = Comment.where(:product_id => @product.id)
+        if user_signed_in? 
+         @users = User.where.not("id = ?",current_user.id).order("created_at DESC").where("id = ?", @product.user_id)
+        end
+
+      @user_id = @product.user_id.to_i
+      @store_ads = Store.where(:user_id => @user_id).distinct
+
+      @my_store = @store_ads.pluck(:id)
+      @my_sellers = User.where(:store_id => @my_store) 
+      
+
+    end
+
     def about_seller_open_shop
     end
 

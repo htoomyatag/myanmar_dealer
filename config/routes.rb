@@ -140,6 +140,9 @@ end
  get 'login' => 'fronts#login'
  get 'product' => 'fronts#product'
  get 'product_full' => 'fronts#product_full' , :as => :product_full
+ get 'mobile_product_detail' => 'fronts#mobile_product_detail' , :as => :mobile_product_detail
+
+
  get 'register' => 'fronts#register'
  get 'check_out' => 'fronts#check_out'
  get 'thanks_you' => 'fronts#thanks_you'

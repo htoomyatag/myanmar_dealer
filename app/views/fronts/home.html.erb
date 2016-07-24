@@ -1,11 +1,18 @@
 
   <!-- for mobile big deals -->
   <div id="desktop_hide">
+
+
+               <div id="logo_img">
+                        <img src="/assets/slide2.png" title="myanmar_dealer" alt="myanmar_dealer" class="img-responsive" />
+                    </div>
+
+                    
        <p class="mytitle"> Big Deals</p>
        <div class="container">      
               <% @big_deals.each do |big_deal| %>
                 <div class="col-xs-4 col-md-4">
-                     <%= link_to image_tag(big_deal.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => big_deal), :id => "product_image" %>
+                     <%= link_to image_tag(big_deal.avatar1_edit, :style=>"height:100px;width:100px;"), mobile_product_detail_path(:id => big_deal), :id => "product_image" %>
                       
                       <span style="font-size:11px;"><%= big_deal.price.to_i %> <%=t :MMK %> </span>
                       <p style="font-size:9px;"><%= big_deal.title %> </p>
@@ -18,7 +25,7 @@
        <div class="container">      
               <% @women_fashions.each do |women_fashion| %>
                 <div class="col-xs-4 col-md-4">
-                     <%= link_to image_tag(women_fashion.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => women_fashion), :id => "product_image" %>
+                     <%= link_to image_tag(women_fashion.avatar1_edit, :style=>"height:100px;width:100px;"), mobile_product_detail_path(:id => women_fashion), :id => "product_image" %>
                       
                       <span style="font-size:11px;"><%= women_fashion.price.to_i %> <%=t :MMK %> </span>
                       <p style="font-size:9px;"><%= women_fashion.title %> </p>
@@ -32,7 +39,7 @@
        <div class="container">      
               <% @men_fashions.each do |men_fashion| %>
                 <div class="col-xs-4 col-md-4">
-                     <%= link_to image_tag(men_fashion.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => men_fashion), :id => "product_image" %>
+                     <%= link_to image_tag(men_fashion.avatar1_edit, :style=>"height:100px;width:100px;"), mobile_product_detail_path(:id => men_fashion), :id => "product_image" %>
                       
                       <span style="font-size:11px;"><%= men_fashion.price.to_i %> <%=t :MMK %> </span>
                       <p style="font-size:9px;"><%= men_fashion.title %> </p>
@@ -45,7 +52,7 @@
        <div class="container">      
               <% @fashion_accessories.each do |fashion_accessory| %>
                 <div class="col-xs-4 col-md-4">
-                     <%= link_to image_tag(fashion_accessory.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => fashion_accessory), :id => "product_image" %>
+                     <%= link_to image_tag(fashion_accessory.avatar1_edit, :style=>"height:100px;width:100px;"), mobile_product_detail_path(:id => fashion_accessory), :id => "product_image" %>
                       
                       <span style="font-size:11px;"><%= fashion_accessory.price.to_i %> <%=t :MMK %> </span>
                       <p style="font-size:9px;"><%= fashion_accessory.title %> </p>
@@ -58,7 +65,7 @@
        <div class="container">      
               <% @bags.each do |bag| %>
                 <div class="col-xs-4 col-md-4">
-                     <%= link_to image_tag(bag.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => bag), :id => "product_image" %>
+                     <%= link_to image_tag(bag.avatar1_edit, :style=>"height:100px;width:100px;"), mobile_product_detail_path(:id => bag), :id => "product_image" %>
                       
                       <span style="font-size:11px;"><%= bag.price.to_i %> <%=t :MMK %> </span>
                       <p style="font-size:9px;"><%= bag.title %> </p>
@@ -71,7 +78,7 @@
        <div class="container">      
               <% @shoes.each do |shoe| %>
                 <div class="col-xs-4 col-md-4">
-                     <%= link_to image_tag(shoe.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => shoe), :id => "product_image" %>
+                     <%= link_to image_tag(shoe.avatar1_edit, :style=>"height:100px;width:100px;"), mobile_product_detail_path(:id => shoe), :id => "product_image" %>
                       
                       <span style="font-size:11px;"><%= shoe.price.to_i %> <%=t :MMK %> </span>
                       <p style="font-size:9px;"><%= shoe.title %> </p>
@@ -84,7 +91,7 @@
        <div class="container">      
               <% @beauty_equipments.each do |beauty_equipment| %>
                 <div class="col-xs-4 col-md-4">
-                     <%= link_to image_tag(beauty_equipment.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => beauty_equipment), :id => "product_image" %>
+                     <%= link_to image_tag(beauty_equipment.avatar1_edit, :style=>"height:100px;width:100px;"), mobile_product_detail_path(:id => beauty_equipment), :id => "product_image" %>
                       
                       <span style="font-size:11px;"><%= beauty_equipment.price.to_i %> <%=t :MMK %> </span>
                       <p style="font-size:9px;"><%= beauty_equipment.title %> </p>
@@ -96,7 +103,7 @@
        <div class="container">      
               <% @toys.each do |toy| %>
                 <div class="col-xs-4 col-md-4">
-                     <%= link_to image_tag(toy.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => toy), :id => "product_image" %>
+                     <%= link_to image_tag(toy.avatar1_edit, :style=>"height:100px;width:100px;"), mobile_product_detail_path(:id => toy), :id => "product_image" %>
                       
                       <span style="font-size:11px;"><%= toy.price.to_i %> <%=t :MMK %> </span>
                       <p style="font-size:9px;"><%= toy.title %> </p>
@@ -109,7 +116,7 @@
        <div class="container">      
               <% @mobile_phones.each do |mobile_phone| %>
                 <div class="col-xs-4 col-md-4">
-                     <%= link_to image_tag(mobile_phone.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => mobile_phone), :id => "product_image" %>
+                     <%= link_to image_tag(mobile_phone.avatar1_edit, :style=>"height:100px;width:100px;"), mobile_product_detail_path(:id => mobile_phone), :id => "product_image" %>
                       
                       <span style="font-size:11px;"><%= mobile_phone.price.to_i %> <%=t :MMK %> </span>
                       <p style="font-size:9px;"><%= mobile_phone.title %> </p>
@@ -121,7 +128,7 @@
        <div class="container">      
               <% @computers.each do |computer| %>
                 <div class="col-xs-4 col-md-4">
-                     <%= link_to image_tag(computer.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => computer), :id => "product_image" %>
+                     <%= link_to image_tag(computer.avatar1_edit, :style=>"height:100px;width:100px;"), mobile_product_detail_path(:id => computer), :id => "product_image" %>
                       
                       <span style="font-size:11px;"><%= computer.price.to_i %> <%=t :MMK %> </span>
                       <p style="font-size:9px;"><%= computer.title %> </p>
@@ -134,7 +141,7 @@
        <div class="container">      
               <% @electrical_equipments.each do |electrical_equipment| %>
                 <div class="col-xs-4 col-md-4">
-                     <%= link_to image_tag(electrical_equipment.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => electrical_equipment), :id => "product_image" %>
+                     <%= link_to image_tag(electrical_equipment.avatar1_edit, :style=>"height:100px;width:100px;"), mobile_product_detail_path(:id => electrical_equipment), :id => "product_image" %>
                       
                       <span style="font-size:11px;"><%= electrical_equipment.price.to_i %> <%=t :MMK %> </span>
                       <p style="font-size:9px;"><%= electrical_equipment.title %> </p>
