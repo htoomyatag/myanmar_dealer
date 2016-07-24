@@ -89,7 +89,7 @@
                             Resize image
                           </div>
 
-                            <%= f.text_field :avatar1_edit, :class=>"form-control"  %>
+                           <%= f.text_field :avatar1_edit, :class=>"form-control", :style=>"display:none"  %>
 
 
                             <input type="range" class="cropit-image-zoom-input" >
@@ -113,7 +113,7 @@
                             Resize image
                           </div>
 
-                            <%= f.text_field :avatar2_edit, :class=>"form-control"  %>
+                           <%= f.text_field :avatar2_edit, :class=>"form-control", :style=>"display:none"  %>
 
 
                             <input type="range" class="cropit-image-zoom-input" >
@@ -139,7 +139,7 @@
                             Resize image
                           </div>
 
-                            <%= f.text_field :avatar3_edit, :class=>"form-control"  %>
+                           <%= f.text_field :avatar3_edit, :class=>"form-control", :style=>"display:none"  %>
 
 
                             <input type="range" class="cropit-image-zoom-input" >
@@ -166,7 +166,7 @@
                             Resize image
                           </div>
 
-                            <%= f.text_field :avatar4_edit, :class=>"form-control"  %>
+                           <%= f.text_field :avatar4_edit, :class=>"form-control", :style=>"display:none"  %>
 
 
                             <input type="range" class="cropit-image-zoom-input" >
@@ -223,26 +223,34 @@
     <script>
       $(function() {
         $('.image-editor1').cropit({
-          imageState: {
+
+     minZoom: 'fit',
+    imageState: {
             src: 'http://localhost:3000/',
           },
         });
 
         $('.image-editor2').cropit({
-          imageState: {
+
+     minZoom: 'fit',
+    imageState: {
             src: 'http://localhost:3000/',
           },
         });
 
 
         $('.image-editor3').cropit({
-          imageState: {
+
+     minZoom: 'fit',
+    imageState: {
             src: 'http://localhost:3000/',
           },
         });
 
         $('.image-editor4').cropit({
-          imageState: {
+
+     minZoom: 'fit',
+    imageState: {
             src: 'http://localhost:3000/',
           },
         });

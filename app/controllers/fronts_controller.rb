@@ -226,6 +226,31 @@ class FrontsController < ApplicationController
         @coutry_products = Product.all.select(:made_by_country).uniq
         @brand_products = Product.all.select(:brand).uniq
 
+        @big_deals =  Product.where.not(id: '1').order('id DESC').limit(3)
+        @women_fashions =  Product.where.not(id: '1').order('id DESC').limit(3)
+        @men_fashions =  Product.where.not(id: '1').order('id DESC').limit(3)
+
+        @fashion_accessories =  Product.where.not(id: '1').order('id DESC').limit(3).where(:product_category => "fashion_related")
+
+        @bags =  Product.where.not(id: '1').order('id DESC').limit(3).where(:category => "bags")
+
+        @shoes =  Product.where.not(id: '1').order('id DESC').limit(3).where(:category => "footwears")
+
+        @beauty_equipments =  Product.where.not(id: '1').order('id DESC').limit(3).where(:category => "beauty_equipments")
+
+        @toys =  Product.where.not(id: '1').order('id DESC').limit(3).where(:category => "toys")
+
+        @mobile_phones =  Product.where.not(id: '1').order('id DESC').limit(3).where(:category => "phone_related")
+
+        @computers =  Product.where.not(id: '1').order('id DESC').limit(3).where(:product_category => "computers_laptops")
+
+        @electrical_equipments =  Product.where.not(id: '1').order('id DESC').limit(3).where(:product_category => "eletronic_related")
+
+
+
+
+
+
         if user_signed_in? 
          @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
          @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
@@ -273,7 +298,8 @@ class FrontsController < ApplicationController
 
    def product_full
        @product = Product.find(params[:id])
-       @relate_product = Product.where(:product_category => @product.product_category)
+       @relate_products = Product.where(:product_category => @product.product_category).limit(2)
+       @the_relate_products = Product.where(:product_category => @product.product_category).last(2)
 
       @comment = Comment.new
       @comments = Comment.where(:product_id => @product.id)

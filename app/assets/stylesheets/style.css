@@ -11,7 +11,6 @@ body{
 /* mobile hide*/
 
 
-
 /* Standard Styles Starts */
 
 a{
@@ -1461,4 +1460,30 @@ select#select option[value="transporter"]   {
 
       button {
         margin-top: 10px;
+      }
+
+
+
+
+      #mobile_navsearch {
+      	height:38px;
+      	width:50%;
+      	text-align:center;
+      	background:#bf1c23;
+      	color:white;
+      	margin-top: 6px;
+      }
+
+
+      #mobile_nav_btn{
+      	position: relative;
+      	float: right;
+      	top: -44px;
+      	right: 5px;
+      }
+
+
+
+      #logo_img{
+      	margin-top:-20px;
       }

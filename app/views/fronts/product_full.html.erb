@@ -250,7 +250,7 @@
                 </div>
 
                  <div class="col-md-5" >
-                 		<h2 style="background:#d9534f;margin-top:30px;padding:20px;border-radius:5px;">Advertising Place</h2>
+                 	
                  </div>
    
          
@@ -707,55 +707,25 @@
          
             <hr/>
             <div class="col-md-2" >
+
+                <% @relate_products.each do |relate_product| %>
+
                     <br/>
                     <div>
-                    <a href="#" class="thumbnail">
-                        <img src="/assets/no_image.jpg" alt="...">
-                     </a>
-                        <b>1800 Kyats </b>
-                        <span style="float:right;color:gray;font-weight:bold;">125 sold</span>
-                    
-                    <span style="float:left;;color:black;font-weight:bold;">Summer dress for lady</span>
-                    <p>ggergegegreg gegregregrreg gregregre gregrege </p>
+                      <a href="#" class="thumbnail">
+                          <img src="/assets/no_image.jpg" alt="...">
+                       </a>
+                          <b> <%= relate_product.price %> Kyats </b>
+                          <span style="float:right;color:gray;font-weight:bold;">125 sold</span>
+                      
+                      <span style="float:left;;color:black;font-weight:bold;">
+                        <%= relate_product.title rescue "-"%>
+                      </span><br/><br/>
+                        <img src="/assets/shop-icon-23328.png">  MiMiBerry Tshirt
+                        <img src="/assets/chat.png" style="float:right;">
+                    </div><br/>
 
-
-                      <img src="/assets/shop-icon-23328.png">  MiMiBerry Tshirt
-                      <img src="/assets/chat.png" style="float:right;">
-                    </div>
-
-
-                        <br/>
-                    <div>
-                    <a href="#" class="thumbnail">
-                        <img src="/assets/no_image.jpg" alt="...">
-                     </a>
-                        <b>1800 Kyats </b>
-                        <span style="float:right;color:gray;font-weight:bold;">125 sold</span>
-                    
-                    <span style="float:left;;color:black;font-weight:bold;">Summer dress for lady</span>
-                    <p>ggergegegreg gegregregrreg gregregre gregrege </p>
-
-
-                      <img src="/assets/shop-icon-23328.png">  MiMiBerry Tshirt
-                      <img src="/assets/chat.png" style="float:right;">
-                    </div>
-
-
-                        <br/>
-                    <div>
-                    <a href="#" class="thumbnail">
-                        <img src="/assets/no_image.jpg" alt="...">
-                     </a>
-                        <b>1800 Kyats </b>
-                        <span style="float:right;color:gray;font-weight:bold;">125 sold</span>
-                    
-                    <span style="float:left;;color:black;font-weight:bold;">Summer dress for lady</span>
-                    <p>ggergegegreg gegregregrreg gregregre gregrege </p>
-
-
-                      <img src="/assets/shop-icon-23328.png">  MiMiBerry Tshirt
-                      <img src="/assets/chat.png" style="float:right;">
-                    </div>
+               <% end %>
 
             </div>
 
@@ -842,7 +812,7 @@
                          <%= image_tag store_ad.ads_one.url, :id => "store_ads"  %>
                          <%= image_tag store_ad.ads_two.url, :id => "store_ads" %>
 
-
+                           <br/>
                           <span style="font-weight:bold;color:#d9534f;">Terms and Condition</span><br/>
                           <span style="font-weight:bold;colo:gray;">
                                <%= store_ad.description rescue "-"  %>
@@ -1007,55 +977,26 @@
             </div>
 
             <div class="col-md-2" >
+                   
+                  <% @the_relate_products.each do |the_relate_product| %>
+
                     <br/>
                     <div>
-                    <a href="#" class="thumbnail">
-                        <img src="/assets/no_image.jpg" alt="...">
-                     </a>
-                        <b>1800 Kyats </b>
-                        <span style="float:right;color:gray;font-weight:bold;">125 sold</span>
-                    
-                    <span style="float:left;;color:black;font-weight:bold;">Summer dress for lady</span>
-                    <p>ggergegegreg gegregregrreg gregregre gregrege </p>
+                      <a href="#" class="thumbnail">
+                          <img src="/assets/no_image.jpg" alt="...">
+                       </a>
+                          <b> <%= the_relate_product.price %> Kyats </b>
+                          <span style="float:right;color:gray;font-weight:bold;">125 sold</span>
+                      
+                      <span style="float:left;;color:black;font-weight:bold;">
+                        <%= the_relate_product.title rescue "-"%>
+                      </span><br/><br/>
+                        <img src="/assets/shop-icon-23328.png">  MiMiBerry Tshirt
+                        <img src="/assets/chat.png" style="float:right;">
+                    </div><br/>
 
-
-                      <img src="/assets/shop-icon-23328.png">  MiMiBerry Tshirt
-                      <img src="/assets/chat.png" style="float:right;">
-                    </div>
-
-
-                        <br/>
-                    <div>
-                    <a href="#" class="thumbnail">
-                        <img src="/assets/no_image.jpg" alt="...">
-                     </a>
-                        <b>1800 Kyats </b>
-                        <span style="float:right;color:gray;font-weight:bold;">125 sold</span>
-                    
-                    <span style="float:left;;color:black;font-weight:bold;">Summer dress for lady</span>
-                    <p>ggergegegreg gegregregrreg gregregre gregrege </p>
-
-
-                      <img src="/assets/shop-icon-23328.png">  MiMiBerry Tshirt
-                      <img src="/assets/chat.png" style="float:right;">
-                    </div>
-
-
-                        <br/>
-                    <div>
-                    <a href="#" class="thumbnail">
-                        <img src="/assets/no_image.jpg" alt="...">
-                     </a>
-                        <b>1800 Kyats </b>
-                        <span style="float:right;color:gray;font-weight:bold;">125 sold</span>
-                    
-                    <span style="float:left;;color:black;font-weight:bold;">Summer dress for lady</span>
-                    <p>ggergegegreg gegregregrreg gregregre gregrege </p>
-
-
-                      <img src="/assets/shop-icon-23328.png">  MiMiBerry Tshirt
-                      <img src="/assets/chat.png" style="float:right;">
-                    </div>
+               <% end %>
+                  
 
             </div>
 

@@ -1,4 +1,156 @@
 
+  <!-- for mobile big deals -->
+  <div id="desktop_hide">
+       <p class="mytitle"> Big Deals</p>
+       <div class="container">      
+              <% @big_deals.each do |big_deal| %>
+                <div class="col-xs-4 col-md-4">
+                     <%= link_to image_tag(big_deal.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => big_deal), :id => "product_image" %>
+                      
+                      <span style="font-size:11px;"><%= big_deal.price.to_i %> <%=t :MMK %> </span>
+                      <p style="font-size:9px;"><%= big_deal.title %> </p>
+                </div>
+              <% end %>
+      </div> 
+
+
+       <p class="mytitle"> Women Fashons</p>
+       <div class="container">      
+              <% @women_fashions.each do |women_fashion| %>
+                <div class="col-xs-4 col-md-4">
+                     <%= link_to image_tag(women_fashion.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => women_fashion), :id => "product_image" %>
+                      
+                      <span style="font-size:11px;"><%= women_fashion.price.to_i %> <%=t :MMK %> </span>
+                      <p style="font-size:9px;"><%= women_fashion.title %> </p>
+                </div>
+              <% end %>
+      </div> 
+
+
+
+       <p class="mytitle"> Men Fashions</p>
+       <div class="container">      
+              <% @men_fashions.each do |men_fashion| %>
+                <div class="col-xs-4 col-md-4">
+                     <%= link_to image_tag(men_fashion.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => men_fashion), :id => "product_image" %>
+                      
+                      <span style="font-size:11px;"><%= men_fashion.price.to_i %> <%=t :MMK %> </span>
+                      <p style="font-size:9px;"><%= men_fashion.title %> </p>
+                </div>
+              <% end %>
+      </div> 
+
+
+      <p class="mytitle"> Fashion Accessories</p>
+       <div class="container">      
+              <% @fashion_accessories.each do |fashion_accessory| %>
+                <div class="col-xs-4 col-md-4">
+                     <%= link_to image_tag(fashion_accessory.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => fashion_accessory), :id => "product_image" %>
+                      
+                      <span style="font-size:11px;"><%= fashion_accessory.price.to_i %> <%=t :MMK %> </span>
+                      <p style="font-size:9px;"><%= fashion_accessory.title %> </p>
+                </div>
+              <% end %>
+      </div> 
+
+
+        <p class="mytitle"> Bags</p>
+       <div class="container">      
+              <% @bags.each do |bag| %>
+                <div class="col-xs-4 col-md-4">
+                     <%= link_to image_tag(bag.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => bag), :id => "product_image" %>
+                      
+                      <span style="font-size:11px;"><%= bag.price.to_i %> <%=t :MMK %> </span>
+                      <p style="font-size:9px;"><%= bag.title %> </p>
+                </div>
+              <% end %>
+      </div> 
+
+
+      <p class="mytitle"> Shoes</p>
+       <div class="container">      
+              <% @shoes.each do |shoe| %>
+                <div class="col-xs-4 col-md-4">
+                     <%= link_to image_tag(shoe.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => shoe), :id => "product_image" %>
+                      
+                      <span style="font-size:11px;"><%= shoe.price.to_i %> <%=t :MMK %> </span>
+                      <p style="font-size:9px;"><%= shoe.title %> </p>
+                </div>
+              <% end %>
+      </div> 
+
+
+      <p class="mytitle"> Beauty & Health</p>
+       <div class="container">      
+              <% @beauty_equipments.each do |beauty_equipment| %>
+                <div class="col-xs-4 col-md-4">
+                     <%= link_to image_tag(beauty_equipment.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => beauty_equipment), :id => "product_image" %>
+                      
+                      <span style="font-size:11px;"><%= beauty_equipment.price.to_i %> <%=t :MMK %> </span>
+                      <p style="font-size:9px;"><%= beauty_equipment.title %> </p>
+                </div>
+              <% end %>
+      </div> 
+
+      <p class="mytitle"> Kid Fashion & Toy</p>
+       <div class="container">      
+              <% @toys.each do |toy| %>
+                <div class="col-xs-4 col-md-4">
+                     <%= link_to image_tag(toy.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => toy), :id => "product_image" %>
+                      
+                      <span style="font-size:11px;"><%= toy.price.to_i %> <%=t :MMK %> </span>
+                      <p style="font-size:9px;"><%= toy.title %> </p>
+                </div>
+              <% end %>
+      </div> 
+
+
+      <p class="mytitle"> Mobile Phone & Accessories</p>
+       <div class="container">      
+              <% @mobile_phones.each do |mobile_phone| %>
+                <div class="col-xs-4 col-md-4">
+                     <%= link_to image_tag(mobile_phone.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => mobile_phone), :id => "product_image" %>
+                      
+                      <span style="font-size:11px;"><%= mobile_phone.price.to_i %> <%=t :MMK %> </span>
+                      <p style="font-size:9px;"><%= mobile_phone.title %> </p>
+                </div>
+              <% end %>
+      </div> 
+
+        <p class="mytitle"> Computer & Laptops</p>
+       <div class="container">      
+              <% @computers.each do |computer| %>
+                <div class="col-xs-4 col-md-4">
+                     <%= link_to image_tag(computer.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => computer), :id => "product_image" %>
+                      
+                      <span style="font-size:11px;"><%= computer.price.to_i %> <%=t :MMK %> </span>
+                      <p style="font-size:9px;"><%= computer.title %> </p>
+                </div>
+              <% end %>
+      </div> 
+
+
+       <p class="mytitle"> Electronics</p>
+       <div class="container">      
+              <% @electrical_equipments.each do |electrical_equipment| %>
+                <div class="col-xs-4 col-md-4">
+                     <%= link_to image_tag(electrical_equipment.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => electrical_equipment), :id => "product_image" %>
+                      
+                      <span style="font-size:11px;"><%= electrical_equipment.price.to_i %> <%=t :MMK %> </span>
+                      <p style="font-size:9px;"><%= electrical_equipment.title %> </p>
+                </div>
+              <% end %>
+      </div> 
+
+
+
+</div>
+
+
+        <!--  -->
+
+
+
 
 
 <nav class="navbar navbar-inverse navbar-fixed-top" style="background:white;border:red;" id="hide_mobile">
@@ -235,7 +387,8 @@
 
                 <div class="col-md-2">
                   <div id="logo">
-                    <a href="#"><img src="/assets/logo.jpg" title="Spice Shoppe" alt="Spice Shoppe" style="height:95px;" /></a>
+                    <a href="#">
+                    <img src="/assets/logo.jpg" title="Spice Shoppe" alt="Spice Shoppe" style="height:95px;" /></a>
                   </div>
                 </div>
 
@@ -378,83 +531,6 @@
   <div style="height:210px;" id="hide_mobile">
 
   </div>
-<!-- for mobile_view -->
-<div class="container" id="desktop_hide">
-
-		
-
-
-			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-							 
-
-							  <!-- Wrapper for slides -->
-							  <div class="carousel-inner" role="listbox">
-							    <div class="item active">
-							       <%= image_tag 'slide1.png' %>
-							   
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'slide1.png' %>
-							     
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'slide1.png' %>
-							     
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'slide1.png' %>
-							     
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'slide1.png' %>
-							    </div>
-							  </div>
-
-							 
-			</div>
-
-			<div class="rows"><br/>
-				<% @products.each do |product| %>
-						<div class="col-xs-6 col-sm-6">
-							<div class="product-col">
-								<div class="image">
-								<% if !product.avatar1_file_name.nil?  %>
-            
-					                 <%= link_to image_tag(product.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => product), :id => "product_image" %>
-					            <% elsif product.avatar1_file_name.nil?  %>      
-									<img src="/assets/no_image.jpg" alt="product" class="img-responsive" style="height:100px;width:100px;" />
-					            <% end %>
-								</div>
-								<div class="caption">
-									<p>
-										<%= link_to product.title, product_full_path(:id => product) %><br/>
-										<%= product.price.to_i %> <%=t :MMK %>
-									</p>
-								
-									
-									<div class="cart-button">
-									
-  									<%= button_to line_items_path(:mmdealer_code => product.category.to_s+product.id.to_s, :user_id => product.user_id), remote: true, :onclick =>"cartFunction#{product.id}()", :data => product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
-  									<%=t :add_to_cart %>
-
-
-
-									  <i class="fa fa-shopping-cart"></i> 
-									<% end %>
-
-
-																	
-									</div>
-								</div>
-							</div>
-						</div>
-					<% end %>
-			</div>
-
-
-</div>
-
-<!--  -->
 
 
 
@@ -595,14 +671,7 @@
 
 							 
 					</div>
-					<div style="position:relative;top:15px;">
-						<span id="home_menubtn">Big Deals</span>
-						<span id="home_menubtn">Best Selling</span>
-						<span id="home_menubtn">Hot Shop</span>
-						<span id="home_menubtn">Branded</span>
-						<span id="home_menubtn">Free Delivery</span>
-						
-					</div>
+				
 						
 					
 
@@ -632,6 +701,8 @@
      	  		
 	
      	  </div>
+
+      
 
 
      	  <div class="col-md-2" style="margin-left:-15px;">

@@ -25,7 +25,7 @@
   <%= javascript_include_tag 'amazonmenu.js' %>
   <%= javascript_include_tag 'pusher.min.js' %>
  
-<meta name="viewport" content="width=1024">  
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
 
@@ -53,30 +53,33 @@ jQuery(function(){
 
                 <div class="rows" id="desktop_hide">
 
-                <nav class="navbar navbar-default" style="background:#d9534f;">
+                <nav class="navbar navbar-default" style="background:#d9534f;height:60px;">
                     <div class="container-fluid">
                       <!-- Brand and toggle get grouped for better mobile display -->
                       <div class="navbar-header">
 
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="float:left;margin-left:5px;">
                           <span class="sr-only">Toggle navigation</span>
                           <span class="icon-bar"></span>
                           <span class="icon-bar"></span>
                           <span class="icon-bar"></span>
                         </button>
-                        <p class="navbar-text" style="color:white;font-weight:bold;"> &nbsp;&nbsp;&nbsp;MyanmarDealer
-                                <a href="/check_out">
-                                 
-                                  <span class="hidden-sm hidden-xs" style="color:white;">
-                                    Cart
-                                  </span>
-                                  <span class="badge" id="myqty">Cart (<%= (@cart.total_quantity) %>)</span>
-                                </a>
-                        </p>
+
+
+                          <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
+                                   
+                                   
+                                          <%= text_field_tag :title, params[:title], :id => "mobile_navsearch", :placeholder => "SEARCH" %>
+                                          <button type="submit" class="btn btn-danger" id="mobile_nav_btn">Search</button>
+                                      
+                                    
+                            <% end %>
+
+                      
                       </div>
 
                       <!-- Collect the nav links, forms, and other content for toggling -->
-                      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background:black;">
                     
                         <ul class="nav navbar-nav">
                         
@@ -99,26 +102,17 @@ jQuery(function(){
                          <li><a href="/product_gifts" style="color:white;"> Gifts </a></li>
                          
                         </ul>
-                      
+                    
+
                       </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
               </nav>
 
               
-                    <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
-                                   
-                                        <div class="form-group">
-                                          <span style="padding-left:20px;font-size:12px;color:#bf1c23;"> I am shopping For </span>
-                                  
-                                          <%= text_field_tag :title, params[:title], :style => "width:40%;" %>
-                                          <button type="submit" class="btn btn-danger">Search</button>
-                                        </div>
-                                    
-                                    
-                    <% end %>
+                   
 
-                    <div id="logo">
-                        <img src="/assets/mobile_logo.jpg" title="Spice Shoppe" alt="Spice Shoppe" class="img-responsive" />
+                    <div id="logo_img">
+                        <img src="/assets/slide2.png" title="myanmar_dealer" alt="myanmar_dealer" class="img-responsive" />
                     </div>
 
                 </div>
@@ -189,11 +183,9 @@ jQuery(function(){
           <div class="col-md-2 col-sm-6">
             <h5 style="font-weight:bold;">Our Partner</h5>
             <ul>
-              <li><a href="http://mmtransporter.com/" id="footer_link">Transporter</a></li>
-              <li><a href="http://ayabank.com/" id="footer_link">Ayawaddy bank</a></li>
-              <li><a href="http://www.myanmarpaymentunion.com/" id="footer_link">MPU</a></li>
               <li><a href="http://www.hnttechs.com/" id="footer_link">H&T technology</a></li>
-              <li><a href="http://www.mpt.com.mm/" id="footer_link">MPT</a></li>
+              <li><a href="http://mmtransporter.com/" id="footer_link">Transporter</a></li>
+              <li><a href="http://www.myanmarpaymentunion.com/" id="footer_link">MPU</a></li>
             </ul>
           </div>
         
@@ -201,7 +193,7 @@ jQuery(function(){
             <h5 style="font-weight:bold;">Hotline</h5>
             <ul>
 
-              <li><a href="#" style="font-size:18px;font-weight:bold;color:white;"> 09966438861</a></li>
+              <li><a href="#" style="font-size:18px;font-weight:bold;"> 09966438861</a></li>
               <br/>
               <li><a href="#" style="font-size:18px;font-weight:bold;color:white;">Seller Service</a></li>
               <li><a href="#"  style="font-size:16px;font-weight:bold;">09966438862</a></li>
