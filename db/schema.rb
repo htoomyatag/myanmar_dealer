@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160719111059) do
+ActiveRecord::Schema.define(version: 20160729143413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1191,20 +1191,62 @@ ActiveRecord::Schema.define(version: 20160719111059) do
     t.string   "company_name"
     t.integer  "user_type_id"
     t.string   "store_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.string   "email",                           default: "", null: false
+    t.string   "encrypted_password",              default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "authentication_token"
     t.string   "admin_approved"
+    t.string   "personal_nrc_number"
+    t.string   "personal_name"
+    t.string   "personal_address"
+    t.string   "retail_nrc_number"
+    t.string   "retail_name"
+    t.string   "retail_address"
+    t.string   "shop_name"
+    t.string   "staff_name"
+    t.string   "staff_nrc_number"
+    t.string   "staff_address"
+    t.string   "personal_nrc_front_file_name"
+    t.string   "personal_nrc_front_content_type"
+    t.integer  "personal_nrc_front_file_size"
+    t.datetime "personal_nrc_front_updated_at"
+    t.string   "personal_nrc_back_file_name"
+    t.string   "personal_nrc_back_content_type"
+    t.integer  "personal_nrc_back_file_size"
+    t.datetime "personal_nrc_back_updated_at"
+    t.string   "retail_nrc_front_file_name"
+    t.string   "retail_nrc_front_content_type"
+    t.integer  "retail_nrc_front_file_size"
+    t.datetime "retail_nrc_front_updated_at"
+    t.string   "retail_nrc_back_file_name"
+    t.string   "retail_nrc_back_content_type"
+    t.integer  "retail_nrc_back_file_size"
+    t.datetime "retail_nrc_back_updated_at"
+    t.string   "shop_licensce_file_name"
+    t.string   "shop_licensce_content_type"
+    t.integer  "shop_licensce_file_size"
+    t.datetime "shop_licensce_updated_at"
+    t.string   "staff_nrc_front_file_name"
+    t.string   "staff_nrc_front_content_type"
+    t.integer  "staff_nrc_front_file_size"
+    t.datetime "staff_nrc_front_updated_at"
+    t.string   "staff_nrc_back_file_name"
+    t.string   "staff_nrc_back_content_type"
+    t.integer  "staff_nrc_back_file_size"
+    t.datetime "staff_nrc_back_updated_at"
+    t.string   "company_licensce_file_name"
+    t.string   "company_licensce_content_type"
+    t.integer  "company_licensce_file_size"
+    t.datetime "company_licensce_updated_at"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true, using: :btree

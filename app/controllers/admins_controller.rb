@@ -19,6 +19,18 @@ class AdminsController < ApplicationController
     @sellers = User.where(:user_type_id => 1)
   end
 
+  def admin_manage_personal_user
+    @sellers = User.where(:user_type_id => 1).where.not(:personal_name => "")
+  end
+
+  def admin_manage_retail_user
+    @sellers = User.where(:user_type_id => 1).where.not(:retail_name => "")
+  end
+
+  def admin_manage_company_user
+    @sellers = User.where(:user_type_id => 1).where.not(:staff_name => "")
+  end
+
   def admin_manage_buyer
     @buyers = User.where(:user_type_id => 2)
   end

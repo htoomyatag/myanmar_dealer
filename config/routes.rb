@@ -3,6 +3,9 @@ Rails.application.routes.draw do
  
   resources :admins
   get 'admin_log_in' => "admins#admin_log_in", :as => :admin_log_in
+  get 'admin_manage_personal_user' => "admins#admin_manage_personal_user", :as => :admin_manage_personal_user
+  get 'admin_manage_retail_user' => "admins#admin_manage_retail_user", :as => :admin_manage_retail_user
+  get 'admin_manage_company_user' => "admins#admin_manage_company_user", :as => :admin_manage_company_user
 
   resources :comments
   resources :favourites
