@@ -24,6 +24,34 @@ class UsersController < ApplicationController
 
   end
 
+
+  def approve_seller
+    respond_to do |format|
+      @user = User.find(params[:id])
+      if @user.update(:admin_approved => "t")
+        format.html { redirect_to admin_manage_seller_path }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def unapprove_seller
+    respond_to do |format|
+      @user = User.find(params[:id])
+      if @user.update(:admin_approved => "f")
+        format.html { redirect_to admin_manage_seller_path }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
   # GET /users/1
   # GET /users/1.json
   def show
@@ -88,6 +116,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:store_id, :name, :phone, :address, :has_store, :company_name, :user_type_id, :authentication_token)
+      params.require(:user).permit(:admin_approved, :store_id, :name, :phone, :address, :has_store, :company_name, :user_type_id, :authentication_token)
     end
 end

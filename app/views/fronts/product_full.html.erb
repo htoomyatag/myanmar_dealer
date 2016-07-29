@@ -1170,49 +1170,6 @@ document.getElementById('delivery_fees').value = package_name;
 
 				    });
 
-
-            // chat user my seller
-
-            $('#chat_myseller').click(function () {
-                $('#mysellerchatbox').show();
-                return false;
-            });
-
-            $('#close_chatseller').click(function () {
-                $('#mysellerchatbox').hide();
-                return false;
-            });
-
-            $('#send').click(function () {
-                
-              var message = document.getElementById("message").value;
-              var mychannel = "<%= current_user.name.to_s + @product.user.name.to_s %>";
-              var sender_id = "<%= current_user.id %>";
-              var recipient_id = "<%= @product.user_id %>";
-
-
-
-              $.ajax({
-                      type: 'get',
-                      url: "send_to_pusher?message="+message+"&recipient_id="+recipient_id+"&sender_id="+sender_id+"&channels="+mychannel,
-                      complete: function(r){
-
-
-                              $("#text_msg").append("<b> You: "+message+"</b><br/> ");
-                              $("#msg_box").scrollTop($("#msg_box")[0].scrollHeight);
-                           
-
-                      }
-                   });
-
-
-
-            });
-
-
-
-
-
 				});
 
 				</script>

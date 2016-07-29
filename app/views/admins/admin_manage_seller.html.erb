@@ -23,7 +23,8 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-
+            
+            <th>status</th>
           	<th>Name</th>
             <th>Email</th>
             <th>Phone</th>
@@ -38,13 +39,33 @@
       <tbody>
          <% @sellers.each do |seller| %>
           <tr>
+            <td>
+               <% if seller.admin_approved == "f" %>
+                  <img src="/assets/unapprove.png" title="myanmar_dealer" alt="myanmar_dealer" />
+               <% elsif seller.admin_approved == "t" %>
+                  <img src="/assets/approve.png" title="myanmar_dealer" alt="myanmar_dealer" />
+               <% else %>
+                  <img src="/assets/caution.png" title="myanmar_dealer" alt="myanmar_dealer" />
+               <% end %>
+
+
+
+            </td>
             <td><%= seller.name %></td>
             <td><%= seller.email %></td>
             <td><%= seller.phone %></td>
             <td><%= seller.address %></td>
             <td><%= seller.has_store %></td>
             <td><%= seller.company_name %></td>
-            <td><%= link_to 'Remove', seller, :class=>"btn btn-danger btn-xs", :remote => true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Remove', seller, :class=>"btn btn-danger btn-xs", :remote => true, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+              <%= link_to 'Approve', approve_seller_path(seller), :class=>"btn btn-default btn-xs", method: :put, data: { confirm: 'Are you sure you want to approve?' } %>
+
+             <%= link_to 'Close', unapprove_seller_path(seller), :class=>"btn btn-default btn-xs", method: :put, data: { confirm: 'Are you sure you want to approve?' } %>
+
+
+
+            </td>
           </tr>
         <% end %>
       </tbody>

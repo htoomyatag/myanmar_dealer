@@ -1,8 +1,7 @@
 class FrontsController < ApplicationController
   before_action :set_front, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:check_out]
-    layout :layout_per_action
-  
+    
   # GET /fronts
   # GET /fronts.json
 
@@ -704,10 +703,22 @@ class FrontsController < ApplicationController
 
 
   def my_conversation
-    @chat_users = User.where.not(:id => current_user)
 
 
-     if params[:user_id]
+        @conversation_ids = Conversation.where(:recipient_id => current_user)
+        @my_conversation = @conversation_ids.pluck(:id)
+
+        @messages = Message.where(:conversation_id => @my_conversation)
+        @users = @messages.group_by { |t| t.user_id }
+        
+  end
+
+
+  def chat_with
+
+
+      if params[:user_id]
+        
         @users = User.where("id = ?", params[:user_id])
 
         @user_name = User.where("id = ?", params[:user_id]).pluck(:name)
@@ -723,18 +734,9 @@ class FrontsController < ApplicationController
         @sender_messages = Message.where(:conversation_code => code_one)
         @receiver_messages = Message.where(:conversation_code => code_two)
 
-
         @messages = Message.where.any_of(@sender_messages, @receiver_messages)
 
-
-     else
-        @users = User.all
-        @messages = Message.all
      end
-
-  
-
-
 
   end
 
@@ -807,11 +809,4 @@ class FrontsController < ApplicationController
     end
 
 
-    def layout_per_action
-      if action_name == "my_conversation"
-           "backend"
-      else
-        "application"
-      end
-    end
 end

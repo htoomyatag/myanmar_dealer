@@ -790,11 +790,10 @@
 							<div class="product-col">
 								<div class="image">
 								<% if !product.avatar1_file_name.nil?  %>
-					                   <%= link_to image_tag(product.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => product), :id => "product_image" %>
-                          
-					            <% elsif product.avatar1_file_name.nil?  %>      
+					                   <%= link_to image_tag(product.avatar1_edit, :style=>"height:100px;width:100px;"), product_full_path(:id => product), :id => "product_image" %>   
+					     <% elsif product.avatar1_file_name.nil?  %>      
 									<img src="/assets/no_image.jpg" alt="product" class="img-responsive" style="height:100px;width:120px;" />
-					            <% end %>
+					    <% end %>
 								</div>
 								<div class="caption">
 
@@ -818,7 +817,6 @@
 
 
 
-									  <i class="fa fa-shopping-cart"></i> 
 									<% end %>
 
 

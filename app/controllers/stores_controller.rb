@@ -16,6 +16,9 @@ class StoresController < ApplicationController
   # GET /stores/1
   # GET /stores/1.json
   def show
+      redirect_to "/not_approve_sorry", error: 'You dont have enough permissions to be here' unless current_user.admin_approved == "t"
+      return true
+
       @products = Product.where(:user_id => current_user.id)
       @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
       @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
@@ -24,6 +27,8 @@ class StoresController < ApplicationController
 
   # GET /stores/new
   def new
+    redirect_to "/not_approve_sorry", error: 'You dont have enough permissions to be here' unless current_user.admin_approved == "t"
+    return true
     @store = Store.new
   end
 

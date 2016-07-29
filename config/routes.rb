@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :user_types
 
   devise_for :users, :authentication_token => 'authentication_token'
+  put 'approve_seller/:id' => 'users#approve_seller', :as => :approve_seller
+  put 'unapprove_seller/:id' => 'users#unapprove_seller', :as => :unapprove_seller
 
   namespace :myapi do
   namespace :v1 do
@@ -296,6 +298,9 @@ end
 
  get 'set_my_seller' => 'fronts#set_my_seller', :as => :set_my_seller
 
+ get 'chat_with' => 'fronts#chat_with', :as => :chat_with
+
+ get 'not_approve_sorry' => 'fronts#not_approve_sorry', :as => :not_approve_sorry
 
 
   resources :conversations do
