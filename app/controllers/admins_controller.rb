@@ -37,7 +37,16 @@ class AdminsController < ApplicationController
 
   def set_today_deal
      @admin = Admin.find(1)
+     @products =Product.where.not(:id => 1)
   end
+
+  def admin_set_today_deal
+     @admin = Admin.find(1)
+     @admin.update(:ends_in =>  "end in", :discount_percent => "60", :price => "8000")
+     redirect_to set_today_deal_path
+  end
+
+
 
   def admin_manage_product
 

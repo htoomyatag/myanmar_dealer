@@ -1,0 +1,26 @@
+{
+Products: [
+{
+id: 50,
+store_name: "Hu0026Ttechs",
+title: "temptitle",
+price: 8000,
+quantity: 30,
+avatar1_file_name: "/images/original/missing.png",
+avatar2_file_name: "/images/original/missing.png",
+avatar3_file_name: "/images/original/missing.png",
+avatar4_file_name: "/images/original/missing.png"
+}
+],
+Specifications: [
+{
+id: 50,
+made_by_country: "China",
+description: "This is Descritpion",
+age_group: "Adult 18 to 60",
+color: "Red Green Blue",
+weight: "tempweight",
+made_with: "tempmadewith"
+}
+]
+}

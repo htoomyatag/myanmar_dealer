@@ -5,6 +5,17 @@ class ApisController < ApplicationController
   # GET /apis.json
   def index
     @apis = Api.all
+
+  end
+
+
+  def test_json
+      
+      @aok = File.read("/#{Rails.root}/app/assets/my_file.txt")
+      # render json: @aok 
+      render text: @aok   
+  
+
   end
 
 

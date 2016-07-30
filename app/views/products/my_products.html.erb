@@ -8,7 +8,8 @@
 
     <table class="table">
       <thead>
-        <tr>
+        <tr> 
+          <th>Code</th>
           <th>Title</th>
           <th>Price</th>
           <th></th>
@@ -21,6 +22,7 @@
       <tbody>
         <% @products.each do |product| %>
           <tr>
+            <td><%= product.mmdealer_code %></td>
             <td><%= product.title %></td>
             <td><%= product.price %></td>
             <td><%= link_to 'Set as BigDeal', set_as_bigdeal_path(product), :class=>"btn btn-default" %></td>

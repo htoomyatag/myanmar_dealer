@@ -43,6 +43,7 @@ end
   get 'admin_manage_seller' => 'admins#admin_manage_seller'
   get 'admin_manage_buyer' => 'admins#admin_manage_buyer'
   get 'set_today_deal' => 'admins#set_today_deal'
+  get 'admin_set_today_deal' => 'admins#admin_set_today_deal'
   get 'admin_manage_product' => 'admins#admin_manage_product'
 
    get 'admin_view_order_report' => 'admins#admin_view_order_report'
@@ -53,7 +54,7 @@ end
   resources :apis
 
   
-
+  get 'test_json' => 'apis#test_json', :as => :test_json
   get 'my_big_deals' => 'apis#my_big_deals', :as => :my_big_deals
   get 'my_api_services' => 'apis#my_api_services', :as => :my_api_services
   get 'my_api_training_and_schools' => 'apis#my_api_training_and_schools', :as => :my_api_training_and_schools
