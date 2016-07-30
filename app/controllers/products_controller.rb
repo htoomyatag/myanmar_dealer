@@ -7,6 +7,20 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def set_as_bigdeal
+     respond_to do |format|
+      @product = Product.find(params[:id])
+      if @product.update(:big_deal => "yes")
+        format.html { redirect_to my_products_path }
+        format.json { render :show, status: :ok, location: @product }
+      else
+        format.html { render :edit }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
+
+  end
+
   def my_sell_product
      @products = Product.where(:user_id => current_user)
   end
@@ -93,7 +107,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:delivery_category, :store_name,:mmdealer_code,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:user_id,:store_,:t,:cate,:ingredient,:usage,:made_by_country,:description,:brand,:effect,:certification,:age_group,:price,:feature,:modal_number,:color,:price,:quantity,:size,:weight,:made_with,:specification,:thickness,:operation_system,:bag_type,:gender,:footwear_type,:hat_type,:power,:voltage,:dimension,:ingredient,:caution ,:charges,:service_category,:feature,:fees,:period,:school,:avatar1_edit,:avatar2_edit,:avatar3_edit,:avatar4_edit)
+      params.require(:product).permit(:big_deal,:delivery_category, :store_name,:mmdealer_code,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:user_id,:store_,:t,:cate,:ingredient,:usage,:made_by_country,:description,:brand,:effect,:certification,:age_group,:price,:feature,:modal_number,:color,:price,:quantity,:size,:weight,:made_with,:specification,:thickness,:operation_system,:bag_type,:gender,:footwear_type,:hat_type,:power,:voltage,:dimension,:ingredient,:caution ,:charges,:service_category,:feature,:fees,:period,:school,:avatar1_edit,:avatar2_edit,:avatar3_edit,:avatar4_edit)
     end
 
     def layout_per_action

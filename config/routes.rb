@@ -54,7 +54,7 @@ end
 
   
 
-
+  get 'my_big_deals' => 'apis#my_big_deals', :as => :my_big_deals
   get 'my_api_services' => 'apis#my_api_services', :as => :my_api_services
   get 'my_api_training_and_schools' => 'apis#my_api_training_and_schools', :as => :my_api_training_and_schools
   get 'my_api_sports' => 'apis#my_api_sports', :as => :my_api_sports
@@ -124,7 +124,7 @@ end
   get 'my_product' => 'products#my_product', :as => :my_product
   get 'my_products' => 'products#my_products', :as => :my_products
   get 'my_sell_product' => 'products#my_sell_product', :as => :my_sell_product
-  
+  get 'set_as_bigdeal/:id' => 'products#set_as_bigdeal', :as => :set_as_bigdeal
   
 
   resources :stores
