@@ -7,7 +7,12 @@
                         <img src="/assets/slide2.png" title="myanmar_dealer" alt="myanmar_dealer" class="img-responsive" />
                     </div>
 
-                    
+       <% if user_signed_in? %>
+           <p class="mytitle"> Hello,   <%= current_user.name %> </p>
+           <p> &nbsp; Welcome from Myanmar Dealer.com</p> 
+       <% end %>
+
+
        <p class="mytitle"> Big Deals</p>
        <div class="container">      
               <% @big_deals.each do |big_deal| %>

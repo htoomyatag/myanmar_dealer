@@ -78,13 +78,23 @@ jQuery(function(){
                       
                       </div>
 
+
+
                       <!-- Collect the nav links, forms, and other content for toggling -->
                       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background:#d9534f;">
                     
                         <ul class="nav navbar-nav">
                         
                          <li><a href="/home" style="color:white;">Home</a></li>
-                        <li><a href="/user_sign_in" style="color:white;">Sign in</a></li>
+                            <% if user_signed_in? %>  
+                                <li>
+                                <%= link_to "#{t :log_out}", destroy_user_session_path, :method => :delete, :style => "color:white;" %>
+                                </li>
+                            <% else %>
+                                 <li><a href="/user_sign_in" style="color:white;">Sign in</a></li>
+                            <% end %>
+
+
                          <li><a href="/about" style="color:white;">About</a></li>
                          <li><a href="/contact" style="color:white;">Contact</a></li>
 
@@ -323,3 +333,20 @@ $(window).scroll(function() {
  });
 </script>
 
+
+
+<style type="text/css">
+  
+
+      @font-face {
+  font-family: 'ZawgyiOne'; 
+  src: url('/assets/ZawgyiOne.ttf') format('truetype');
+}
+
+body {
+  font-family: 'ZawgyiOne';
+}
+
+
+  
+</style>

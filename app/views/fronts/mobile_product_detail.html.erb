@@ -1,9 +1,12 @@
 
 
   <div id="desktop_hide">
-  		       <div class="container">    
+  		       <div class="container">  
 
-  		       		<div class="panel panel-default">
+  		         Items in cart: <span class="badge" id="myqty"><%= (@cart.total_quantity) %></span>
+  		         <a href="/check_out" style="float:right;">check out</a>  
+
+  		       		<br/><br/><div class="panel panel-default">
 					  <div class="panel-body">
 					    	<img src="<%= @product.avatar1_edit %>" class="img-responsive" />  
 					  </div>
