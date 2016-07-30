@@ -28,7 +28,7 @@ class ApisController < ApplicationController
   def my_big_deals
 
     @big_deals = Product.where(:big_deal => "yes").select(:id,:title,:price,:store_name, :price, :quantity, :avatar1_file_name, :avatar2_file_name, :avatar3_file_name, :avatar4_file_name)
-    @specifications = Product.select( ).where(:big_deal => "yes")
+    @specifications = Product.select(:id).where(:big_deal => "yes")
 
 
 
