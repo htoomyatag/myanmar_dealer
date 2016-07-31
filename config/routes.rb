@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   end
 end
 
+  post 'send_to_web' => 'products#send_to_web', :as => 'send_to_web'
 
 
   get 'buyer_sign_up' => 'users#buyer_sign_up', :as => :buyer_sign_up
