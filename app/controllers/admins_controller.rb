@@ -42,7 +42,7 @@ class AdminsController < ApplicationController
 
   def admin_set_today_deal
      @admin = Admin.find(1)
-     @admin.update(:ends_in =>  "end in", :discount_percent => "60", :price => "8000")
+     @admin.update(:ends_in =>  "end in", :discount_percent => "90", :price => params[:price])
      redirect_to set_today_deal_path
   end
 
