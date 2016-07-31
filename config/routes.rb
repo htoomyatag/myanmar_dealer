@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'admin_manage_personal_user' => "admins#admin_manage_personal_user", :as => :admin_manage_personal_user
   get 'admin_manage_retail_user' => "admins#admin_manage_retail_user", :as => :admin_manage_retail_user
   get 'admin_manage_company_user' => "admins#admin_manage_company_user", :as => :admin_manage_company_user
+  get 'chat_to_seller' => "admins#chat_to_seller", :as => :chat_to_seller
 
   resources :comments
   resources :favourites

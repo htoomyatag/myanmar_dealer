@@ -29,7 +29,8 @@
                      
             <p id="text_msg"></p>
 
-           <textarea rows="1" id="my_msg_btn" style="width:100%;"></textarea>
+
+           <input type="text" id="my_msg_btn" style="width:100%;">
            <input class="btn btn-default" id="my_send_btn" type="button" value="Send"><br/>
                
           </div>
@@ -80,18 +81,20 @@
               var sender_id = "<%= current_user.id %>";
               var recipient_id = "<%= user.id %>";
 
+
               $.ajax({
                       type: 'get',
                       url: "send_to_pusher?message="+message+"&recipient_id="+recipient_id+"&sender_id="+sender_id+"&channels="+mychannel,
                       complete: function(r){
 
                           $("#text_msg").append("<b>You: "+message+"</b><br/> ");
-                          $('#my_msg_btn').val('');
+                           $('#my_msg_btn').val('');
                           
                       }
                    });
 
-
+               		
+                
             });
 
         });
@@ -99,3 +102,6 @@
 </script>
 
 <% end %> 
+
+
+   
