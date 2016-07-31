@@ -75,7 +75,7 @@ class ApisController < ApplicationController
 
   def my_api_sports
 
-    @sports = Product.where(:category => "sports")
+    @sports = Product.where(:category => "sports").order('id DESC')
 
     respond_to do |format|
           my_primary_json = { :Products => @sports.to_json(:methods => [:avatar_url])   }
@@ -94,7 +94,7 @@ class ApisController < ApplicationController
 
     def my_api_toys
 
-    @toys = Product.where(:category => "toys")
+    @toys = Product.where(:category => "toys").order('id DESC')
 
     respond_to do |format|
           my_primary_json = { :Products => @toys.to_json(:methods => [:avatar_url])   }
@@ -112,7 +112,7 @@ class ApisController < ApplicationController
 
   
   def my_api_gifts
-    @gifts = Product.where(:category => "gifts")
+    @gifts = Product.where(:category => "gifts").order('id DESC')
 
 
     respond_to do |format|
@@ -128,7 +128,7 @@ class ApisController < ApplicationController
   end
   
   def my_api_car_accessories
-    @car_accessories = Product.where(:category => "car_accessories")
+    @car_accessories = Product.where(:category => "car_accessories").order('id DESC')
 
     respond_to do |format|
           my_primary_json = { :Products => @car_accessories.to_json(:methods => [:avatar_url])   }
@@ -144,7 +144,7 @@ class ApisController < ApplicationController
   end
 
   def my_api_motorcycle_accessories
-    @motorcycle_accessories = Product.where(:category => "motorcycle")
+    @motorcycle_accessories = Product.where(:category => "motorcycle").order('id DESC')
 
 
     respond_to do |format|
@@ -162,7 +162,7 @@ class ApisController < ApplicationController
   
   def my_api_machines
 
-    @machines = Product.where(:category => "machines")
+    @machines = Product.where(:category => "machines").order('id DESC')
 
     respond_to do |format|
           my_primary_json = { :Products => @machines.to_json(:methods => [:avatar_url])}
@@ -180,7 +180,7 @@ class ApisController < ApplicationController
 
   def my_api_instruments
 
-    @instruments = Product.where(:category => "instruments")
+    @instruments = Product.where(:category => "instruments").order('id DESC')
 
     respond_to do |format|
           my_primary_json = { :Products => @instruments.to_json(:methods => [:avatar_url])   }
@@ -199,7 +199,7 @@ class ApisController < ApplicationController
 
   def my_api_equipment
 
-    @equipments = Product.where(:category => "equipments")
+    @equipments = Product.where(:category => "equipments").order('id DESC')
     respond_to do |format|
           my_primary_json = { :Products => @equipments.to_json(:methods => [:avatar_url])   }
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
@@ -215,7 +215,7 @@ class ApisController < ApplicationController
 
   def my_api_bath_supplies
 
-    @bath_supplies = Product.where(:category => "bath_supplies")
+    @bath_supplies = Product.where(:category => "bath_supplies").order('id DESC')
 
     respond_to do |format|
           my_primary_json = { :Products => @bath_supplies.to_json(:methods => [:avatar_url])   }
@@ -233,7 +233,7 @@ class ApisController < ApplicationController
   def my_api_makeup_and_skincares
 
 
-    @makeup_and_skincares = Product.where(:category => "comesmetics")
+    @makeup_and_skincares = Product.where(:category => "comesmetics").order('id DESC')
     respond_to do |format|
           my_primary_json = { :Products => @makeup_and_skincares.to_json(:methods => [:avatar_url])   }
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
@@ -250,7 +250,7 @@ class ApisController < ApplicationController
 
   def my_api_beauty_equipments
 
-    @beauty_equipments = Product.where(:category => "beauty_equipments")
+    @beauty_equipments = Product.where(:category => "beauty_equipments").order('id DESC')
     respond_to do |format|
           my_primary_json = { :Products => @beauty_equipments.to_json(:methods => [:avatar_url])   }
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
@@ -266,7 +266,7 @@ class ApisController < ApplicationController
 
   def my_api_medicines
 
-    @medicines = Product.where(:category => "medicines")
+    @medicines = Product.where(:category => "medicines").order('id DESC')
     respond_to do |format|
           my_primary_json = { :Products => @medicines.to_json(:methods => [:avatar_url])   }
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
@@ -283,7 +283,7 @@ class ApisController < ApplicationController
 
   def my_api_home_appliances
 
-    @home_appliances = Product.where(:category => "home_appliance")
+    @home_appliances = Product.where(:category => "home_appliance").order('id DESC')
     respond_to do |format|
           my_primary_json = { :Products => @home_appliances.to_json(:methods => [:avatar_url])   }
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
@@ -299,7 +299,7 @@ class ApisController < ApplicationController
 
   def my_api_computers
 
-    @computers = Product.where(:category => "computers_laptops")
+    @computers = Product.where(:category => "computers_laptops").order('id DESC')
     respond_to do |format|
           my_primary_json = { :Products => @computers.to_json(:methods => [:avatar_url])   }
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
@@ -316,7 +316,7 @@ class ApisController < ApplicationController
 
   def my_api_telephone_accessories
 
-    @telephone_accessories = Product.where(:category => "phone_related")
+    @telephone_accessories = Product.where(:category => "phone_related").order('id DESC')
     respond_to do |format|
           my_primary_json = { :Products => @telephone_accessories.to_json(:methods => [:avatar_url])   }
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
@@ -333,7 +333,7 @@ class ApisController < ApplicationController
 
   def my_api_electrical_equipments
 
-    @electrical_equipments = Product.where(:category => "eletronic_related")
+    @electrical_equipments = Product.where(:category => "eletronic_related").order('id DESC')
     respond_to do |format|
           my_primary_json = { :Products => @electrical_equipments.to_json(:methods => [:avatar_url])   }
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
@@ -349,7 +349,7 @@ class ApisController < ApplicationController
 
   def my_api_fashion_hats
 
-    @fashion_hats = Product.where(:category => "hats")
+    @fashion_hats = Product.where(:category => "hats").order('id DESC')
     respond_to do |format|
           my_primary_json = { :Products => @fashion_hats.to_json(:methods => [:avatar_url])   }
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
@@ -365,7 +365,7 @@ class ApisController < ApplicationController
 
   def my_api_fashion_footwears
 
-    @fashion_footwears = Product.where(:category => "footwears")
+    @fashion_footwears = Product.where(:category => "footwears").order('id DESC')
     respond_to do |format|
           my_primary_json = { :Products => @fashion_footwears.to_json(:methods => [:avatar_url])   }
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
@@ -381,7 +381,7 @@ class ApisController < ApplicationController
 
   def my_api_fashion_bags
 
-    @fashion_bags = Product.where(:category => "bags")
+    @fashion_bags = Product.where(:category => "bags").order('id DESC')
 
     respond_to do |format|
           my_primary_json = { :Products => @fashion_bags.to_json(:methods => [:avatar_url])   }
@@ -398,7 +398,7 @@ class ApisController < ApplicationController
 
   def my_api_fashion_accessories
 
-    @fashion_accessories = Product.where(:category => "fashion_related")
+    @fashion_accessories = Product.where(:category => "fashion_related").order('id DESC')
     respond_to do |format|
           my_primary_json = { :Products => @fashion_accessories.to_json(:methods => [:avatar_url])   }
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
@@ -416,7 +416,7 @@ class ApisController < ApplicationController
 
 
 
-    @fashion_clothings = Product.where(:category => "cloths")
+    @fashion_clothings = Product.where(:category => "cloths").order('id DESC')
     respond_to do |format|
           my_primary_json = { :Products => @fashion_clothings.to_json(:methods => [:avatar_url]) }
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
