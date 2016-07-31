@@ -8,7 +8,16 @@ class ProductsController < ApplicationController
   end
 
   def send_to_web
-     @products = Product.create(:title => params[:title],:category => params[:category],:description => params[:description],:price => params[:price],:delivery_category => params[:delivery_method],:color => params[:color],:size => params[:size], :store_name => params[:store_name],:user_id => params[:user_id])
+     @products = Product.create(
+      
+      :title => params[:title],
+      :category => params[:category],
+      :description => params[:description],
+      :price => params[:price],
+      :delivery_category => params[:delivery_method],
+      :color => params[:color],:size => params[:size], 
+      :store_name => params[:store_name],
+      :user_id => params[:user_id])
   end
 
   def set_as_bigdeal
