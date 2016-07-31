@@ -1,0 +1,83 @@
+<%= form_for(@hot_item) do |f| %>
+  <% if @hot_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hot_item.errors.count, "error") %> prohibited this hot_item from being saved:</h2>
+
+      <ul>
+      <% @hot_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+                    <div class="image-editor1">
+
+                          <input type="file" id="desc_img1"  class="cropit-image-input">
+                          <div class="cropit-preview" style="width:500px;height:500"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                             <%= f.text_field :image_data, :class=>"form-control", :style => "display:none;" %>
+
+                            <input type="range" class="cropit-image-zoom-input" >
+
+                          <div>
+                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
+                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
+                              <span style="float:right;"><button class="exportav1">Confirm</button></span>
+                          </div>
+                  
+              
+                  </div>
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+    <script>
+      $(function() {
+        $('.image-editor1').cropit({
+
+        minZoom: 'fit',
+    imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor1').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor1').cropit('rotateCCW');
+        });
+
+
+
+
+
+        $('.exportav1').click(function() {
+          var imageData1 = $('.image-editor1').cropit('export');
+       
+          document.getElementById("hot_item_image_data").value = imageData1;
+          // window.open(imageData);
+
+        });
+
+
+
+
+
+
+      });
+    </script>

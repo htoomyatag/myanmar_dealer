@@ -8,6 +8,14 @@ products = Product.create([
 ])
 
 
+ hot_item = HotItem.create([
+
+{id: 1},
+{id: 2},
+{id: 3},
+
+ ])
+
  bath_supply = BathSupply.create([
 
      {title: "aokshampoo",

@@ -195,6 +195,8 @@ class FrontsController < ApplicationController
 
 
    def home
+     @hot_items = HotItem.all
+     @hot_item = HotItem.find(1)
 
      @admin = Admin.find(1)
      if params[:category]

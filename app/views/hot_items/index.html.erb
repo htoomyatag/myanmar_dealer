@@ -1,0 +1,50 @@
+
+
+
+<%= render 'layouts/defaultnav' %>
+
+ 
+<div class="rows" style="padding:10px;">
+
+
+<ul class="nav nav-tabs">
+  <li role="presentation" ><a href="/admin_manage_shop">Manage Shop</a></li>
+  <li role="presentation"><a href="/admin_manage_product">View Products</a></li>
+  <li role="presentation"><a href="/admin_manage_seller">Manage Seller</a></li>
+  <li role="presentation"><a href="/admin_manage_buyer">Manage Buyer</a></li>
+  <li role="presentation"><a href="/set_today_deal">Set today deal</a></li>
+
+  <li role="presentation"><a href="/admin_view_order_report">Order Report</a></li>
+  <li role="presentation"><a href="/admin_view_product_report ">Product Report</a></li>
+  <li role="presentation"><a href="/admin_view_user_report ">User Report</a></li>
+  <li role="presentation"  class="active"><a href="/hot_items ">Hot Items</a></li>
+
+
+</ul>
+  <br/>
+   
+    <div class="well well-sm"> <h4>Hot Items Images</h4></div>
+
+   
+
+    <table class="table table-bordered">
+         <thead>
+              <tr>
+                <th>Image data</th>
+                <th colspan="2"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @hot_items.each do |hot_item| %>
+                <tr>
+                  <td><img src="<%= hot_item.image_data %>" id="hot_item_image"/></td>
+                  <td><%= link_to 'Change', edit_hot_item_path(hot_item) %></td>
+                </tr>
+              <% end %>
+            </tbody>
+    </table>
+
+    <br>
+
+</div>

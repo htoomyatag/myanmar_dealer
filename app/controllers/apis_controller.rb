@@ -90,26 +90,26 @@ class ApisController < ApplicationController
     end
   end
   
-  def my_api_toys
-    @toys = Product.where(:category => "toys").select(:id,:title,:price,:store_name, :price, :quantity, :avatar1_file_name, :avatar2_file_name, :avatar3_file_name, :avatar4_file_name)
-    @specifications = Product.select(:id,:description,:weight,:made_by_country,:made_with,:color,:age_group).where(:category => "toys")
-    @aok = {@toys}
+  # def my_api_toys
+  #   @toys = Product.where(:category => "toys").select(:id,:title,:price,:store_name, :price, :quantity, :avatar1_file_name, :avatar2_file_name, :avatar3_file_name, :avatar4_file_name)
+  #   @specifications = Product.select(:id,:description,:weight,:made_by_country,:made_with,:color,:age_group).where(:category => "toys")
+  #   @aok = {@toys}
   
-    respond_to do |format|
-          my_primary_json = { 
+  #   respond_to do |format|
+  #         my_primary_json = { 
             
-            :Products => @aok.to_json(:methods => [:avatar_url])
+  #           :Products => @aok.to_json(:methods => [:avatar_url])
 
-          }
-          my_seconday_json = my_primary_json.to_json.gsub('\\', '')
-          a = '"['
-          b = ']"'
-          my_third_json = my_seconday_json.gsub(a , "[")
-          my_fourth_json = my_third_json.gsub(b , "]")
-          format.json {render json: my_primary_json}
-          format.text {render text: my_fourth_json}
-    end
-  end
+  #         }
+  #         my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+  #         a = '"['
+  #         b = ']"'
+  #         my_third_json = my_seconday_json.gsub(a , "[")
+  #         my_fourth_json = my_third_json.gsub(b , "]")
+  #         format.json {render json: my_primary_json}
+  #         format.text {render text: my_fourth_json}
+  #   end
+  # end
 
  
 

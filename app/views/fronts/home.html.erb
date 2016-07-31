@@ -660,25 +660,18 @@
 
 							  <!-- Wrapper for slides -->
 							  <div class="carousel-inner" role="listbox">
-							    <div class="item active">
-							       <%= image_tag 'slide2.png' %>
-							   
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'slide2.png' %>
-							     
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'slide2.png' %>
-							     
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'slide2.png' %>
-							     
-							    </div>
-							    <div class="item">
-							       <%= image_tag 'slide2.png' %>
-							    </div>
+
+                      <div class="item active">
+                        <img src="<%= @hot_item.image_data %>"/>
+                      </div>
+
+                     <% @hot_items.each do |hot_item| %>
+                       <div class="item">
+                         <img src="<%= hot_item.image_data %>"/>
+                       </div>
+                    <% end %>
+
+				
 							  </div>
 
 							 

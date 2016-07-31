@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
  
  
+  resources :hot_items
   resources :admins
   get 'admin_log_in' => "admins#admin_log_in", :as => :admin_log_in
   get 'admin_manage_personal_user' => "admins#admin_manage_personal_user", :as => :admin_manage_personal_user
