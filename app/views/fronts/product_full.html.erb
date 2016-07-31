@@ -511,17 +511,6 @@
 						<span class="product_ask"><%= @product.size rescue "-" %></span>
 					</div><br/>
 
-					<div style="width:100%;">
-						<span class="product_ask" style="float:left;">
-                 Quantity:    
-            </span>
-            <span style="float:left;padding-left:10px;">
-             <input type="text">  
-            </span>
-            <span style="float:left;padding-left:10px;">
-              989 packs in stock
-            </span>
-					</div><br/><br/><br/>
 
 
 						
@@ -833,6 +822,11 @@
               
                    <% @store_ads.each do |store_ad| %>
                     
+
+                         <img src="<%= store_ad.description_image1 %>" id="desc_image"/>
+                         <img src="<%= store_ad.description_image2 %>" id="desc_image"/>
+                         <img src="<%= store_ad.description_image3 %>" id="desc_image"/>
+                         <img src="<%= store_ad.description_image4 %>" id="desc_image"/>
 
                          <%= image_tag store_ad.ads_one.url, :id => "store_ads"  %>
                          <%= image_tag store_ad.ads_two.url, :id => "store_ads" %>

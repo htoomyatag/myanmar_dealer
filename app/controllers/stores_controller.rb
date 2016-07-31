@@ -16,20 +16,23 @@ class StoresController < ApplicationController
   # GET /stores/1
   # GET /stores/1.json
   def show
-      redirect_to "/not_approve_sorry", error: 'You dont have enough permissions to be here' unless current_user.admin_approved == "t"
-      return true
-
+   
       @products = Product.where(:user_id => current_user.id)
       @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
       @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
       @users = User.all
+
+      redirect_to "/not_approve_sorry", error: 'You dont have enough permissions to be here' unless current_user.admin_approved == "t"
+      return true
+
   end
 
   # GET /stores/new
   def new
+    @store = Store.new
     redirect_to "/not_approve_sorry", error: 'You dont have enough permissions to be here' unless current_user.admin_approved == "t"
     return true
-    @store = Store.new
+    
   end
 
   # GET /stores/1/edit
@@ -89,7 +92,7 @@ class StoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def store_params
-      params.require(:store).permit(:term, :ads_one, :ads_two, :user_id,:avatar, :store_name, :store_address, :store_contact, :description, :user_id, :seller_name)
+      params.require(:store).permit(:description_image1,:description_image2,:description_image3,:description_image4,:term, :ads_one, :ads_two, :user_id,:avatar, :store_name, :store_address, :store_contact, :description, :user_id, :seller_name)
     end
 
     def layout_per_action
