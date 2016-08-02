@@ -180,7 +180,7 @@ class FrontsController < ApplicationController
 
       Pusher.trigger(params[:channels], 'my_event', {
       message: params[:message],
-      channels: params[:channels]
+      channels: params[:channels].gsub(/\s+/, "")
     })
 
 

@@ -56,7 +56,8 @@ end
 
   resources :apis
 
-  
+  get 'last_three_json' => 'apis#last_three_json', :as => :last_three_json
+
   get 'test_json' => 'apis#test_json', :as => :test_json
   get 'my_big_deals' => 'apis#my_big_deals', :as => :my_big_deals
   get 'my_api_services' => 'apis#my_api_services', :as => :my_api_services

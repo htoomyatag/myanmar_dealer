@@ -117,6 +117,7 @@
           </div>
         <!-- Login Panel Ends -->
         </div>
+
          <div class="col-sm-12">
             <div class="panel panel-smart">
                 <div class="panel-heading">
@@ -133,14 +134,14 @@
                             Resize image
                           </div>
 
-                             <%= f.text_field :description_image1, :class=>"form-control" %>
+                             <%= f.text_field :description_image1, :class=>"form-control", :style => "display:none;" %>
 
                             <input type="range" class="cropit-image-zoom-input" >
 
                           <div>
                               <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
                               <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
-                              <span style="float:right;"><button class="exportav1">Confirm</button></span>
+                              <span style="float:right;"><a class="exportav1"  id="confirm">Confirm</a></span>
                           </div>
                   
               
@@ -157,14 +158,14 @@
                             Resize image
                           </div>
 
-                             <%= f.text_field :description_image2, :class=>"form-control" %>
+                             <%= f.text_field :description_image2, :class=>"form-control", :style => "display:none;" %>
 
                             <input type="range" class="cropit-image-zoom-input" >
 
                           <div>
                               <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
                               <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
-                              <span style="float:right;"><button class="exportav2">Confirm</button></span>
+                              <span style="float:right;"><a class="exportav2"  id="confirm">Confirm</a></span>
                           </div>
                   
               
@@ -183,14 +184,14 @@
                             Resize image
                           </div>
 
-                             <%= f.text_field :description_image3, :class=>"form-control" %>
+                             <%= f.text_field :description_image3, :class=>"form-control", :style => "display:none;" %>
 
                             <input type="range" class="cropit-image-zoom-input" >
 
                           <div>
                               <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
                               <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
-                              <span style="float:right;"><button class="exportav3">Confirm</button></span>
+                              <span style="float:right;"><a class="exportav3"  id="confirm">Confirm</a></span>
                           </div>
                   
               
@@ -208,23 +209,24 @@
                             Resize image
                           </div>
 
-                             <%= f.text_field :description_image4, :class=>"form-control" %>
+                             <%= f.text_field :description_image4, :class=>"form-control", :style => "display:none;" %>
 
                             <input type="range" class="cropit-image-zoom-input" >
 
                           <div>
                               <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
                               <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
-                              <span style="float:right;"><button class="exportav4">Confirm</button></span>
+                              <span style="float:right;"><a class="exportav4" id="confirm">Confirm</a></span>
                           </div>
                   
               
-                        </div>
+                        </div> <br/><br/> <br/><br/>
                      </div>
 
+                  
 
 
-                      <p>
+                      <p>   
                          <%= f.file_field :ads_one %>
                          width 700px height 300px for best view
                       </p>
@@ -411,3 +413,11 @@ function validateForm() {
     </script>
 
 
+
+
+<style type="text/css">
+  
+  #confirm {
+    cursor: pointer;
+  }
+</style>

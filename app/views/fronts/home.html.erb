@@ -4,7 +4,7 @@
 
 
                <div id="logo_img">
-                        <img src="/assets/slide2.png" title="myanmar_dealer" alt="myanmar_dealer" class="img-responsive" />
+                        <img src="/assets/slide2.png" title="myanmar_dealer" alt="myanmar_dealer" class="img-responsive"  />
                     </div>
 
        <% if user_signed_in? %>
@@ -479,7 +479,7 @@
                             <br/>
                            
 
-                            <% if current_user.has_store == "Yes" %>
+                            <% if current_user.has_store == "yes" %>
                                 <a href="/stores/<%= @store_id %>"  class="btn btn-default", id="menu_mybtn">MyStore</a>
                             <% else %>
                                <%= link_to "Open Shop", new_store_path, :class=>"btn btn-default", :id => "menu_mybtn"%>
@@ -662,12 +662,12 @@
 							  <div class="carousel-inner" role="listbox">
 
                       <div class="item active">
-                        <img src="<%= @hot_item.image_data %>"/>
+                        <img src="<%= @hot_item.image_data %>" style="width:800px;height:300px;"/>
                       </div>
 
                      <% @hot_items.each do |hot_item| %>
                        <div class="item">
-                         <img src="<%= hot_item.image_data %>"/>
+                         <img src="<%= hot_item.image_data %>" style="width:800px;height:300px;"/>
                        </div>
                     <% end %>
 
@@ -810,7 +810,7 @@
 								
 									<div class="cart-button">
 									
-									<%= button_to line_items_path(:mmdealer_code => product.category.to_s+product.id.to_s, :user_id => product.user_id), remote: true, :onclick =>"cartFunction#{product.id}()", :data => product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
+									<%= button_to line_items_path(:mmdealer_code => product.category.to_s+product.id.to_s, :user_id => product.user_id),  :onclick =>"cartFunction#{product.id}()", :data => product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
 									   <%=t :add_to_cart %>
 
 

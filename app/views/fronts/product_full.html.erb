@@ -286,18 +286,18 @@
 	<!-- Product Info Starts -->
 		<div class="row product-info full">
 		<!-- Left Starts -->
-			<div class="col-sm-4 images-block">
+			<div class="col-sm-3 images-block">
         
 
-        <div style="background:gray;width:303px;">
+        <div>
 
-          <img id="zoom_01" src="<%= @product.avatar1_edit %>" data-zoom-image="<%= @product.avatar1_edit %>" style="height:301px;" />
+          <img id="zoom_01" src="<%= @product.avatar1_edit %>" data-zoom-image="<%= @product.avatar1_edit %>" style="width:300px;heigh:250px;" />
 
-          <img id="zoom_02" src="<%= @product.avatar2_edit %>" data-zoom-image="<%= @product.avatar2_edit %>" style="height:301px;display:none;" />
+          <img id="zoom_02" src="<%= @product.avatar2_edit %>" data-zoom-image="<%= @product.avatar2_edit %>" style="width:300px;heigh:250px;display:none;" />
 
-          <img id="zoom_03" src="<%= @product.avatar3_edit %>" data-zoom-image="<%= @product.avatar3_edit %>" style="height:301px;display:none;"/>
+          <img id="zoom_03" src="<%= @product.avatar3_edit %>" data-zoom-image="<%= @product.avatar3_edit %>" style="width:300px;heigh:250px;display:none;"/>
 
-          <img id="zoom_04" src="<%= @product.avatar4_edit %>" data-zoom-image="<%= @product.avatar4_edit %>" style="height:301px;display:none;"/>
+          <img id="zoom_04" src="<%= @product.avatar4_edit %>" data-zoom-image="<%= @product.avatar4_edit %>" style="width:300px;heigh:250px;display:none;"/>
 
 
 
@@ -305,10 +305,11 @@
 
 
         <div>
-
-            <img id="av2" src="<%= @product.avatar2_edit %>" style="width:100px;height:100px;"/>
-            <img id="av3" src="<%= @product.avatar3_edit %>" style="width:100px;height:100px;"/>
-            <img id="av4" src="<%= @product.avatar4_edit %>" style="width:100px;height:100px;"/>
+            
+            <img id="av1" src="<%= @product.avatar1_edit %>"  style="width:50px;height:50px;border:1px solid black;"/>
+            <img id="av2" src="<%= @product.avatar2_edit %>"  style="width:50px;height:50px;border:1px solid black;"/>
+            <img id="av3" src="<%= @product.avatar3_edit %>"  style="width:50px;height:50px;border:1px solid black;"/>
+            <img id="av4" src="<%= @product.avatar4_edit %>"  style="width:50px;height:50px;border:1px solid black;"/>
 
         </div>
 
@@ -317,7 +318,7 @@
 
 		<!-- Left Ends -->
 		<!-- Right Starts -->
-			<div class="col-sm-5 product-details">
+			<div class="col-sm-6 product-details">
 				<div >
 				<!-- Product Name Starts -->
 					<h2>
@@ -511,6 +512,11 @@
 						<span class="product_ask"><%= @product.size rescue "-" %></span>
 					</div><br/>
 
+            <div>
+            <span class="product_ask">Available Quantity:</span>
+            <span class="product_ask"><%= @product.quantity rescue "-" %></span>
+          </div><br/>
+
 
 
 						
@@ -659,7 +665,7 @@
 		</div>
 	<!-- Product Info Ends -->	
 
-    <div class="tabs-panel panel-smart"  style="height:1100px;">
+    <div class="tabs-panel panel-smart"  style="height:1300px;">
 
            <div class="col-md-2" > 
 
@@ -788,7 +794,7 @@
                   </center>
                   <hr/>
 
-              
+             
                    <% @store_ads.each do |store_ad| %>
                     
 
@@ -800,16 +806,16 @@
                          <%= image_tag store_ad.ads_one.url, :id => "store_ads"  %>
                          <%= image_tag store_ad.ads_two.url, :id => "store_ads" %>
 
-                           <br/>
+                           <br/>         <br/>
                           <span style="font-weight:bold;color:#d9534f;">Description</span><br/>
-                          <span style="font-weight:bold;colo:gray;">
+                          <span style="font-weight:bold;color:gray;">
                                <%= store_ad.description rescue "-"  %>
                           </span>
 
 
                           <br/><br/>
                           <span style="font-weight:bold;color:#d9534f;">Terms and Condition</span><br/>
-                           <span style="font-weight:bold;color:#d9534f;">
+                           <span style="font-weight:bold;color:gray;">
                                <%= store_ad.term rescue "-" %>
                            </span>
 
@@ -1236,6 +1242,17 @@ $("#zoom_01").elevateZoom();
 $("#zoom_02").elevateZoom();
 $("#zoom_03").elevateZoom();
 $("#zoom_04").elevateZoom();
+
+
+$('#av1').click(function(){
+
+  $('#zoom_01').show();
+  $('#zoom_02').hide();
+  $('#zoom_03').hide();
+  $('#zoom_04').hide();
+
+});
+
 
 $('#av2').click(function(){
 

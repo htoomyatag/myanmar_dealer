@@ -20,6 +20,78 @@ class ApisController < ApplicationController
 
 
 
+
+  def last_three_json
+
+    @fashion_clothings = Product.where(:category => "cloths").order('id DESC')
+    @fashion_accessories = Product.where(:category => "fashion_related").order('id DESC')
+    @fashion_bags = Product.where(:category => "bags").order('id DESC')
+    @fashion_footwears = Product.where(:category => "footwears").order('id DESC')
+    @beauty_equipments = Product.where(:category => "beauty_equipments").order('id DESC')
+    @toys = Product.where(:category => "toys").order('id DESC')
+    @telephone_accessories = Product.where(:category => "phone_related").order('id DESC')
+    @computers = Product.where(:category => "computers_laptops").order('id DESC')
+    @electrical_equipments = Product.where(:category => "eletronic_related").order('id DESC')
+    
+    @hot_items = HotItem.all
+
+
+ 
+    respond_to do |format|
+          my_primary_json = { 
+            :FashionClothings => @fashion_clothings.to_json(:methods => [:avatar_url]),
+            :FashionAccessories => @fashion_accessories.to_json(:methods => [:avatar_url]),
+            :FashionBags => @fashion_bags.to_json(:methods => [:avatar_url]),
+            :FashionFootwears => @fashion_footwears.to_json(:methods => [:avatar_url]),
+            :BeautyEquipments => @beauty_equipments.to_json(:methods => [:avatar_url]),
+            :Toys => @toys.to_json(:methods => [:avatar_url]),
+            :TelephoneAccessories => @telephone_accessories.to_json(:methods => [:avatar_url]),
+            :Computers => @computers.to_json(:methods => [:avatar_url]),
+            :ElectricalEquipments => @electrical_equipments.to_json(:methods => [:avatar_url]),
+            :HotItem => @hot_items.to_json
+
+
+             }
+          my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+          a = '"['
+          b = ']"'
+          my_third_json = my_seconday_json.gsub(a , "[")
+          my_fourth_json = my_third_json.gsub(b , "]")
+          format.json {render json: my_primary_json}
+          format.text {render text: my_fourth_json}
+    end
+
+  end
+
+
+
+  # def fashion_json 
+  # end
+  
+  # def fashion_accessories_json 
+  # end
+
+  # def fashion_bag_json 
+  # end
+
+  # def footwear_json 
+  # end
+
+  # def beauty_json 
+  # end
+
+  # def kid_json
+  # end
+
+  # def phone_json
+  # end
+
+  # def computer_json
+  # end
+  
+  # def electronic_json
+  # end
+
   def my_api_services
 
     @services = Service.all
