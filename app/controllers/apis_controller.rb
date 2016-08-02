@@ -18,6 +18,105 @@ class ApisController < ApplicationController
 
   end
 
+
+  def order_confirm_list
+    @orders = Order.where(:order_status => "order_confirm").where("user_id = ?", params[:user_id])
+
+     respond_to do |format|
+          my_primary_json = { :Orders => @orders}
+          my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+          a = '"['
+          b = ']"'
+          my_third_json = my_seconday_json.gsub(a , "[")
+          my_fourth_json = my_third_json.gsub(b , "]")
+          format.json {render json: my_primary_json}
+          format.text {render text: my_fourth_json}
+     end
+  end
+
+  def order_processing_list
+    @orders = Order.where(:order_status => "order_processing").where("user_id = ?", params[:user_id])
+
+     respond_to do |format|
+          my_primary_json = { :Orders => @orders}
+          my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+          a = '"['
+          b = ']"'
+          my_third_json = my_seconday_json.gsub(a , "[")
+          my_fourth_json = my_third_json.gsub(b , "]")
+          format.json {render json: my_primary_json}
+          format.text {render text: my_fourth_json}
+     end
+  end
+
+
+  def order_delivery_list
+    @orders = Order.where(:order_status => "order_delivery").where("user_id = ?", params[:user_id])
+
+     respond_to do |format|
+          my_primary_json = { :Orders => @orders}
+          my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+          a = '"['
+          b = ']"'
+          my_third_json = my_seconday_json.gsub(a , "[")
+          my_fourth_json = my_third_json.gsub(b , "]")
+          format.json {render json: my_primary_json}
+          format.text {render text: my_fourth_json}
+     end
+  end
+
+
+  def order_completed_list
+    
+    @orders = Order.where(:order_status => "order_completed").where("user_id = ?", params[:user_id])
+
+     respond_to do |format|
+          my_primary_json = { :Orders => @orders}
+          my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+          a = '"['
+          b = ']"'
+          my_third_json = my_seconday_json.gsub(a , "[")
+          my_fourth_json = my_third_json.gsub(b , "]")
+          format.json {render json: my_primary_json}
+          format.text {render text: my_fourth_json}
+     end
+  end
+
+  def order_rejected_list
+
+    @orders = Order.where(:order_status => "order_rejected").where("user_id = ?", params[:user_id])
+
+     respond_to do |format|
+          my_primary_json = { :Orders => @orders}
+          my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+          a = '"['
+          b = ']"'
+          my_third_json = my_seconday_json.gsub(a , "[")
+          my_fourth_json = my_third_json.gsub(b , "]")
+          format.json {render json: my_primary_json}
+          format.text {render text: my_fourth_json}
+     end
+  end
+
+  def get_store_product_by_seller
+
+      # http://localhost:3000/get_store_product_by_seller.txt?user_id=1
+
+      @products = Product.where("user_id = ?", params[:user_id])
+
+      respond_to do |format|
+          my_primary_json = { :Products => @products}
+          my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+          a = '"['
+          b = ']"'
+          my_third_json = my_seconday_json.gsub(a , "[")
+          my_fourth_json = my_third_json.gsub(b , "]")
+          format.json {render json: my_primary_json}
+          format.text {render text: my_fourth_json}
+     end
+
+  end
+
   def get_store_product
 
       # http://localhost:3000/get_store_product.txt?store_name=S3 fashion

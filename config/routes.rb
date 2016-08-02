@@ -57,12 +57,20 @@ end
   resources :apis
 
 
+  get 'order_confirm_list' => 'apis#order_confirm_list', :as => :order_confirm_list
+  get 'order_delivery_list' => 'apis#order_delivery_list', :as => :order_delivery_list
+  get 'order_completed_list' => 'apis#order_completed_list', :as => :order_completed_list
+  get 'order_rejected_list' => 'apis#order_rejected_list', :as => :order_rejected_list
+  get 'order_processing_list' => 'apis#order_processing_list', :as => :order_processing_list
 
   get 'to_send_shipment' => 'apis#to_send_shipment', :as => :to_send_shipment
   get 'store_desc' => 'apis#store_desc', :as => :store_desc
   get 'last_three_json' => 'apis#last_three_json', :as => :last_three_json
 
   get 'get_store_product' => "apis#get_store_product", :as => :get_store_product
+  get 'get_store_product_by_seller' => "apis#get_store_product_by_seller", :as => :get_store_product_by_seller
+
+
   post 'to_send_rating' => "apis#to_send_rating", :as => :to_send_rating
   get 'get_rating' => "apis#get_rating", :as => :get_rating
 
