@@ -48,6 +48,8 @@ class ApisController < ApplicationController
     @telephone_accessories = Product.where(:category => "phone_related").order('id DESC').last(3)
     @computers = Product.where(:category => "computers_laptops").order('id DESC').last(3)
     @electrical_equipments = Product.where(:category => "eletronic_related").order('id DESC').last(3)
+
+    @big_deals = Product.where(:big_deal => "yes").select(:id,:title,:price,:store_name, :price, :quantity, :avatar1_file_name, :avatar2_file_name, :avatar3_file_name, :avatar4_file_name)
     
     @hot_items = HotItem.all
 
@@ -64,6 +66,7 @@ class ApisController < ApplicationController
             :TelephoneAccessories => @telephone_accessories.to_json(:methods => [:avatar_url]),
             :Computers => @computers.to_json(:methods => [:avatar_url]),
             :ElectricalEquipments => @electrical_equipments.to_json(:methods => [:avatar_url]),
+            :BigDeals => @big_deals.to_json(:methods => [:avatar_url]),
             :HotItem => @hot_items.to_json
 
 

@@ -1561,3 +1561,11 @@ select#select option[value="transporter"]   {
 	width: 50px;
 	
 }
+
+
+
+#btn_to_cart{
+	font-size: 11px;
+	text-align:  center;
+	height: 30px;
+}
