@@ -1201,9 +1201,9 @@ hr{
 
 
 #side_menu{
-	font-size: 12px;
+	font-size: 11px;
 	color: white;
-	padding: 5px;
+	padding: 10px;
 }
 
 
@@ -1316,11 +1316,11 @@ select#select option[value="transporter"]   {
 
 #menuside{
 
-	font-size: 10px;
+	font-size: 11px;
 	text-align: center;
 	color: black;
 	background: white;
-	height: 28px;
+	height: 40px;
 
 }
 
