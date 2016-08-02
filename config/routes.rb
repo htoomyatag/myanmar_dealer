@@ -59,6 +59,9 @@ end
   get 'store_desc' => 'apis#store_desc', :as => :store_desc
   get 'last_three_json' => 'apis#last_three_json', :as => :last_three_json
 
+
+  get 'to_send_rating' => "apis#to_send_rating", :as => :to_send_rating
+
   get 'test_json' => 'apis#test_json', :as => :test_json
   get 'my_big_deals' => 'apis#my_big_deals', :as => :my_big_deals
   get 'my_api_services' => 'apis#my_api_services', :as => :my_api_services

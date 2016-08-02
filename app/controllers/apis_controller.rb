@@ -18,6 +18,10 @@ class ApisController < ApplicationController
 
   end
 
+  def to_send_rating
+    @comment = Comment.create(:user_id => params[:user_id], :message  => params[:message], :product_id  => params[:product_id] )
+  end
+
 
   def store_desc
     @store_desc = Store.select(:id, :description, :description_image1, :description_image2, :description_image3, :description_image4)
