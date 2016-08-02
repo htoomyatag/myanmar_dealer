@@ -249,7 +249,7 @@
                                       <div class="form-group">
                                           <%= text_field_tag :title, params[:title], :class=>"form-control" %>
                                       </div>
-                                      <button type="submit" class="btn btn-danger">search</button>
+                                      <button type="submit" class="btn btn-danger" style="position:relative;top:-5px;">search</button>
                 <% end %>
       
             <div class="pull-right" >
@@ -408,7 +408,7 @@
                                       <div class="form-group">
                                           <%= text_field_tag :title, params[:title], :style=>"width:350px;position:relative;top:5px;height:50px;" %>
                                       </div>
-                                      <button type="submit" class="btn btn-danger">search</button>
+                                      <button type="submit" class="btn btn-danger" style="height:50px;">search</button>
                                 <% end %>
 
                               </div>
@@ -417,9 +417,9 @@
                                   <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
                                       <br/>
                                       <div class="form-group">
-                                          <%= text_field_tag :store_name, params[:store_name], :style=>"width:350px;" %>
+                                          <%= text_field_tag :store_name, params[:store_name], :style=>"width:350px;position:relative;top:5px;height:50px;" %>
                                       </div>
-                                      <button type="submit" class="btn btn-danger">search</button>
+                                      <button type="submit" class="btn btn-danger" style="height:50px;">search</button>
                                 <% end %>
 
                               </div>
@@ -428,9 +428,9 @@
                                 <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
                                       <br/>
                                       <div class="form-group">
-                                          <%= text_field_tag :title2, params[:title2], :style=>"width:350px;" %>
+                                          <%= text_field_tag :title2, params[:title2], :style=>"width:350px;position:relative;top:5px;height:50px;" %>
                                       </div>
-                                      <button type="submit" class="btn btn-danger">search</button>
+                                      <button type="submit" class="btn btn-danger" style="height:50px;">search</button>
                                 <% end %>
 
 

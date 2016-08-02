@@ -325,200 +325,164 @@
 						<div>
 							<span style="float:left;"><%= @product.title %></span>
 	 					</div>
-
 					</h2>
-				<!-- Product Name Ends -->
-				    <br/><br/>   <br/>
-					<span class="product_ask">Price:</span>
-					<span class="price-new">
-						<%= @product.price.to_i %> Ks
-					</span> 
+          
+          <br>   <br>
+          <h4><span>Price:</span>  <span><%= @product.price.to_i %> Ks</span> </h4>
+          <h4><span>Color:</span> <span><%= @product.color rescue "-" %></span>  </h4>
+          <h4><span>Size: </span><span><%= @product.size rescue "-" %></span>  </h4>
+				  <h4><span>Available Quantity: </span><span><%= @product.quantity rescue "-" %> </span> </h4>
 
-					<br/><br/>
-			
-
-      <% if @product.delivery_category == "transporter_logistics" %>
-
-      		<!-- delivery with transporter -->
-					<div style="width:100%;">
-
-						<div style="width:20%;float:left;padding-right:10px;padding-top:5px;">
-							<span class="product_ask">Delivery Charges:</span>
-						</div>
-
-						<div style="width:20%;float:left;padding-right:10px;">
-							<select class="form-control">
-							  <option>Region</option>
-							  <option>2</option>
-							  <option>3</option>
-							  <option>4</option>
-							  <option>5</option>
-							</select>
-						</div>
-
-						<div style="width:20%;float:left;padding-right:10px;">
-							<select class="form-control" >
-							   <option>City</option>
-							  <option>Yangon</option>
-							  <option>Mandalay</option>
-							  <option>Taunggyi</option>
-							  <option>Larshio</option>
-							  <option>Myeik</option>
-							  <option>Mgway</option>
-							</select>
-						</div>
-
-						<div style="width:20%;float:left;padding-right:10px;">
-
-							<select class="form-control" >
-							  	
-							  			<option>Township</option>
-										<option value="2000"> 
-												Ahlone	
-										</option>
-										<option value="2000"> 
-												Kyimyindaing
-										</option>
-										<option value="2000"> 
-												Sanchaung
-										</option>
-										<option value="2000"> 	
-												Latha	
-												</option>
-										<option value="2000"> 
-												Lanmadaw
-												</option>
-										<option value="2000"> 
-												Pabedan	
-												</option>
-										<option value="2000"> 
-												Kyauktada
-												</option>
-										<option value="2000"> 
-												Botahtaung
-												</option>
-										<option value="2000"> 
-												Pazundaung
-												</option>
-										<option value="2000"> 
-												Tamwe
-												</option>
-										<option value="2000"> 
-												Mingalar taung nyunt
-												</option>
-										<option value="2000"> 
-												Thingangyun
-												</option>
-										<option value="2000"> 
-												Thuwunna
-												</option>
-										<option value="2000"> 
-												Bahan 
-												</option>
-										<option value="2000"> 
-												Hlaing
-												</option>
-										<option value="2000"> 
-												Mayangon
-												</option>
-										<option value="2000"> 
-												Yankin
-												</option>
-										<option value="2000"> 
-												Tharkayta
-										</option>
-										<!--  -->
-
-										<option value="2500"> 
-										Dagon myothit(south)
-										</option>
-										<option value="2500"> 	
-										Dagon myothit(north)	
-										</option>
-										<option value="2500"> 
-										Dagon myothit(east)	
-										</option>
-										<option value="2500"> 
-										Dagon myothit(west)	
-										</option>
-										<option value="2500"> 
-										Okkalapa(south)	
-										</option>
-										<option value="2500"> 
-										Okkalapa(north)	
-										</option>
-										<option value="2500"> 
-										Bayintnaung	
-										</option>
-										<option value="2500"> 
-										Insein	
-										</option>
-										<option value="2500"> 
-										Sawbuagyigong	
-										</option>
-										<option value="2500"> 
-										Mingalardon	
-										</option>
-
-										<option value="500"> 
-											NAYPYITAW
-										</option>
-
-										<option value="500"> 
-											MANDALAY	
-										</option>
-
-										<option value="500"> 
-											TAUNGGYI	
-										</option>
-							</select>
-						</div>
-
-						<div style="width:20%;float:left;padding-right:10px;padding-top:6px;">
-
-							= 2000 Kyats
-						</div>
-
-					</div><br/><br/><br/>
+          <% if @product.delivery_category == "transporter_logistics" %>
 
 
+              <div style="width:100%;">
 
- <!--  -->
-
-       <% else %>
-
-                <div style="width:100%;">
-
-                  <div style="float:left;padding-right:10px;padding-top:5px;">
-                    <span class="product_ask">Delivery Charges:</span>
-                    <span class="ask_seller">ASK THE SELLER</span>
-                  </div><br/><br/><br/>
-
+            <div >
+              <h4>Delivery Charges</h4>
             </div>
 
-         <% end %>
+            <div style="width:20%;float:left;padding-right:10px;">
+              <select class="form-control">
+                <option>Region</option>
+                <option>Pathein</option>
+                <option>Bago</option>
+                <option>Hakha</option>
+                <option>Myitkyina</option>
+                <option>Loikaw</option>
+                <option></option>
+              </select>
+            </div>
 
+            <div style="width:20%;float:left;padding-right:10px;">
+              <select class="form-control" >
+                 <option>City</option>
+                <option>Yangon</option>
+                <option>Mandalay</option>
+                <option>Taunggyi</option>
+                <option>Larshio</option>
+                <option>Myeik</option>
+                <option>Mgway</option>
+              </select>
+            </div>
 
+            <div style="width:20%;float:left;padding-right:10px;">
 
+              <select class="form-control" >
+                  
+                      <option>Township</option>
+                    <option value="2000"> 
+                        Ahlone  
+                    </option>
+                    <option value="2000"> 
+                        Kyimyindaing
+                    </option>
+                    <option value="2000"> 
+                        Sanchaung
+                    </option>
+                    <option value="2000">   
+                        Latha 
+                        </option>
+                    <option value="2000"> 
+                        Lanmadaw
+                        </option>
+                    <option value="2000"> 
+                        Pabedan 
+                        </option>
+                    <option value="2000"> 
+                        Kyauktada
+                        </option>
+                    <option value="2000"> 
+                        Botahtaung
+                        </option>
+                    <option value="2000"> 
+                        Pazundaung
+                        </option>
+                    <option value="2000"> 
+                        Tamwe
+                        </option>
+                    <option value="2000"> 
+                        Mingalar taung nyunt
+                        </option>
+                    <option value="2000"> 
+                        Thingangyun
+                        </option>
+                    <option value="2000"> 
+                        Thuwunna
+                        </option>
+                    <option value="2000"> 
+                        Bahan 
+                        </option>
+                    <option value="2000"> 
+                        Hlaing
+                        </option>
+                    <option value="2000"> 
+                        Mayangon
+                        </option>
+                    <option value="2000"> 
+                        Yankin
+                        </option>
+                    <option value="2000"> 
+                        Tharkayta
+                    </option>
+                    <!--  -->
 
+                    <option value="2500"> 
+                    Dagon myothit(south)
+                    </option>
+                    <option value="2500">   
+                    Dagon myothit(north)  
+                    </option>
+                    <option value="2500"> 
+                    Dagon myothit(east) 
+                    </option>
+                    <option value="2500"> 
+                    Dagon myothit(west) 
+                    </option>
+                    <option value="2500"> 
+                    Okkalapa(south) 
+                    </option>
+                    <option value="2500"> 
+                    Okkalapa(north) 
+                    </option>
+                    <option value="2500"> 
+                    Bayintnaung 
+                    </option>
+                    <option value="2500"> 
+                    Insein  
+                    </option>
+                    <option value="2500"> 
+                    Sawbuagyigong 
+                    </option>
+                    <option value="2500"> 
+                    Mingalardon 
+                    </option>
 
-					<div>
-						<span class="product_ask">Color:</span>
-					  <%= @product.color rescue "-" %>
-					</div><br/>
+                    <option value="500"> 
+                      NAYPYITAW
+                    </option>
 
-					<div>
-						<span class="product_ask">Size:</span>
-						<span class="product_ask"><%= @product.size rescue "-" %></span>
-					</div><br/>
+                    <option value="500"> 
+                      MANDALAY  
+                    </option>
 
-            <div>
-            <span class="product_ask">Available Quantity:</span>
-            <span class="product_ask"><%= @product.quantity rescue "-" %></span>
-          </div><br/>
+                    <option value="500"> 
+                      TAUNGGYI  
+                    </option>
+              </select>
+            </div>
 
+            <div style="width:20%;float:left;padding-right:10px;padding-top:6px;">
 
+              = 2000 Kyats
+            </div>
 
+          </div><br/><br/><br/>
+
+            <% else %>
+           <h4><span>Delivery Charges: </span><span> Ask to Seller </h4><br/><br/><br/>
+
+            <% end %>
 						
 		
 				
