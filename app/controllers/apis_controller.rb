@@ -18,8 +18,47 @@ class ApisController < ApplicationController
 
   end
 
+  def get_store_product
+
+      # http://localhost:3000/get_store_product.txt?store_name=S3 fashion
+
+      @products = Product.where("store_name = ?", params[:store_name])
+
+      respond_to do |format|
+          my_primary_json = { :Products => @products}
+          my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+          a = '"['
+          b = ']"'
+          my_third_json = my_seconday_json.gsub(a , "[")
+          my_fourth_json = my_third_json.gsub(b , "]")
+          format.json {render json: my_primary_json}
+          format.text {render text: my_fourth_json}
+     end
+
+  end
+
   def to_send_rating
+
+    # http://localhost:3000/to_send_rating?user_id=1&message=this is msg&product_id=2
+    
     @comment = Comment.create(:user_id => params[:user_id], :message  => params[:message], :product_id  => params[:product_id] )
+  end
+
+  def get_rating
+
+    @ratings = Comment.all
+    respond_to do |format|
+          my_primary_json = { :Rating => @ratings}
+          my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+          a = '"['
+          b = ']"'
+          my_third_json = my_seconday_json.gsub(a , "[")
+          my_fourth_json = my_third_json.gsub(b , "]")
+          format.json {render json: my_primary_json}
+          format.text {render text: my_fourth_json}
+    end
+
+
   end
 
 
