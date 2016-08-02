@@ -19,19 +19,35 @@ class ApisController < ApplicationController
   end
 
 
+  def store_desc
+    @store_desc = Store.select(:id, :description, :description_image1, :description_image2, :description_image3, :description_image4)
+
+    respond_to do |format|
+          my_primary_json = { :StoreDesc => @store_desc}
+          my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+          a = '"['
+          b = ']"'
+          my_third_json = my_seconday_json.gsub(a , "[")
+          my_fourth_json = my_third_json.gsub(b , "]")
+          format.json {render json: my_primary_json}
+          format.text {render text: my_fourth_json}
+    end
+
+  end
+
 
 
   def last_three_json
 
-    @fashion_clothings = Product.where(:category => "cloths").order('id DESC')
-    @fashion_accessories = Product.where(:category => "fashion_related").order('id DESC')
-    @fashion_bags = Product.where(:category => "bags").order('id DESC')
-    @fashion_footwears = Product.where(:category => "footwears").order('id DESC')
-    @beauty_equipments = Product.where(:category => "beauty_equipments").order('id DESC')
-    @toys = Product.where(:category => "toys").order('id DESC')
-    @telephone_accessories = Product.where(:category => "phone_related").order('id DESC')
-    @computers = Product.where(:category => "computers_laptops").order('id DESC')
-    @electrical_equipments = Product.where(:category => "eletronic_related").order('id DESC')
+    @fashion_clothings = Product.where(:category => "cloths").order('id DESC').last(3)
+    @fashion_accessories = Product.where(:category => "fashion_related").order('id DESC').last(3)
+    @fashion_bags = Product.where(:category => "bags").order('id DESC').last(3)
+    @fashion_footwears = Product.where(:category => "footwears").order('id DESC').last(3)
+    @beauty_equipments = Product.where(:category => "beauty_equipments").order('id DESC').last(3)
+    @toys = Product.where(:category => "toys").order('id DESC').last(3)
+    @telephone_accessories = Product.where(:category => "phone_related").order('id DESC').last(3)
+    @computers = Product.where(:category => "computers_laptops").order('id DESC').last(3)
+    @electrical_equipments = Product.where(:category => "eletronic_related").order('id DESC').last(3)
     
     @hot_items = HotItem.all
 

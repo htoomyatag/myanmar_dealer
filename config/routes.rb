@@ -56,6 +56,7 @@ end
 
   resources :apis
 
+  get 'store_desc' => 'apis#store_desc', :as => :store_desc
   get 'last_three_json' => 'apis#last_three_json', :as => :last_three_json
 
   get 'test_json' => 'apis#test_json', :as => :test_json
