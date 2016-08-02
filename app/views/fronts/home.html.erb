@@ -302,15 +302,7 @@
 
                   <% if user_signed_in? %>
 
-                     <li>
-                        <a href="#">
-                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
-                          <span class="hidden-sm hidden-xs" style="color:white;">
-                            Favourite
-                          </span>
-                          <span class="badge"><%= @fav_number %></span>
-                        </a>
-                      </li>
+                    
 
                       <li>
                         <a href="/my_order">
@@ -329,15 +321,7 @@
                   <% else %>
 
 
-                   <li>
-                        <a href="#">
-                          <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
-                          <span class="hidden-sm hidden-xs" style="color:white;">
-                            Favourite
-                          </span>
-                          <span class="badge">0</span>
-                        </a>
-                      </li>
+                  
 
                       <li>
                         <a href="/my_order">
@@ -422,7 +406,7 @@
                                 <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
                                       <br/>
                                       <div class="form-group">
-                                          <%= text_field_tag :title, params[:title], :style=>"width:350px;" %>
+                                          <%= text_field_tag :title, params[:title], :style=>"width:350px;position:relative;top:5px;height:50px;" %>
                                       </div>
                                       <button type="submit" class="btn btn-danger">search</button>
                                 <% end %>

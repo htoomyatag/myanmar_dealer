@@ -39,9 +39,26 @@ class ApisController < ApplicationController
 
   def to_send_rating
 
-    # http://localhost:3000/to_send_rating?user_id=1&message=this is msg&product_id=2
-    
+    # http://localhost:3000/to_send_rating?user_id=1&message=this is msg&product_id=2 
     @comment = Comment.create(:user_id => params[:user_id], :message  => params[:message], :product_id  => params[:product_id] )
+  end
+
+  def to_send_shipment
+
+
+
+
+    @order = Order.create(
+
+      :user_id => params[:user_id], 
+      :customer_name  => params[:customer_name], 
+      :customer_email  => params[:customer_email],
+      :customer_phone  => params[:customer_phone],
+      :customer_city  => params[:customer_city],
+      :customer_township  => params[:customer_township],
+      :customer_address  => params[:customer_address],
+      :cart_id  => params[:cart_id],
+      )
   end
 
   def get_rating
