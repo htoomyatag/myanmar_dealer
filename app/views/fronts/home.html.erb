@@ -684,12 +684,16 @@
 		</div>
      	  <div class="col-md-3">
      	  		
-     	  		<p class="mytitle"> Big Deals</p>
+     	  		<p class="mytitle"> Big Deals </p>
      	  		<div class="panel panel-default">
 				  <div class="panel-heading"><span style="color:#d9534f;">TODAY'S</span> DEALS</div>
 				  <div class="panel-body">
              <br/>
-				     <h6 style="text-align:center;"> Ends in <%= @admin.ends_in %></h6>
+				     <h6 style="text-align:center;"> Ends in 
+                  <span id="getting-started"> </span>
+
+
+              </h6>
              <br/>
 
 				   		<center>
@@ -832,3 +836,17 @@
 
 
 
+
+
+ <script type="text/javascript">
+
+
+   $("#getting-started")
+   .countdown("<%= Date.tomorrow.strftime('%Y/%m/%d')   %>", function(event) {
+     $(this).text(
+       event.strftime('%H:%M:%S')
+     );
+   });
+
+
+ </script>
