@@ -328,10 +328,10 @@
 					</h2>
           
           <br>   <br>
-          <h4><span class="">Price:</span>  <span><%= @product.price.to_i %> Ks</span> </h4>
-          <h4><span class="">Color:</span> <span><%= @product.color rescue "-" %></span>  </h4>
-          <h4><span class="">Size: </span><span><%= @product.size rescue "-" %></span>  </h4>
-				  <h4><span class="">Available Quantity: </span><span><%= @product.quantity rescue "-" %> </span> </h4>
+          <h4><span class="txt_price">Price:</span>  <span><%= @product.price.to_i %> Ks</span> </h4>
+          <h4><span class="txt_color">Color:</span> <span><%= @product.color rescue "-" %></span>  </h4>
+          <h4><span class="txt_size">Size: </span><span><%= @product.size rescue "-" %></span>  </h4>
+				  <h4><span class="txt_available">Available Quantity: </span><span><%= @product.quantity rescue "-" %> </span> </h4>
 
           <% if @product.delivery_category == "transporter_logistics" %>
 
@@ -339,7 +339,7 @@
               <div style="width:100%;">
 
             <div >
-              <h4>Delivery Charges</h4>
+              <h4 class="txt_available">Delivery Charges</h4>
             </div>
 
             <div style="width:20%;float:left;padding-right:10px;">

@@ -18,6 +18,66 @@ class ApisController < ApplicationController
 
   end
 
+  def edit_my_store
+       @shops = Store.where("user_id = ?", params[:user_id]).pluck(:id)
+       @shop_id = @shops.to_s.gsub('[', '')
+       @my_shop_id = @shop_id.to_s.gsub(']', '')
+       
+
+       @edit_shop = Store.find(@my_shop_id)
+       @edit_shop.update(
+        :store_name => params[:store_name],
+        :store_address => params[:store_address],
+        :store_contact => params[:store_contact],
+        :description => params[:description],
+        :term => params[:term]
+        )
+
+
+
+  end
+
+  def edit_my_product
+        @products = Product.where("user_id = ?", params[:user_id])
+        @edit_product = @products.find(params[:product_id])
+        @edit_product.update(
+          :title => params[:title],
+          :ingredient => params[:ingredient],
+          :usage => params[:usage],
+          :made_by_country => params[:made_by_country],
+          :description => params[:description],
+          :brand => params[:brand],
+          :effect => params[:effect],
+          :certification => params[:certification],
+          :age_group => params[:age_group],
+          :price => params[:price],
+          :feature => params[:feature],
+          :modal_number => params[:modal_number],
+          :color => params[:color],
+          :quantity => params[:quantity],
+          :size => params[:size],
+          :weight => params[:weight],
+          :made_with => params[:made_with],
+          :specification => params[:specification],
+          :thickness => params[:thickness],
+          :operation_system => params[:operation_system],
+          :bag_type => params[:bag_type],
+          :gender => params[:gender],
+          :footwear_type => params[:footwear_type],
+          :hat_type => params[:hat_type],
+          :power => params[:power],
+          :voltage => params[:voltage],
+          :dimension => params[:dimension],
+          :ingredient => params[:ingredient],
+          :caution => params[:caution],
+          :charges => params[:charges],
+          :service_category => params[:service_category],
+          :feature => params[:feature]
+
+          )
+  
+  end
+
 
   def order_confirm_list
     @orders = Order.where(:order_status => "order_confirm").where("user_id = ?", params[:user_id])
@@ -140,6 +200,7 @@ class ApisController < ApplicationController
 
     # http://localhost:3000/to_send_rating?user_id=1&message=this is msg&product_id=2 
     @comment = Comment.create(:user_id => params[:user_id], :message  => params[:message], :product_id  => params[:product_id] )
+  
   end
 
   def to_send_shipment

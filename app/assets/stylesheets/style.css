@@ -1569,3 +1569,10 @@ select#select option[value="transporter"]   {
 	text-align:  center;
 	height: 30px;
 }
+
+
+.txt_price, .txt_color, .txt_size, .txt_available{
+
+	color: #d9534f;
+
+}
