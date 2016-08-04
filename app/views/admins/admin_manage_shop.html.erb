@@ -43,7 +43,7 @@
             <td><%= store.description %></td>
             <td><%= store.seller_name %></td>
             <td><%= store.created_at.strftime("%m/%d/%Y") %></td>
-            <td><%= link_to 'Remove', store, :class=>"btn btn-danger btn-xs", :remote => true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Remove', store, :class=>"btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
 
 
