@@ -59,8 +59,8 @@ end
 
 
   get 'my_product_order_list' => 'apis#my_product_order_list', :as => :my_product_order_list
-  get 'edit_my_store' => 'apis#edit_my_store', :as => :edit_my_store
-  get 'edit_my_product' => 'apis#edit_my_product', :as => :edit_my_product
+  post 'edit_my_store' => 'apis#edit_my_store', :as => :edit_my_store
+  post 'edit_my_product' => 'apis#edit_my_product', :as => :edit_my_product
   get 'order_confirm_list' => 'apis#order_confirm_list', :as => :order_confirm_list
   get 'order_delivery_list' => 'apis#order_delivery_list', :as => :order_delivery_list
   get 'order_completed_list' => 'apis#order_completed_list', :as => :order_completed_list
