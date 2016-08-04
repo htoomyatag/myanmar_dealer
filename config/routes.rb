@@ -158,6 +158,8 @@ end
   resources :fashions
   resources :fronts
 
+
+  get "apply_as_seller/:id" => "fronts#apply_as_seller", :as => :apply_as_seller
   get "unauthorized" => "fronts#unauthorized", :as => :unauthorized
   get "send_to_pusher" => "fronts#send_to_pusher", :as => :send_to_pusher
   get "add_to_favourite" => "fronts#add_to_favourite", :as => :add_to_favourite

@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:personal_nrc_front,:personal_nrc_back,:retail_nrc_front,:retail_nrc_back,:shop_licensce,:staff_nrc_front,:staff_nrc_back,:company_licensce,:personal_nrc_number,:personal_name,:personal_address,:retail_nrc_number,:retail_name,:retail_address,:staff_name,:staff_nrc_number,:staff_address,:shop_name, :authentication_token,:user_type_id,:company_name,:name,:phone,:address, :email, :password, :password_confirmation,:date_of_birth,:gender, :customer_type, :phone_number, :year_of_birth, :user_name)}
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:admin_approved, :personal_nrc_front,:personal_nrc_back,:retail_nrc_front,:retail_nrc_back,:shop_licensce,:staff_nrc_front,:staff_nrc_back,:company_licensce,:personal_nrc_number,:personal_name,:personal_address,:retail_nrc_number,:retail_name,:retail_address,:staff_name,:staff_nrc_number,:staff_address,:shop_name, :authentication_token,:user_type_id,:company_name,:name,:phone,:address, :email, :password, :password_confirmation,:date_of_birth,:gender, :customer_type, :phone_number, :year_of_birth, :user_name)}
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:email, :password, :remember_me, :authentication_token)}
   end
 

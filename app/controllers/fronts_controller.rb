@@ -9,6 +9,21 @@ class FrontsController < ApplicationController
     @fronts = Front.all
    end
 
+
+
+  def apply_as_seller
+    respond_to do |format|
+      @user = User.find(params[:id])
+      if @user.update(:user_type_id => 1, :admin_approved => "f")
+        format.html { redirect_to root_path }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
     def set_my_seller
           @user = User.find(params[:id])
           @user.update(:store_id => params[:store_id])
