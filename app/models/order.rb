@@ -1,4 +1,39 @@
 class Order < ActiveRecord::Base
+
+
+  after_save :add_sellers
+
+  CITY = ["YANGON", "MANDALAY", "NAYPYITAW", "TAUNGGYI"]
+  TOWNSHIP =  			["Ahlone",  
+                        "Kyimyindaing",
+                        "Sanchaung",
+                        "Latha",
+                        "Lanmadaw",
+                        "Pabedan", 
+                        "Kyauktada",
+                        "Botahtaung",
+                        "Pazundaung",
+                        "Tamwe",
+                        "Mingalar taung nyunt",
+                        "Thingangyun",
+                        "Thuwunna",
+                        "Bahan", 
+                        "Hlaing",
+                        "Mayangon",
+                        "Yankin",
+                        "Tharkayta",
+                    	"Dagon myothit(south)",
+                    	"Dagon myothit(north)",  
+                    	"Dagon myothit(east)", 
+                    	"Dagon myothit(west)", 
+                   		"Okkalapa(south)", 
+                   		"Okkalapa(north)",         
+                    	"Bayintnaung", 
+                    	"Insein",  
+                    	"Sawbuagyigong", 
+                    	"Mingalardon" ]
+
+
 	
 
 	def total_price
@@ -8,5 +43,13 @@ class Order < ActiveRecord::Base
     def total_quantity
 		line_items.to_a.sum { |product| product.quantity }
 	end
+
+    def add_sellers
+          @product_ids = LineItem.where(:cart_id => self.cart_id).pluck(:product_id)
+          @seller_ids = Product.where(:id => @product_ids).pluck(:user_id) 
+         update_column(:sellers,  @seller_ids)
+          
+
+    end
 	
 end

@@ -62,16 +62,25 @@
 									<label for="inputCity" class="col-sm-3 control-label">City :</label>
 									<div class="col-sm-9">
 										<%= f.text_field :customer_city, :class=>"form-control" %>
+										
 									</div>
+
 								</div><br/><br/>
 
 								<div style="display:none;">
 								<%= f.text_field :cart_id, :class=>"form-control" , :value => session[:cart_id]%>
+								
+
 								</div>
 
 								<div  style="display:none;">
 								<%= f.text_field :user_id, :class=>"form-control" , :value => current_user.id %>
+								</div>
+
+								<div  >
+
 								</div>		
+
 								
 							</form>
 						<!-- Form Ends -->
@@ -264,14 +273,14 @@
 								<div class="form-group">
 									<label for="inputCity" class="col-sm-3 control-label">Township :</label>
 									<div class="col-sm-9">
-										<%= f.text_field :customer_township, :class=>"form-control" %>
+										 <%= f.select(:customer_township, Order::TOWNSHIP) %>
 									</div>
 								</div><br/><br/>
 								
 								<div class="form-group">
 									<label for="inputCity" class="col-sm-3 control-label">City :</label>
 									<div class="col-sm-9">
-										<%= f.text_field :customer_city, :class=>"form-control" %>
+										 <%= f.select(:customer_city, Order::CITY) %>
 									</div>
 								</div><br/><br/>
 
@@ -282,6 +291,8 @@
 								<div  style="display:none;">
 								<%= f.text_field :user_id, :class=>"form-control" , :value => current_user.id %>
 								</div>		
+
+							
 								
 							</form>
 						<!-- Form Ends -->

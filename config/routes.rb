@@ -56,7 +56,8 @@ end
 
   resources :apis
 
-
+  get 'view_shop_licensce' => 'apis#view_shop_licensce', :as => :view_shop_licensce
+  get 'order_view_by_seller' => 'apis#order_view_by_seller', :as => :order_view_by_seller
   get 'store_detail_view_by_seller' => 'apis#store_detail_view_by_seller', :as => :store_detail_view_by_seller
   get 'store_detail_view_by_buyer' => 'apis#store_detail_view_by_buyer', :as => :store_detail_view_by_buyer
 
@@ -164,6 +165,8 @@ end
   resources :fronts
 
 
+
+  get "products_by_category" => "fronts#products_by_category", :as => :products_by_category
   get "apply_as_seller/:id" => "fronts#apply_as_seller", :as => :apply_as_seller
   get "unauthorized" => "fronts#unauthorized", :as => :unauthorized
   get "send_to_pusher" => "fronts#send_to_pusher", :as => :send_to_pusher

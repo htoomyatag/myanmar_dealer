@@ -18,6 +18,42 @@ class ApisController < ApplicationController
 
   end
 
+  def view_shop_licensce
+
+    @user_ids = Store.where("store_name = ?", params[:store_name]).pluck(:user_id)
+    @stores = User.where(:id => @user_ids).select(:id, :shop_licensce_file_name)
+
+     respond_to do |format|
+          my_primary_json = { :Stores => @stores.to_json(:methods => [:avatar_url])}
+          my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+          a = '"['
+          b = ']"'
+          my_third_json = my_seconday_json.gsub(a , "[")
+          my_fourth_json = my_third_json.gsub(b , "]")
+          format.json {render json: my_primary_json}
+          format.text {render text: my_fourth_json}
+     end
+
+  end
+
+
+  def order_view_by_seller
+
+    @orders = Order.where('sellers && ARRAY[?]', params[:user_id]).select(:id,:user_id,:cart_id, :customer_name, :customer_email, :customer_phone, :customer_city, :customer_township, :customer_address)
+
+     respond_to do |format|
+          my_primary_json = { :Orders => @orders}
+          my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+          a = '"['
+          b = ']"'
+          my_third_json = my_seconday_json.gsub(a , "[")
+          my_fourth_json = my_third_json.gsub(b , "]")
+          format.json {render json: my_primary_json}
+          format.text {render text: my_fourth_json}
+     end
+
+  end
+
 
 
   def store_detail_view_by_seller

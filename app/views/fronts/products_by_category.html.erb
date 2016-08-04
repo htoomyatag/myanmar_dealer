@@ -1,14 +1,16 @@
   <%= render 'layouts/defaultnav' %>  
 
 <div class="row" style="margin:10px;">
-              <p class="mytitle"> Search result </p>
+              <p class="mytitle"> 
+      				<%= params[:category] %> 
+      		  </p>
 
               <% @products.each do |product| %>
             <div class="col-md-2">
               <div class="product-col">
                 <div class="image">
                 <% if !product.avatar1_file_name.nil?  %>
-                          <%= image_tag product.avatar1_file_name, :id => "product_image", :style=>"height:100px;width:100px;" %>
+                          <%= image_tag product.avatar1_file_name, :id => "product_image", :style=>"height:150px;width:150px;" %>
                       <% elsif product.avatar1_file_name.nil?  %>      
                   <img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
                       <% end %>
@@ -26,7 +28,7 @@
                   <div class="cart-button">
                   
                      <%= button_to line_items_path(:mmdealer_code => product.category.to_s+product.id.to_s, :user_id => product.user_id),  :onclick =>"cartFunction#{product.id}()", :data => product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
-                       <span style="font-size:12px;padding:30px;"> Add to cart</span>
+                       <span style="font-size:12px;padding:30px;"> Add to cart </span>
                       <% end %>
 
 

@@ -969,7 +969,7 @@
   <div class="popup-box chat-popup" id="mychatbox"  style="display:none;">
 
     <div class="popup-head">
-        <div class="popup-head-left"><%= @product.user.name %></div>
+        <div class="popup-head-left"><%= @product.user.name rescue "-" %></div>
         <div class="popup-head-right">
           <a href="#" id="close_chat">✕</a>
         </div>

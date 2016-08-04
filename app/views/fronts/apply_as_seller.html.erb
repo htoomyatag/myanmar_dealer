@@ -1,0 +1,295 @@
+  <%= render 'layouts/defaultnav' %>  
+
+  <div style="height:70px;" id="hide_mobile">
+
+  </div>
+  
+<div id="main-container" class="container">
+  <!-- Breadcrumb Starts -->
+    <ol class="breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li class="active">Apply as seller</li>
+    </ol>
+  <!-- Breadcrumb Ends -->
+  <!-- Main Heading Starts -->
+    <h2 class="main-heading text-center">
+      Apply as seller <br />
+    </h2>
+  <!-- Main Heading Ends -->
+  <!-- Registration Section Starts -->
+    <section class="registration-area">
+      <div class="row">
+
+        <div class="col-sm-12">
+        
+        <!-- Conditions Panel Starts -->
+          <div class="panel panel-smart">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                Seller Information
+              </h3>
+            </div>
+                          <%= form_for(@user) do |f| %>
+            <div class="panel-body">
+                
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="optionsRadios" id="optionspersonal" value="option1">
+                    Personal
+                  </label>
+                     <label>
+                    <input type="radio" name="optionsRadios" id="optionsretail" value="option1">
+                    Retail
+                  </label>
+                     <label>
+                    <input type="radio" name="optionsRadios" id="optionscompany" value="option1">
+                    Company
+                  </label>
+                </div>
+
+
+                 <%= f.text_field :user_type_id, :value => 1, :style => "display:none;" %>
+
+                <div id="personal" style="display:none;">
+
+
+                    
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Name</label>
+                      <%= f.text_field :personal_name, autofocus: true, :class => "form-control" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">NRC number</label>
+                      <%= f.text_field :personal_nrc_number, autofocus: true, :class => "form-control" %>
+                    </div>
+                     <div class="form-group">
+                      <label for="exampleInputFile">NRC Front</label>
+                        <%= f.file_field :personal_nrc_front %>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputFile">NRC Back</label>
+                        <%= f.file_field :personal_nrc_back %>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Address</label>
+                      <%= f.text_field :personal_address, autofocus: true, :class => "form-control" %>
+                    </div>
+
+
+
+
+                </div>
+
+                <div id="retail" style="display:none;">
+                    
+                     <div class="form-group">
+                      <label for="exampleInputEmail1">Name</label>
+                      <%= f.text_field :retail_name, autofocus: true, :class => "form-control" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">NRC number</label>
+                     <%= f.text_field :retail_nrc_number, autofocus: true, :class => "form-control" %>
+                    </div>
+                     <div class="form-group">
+                      <label for="exampleInputFile">NRC Front</label>
+                      <%= f.file_field :retail_nrc_front %>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputFile">NRC Back</label>
+                      <%= f.file_field :retail_nrc_back %>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputFile">Shop Lincensce</label>
+                     <%= f.file_field :shop_licensce %>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Shop Name</label>
+                        <%= f.text_field :shop_name, autofocus: true, :class => "form-control" %>
+                    </div>
+                    <div class="form-group">
+                         <label for="exampleInputEmail1">Shop Address</label>
+                          <%= f.text_field :retail_address, autofocus: true, :class => "form-control" %>
+                    </div>
+
+
+
+                </div>
+
+                <div id="company" style="display:none;">
+                
+
+
+                    
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Staff name</label>
+                      <%= f.text_field :staff_name, autofocus: true, :class => "form-control" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Staff NRC number</label>
+                      <%= f.text_field :staff_nrc_number, autofocus: true, :class => "form-control" %>
+                    </div>
+                     <div class="form-group">
+                      <label for="exampleInputFile">Staff NRC Front</label>
+                      <%= f.file_field :staff_nrc_front %>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputFile">Staff NRC Back</label>
+                      <%= f.file_field :staff_nrc_back %>
+                    </div>
+                     <div class="form-group">
+                         <label for="exampleInputEmail1">Company Licensce</label>
+                                <%= f.file_field :company_licensce %>
+                    </div>
+                    <div class="form-group">
+                         <label for="exampleInputEmail1">Address</label>
+                          <%= f.text_field :staff_address, autofocus: true, :class => "form-control" %>
+                    </div>
+                     
+
+
+
+                </div>
+
+
+                <div class="form-group">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" id="checky"> I'v read and agreed on Conditions
+                      </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-black" id="postme">
+                      Register
+                    </button>
+                </div>
+
+
+
+
+            </div>
+          </div>
+        <!-- Conditions Panel Ends -->
+        </div>
+       <% end %>
+         <div class="col-sm-12">
+        
+        <!-- Conditions Panel Starts -->
+          <div class="panel panel-smart">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                Seller Agreement
+              </h3>
+            </div>
+            <div class="panel-body">
+
+
+            
+
+
+              <ol>
+                  <li>
+                  မိမိေရာင္းခ်ေသာကုန္ပစၥည္းမ်ားသည္တရားဥပေဒနွင္ ့ညွိစြန္းမွဳမရွိၿခင္း၊သူတပါးမူပိုင္ခြင္ ့ခ်ိဳးေဖာက္မွဳမရွိ ၿခင္းနွင္ ့ေဖာ္ၿပထားေသာအခ်က္အလက္မ်ားမွန္ကန္ေၾကာင္းတာ၀န္ယူရမည္။
+                  </li><br>
+                  <li>
+                  မိမိဖြင္ ့ထားေသာဆိုင္အားပံုမွန္လည္ပတ္မွုရွိရမည္။တစ္ပတ္နွင္ ့အထက္ မိမိ Account သို့၀င္ ေရာက္မွဳမရွိၿခင္းနွင္ ့၀ယ္သူမွေမးၿမန္း၀ယ္ယူမွဳမ်ားၿပန္လည္ေၿဖၾကားလက္ခံမွဳမရွိၿခင္းမ်ားမရွိေစရ။ဤသို့ၿဖစ္ေပၚခဲ ့ပါကMD Admin မွေရာင္းသူ Account ဧ။္ဆိုင္ခန္းအားယာယီပိတ္ပင္မည္ၿဖစ္သည္။  ၍ေရာင္းသူမွမိမိဆိုင္ခန္းအားၿပန္လည္ဖြင္ ့လွစ္ေရာင္းခ်လိုပါက MD Admin သို့ၿပန္လည္ ေလ်ွာက္ထားရမည္။သို ့မွသာမိမိဆိုင္ခန္းၿပန္လည္ဖြင္ ့လွစ္ေရာင္းခ်နိုင္မည္ၿဖစ္သည္။
+                  </li><br>
+                  <li>
+                  ေရာင္းသူသည္ MD Website တြင္ဆိုင္ခန္းဖြင္ ့လွစ္ Register လုပ္ၿပီးပါကမိမိကိုယ္ပိုင္ဆိုင္ခန္း Account နွင့္ Chatting Function အသံုးၿပဳနိုင္မည္ၿဖစ္ပါသည္။ တင္ေရာက္ေရာင္းလိုေသာ ကုန္ ပစၥည္းပံုမ်ား .၊ဗြီဒီယိုုမ်ားနွင္ ့ရွင္းလင္းေဖာ္ၿပခ်က္မ်ားကိုမိမိကိုယ္တိုင္ Post လုပ္၍ဆိုင္ခန္း ထိန္း သိမ္းိေရာင္းခ်ရမည္။
+
+                  </li><br>
+                  <li>
+                  ၀ယ္သူနွင္ ့ေရာင္း၀ယ္မွဳကိစၥမ်ားညွိနွိဳင္းၿခင္း၊၀ယ္သူဧ။္ေမးခြန္းမ်ားေၿဖၾကားေပးၿခင္း၊စသည္တို ့ကို MD ဧ။္ Chatting Software ကိုအသံုးၿပဳ၍ေဆြးေနြးညွိနွိဳင္းနိုင္ပါသည္။ သို ့မွသာေရာင္းသူနွင္ ့၀ယ္သူ ၾကားၿဖစ္ေပၚလာနိုင္ေသာအၿငင္းအခုန္ကိစၥမ်ားအတြက္ Chatting Records ၿပန္လည္ၾကည္ ့ရွဳ နိုင္မည္ၿဖစ္သည္။တၿခား Chatting Software မွ Chatting Record မ်ားသည္အၿငင္းအခုန္အ တြက္သက္ ေသအၿဖစ္အသံုးၿပဳရန္အၾကံဳးမ၀င္ပါ။
+                  </li><br>
+                  <li>
+                  ေရာင္း၀ယ္မွဳၿပဳလုပ္ရာတြင္၀ယ္သူထံမွ Order Comfarm ၿဖစ္မၿဖစ္အတည္ၿပဳၿပီးမွပစၥည္းပို ့ရန္။ Order Comfarm မၿဖစ္ဘဲပစၥည္းပို ့၍၀ယ္သူလက္မခံၿခင္းစသည့္ၿပသနာမ်ားၿဖစ္ေပၚပါက မိမိတာ ၀န္သာ ၿဖစ္သည္။
+                  </li>
+              </ol>
+              <br/>
+              <h4> Privancy & Services</h4><hr/>
+              <p >
+                MD ကိုအသံုးၿပဳရန္ Register ၿပဳလုပ္ရာတြင္ MD မွသက္မွတ္ခ်က္အရေတာင္းဆိုေသာ မိမိကိုယ္ေရး ကိုယ္တာ  အခ်က္အလက္မ်ားအားၿဖည့္စြတ္ရန္သေဘာတူရမည္။ဤအခ်က္အလက္မ်ားကို MD မွသိမ္းဆည္းထိန္းသိမ္းထားမည္ၿဖစ္ၿပီး လံုၿခံဳမွဳရွိ ေစရန္တာ ၀န္ယူပါသည္။
+              </p>
+              <p>
+               သို ့ေသာ္သံုးစြဲသူမ်ားအသံုးၿပဳရလြယ္ကူေစရန္ MD နွင့္ပူးေပါင္း ၀န္ေဆာင္မွဳေပးေသာ Third Party မ်ား ၿဖစ္ေသာ Delivery Company /   Bank စသည္ တုိ ့ကိုပစၥည္း ေကာက္ယူ /ပို ့ေဆာင္ရန္/ ေငြေကာက္ခံ၇န္ Online Payment နွင့္တၿခားအေၾကာင္း အရာတြင္အသံုးၿပဳရန္ဤ Data အခ်က္အ လက္မ်ားကိုေပးပိုင္ခြင္ ့ရွိသည္ ။
+              </p>
+
+              <br/>
+              <h4> Myanmar Dealer (Team & Condition)</h4><hr/>
+
+              <p>လူၾကီးမင္းမ်ား Myanmar Dealer ကိုအသံုးၿပဳၿခင္းအတြက္အထူးေက်းဇူးတင္ရွိပါသည္။Myanmar Dealer သည္ လူၾကီးမင္းဧ။္လုပ္ငန္းအားကုန္က်စရိတ္သက္သာစြာ ၿဖင့္တြင္က်ယ္စြာေရာင္းခ်နိုင္ရန္ ၊ကုန္ပစၥည္းမ်ား ေစ်းနွုဳန္းခ်ိဳသာစြာ၀ယ္ယူနိုင္ရန္ Platform တစ္ခုအၿဖစ္၀န္ေဆာင္မွဳေပးေသာလုပ္ငန္းၿဖစ္သည္။လူၾကီးမင္း Myanmar Dealer အားအသံုးမၿပဳမီလူၾကီးမင္းဧ။္ရပိုင္ခြင္အၿခားခံစားခြင့္ဆံုးရွံဳးမွဳမရွိေစရန္ Myanmar Dealer ဧ။္စည္းကမ္း သက္မွတ္ခ်က္မ်ားကိုသိ ရွိ၍  ေအာက္ပါ အခ်က္အလက္မ်ားအား                                    ဖတ္ရွဳနားလည္သေဘာတူမွသာဆက္လက္အသံုးၿပဳပါရန္ေေလးစားစြာအသိေပး အပ္ပါသည္။</p><br/>
+
+              <ol> 
+
+                <li> ဤ Website သည္ ‘Myanmar Dealer ‘Domain Website ကိုဆိုလိုသည္။
+                MD သည္ Myanmar Dealer ကုိဆိုလိုသည္။</li><li>
+                User သည္ MD သက္မွတ္ထားေသာဤစည္းမ်ဥ္းစည္းကမ္းအတိုင္းလိုက္နာရန္သေဘာတူလက္ခံၿပီး MD မွေပးေသာ၀န္ေဆာင္မွဳအားအသံုးၿပဳသူကိုဆိုလိုသည္။</li><li>
+                Seller သည္ဤ Website ေပၚတြင္ကုန္ပစၥည္းေရာင္းခ်ေသာ User ကိုဆိုလိုသည္။</li><li>
+                Buyer သည္ဤ Website ေပၚမွတဆင္ ့ကုန္ပစၥည္း၀ယ္ယူေသာသူကိုဆိုလိုသည္။</li><li>
+                MD သည္ေရာင္းသူနွင္ ့၀ယ္သူတစ္ေနရာထဲတြင္ကုန္ပစၥည္းေရာင္း/၀ယ္နိုင္ရန္ Platform တစ္ခုသာၿဖစ္ေသာ့ေၾကာင္ ့ MD Website ေပၚရွိ               
+                ေရာင္းခ်ေသာကုန္ပစၥည္းဧ။္ ကုန္ပစၥည္း အမည္ု၊ ဓါတ္ပံု၊ဗြီဒီယို နွင္ ့ ရွင္းလင္းေဖာ္ၿပခ်က္အား လံုးတို ့သည္ ေရာင္းသူမွတင္ေရာက္ေရာင္းခ်ၿခင္းသာၿဖစ္သည္။ ထိုေရာင္းခ်ေသာ ကုန္ပစၥည္း မ်ားအားလံုးဧ။္ၿဖစ္ေပၚလာေသာတာ၀န္မ်ား သည္ေရာင္းသူဧ။္တာ၀န္သာၿဖစ္ၿပီး MD နွင့္မသက္ဆိုင္ပါ။</li><li>
+                MD Website ေပၚတြင္ေရာင္းခ်ေသာကုန္ပစၥည္းမ်ားသည္ MD နွင့္မသက္ဆိုင္ ေသာ္လည္း MD မွကုန္ပစၥည္းမ်ားအားစစ္ေဆးခြင္ ့ရွိၿပီးတရားဥပေဒနင္ ့မလြတ္ကင္းေသာပစၥည္းမ်ား ေတြ ့ရွိပါကေရာင္းခ်ခြင္ ့ကိုပိတ္ပင္ပိုင္ခြင္ ့ရွိသည္။တရားဥပေဒနွင္ ့မလြတ္ကင္းေသာပစၥည္းမ်ားဆိုသည္မွာနိုင္ငံေတာ္မွခ်မွတတ္ထားေသာ ဥပေဒခ်ိဳးေဖာက္ေသာ ကုန္ပစၥည္း၊ တၿခား သူ ဧ။္မူပိုင္ခြင့္ခ်ိဳးေဖာက္ေသာကုန္ပစၥည္း၊ ကုန္ပစၥည္းအတုအပနွင္ ့တားၿမစ္ထားေသာ ကုန္ပစၥည္း မ်ားကိုဆိုလိုသည္။</li><li>
+                ကုန္ပစၥည္းေရာင္း၀ယ္ရာတြင္ေရာင္းသူနွင္ ့၀ယ္သူၾကားၿဖစ္ေပၚလာေသာကုန္ပစၥည္းနွင္ ့ပတ္သက္၍အေရအေသြး နွင့္တၿခားၿငင္းခုန္မွဳရွိပါက MD သို ့တိုင္ၾကားနုိင္ၿပီး MD မွေရာင္းသူ/၀ယ္သူတင္ၿပေသာ Catting Records မ်ားစသည္ ့သက္ေသအေထာက္အထားမ်ားအားစီစစ္၍ ၀င္ေရာက္ ေၿဖရွင္းေပး မည္ၿဖစ္သည္။MD မွေၿဖရွင္းေပးေသာရလဒ္အားေက်နပ္္္မွွွဳမရွိပါကေရာင္းသူ /၀ယ္သူမွ မိမိ သေဘာ ၿဖင့္တရားဥပေဒနည္းလမ္းအတုိုင္းေၿဖရွင္းနိုင္သည္။</li><li>
+                MD Website ေပၚရွိကုန္ပစၥည္းမ်ားအား၀ယ္ယူလိုပါကေရာင္းသူထံသို ့ Chat Box ၿဖင္ ့တိုက္ရိုက္ေမးၿမန္း၀ယ္ယူနိုင္ပါသည္။</li><li>ကုန္ပစၥည္းမ်ား၀ယ္ယူရာတြင္မိမိ၀ယ္လိုေသာပစၥည္အမ်ိဳးအစား/အေရာင္/အေရအတြက္တို ့ကိုေသခ်ာေရြးခ်ယ္ၿပီးမွ၀ယ္ယူရန္။ေရာင္းသူဧ။္ Cash Refund စနစ္နွင္ ့Payment စနစ္တို ့အားေသခ်ာၾကည္ ့ရွဳၿပီးမွ၀ယ္ယူရန္။ မိမိထံသို  ့ကုန္ပစၥည္း မ်ားေရာက္ရွိလာပါက Packing ပ်က္စီးၿခင္းရွိမရွိ Packing အတြင္းရွိကုန္ပစၥည္းအပစ္အနာအစာ ရွိမရွိ စစ္ေဆးၿပီးမွလက္မွတ္ထိုးလက္ခံရမည္။ ကုန္ပစၥည္း စစ္ေဆးရာတြင္အပ်က္အစီးရွိၿခင္း၊ မိမိ၀ယ္ယူ လိုေသာကုန္ပစၥည္းနွင့္ကိုက္ညီးၿခင္းမရွိပါကလက္ခံၿခင္းမၿပဳပဲေရာင္းသူထံသို ့ဆက္သြယ္၍ ပစၥည္း လဲလွယ္ၿခင္း(သို ့)ညွိနွိဳင္းထားေသာ ေငြ ၿပန္အမ္းၿခင္းတို့ခ်က္ၿခင္းၿပဳလုပ္ရမည္ၿဖစ္သည္။</li><li>
+                ဤ  Platform ေပၚရွိ www.myanmardealer.com Website, Shopping Software,Seller Software, Buyer Software , Chatting Software,Logo နွင္ ့ Website Design စသည္တို  ့ကို Myanmar Dealer မွပိုင္ဆိုင္ပါသည္။ </li>
+
+              </ol>
+              
+            </div>
+          </div>
+        <!-- Conditions Panel Ends -->
+        </div>
+      </div>
+    </section>
+  <!-- Registration Section Ends -->
+  </div>
+
+<script type="text/javascript">
+  
+
+$(document).ready(function() {
+      $("#optionspersonal").click(function() {
+
+           $("#personal").show();
+           $("#retail").hide();
+           $("#company").hide();
+
+      });
+
+       $("#optionsretail").click(function() {
+
+           $("#personal").hide();
+           $("#retail").show();
+           $("#company").hide();
+
+      });
+
+
+        $("#optionscompany").click(function() {
+
+            $("#personal").hide();
+           $("#retail").hide();
+           $("#company").show();
+
+      });
+
+     
+
+});
+
+</script>
+
+
+  <script type="text/javascript">
+
+
+
+       $('#checky').change(function () {
+          $('#postme').prop("disabled", !this.checked);
+      }).change()
+
+
+
+  </script>
+

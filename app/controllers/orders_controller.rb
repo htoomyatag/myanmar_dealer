@@ -6,8 +6,8 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.where.not(:user_id  => current_user.id)
-     @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
-     @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
+    @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
+    @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
   end
 
 
@@ -83,7 +83,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:order_status,:user_id,:cart_id, :user_id, :customer_name, :customer_email, :customer_phone, :customer_city, :customer_township, :customer_address)
+      params.require(:order).permit(:sellers, :order_status,:user_id,:cart_id, :customer_name, :customer_email, :customer_phone, :customer_city, :customer_township, :customer_address)
     end
 
     def layout_per_action

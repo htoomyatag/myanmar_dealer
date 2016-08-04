@@ -1531,7 +1531,7 @@ select#select option[value="transporter"]   {
 }
 
 
-#fashion_clothing_delivery_category{
+#fashion_clothing_delivery_category, #order_customer_township, #order_customer_city{
 
 	display: block;
   width: 100%;
