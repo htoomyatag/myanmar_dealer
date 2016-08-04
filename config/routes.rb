@@ -57,6 +57,8 @@ end
   resources :apis
 
 
+
+  get 'my_product_order_list' => 'apis#my_product_order_list', :as => :my_product_order_list
   get 'edit_my_store' => 'apis#edit_my_store', :as => :edit_my_store
   get 'edit_my_product' => 'apis#edit_my_product', :as => :edit_my_product
   get 'order_confirm_list' => 'apis#order_confirm_list', :as => :order_confirm_list

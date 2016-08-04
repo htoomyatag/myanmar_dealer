@@ -78,6 +78,23 @@ class ApisController < ApplicationController
   
   end
 
+  def my_product_order_list
+
+    @orders = Order.where("user_id = ?", params[:user_id])
+
+     respond_to do |format|
+          my_primary_json = { :Orders => @orders}
+          my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+          a = '"['
+          b = ']"'
+          my_third_json = my_seconday_json.gsub(a , "[")
+          my_fourth_json = my_third_json.gsub(b , "]")
+          format.json {render json: my_primary_json}
+          format.text {render text: my_fourth_json}
+     end
+
+  end
+
 
   def order_confirm_list
     @orders = Order.where(:order_status => "order_confirm").where("user_id = ?", params[:user_id])
