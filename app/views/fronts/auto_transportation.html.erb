@@ -9,23 +9,20 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @car_accessories.each do |car_accessory| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											<% if !car_accessory.avatar1_file_name.nil?  %>
-								                <%= image_tag car_accessory.avatar1.url, :id => "product_image" %>
+								                <%= image_tag car_accessory.avatar1.url, :id => "product_crop_image"  %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 											<%= link_to car_accessory.title, full_productinfo_car_accessories_path(:id => car_accessory) %>
-											</h4>
-											<div class="description">
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= car_accessory.price.to_i %> <%=t :MMK %></span> 
 												<span class="price-old"><%= car_accessory.price.to_i + 15 %> <%=t :MMK %></span>
@@ -50,23 +47,20 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @motorcycle_accessories.each do |motorcycle_accessory| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											<% if !motorcycle_accessory.avatar1_file_name.nil?  %>
-								                <%= image_tag motorcycle_accessory.avatar1.url, :id => "product_image" %>
+								                <%= image_tag motorcycle_accessory.avatar1.url, :id => "product_crop_image"  %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 												<%= link_to motorcycle_accessory.title, full_productinfo_motorcycle_accessories_path(:id => motorcycle_accessory) %>
-											</h4>
-											<div class="description">
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= motorcycle_accessory.price.to_i %> <%=t :MMK %></span> 
 												<span class="price-old"><%= motorcycle_accessory.price.to_i + 15 %> <%=t :MMK %></span>
@@ -74,8 +68,8 @@
 											<div class="cart-button">
 											
 											<%= button_to line_items_path(:mmdealer_code => "motorcycleaccessory"+motorcycle_accessory.id.to_s, :user_id => motorcycle_accessory.user_id), :class =>"btn btn-cart" do %>
-											   <%=t :add_to_cart %>
-											  <i class="fa fa-shopping-cart"></i> 
+											   
+											  
 											<% end %>
 
 

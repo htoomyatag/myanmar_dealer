@@ -11,24 +11,21 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @fashion_accessories.each do |fashion_accessory| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											<% if !fashion_accessory.avatar1_file_name.nil?  %>
-								                <%= image_tag fashion_accessory.avatar1.url, :id => "product_image" %>
+								                <%= image_tag fashion_accessory.avatar1.url, :id => "product_crop_image"  %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 												
 												<%= link_to fashion_accessory.title, full_productinfo_fashion_accessories_path(:id => fashion_accessory) %>
-											</h4>
-											<div class="description">
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= fashion_accessory.price.to_i %> <%=t :MMK %></span> 
 												<span class="price-old"><%= fashion_accessory.price.to_i + 15 %> <%=t :MMK %></span>
@@ -36,8 +33,8 @@
 											<div class="cart-button">
 											
 											<%= button_to line_items_path(:mmdealer_code => "fashion_related"+fashion_accessory.id.to_s, :user_id => fashion_accessory.user_id), :class =>"btn btn-cart" do %>
-											   <%=t :add_to_cart %>
-											  <i class="fa fa-shopping-cart"></i> 
+											   
+											  
 
 											<% end %>
 
@@ -64,23 +61,20 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @fashion_bags.each do |fashion_bag| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											<% if !fashion_bag.avatar1_file_name.nil?  %>
-								                <%= image_tag fashion_bag.avatar1.url, :id => "product_image" %>
+								                <%= image_tag fashion_bag.avatar1.url, :id => "product_crop_image"  %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 												<%= link_to fashion_bag.title, full_productinfo_fashion_bags_path(:id => fashion_bag) %>
-											</h4>
-											<div class="description">
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= fashion_bag.price.to_i %> <%=t :MMK %></span> 
 												<span class="price-old"><%= fashion_bag.price.to_i + 15 %> <%=t :MMK %></span>
@@ -88,8 +82,8 @@
 											<div class="cart-button">
 											
 											<%= button_to line_items_path(:mmdealer_code => "bags"+fashion_bag.id.to_s, :user_id => fashion_bag.user_id), :class =>"btn btn-cart" do %>
-											   <%=t :add_to_cart %>
-											  <i class="fa fa-shopping-cart"></i> 
+											   
+											  
 											<% end %>
 
 
@@ -115,24 +109,21 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @fashion_clothings.each do |fashion_clothing| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											<% if !fashion_clothing.avatar1_file_name.nil?  %>
-								                <%= image_tag fashion_clothing.avatar1.url, :id => "product_image" %>
+								                <%= image_tag fashion_clothing.avatar1.url, :id => "product_crop_image"  %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 												<%= link_to fashion_clothing.title, full_productinfo_fashion_clothings_path(:id => fashion_clothing) %>
 												
-											</h4>
-											<div class="description">
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= fashion_clothing.price.to_i %> <%=t :MMK %></span> 
 												<span class="price-old"><%= fashion_clothing.price.to_i + 15 %> <%=t :MMK %></span>
@@ -140,8 +131,8 @@
 											<div class="cart-button">
 											
 											<%= button_to line_items_path(:mmdealer_code => "cloths"+fashion_clothing.id.to_s, :user_id => fashion_clothing.user_id), :class =>"btn btn-cart" do %>
-											   <%=t :add_to_cart %>
-											  <i class="fa fa-shopping-cart"></i> 
+											   
+											  
 											<% end %>
 
 
@@ -167,23 +158,20 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @fashion_footwears.each do |fashion_footwear| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											<% if !fashion_footwear.avatar1_file_name.nil?  %>
-								                <%= image_tag fashion_footwear.avatar1.url, :id => "product_image" %>
+								                <%= image_tag fashion_footwear.avatar1.url, :id => "product_crop_image"  %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 													<%= link_to fashion_footwear.title, full_productinfo_fashion_footwears_path(:id => fashion_footwear) %>
-											</h4>
-											<div class="description">
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= fashion_footwear.price.to_i %> <%=t :MMK %></span> 
 												<span class="price-old"><%= fashion_footwear.price.to_i + 15 %> <%=t :MMK %></span>
@@ -191,8 +179,8 @@
 											<div class="cart-button">
 											
 											<%= button_to line_items_path(:mmdealer_code => "footwears"+fashion_footwear.id.to_s, :user_id => fashion_footwear.user_id), :class =>"btn btn-cart" do %>
-											   <%=t :add_to_cart %>
-											  <i class="fa fa-shopping-cart"></i> 
+											   
+											  
 											<% end %>
 
 
@@ -218,23 +206,20 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @fashion_hats.each do |fashion_hats| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											<% if !fashion_hats.avatar1_file_name.nil?  %>
-								                <%= image_tag fashion_hats.avatar1.url, :id => "product_image" %>
+								                <%= image_tag fashion_hats.avatar1.url, :id => "product_crop_image"  %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 												<%= link_to fashion_hats.title, full_productinfo_fashion_hats_path(:id => fashion_hats) %>
-											</h4>
-											<div class="description">
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= fashion_hats.price.to_i %> <%=t :MMK %></span> 
 												<span class="price-old"><%= fashion_hats.price.to_i + 15 %> <%=t :MMK %></span>
@@ -242,8 +227,8 @@
 											<div class="cart-button">
 											
 											<%= button_to line_items_path(:mmdealer_code => "hats"+fashion_hats.id.to_s, :user_id => fashion_hats.user_id), :class =>"btn btn-cart" do %>
-											   <%=t :add_to_cart %>
-											  <i class="fa fa-shopping-cart"></i> 
+											   
+											  
 											<% end %>
 
 

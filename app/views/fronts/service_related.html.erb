@@ -11,24 +11,21 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @customer_services.each do |customer_service| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											<% if !customer_service.avatar1_file_name.nil?  %>
-								                <%= image_tag customer_service.avatar1.url, :id => "product_image" %>
+								                <%= image_tag customer_service.avatar1.url, :id => "product_crop_image"  %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 												
 												<%= link_to customer_service.title, full_productinfo_services_path(customer_service) %>	  
-											</h4>
-											<div class="description">
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= customer_service.charges.to_i %> <%=t :MMK %></span> 
 												<span class="price-old"><%= customer_service.charges.to_i + 15 %> <%=t :MMK %></span>
@@ -54,7 +51,7 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @training_and_schools.each do |training_and_school| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											
@@ -62,14 +59,11 @@
 								          
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 												
 												<%= link_to training_and_school.title, full_productinfo_training_and_schools_path(training_and_school) %>
-											</h4>
-											<div class="description">
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= training_and_school.fees.to_i %> <%=t :MMK %></span> 
 												<span class="price-old"><%= training_and_school.fees.to_i + 15 %> <%=t :MMK %></span>

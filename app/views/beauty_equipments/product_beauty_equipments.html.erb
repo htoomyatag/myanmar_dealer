@@ -9,33 +9,30 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @beauty_equipments.each do |beauty_equipment| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											<% if !beauty_equipment.avatar1_file_name.nil?  %>
-								                <%= image_tag beauty_equipment.avatar1.url, :id => "product_image" %>
+								                <%= image_tag beauty_equipment.avatar1.url, :id => "product_crop_image" %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 												
-												<%= link_to beauty_equipment.title, full_productinfo_beauty_equipments_path(:id => beauty_equipment) %>
-											</h4>
-											<div class="description">
+												<%= link_to beauty_equipment.title, product_full_path(:id => beauty_equipment) %>
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= beauty_equipment.price.to_i %> MMK</span> 
-												<span class="price-old"><%= beauty_equipment.price.to_i + 15 %> MMK</span>
+												
 											</div>
 											<div class="cart-button">
 											
 											<%= button_to line_items_path(:mmdealer_code => "beauty_equipments"+beauty_equipment.id.to_s, :user_id => beauty_equipment.user_id), :class =>"btn btn-cart" do %>
-											   <%=t :add_to_cart %>
-											  <i class="fa fa-shopping-cart"></i> 
+											    Add to cart &nbsp;&nbsp;
+											  
 											<% end %>
 
 

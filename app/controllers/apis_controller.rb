@@ -18,6 +18,38 @@ class ApisController < ApplicationController
 
   end
 
+
+
+  def store_detail_view_by_seller
+    @stores = Store.where("user_id = ?", params[:user_id])
+
+     respond_to do |format|
+          my_primary_json = { :Stores => @stores}
+          my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+          a = '"['
+          b = ']"'
+          my_third_json = my_seconday_json.gsub(a , "[")
+          my_fourth_json = my_third_json.gsub(b , "]")
+          format.json {render json: my_primary_json}
+          format.text {render text: my_fourth_json}
+     end
+  end
+
+  def store_detail_view_by_buyer
+    @stores = Store.where("store_name = ?", params[:store_name])
+
+     respond_to do |format|
+          my_primary_json = { :Stores => @stores}
+          my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+          a = '"['
+          b = ']"'
+          my_third_json = my_seconday_json.gsub(a , "[")
+          my_fourth_json = my_third_json.gsub(b , "]")
+          format.json {render json: my_primary_json}
+          format.text {render text: my_fourth_json}
+     end
+  end
+
   def edit_my_store
        @shops = Store.where("user_id = ?", params[:user_id]).pluck(:id)
        @shop_id = @shops.to_s.gsub('[', '')

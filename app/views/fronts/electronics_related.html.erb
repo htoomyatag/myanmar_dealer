@@ -9,24 +9,21 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @electrical_equipments.each do |electrical_equipment| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											<% if !electrical_equipment.avatar1_file_name.nil?  %>
-								                <%= image_tag electrical_equipment.avatar1.url, :id => "product_image" %>
+								                <%= image_tag electrical_equipment.avatar1.url, :id => "product_crop_image"  %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 												
 												<%= link_to electrical_equipment.title, full_productinfo_electrical_equipments_path(:id => electrical_equipment) %>
-											</h4>
-											<div class="description">
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= electrical_equipment.price.to_i %> <%=t :MMK %></span> 
 												<span class="price-old"><%= electrical_equipment.price.to_i + 15 %> <%=t :MMK %></span>
@@ -34,8 +31,8 @@
 											<div class="cart-button">
 											
 											<%= button_to line_items_path(:mmdealer_code => "eletronic_related"+electrical_equipment.id.to_s, :user_id => electrical_equipment.user_id), :class =>"btn btn-cart" do %>
-											   <%=t :add_to_cart %>
-											  <i class="fa fa-shopping-cart"></i> 
+											   
+											  
 											<% end %>
 
 
@@ -60,23 +57,20 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @computers.each do |computer| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											<% if !computer.avatar1_file_name.nil?  %>
-								                <%= image_tag computer.avatar1.url, :id => "product_image" %>
+								                <%= image_tag computer.avatar1.url, :id => "product_crop_image"  %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 												<%= link_to computer.title, full_productinfo_computers_path(:id => computer) %>
-											</h4>
-											<div class="description">
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= computer.price.to_i %> <%=t :MMK %></span> 
 												<span class="price-old"><%= computer.price.to_i + 15 %> <%=t :MMK %></span>
@@ -84,8 +78,8 @@
 											<div class="cart-button">
 											
 											<%= button_to line_items_path(:mmdealer_code => "computers_laptops"+computer.id.to_s, :user_id => computer.user_id), :class =>"btn btn-cart" do %>
-											   <%=t :add_to_cart %>
-											  <i class="fa fa-shopping-cart"></i> 
+											   
+											  
 											<% end %>
 
 
@@ -110,23 +104,20 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @telephone_accessories.each do |telephone_accessory| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											<% if !telephone_accessory.avatar1_file_name.nil?  %>
-								                <%= image_tag telephone_accessory.avatar1.url, :id => "product_image" %>
+								                <%= image_tag telephone_accessory.avatar1.url, :id => "product_crop_image"  %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 													<%= link_to telephone_accessory.title, full_productinfo_telephone_accessories_path(:id => telephone_accessory) %>
-											</h4>
-											<div class="description">
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= telephone_accessory.price.to_i %> <%=t :MMK %></span> 
 												<span class="price-old"><%= telephone_accessory.price.to_i + 15 %> <%=t :MMK %></span>
@@ -134,8 +125,8 @@
 											<div class="cart-button">
 											
 											<%= button_to line_items_path(:mmdealer_code => "phone_related"+telephone_accessory.id.to_s, :user_id => telephone_accessory.user_id), :class =>"btn btn-cart" do %>
-											   <%=t :add_to_cart %>
-											  <i class="fa fa-shopping-cart"></i> 
+											   
+											  
 											<% end %>
 
 
@@ -160,23 +151,20 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @home_appliances.each do |home_appliance| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											<% if !home_appliance.avatar1_file_name.nil?  %>
-								                <%= image_tag home_appliance.avatar1.url, :id => "product_image" %>
+								                <%= image_tag home_appliance.avatar1.url, :id => "product_crop_image"  %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 												<%= link_to home_appliance.title, full_productinfo_home_appliances_path(:id => home_appliance) %>
-											</h4>
-											<div class="description">
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= home_appliance.price.to_i %> <%=t :MMK %></span> 
 												<span class="price-old"><%= home_appliance.price.to_i + 15 %> <%=t :MMK %></span>
@@ -184,8 +172,8 @@
 											<div class="cart-button">
 											
 											<%= button_to line_items_path(:mmdealer_code => "home_appliance"+home_appliance.id.to_s, :user_id => home_appliance.user_id), :class =>"btn btn-cart" do %>
-											   <%=t :add_to_cart %>
-											  <i class="fa fa-shopping-cart"></i> 
+											   
+											  
 											<% end %>
 
 

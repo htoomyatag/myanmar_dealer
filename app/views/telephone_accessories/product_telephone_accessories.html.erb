@@ -11,23 +11,20 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @telephone_accessories.each do |telephone_accessory| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											<% if !telephone_accessory.avatar1_file_name.nil?  %>
-								                <%= image_tag telephone_accessory.avatar1.url, :id => "product_image" %>
+								                <%= image_tag telephone_accessory.avatar1.url, :id => "product_crop_image"  %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 													<%= link_to telephone_accessory.title, full_productinfo_telephone_accessories_path(:id => telephone_accessory) %>
-											</h4>
-											<div class="description">
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= telephone_accessory.price.to_i %> <%=t :MMK %></span> 
 												<span class="price-old"><%= telephone_accessory.price.to_i + 15 %> <%=t :MMK %></span>
@@ -35,8 +32,8 @@
 											<div class="cart-button">
 											
 											<%= button_to line_items_path(:mmdealer_code => "phone_related"+telephone_accessory.id.to_s, :user_id => telephone_accessory.user_id), :class =>"btn btn-cart" do %>
-											   <%=t :add_to_cart %>
-											  <i class="fa fa-shopping-cart"></i> 
+											     Add to cart &nbsp;&nbsp;
+											  
 											<% end %>
 
 

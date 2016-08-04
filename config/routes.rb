@@ -57,6 +57,9 @@ end
   resources :apis
 
 
+  get 'store_detail_view_by_seller' => 'apis#store_detail_view_by_seller', :as => :store_detail_view_by_seller
+  get 'store_detail_view_by_buyer' => 'apis#store_detail_view_by_buyer', :as => :store_detail_view_by_buyer
+
 
   get 'my_product_order_list' => 'apis#my_product_order_list', :as => :my_product_order_list
   post 'edit_my_store' => 'apis#edit_my_store', :as => :edit_my_store

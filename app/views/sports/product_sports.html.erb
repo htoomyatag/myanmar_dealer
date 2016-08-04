@@ -10,23 +10,20 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @sports.each do |sport| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											<% if !sport.avatar1_file_name.nil?  %>
-								                <%= image_tag sport.avatar1.url, :id => "product_image" %>
+								                <%= image_tag sport.avatar1.url, :id => "product_crop_image"  %>
 								            <% else  %>      
 												<img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
 								            <% end %>
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 												<%= link_to sport.title, full_productinfo_sports_path(:id => sport) %>
-											</h4>
-											<div class="description">
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= sport.price.to_i %> <%=t :MMK %></span> 
 												<span class="price-old"><%= sport.price.to_i + 15 %> <%=t :MMK %></span>
@@ -34,8 +31,8 @@
 											<div class="cart-button">
 											
 											<%= button_to line_items_path(:mmdealer_code => "sports"+sport.id.to_s, :user_id => sport.user_id), :class =>"btn btn-cart" do %>
-											   <%=t :add_to_cart %>
-											  <i class="fa fa-shopping-cart"></i> 
+											   
+											  
 											<% end %>
 
 

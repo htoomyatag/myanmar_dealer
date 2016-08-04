@@ -10,7 +10,7 @@
 							<div class="row">
 							<!-- Product #1 Starts -->
 							<% @training_and_schools.each do |training_and_school| %>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-2 col-sm-6">
 									<div class="product-col">
 										<div class="image">
 											
@@ -18,17 +18,13 @@
 								          
 										</div>
 										<div class="caption">
-											<h4>
+											<h6>
 												
 												<%= link_to training_and_school.title %>
-											</h4>
-											<div class="description">
+											</h6>
 											
-											
-											</div>
 											<div class="price">
 												<span class="price-new"><%= training_and_school.fees.to_i %> <%=t :MMK %></span> 
-												<span class="price-old"><%= training_and_school.fees.to_i + 15 %> <%=t :MMK %></span>
 											</div>
 										
 										</div>
