@@ -39,7 +39,7 @@ class ApisController < ApplicationController
 
   def order_view_by_seller
 
-    @orders = Order.where('sellers && ARRAY[?]', params[:user_id]).select(:id,:user_id,:cart_id, :customer_name, :customer_email, :customer_phone, :customer_city, :customer_township, :customer_address)
+    @orders = Order.where('sellers && ARRAY[?]', params[:user_id]).select(:order_status,:id,:user_id,:cart_id, :customer_name, :customer_email, :customer_phone, :customer_city, :customer_township, :customer_address)
 
      respond_to do |format|
           my_primary_json = { :Orders => @orders}
