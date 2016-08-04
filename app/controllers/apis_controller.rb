@@ -38,6 +38,8 @@ class ApisController < ApplicationController
   end
 
   def edit_my_product
+
+  
         @products = Product.where("user_id = ?", params[:user_id])
         @edit_product = @products.find(params[:product_id])
         @edit_product.update(

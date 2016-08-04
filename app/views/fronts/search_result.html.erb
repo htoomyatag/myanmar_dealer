@@ -4,33 +4,33 @@
               <p class="mytitle"> Search result </p>
 
               <% @products.each do |product| %>
-            <div class="col-md-3">
+            <div class="col-md-2">
               <div class="product-col">
                 <div class="image">
                 <% if !product.avatar1_file_name.nil?  %>
-                          <%= image_tag product.avatar1_file_name, :id => "product_image", :style=>"height:200px;width:220px;" %>
+                          <%= image_tag product.avatar1_file_name, :id => "product_image", :style=>"height:100px;width:100px;" %>
                       <% elsif product.avatar1_file_name.nil?  %>      
                   <img src="/assets/no_image.jpg" alt="product" class="img-responsive" />
                       <% end %>
                 </div>
                 <div class="caption">
-                  <h4>
+                  <h6>
                     <%= link_to product.title, product_full_path(:id => product) %>
-                  </h4>
+                  </h6>
                 
                   <div class="price">
-                    <span class="price-new"><%= product.price.to_i %> <%=t :MMK %></span> 
+                     <h6><%= product.price.to_i %> <%=t :MMK %></h6>
                     
                   </div>
+                 
                   <div class="cart-button">
                   
-                  <%= button_to line_items_path(:mmdealer_code => product.category.to_s+product.id.to_s, :user_id => product.user_id), remote: true, :onclick =>"cartFunction#{product.id}()", :data => product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
-                     <%=t :add_to_cart %>
+                     <%= button_to line_items_path(:mmdealer_code => product.category.to_s+product.id.to_s, :user_id => product.user_id),  :onclick =>"cartFunction#{product.id}()", :data => product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
+                       <span style="font-size:12px;padding:30px;"><%=t :add_to_cart %> </span>
+                      <% end %>
 
 
-
-                    <i class="fa fa-shopping-cart"></i> 
-                  <% end %>
+                 
 
 
                                   

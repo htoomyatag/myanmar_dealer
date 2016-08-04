@@ -8,6 +8,14 @@ class ProductsController < ApplicationController
   end
 
   def send_to_web
+
+     @stores = Store.where(:user_id => params[:user_id]).pluck(:store_name)
+     @store_name = @stores.to_s.gsub('[', '').gsub('"','')
+     @my_store_name = @store_name.to_s.gsub(']', '')
+    
+    puts "@@@@@@@@@@@@@@"+@my_store_name.to_s+"@@@@@@@@@@@@@@"
+
+
      @products = Product.create(
       
       :title => params[:title],
@@ -16,7 +24,7 @@ class ProductsController < ApplicationController
       :price => params[:price],
       :delivery_category => params[:delivery_method],
       :color => params[:color],:size => params[:size], 
-      :store_name => params[:store_name],
+      :store_name => @my_store_name,
       :user_id => params[:user_id])
   end
 

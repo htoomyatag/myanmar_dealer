@@ -100,7 +100,7 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:product_id, :cart_id, :user_id)
+      params.require(:line_item).permit(:product_id, :cart_id, :user_id, :product_name)
     end
 
     def layout_per_action
