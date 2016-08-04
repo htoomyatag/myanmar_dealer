@@ -1526,8 +1526,8 @@ select#select option[value="transporter"]   {
 
 
 #desc_image{
-	width: 170px;
-	height: 170px;
+	width: 185px;
+	height: 185px;
 }
 
 
@@ -1575,4 +1575,9 @@ select#select option[value="transporter"]   {
 
 	color: #d9534f;
 
+}
+
+
+#store_ads {
+	width: 100%;
 }

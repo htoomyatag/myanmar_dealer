@@ -291,13 +291,13 @@
 
         <div>
 
-          <img id="zoom_01" src="<%= @product.avatar1_edit %>" data-zoom-image="<%= @product.avatar1_edit %>" style="width:300px;heigh:250px;" />
+          <img id="zoom_01" src="<%= @product.avatar1_edit %>" data-zoom-image="<%= @product.avatar1_edit %>" style="width:274px;height:300px;border:1px solid gray;" />
 
-          <img id="zoom_02" src="<%= @product.avatar2_edit %>" data-zoom-image="<%= @product.avatar2_edit %>" style="width:300px;heigh:250px;display:none;" />
+          <img id="zoom_02" src="<%= @product.avatar2_edit %>" data-zoom-image="<%= @product.avatar2_edit %>" style="width:274px;height:300px;display:none;border:1px solid gray;" />
 
-          <img id="zoom_03" src="<%= @product.avatar3_edit %>" data-zoom-image="<%= @product.avatar3_edit %>" style="width:300px;heigh:250px;display:none;"/>
+          <img id="zoom_03" src="<%= @product.avatar3_edit %>" data-zoom-image="<%= @product.avatar3_edit %>" style="width:274px;height:300px;display:none;border:1px solid gray;"/>
 
-          <img id="zoom_04" src="<%= @product.avatar4_edit %>" data-zoom-image="<%= @product.avatar4_edit %>" style="width:300px;heigh:250px;display:none;"/>
+          <img id="zoom_04" src="<%= @product.avatar4_edit %>" data-zoom-image="<%= @product.avatar4_edit %>" style="width:274px;height:300px;display:none;border:1px solid gray;"/>
 
 
 
@@ -306,10 +306,10 @@
 
         <div>
             
-            <img id="av1" src="<%= @product.avatar1_edit %>"  style="width:50px;height:50px;border:1px solid black;"/>
-            <img id="av2" src="<%= @product.avatar2_edit %>"  style="width:50px;height:50px;border:1px solid black;"/>
-            <img id="av3" src="<%= @product.avatar3_edit %>"  style="width:50px;height:50px;border:1px solid black;"/>
-            <img id="av4" src="<%= @product.avatar4_edit %>"  style="width:50px;height:50px;border:1px solid black;"/>
+            <img id="av1" src="<%= @product.avatar1_edit %>"  style="width:65px;height:65px;border:1px solid black;"/>
+            <img id="av2" src="<%= @product.avatar2_edit %>"  style="width:65px;height:65px;border:1px solid black;"/>
+            <img id="av3" src="<%= @product.avatar3_edit %>"  style="width:65px;height:65px;border:1px solid black;"/>
+            <img id="av4" src="<%= @product.avatar4_edit %>"  style="width:65px;height:65px;border:1px solid black;"/>
 
         </div>
 
@@ -509,26 +509,16 @@
 							
 							<div style="float:left;">
 
-								<%= button_to line_items_path(:mmdealer_code => @product.category.to_s+@product.id.to_s, :user_id => @product.user_id), remote: true, :onclick =>"cartFunction#{@product.id}()", :data => @product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
-									   Buy Now
+                  <%= button_to line_items_path(:mmdealer_code => @product.category.to_s+@product.id.to_s, :user_id => @product.user_id), :onclick =>"cartFunction#{@product.id}()", :data => @product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
+                     Add to Cart
 
 
-								<% end %>
+                <% end %>
 
 
 						   </div>
 
-						   <div  style="float:right;">
-
-
-							    <%= button_to line_items_path(:mmdealer_code => @product.category.to_s+@product.id.to_s, :user_id => @product.user_id), remote: true, :onclick =>"cartFunction#{@product.id}()", :data => @product.price.to_i , :id => "btn_to_cart", :class =>"btn btn-cart" do %>
-									   Add to Cart
-
-
-								<% end %>
-
-						 </div>
-
+						  
  							
 
 						</div>
@@ -550,7 +540,8 @@
 
               <img src="/assets/logo_mimiberry.jpg" >
               <span style="font-weight:bold;color:#d9534f;text-align:center;"> 
-                <%= @product.store_name %>
+                  <%= @product.store_name rescue "-" %>
+                
               </span>
               
 
@@ -599,25 +590,25 @@
 
 					    </table>
 
-          
-					 	 <div class="col-md-4">
-					 	 	<p style="text-align:center;font-weight:bold;">
+             <br/>
+					 	 <div class="col-md-4" style="background:#d9534f;border:1px solid white;">
+					 	 	<p style="text-align:center;font-weight:bold;color:white;">
 								Depict<br/>
 								4.3
 							</p>
 					 	 </div>
-					 	 <div class="col-md-4">
-					 	 	<p style="text-align:center;font-weight:bold;">
+					 	 <div class="col-md-4" style="background:#d9534f;border:1px solid white;">
+					 	 	<p style="text-align:center;font-weight:bold;color:white;">
 								Delivery<br/>
 								4.3
 							</p>
 					 	 </div>
-					 	 <div class="col-md-4">
-					 	 	<p style="text-align:center;font-weight:bold;">
+					 	 <div class="col-md-4" style="background:#d9534f;border:1px solid white;">
+					 	 	<p style="text-align:center;font-weight:bold;color:white;">
 								Service<br/>
 								4.3
 							</p>
-					 	 </div><br/><br/><br/><br/><br/>
+					 	 </div><br/>
 
 
 				
@@ -683,8 +674,7 @@
                           <img src="/assets/no_image.jpg" alt="...">
                        </a>
                           <b> <%= relate_product.price %> Kyats </b>
-                          <span style="float:right;color:gray;font-weight:bold;">125 sold</span>
-                      
+                        
                       <span style="float:left;;color:black;font-weight:bold;">
                         <%= relate_product.title rescue "-"%>
                       </span><br/><br/>
@@ -780,8 +770,9 @@
                          <img src="<%= store_ad.description_image2 %>" id="desc_image"/>
                          <img src="<%= store_ad.description_image3 %>" id="desc_image"/>
                          <img src="<%= store_ad.description_image4 %>" id="desc_image"/>
+                         <hr/>
 
-                         <%= image_tag store_ad.ads_one.url, :id => "store_ads"  %>
+                         <%= image_tag store_ad.ads_one.url, :id => "store_ads"  %><br/><br/>
                          <%= image_tag store_ad.ads_two.url, :id => "store_ads" %>
 
                            <br/>         <br/>
@@ -945,7 +936,6 @@
                           <img src="/assets/no_image.jpg" alt="...">
                        </a>
                           <b> <%= the_relate_product.price %> Kyats </b>
-                          <span style="float:right;color:gray;font-weight:bold;">125 sold</span>
                       
                       <span style="float:left;;color:black;font-weight:bold;">
                         <%= the_relate_product.title rescue "-"%>
