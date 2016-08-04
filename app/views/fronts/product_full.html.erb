@@ -562,8 +562,11 @@
 
 
 				    	 
-				    	<h6 class="shoptitle"><img src="/assets/shop-icon-23328.png"> <%= @product.store_name rescue "-" %>
-</h6>
+				    	<h6 class="shoptitle">
+                <img src="/assets/shop-icon-23328.png"> 
+
+                <%= @product.store_name rescue "-" %>
+              </h6>
 
 				    	<table>
 					      
@@ -837,7 +840,12 @@
                                   <div class="input-group" style="float:right;width:150px;right:20px;">
                                 <input type="text" class="form-control" aria-label="..." placeholder="">
                                 <div class="input-group-btn">
-                                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">arrange by <span class="caret"></span></button>
+
+                                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position:relative;top:-10px;">arrange by 
+                                  <span class="caret"></span>
+                                  </button>
+
+
                                   <ul class="dropdown-menu dropdown-menu-right">
                                     <li><a href="#">Action</a></li>
                                     <li><a href="#">Another action</a></li>
@@ -856,7 +864,7 @@
                         </div>
 
 
-                      <%= form_for(@comment, :remote => true) do |f| %>
+                      <%= form_for(@comment) do |f| %>
                    
 
                          <% if user_signed_in? %>
@@ -909,25 +917,7 @@
                                     </div>
                               <% end %>
 
-                            <div class="col-md-2">
-                               <img src="/assets/avatar.jpg" alt="...">
-                            </div>
 
-                            <div class="col-md-9" style="left:30px;">
-                                  <div class="panel panel-default">
-                                    <div class="panel-body">
-                                       <p style="top:30px;" id="the_feed"> &nbsp;&nbsp;.</p>
-                                      <p style="top:30px;"> &nbsp;&nbsp; 
-                                      <img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png">
-                                      .</p><bt/>
-                                        <% if user_signed_in? %>
-                                      <h4>  
-                                      &nbsp;&nbsp; <%= current_user.name %>
-                                      </h4>
-                                        <% end %>
-                                    </div>
-                                  </div>
-                            </div>
 
                     </div>
 
