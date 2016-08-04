@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
  
  
+  resources :seller_orders
   resources :hot_items
   resources :admins
   get 'admin_log_in' => "admins#admin_log_in", :as => :admin_log_in
@@ -56,6 +57,8 @@ end
 
   resources :apis
 
+
+  get 'set_order_status_by_seller' => 'apis#set_order_status_by_seller', :as => :set_order_status_by_seller
   get 'view_shop_licensce' => 'apis#view_shop_licensce', :as => :view_shop_licensce
   get 'order_view_by_seller' => 'apis#order_view_by_seller', :as => :order_view_by_seller
   get 'store_detail_view_by_seller' => 'apis#store_detail_view_by_seller', :as => :store_detail_view_by_seller

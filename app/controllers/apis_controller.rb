@@ -18,6 +18,19 @@ class ApisController < ApplicationController
 
   end
 
+  def set_order_status_by_seller
+    
+      @order = SellerOrder.find(params[:order_id])
+      @order.update(:order_status => params[:order_status])
+      # order_status format 
+      #order_confirm
+      #order_processing
+      #order_delivery
+      #order_completed
+      #order_rejeted
+
+  end
+
   def view_shop_licensce
 
     @user_ids = Store.where("store_name = ?", params[:store_name]).pluck(:user_id)
@@ -39,7 +52,7 @@ class ApisController < ApplicationController
 
   def order_view_by_seller
 
-    @orders = Order.where('sellers && ARRAY[?]', params[:user_id]).select(:order_status,:id,:user_id,:cart_id, :customer_name, :customer_email, :customer_phone, :customer_city, :customer_township, :customer_address)
+    @orders = SellerOrder.where("seller_id = ?", params[:user_id]).select(:order_status,:id,:user_id,:cart_id, :customer_name, :customer_email, :customer_phone, :customer_city, :customer_township, :customer_address)
 
      respond_to do |format|
           my_primary_json = { :Orders => @orders}
@@ -150,7 +163,7 @@ class ApisController < ApplicationController
 
   def my_product_order_list
 
-    @orders = Order.where("user_id = ?", params[:user_id])
+    @orders = SellerOrder.where("buyer_id = ?", params[:user_id])
 
      respond_to do |format|
           my_primary_json = { :Orders => @orders}
@@ -167,7 +180,7 @@ class ApisController < ApplicationController
 
 
   def order_confirm_list
-    @orders = Order.where(:order_status => "order_confirm").where("user_id = ?", params[:user_id])
+    @orders = SellerOrder.where(:order_status => "order_confirm").where("buyer_id = ?", params[:user_id])
 
      respond_to do |format|
           my_primary_json = { :Orders => @orders}
@@ -182,7 +195,7 @@ class ApisController < ApplicationController
   end
 
   def order_processing_list
-    @orders = Order.where(:order_status => "order_processing").where("user_id = ?", params[:user_id])
+    @orders = SellerOrder.where(:order_status => "order_processing").where("buyer_id = ?", params[:user_id])
 
      respond_to do |format|
           my_primary_json = { :Orders => @orders}
@@ -198,7 +211,7 @@ class ApisController < ApplicationController
 
 
   def order_delivery_list
-    @orders = Order.where(:order_status => "order_delivery").where("user_id = ?", params[:user_id])
+    @orders = SellerOrder.where(:order_status => "order_delivery").where("buyer_id = ?", params[:user_id])
 
      respond_to do |format|
           my_primary_json = { :Orders => @orders}
@@ -215,7 +228,7 @@ class ApisController < ApplicationController
 
   def order_completed_list
     
-    @orders = Order.where(:order_status => "order_completed").where("user_id = ?", params[:user_id])
+    @orders = SellerOrder.where(:order_status => "order_completed").where("buyer_id = ?", params[:user_id])
 
      respond_to do |format|
           my_primary_json = { :Orders => @orders}
@@ -231,7 +244,7 @@ class ApisController < ApplicationController
 
   def order_rejected_list
 
-    @orders = Order.where(:order_status => "order_rejected").where("user_id = ?", params[:user_id])
+    @orders = SellerOrder.where(:order_status => "order_rejected").where("buyer_id = ?", params[:user_id])
 
      respond_to do |format|
           my_primary_json = { :Orders => @orders}

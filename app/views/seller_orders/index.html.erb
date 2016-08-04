@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Seller Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @seller_orders.each do |seller_order| %>
+      <tr>
+        <td><%= seller_order.customer_name %></td>
+        <td><%= link_to 'Show', seller_order %></td>
+        <td><%= link_to 'Edit', edit_seller_order_path(seller_order) %></td>
+        <td><%= link_to 'Destroy', seller_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Seller order', new_seller_order_path %>
