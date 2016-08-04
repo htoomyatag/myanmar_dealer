@@ -45,7 +45,7 @@
             <td><%= buyer.address %></td>
             <td>No</td>
             <td>No</td>
-            <td><%= link_to 'Remove', buyer, :class=>"btn btn-danger btn-xs", :remote => true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Remove', buyer, :class=>"btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>

@@ -65,7 +65,7 @@
             <td><%= seller.address %></td>
             <td><%= seller.has_store %></td>
             <td><%= seller.company_name %></td>
-            <td><%= link_to 'Remove', seller, :class=>"btn btn-danger btn-xs", :remote => true, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <td><%= link_to 'Remove', seller, :class=>"btn btn-danger btn-xs",  method: :delete, data: { confirm: 'Are you sure?' } %>
 
               <%= link_to 'Approve', approve_seller_path(seller), :class=>"btn btn-default btn-xs", method: :put, data: { confirm: 'Are you sure you want to approve?' } %>
 
