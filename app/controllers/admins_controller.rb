@@ -1,5 +1,12 @@
 class AdminsController < ApplicationController
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
+  before_filter :is_admin?, :only => [:admin_view_user_report, :admin_view_product_report, :admin_view_order_report, :admin_manage_product, :set_today_deal, :admin_manage_buyer, :admin_manage_company_user, :admin_manage_shop, :admin_manage_seller, :admin_manage_personal_user, :admin_manage_retail_user]
+
+
+  def is_admin?
+    redirect_to "/unauthorized", error: 'You dont have enough permissions to be here' unless current_user.user_type_id == 3
+    true
+  end
 
   # GET /admins
   # GET /admins.json

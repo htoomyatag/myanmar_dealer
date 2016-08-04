@@ -826,7 +826,8 @@ products = Product.create([
  user_types = UserType.create([
 
  {title:"Seller"},
- {title:"Buyer"}
+ {title:"Buyer"},
+ {title:"Admin"}
 
  ])
 
@@ -1029,7 +1030,8 @@ products = Product.create([
     {user_type_id:"2",name: "htoo", email: "htoomyatag@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
     {user_type_id:"2",name: "thel", email: "theldarlykhin@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
     {user_type_id:"2",name: "arphan", email: "arphan@gmail.com", password: "privateafan", password_confirmation: "privateafan"},
-    {user_type_id:"2",name: "guest", email: "guestguest@gmail.com", password: "privateafan", password_confirmation: "privateafan"}
+    {user_type_id:"2",name: "guest", email: "guestguest@gmail.com", password: "privateafan", password_confirmation: "privateafan"},
+    {user_type_id:"3",name: "admin", email: "adminarphan@gmail.com", password: "privateafan", password_confirmation: "privateafan"}
  
 
 

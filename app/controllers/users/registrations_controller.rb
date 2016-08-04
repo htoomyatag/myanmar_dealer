@@ -5,8 +5,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
    		
    	  if current_user.has_store == nil && current_user.user_type_id == 1
           return new_store_path
-      elsif  current_user.has_store == nil && current_user.user_type_id == 2
+      elsif current_user.has_store == nil && current_user.user_type_id == 2
           return root_path 
+      elsif current_user.has_store == nil && current_user.user_type_id == 3
+          return admin_manage_seller_path
+
       else
           return "/stores/#{@store_id}"	
       end

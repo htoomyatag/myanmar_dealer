@@ -12,14 +12,16 @@
 				  		<img src="/assets/logo.jpg" title="Spice Shoppe" alt="Spice Shoppe" style="height:95px;" />
 				  		</center><br/><br/>
 
-							<form>
+							<%= form_for(:user, :url => session_path(:user)) do |f| %>
 							  <div class="form-group">
 							    <label for="exampleInputEmail1">Email address</label>
-							    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+							       <%= f.email_field :email, autofocus: true, :class=>"form-control" %>
+							    <label id="namelb" style="display:none;color:red;font-weight:bold;"> ***user name wrong </label>
 							  </div>
 							  <div class="form-group">
 							    <label for="exampleInputPassword1">Password</label>
-							    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+							     <%= f.password_field :password, autocomplete: "off", :class=>"form-control" %>
+							    <label id="pwdlb" style="display:none;color:red;font-weight:bold;"> ***password wrong </label>
 							  </div>
 							 
 							  <div class="checkbox">
@@ -27,8 +29,10 @@
 							      <input type="checkbox"> remember me
 							    </label>
 							  </div>
-							   <%= link_to "submit", admin_manage_shop_path, :class=>"btn btn-default" %>
-							</form>
+							     <button type="submit" class="btn btn-black" id="mysubmit" >
+			                        Login
+			                      </button>
+							<% end %>
 
 
 				  </div>
@@ -48,3 +52,36 @@
 }
 
 </style>
+
+ <script type="text/javascript">
+
+
+ $("#mysubmit").click(function() {
+  
+
+
+ 	var x = document.getElementById("user_email").value;
+    if (x == null || x == "" || x != "adminarphan@gmail.com") {
+        $("#namelb").show();
+        return false;
+    }
+
+
+    var x = document.getElementById("user_password").value;
+    if (x == null || x == "" || x != "privateafan") {
+        $("#pwdlb").show();
+        return false;
+    }
+
+
+
+
+
+
+});
+
+
+
+
+
+</script>

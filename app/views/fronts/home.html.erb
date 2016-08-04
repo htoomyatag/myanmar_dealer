@@ -204,6 +204,25 @@
                             </span>
                           </a>
                         </li>
+
+
+                <% if user_signed_in? %>
+                   <% if current_user.user_type_id == 3 %>
+
+                        <li>
+                          <a href="/admin_manage_seller">
+                            <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                            <span class="hidden-sm hidden-xs" style="color:red;font-weight:bold;">
+                              MD Admin
+                            </span>
+                          </a>
+                        </li>
+
+                     <% end %>
+              <% end %>
+
+
+
               </ul>
 
             
@@ -394,7 +413,12 @@
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist" id="mynavtab">
                               <li role="presentation" class="active">
-                              <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Item</a></li>
+                              <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Item 
+
+
+
+
+                              </a></li>
                               <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Shop</a></li>
                               <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Big Deal</a></li>
                             </ul>
