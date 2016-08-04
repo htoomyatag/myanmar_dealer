@@ -1,10 +1,10 @@
 
- # products = Product.create([
+ products = Product.create([
 
- # {title:"tmp",price: "10"},
+ {title:"tmp",price: "10"},
 
 
- # ])
+ ])
 
 
 
