@@ -430,9 +430,9 @@
                                 <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
                                       <br/>
                                       <div class="form-group">
-                                          <%= text_field_tag :title, params[:title], :style=>"width:350px;position:relative;top:5px;height:50px;" %>
+                                          <%= text_field_tag :title, params[:title], :style=>"width:350px;position:relative;top:-15px;height:50px;" %>
                                       </div>
-                                      <button type="submit" class="btn btn-danger" style="height:50px;">search</button>
+                                      <button type="submit" class="btn btn-danger" style="height:50px;position:relative;top:-20px">search</button>
                                 <% end %>
 
                               </div>
@@ -441,9 +441,9 @@
                                   <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
                                       <br/>
                                       <div class="form-group">
-                                          <%= text_field_tag :store_name, params[:store_name], :style=>"width:350px;position:relative;top:5px;height:50px;" %>
+                                          <%= text_field_tag :store_name, params[:store_name], :style=>"width:350px;position:relative;top:-15px;height:50px;" %>
                                       </div>
-                                      <button type="submit" class="btn btn-danger" style="height:50px;">search</button>
+                                      <button type="submit" class="btn btn-danger" style="height:50px;position:relative;top:-20px">search</button>
                                 <% end %>
 
                               </div>
@@ -452,9 +452,9 @@
                                 <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
                                       <br/>
                                       <div class="form-group">
-                                          <%= text_field_tag :title2, params[:title2], :style=>"width:350px;position:relative;top:5px;height:50px;" %>
+                                          <%= text_field_tag :title2, params[:title2], :style=>"width:350px;position:relative;top:-15px;height:50px;" %>
                                       </div>
-                                      <button type="submit" class="btn btn-danger" style="height:50px;">search</button>
+                                      <button type="submit" class="btn btn-danger" style="height:50px;position:relative;top:-20px">search</button>
                                 <% end %>
 
 
@@ -558,7 +558,7 @@
      <div class="row">
 
      <!-- side menu -->
-     	 <div class="col-md-2">
+     	 <div class="col-md-2" style="position:relative;top:-22px;">
      	 	<p class="mytitle"> <%=t :category %> </p>
 
      	 	<div class="list-group categories">
@@ -660,7 +660,7 @@
 
 
      	 </div> 
-     	 <div class="col-md-5">
+     	 <div class="col-md-5" style="position:relative;top:-22px;">
      	  	<p class="mytitle"> Hot sale</p>
 
 		     	  	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -670,12 +670,12 @@
 							  <div class="carousel-inner" role="listbox">
 
                       <div class="item active">
-                        <img src="<%= @hot_item.image_data %>" style="width:550px;height:470px;"/>
+                        <img src="<%= @hot_item.image_data %>" style="width:550px;height:400px;"/>
                       </div>
 
                      <% @hot_items.each do |hot_item| %>
                        <div class="item">
-                         <img src="<%= hot_item.image_data %>" style="width:800px;height:470px;"/>
+                         <img src="<%= hot_item.image_data %>" style="width:550px;height:400px;"/>
                        </div>
                     <% end %>
 
@@ -690,22 +690,20 @@
 
 
 		</div>
-     	  <div class="col-md-3">
+     	  <div class="col-md-3" style="position:relative;top:-22px;">
      	  		
      	  		<p class="mytitle"> Big Deals </p>
      	  		<div class="panel panel-default">
 				  <div class="panel-heading"><span style="color:#d9534f;">TODAY'S</span> DEALS</div>
 				  <div class="panel-body">
-             <br/>
 				     <h6 style="text-align:center;"> Ends in 
                   <span id="getting-started"> </span>
 
 
               </h6>
-             <br/>
 
 				   		<center>
-                  <%= image_tag @admin.avatar, :class=>"img-responsive", :style => "height:260px;width:300px;" %>
+                  <%= image_tag @admin.avatar, :class=>"img-responsive", :style => "height:239px;width:300px;" %>
 				   		</center>
 				   
 
@@ -736,19 +734,19 @@
                         </div>
                         <ul class="list-group">
               						  <li class="list-group-item" id="menuside">
-                              <a href="/buyer_sign_up">Register</a>
+                              <a href="/buyer_sign_up" id="menu_mylink">Register</a>
                             </li>
                               <li class="list-group-item" id="menuside">
-                              <a href="/about_add_to_fav">Add to Favourite</a>
+                              <a href="/about_add_to_fav" id="menu_mylink">Add to Favourite</a>
                             </li>
                               <li class="list-group-item" id="menuside">
-                              <a href="/about_add_to_cart">Add to cart</a>
+                              <a href="/about_add_to_cart" id="menu_mylink">Add to cart</a>
                             </li>
                               <li class="list-group-item" id="menuside">
-                              <a href="/about_make_an_order">Make Order</a>
+                              <a href="/about_make_an_order" id="menu_mylink">Make Order</a>
                             </li>
                               <li class="list-group-item" id="menuside">
-                              <a href="/about_order_trekking">Order Trekking</a>
+                              <a href="/about_order_trekking" id="menu_mylink">Order Trekking</a>
                             </li>
 						            </ul>
                     </div>
@@ -761,23 +759,23 @@
                          <ul class="list-group">
 
                             <li class="list-group-item" id="menuside">
-                              <a href="/about_seller_open_shop">Open Shop</a>
+                              <a href="/about_seller_open_shop" id="menu_mylink">Open Shop</a>
                             </li>
 
                             <li class="list-group-item" id="menuside">
-                              <a href="/about_seller_sell_product">Sell Your Product</a>
+                              <a href="/about_seller_sell_product" id="menu_mylink">Sell Your Product</a>
                             </li>
 
                             <li class="list-group-item" id="menuside">
-                              <a href="/about_seller_manage_shop">Manage Your Shop</a>
+                              <a href="/about_seller_manage_shop" id="menu_mylink">Manage Your Shop</a>
                             </li>
 
                                    <li class="list-group-item" id="menuside">
-                              <a href="/about_seller_manage_product">Manage Your Item</a>
+                              <a href="/about_seller_manage_product" id="menu_mylink">Manage Your Item</a>
                             </li>
 
                             <li class="list-group-item" id="menuside">
-                              <a href="/about_seller_view_report">View Your Report</a>
+                              <a href="/about_seller_view_report" id="menu_mylink">View Your Report</a>
                             </li>
 
 						</ul>
