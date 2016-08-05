@@ -534,7 +534,7 @@
 
                     <div class="panel panel-default">
                       
-                      <div class="panel-heading" style="font-size:10px;background:#d9534f;font-weight:bold;text-align:center;">DOWNLOAD OUR FREE APP</div>
+                      <div class="panel-heading" style="font-size:10px;background:#d9534f;font-weight:bold;text-align:center;"><%=t :down_load_our_free_app %> </div>
                         <div class="panel-body">
                             <center>
                             <%= link_to image_tag 'app.jpg' %>
@@ -577,7 +577,8 @@
 
      	 	<nav id="mysidebarmenu" class="amazonmenu">
 				<ul >
-					<li><a href="#" id="side_menu", class= "list-group-item">Fashions Men / Women</a>
+					<li><a href="#" id="side_menu", class= "list-group-item">
+              <%=t :fashion_related %>
 						<div>
 						  <ul>
 							  <li><a href="/products_by_category?category=cloths">Clothing</a></li>
@@ -587,49 +588,76 @@
 						</div>
 					</li>
 
-					<li><a href="/products_by_category?category=footwears" id="side_menu", class= "list-group-item">Shoes</a>
+					<li><a href="/products_by_category?category=footwears" id="side_menu", class= "list-group-item">
+                <%=t :footwears %>
+          </a>
 					</li>
 
-					<li><a href="/products_by_category?category=bags" id="side_menu", class= "list-group-item">Bags</a>
+					<li><a href="/products_by_category?category=bags" id="side_menu", class= "list-group-item">
+              <%=t :bags %>     
+          </a>
 					</li>
 
 				
-					<li><a href="#" id="side_menu", class= "list-group-item"> Cosmetic </a>
+					<li><a href="#" id="side_menu", class= "list-group-item"> 
+              <%=t :comesmetics %>     
+          </a>
 						<div>
 						  <ul>
-							  <li><a href="/products_by_category?category=bath_supplies">Bath Supplies</a></li>
-							  <li><a href="/products_by_category?category=beauty_equipments">Beauty Equipment</a></li>
-                <li><a href="/products_by_category?category=comesmetics">Makeup and Skincares</a></li>
+							  <li><a href="/products_by_category?category=bath_supplies">
+                    <%=t :bath_supplies %>   
+                </a></li>
+							  <li><a href="/products_by_category?category=beauty_equipments">
+                  <%=t :makeup_and_skincares %>   
+                </a></li>
+                <li><a href="/products_by_category?category=comesmetics">
+                     <%=t :beauty_equipments %> 
+                </a></li>
 						  </ul>
 						</div>
 					</li>
 
 
-					<li><a href="/products_by_category?category=books" id="side_menu", class= "list-group-item"> Books & Accessories </a>
+					<li><a href="/products_by_category?category=books" id="side_menu", class= "list-group-item"> 
+                  <%=t :books %> 
+          </a>
 					</li>
 
 
-					<li><a href="#" id="side_menu", class= "list-group-item"> Electronics </a>
+					<li><a href="#" id="side_menu", class= "list-group-item">
+             <%=t :electronics %>
+           </a>
 						<div>
 						  <ul>
-							  <li><a href="/products_by_category?category=computers_laptops">Computers</a></li>
+							  <li><a href="/products_by_category?category=computers_laptops">
+                     <%=t :computers %>
+                </a></li>
 						  </ul>
 						</div>
 					</li>
 
-				    <li><a href="/products_by_category?category=phone_related" id="side_menu", class= "list-group-item"> Phone & Accessories </a>
+				    <li><a href="/products_by_category?category=phone_related" id="side_menu", class= "list-group-item"> 
+                    <%=t :telephone_accessories %>
+                </a>
 					</li>
 
-					<li><a href="/products_by_category?category=home_appliance" id="side_menu", class= "list-group-item"> Home Appliance </a>
+					<li><a href="/products_by_category?category=home_appliance" id="side_menu", class= "list-group-item"> 
+           <%=t :home_appliances %>
+
+          </a>
 					</li>
 
-					<li><a href="/products_by_category?category=furnitures" id="side_menu", class= "list-group-item"> Furniture </a>
+					<li><a href="/products_by_category?category=furnitures" id="side_menu", class= "list-group-item"> 
+               <%=t :furniture %>
+           </a>
 					</li>
 
 				
 
 
-					<li><a href="#" id="side_menu", class= "list-group-item"> Tools and Hardware </a>
+					<li><a href="#" id="side_menu", class= "list-group-item"> 
+              <%=t :tools %>
+          </a>
 						<div>
 						  <ul>
 							  <li><a href="/products_by_category?category=machines">Machines</a></li>
@@ -639,7 +667,9 @@
 						</div>
 					</li>
 
-					<li><a href="#" id="side_menu", class= "list-group-item"> Car Accessories </a>
+					<li><a href="#" id="side_menu", class= "list-group-item"> 
+                <%=t :car_accessories %>
+          </a>
 						<div>
 						  <ul>
 							  <li><a href="/products_by_category?category=car_accessories">Motor Car</a></li>
@@ -648,15 +678,21 @@
 						</div>
 					</li>
 
-					<li><a href="/products_by_category?category=sports" id="side_menu", class= "list-group-item"> Sports </a>
+					<li><a href="/products_by_category?category=sports" id="side_menu", class= "list-group-item"> 
+ <%=t :sports %>
+          </a>
 					</li>
 
 					
-					 <li><a href="/products_by_category?category=medicines" id="side_menu", class= "list-group-item"> Medicines </a>
+					 <li><a href="/products_by_category?category=medicines" id="side_menu", class= "list-group-item">  
+            <%=t :medicines %>
+           </a>
 					</li>
 
 
-					 <li><a href="/products_by_category?category=gifts" id="side_menu", class= "list-group-item"> Gifts </a>
+					 <li><a href="/products_by_category?category=gifts" id="side_menu", class= "list-group-item"> 
+                <%=t :special_gifts %>
+            </a>
 					</li>
 
 
@@ -741,7 +777,7 @@
 
                     <div class="panel panel-default" >
                         <div class="panel-heading" style="font-size:14px;background:#d9534f;font-weight:bold;text-align:center;">
-                          How to Buy
+                          <%=t :how_to_buy %>
                         </div>
                         <ul class="list-group">
               						  <li class="list-group-item" id="menuside">
@@ -765,7 +801,7 @@
 
                       <div class="panel panel-default" >
                         <div class="panel-heading" style="font-size:14px;background:#d9534f;font-weight:bold;text-align:center;">
-                          How to Sell
+                               <%=t :how_to_sell %>
                         </div>
                          <ul class="list-group">
 
@@ -804,7 +840,7 @@
      <div class="row" style="position:relative;top:-33px;">
 
 			 <div class="col-md-12" >
-			     	 	<p class="mytitle"> Hot Sale </p>
+			     	 	<p class="mytitle"> <%=t :hot_sale %></p>
 
 			     	 	<% @products.each do |product| %>
 						<div class="col-md-2">
