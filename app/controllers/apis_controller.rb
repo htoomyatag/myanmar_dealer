@@ -19,6 +19,24 @@ class ApisController < ApplicationController
   end
 
 
+  def seach_from_mobile
+
+      @products = Product.where("title LIKE ?", "%#{params[:search]}%")
+
+        respond_to do |format|
+              my_primary_json = { :Products => @products.to_json(:methods => [:avatar_url])}
+              my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+              a = '"['
+              b = ']"'
+              my_third_json = my_seconday_json.gsub(a , "[")
+              my_fourth_json = my_third_json.gsub(b , "]")
+              format.json {render json: my_primary_json}
+              format.text {render text: my_fourth_json}
+         end
+
+  end
+
+
     def send_to_web
       # new prodcuct from mobile
 

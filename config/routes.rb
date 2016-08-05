@@ -60,6 +60,8 @@ end
   resources :apis
 
 
+
+  get 'seach_from_mobile' => 'apis#seach_from_mobile', :as => :seach_from_mobile
   post 'send_to_web' => 'apis#send_to_web', :as => 'send_to_web'
   get 'seller_buyer_conversation' => 'apis#seller_buyer_conversation', :as => :seller_buyer_conversation
   get 'set_order_status_by_seller' => 'apis#set_order_status_by_seller', :as => :set_order_status_by_seller
