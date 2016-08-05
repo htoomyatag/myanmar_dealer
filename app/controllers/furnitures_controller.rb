@@ -28,7 +28,7 @@ class FurnituresController < ApplicationController
 
     respond_to do |format|
       if @furniture.save
-        format.html { redirect_to @furniture, notice: 'Furniture was successfully created.' }
+        format.html { redirect_to my_products_path, notice: 'Furniture was successfully created.' }
         format.json { render :show, status: :created, location: @furniture }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class FurnituresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def furniture_params
-      params.require(:furniture).permit(:store_name, :user_id,:title, :weight, :dimension, :price, :made_by, :brand, :avatar_1, :avatar_2, :avatar_3, :avatar_4)
+      params.require(:furniture).permit(:quantity, :delivery_category, :store_name, :user_id,:title, :weight, :dimension, :price, :made_by, :brand, :avatar_1, :avatar_2, :avatar_3, :avatar_4)
     end
 end

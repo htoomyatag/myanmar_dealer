@@ -1,57 +1,341 @@
-<%= form_for(@furniture) do |f| %>
-  <% if @furniture.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@furniture.errors.count, "error") %> prohibited this furniture from being saved:</h2>
+<div class="col-md-6"> 
 
-      <ul>
-      <% @furniture.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h4>New furniture</h4>
+            <hr/>
+
+
+            <%= form_for(@furniture, html: { multipart: true }) do |f| %>
+              <% if @furniture.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@furniture.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+                  <ul>
+                  <% @furniture.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+
+    <div class="form-group" >
+              <%= f.label :delivery_category %>
+              <%= f.select(:delivery_category, Furniture::DELIVERY) %>
+     </div>
+
+
+     <div class="form-group" style="display:none;">
+              <%= f.label :user_id %>
+              <%= f.number_field :user_id, :value => current_user.id %>
+      </div>     
+
+          
+     <div class="form-group">
+              <%= f.label :title %><br/>
+              <%= f.text_field :title, :class=>"form-control", :required => true  %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+   
+
+     <div class="form-group">
+              <%= f.label :price %><br/>
+               <%= f.text_field :price, :class=>"form-control", :required => true  %> 
+    </div>
+
+     <div class="form-group">
+              <%= f.label :quantity %><br/>
+              <%= f.text_field :quantity, :class=>"form-control" , :required => true %>
+      </div>
+
+     <div class="form-group">
+              <%= f.label :weight %><br/>
+              <%= f.text_field :weight, :class=>"form-control" , :required => true %>
+    </div>
+     <div class="form-group">
+              <%= f.label :dimension %><br/>
+              <%= f.text_field :dimension, :class=>"form-control", :required => true  %>
+    </div>
+ 
+     <div class="form-group">
+              <%= f.label :brand %><br/>
+              <%= f.text_field :brand, :class=>"form-control" , :required => true %>
+      </div>
+   
+    
+     <div class="form-group">
+              <%= f.label :made_by %><br/>
+              <%= f.text_field :made_by, :class=>"form-control", :required => true  %>
+      </div>
+
+
+
+        </div>
+    </div> 
   </div>
-  <div class="field">
-    <%= f.label :weight %><br>
-    <%= f.text_field :weight %>
+
+
+  <div class="col-md-6">
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+         <h4>Product Images (Width:250px High:200px for best view)</h4>
+            <hr/>
+       
+
+      <!-- crop mage -->
+               <div class="col-md-6">
+                      <div class="image-editor1">
+
+                          <%= f.file_field :avatar1, :class=>"cropit-image-input" %>
+                          <div class="cropit-preview"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                           <%= f.text_field :avatar_1, :class=>"form-control", :style=>"display:none"  %>
+
+
+                            <input type="range" class="cropit-image-zoom-input" >
+
+                          <div>
+                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
+                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
+                              <span style="float:right;"><a class="exportav1">Confirm </a></span>
+                          </div>
+                  
+                          
+
+                        </div>
+              </div>
+               <div class="col-md-6">
+                      <div class="image-editor2">
+
+                          <%= f.file_field :avatar2, :class=>"cropit-image-input" %>
+                          <div class="cropit-preview"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                           <%= f.text_field :avatar_2, :class=>"form-control", :style=>"display:none"  %>
+
+
+                            <input type="range" class="cropit-image-zoom-input" >
+
+                          <div>
+                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
+                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
+                              <span style="float:right;"><a class="exportav2">Confirm </a></span>
+                          </div>
+                  
+                       
+
+                        </div>
+              </div>
+
+
+                  <div class="col-md-6">
+                      <div class="image-editor3">
+
+                          <%= f.file_field :avatar3, :class=>"cropit-image-input" %>
+                          <div class="cropit-preview"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                           <%= f.text_field :avatar_3, :class=>"form-control", :style=>"display:none" %>
+
+
+                            <input type="range" class="cropit-image-zoom-input" >
+
+                          <div>
+                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
+                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
+                              <span style="float:right;"><a class="exportav3">Confirm </a></span>
+                          </div>
+                  
+                       
+
+                        </div>
+              </div>
+
+
+
+    <div class="col-md-6">
+                      <div class="image-editor4">
+
+                          <%= f.file_field :avatar4, :class=>"cropit-image-input" %>
+                          <div class="cropit-preview"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                           <%= f.text_field :avatar_4, :class=>"form-control", :style=>"display:none"  %>
+
+
+                            <input type="range" class="cropit-image-zoom-input" >
+
+                          <div>
+                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
+                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
+                              <span style="float:right;"><a class="exportav4">Confirm </a></span>
+                          </div>
+                  
+                       
+
+                        </div>
+              </div>
+       
+            
+        </div>
+    </div>
+
+
   </div>
-  <div class="field">
-    <%= f.label :dimension %><br>
-    <%= f.text_field :dimension %>
+
+
+
+  <div class="col-md-12">
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+           <div class="actions">
+            Please enter "Create" button to upload your
+            furnitures product in your store.
+            <span style="float:right;"><%= f.submit %></span>
+          </div>
+
+        </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :made_by %><br>
-    <%= f.text_field :made_by %>
-  </div>
-  <div class="field">
-    <%= f.label :brand %><br>
-    <%= f.text_field :brand %>
-  </div>
-  <div class="field">
-    <%= f.label :avatar_1 %><br>
-    <%= f.text_field :avatar_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :avatar_2 %><br>
-    <%= f.text_field :avatar_2 %>
-  </div>
-  <div class="field">
-    <%= f.label :avatar_3 %><br>
-    <%= f.text_field :avatar_3 %>
-  </div>
-  <div class="field">
-    <%= f.label :avatar_4 %><br>
-    <%= f.text_field :avatar_4 %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
 <% end %>
+
+
+    <script>
+      $(function() {
+        $('.image-editor1').cropit({
+
+     minZoom: 'fit',
+    imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
+
+        $('.image-editor2').cropit({
+
+     minZoom: 'fit',
+    imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
+
+
+        $('.image-editor3').cropit({
+
+     minZoom: 'fit',
+    imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
+
+        $('.image-editor4').cropit({
+
+     minZoom: 'fit',
+    imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
+
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor1').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor1').cropit('rotateCCW');
+        });
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor2').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor2').cropit('rotateCCW');
+        });
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor3').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor3').cropit('rotateCCW');
+        });
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor4').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor4').cropit('rotateCCW');
+        });
+
+
+
+
+
+
+
+
+
+        $('.exportav1').click(function() {
+          var imageData1 = $('.image-editor1').cropit('export');
+       
+          document.getElementById("furniture_avatar_1").value = imageData1;
+          // window.open(imageData);
+
+        });
+
+
+
+
+          $('.exportav2').click(function() {
+          var imageData2 = $('.image-editor2').cropit('export');
+       
+          document.getElementById("furniture_avatar_2").value = imageData2;
+          // window.open(imageData);
+
+        });
+
+
+           $('.exportav3').click(function() {
+          var imageData3 = $('.image-editor3').cropit('export');
+       
+          document.getElementById("furniture_avatar_3").value = imageData3;
+          // window.open(imageData);
+
+        });
+
+
+              $('.exportav4').click(function() {
+          var imageData4 = $('.image-editor4').cropit('export');
+       
+          document.getElementById("furniture_avatar_4").value = imageData4;
+          // window.open(imageData);
+
+        });
+
+
+
+
+      });
+    </script>
+
+
