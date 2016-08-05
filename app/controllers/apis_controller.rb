@@ -331,7 +331,7 @@ class ApisController < ApplicationController
   def to_send_shipment
 
 
-
+    @cart_id = Cart.maximum(:id)+1
 
     @order = Order.create(
 
@@ -342,7 +342,7 @@ class ApisController < ApplicationController
       :customer_city  => params[:customer_city],
       :customer_township  => params[:customer_township],
       :customer_address  => params[:customer_address],
-      :cart_id  => params[:cart_id],
+      :cart_id  => @cart_id,
       )
   end
 

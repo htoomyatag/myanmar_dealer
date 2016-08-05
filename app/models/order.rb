@@ -45,6 +45,8 @@ class Order < ActiveRecord::Base
 	end
 
     def add_sellers
+  
+
           @product_ids = LineItem.where(:cart_id => self.cart_id).pluck(:product_id)
           @seller_ids = Product.where(:id => @product_ids).pluck(:user_id) 
           @seller_ids.each do |p|
@@ -67,9 +69,6 @@ class Order < ActiveRecord::Base
           end
 
 
-
-
-          
 
     end
 	
