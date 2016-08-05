@@ -18,6 +18,33 @@ class ApisController < ApplicationController
 
   end
 
+
+    def send_to_web
+      # new prodcuct from mobile
+
+     @stores = Store.where(:user_id => params[:user_id]).pluck(:store_name)
+     @store_name = @stores.to_s.gsub('[', '').gsub('"','')
+     @my_store_name = @store_name.to_s.gsub(']', '')
+    
+    puts "@@@@@@@@@@@@@@"+@my_store_name.to_s+"@@@@@@@@@@@@@@"
+
+
+     @products = Product.create(
+      
+      :title => params[:title],
+      :category => params[:category],
+      :description => params[:description],
+      :price => params[:price],
+      :delivery_category => params[:delivery_method],
+      :color => params[:color],:size => params[:size], 
+      :store_name => @my_store_name,
+      :avatar1_edit => params[:image1],
+      :avatar2_edit => params[:image2],
+      :avatar3_edit => params[:image3],
+      :avatar4_edit => params[:image4],
+      :user_id => params[:user_id])
+  end
+
   def set_order_status_by_seller
     
       @order = SellerOrder.find(params[:order_id])

@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   end
 end
 
-  post 'send_to_web' => 'products#send_to_web', :as => 'send_to_web'
+
 
 
   get 'buyer_sign_up' => 'users#buyer_sign_up', :as => :buyer_sign_up
@@ -60,7 +60,7 @@ end
   resources :apis
 
 
-
+  post 'send_to_web' => 'apis#send_to_web', :as => 'send_to_web'
   get 'seller_buyer_conversation' => 'apis#seller_buyer_conversation', :as => :seller_buyer_conversation
   get 'set_order_status_by_seller' => 'apis#set_order_status_by_seller', :as => :set_order_status_by_seller
   get 'view_shop_licensce' => 'apis#view_shop_licensce', :as => :view_shop_licensce

@@ -93,6 +93,9 @@ mm:
   report_list: "တိုင္ၾကားထားေသာ စာရင္း"
   dashboard: "လုပ္ငန္းေဆာင္ရြက္ရန္"
   conversation_list: "စကားေျပာထား ေသာ စာရင္း"
+  hot_sale: "အေရာင္းသြက္ကုန္ပစၥည္း"
+  big_deal: "တန္မွတန္"
+
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
