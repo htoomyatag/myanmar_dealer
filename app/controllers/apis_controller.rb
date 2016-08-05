@@ -337,7 +337,7 @@ class ApisController < ApplicationController
     @line_items = LineItem.create(
 
           :product_id => params[:product_id],
-          :cart_id => params[:cart_id],
+          :cart_id => @cart_id,
           :user_id => params[:user_id],
           :quantity => params[:quantity],
           :product_name => params[:product_name]

@@ -1191,10 +1191,38 @@ document.getElementById('delivery_fees').value = package_name;
 
 <script type="text/javascript">
   
-$("#zoom_01").elevateZoom();
-$("#zoom_02").elevateZoom();
-$("#zoom_03").elevateZoom();
-$("#zoom_04").elevateZoom();
+$("#zoom_01").elevateZoom(
+{
+   responsive: true,
+   zoomType: "lens", 
+   containLensZoom: true
+}
+);
+
+
+$("#zoom_02").elevateZoom(
+{
+   responsive: true,
+   zoomType: "lens", 
+   containLensZoom: true
+}
+);
+
+$("#zoom_03").elevateZoom(
+{
+   responsive: true,
+   zoomType: "lens", 
+   containLensZoom: true
+}
+);
+
+$("#zoom_04").elevateZoom(
+{
+   responsive: true,
+   zoomType: "lens", 
+   containLensZoom: true
+}
+);
 
 
 $('#av1').click(function(){
