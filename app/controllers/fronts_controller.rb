@@ -15,6 +15,11 @@ class FrontsController < ApplicationController
    end
 
 
+   def big_deals
+     @products = Product.where(:big_deal => "yes")
+   end
+
+
  
 
   def apply_as_seller

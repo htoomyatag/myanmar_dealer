@@ -132,8 +132,11 @@ ActiveRecord::Schema.define(version: 20160805025435) do
     t.string   "avatar_4"
     t.string   "user_id"
     t.string   "store_name"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.string   "quantity"
+    t.string   "delivery_category"
+    t.string   "category"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "buyer_reports", force: :cascade do |t|

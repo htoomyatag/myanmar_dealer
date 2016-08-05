@@ -28,7 +28,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
+        format.html { redirect_to my_products_path, notice: 'Book was successfully created.' }
         format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:store_name, :user_id, :title, :author, :number_of_paper, :price, :publisher, :book_description, :avatar_1, :avatar_2, :avatar_3, :avatar_4)
+      params.require(:book).permit(:category,:delivery_category, :store_name, :user_id, :title, :author, :number_of_paper, :price, :publisher, :book_description, :avatar_1, :avatar_2, :avatar_3, :avatar_4)
     end
 end

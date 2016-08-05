@@ -13,6 +13,9 @@ class CreateBooks < ActiveRecord::Migration
       t.string :avatar_4
       t.string :user_id
       t.string :store_name
+      t.string :quantity
+      t.string :delivery_category
+      t.string :category
 
       t.timestamps null: false
     end

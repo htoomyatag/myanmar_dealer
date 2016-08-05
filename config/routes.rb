@@ -172,6 +172,7 @@ end
   resources :fronts
 
 
+  get "big_deals" => "fronts#big_deals", :as => :big_deals  
 
   get "products_by_category" => "fronts#products_by_category", :as => :products_by_category
   get "apply_as_seller/:id" => "fronts#apply_as_seller", :as => :apply_as_seller
