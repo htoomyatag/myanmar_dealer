@@ -5,9 +5,7 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.where.not(:user_id  => current_user.id)
-    @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
-    @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
+    @orders = SellerOrder.where(:seller_id  => current_user)
   end
 
 

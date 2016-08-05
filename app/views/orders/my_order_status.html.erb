@@ -1,7 +1,12 @@
-<div class="container">
+<%= render 'layouts/defaultnav' %>  
+
+<div id="main-container" class="rows" style="padding:10px;">
+
+
 <div class="panel panel-default">
   <div class="panel-body">
      <p>Order Status</p>
+          <a class="btn btn-default" href="/my_order" role="button">back to order list</a>
      <hr/>
 
     <span class="label label-default" id="order_status_confirm">order confirm</span>
@@ -18,8 +23,6 @@
     <img src="/assets/direction.png" alt="direction" id="direction_arow" />
     </div>
 
-	<br/><br/><br/>
-	<p>Info: Now you order is in  [<%= @order.order_status %>] stage.</p>
 
 
   </div>
@@ -81,6 +84,14 @@
 			left: 620px;
 		}
 	</style>
+<% elsif @order.order_status == nil  %>
+
+	<style type="text/css">
+		#direction_arow{
+			display: none;
+		}
+	</style>
+
 
 <% elsif @order.order_status == "order_rejected"  %>
 

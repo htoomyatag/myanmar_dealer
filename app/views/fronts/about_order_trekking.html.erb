@@ -36,8 +36,7 @@
 			<div><br/>
     <img src="/assets/direction.png" alt="direction" id="direction_arow" />
     </div>
-	<p>Info: Now you order is in  [<%= order.order_status %>] stage.</p>
-
+	
 
 
 				<% if order.order_status == "order_confirm"  %>
@@ -85,6 +84,15 @@
 							left: 910px;
 						}
 					</style>
+
+			   <% elsif order.order_status == nil  %>
+
+					<style type="text/css">
+						#direction_arow{
+							display: none;
+						}
+					</style>
+
 
 				<% end  %>
 

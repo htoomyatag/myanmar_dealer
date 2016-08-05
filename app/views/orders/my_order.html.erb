@@ -1,5 +1,6 @@
+<%= render 'layouts/defaultnav' %>  
 
-<div id="main-container" class="container">
+<div id="main-container" class="row">
 
 
 
@@ -21,8 +22,7 @@
               <th>City</th>
               <th>Township</th>
               <th>Order</th>
-              <th>Status</th>
-              <th colspan="3"></th>
+              <th>Delivery Status</th>
             </tr>
           </thead>
 
@@ -40,9 +40,7 @@
                 
                 <td><%= link_to "Order details",my_items_path(:cart_id => order.cart_id), :method => :get, :class => "btn btn-primary btn-xs" %></td>
                 <td><%= link_to "Status details",my_order_status_path( order.id), :method => :get, :class => "btn btn-info btn-xs" %></td>
-                <td><%= link_to 'Show', order %></td>
-                <td><%= link_to 'Edit', edit_order_path(order) %></td>
-                <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                
               </tr>
             <% end %>
           </tbody>
@@ -56,3 +54,4 @@
 
 
 </div>
+
