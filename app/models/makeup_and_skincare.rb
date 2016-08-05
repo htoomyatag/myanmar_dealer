@@ -37,6 +37,7 @@ class MakeupAndSkincare < ActiveRecord::Base
       :brand => self.brand,
       :effect => self.effect,
       :certification => self.certification,
+           :store_name => self.store_name,
       :category => "comesmetics",
       :price => self.price,
       :avatar1_file_name => self.avatar1.url,

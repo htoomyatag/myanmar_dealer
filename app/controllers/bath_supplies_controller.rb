@@ -1,6 +1,7 @@
 class BathSuppliesController < ApplicationController
   before_action :set_bath_supply, only: [:show, :edit, :update, :destroy]
-   layout :layout_per_action
+  layout :layout_per_action
+  before_action :authenticate_user!, only: [:new]
   # GET /bath_supplies
   # GET /bath_supplies.json
   def index
@@ -21,6 +22,7 @@ class BathSuppliesController < ApplicationController
   # GET /bath_supplies/new
   def new
     @bath_supply = BathSupply.new
+    @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /bath_supplies/1/edit

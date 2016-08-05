@@ -48,6 +48,7 @@ class FashionHat < ActiveRecord::Base
       :made_with => self.made_with,
       :delivery_category => self.delivery_category,
       :category => "hats",
+           :store_name => self.store_name,
       :avatar1_file_name => self.avatar1.url,
       :avatar2_file_name => self.avatar2.url,
       :avatar3_file_name => self.avatar3.url,

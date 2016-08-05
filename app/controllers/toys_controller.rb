@@ -1,6 +1,7 @@
 class ToysController < ApplicationController
   before_action :set_toy, only: [:show, :edit, :update, :destroy]
    layout :layout_per_action
+     before_action :authenticate_user!, only: [:new]
   # GET /toys
   # GET /toys.json
   def index
@@ -19,6 +20,7 @@ class ToysController < ApplicationController
   # GET /toys/new
   def new
     @toy = Toy.new
+       @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /toys/1/edit

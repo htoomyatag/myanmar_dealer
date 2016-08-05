@@ -1,6 +1,7 @@
 class FashionBagsController < ApplicationController
   before_action :set_fashion_bag, only: [:show, :edit, :update, :destroy]
     layout :layout_per_action
+      before_action :authenticate_user!, only: [:new]
   # GET /fashion_bags
   # GET /fashion_bags.json
   def index
@@ -19,6 +20,7 @@ class FashionBagsController < ApplicationController
   # GET /fashion_bags/new
   def new
     @fashion_bag = FashionBag.new
+       @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /fashion_bags/1/edit

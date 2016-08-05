@@ -1,6 +1,7 @@
 class CarAccessoriesController < ApplicationController
   before_action :set_car_accessory, only: [:show, :edit, :update, :destroy]
    layout :layout_per_action
+     before_action :authenticate_user!, only: [:new]
   # GET /car_accessories
   # GET /car_accessories.json
   def index
@@ -19,6 +20,7 @@ class CarAccessoriesController < ApplicationController
   # GET /car_accessories/new
   def new
     @car_accessory = CarAccessory.new
+       @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /car_accessories/1/edit

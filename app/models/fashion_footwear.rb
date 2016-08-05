@@ -50,6 +50,7 @@ class FashionFootwear < ActiveRecord::Base
       :quantity => self.quantity,
       :delivery_category => self.delivery_category,
       :size => self.size,
+           :store_name => self.store_name,
       :category => "footwears",
       :avatar1_file_name => self.avatar1.url,
       :avatar2_file_name => self.avatar2.url,

@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
+  before_action :authenticate_user!, only: [:new]
   # GET /books
   # GET /books.json
   def index
@@ -15,6 +16,7 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+       @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /books/1/edit

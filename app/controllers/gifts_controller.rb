@@ -1,6 +1,7 @@
 class GiftsController < ApplicationController
   before_action :set_gift, only: [:show, :edit, :update, :destroy]
    layout :layout_per_action
+  before_action :authenticate_user!, only: [:new]
   # GET /gifts
   # GET /gifts.json
   def index
@@ -19,6 +20,7 @@ class GiftsController < ApplicationController
   # GET /gifts/new
   def new
     @gift = Gift.new
+       @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /gifts/1/edit

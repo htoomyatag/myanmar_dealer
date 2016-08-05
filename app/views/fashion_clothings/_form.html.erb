@@ -22,7 +22,7 @@
                 </div>
               <% end %>
 
-            
+                  <%= f.text_field :store_name, :value => @store_name, :style => "display:none;" %>
             <div class="form-group" style="display:none;">
               <%= f.label :user_id %>
               <%= f.number_field :user_id, :value => current_user.id %>

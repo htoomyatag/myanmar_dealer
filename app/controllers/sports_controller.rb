@@ -1,6 +1,7 @@
 class SportsController < ApplicationController
   before_action :set_sport, only: [:show, :edit, :update, :destroy]
    layout :layout_per_action
+     before_action :authenticate_user!, only: [:new]
   # GET /sports
   # GET /sports.json
   def index
@@ -19,6 +20,7 @@ class SportsController < ApplicationController
   # GET /sports/new
   def new
     @sport = Sport.new
+       @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /sports/1/edit

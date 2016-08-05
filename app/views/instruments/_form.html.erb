@@ -1,4 +1,10 @@
 
+  <div class="col-md-6"> 
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h4>New innstruments</h4>
+
 
             <%= form_for(@instrument, html: { multipart: true }) do |f| %>
               <% if @instrument.errors.any? %>
@@ -13,7 +19,7 @@
                 </div>
               <% end %>
 
-
+      <%= f.text_field :store_name, :value => @store_name, :style => "display:none;" %>
             <div class="form-group" >
               <%= f.label :delivery_category %>
               <%= f.select(:delivery_category, Instrument::DELIVERY) %>

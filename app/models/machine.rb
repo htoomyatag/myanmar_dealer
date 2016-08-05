@@ -36,6 +36,7 @@ class Machine < ActiveRecord::Base
       :color => self.color,
       :quantity => self.quantity,
       :delivery_category => self.delivery_category,
+           :store_name => self.store_name,
       :weight => self.weight,
       :made_with => self.made_with,
       :specification => self.specification,

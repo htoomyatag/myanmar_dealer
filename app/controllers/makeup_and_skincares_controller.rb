@@ -1,6 +1,7 @@
 class MakeupAndSkincaresController < ApplicationController
   before_action :set_makeup_and_skincare, only: [:show, :edit, :update, :destroy]
    layout :layout_per_action
+     before_action :authenticate_user!, only: [:new]
   # GET /makeup_and_skincares
   # GET /makeup_and_skincares.json
   def index
@@ -19,6 +20,7 @@ class MakeupAndSkincaresController < ApplicationController
   # GET /makeup_and_skincares/new
   def new
     @makeup_and_skincare = MakeupAndSkincare.new
+       @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /makeup_and_skincares/1/edit

@@ -1,6 +1,7 @@
 class TelephoneAccessoriesController < ApplicationController
   before_action :set_telephone_accessory, only: [:show, :edit, :update, :destroy]
    layout :layout_per_action
+     before_action :authenticate_user!, only: [:new]
   # GET /telephone_accessories
   # GET /telephone_accessories.json
   def index
@@ -19,6 +20,7 @@ class TelephoneAccessoriesController < ApplicationController
   # GET /telephone_accessories/new
   def new
     @telephone_accessory = TelephoneAccessory.new
+       @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /telephone_accessories/1/edit

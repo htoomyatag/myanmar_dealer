@@ -36,7 +36,9 @@ class BeautyEquipment < ActiveRecord::Base
          :modal_number => self.modal_number,
          :color => self.color,
          :price => self.price,
+              :store_name => self.store_name,
          :category => "beauty_equipments",
+         
          :avatar1_file_name => self.avatar1.url,
          :avatar2_file_name => self.avatar2.url,
          :avatar3_file_name => self.avatar3.url,

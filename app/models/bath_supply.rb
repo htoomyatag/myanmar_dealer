@@ -63,8 +63,7 @@ class BathSupply < ActiveRecord::Base
       :avatar3_edit => self.avatar3_edit,
       :avatar4_edit => self.avatar4_edit,
       :user_id => user_id,
-      :seller_name => @seller_name,
-      :store_name => current_user.store_name
+      :seller_name => @seller_name
      ) 
    
 

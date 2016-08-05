@@ -1,6 +1,7 @@
 class MedicinesController < ApplicationController
   before_action :set_medicine, only: [:show, :edit, :update, :destroy]
    layout :layout_per_action
+     before_action :authenticate_user!, only: [:new]
   # GET /medicines
   # GET /medicines.json
   def index
@@ -19,6 +20,7 @@ class MedicinesController < ApplicationController
   # GET /medicines/new
   def new
     @medicine = Medicine.new
+       @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /medicines/1/edit

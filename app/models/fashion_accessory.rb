@@ -30,6 +30,7 @@ class FashionAccessory < ActiveRecord::Base
             :seller_name => @seller_name,
       :title => self.title,
       :description => self.description,
+           :store_name => self.store_name,
       :brand => self.brand,
       :price => self.price,
       :quantity => self.quantity,

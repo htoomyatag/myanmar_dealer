@@ -1,6 +1,7 @@
 class ComputersController < ApplicationController
   before_action :set_computer, only: [:show, :edit, :update, :destroy]
    layout :layout_per_action
+     before_action :authenticate_user!, only: [:new]
   # GET /computers
   # GET /computers.json
   def index
@@ -20,6 +21,7 @@ class ComputersController < ApplicationController
   # GET /computers/new
   def new
     @computer = Computer.new
+       @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /computers/1/edit

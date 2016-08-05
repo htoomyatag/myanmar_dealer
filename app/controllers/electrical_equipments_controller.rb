@@ -1,6 +1,7 @@
 class ElectricalEquipmentsController < ApplicationController
   before_action :set_electrical_equipment, only: [:show, :edit, :update, :destroy]
    layout :layout_per_action
+     before_action :authenticate_user!, only: [:new]
   # GET /electrical_equipments
   # GET /electrical_equipments.json
   def index
@@ -19,6 +20,7 @@ class ElectricalEquipmentsController < ApplicationController
   # GET /electrical_equipments/new
   def new
     @electrical_equipment = ElectricalEquipment.new
+       @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /electrical_equipments/1/edit

@@ -1,6 +1,7 @@
 class InstrumentsController < ApplicationController
   before_action :set_instrument, only: [:show, :edit, :update, :destroy]
    layout :layout_per_action
+     before_action :authenticate_user!, only: [:new]
   # GET /instruments
   # GET /instruments.json
   def index
@@ -19,6 +20,7 @@ class InstrumentsController < ApplicationController
   # GET /instruments/new
   def new
     @instrument = Instrument.new
+       @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /instruments/1/edit
@@ -77,7 +79,7 @@ class InstrumentsController < ApplicationController
     end
 
     def layout_per_action
-      if action_name == "index" or action_name ==  "product_instruments" 
+      if action_name == "index" or "product_instruments" 
            "application"
       else
         "backend"

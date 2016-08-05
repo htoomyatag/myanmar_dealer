@@ -4,8 +4,25 @@
 
 
                <div id="logo_img">
-                        <img src="/assets/slide2.png" title="myanmar_dealer" alt="myanmar_dealer" class="img-responsive"  />
-                    </div>
+
+                <div class="carousel-inner" role="listbox">
+
+                      <div class="item active">
+                        <img src="<%= @hot_item.image_data %>" style="width:550px;height:400px;"/>
+                      </div>
+
+                     <% @hot_items.each do |hot_item| %>
+                       <div class="item">
+                         <img src="<%= hot_item.image_data %>" style="width:550px;height:400px;"/>
+                       </div>
+                    <% end %>
+
+        
+                </div>
+
+                
+                    
+                </div>
 
        <% if user_signed_in? %>
            <p class="mytitle"> Hello,   <%= current_user.name %> </p>
@@ -846,9 +863,9 @@
 						<div class="col-md-2">
 							<div class="product-col">
 								<div class="image">
-								<% if !product.avatar1_file_name.nil?  %>
+								<% if !product.avatar1_edit.nil?  %>
 					                   <%= link_to image_tag(product.avatar1_edit, :style=>"height:150px;width:150px;"), product_full_path(:id => product), :id => "product_image" %>   
-					     <% elsif product.avatar1_file_name.nil?  %>      
+					     <% elsif product.avatar1_edit.nil?  %>      
 									<img src="/assets/no_image.jpg" alt="product" class="img-responsive" style="height:150px;width:150px;" />
 					    <% end %>
 								</div>

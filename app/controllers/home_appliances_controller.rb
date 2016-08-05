@@ -1,6 +1,7 @@
 class HomeAppliancesController < ApplicationController
   before_action :set_home_appliance, only: [:show, :edit, :update, :destroy]
    layout :layout_per_action
+     before_action :authenticate_user!, only: [:new]
   # GET /home_appliances
   # GET /home_appliances.json
   def index
@@ -19,6 +20,7 @@ class HomeAppliancesController < ApplicationController
   # GET /home_appliances/new
   def new
     @home_appliance = HomeAppliance.new
+       @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /home_appliances/1/edit

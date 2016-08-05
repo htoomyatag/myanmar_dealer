@@ -34,6 +34,7 @@ class HomeAppliance < ActiveRecord::Base
       :price => self.price,
       :feature => self.feature,
       :modal_number => self.modal_number,
+           :store_name => self.store_name,
       :color => self.color,
       :quantity => self.quantity,
       :size => self.size,

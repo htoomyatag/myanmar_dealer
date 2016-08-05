@@ -40,6 +40,7 @@ class FashionBag < ActiveRecord::Base
             :seller_name => @seller_name,
       :title => self.title,
       :color => self.color,
+           :store_name => self.store_name,
       :made_by_country => self.made_by_country,
       :description => self.description,
       :brand => self.brand,

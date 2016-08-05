@@ -36,6 +36,7 @@ class MotorcycleAccessory < ActiveRecord::Base
       :modal_number => self.modal_number,
       :color => self.color,
       :quantity => self.quantity,
+           :store_name => self.store_name,
       :delivery_category => self.delivery_category,
       :size => self.size,
       :weight => self.weight,

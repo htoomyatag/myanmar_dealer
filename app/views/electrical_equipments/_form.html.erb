@@ -20,7 +20,7 @@
                 </div>
               <% end %>
 
-
+      <%= f.text_field :store_name, :value => @store_name, :style => "display:none;" %>
               <div class="form-group" >
               <%= f.label :delivery_category %>
               <%= f.select(:delivery_category, ElectricalEquipment::DELIVERY) %>

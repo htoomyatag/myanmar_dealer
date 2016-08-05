@@ -40,6 +40,7 @@ class TelephoneAccessory < ActiveRecord::Base
       :delivery_category => self.delivery_category,
       :size => self.size,
       :weight => self.weight,
+           :store_name => self.store_name,
       :category => "phone_related",
       :avatar1_file_name => self.avatar1.url,
       :avatar2_file_name => self.avatar2.url,

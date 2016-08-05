@@ -33,6 +33,7 @@ class Instrument < ActiveRecord::Base
       :dimension => self.dimension,
       :brand => self.brand,
       :price => self.price,
+           :store_name => self.store_name,
       :modal_number => self.modal_number,
       :color => self.color,
       :quantity => self.quantity,

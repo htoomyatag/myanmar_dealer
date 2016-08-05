@@ -36,6 +36,7 @@ class Medicine < ActiveRecord::Base
       :description => self.description,
       :certification => self.certification,
       :price => self.price,
+           :store_name => self.store_name,
       :category => "medicines",
       :avatar1_file_name => self.avatar1.url,
       :avatar2_file_name => self.avatar2.url,

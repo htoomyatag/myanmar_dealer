@@ -292,7 +292,7 @@
       
 
         <div id="zoom_images" >
-          <img id="zoom_01" src="<%= @product.avatar1_edit %>" data-zoom-image="<%= @product.avatar1_edit %>"  />
+          <img id="zoom_01" src="<%= @product.avatar1_edit %>" data-zoom-image="<%= @product.avatar1_edit %>" style="width:274px;height:300px;border:1px solid gray;" />
         </div>
         <div id="zoom_images">
           <img id="zoom_02" src="<%= @product.avatar2_edit %>" data-zoom-image="<%= @product.avatar2_edit %>" style="width:274px;height:300px;display:none;border:1px solid gray;" />
@@ -539,22 +539,26 @@
 				<div class="panel panel-default">
 				  <div class="panel-body">
 
-              <img src="/assets/logo_mimiberry.jpg" >
-              <span style="font-weight:bold;color:#d9534f;text-align:center;"> 
-                  <%= @product.store_name rescue "-" %>
-                
-              </span>
               
-
+              <p style="font-weight:bold;color:#d9534f;text-align:center;width:100%;">
+                     <img src="/assets/logo_mimiberry.jpg" style="float:left;"> 
+                    
+                    <span style="font-size:22px;position:relative;top:9px;"><%= @product.store_name rescue "-" %></span>
+                    
                     <%  if user_signed_in?  %>
                             <img src="/assets/chat.png" style="float:right;" id="chat_user">
                    <%  else  %>
                           
                     <%  end  %>
 
+                
+              </p><br/>
+              
+
+                 
 
 				    	 
-				    	<h6 class="shoptitle">
+				    	<h6 class="shoptitle" >
                 <img src="/assets/shop-icon-23328.png"> 
 
                 <%= @product.store_name rescue "-" %>
@@ -1237,10 +1241,7 @@ $('#av1').click(function(){
   document.getElementById("zoom_02").style.display = "none";
   document.getElementById("zoom_03").style.display = "none";
   document.getElementById("zoom_04").style.display = "none";
-   $('#zoom_01').add();
-   $('#zoom_02').remove();
-   $('#zoom_03').remove();
-   $('#zoom_04').remove();
+
 
 });
 
@@ -1256,10 +1257,6 @@ $('#av2').click(function(){
   document.getElementById("zoom_03").style.display = "none";
   document.getElementById("zoom_04").style.display = "none";
 
-   $('#zoom_02').add();
-   $('#zoom_01').remove();
-   $('#zoom_03').remove();
-   $('#zoom_04').remove();
 
 });
 

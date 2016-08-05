@@ -37,6 +37,7 @@ class Sport < ActiveRecord::Base
             :made_with => self.made_with,
             :description => self.description,
             :color => self.color,
+                 :store_name => self.store_name,
             :brand => self.brand,
             :category => "sports",
             :delivery_category => self.delivery_category,
@@ -49,7 +50,7 @@ class Sport < ActiveRecord::Base
       :avatar2_edit => self.avatar2_edit,
       :avatar3_edit => self.avatar3_edit,
       :avatar4_edit => self.avatar4_edit,
-            :store_name => self.user_id
+            :seller_id => self.user_id
         )
   end
   

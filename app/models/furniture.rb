@@ -19,6 +19,7 @@ class Furniture < ActiveRecord::Base
       :dimension => self.dimension,
       :price => self.price,
       :made_with => self.made_by,
+           :store_name => self.store_name,
       :brand => self.brand,
       :avatar1_edit => self.avatar_1,
       :avatar2_edit => self.avatar_2,

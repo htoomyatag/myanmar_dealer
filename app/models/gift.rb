@@ -32,6 +32,7 @@ class Gift < ActiveRecord::Base
       :title => self.title,
       :weight => self.weight,
       :quantity => self.quantity,
+           :store_name => self.store_name,
       :color => self.color,
       :price => self.price,
       :made_by_country => self.made_by_country,

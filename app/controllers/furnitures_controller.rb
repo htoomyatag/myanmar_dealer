@@ -1,5 +1,6 @@
 class FurnituresController < ApplicationController
   before_action :set_furniture, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!, only: [:new]
 
   # GET /furnitures
   # GET /furnitures.json
@@ -15,6 +16,7 @@ class FurnituresController < ApplicationController
   # GET /furnitures/new
   def new
     @furniture = Furniture.new
+       @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /furnitures/1/edit

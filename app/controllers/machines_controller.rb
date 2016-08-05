@@ -1,6 +1,7 @@
 class MachinesController < ApplicationController
   before_action :set_machine, only: [:show, :edit, :update, :destroy]
    layout :layout_per_action
+     before_action :authenticate_user!, only: [:new]
   # GET /machines
   # GET /machines.json
   def index
@@ -19,6 +20,7 @@ class MachinesController < ApplicationController
   # GET /machines/new
   def new
     @machine = Machine.new
+       @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /machines/1/edit
@@ -77,7 +79,7 @@ class MachinesController < ApplicationController
     end
 
     def layout_per_action
-      if action_name == "index" or action_name ==  "product_machines" 
+      if action_name == "index" or "product_machines" 
            "application"
       else
         "backend"

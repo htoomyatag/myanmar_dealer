@@ -1,8 +1,15 @@
 class HotItemsController < ApplicationController
   before_action :set_hot_item, only: [:show, :edit, :update, :destroy]
-
+  before_filter :is_admin?, :only => [:new, :index]
   # GET /hot_items
   # GET /hot_items.json
+
+  def is_admin?
+    redirect_to "/unauthorized", error: 'You dont have enough permissions to be here' unless current_user.user_type_id == 3
+    true
+  end
+
+
   def index
     @hot_items = HotItem.all
   end
