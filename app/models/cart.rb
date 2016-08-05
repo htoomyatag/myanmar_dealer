@@ -7,7 +7,11 @@ class Cart < ActiveRecord::Base
 		if current_item
 			current_item.quantity += 1
 		else
-			current_item = LineItem.new(:product_id=> product_id, :user_id => user_id)
+			@raw_product_name = Product.where(:id=> product_id).pluck(:title)
+		    @clear_product_name = @raw_product_name.to_s.gsub('["', '')
+		    @clean_product_name = @clear_product_name.to_s.gsub('"]', '')
+
+			current_item = LineItem.new(:product_id=> product_id, :user_id => user_id, :product_name => @clean_product_name)
 			line_items << current_item
 		end
 		current_item

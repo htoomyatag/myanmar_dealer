@@ -183,9 +183,10 @@ class ApisController < ApplicationController
   def my_product_order_list
 
     @orders = SellerOrder.where("buyer_id = ?", params[:user_id])
+    @line_items = LineItem.where("user_id = ?", params[:user_id])
 
      respond_to do |format|
-          my_primary_json = { :Orders => @orders}
+          my_primary_json = { :Orders => @orders, :LineItems => @line_items }
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
           a = '"['
           b = ']"'
@@ -200,9 +201,10 @@ class ApisController < ApplicationController
 
   def order_confirm_list
     @orders = SellerOrder.where(:order_status => "order_confirm").where("buyer_id = ?", params[:user_id])
+    @line_items = LineItem.where("user_id = ?", params[:user_id])
 
      respond_to do |format|
-          my_primary_json = { :Orders => @orders}
+          my_primary_json = { :Orders => @orders, :LineItems => @line_items}
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
           a = '"['
           b = ']"'
@@ -215,9 +217,10 @@ class ApisController < ApplicationController
 
   def order_processing_list
     @orders = SellerOrder.where(:order_status => "order_processing").where("buyer_id = ?", params[:user_id])
+    @line_items = LineItem.where("user_id = ?", params[:user_id])
 
      respond_to do |format|
-          my_primary_json = { :Orders => @orders}
+          my_primary_json = { :Orders => @orders, :LineItems => @line_items}
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
           a = '"['
           b = ']"'
@@ -231,9 +234,10 @@ class ApisController < ApplicationController
 
   def order_delivery_list
     @orders = SellerOrder.where(:order_status => "order_delivery").where("buyer_id = ?", params[:user_id])
+        @line_items = LineItem.where("user_id = ?", params[:user_id])
 
      respond_to do |format|
-          my_primary_json = { :Orders => @orders}
+          my_primary_json = { :Orders => @orders, :LineItems => @line_items}
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
           a = '"['
           b = ']"'
@@ -248,9 +252,10 @@ class ApisController < ApplicationController
   def order_completed_list
     
     @orders = SellerOrder.where(:order_status => "order_completed").where("buyer_id = ?", params[:user_id])
+        @line_items = LineItem.where("user_id = ?", params[:user_id])
 
      respond_to do |format|
-          my_primary_json = { :Orders => @orders}
+          my_primary_json = { :Orders => @orders, :LineItems => @line_items}
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
           a = '"['
           b = ']"'
@@ -264,9 +269,10 @@ class ApisController < ApplicationController
   def order_rejected_list
 
     @orders = SellerOrder.where(:order_status => "order_rejected").where("buyer_id = ?", params[:user_id])
+        @line_items = LineItem.where("user_id = ?", params[:user_id])
 
      respond_to do |format|
-          my_primary_json = { :Orders => @orders}
+          my_primary_json = { :Orders => @orders, :LineItems => @line_items}
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
           a = '"['
           b = ']"'
