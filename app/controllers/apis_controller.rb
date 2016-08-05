@@ -333,6 +333,17 @@ class ApisController < ApplicationController
 
     @cart_id = Cart.maximum(:id)+1
 
+
+    @line_items = LineItem.create(
+
+          :product_id => params[:product_id],
+          :cart_id => params[:cart_id],
+          :user_id => params[:user_id],
+          :quantity => params[:quantity],
+          :product_name => params[:product_name]
+
+        )
+
     @order = Order.create(
 
       :user_id => params[:user_id], 
@@ -342,7 +353,7 @@ class ApisController < ApplicationController
       :customer_city  => params[:customer_city],
       :customer_township  => params[:customer_township],
       :customer_address  => params[:customer_address],
-      :cart_id  => @cart_id,
+      :cart_id  => @cart_id
       )
   end
 

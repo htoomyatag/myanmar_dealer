@@ -78,7 +78,7 @@ end
   get 'order_rejected_list' => 'apis#order_rejected_list', :as => :order_rejected_list
   get 'order_processing_list' => 'apis#order_processing_list', :as => :order_processing_list
 
-  get 'to_send_shipment' => 'apis#to_send_shipment', :as => :to_send_shipment
+  post 'to_send_shipment' => 'apis#to_send_shipment', :as => :to_send_shipment
   get 'store_desc' => 'apis#store_desc', :as => :store_desc
   get 'last_three_json' => 'apis#last_three_json', :as => :last_three_json
 
