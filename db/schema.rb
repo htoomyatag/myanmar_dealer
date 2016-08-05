@@ -1002,6 +1002,9 @@ ActiveRecord::Schema.define(version: 20160805025435) do
     t.string   "avatar2_edit"
     t.string   "avatar3_edit"
     t.string   "avatar4_edit"
+    t.string   "author"
+    t.string   "number_of_paper"
+    t.string   "publisher"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "avatar1_file_name"

@@ -44,6 +44,9 @@ class CreateProducts < ActiveRecord::Migration
     t.string :avatar2_edit
     t.string :avatar3_edit
     t.string :avatar4_edit
+    t.string :author 
+    t.string :number_of_paper
+    t.string :publisher
 
 
       t.timestamps null: false
