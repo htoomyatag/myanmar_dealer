@@ -4,6 +4,7 @@ class TrainingAndSchool < ActiveRecord::Base
 	
 	 def add_to_product
       Product.create( :mmdealer_code => "trainingandschool"+(Product.maximum(:id).next.to_i).to_s,:user_id => self.user_id,
+            :seller_name => @seller_name,
       :store_name => self.store_name,
       :title => self.title,
       :description => self.description,

@@ -21,7 +21,13 @@ class FashionAccessory < ActiveRecord::Base
 
  def add_to_product
 
-      Product.create( :mmdealer_code => "fashion_related"+(Product.maximum(:id).next.to_i).to_s,:user_id => self.user_id,
+
+     raw_seller_name = User.where(:id => self.user_id).pluck(:name)
+     @config_seller = raw_seller_name.to_s.gsub('["', '')
+     @seller_name = @config_seller.to_s.gsub('"]', '')
+     
+      Product.create( :mmdealer_code => "fashion_related"+(Product.maximum(:id).next.to_i).to_s,            :user_id => self.user_id,
+            :seller_name => @seller_name,
       :title => self.title,
       :description => self.description,
       :brand => self.brand,

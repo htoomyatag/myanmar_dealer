@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
  
  
+  resources :books
+  resources :furnitures
   resources :seller_orders
   resources :hot_items
   resources :admins

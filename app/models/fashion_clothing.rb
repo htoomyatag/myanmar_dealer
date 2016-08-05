@@ -22,8 +22,12 @@ class FashionClothing < ActiveRecord::Base
 
  def add_to_product
 
+     raw_seller_name = User.where(:id => self.user_id).pluck(:name)
+     @config_seller = raw_seller_name.to_s.gsub('["', '')
+     @seller_name = @config_seller.to_s.gsub('"]', '')
 
-      Product.create( :mmdealer_code => "cloths"+(Product.maximum(:id).next.to_i).to_s,:user_id => self.user_id,
+      Product.create( :mmdealer_code => "cloths"+(Product.maximum(:id).next.to_i).to_s,            :user_id => self.user_id,
+            :seller_name => @seller_name,
       :title => self.title,
       :store_name => self.store_name,
       :made_by_country => self.made_by_country,

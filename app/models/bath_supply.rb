@@ -36,9 +36,8 @@ class BathSupply < ActiveRecord::Base
      price = self.price
      user_id = self.user_id
      raw_seller_name = User.where(:id => self.user_id).pluck(:name)
-
-      @config_seller = raw_seller_name.to_s.gsub('[', '')
-      @seller_name = @config_seller.to_s.gsub(']', '')
+     @config_seller = raw_seller_name.to_s.gsub('["', '')
+     @seller_name = @config_seller.to_s.gsub('"]', '')
 
 
      Product.create(:mmdealer_code =>  "bath_supplies"+(Product.maximum(:id).next.to_i).to_s,

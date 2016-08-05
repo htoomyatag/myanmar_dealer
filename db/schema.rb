@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805023943) do
+ActiveRecord::Schema.define(version: 20160805025435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,6 +117,23 @@ ActiveRecord::Schema.define(version: 20160805023943) do
     t.string   "avatar5_content_type"
     t.integer  "avatar5_file_size"
     t.datetime "avatar5_updated_at"
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string   "title"
+    t.string   "author"
+    t.string   "number_of_paper"
+    t.string   "price"
+    t.string   "publisher"
+    t.string   "book_description"
+    t.string   "avatar_1"
+    t.string   "avatar_2"
+    t.string   "avatar_3"
+    t.string   "avatar_4"
+    t.string   "user_id"
+    t.string   "store_name"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "buyer_reports", force: :cascade do |t|
@@ -564,6 +581,23 @@ ActiveRecord::Schema.define(version: 20160805023943) do
   end
 
   create_table "fronts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "furnitures", force: :cascade do |t|
+    t.string   "title"
+    t.string   "weight"
+    t.string   "dimension"
+    t.string   "price"
+    t.string   "made_by"
+    t.string   "brand"
+    t.string   "avatar_1"
+    t.string   "avatar_2"
+    t.string   "avatar_3"
+    t.string   "avatar_4"
+    t.string   "user_id"
+    t.string   "store_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

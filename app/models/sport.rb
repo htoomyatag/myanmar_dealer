@@ -20,7 +20,15 @@ class Sport < ActiveRecord::Base
       DELIVERY = ["self_delivery", "transporter_logistics"]
 
  def add_to_product
+
+
+       raw_seller_name = User.where(:id => self.user_id).pluck(:name)
+     @config_seller = raw_seller_name.to_s.gsub('["', '')
+     @seller_name = @config_seller.to_s.gsub('"]', '')
+
+     
       Product.create( :mmdealer_code => "sports"+(Product.maximum(:id).next.to_i).to_s,:user_id => self.user_id,
+            :seller_name => @seller_name,
             :title => self.title,
             :price => self.price,
             :quantity => self.quantity,
