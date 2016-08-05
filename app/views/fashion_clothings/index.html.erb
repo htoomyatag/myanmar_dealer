@@ -1,47 +1,13 @@
-<div class="container">
-<p id="notice"><%= notice %></p>
+  
+  <h3 style="text-align:center;">
+  unauthorized access
+  </h3>
 
-<h1>Listing Fashion Clothings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>Title</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Size</th>
-      <th>Made by country</th>
-      <th>Made with</th>
-      <th>Description</th>
-      <th>Gender</th>
-      <th>Brand</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<style type="text/css">
+  
+#footer-area{
+  display: none;
+}
 
-  <tbody>
-    <% @fashion_clothings.each do |fashion_clothing| %>
-      <tr>
-        <td><img src="<%= fashion_clothing.avatar2_edit %>"></td>
-        <td><%= fashion_clothing.title %></td>
-        <td><%= fashion_clothing.price %></td>
-        <td><%= fashion_clothing.quantity %></td>
-        <td><%= fashion_clothing.size %></td>
-        <td><%= fashion_clothing.made_by_country %></td>
-        <td><%= fashion_clothing.made_with %></td>
-        <td><%= fashion_clothing.description %></td>
-        <td><%= fashion_clothing.gender %></td>
-        <td><%= fashion_clothing.brand %></td>
-        <td><%= link_to 'Show', fashion_clothing %></td>
-        <td><%= link_to 'Edit', edit_fashion_clothing_path(fashion_clothing) %></td>
-        <td><%= link_to 'Destroy', fashion_clothing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Fashion clothing', new_fashion_clothing_path %>
-</div>
+</style>

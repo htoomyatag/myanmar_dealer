@@ -1,43 +1,13 @@
-<div class="container">
-<p id="notice"><%= notice %></p>
+  
+  <h3 style="text-align:center;">
+  unauthorized access
+  </h3>
 
-<h1>Listing Fashion Hats</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Made by country</th>
-      <th>Made with</th>
-      <th>Description</th>
-      <th>Brand</th>
-      <th>Hat type</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<style type="text/css">
+  
+#footer-area{
+  display: none;
+}
 
-  <tbody>
-    <% @fashion_hats.each do |fashion_hat| %>
-      <tr>
-        <td><%= fashion_hat.title %></td>
-        <td><%= fashion_hat.price %></td>
-        <td><%= fashion_hat.quantity %></td>
-        <td><%= fashion_hat.made_by_country %></td>
-        <td><%= fashion_hat.made_with %></td>
-        <td><%= fashion_hat.description %></td>
-        <td><%= fashion_hat.brand %></td>
-        <td><%= fashion_hat.hat_type %></td>
-        <td><%= link_to 'Show', fashion_hat %></td>
-        <td><%= link_to 'Edit', edit_fashion_hat_path(fashion_hat) %></td>
-        <td><%= link_to 'Destroy', fashion_hat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Fashion hat', new_fashion_hat_path %>
-</div>
+</style>

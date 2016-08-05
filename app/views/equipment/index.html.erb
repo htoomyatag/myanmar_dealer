@@ -1,51 +1,13 @@
-<div class="container">
-<p id="notice"><%= notice %></p>
+  
+  <h3 style="text-align:center;">
+  unauthorized access
+  </h3>
 
-<h1>Listing Equipment</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Size</th>
-      <th>Weight</th>
-      <th>Made by country</th>
-      <th>Made with</th>
-      <th>Description</th>
-      <th>Brand</th>
-      <th>Specification</th>
-      <th>Modal number</th>
-      <th>Color</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<style type="text/css">
+  
+#footer-area{
+  display: none;
+}
 
-  <tbody>
-    <% @equipment.each do |equipment| %>
-      <tr>
-        <td><%= equipment.title %></td>
-        <td><%= equipment.price %></td>
-        <td><%= equipment.quantity %></td>
-        <td><%= equipment.size %></td>
-        <td><%= equipment.weight %></td>
-        <td><%= equipment.made_by_country %></td>
-        <td><%= equipment.made_with %></td>
-        <td><%= equipment.description %></td>
-        <td><%= equipment.brand %></td>
-        <td><%= equipment.specification %></td>
-        <td><%= equipment.modal_number %></td>
-        <td><%= equipment.color %></td>
-        <td><%= link_to 'Show', equipment %></td>
-        <td><%= link_to 'Edit', edit_equipment_path(equipment) %></td>
-        <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Equipment', new_equipment_path %>
-</div>
+</style>

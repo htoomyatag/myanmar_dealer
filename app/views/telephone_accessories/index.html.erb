@@ -1,53 +1,13 @@
-<div class="container">
-<p id="notice"><%= notice %></p>
+  
+  <h3 style="text-align:center;">
+  unauthorized access
+  </h3>
 
-<h1>Listing Telephone Accessories</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Size</th>
-      <th>Weight</th>
-      <th>Made by country</th>
-      <th>Description</th>
-      <th>Brand</th>
-      <th>Category</th>
-      <th>Modal number</th>
-      <th>Color</th>
-      <th>Feature</th>
-      <th>Operation system</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<style type="text/css">
+  
+#footer-area{
+  display: none;
+}
 
-  <tbody>
-    <% @telephone_accessories.each do |telephone_accessory| %>
-      <tr>
-        <td><%= telephone_accessory.title %></td>
-        <td><%= telephone_accessory.price %></td>
-        <td><%= telephone_accessory.quantity %></td>
-        <td><%= telephone_accessory.size %></td>
-        <td><%= telephone_accessory.weight %></td>
-        <td><%= telephone_accessory.made_by_country %></td>
-        <td><%= telephone_accessory.description %></td>
-        <td><%= telephone_accessory.brand %></td>
-        <td><%= telephone_accessory.category %></td>
-        <td><%= telephone_accessory.modal_number %></td>
-        <td><%= telephone_accessory.color %></td>
-        <td><%= telephone_accessory.feature %></td>
-        <td><%= telephone_accessory.operation_system %></td>
-        <td><%= link_to 'Show', telephone_accessory %></td>
-        <td><%= link_to 'Edit', edit_telephone_accessory_path(telephone_accessory) %></td>
-        <td><%= link_to 'Destroy', telephone_accessory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Telephone accessory', new_telephone_accessory_path %>
-</div>
+</style>

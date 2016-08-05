@@ -1,55 +1,13 @@
-<div class="container">
-<p id="notice"><%= notice %></p>
+  
+  <h3 style="text-align:center;">
+  unauthorized access
+  </h3>
 
-<h1>Listing Home Appliances</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Size</th>
-      <th>Weight</th>
-      <th>Made by country</th>
-      <th>Description</th>
-      <th>Brand</th>
-      <th>Category</th>
-      <th>Modal number</th>
-      <th>Color</th>
-      <th>Feature</th>
-      <th>Power</th>
-      <th>Voltage</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<style type="text/css">
+  
+#footer-area{
+  display: none;
+}
 
-  <tbody>
-    <% @home_appliances.each do |home_appliance| %>
-      <tr>
-        <td><%= home_appliance.title %></td>
-        <td><%= home_appliance.price %></td>
-        <td><%= home_appliance.quantity %></td>
-        <td><%= home_appliance.size %></td>
-        <td><%= home_appliance.weight %></td>
-        <td><%= home_appliance.made_by_country %></td>
-        <td><%= home_appliance.description %></td>
-        <td><%= home_appliance.brand %></td>
-        <td><%= home_appliance.category %></td>
-        <td><%= home_appliance.modal_number %></td>
-        <td><%= home_appliance.color %></td>
-        <td><%= home_appliance.feature %></td>
-        <td><%= home_appliance.power %></td>
-        <td><%= home_appliance.voltage %></td>
-        <td><%= link_to 'Show', home_appliance %></td>
-        <td><%= link_to 'Edit', edit_home_appliance_path(home_appliance) %></td>
-        <td><%= link_to 'Destroy', home_appliance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Home appliance', new_home_appliance_path %>
-</div>
+</style>

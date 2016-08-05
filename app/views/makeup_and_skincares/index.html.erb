@@ -1,47 +1,13 @@
-<div class="container">
-<p id="notice"><%= notice %></p>
+  
+  <h3 style="text-align:center;">
+  unauthorized access
+  </h3>
 
-<h1>Listing Makeup And Skincares</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Category</th>
-      <th>Certification</th>
-      <th>Ingredient</th>
-      <th>Usage</th>
-      <th>Made by country</th>
-      <th>Description</th>
-      <th>Brand</th>
-      <th>Color</th>
-      <th>Effect</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<style type="text/css">
+  
+#footer-area{
+  display: none;
+}
 
-  <tbody>
-    <% @makeup_and_skincares.each do |makeup_and_skincare| %>
-      <tr>
-        <td><%= makeup_and_skincare.title %></td>
-        <td><%= makeup_and_skincare.category %></td>
-        <td><%= makeup_and_skincare.certification %></td>
-        <td><%= makeup_and_skincare.ingredient %></td>
-        <td><%= makeup_and_skincare.usage %></td>
-        <td><%= makeup_and_skincare.made_by_country %></td>
-        <td><%= makeup_and_skincare.description %></td>
-        <td><%= makeup_and_skincare.brand %></td>
-        <td><%= makeup_and_skincare.color %></td>
-        <td><%= makeup_and_skincare.effect %></td>
-        <td><%= link_to 'Show', makeup_and_skincare %></td>
-        <td><%= link_to 'Edit', edit_makeup_and_skincare_path(makeup_and_skincare) %></td>
-        <td><%= link_to 'Destroy', makeup_and_skincare, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Makeup and skincare', new_makeup_and_skincare_path %>
-</div>
+</style>

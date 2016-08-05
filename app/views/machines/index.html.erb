@@ -1,53 +1,13 @@
-<div class="container">
-<p id="notice"><%= notice %></p>
+  
+  <h3 style="text-align:center;">
+  unauthorized access
+  </h3>
 
-<h1>Listing Machines</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Dimension</th>
-      <th>Weight</th>
-      <th>Made by country</th>
-      <th>Made with</th>
-      <th>Description</th>
-      <th>Brand</th>
-      <th>Category</th>
-      <th>Modal number</th>
-      <th>Specification</th>
-      <th>Color</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<style type="text/css">
+  
+#footer-area{
+  display: none;
+}
 
-  <tbody>
-    <% @machines.each do |machine| %>
-      <tr>
-        <td><%= machine.title %></td>
-        <td><%= machine.price %></td>
-        <td><%= machine.quantity %></td>
-        <td><%= machine.dimension %></td>
-        <td><%= machine.weight %></td>
-        <td><%= machine.made_by_country %></td>
-        <td><%= machine.made_with %></td>
-        <td><%= machine.description %></td>
-        <td><%= machine.brand %></td>
-        <td><%= machine.category %></td>
-        <td><%= machine.modal_number %></td>
-        <td><%= machine.specification %></td>
-        <td><%= machine.color %></td>
-        <td><%= link_to 'Show', machine %></td>
-        <td><%= link_to 'Edit', edit_machine_path(machine) %></td>
-        <td><%= link_to 'Destroy', machine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Machine', new_machine_path %>
-</div>
+</style>
