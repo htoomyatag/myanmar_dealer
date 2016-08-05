@@ -2,7 +2,7 @@
   <div class="col-md-3">
       <div class="panel panel-default">
         <div class="panel-body">
-            <%= image_tag @product.avatar1.url(:medium), :id => "product_avatar" %>
+              <%= image_tag @product.avatar1_edit, :id => "product_avatar" %>
         </div>
       </div>
   </div>
@@ -29,8 +29,8 @@
               </p><hr/>
 
               <p>
-                <span style="color:grey;">Weight:</span>
-                <%= @product.weight %>
+                <span style="color:grey;">Quantity:</span>
+                <%= @product.quantity %>
               </p><hr/>
 
               
@@ -39,35 +39,28 @@
       </div>
   </div>
 
-  <div class="col-md-3">
+  <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-body">
-           <%= image_tag @product.avatar2.url(:medium), :id => "product_avatar" %>
+           <%= image_tag @product.avatar2_edit, :id => "product_avatar" %>
         </div>
       </div>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-body">
-           <%= image_tag @product.avatar3.url(:medium), :id => "product_avatar" %>
+           <%= image_tag @product.avatar3_edit, :id => "product_avatar" %>
         </div>
       </div>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-body">
-           <%= image_tag @product.avatar4.url(:medium), :id => "product_avatar" %>
+           <%= image_tag @product.avatar4_edit, :id => "product_avatar" %>
         </div>
       </div>
   </div>
-  <div class="col-md-3">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <%= image_tag @product.avatar5.url(:medium), :id => "product_avatar" %>
-        </div>
-      </div>
-  </div>
-  
+
 </div>
 
 

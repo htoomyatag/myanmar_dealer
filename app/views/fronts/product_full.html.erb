@@ -287,22 +287,25 @@
 		<div class="row product-info full">
 		<!-- Left Starts -->
 			<div class="col-sm-3 images-block">
-        
 
-        <div>
 
-          <img id="zoom_01" src="<%= @product.avatar1_edit %>" data-zoom-image="<%= @product.avatar1_edit %>" style="width:274px;height:300px;border:1px solid gray;" />
+      
 
+        <div id="zoom_images" >
+          <img id="zoom_01" src="<%= @product.avatar1_edit %>" data-zoom-image="<%= @product.avatar1_edit %>"  />
+        </div>
+        <div id="zoom_images">
           <img id="zoom_02" src="<%= @product.avatar2_edit %>" data-zoom-image="<%= @product.avatar2_edit %>" style="width:274px;height:300px;display:none;border:1px solid gray;" />
-
-          <img id="zoom_03" src="<%= @product.avatar3_edit %>" data-zoom-image="<%= @product.avatar3_edit %>" style="width:274px;height:300px;display:none;border:1px solid gray;"/>
-
+        </div>
+        <div id="zoom_images">
+          <img id="zoom_03" src="<%= @product.avatar3_edit %>" data-zoom-image="<%= @product.avatar3_edit %>"   style="width:274px;height:300px;display:none;border:1px solid gray;"/>
+        </div>
+        <div id="zoom_images">
           <img id="zoom_04" src="<%= @product.avatar4_edit %>" data-zoom-image="<%= @product.avatar4_edit %>" style="width:274px;height:300px;display:none;border:1px solid gray;"/>
-
-
-
         </div>
 
+
+        
 
         <div>
             
@@ -1192,11 +1195,10 @@ document.getElementById('delivery_fees').value = package_name;
 <script type="text/javascript">
   
 $("#zoom_01").elevateZoom(
-{
-   responsive: true,
+   {responsive: true,
    zoomType: "lens", 
-   containLensZoom: true
-}
+   containLensZoom: true}
+
 );
 
 
@@ -1205,6 +1207,7 @@ $("#zoom_02").elevateZoom(
    responsive: true,
    zoomType: "lens", 
    containLensZoom: true
+
 }
 );
 
@@ -1231,6 +1234,13 @@ $('#av1').click(function(){
   $('#zoom_02').hide();
   $('#zoom_03').hide();
   $('#zoom_04').hide();
+  document.getElementById("zoom_02").style.display = "none";
+  document.getElementById("zoom_03").style.display = "none";
+  document.getElementById("zoom_04").style.display = "none";
+   $('#zoom_01').add();
+   $('#zoom_02').remove();
+   $('#zoom_03').remove();
+   $('#zoom_04').remove();
 
 });
 
@@ -1242,6 +1252,15 @@ $('#av2').click(function(){
   $('#zoom_03').hide();
   $('#zoom_04').hide();
 
+  document.getElementById("zoom_01").style.display = "none";
+  document.getElementById("zoom_03").style.display = "none";
+  document.getElementById("zoom_04").style.display = "none";
+
+   $('#zoom_02').add();
+   $('#zoom_01').remove();
+   $('#zoom_03').remove();
+   $('#zoom_04').remove();
+
 });
 
 
@@ -1252,6 +1271,10 @@ $('#av3').click(function(){
   $('#zoom_03').show();
   $('#zoom_04').hide();
 
+  document.getElementById("zoom_01").style.display = "none";
+  document.getElementById("zoom_02").style.display = "none";
+  document.getElementById("zoom_04").style.display = "none";
+
 });
 
 
@@ -1261,6 +1284,10 @@ $('#av4').click(function(){
   $('#zoom_02').hide();
   $('#zoom_03').hide();
   $('#zoom_04').show();
+
+  document.getElementById("zoom_01").style.display = "none";
+  document.getElementById("zoom_02").style.display = "none";
+  document.getElementById("zoom_03").style.display = "none";
 
 });
 
@@ -1279,3 +1306,6 @@ $('#av4').click(function(){
 }
 
 </style>
+
+
+

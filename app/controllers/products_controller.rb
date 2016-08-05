@@ -113,7 +113,7 @@ class ProductsController < ApplicationController
     end
 
     def layout_per_action
-      if action_name == "index"
+      if action_name == "index" || action_name == "edit"
            "application"
       else
         "backend"

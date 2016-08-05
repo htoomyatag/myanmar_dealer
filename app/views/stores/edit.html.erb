@@ -1,96 +1,423 @@
-<%= form_for(@store) do |f| %>
-  <% if @store.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@store.errors.count, "error") %> prohibited this store from being saved:</h2>
+<%= render 'layouts/defaultnav' %>  
 
-      <ul>
-      <% @store.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  
+<div id="main-container" class="container">
+  <!-- Breadcrumb Starts -->
+    <ol class="breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li class="active">Open store</li>
+    </ol>
+  <!-- Breadcrumb Ends -->
+  <!-- Main Heading Starts -->
+    <h2 class="main-heading text-center">
+      Edit Store
+    </h2>
+  <!-- Main Heading Ends -->
+  <!-- Login Form Section Starts -->
+    <section class="login-area">
+      <div class="row">
+       <%= form_for(@store, html: { multipart: true , :onsubmit => "return validateForm()"}) do |f| %>
+          <% if @store.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@store.errors.count, "error") %> prohibited this store from being saved:</h2>
 
-
-<div class="col-md-12">
-
-
-  <div class="col-md-8">
-
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-
-           
-            About store
-            <hr/>
-               <%= f.text_area :description, :class=>"form-control", :rows => 5 %>
-               <br/>
-              <%= f.text_area :term, :class=>"form-control",  :cols=>"10", :rows=>"5" %>
-              <br/>
-               <%= f.file_field :avatar %>
-
+              <ul>
+              <% @store.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+    <% end %>
+        <div class="col-sm-6">
+        <!-- Account Panel Starts -->
+          <div class="panel panel-smart">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                  Store logo
                  
-                         <%= f.file_field :ads_one %>
-                         width 700px height 300px for best view
-                     
-                         <%= f.file_field :ads_two %>
-                          width 700px height 300px for best view
-                
-
-        
-
-          </div>
-        </div>
-
-
-  </div>
-  <div class="col-md-4">
-    
-            <ul class="list-group">
-                <li class="list-group-item">Store Name<br/> <br/> 
-                <span style="color:grey;">
-                	 <%= f.text_field :store_name, :class=>"form-control" %>
-                </span></li>
-               
-                <li class="list-group-item">Store Address<br/> <br/> 
-                 <span style="color:grey;">  
-                 <%= f.text_field :store_address, :class=>"form-control" %>
-                 </span></li>
-          
-                <li class="list-group-item">Store Contact<br/><br/>
-                 <span style="color:grey;">
-                   <%= f.text_field :store_contact, :class=>"form-control" %>
-                 </span></li>
-
-               
-                <li class="list-group-item">Seller Name<br/><br/>
-                 <span style="color:grey;"> <%= f.text_field :seller_name, :class=>"form-control" %>
-                 </span></li>
-
-                 <li class="list-group-item">
-                   Update information by enter  <%= f.submit %>
-                 </li>
-                 
-
-               
-            </ul>
-        
-  </div>
-
-
-
-
-
-
-
-
-
-</div>
-
-
-<% end %>
-
+              </h3>
+            </div>
+            <div class="panel-body">
+              <p>
+                 <%= f.file_field :avatar %>
+              </p>
 
  
+            </div>
+          </div>
 
+           <div class="panel panel-smart">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                About your store
+              </h3>
+            </div>
+            <div class="panel-body">
+                  <%= f.text_area :description, :class=>"form-control",  :cols=>"10", :rows=>"2" %>
+            </div>
+
+             <div class="panel-heading">
+              <h3 class="panel-title">
+                Terms and conditions
+              </h3>
+            </div>
+            <div class="panel-body">
+                  <%= f.text_area :term, :class=>"form-control",  :cols=>"10", :rows=>"2" %>
+            </div>
+
+          </div>
+        <!-- Account Panel Ends -->
+        </div>
+        <div class="col-sm-6">
+        <!-- Login Panel Starts -->
+          <div class="panel panel-smart">
+            <div class="panel-heading">
+              <h3 class="panel-title">Store information</h3>
+            </div>
+            <div class="panel-body">
+              <p>
+                Edit your store informations
+              </p>
+
+          <div class="form-group">
+            <%= f.label :store_name %>
+            <span style="color:red;font-weight:bold;display:none;" id="store_namelb"> 
+                &nbsp;&nbsp;*** store name must be filled ***
+            </span>
+            <br>
+            <%= f.text_field :store_name, :class=>"form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :store_address %>
+            <span style="color:red;font-weight:bold;display:none;" id="store_addresslb"> &nbsp;&nbsp;*** store address must be filled ***</span>
+            <br>
+            <%= f.text_field :store_address, :class=>"form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :store_contact %>
+            <span style="color:red;font-weight:bold;display:none;" id="store_contactlb"> &nbsp;&nbsp;*** store contact must be filled ***</span>
+            <br>
+            <%= f.text_field :store_contact, :class=>"form-control" %>
+          </div>
+          <div class="form-group" style="display:none;">
+            <%= f.label :user_id %><br>
+            <%= f.number_field :user_id,  :value => current_user.id ,:class=>"form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :seller_name %>
+              <span style="color:red;font-weight:bold;display:none;" id="seller_namelb"> &nbsp;&nbsp;*** seller name must be filled ***</span>
+            <br>
+            <%= f.text_field :seller_name,:class=>"form-control" %>
+          </div>
+          <div class="actions">
+            <%= f.submit :id => "create_store" %>
+          </div>
+  
+            </div>
+          </div>
+        <!-- Login Panel Ends -->
+        </div>
+
+         <div class="col-sm-12">
+            <div class="panel panel-smart">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Store ads</h3>
+                </div>
+                <div class="panel-body">
+
+                     <div class="col-sm-3">
+                        <div class="image-editor1">
+
+                          <input type="file" id="desc_img1"  class="cropit-image-input">
+                          <div class="cropit-preview"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                             <%= f.text_field :description_image1, :class=>"form-control", :style => "display:none;" %>
+
+                            <input type="range" class="cropit-image-zoom-input" >
+
+                          <div>
+                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
+                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
+                              <span style="float:right;"><a class="exportav1"  id="confirm">Confirm</a></span>
+                          </div>
+                  
+              
+                        </div>
+                     </div>
+
+
+                       <div class="col-sm-3">
+                        <div class="image-editor2">
+
+                          <input type="file" id="desc_img2"  class="cropit-image-input">
+                          <div class="cropit-preview"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                             <%= f.text_field :description_image2, :class=>"form-control", :style => "display:none;" %>
+
+                            <input type="range" class="cropit-image-zoom-input" >
+
+                          <div>
+                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
+                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
+                              <span style="float:right;"><a class="exportav2"  id="confirm">Confirm</a></span>
+                          </div>
+                  
+              
+                        </div>
+                     </div>
+
+
+
+
+                      <div class="col-sm-3">
+                        <div class="image-editor3">
+
+                          <input type="file" id="desc_img3"  class="cropit-image-input">
+                          <div class="cropit-preview"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                             <%= f.text_field :description_image3, :class=>"form-control", :style => "display:none;" %>
+
+                            <input type="range" class="cropit-image-zoom-input" >
+
+                          <div>
+                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
+                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
+                              <span style="float:right;"><a class="exportav3"  id="confirm">Confirm</a></span>
+                          </div>
+                  
+              
+                        </div>
+                     </div>
+
+
+
+                      <div class="col-sm-3">
+                        <div class="image-editor4">
+
+                          <input type="file" id="desc_img4"  class="cropit-image-input">
+                          <div class="cropit-preview"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                             <%= f.text_field :description_image4, :class=>"form-control", :style => "display:none;" %>
+
+                            <input type="range" class="cropit-image-zoom-input" >
+
+                          <div>
+                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
+                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
+                              <span style="float:right;"><a class="exportav4" id="confirm">Confirm</a></span>
+                          </div>
+                  
+              
+                        </div> <br/><br/> <br/><br/>
+                     </div>
+
+                  
+
+
+                      <p>   
+                         <%= f.file_field :ads_one %>
+                         width 700px height 300px for best view
+                      </p>
+
+                      <p>
+                         <%= f.file_field :ads_two %>
+                          width 700px height 300px for best view
+                      </p>
+                </div>
+            </div>
+
+
+         </div>
+    <% end %>
+   </div>
+  </section>
+  <!-- Login Form Section Ends -->
+  </div>
+
+
+
+  <script type="text/javascript">
+
+function validateForm() {
+
+
+    var x = document.forms["new_store"]["store[store_name]"].value;
+    if (x == null || x == "") {
+        $("#store_namelb").show();
+        return false;
+    }
+
+
+    var x = document.forms["new_store"]["store[store_address]"].value;
+    if (x == null || x == "") {
+        $("#store_addresslb").show();
+        return false;
+    }
+
+
+    var x = document.forms["new_store"]["store[store_contact]"].value;
+    if (x == null || x == "") {
+        $("#store_contactlb").show();
+        return false;
+    }
+
+
+    var x = document.forms["new_store"]["store[seller_name]"].value;
+    if (x == null || x == "") {
+        $("#seller_namelb").show();
+        return false;
+    }
+
+
+
+}
+
+</script>
+
+
+
+
+    <script>
+      $(function() {
+        $('.image-editor1').cropit({
+
+     minZoom: 'fit',
+    imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
+
+        $('.image-editor2').cropit({
+
+     minZoom: 'fit',
+    imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
+
+
+        $('.image-editor3').cropit({
+
+     minZoom: 'fit',
+    imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
+
+        $('.image-editor4').cropit({
+
+     minZoom: 'fit',
+    imageState: {
+            src: 'http://localhost:3000/',
+          },
+        });
+
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor1').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor1').cropit('rotateCCW');
+        });
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor2').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor2').cropit('rotateCCW');
+        });
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor3').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor3').cropit('rotateCCW');
+        });
+
+
+
+        $('.rotate-cw').click(function() {
+          $('.image-editor4').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          $('.image-editor4').cropit('rotateCCW');
+        });
+
+
+
+
+
+
+
+
+
+        $('.exportav1').click(function() {
+          var imageData1 = $('.image-editor1').cropit('export');
+       
+          document.getElementById("store_description_image1").value = imageData1;
+          // window.open(imageData);
+
+        });
+
+
+
+
+          $('.exportav2').click(function() {
+          var imageData2 = $('.image-editor2').cropit('export');
+       
+          document.getElementById("store_description_image2").value = imageData2;
+          // window.open(imageData);
+
+        });
+
+
+           $('.exportav3').click(function() {
+          var imageData3 = $('.image-editor3').cropit('export');
+       
+          document.getElementById("store_description_image3").value = imageData3;
+          // window.open(imageData);
+
+        });
+
+
+              $('.exportav4').click(function() {
+          var imageData4 = $('.image-editor4').cropit('export');
+       
+          document.getElementById("store_description_image4").value = imageData4;
+          // window.open(imageData);
+
+        });
+
+
+
+
+      });
+    </script>
+
+
+
+
+<style type="text/css">
+  
+  #confirm {
+    cursor: pointer;
+  }
+</style>

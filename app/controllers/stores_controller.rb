@@ -98,7 +98,7 @@ class StoresController < ApplicationController
     def layout_per_action
       if action_name == "index"
            "application"
-      elsif action_name == "new"
+      elsif action_name == "new" || action_name == "edit"
            "application"
       else
         "backend"
