@@ -101,16 +101,17 @@
                <div class="col-md-6">
                       <div class="image-editor1">
 
-                          <%= f.file_field :avatar1, :class=>"cropit-image-input" %>
+                          <input type="file"  class="cropit-image-input">
+
                           <div class="cropit-preview"></div>
                           <div class="image-size-label">
                             Resize image
                           </div>
 
-                           <%= f.text_field :avatar1_edit, :class=>"form-control" %>
+                           <%= f.text_field :avatar1_edit, :class=>"form-control", :style => "display:none;" %>
 
 
-                            <input type="range" class="cropit-image-zoom-input" >
+                            <input type="range" class="cropit-image-zoom-input"  >
 
                           <div>
                               <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
@@ -125,13 +126,14 @@
                <div class="col-md-6">
                       <div class="image-editor2">
 
-                          <%= f.file_field :avatar2, :class=>"cropit-image-input" %>
+                                  <input type="file"  class="cropit-image-input">
+
                           <div class="cropit-preview"></div>
                           <div class="image-size-label">
                             Resize image
                           </div>
 
-                           <%= f.text_field :avatar2_edit, :class=>"form-control"  %>
+                           <%= f.text_field :avatar2_edit, :class=>"form-control", :style => "display:none;"  %>
 
 
                             <input type="range" class="cropit-image-zoom-input" >
@@ -151,13 +153,14 @@
                   <div class="col-md-6">
                       <div class="image-editor3">
 
-                          <%= f.file_field :avatar3, :class=>"cropit-image-input" %>
+                            <input type="file"  class="cropit-image-input">
+
                           <div class="cropit-preview"></div>
                           <div class="image-size-label">
                             Resize image
                           </div>
 
-                           <%= f.text_field :avatar3_edit, :class=>"form-control"  %>
+                           <%= f.text_field :avatar3_edit, :class=>"form-control", :style => "display:none;"  %>
 
 
                             <input type="range" class="cropit-image-zoom-input" >
@@ -178,13 +181,14 @@
     <div class="col-md-6">
                       <div class="image-editor4">
 
-                          <%= f.file_field :avatar4, :class=>"cropit-image-input" %>
+                            <input type="file"  class="cropit-image-input">
+
                           <div class="cropit-preview"></div>
                           <div class="image-size-label">
                             Resize image
                           </div>
 
-                           <%= f.text_field :avatar4_edit, :class=>"form-control"  %>
+                           <%= f.text_field :avatar4_edit, :class=>"form-control", :style => "display:none;"  %>
 
 
                             <input type="range" class="cropit-image-zoom-input" >
@@ -325,6 +329,8 @@
 
               var imageData1 = $('.image-editor1').cropit('export');
               document.getElementById("fashion_clothing_avatar1_edit").value = imageData1;
+  
+
           // window.open(imageData);
 
         });
@@ -334,7 +340,6 @@
 
           $('.exportav2').click(function() {
           var imageData2 = $('.image-editor2').cropit('export');
-       
           document.getElementById("fashion_clothing_avatar2_edit").value = imageData2;
           // window.open(imageData);
 
