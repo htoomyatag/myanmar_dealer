@@ -55,7 +55,7 @@
           encrypted: true
         });
 
-        var my_channel = "<%= user.name.to_s + current_user.name.to_s %>";
+        var my_channel = "<%= user.name.to_s.split.join + current_user.name.to_s.split.join %>";
 
       
         var channel = pusher.subscribe(my_channel);
@@ -76,7 +76,7 @@
             $('#my_send_btn').click(function () {
                 
               var message = document.getElementById("my_msg_btn").value;
-              var mychannel = "<%= current_user.name.to_s + user.name.to_s %>";
+              var mychannel = "<%= current_user.name.to_s.split.join + user.name.to_s.split.join %>";
               var sender_id = "<%= current_user.id %>";
               var recipient_id = "<%= user.id %>";
 

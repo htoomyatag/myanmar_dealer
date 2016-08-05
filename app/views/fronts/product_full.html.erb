@@ -1069,7 +1069,7 @@ document.getElementById('delivery_fees').value = package_name;
 				    $('#send').click(function () {
 				        
 				      var message = document.getElementById("message").value;
-				      var mychannel = "<%= current_user.name.to_s + @product.user.name.to_s %>";
+				      var mychannel = "<%= current_user.name.to_s.split.join + @product.user.name.to_s.split.join %>";
 				      var sender_id = "<%= current_user.id %>";
 				      var recipient_id = "<%= @product.user_id %>";
 
@@ -1111,13 +1111,13 @@ document.getElementById('delivery_fees').value = package_name;
 				    });
 
 
-				     var my_channel = "<%= @product.user.name.to_s + current_user.name.to_s %>";
-				  
+				     var my_channel = "<%= @product.user.name.to_s.split.join + current_user.name.to_s.split.join %>";
+				
 
 				    var channel = pusher.subscribe(my_channel);
 				    channel.bind('my_event', function(data) {
 
-				          $("#text_msg").append("<b id='receiver'>"+"<%= @product.user.name.to_s %>: "+data.message+"</b><br/> ");
+				          $("#text_msg").append("<b id='receiver'>"+"<%= @product.user.name.to_s.split.join %>: "+data.message+"</b><br/> ");
 				                 
 				    });
 
