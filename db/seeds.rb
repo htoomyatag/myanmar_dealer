@@ -1017,20 +1017,20 @@
 
    user = User.create([
 
-       {user_type_id:"1", has_store:"Yes", name:"htoomyatag1",company_name:"MiMiBerry", phone:"09795545748", email: "htoomyatag1.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
-       {user_type_id:"1", has_store:"Yes", name:"htoomyatag2",company_name:"OverDoze", phone:"09795545748", email: "htoomyatag2.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
-       {user_type_id:"1", has_store:"Yes", name:"theldarlykhin1",company_name:"5000Kyats", phone:"0930210743",email: "theldarlykhin1.webdev@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
-       {user_type_id:"1", has_store:"Yes", name:"theldarlykhin2",company_name:"S3 fashion", phone:"0930210743",email: "theldarlykhin2.webdev@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
-       {user_type_id:"1", has_store:"Yes", name:"tracy1",company_name:"Lady's foot wear", phone:"095016213",email: "tracy1@gmail.com", password: "privatetracy", password_confirmation: "privatetracy"},
-       {user_type_id:"1", has_store:"Yes", name:"tracy2",company_name:"Luggage", phone:"095016213",email: "tracy2@gmail.com", password: "privatetracy", password_confirmation: "privatetracy"},
-       {user_type_id:"1", has_store:"Yes", name:"tracy3",company_name:"Lady's under wear", phone:"095016213",email: "tracy3@gmail.com", password: "privatetracy", password_confirmation: "privatetracy"},
+       {admin_approved:"t",user_type_id:"1", has_store:"yes", name:"htoomyatag1",company_name:"MiMiBerry", phone:"09795545748", email: "htoomyatag1.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
+       {admin_approved:"t",user_type_id:"1", has_store:"yes", name:"htoomyatag2",company_name:"OverDoze", phone:"09795545748", email: "htoomyatag2.webdev@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
+       {admin_approved:"t",user_type_id:"1", has_store:"yes", name:"theldarlykhin1",company_name:"5000Kyats", phone:"0930210743",email: "theldarlykhin1.webdev@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
+       {admin_approved:"t",user_type_id:"1", has_store:"yes", name:"theldarlykhin2",company_name:"S3 fashion", phone:"0930210743",email: "theldarlykhin2.webdev@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
+       {admin_approved:"t",user_type_id:"1", has_store:"yes", name:"tracy1",company_name:"Lady's foot wear", phone:"095016213",email: "tracy1@gmail.com", password: "privatetracy", password_confirmation: "privatetracy"},
+       {admin_approved:"t",user_type_id:"1", has_store:"yes", name:"tracy2",company_name:"Luggage", phone:"095016213",email: "tracy2@gmail.com", password: "privatetracy", password_confirmation: "privatetracy"},
+       {admin_approved:"t",user_type_id:"1", has_store:"yes", name:"tracy3",company_name:"Lady's under wear", phone:"095016213",email: "tracy3@gmail.com", password: "privatetracy", password_confirmation: "privatetracy"},
 
     
 
-       {user_type_id:"2",name: "htoo", email: "htoomyatag@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
-       {user_type_id:"2",name: "thel", email: "theldarlykhin@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
-       {user_type_id:"2",name: "arphan", email: "arphan@gmail.com", password: "privateafan", password_confirmation: "privateafan"},
-       {user_type_id:"2",name: "guest", email: "guestguest@gmail.com", password: "privateafan", password_confirmation: "privateafan"},
+       {admin_approved:"t",user_type_id:"2",name: "htoo", email: "htoomyatag@gmail.com", password: "privatehma", password_confirmation: "privatehma"},
+       {admin_approved:"t",user_type_id:"2",name: "thel", email: "theldarlykhin@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
+       {admin_approved:"t",user_type_id:"2",name: "arphan", email: "arphan@gmail.com", password: "privateafan", password_confirmation: "privateafan"},
+       {admin_approved:"t",user_type_id:"2",name: "guest", email: "guestguest@gmail.com", password: "privateafan", password_confirmation: "privateafan"},
     
 
      {user_type_id:"3",name: "admin", email: "adminarphan@gmail.com", password: "privateafan", password_confirmation: "privateafan"},

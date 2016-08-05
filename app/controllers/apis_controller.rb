@@ -31,6 +31,25 @@ class ApisController < ApplicationController
 
   end
 
+
+  def seller_buyer_conversation
+
+        @conversation_ids = Conversation.where(:recipient_id => params[:user_id])
+        @my_conversation = @conversation_ids.pluck(:id)
+        @messages = Message.where(:conversation_id => @my_conversation)
+
+        respond_to do |format|
+              my_primary_json = { :Messages => @messages.to_json(:methods => [:avatar_url])}
+              my_seconday_json = my_primary_json.to_json.gsub('\\', '')
+              a = '"['
+              b = ']"'
+              my_third_json = my_seconday_json.gsub(a , "[")
+              my_fourth_json = my_third_json.gsub(b , "]")
+              format.json {render json: my_primary_json}
+              format.text {render text: my_fourth_json}
+         end
+  end
+
   def view_shop_licensce
 
     @user_ids = Store.where("store_name = ?", params[:store_name]).pluck(:user_id)

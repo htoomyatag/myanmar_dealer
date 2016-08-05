@@ -35,6 +35,10 @@ class BathSupply < ActiveRecord::Base
      age_group = self.age_group
      price = self.price
      user_id = self.user_id
+     raw_seller_name = User.where(:id => self.user_id).pluck(:name)
+
+      @config_seller = raw_seller_name.to_s.gsub('[', '')
+      @seller_name = @config_seller.to_s.gsub(']', '')
 
 
      Product.create(:mmdealer_code =>  "bath_supplies"+(Product.maximum(:id).next.to_i).to_s,
@@ -59,7 +63,9 @@ class BathSupply < ActiveRecord::Base
       :avatar2_edit => self.avatar2_edit,
       :avatar3_edit => self.avatar3_edit,
       :avatar4_edit => self.avatar4_edit,
-     :user_id => user_id) 
+      :user_id => user_id,
+      :seller_name => @seller_name
+     ) 
    
 
 
