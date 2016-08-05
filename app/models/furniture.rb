@@ -6,6 +6,13 @@ class Furniture < ActiveRecord::Base
 
 	 def add_to_product
 
+
+     raw_seller_name = User.where(:id => self.user_id).pluck(:name)
+     @config_seller = raw_seller_name.to_s.gsub('["', '')
+     @seller_name = @config_seller.to_s.gsub('"]', '')
+
+     
+
       Product.create( :mmdealer_code => "furnitures"+(Product.maximum(:id).next.to_i).to_s,           
       :title => self.title,
       :weight => self.weight,
@@ -19,7 +26,8 @@ class Furniture < ActiveRecord::Base
       :avatar4_edit => self.avatar_4,
       :user_id => self.user_id,
       :delivery_category => self.delivery_category,
-      :category => "furnitures"
+      :category => "furnitures",
+      :seller_name => @seller_name
       )
   end
 
