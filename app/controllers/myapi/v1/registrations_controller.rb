@@ -25,7 +25,7 @@ class Myapi::V1::RegistrationsController < Devise::RegistrationsController
 
 
   def user_new
-    @user = User.create(:name => params[:name], :email => params[:email],:password => params[:password],:password_confirmation => params[:password_confirmation])
+    @user = User.create(:user_type_id =>  params[:user_type] ,:name => params[:name], :email => params[:email],:password => params[:password],:password_confirmation => params[:password_confirmation])
   end
 
 
