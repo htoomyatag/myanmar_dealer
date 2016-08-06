@@ -1,7 +1,7 @@
 class Order < ActiveRecord::Base
 
 
-  after_save :add_sellers
+  after_create :add_sellers
 
   CITY = ["YANGON", "MANDALAY", "NAYPYITAW", "TAUNGGYI"]
   TOWNSHIP =  			["Ahlone",  
