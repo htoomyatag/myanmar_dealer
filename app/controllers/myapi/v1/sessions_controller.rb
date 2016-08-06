@@ -17,15 +17,15 @@ class Myapi::V1::SessionsController < Devise::SessionsController
                       :data => { :auth_token => current_user.authentication_token, :user_id => current_user.id, :user_name => current_user.name, :email => current_user.email, :user_type_id => current_user.user_type_id }}
 
 
-    require "base64"
+    # require "base64"
     
-    @login_code = params[:user].to_json
-    @en_code = Base64.encode64(@login_code)
-    @thecode = @en_code
+    # @login_code = params[:user].to_json
+    # @en_code = Base64.encode64(@login_code)
+    # @thecode = @en_code
 
-    require 'launchy'
+    # require 'launchy'
 
-    Launchy.open("http://localhost:3000/logging_with_qrcode?thecode=#{@thecode.to_s}")
+    # Launchy.open("http://localhost:3000/logging_with_qrcode?thecode=#{@thecode.to_s}")
     
   end
 
