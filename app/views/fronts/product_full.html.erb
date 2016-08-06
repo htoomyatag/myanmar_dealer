@@ -873,7 +873,8 @@
                                     <%= f.number_field :user_id, :value => current_user.id %>
                                   </div>
                                   <div class="field">
-                                    <%= f.text_area :message, :class => "form-control", :rows => "5" %>
+                                    <%= f.text_area :message, :class => "form-control", :rows => "5" %><br/>
+                                    <%= f.select(:rate_star, Comment::STAR) %>
                                   </div><br/>
                                   <div class="field" style="display:none;">
                                     <%= f.label :product_id %><br>
@@ -903,9 +904,16 @@
                                             <div class="panel-body">
                                                <p style="top:30px;"> &nbsp;&nbsp;
                                                       <%= comment.message %>
+
                                                </p>
                                               <p style="top:30px;"> &nbsp;&nbsp; 
-                                              <img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png"><img src="/assets/star.png">
+                                                 <% (1..comment.rate_star.to_i).each do |i| %>
+                                                   <img src="/assets/star.png">
+                                                <% end %>
+                                             
+                                             
+                                             
+
                                               .</p><bt/>
                                               <h4>  &nbsp;&nbsp; <%= comment.user.name rescue "-" %></h4>
                                             </div>
