@@ -14,7 +14,7 @@ class Myapi::V1::RegistrationsController < Devise::RegistrationsController
            :json => { :success => true,
                       :info => "Registered",
                       :data => { :user => resource,
-                                 :auth_token => current_user.authentication_token, :user_id => current_user.id, :user_name => current_user.name, :email => current_user.email, :user_type_id => current_user.user_type_id  } }
+                                 :auth_token => current_user.authentication_token, :user_id => current_user.id, :user_name => current_user.name, :email => current_user.email, :user_type_id => current_user.user_type_id} }
     else
       render :status => :unprocessable_entity,
              :json => { :success => false,
