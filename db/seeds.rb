@@ -1052,7 +1052,7 @@
        store_address:"Thamile 7street, Building 606, 6h floor",
        store_contact:"09795545748",
        user_id:"1",
-       seller_name:"tracy3"
+       seller_name:"tracy3"}
 
    #   },
 
