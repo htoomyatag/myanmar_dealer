@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   layout :layout_per_action
   before_action :is_buyer?, only: [:my_order]
+   before_action :authenticate_user!, only: [:my_order]
   # GET /orders
   # GET /orders.json
   def index

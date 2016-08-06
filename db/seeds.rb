@@ -1023,7 +1023,7 @@
        # {admin_approved:"t",user_type_id:"1", has_store:"yes", name:"theldarlykhin2",company_name:"S3 fashion", phone:"0930210743",email: "theldarlykhin2.webdev@gmail.com", password: "privatethel", password_confirmation: "privatethel"},
        # {admin_approved:"t",user_type_id:"1", has_store:"yes", name:"tracy1",company_name:"Lady's foot wear", phone:"095016213",email: "tracy1@gmail.com", password: "privatetracy", password_confirmation: "privatetracy"},
        # {admin_approved:"t",user_type_id:"1", has_store:"yes", name:"tracy2",company_name:"Luggage", phone:"095016213",email: "tracy2@gmail.com", password: "privatetracy", password_confirmation: "privatetracy"},
-       # {admin_approved:"t",user_type_id:"1", has_store:"yes", name:"tracy3",company_name:"Lady's under wear", phone:"095016213",email: "tracy3@gmail.com", password: "privatetracy", password_confirmation: "privatetracy"},
+       {admin_approved:"t",user_type_id:"1", has_store:"yes", name:"tracy3",company_name:"Lady's under wear", phone:"095016213",email: "tracy3@gmail.com", password: "privatetracy", password_confirmation: "privatetracy"},
 
     
 
@@ -1044,15 +1044,15 @@
 
 
 
-   #   store = Store.create([
+     store = Store.create([
 
-   #   {
+     {
 
-   #     store_name:"MiMiBerry",
-   #     store_address:"Thamile 7street, Building 606, 6h floor",
-   #     store_contact:"09795545748",
-   #     user_id:"1",
-   #     seller_name:"htoomyatag1"
+       store_name:"MiMiBerry",
+       store_address:"Thamile 7street, Building 606, 6h floor",
+       store_contact:"09795545748",
+       user_id:"1",
+       seller_name:"tracy3"
 
    #   },
 
@@ -1125,7 +1125,7 @@
 
 
 
-   #   ])
+     ])
 
 
 
