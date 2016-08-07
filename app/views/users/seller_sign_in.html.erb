@@ -264,15 +264,20 @@
               </p>
             <!-- Login Form Starts -->
                     <%= form_for(:user, :url => session_path(:user)) do |f| %>
+
+
+                    
                       <div class="form-group">
                         <label class="sr-only" for="exampleInputEmail2">Email</label>
                         <%= f.email_field :email, autofocus: true, :class=>"form-control" %>
+                          <label id="namelb" style="display:none;color:red;font-weight:bold;"> ***please enter user name </label>
                       </div>
                       <div class="form-group">
                         <label class="sr-only" for="exampleInputPassword2">Password</label>
                         <%= f.password_field :password, autocomplete: "off", :class=>"form-control" %>
+                        <label id="pwdlb" style="display:none;color:red;font-weight:bold;"> ***please enter password </label>
                       </div>
-                      <button type="submit" class="btn btn-black">
+                      <button type="submit" class="btn btn-black"  id="mysubmit">
                         Login
                       </button>
                   <% end %>
@@ -319,4 +324,41 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
     colorLight : "#ffffff",
     correctLevel : QRCode.CorrectLevel.H
 });
+</script>
+
+
+
+
+
+ <script type="text/javascript">
+
+
+ $("#mysubmit").click(function() {
+  
+
+
+  var x = document.getElementById("user_email").value;
+    if (x == null || x == "" ) {
+        $("#namelb").show();
+        return false;
+    }
+
+
+    var x = document.getElementById("user_password").value;
+    if (x == null || x == "" ) {
+        $("#pwdlb").show();
+        return false;
+    }
+
+
+
+
+
+
+});
+
+
+
+
+
 </script>

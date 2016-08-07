@@ -1,29 +1,17 @@
 class AddAvatarToUsers < ActiveRecord::Migration
-def up
-    add_attachment :users, :personal_nrc_front
-    add_attachment :users, :personal_nrc_back
+def change
 
-    add_attachment :users, :retail_nrc_front
-    add_attachment :users, :retail_nrc_back
-    add_attachment :users, :shop_licensce
+    add_column :users, :personal_nrc_front, :text
+    add_column :users, :personal_nrc_back, :text
 
-    add_attachment :users, :staff_nrc_front
-    add_attachment :users, :staff_nrc_back
-    add_attachment :users, :company_licensce
+    add_column :users, :retail_nrc_front, :text
+    add_column :users, :retail_nrc_back, :text
+    add_column :users, :shop_licensce, :text
+
+    add_column :users, :staff_nrc_front, :text
+    add_column :users, :staff_nrc_back, :text
+    add_column :users, :company_licensce, :text
   end
 
-  def down
-
-    remove_attachment :users, :personal_nrc_front
-    remove_attachment :users, :personal_nrc_back
-
-    remove_attachment :users, :retail_nrc_front
-    remove_attachment :users, :retail_nrc_back
-    remove_attachment :users, :shop_licensce
-
-    remove_attachment :users, :staff_nrc_front
-    remove_attachment :users, :staff_nrc_back
-    remove_attachment :users, :company_licensce
-  end
 
 end

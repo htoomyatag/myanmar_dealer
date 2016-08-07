@@ -25,7 +25,37 @@ class Myapi::V1::RegistrationsController < Devise::RegistrationsController
 
 
   def user_new
-    @user = User.create(:user_type_id =>  params[:user_type] ,:name => params[:name], :email => params[:email],:password => params[:password],:password_confirmation => params[:password_confirmation])
+    @user = User.create(
+      :user_type_id =>  params[:user_type] ,
+      :name => params[:name], 
+      :email => params[:email],
+      :password => params[:password],
+      :password_confirmation => params[:password_confirmation],
+      :phone => params[:phone],
+
+      :personal_name => params[:personal_name],
+      :personal_address => params[:personal_address],
+      :personal_nrc_number => params[:personal_nrc_number],
+      :personal_nrc_front => params[:personal_nrc_front],
+      :personal_nrc_back => params[:personal_nrc_back],
+
+      :staff_name => params[:staff_name],
+      :staff_nrc_number => params[:staff_nrc_number],
+      :staff_address => params[:staff_address],
+      :staff_nrc_front => params[:staff_nrc_front],
+      :staff_nrc_back => params[:staff_nrc_back],
+      :company_licensce => params[:company_licensce],
+      :company_name => params[:company_name],
+
+      :retail_name => params[:retail_name],
+      :retail_address => params[:retail_address],
+      :retail_nrc_number => params[:retail_nrc_number],
+      :retail_nrc_front => params[:retail_nrc_front],
+      :retail_nrc_back => params[:retail_nrc_back],
+      :shop_licensce => params[:shop_licensce],
+      :shop_name => params[:shop_name]
+
+      )
   end
 
 

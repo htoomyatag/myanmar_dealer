@@ -77,6 +77,33 @@ class ApisController < ApplicationController
   end
 
 
+  def open_new_store
+
+     @store = Store.create(
+
+        :description_image1 => params[:description_image1],
+        :description_image2 => params[:description_image2],
+        :description_image3 => params[:description_image3],
+        :description_image4 => params[:description_image4],
+        :term => params[:term],
+        :ads_one => params[:ads_one],
+        :ads_two => params[:ads_two],
+        :avatar => params[:avatar],
+        :store_name => params[:store_name],
+        :store_address => params[:store_address],
+        :store_contact => params[:store_contact],
+        :description => params[:description],
+        :user_id => params[:user_id],
+        :seller_name => params[:seller_name]
+
+        )
+
+     @user = User.find(params[:user_id])
+     @user.update(:has_store => "yes")
+
+  end
+
+
   def seller_buyer_conversation
 
         @conversation_ids = Conversation.where(:recipient_id => params[:user_id])

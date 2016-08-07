@@ -1130,20 +1130,11 @@ ActiveRecord::Schema.define(version: 20160805025435) do
     t.text     "term"
     t.integer  "user_id"
     t.string   "seller_name"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-    t.string   "ads_one_file_name"
-    t.string   "ads_one_content_type"
-    t.integer  "ads_one_file_size"
-    t.datetime "ads_one_updated_at"
-    t.string   "ads_two_file_name"
-    t.string   "ads_two_content_type"
-    t.integer  "ads_two_file_size"
-    t.datetime "ads_two_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "avatar"
+    t.string   "ads_one"
+    t.string   "ads_two"
     t.string   "description_image1"
     t.string   "description_image2"
     t.string   "description_image3"
@@ -1264,14 +1255,14 @@ ActiveRecord::Schema.define(version: 20160805025435) do
     t.string   "company_name"
     t.integer  "user_type_id"
     t.string   "store_id"
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
-    t.string   "email",                           default: "", null: false
-    t.string   "encrypted_password",              default: "", null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                   default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -1288,38 +1279,14 @@ ActiveRecord::Schema.define(version: 20160805025435) do
     t.string   "staff_name"
     t.string   "staff_nrc_number"
     t.string   "staff_address"
-    t.string   "personal_nrc_front_file_name"
-    t.string   "personal_nrc_front_content_type"
-    t.integer  "personal_nrc_front_file_size"
-    t.datetime "personal_nrc_front_updated_at"
-    t.string   "personal_nrc_back_file_name"
-    t.string   "personal_nrc_back_content_type"
-    t.integer  "personal_nrc_back_file_size"
-    t.datetime "personal_nrc_back_updated_at"
-    t.string   "retail_nrc_front_file_name"
-    t.string   "retail_nrc_front_content_type"
-    t.integer  "retail_nrc_front_file_size"
-    t.datetime "retail_nrc_front_updated_at"
-    t.string   "retail_nrc_back_file_name"
-    t.string   "retail_nrc_back_content_type"
-    t.integer  "retail_nrc_back_file_size"
-    t.datetime "retail_nrc_back_updated_at"
-    t.string   "shop_licensce_file_name"
-    t.string   "shop_licensce_content_type"
-    t.integer  "shop_licensce_file_size"
-    t.datetime "shop_licensce_updated_at"
-    t.string   "staff_nrc_front_file_name"
-    t.string   "staff_nrc_front_content_type"
-    t.integer  "staff_nrc_front_file_size"
-    t.datetime "staff_nrc_front_updated_at"
-    t.string   "staff_nrc_back_file_name"
-    t.string   "staff_nrc_back_content_type"
-    t.integer  "staff_nrc_back_file_size"
-    t.datetime "staff_nrc_back_updated_at"
-    t.string   "company_licensce_file_name"
-    t.string   "company_licensce_content_type"
-    t.integer  "company_licensce_file_size"
-    t.datetime "company_licensce_updated_at"
+    t.text     "personal_nrc_front"
+    t.text     "personal_nrc_back"
+    t.text     "retail_nrc_front"
+    t.text     "retail_nrc_back"
+    t.text     "shop_licensce"
+    t.text     "staff_nrc_front"
+    t.text     "staff_nrc_back"
+    t.text     "company_licensce"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true, using: :btree

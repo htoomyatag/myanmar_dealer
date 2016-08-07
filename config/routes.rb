@@ -60,7 +60,7 @@ end
   resources :apis
 
 
-
+  post 'open_new_store' => 'apis#open_new_store', :as => :open_new_store
   get 'seach_from_mobile' => 'apis#seach_from_mobile', :as => :seach_from_mobile
   post 'send_to_web' => 'apis#send_to_web', :as => 'send_to_web'
   get 'seller_buyer_conversation' => 'apis#seller_buyer_conversation', :as => :seller_buyer_conversation

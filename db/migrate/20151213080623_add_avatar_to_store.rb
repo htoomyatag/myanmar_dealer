@@ -1,10 +1,10 @@
 class AddAvatarToStore < ActiveRecord::Migration
 
-  def up
-    add_attachment :stores, :avatar
+  def change
+   	 add_column :stores, :avatar, :string
+   	 add_column :stores, :ads_one, :string
+   	 add_column :stores, :ads_two, :string
   end
 
-  def down
-    remove_attachment :stores, :avatar
-  end
+
 end

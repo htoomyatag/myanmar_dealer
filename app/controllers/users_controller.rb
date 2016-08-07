@@ -14,6 +14,8 @@ class UsersController < ApplicationController
 
   def seller_sign_in
 
+
+flash[:notice]
       @my_ip = request.remote_ip
 
       directory = "/#{Rails.root}/app/assets/"
