@@ -6,8 +6,8 @@
           <div class="panel-body">
           <center>
            
-             <% if !@store.avatar_file_name.nil?  %>
-                    <%= image_tag @store.avatar.url, :id => "store_avatar" %>
+             <% if !@store.avatar.nil?  %>
+                    <%= image_tag @store.avatar, :id => "store_avatar" %>
               <% else  %>      
                    <%= image_tag "shop-icon.png", :id => "store_avatar" %>
             <% end %>
@@ -72,6 +72,11 @@
       <img src="<%= @store.description_image2 %>" id="desc_image"/>
       <img src="<%= @store.description_image3 %>" id="desc_image"/>
       <img src="<%= @store.description_image4 %>" id="desc_image"/>
+
+
+  <div class="well well-lg"> Store Cover</div>
+       <img src="<%= @store.ads_one %>" id="desc_image"/><br/>
+       <img src="<%= @store.ads_two %>" id="desc_image"/><br/>
 
 
 
