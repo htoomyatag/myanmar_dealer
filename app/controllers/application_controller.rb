@@ -40,11 +40,15 @@ class ApplicationController < ActionController::Base
   private
   def get_products
      @cart = current_cart
+
      @products = Product.where.not(id: '1').order('id DESC')
      
         if user_signed_in? 
              @raw_store_id = Store.where(:user_id => current_user.id).pluck(:id)
              @store_id = @raw_store_id.to_s.gsub("[", "").gsub("]", "")
+             
+             @store_aok = "http://www.myanmardealer.com/stores/"+@store_id.to_s
+
              @order_number = Order.where(:user_id => current_user.id).count
              @fav_number = Favourite.where(:user_id => current_user.id).count
              @cart_ids = Order.where(user_id: current_user.id).pluck(:cart_id)
