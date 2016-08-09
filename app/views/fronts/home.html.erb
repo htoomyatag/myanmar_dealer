@@ -421,136 +421,39 @@
                   
 
                 <div class="col-md-2">
-                  <div id="logo">
+                  <div id="logo" style="position:relative;top:-10px;">
                     <a href="#">
-                    <img src="/assets/logo.jpg" title="Spice Shoppe" alt="Spice Shoppe" style="height:95px;" /></a>
+                    <img src="/assets/logo.jpg" title="Spice Shoppe" alt="Spice Shoppe" style="height:60px;" /></a>
                   </div>
                 </div>
 
                 <div class="col-md-5" >
 
-                      <div><br/>
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs" role="tablist" id="mynavtab">
-                              <li role="presentation" class="active">
-                              <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Item 
-
-
-
-
-                              </a></li>
-                              <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Shop</a></li>
-                              <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Big Deal</a></li>
-                            </ul>
-
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                              <div role="tabpanel" class="tab-pane active" id="home">
-                                  
-                                <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
+                   <div style="position:relative;">
+                        <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
                                       <br/>
                                       <div class="form-group">
-                                          <%= text_field_tag :title, params[:title], :style=>"width:350px;position:relative;top:-15px;height:50px;" %>
+                                          <%= text_field_tag :title, params[:title], :style=>"width:350px;position:relative;top:-15px;height:50px;width:420px;" %>
                                       </div>
                                       <button type="submit" class="btn btn-danger" style="height:50px;position:relative;top:-20px">search</button>
-                                <% end %>
-
-                              </div>
-                              <div role="tabpanel" class="tab-pane" id="profile">
-
-                                  <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
-                                      <br/>
-                                      <div class="form-group">
-                                          <%= text_field_tag :store_name, params[:store_name], :style=>"width:350px;position:relative;top:-15px;height:50px;" %>
-                                      </div>
-                                      <button type="submit" class="btn btn-danger" style="height:50px;position:relative;top:-20px">search</button>
-                                <% end %>
-
-                              </div>
-                              <div role="tabpanel" class="tab-pane" id="messages">
-                                    
-                                <%= form_tag(search_result_path, :method => "get", class: "form-inline") do %> 
-                                      <br/>
-                                      <div class="form-group">
-                                          <%= text_field_tag :title2, params[:title2], :style=>"width:350px;position:relative;top:-15px;height:50px;" %>
-                                      </div>
-                                      <button type="submit" class="btn btn-danger" style="height:50px;position:relative;top:-20px">search</button>
-                                <% end %>
+                          <% end %>
+                  </div>
 
 
-                              </div>
-                            </div>
-
-                      </div>
 
 
                 </div>
 
-                <div class="col-md-3" style="background:black;margin-left:12px;width:22%;" id="account_setting" >
-   
+                 <div class="col-md-3">
 
-                  <% if user_signed_in? %>
-
-
-                           <div style="float:left;">
-                            <img src="/assets/avatar.png" class="img-responsive" />
-                            <p class="avata_name">  <%= current_user.name %> </p>
-                          </div>
-
-                          <div style="float:right;">
-                            <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class=>"btn btn-default", :style => "margin-top:8px;", :id => "menu_mybtn"%>
-
-                            <br/>
-                            <%= link_to "Register", new_user_registration_path, :class=>"btn btn-default", :id => "menu_mybtn"%>
-
-
-                            <br/>
-                           
-
-                            <% if current_user.has_store == "yes" %>
-
-                                <a href="/stores/<%= @store_id %>"  class="btn btn-default", id="menu_mybtn">MyStore</a>
-
-                            <% else %>
-
-                               <% if current_user.user_type_id == 1 %>
-                                   <%= link_to "Open Shop", new_store_path, :class=>"btn btn-default", :id => "menu_mybtn"%>
-                               <% elsif current_user.user_type_id == 2 %>
-                                  <%= link_to "Apply as Seller", apply_as_seller_path(current_user.id), :class=>"btn btn-default"%>
-                              <% else %>
-                                      <%= link_to "Open Shop", new_store_path, :class=>"btn btn-default", :id => "menu_mybtn"%>
-
-                               <% end %>
-
-                              
-                            <% end %>
-
-
-                          </div>
-      
-                  <% else %>
-
-
-                          <div style="float:left;">
-                            <img src="/assets/avatar.png" class="img-responsive" />
-                            <p class="avata_name"> Guest </p>
-                          </div>
-
-                          <div style="float:right;">
-                            <a href="/user_sign_in" class="btn btn-default" type="submit" id="menu_mybtn" style="margin-top:8px;">Login</a><br/>
-
-
-                            <%= link_to "Register(Seller)", seller_sign_up_path, :class=>"btn btn-default", :id => "menu_mybtn"%>
-
-                            <br/>
-                            <button class="btn btn-default" id="menu_mybtn" onclick="storeFunction()"> Open Shop</button>
-
-                          </div>
-
-                  <% end %>
-
+                    <a href="/buyer_sign_up" class="btn btn-default" role="button" id="home_signup">
+                    Register</a>
+                    <a href="/seller_sign_up" class="btn btn-default" role="button" id="home_signup">
+                    Apply as Seller</a>
                 </div>
-                <div class="col-md-2" style="margin-left:10px;">
+
+                
+                <div class="col-md-2" style="margin-left:-15px;">
 
                     <div class="panel panel-default">
                       
@@ -589,7 +492,7 @@
      <div class="row">
 
      <!-- side menu -->
-     	 <div class="col-md-2" style="position:relative;top:-22px;">
+     	 <div class="col-md-2" style="position:relative;top:-82px;">
      	 	<p class="mytitle"> <%=t :category %> </p>
 
      	 	<div class="list-group categories">
@@ -728,7 +631,7 @@
 
 
      	 </div> 
-     	 <div class="col-md-5" style="position:relative;top:-22px;">
+     	 <div class="col-md-5" style="position:relative;top:-82px;">
      	  	<p class="mytitle"> <%=t :hot_sale %> </p>
 
 		     	  	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -738,12 +641,12 @@
 							  <div class="carousel-inner" role="listbox">
 
                       <div class="item active">
-                        <img src="<%= @hot_item.image_data %>" style="width:550px;height:400px;"/>
+                        <img src="<%= @hot_item.image_data %>" style="width:550px;height:440px;"/>
                       </div>
 
                      <% @hot_items.each do |hot_item| %>
                        <div class="item">
-                         <img src="<%= hot_item.image_data %>" style="width:550px;height:400px;"/>
+                         <img src="<%= hot_item.image_data %>" style="width:550px;height:440px;"/>
                        </div>
                     <% end %>
 
@@ -758,14 +661,14 @@
 
 
 		</div>
-     	  <div class="col-md-3" style="position:relative;top:-22px;">
+     	  <div class="col-md-3" style="position:relative;top:-82px;">
      	  		
      	  		<p class="mytitle"> <%=t :big_deal %> </p>
      	  		<div class="panel panel-default">
 				  <div class="panel-heading"><span style="color:#d9534f;">TODAY'S</span> DEALS</div>
 				  <div class="panel-body">
 				     <h6 style="text-align:center;"> Ends in 
-                  <span id="getting-started"> </span>
+                  <span id="getting-started"> </span><br/><br/>
 
 
               </h6>
@@ -775,7 +678,7 @@
 				   		</center>
 				   
 
-				     <h6 style="text-align:center;"> <br/>
+				     <h6 style="text-align:center;"> <br/><br/>
 				     	<%= @admin.price %> Kyats 
 				     	<span style="background:#d43f3a;color:white;padding:5px;"> <%= @admin.discount_percent %>%  OFF </span>
 				     </h6>
@@ -858,7 +761,7 @@
 
 
 <div id="hide_mobile" style="padding:10px;">
-     <div class="row" style="position:relative;top:-33px;">
+     <div class="row" style="position:relative;top:-53px;">
 
 			 <div class="col-md-12" >
 			     	 	<p class="mytitle"> <%=t :hot_sale %></p>
