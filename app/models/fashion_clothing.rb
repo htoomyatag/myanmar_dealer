@@ -26,8 +26,10 @@ class FashionClothing < ActiveRecord::Base
      @config_seller = raw_seller_name.to_s.gsub('["', '')
      @seller_name = @config_seller.to_s.gsub('"]', '')
 
-      Product.create( :mmdealer_code => "cloths"+(Product.maximum(:id).next.to_i).to_s,            :user_id => self.user_id,
-            :seller_name => @seller_name,
+      Product.create( :mmdealer_code => "cloths"+(Product.maximum(:id).next.to_i).to_s,            
+
+      :user_id => self.user_id,
+      :seller_name => @seller_name,
       :title => self.title,
       :store_name => self.store_name,
       :made_by_country => self.made_by_country,
@@ -40,11 +42,6 @@ class FashionClothing < ActiveRecord::Base
       :quantity => self.quantity,
       :category => "cloths",
       :delivery_category => self.delivery_category,
-      :avatar1_file_name => self.avatar1.url,
-      :avatar2_file_name => self.avatar2.url,
-      :avatar3_file_name => self.avatar3.url,
-      :avatar4_file_name => self.avatar4.url,
-      :avatar5_file_name => self.avatar5.url,
       :avatar1_edit => self.avatar1_edit,
       :avatar2_edit => self.avatar2_edit,
       :avatar3_edit => self.avatar3_edit,

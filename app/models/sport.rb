@@ -49,8 +49,7 @@ class Sport < ActiveRecord::Base
             :avatar1_edit => self.avatar1_edit,
       :avatar2_edit => self.avatar2_edit,
       :avatar3_edit => self.avatar3_edit,
-      :avatar4_edit => self.avatar4_edit,
-            :seller_id => self.user_id
+      :avatar4_edit => self.avatar4_edit
         )
   end
   

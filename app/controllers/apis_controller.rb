@@ -54,13 +54,16 @@ class ApisController < ApplicationController
       :description => params[:description],
       :price => params[:price],
       :delivery_category => params[:delivery_method],
-      :color => params[:color],:size => params[:size], 
+      :color => params[:color],
+      :size => params[:size], 
       :store_name => @my_store_name,
       :avatar1_edit => params[:image1],
       :avatar2_edit => params[:image2],
       :avatar3_edit => params[:image3],
       :avatar4_edit => params[:image4],
       :user_id => params[:user_id])
+
+
   end
 
   def set_order_status_by_seller
@@ -404,21 +407,37 @@ class ApisController < ApplicationController
 
 
     @cart_id = Cart.maximum(:id)+1
+    @seller_ids = Product.where(:id => params[:product_id]).pluck(:user_id)
 
 
-    @line_items = LineItem.create(
 
-          :product_id => params[:product_id],
+
+ @product = JSON.parse(params[:product_id])
+ @quantity = JSON.parse(params[:quantity])
+
+puts @product
+
+ @product.zip(@quantity).each do |product, quantity|
+    puts product
+    puts quantity
+
+      @line_items = LineItem.create(
+
+          :product_id => product,
           :cart_id => @cart_id,
           :user_id => params[:user_id],
-          :quantity => params[:quantity],
-          :product_name => params[:product_name]
+          :quantity => quantity
 
         )
+
+
+ end
+
 
     @order = Order.create(
 
       :user_id => params[:user_id], 
+      :sellers => @seller_ids,
       :customer_name  => params[:customer_name], 
       :customer_email  => params[:customer_email],
       :customer_phone  => params[:customer_phone],
@@ -427,6 +446,8 @@ class ApisController < ApplicationController
       :customer_address  => params[:customer_address],
       :cart_id  => @cart_id
       )
+
+
   end
 
   def get_rating

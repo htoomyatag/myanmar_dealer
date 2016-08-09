@@ -20,7 +20,7 @@ class FashionClothingsController < ApplicationController
   # GET /fashion_clothings/new
   def new
     @fashion_clothing = FashionClothing.new
-       @store_name = Store.where(:user_id => current_user).pluck(:store_name)
+    @store_name = Store.where(:user_id => current_user).pluck(:store_name)
   end
 
   # GET /fashion_clothings/1/edit
