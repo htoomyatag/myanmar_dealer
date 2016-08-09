@@ -44,6 +44,10 @@ class CreateProducts < ActiveRecord::Migration
     t.string :avatar2_edit
     t.string :avatar3_edit
     t.string :avatar4_edit
+    t.string :avatar5_edit
+    t.string :avatar6_edit
+    t.string :avatar7_edit
+    t.string :avatar8_edit
     t.string :author 
     t.string :number_of_paper
     t.string :publisher

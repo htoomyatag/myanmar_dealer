@@ -127,13 +127,9 @@
                            <%= f.text_field :avatar1_edit, :class=>"form-control", :style=>"display:none"  %>
 
 
-                            <input type="range" class="cropit-image-zoom-input" >
+                            <input type="range" class="cropit-image-zoom-input" id="exportav1">
 
-                          <div>
-                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
-                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
-                              <span style="float:right;"><a class="exportav1">Confirm </a></span>
-                          </div>
+
                   
                           
 
@@ -151,13 +147,9 @@
                            <%= f.text_field :avatar2_edit, :class=>"form-control", :style=>"display:none"  %>
 
 
-                            <input type="range" class="cropit-image-zoom-input" >
+                            <input type="range" class="cropit-image-zoom-input" id="exportav2">
 
-                          <div>
-                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
-                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
-                              <span style="float:right;"><a class="exportav2">Confirm </a></span>
-                          </div>
+
                   
                        
 
@@ -177,13 +169,9 @@
                            <%= f.text_field :avatar3_edit, :class=>"form-control", :style=>"display:none"  %>
 
 
-                            <input type="range" class="cropit-image-zoom-input" >
+                            <input type="range" class="cropit-image-zoom-input" id="exportav3">
 
-                          <div>
-                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
-                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
-                              <span style="float:right;"><a class="exportav3">Confirm </a></span>
-                          </div>
+
                   
                        
 
@@ -204,13 +192,9 @@
                            <%= f.text_field :avatar4_edit, :class=>"form-control", :style=>"display:none"  %>
 
 
-                            <input type="range" class="cropit-image-zoom-input" >
+                            <input type="range" class="cropit-image-zoom-input" id="exportav4">
 
-                          <div>
-                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
-                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
-                              <span style="float:right;"><a class="exportav4">Confirm </a></span>
-                          </div>
+
                   
                        
 
@@ -238,6 +222,110 @@
 
 
   </div>
+
+
+<div class="col-md-12">
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+
+   <div class="col-md-3">
+                      <div class="image-editor5">
+
+                            <input type="file"  class="cropit-image-input">
+
+                          <div class="cropit-preview"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                           <%= f.text_field :avatar5_edit, :class=>"form-control", :style => "display:none;"  %>
+
+
+                            <input type="range" class="cropit-image-zoom-input" id="exportav5">
+
+
+                  
+                       
+
+                        </div>
+    </div>
+
+       <div class="col-md-3">
+                      <div class="image-editor6">
+
+                            <input type="file"  class="cropit-image-input">
+
+                          <div class="cropit-preview"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                           <%= f.text_field :avatar6_edit, :class=>"form-control", :style => "display:none;"  %>
+
+
+                            <input type="range" class="cropit-image-zoom-input" id="exportav6">
+
+
+                  
+                       
+
+                        </div>
+    </div>
+
+
+       <div class="col-md-3">
+                      <div class="image-editor7">
+
+                            <input type="file"  class="cropit-image-input">
+
+                          <div class="cropit-preview"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                           <%= f.text_field :avatar7_edit, :class=>"form-control", :style => "display:none;"  %>
+
+
+                            <input type="range" class="cropit-image-zoom-input" id="exportav7">
+
+
+                  
+                       
+
+                        </div>
+    </div>
+
+
+       <div class="col-md-3">
+                      <div class="image-editor8">
+
+                            <input type="file"  class="cropit-image-input">
+
+                          <div class="cropit-preview"></div>
+                          <div class="image-size-label">
+                            Resize image
+                          </div>
+
+                           <%= f.text_field :avatar8_edit, :class=>"form-control", :style => "display:none;"  %>
+
+
+                            <input type="range" class="cropit-image-zoom-input" id="exportav8">
+
+
+                  
+                       
+
+                        </div>
+    </div>
+
+    
+                        </div>
+    </div>
+
+
+</div>
 
   <div class="col-md-12">
 
@@ -338,7 +426,8 @@
 
 
 
-        $('.exportav1').click(function() {
+        var rangeInput = document.getElementById("exportav1");
+        rangeInput.addEventListener('mouseup', function() {
           var imageData1 = $('.image-editor1').cropit('export');
        
           document.getElementById("home_appliance_avatar1_edit").value = imageData1;
@@ -349,7 +438,8 @@
 
 
 
-          $('.exportav2').click(function() {
+        var rangeInput = document.getElementById("exportav2");
+        rangeInput.addEventListener('mouseup', function() {
           var imageData2 = $('.image-editor2').cropit('export');
        
           document.getElementById("home_appliance_avatar2_edit").value = imageData2;
@@ -358,7 +448,8 @@
         });
 
 
-           $('.exportav3').click(function() {
+        var rangeInput = document.getElementById("exportav3");
+        rangeInput.addEventListener('mouseup', function() {
           var imageData3 = $('.image-editor3').cropit('export');
        
           document.getElementById("home_appliance_avatar3_edit").value = imageData3;
@@ -367,7 +458,8 @@
         });
 
 
-              $('.exportav4').click(function() {
+        var rangeInput = document.getElementById("exportav4");
+        rangeInput.addEventListener('mouseup', function() {
           var imageData4 = $('.image-editor4').cropit('export');
        
           document.getElementById("home_appliance_avatar4_edit").value = imageData4;

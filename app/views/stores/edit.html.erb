@@ -369,7 +369,8 @@ function validateForm() {
 
 
 
-        $('.exportav1').click(function() {
+        var rangeInput = document.getElementById("exportav1");
+        rangeInput.addEventListener('mouseup', function() {
           var imageData1 = $('.image-editor1').cropit('export');
        
           document.getElementById("store_description_image1").value = imageData1;
@@ -380,7 +381,8 @@ function validateForm() {
 
 
 
-          $('.exportav2').click(function() {
+        var rangeInput = document.getElementById("exportav2");
+        rangeInput.addEventListener('mouseup', function() {
           var imageData2 = $('.image-editor2').cropit('export');
        
           document.getElementById("store_description_image2").value = imageData2;
@@ -389,7 +391,8 @@ function validateForm() {
         });
 
 
-           $('.exportav3').click(function() {
+        var rangeInput = document.getElementById("exportav3");
+        rangeInput.addEventListener('mouseup', function() {
           var imageData3 = $('.image-editor3').cropit('export');
        
           document.getElementById("store_description_image3").value = imageData3;
@@ -398,7 +401,8 @@ function validateForm() {
         });
 
 
-              $('.exportav4').click(function() {
+        var rangeInput = document.getElementById("exportav4");
+        rangeInput.addEventListener('mouseup', function() {
           var imageData4 = $('.image-editor4').cropit('export');
        
           document.getElementById("store_description_image4").value = imageData4;

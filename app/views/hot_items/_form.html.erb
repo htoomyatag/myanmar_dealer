@@ -25,11 +25,7 @@
 
                             <input type="range" class="cropit-image-zoom-input" >
 
-                          <div>
-                              <span style="float:left;"><img src="/assets/leftclock.png" class="rotate-ccw"></span>
-                              <span><img src="/assets/rightclock.png" class="rotate-cw"></span>
-                              <span style="float:right;"><a class="exportav1">Confirm </a></span>
-                          </div>
+
                   
               
                   </div>
@@ -66,7 +62,8 @@
 
 
 
-        $('.exportav1').click(function() {
+        var rangeInput = document.getElementById("exportav1");
+        rangeInput.addEventListener('mouseup', function() {
           var imageData1 = $('.image-editor1').cropit('export');
        
           document.getElementById("hot_item_image_data").value = imageData1;

@@ -75,7 +75,7 @@ class FashionClothingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fashion_clothing_params
-      params.require(:fashion_clothing).permit(:delivery_category,:delivery_category, :avatar1_edit,:avatar2_edit,:avatar3_edit,:avatar4_edit,:category,:store_name,:color,:user_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :size, :made_by_country, :made_with, :description, :gender, :brand)
+      params.require(:fashion_clothing).permit(:delivery_category,:avatar5_edit,:avatar6_edit,:avatar7_edit,:avatar8_edit,:delivery_category, :avatar1_edit,:avatar2_edit,:avatar3_edit,:avatar4_edit,:category,:store_name,:color,:user_id,:avatar1,:avatar2,:avatar3,:avatar4,:avatar5,:title, :price, :quantity, :size, :made_by_country, :made_with, :description, :gender, :brand)
     end
 
     def layout_per_action

@@ -59,6 +59,10 @@ class FashionBag < ActiveRecord::Base
       :avatar2_edit => self.avatar2_edit,
       :avatar3_edit => self.avatar3_edit,
       :avatar4_edit => self.avatar4_edit,
+      :avatar5_edit => self.avatar5_edit,
+      :avatar6_edit => self.avatar6_edit,
+      :avatar7_edit => self.avatar7_edit,
+      :avatar8_edit => self.avatar8_edit,
       :bag_type => self.bag_type)
   end
 
