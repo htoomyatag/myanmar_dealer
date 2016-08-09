@@ -868,7 +868,7 @@
 							<div class="product-col">
 								<div class="image">
 								<% if !product.avatar1_edit.nil?  %>
-					                   <%= link_to image_tag(product.avatar1_edit, :style=>"height:150px;width:150px;"), product_full_path(:id => product), :id => "product_image" %>   
+					                   <%= link_to image_tag(product.avatar1_edit.to_s, :style=>"height:150px;width:150px;"), product_full_path(:id => product), :id => "product_image" %>   
 					     <% elsif product.avatar1_edit.nil?  %>      
 									<img src="/assets/no_image.jpg" alt="product" class="img-responsive" style="height:150px;width:150px;" />
 					    <% end %>

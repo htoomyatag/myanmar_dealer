@@ -46,6 +46,8 @@ class ApisController < ApplicationController
     
     puts "@@@@@@@@@@@@@@"+@my_store_name.to_s+"@@@@@@@@@@@@@@"
 
+    
+        
 
      @products = Product.create(
       
@@ -57,10 +59,10 @@ class ApisController < ApplicationController
       :color => params[:color],
       :size => params[:size], 
       :store_name => @my_store_name,
-      :avatar1_edit => params[:image1],
-      :avatar2_edit => params[:image2],
-      :avatar3_edit => params[:image3],
-      :avatar4_edit => params[:image4],
+      :avatar1_edit => "data:image/png;base64,"+params[:image1].to_s.gsub('-', ''),
+      :avatar2_edit => "data:image/png;base64,"+params[:image2].to_s.gsub('-', ''),
+      :avatar3_edit => "data:image/png;base64,"+params[:image3].to_s.gsub('-', ''),
+      :avatar4_edit => "data:image/png;base64,"+params[:image4].to_s.gsub('-', ''),
       :user_id => params[:user_id])
 
 
@@ -958,7 +960,7 @@ puts @product
 
     @fashion_clothings = Product.where(:category => "cloths").order('id DESC')
     respond_to do |format|
-          my_primary_json = { :Products => @fashion_clothings.to_json(:methods => [:avatar_url]) }
+          my_primary_json = { :Products => @fashion_clothings.to_json }
           my_seconday_json = my_primary_json.to_json.gsub('\\', '')
           a = '"['
           b = ']"'

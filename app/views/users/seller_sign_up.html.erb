@@ -35,6 +35,7 @@
                   <label for="inputFname" class="col-sm-3 control-label">Full Name :</label>
                   <div class="col-sm-9">
                     <%= f.text_field :name, autofocus: true, :class => "form-control", :Placeholder => "Name" %>
+                      <label id="namelb" style="display:none;color:red;font-weight:bold;"> ***user name must be enter </label>
                   </div>
                 </div>
 
@@ -46,12 +47,14 @@
                   <label for="inputEmail" class="col-sm-3 control-label">Email :</label>
                   <div class="col-sm-9">
                       <%= f.email_field :email, autofocus: true, :class => "form-control", :Placeholder => "Email" %>
+                       <label id="emaillb" style="display:none;color:red;font-weight:bold;"> ***user email must be enter </label>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputPhone" class="col-sm-3 control-label">Phone :</label>
                   <div class="col-sm-9">
                      <%= f.text_field :phone, autofocus: true, :class => "form-control", :Placeholder => "Phone" %>
+                      <label id="phonelb" style="display:none;color:red;font-weight:bold;"> ***user phone must be enter </label>
                   </div>
                 </div>
                
@@ -66,12 +69,16 @@
                   <label for="inputPassword" class="col-sm-3 control-label">Password :</label>
                   <div class="col-sm-9">
                     <%= f.password_field :password, autocomplete: "off", :class=>"form-control", :Placeholder => "Password" %>
+                      <label id="pwdlb" style="display:none;color:red;font-weight:bold;"> ***password must be enter </label>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputRePassword" class="col-sm-3 control-label">Re-Password :</label>
                   <div class="col-sm-9">
                     <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"form-control", :Placeholder => "Re-Password" %>
+                    <label id="pwdconfirmlb" style="display:none;color:red;font-weight:bold;"> ***password must be re-enter twice </label>
+
+
                   </div>
                 </div>
                
@@ -111,42 +118,47 @@
                 
                 <div class="radio">
                   <label>
-                    <input type="radio" name="optionsRadios" id="optionspersonal" value="option1">
+                    <input type="radio" name="optionsRadiosPersonal" id="optionspersonal" value="option1" checked>
                     Personal
                   </label>
                      <label>
-                    <input type="radio" name="optionsRadios" id="optionsretail" value="option1">
+                    <input type="radio" name="optionsRadiosRetail" id="optionsretail" value="option2">
                     Retail
                   </label>
                      <label>
-                    <input type="radio" name="optionsRadios" id="optionscompany" value="option1">
+                    <input type="radio" name="optionsRadiosCompany" id="optionscompany" value="option3">
                     Company
                   </label>
                 </div>
 
-                <div id="personal" style="display:none;">
+                <div id="personal">
 
 
                     
                     <div class="form-group">
                       <label for="exampleInputEmail1">Name</label>
                       <%= f.text_field :personal_name, autofocus: true, :class => "form-control" %>
+                      <label id="user_personal_namelb" style="display:none;color:red;font-weight:bold;"> ***personal name must be enter </label>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">NRC number</label>
                       <%= f.text_field :personal_nrc_number, autofocus: true, :class => "form-control" %>
+                      <label id="user_personal_nrc_numberlb" style="display:none;color:red;font-weight:bold;"> ***NRC number must be enter </label>
                     </div>
                      <div class="form-group">
                       <label for="exampleInputFile">NRC Front</label>
                         <%= f.file_field :personal_nrc_front %>
+                        <label id="user_personal_nrc_frontlb" style="display:none;color:red;font-weight:bold;"> ***NRC Front must be upload </label>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputFile">NRC Back</label>
                         <%= f.file_field :personal_nrc_back %>
+                      <label id="user_personal_nrc_backlb" style="display:none;color:red;font-weight:bold;"> ***NRC Back must be upload </label>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Address</label>
                       <%= f.text_field :personal_address, autofocus: true, :class => "form-control" %>
+                      <label id="user_personal_addresslb" style="display:none;color:red;font-weight:bold;"> ***Address must be enter </label>
                     </div>
 
 
@@ -156,34 +168,42 @@
 
                 <div id="retail" style="display:none;">
                     
+
                      <div class="form-group">
                       <label for="exampleInputEmail1">Name</label>
                       <%= f.text_field :retail_name, autofocus: true, :class => "form-control" %>
+                      <label id="user_retail_namelb" style="display:none;color:red;font-weight:bold;"> ***Name must be enter </label>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">NRC number</label>
                      <%= f.text_field :retail_nrc_number, autofocus: true, :class => "form-control" %>
+                      <label id="user_retail_nrc_numberlb" style="display:none;color:red;font-weight:bold;"> ***NRC number must be enter </label>
                     </div>
                      <div class="form-group">
                       <label for="exampleInputFile">NRC Front</label>
                       <%= f.file_field :retail_nrc_front %>
+                      <label id="user_retail_nrc_frontlb" style="display:none;color:red;font-weight:bold;"> ***NRC Front must be upload </label>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputFile">NRC Back</label>
                       <%= f.file_field :retail_nrc_back %>
+                      <label id="user_retail_nrc_backlb" style="display:none;color:red;font-weight:bold;"> ***NRC Back must be upload </label>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputFile">Shop Lincensce</label>
                      <%= f.file_field :shop_licensce %>
+                     <label id="user_shop_licenscelb" style="display:none;color:red;font-weight:bold;"> ***Shop Licensce must be upload </label>
                     </div>
                 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Shop Name</label>
                         <%= f.text_field :shop_name, autofocus: true, :class => "form-control" %>
+                        <label id="user_shop_namelb" style="display:none;color:red;font-weight:bold;"> ***Shop name must be enter </label>
                     </div>
                     <div class="form-group">
                          <label for="exampleInputEmail1">Shop Address</label>
                           <%= f.text_field :retail_address, autofocus: true, :class => "form-control" %>
+                        <label id="user_retail_addresslb" style="display:none;color:red;font-weight:bold;"> ***Shop address must be enter </label>
                     </div>
 
 
@@ -193,40 +213,43 @@
                 <div id="company" style="display:none;">
                 
 
-
                     
                     <div class="form-group">
                       <label for="exampleInputEmail1">Staff name</label>
                       <%= f.text_field :staff_name, autofocus: true, :class => "form-control" %>
+                      <label id="user_staff_namelb" style="display:none;color:red;font-weight:bold;"> ***Staff name must be enter </label>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Staff NRC number</label>
                       <%= f.text_field :staff_nrc_number, autofocus: true, :class => "form-control" %>
+                      <label id="user_staff_nrc_numberlb" style="display:none;color:red;font-weight:bold;"> ***Staff NRC must be enter </label>
                     </div>
                      <div class="form-group">
                       <label for="exampleInputFile">Staff NRC Front</label>
                       <%= f.file_field :staff_nrc_front %>
+                      <label id="user_staff_nrc_frontlb" style="display:none;color:red;font-weight:bold;"> ***Staff NRC Front must be upload </label>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputFile">Staff NRC Back</label>
                       <%= f.file_field :staff_nrc_back %>
+                      <label id="user_staff_nrc_backlb" style="display:none;color:red;font-weight:bold;"> ***Staff NRC Back must be upload </label>
                     </div>
                      <div class="form-group">
                          <label for="exampleInputEmail1">Company Licensce</label>
-                                <%= f.file_field :company_licensce %>
+                          <%= f.file_field :company_licensce %>
+                          <label id="user_company_licenscelb" style="display:none;color:red;font-weight:bold;"> ***Company Licensce must be upload </label>
                     </div>
 
                      <div class="form-group">
                          <label for="exampleInputEmail1">Company Name</label>
                           <%= f.text_field :company_name, autofocus: true, :class => "form-control" %>
+                        <label id="user_company_namelb" style="display:none;color:red;font-weight:bold;"> ***Company Name must be upload </label>
                     </div>
-
-
-
 
                     <div class="form-group">
                          <label for="exampleInputEmail1">Address</label>
                           <%= f.text_field :staff_address, autofocus: true, :class => "form-control" %>
+                          <label id="user_staff_addresslb" style="display:none;color:red;font-weight:bold;"> ***Staff Name must be upload </label>
                     </div>
                      
 
@@ -360,3 +383,531 @@ $(document).ready(function() {
 
   </script>
 
+
+
+ <script type="text/javascript">
+
+
+
+ $('#optionspersonal').on("click", function(event){
+
+    $('#optionsretail').prop('checked', false);
+    $('#optionscompany').prop('checked', false);
+
+
+    $('#user_retail_name').val(null);
+    $('#user_retail_nrc_number').val(null);
+    $('#user_retail_nrc_front').val(null);
+    $('#user_retail_nrc_back').val(null);
+    $('#user_shop_licensce').val(null);
+    $('#user_shop_name').val(null);
+    $('#user_retail_address').val(null);
+
+    $('#user_staff_name').val(null);
+    $('#user_staff_nrc_number').val(null);
+    $('#user_staff_nrc_front').val(null);
+    $('#user_staff_nrc_back').val(null);
+    $('#user_company_licensce').val(null);
+    $('#user_company_name').val(null);
+    $('#user_staff_address').val(null);
+
+
+
+
+});
+
+
+ $('#optionscompany').on("click", function(event){
+
+    $('#optionsretail').prop('checked', false);
+    $('#optionspersonal').prop('checked', false);
+
+
+
+$('#user_personal_name').val(null);
+
+$('#user_personal_nrc_number').val(null);
+$('#user_personal_nrc_front').val(null);
+$('#user_personal_nrc_back').val(null);
+$('#user_personal_address').val(null);
+
+$('#user_retail_name').val(null);
+$('#user_retail_nrc_number').val(null);
+$('#user_retail_nrc_front').val(null);
+$('#user_retail_nrc_back').val(null);
+$('#user_shop_licensce').val(null);
+$('#user_shop_name').val(null);
+$('#user_retail_address').val(null);
+
+
+
+
+
+    
+});
+
+
+  $('#optionsretail').on("click", function(event){
+
+    $('#optionscompany').prop('checked', false);
+    $('#optionspersonal').prop('checked', false);
+
+
+
+
+$('#user_personal_name').val(null);
+$('#user_personal_nrc_number').val(null);
+$('#user_personal_nrc_front').val(null);
+$('#user_personal_nrc_back').val(null);
+$('#user_personal_address').val(null);
+
+
+
+
+
+
+$('#user_staff_name').val(null);
+$('#user_staff_nrc_number').val(null);
+$('#user_staff_nrc_front').val(null);
+$('#user_staff_nrc_back').val(null);
+$('#user_company_licensce').val(null);
+$('#user_company_name').val(null);
+$('#user_staff_address').val(null);
+
+
+    
+});
+
+
+
+
+
+
+ $("#postme").click(function() {
+  
+
+
+
+
+
+  var x = document.getElementById("user_name").value;
+    if (x == null || x == "") {
+        $("#namelb").show();
+        return false;
+    }
+
+
+  var x = document.getElementById("user_email").value;
+    if (x == null || x == "" ) {
+        $("#emaillb").show();
+        return false;
+    }
+
+
+      var x = document.getElementById("user_phone").value;
+    if (x == null || x == "" ) {
+        $("#phonelb").show();
+        return false;
+    }
+
+
+    var x = document.getElementById("user_password").value;
+    if (x == null || x == "" ) {
+        $("#pwdlb").show();
+        return false;
+    }
+
+    var x = document.getElementById("user_password_confirmation").value;
+    if (x == null || x == "" ) {
+        $("#pwdconfirmlb").show();
+        return false;
+    }
+
+
+
+
+
+
+  
+
+
+   if( $('input:radio[name=optionsRadiosPersonal]:checked').length > 0 ) {
+
+
+
+    
+// // personal user
+    var user_personal_name = document.getElementById('user_personal_name').value;
+    var user_personal_nrc_number = document.getElementById('user_personal_nrc_number').value;
+    var user_personal_nrc_front = document.getElementById('user_personal_nrc_front').value;
+    var user_personal_nrc_back = document.getElementById('user_personal_nrc_back').value;
+    var user_personal_address = document.getElementById('user_personal_address').value;
+
+     if (user_personal_name == null || user_personal_name == "") {
+        $("#user_personal_namelb").show();
+        return false;
+    }
+
+     if (user_personal_nrc_number == null || user_personal_nrc_number == "") {
+        $("#user_personal_nrc_numberlb").show();
+        return false;
+    }
+
+
+     if (user_personal_nrc_front == null || user_personal_nrc_front == "") {
+        $("#user_personal_nrc_frontlb").show();
+        return false;
+    }
+
+
+     if (user_personal_nrc_back == null || user_personal_nrc_back == "") {
+        $("#user_personal_nrc_backlb").show();
+        return false;
+    }
+
+
+     if (user_personal_address == null || user_personal_address == "") {
+        $("#user_personal_addresslb").show();
+        return false;
+    }
+
+
+    
+    }
+
+
+    if( $('input:radio[name=optionsRadiosRetail]:checked').length > 0 ) {
+    
+        // // retail user
+            var user_retail_name = document.getElementById('user_retail_name').value;
+            var user_retail_nrc_number = document.getElementById('user_retail_nrc_number').value;
+            var user_retail_nrc_front = document.getElementById('user_retail_nrc_front').value;
+            var user_retail_nrc_back = document.getElementById('user_retail_nrc_back').value;
+            var user_shop_licensce = document.getElementById('user_shop_licensce').value;
+            var user_shop_name = document.getElementById('user_shop_name').value;
+            var user_retail_address = document.getElementById('user_retail_address').value;
+
+             if (user_retail_name == null || user_retail_name == "") {
+                $("#user_retail_namelb").show();
+                return false;
+            }
+
+             if (user_retail_nrc_number == null || user_retail_nrc_number == "") {
+                $("#user_retail_nrc_numberlb").show();
+                return false;
+            }
+
+
+             if (user_retail_nrc_front == null || user_retail_nrc_front == "") {
+                $("#user_retail_nrc_frontlb").show();
+                return false;
+            }
+
+
+             if (user_retail_nrc_back == null || user_retail_nrc_back == "") {
+                $("#user_retail_nrc_backlb").show();
+                return false;
+            }
+
+
+             if (user_shop_licensce == null || user_shop_licensce == "") {
+                $("#user_shop_licenscelb").show();
+                return false;
+            }
+
+            if (user_shop_name == null || user_shop_name == "") {
+                $("#user_shop_namelb").show();
+                return false;
+            }
+
+
+            if (user_retail_address == null || user_retail_address == "") {
+                $("#user_retail_addresslb").show();
+                return false;
+            }
+
+
+    
+    }
+
+
+    if( $('input:radio[name=optionsRadiosCompany]:checked').length > 0 ) {
+    
+        // // company user
+            var user_staff_name = document.getElementById('user_staff_name').value;
+            var user_staff_nrc_number = document.getElementById('user_staff_nrc_number').value;
+            var user_staff_nrc_front = document.getElementById('user_staff_nrc_front').value;
+            var user_staff_nrc_back = document.getElementById('user_staff_nrc_back').value;
+            var user_company_licensce = document.getElementById('user_company_licensce').value;
+            var user_company_name = document.getElementById('user_company_name').value;
+            var user_staff_address = document.getElementById('user_staff_address').value;
+
+             if (user_staff_name == null || user_staff_name == "") {
+                $("#user_staff_namelb").show();
+                return false;
+            }
+
+             if (user_staff_nrc_number == null || user_staff_nrc_number == "") {
+                $("#user_staff_nrc_numberlb").show();
+                return false;
+            }
+
+
+             if (user_staff_nrc_front == null || user_staff_nrc_front == "") {
+                $("#user_staff_nrc_frontlb").show();
+                return false;
+            }
+
+
+             if (user_staff_nrc_back == null || user_staff_nrc_back == "") {
+                $("#user_staff_nrc_backlb").show();
+                return false;
+            }
+
+
+             if (user_company_licensce == null || user_company_licensce == "") {
+                $("#user_company_licenscelb").show();
+                return false;
+            }
+
+            if (user_company_name == null || user_company_name == "") {
+                $("#user_company_namelb").show();
+                return false;
+            }
+
+
+            if (user_staff_address == null || user_staff_address == "") {
+                $("#user_staff_addresslb").show();
+                return false;
+            }
+
+
+    
+    }
+
+
+
+
+
+
+   
+
+
+
+});
+
+
+
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+       
+
+
+
+  var x = document.getElementById("user_name").value;
+    if (x == null || x == "") {
+        $("#namelb").show();
+        return false;
+    }
+
+
+  var x = document.getElementById("user_email").value;
+    if (x == null || x == "" ) {
+        $("#emaillb").show();
+        return false;
+    }
+
+
+        var x = document.getElementById("user_phone").value;
+    if (x == null || x == "" ) {
+        $("#phonelb").show();
+        return false;
+    }
+
+
+    var x = document.getElementById("user_password").value;
+    if (x == null || x == "" ) {
+        $("#pwdlb").show();
+        return false;
+    }
+
+
+    var x = document.getElementById("user_password_confirmation").value;
+    if (x == null || x == "" ) {
+        $("#pwdconfirmlb").show();
+        return false;
+    }
+
+
+
+
+
+
+
+   if( $('input:radio[name=optionsRadiosPersonal]:checked').length > 0 ) {
+
+
+
+    
+// // personal user
+    var user_personal_name = document.getElementById('user_personal_name').value;
+    var user_personal_nrc_number = document.getElementById('user_personal_nrc_number').value;
+    var user_personal_nrc_front = document.getElementById('user_personal_nrc_front').value;
+    var user_personal_nrc_back = document.getElementById('user_personal_nrc_back').value;
+    var user_personal_address = document.getElementById('user_personal_address').value;
+
+     if (user_personal_name == null || user_personal_name == "") {
+        $("#user_personal_namelb").show();
+        return false;
+    }
+
+     if (user_personal_nrc_number == null || user_personal_nrc_number == "") {
+        $("#user_personal_nrc_numberlb").show();
+        return false;
+    }
+
+
+     if (user_personal_nrc_front == null || user_personal_nrc_front == "") {
+        $("#user_personal_nrc_frontlb").show();
+        return false;
+    }
+
+
+     if (user_personal_nrc_back == null || user_personal_nrc_back == "") {
+        $("#user_personal_nrc_backlb").show();
+        return false;
+    }
+
+
+     if (user_personal_address == null || user_personal_address == "") {
+        $("#user_personal_addresslb").show();
+        return false;
+    }
+
+
+    
+    }
+
+
+    if( $('input:radio[name=optionsRadiosRetail]:checked').length > 0 ) {
+    
+        // // retail user
+            var user_retail_name = document.getElementById('user_retail_name').value;
+            var user_retail_nrc_number = document.getElementById('user_retail_nrc_number').value;
+            var user_retail_nrc_front = document.getElementById('user_retail_nrc_front').value;
+            var user_retail_nrc_back = document.getElementById('user_retail_nrc_back').value;
+            var user_shop_licensce = document.getElementById('user_shop_licensce').value;
+            var user_shop_name = document.getElementById('user_shop_name').value;
+            var user_retail_address = document.getElementById('user_retail_address').value;
+
+             if (user_retail_name == null || user_retail_name == "") {
+                $("#user_retail_namelb").show();
+                return false;
+            }
+
+             if (user_retail_nrc_number == null || user_retail_nrc_number == "") {
+                $("#user_retail_nrc_numberlb").show();
+                return false;
+            }
+
+
+             if (user_retail_nrc_front == null || user_retail_nrc_front == "") {
+                $("#user_retail_nrc_frontlb").show();
+                return false;
+            }
+
+
+             if (user_retail_nrc_back == null || user_retail_nrc_back == "") {
+                $("#user_retail_nrc_backlb").show();
+                return false;
+            }
+
+
+             if (user_shop_licensce == null || user_shop_licensce == "") {
+                $("#user_shop_licenscelb").show();
+                return false;
+            }
+
+            if (user_shop_name == null || user_shop_name == "") {
+                $("#user_shop_namelb").show();
+                return false;
+            }
+
+
+            if (user_retail_address == null || user_retail_address == "") {
+                $("#user_retail_addresslb").show();
+                return false;
+            }
+
+
+    
+    }
+
+
+    if( $('input:radio[name=optionsRadiosCompany]:checked').length > 0 ) {
+    
+        // // company user
+            var user_staff_name = document.getElementById('user_staff_name').value;
+            var user_staff_nrc_number = document.getElementById('user_staff_nrc_number').value;
+            var user_staff_nrc_front = document.getElementById('user_staff_nrc_front').value;
+            var user_staff_nrc_back = document.getElementById('user_staff_nrc_back').value;
+            var user_company_licensce = document.getElementById('user_company_licensce').value;
+            var user_company_name = document.getElementById('user_company_name').value;
+            var user_staff_address = document.getElementById('user_staff_address').value;
+
+             if (user_staff_name == null || user_staff_name == "") {
+                $("#user_staff_namelb").show();
+                return false;
+            }
+
+             if (user_staff_nrc_number == null || user_staff_nrc_number == "") {
+                $("#user_staff_nrc_numberlb").show();
+                return false;
+            }
+
+
+             if (user_staff_nrc_front == null || user_staff_nrc_front == "") {
+                $("#user_staff_nrc_frontlb").show();
+                return false;
+            }
+
+
+             if (user_staff_nrc_back == null || user_staff_nrc_back == "") {
+                $("#user_staff_nrc_backlb").show();
+                return false;
+            }
+
+
+             if (user_company_licensce == null || user_company_licensce == "") {
+                $("#user_company_licenscelb").show();
+                return false;
+            }
+
+            if (user_company_name == null || user_company_name == "") {
+                $("#user_company_namelb").show();
+                return false;
+            }
+
+
+            if (user_staff_address == null || user_staff_address == "") {
+                $("#user_staff_addresslb").show();
+                return false;
+            }
+
+
+    
+    }
+
+
+
+
+
+
+
+
+    }
+});
+
+
+
+</script>
