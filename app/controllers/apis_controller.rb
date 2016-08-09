@@ -46,6 +46,9 @@ class ApisController < ApplicationController
     
     puts "@@@@@@@@@@@@@@"+@my_store_name.to_s+"@@@@@@@@@@@@@@"
 
+     @users = User.where(:id => params[:user_id]).pluck(:name)
+     @user_name = @users.to_s.gsub('[', '').gsub('"','')
+     @my_user_name = @user_name.to_s.gsub(']', '')
     
         
 
@@ -63,6 +66,7 @@ class ApisController < ApplicationController
       :avatar2_edit => "data:image/png;base64,"+params[:image2].to_s.gsub('-', ''),
       :avatar3_edit => "data:image/png;base64,"+params[:image3].to_s.gsub('-', ''),
       :avatar4_edit => "data:image/png;base64,"+params[:image4].to_s.gsub('-', ''),
+      :seller_name =>  @my_user_name,
       :user_id => params[:user_id])
 
 
